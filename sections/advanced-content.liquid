@@ -1,0 +1,183 @@
+{%- render 'section-advanced-content' -%}
+
+{% schema %}
+{
+  "name": "t:labels.custom_content",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:labels.full_page_width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "space_around",
+      "label": "t:actions.add_spacing_above",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "liquid",
+      "name": "t:labels.html",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "code",
+          "label": "t:labels.html",
+          "default": "<h2>Custom content</h2><p>Use this advanced section to build your own layouts or to add custom HTML, Liquid, or scripts.</p>",
+          "info": "t:labels.supports_liquid"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:labels.width",
+          "default": "100%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:labels.vertical_alignment",
+          "default": "center",
+          "info": "t:info.aligns_next_to_custom_content",
+          "options": [
+            {
+              "value": "top-middle",
+              "label": "t:labels.alignments.top"
+            },
+            {
+              "value": "center",
+              "label": "t:labels.alignments.middle"
+            },
+            {
+              "value": "bottom-middle",
+              "label": "t:labels.alignments.bottom"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:labels.image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:labels.link"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:labels.width",
+          "default": "100%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:labels.vertical_alignment",
+          "default": "center",
+          "info": "t:info.aligns_next_to_custom_content",
+          "options": [
+            {
+              "value": "top-middle",
+              "label": "t:labels.alignments.top"
+            },
+            {
+              "value": "center",
+              "label": "t:labels.alignments.middle"
+            },
+            {
+              "value": "bottom-middle",
+              "label": "t:labels.alignments.bottom"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.custom_content",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "width": "50%"
+          }
+        },
+        {
+          "type": "liquid",
+          "settings": {
+            "width": "50%"
+          }
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "custom.popups"
+    ]
+  }
+}
+{% endschema %}

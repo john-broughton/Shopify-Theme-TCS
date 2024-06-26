@@ -1,0 +1,37 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a grid item for search results.
+
+  Accepts:
+  - item {object} - The item to display
+
+  Usage:
+  {% render 'search-grid-item', item: item %}
+{%- endcomment -%}
+
+<div class="grid-item grid-product">
+  <div class="grid-item__content">
+    <a href="{{ item.url }}" class="grid-item__link">
+      {%- if item.object_type == 'article' and item.image -%}
+        <div class="grid-product__image-wrap">
+          {%- render 'image-element',
+            img: item.image,
+            classes: 'grid-product__image',
+            alt: item.title,
+            widths: '180, 360, 540',
+            sizes: sizes,
+            sizeVariable: sizeVariable,
+            fallback: fallback
+          -%}
+        </div>
+      {%- endif -%}
+
+      <div class="grid-item__meta">
+        <span class="h4">{{ item.title }}</span>
+        <div>
+          {{ item.content | strip_html | truncatewords: 45 }}
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

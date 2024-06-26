@@ -1,0 +1,58 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a list of collection tiles for a menu's subcollections.
+
+  Accepts:
+  - menu {linklist} - The menu object
+
+  Usage:
+  {% render 'subcollections', menu: linklists['main-menu'] %}
+{%- endcomment -%}
+
+{%- liquid
+  assign menu = menu | default: blank
+
+  unless current_tags
+    assign current_items = ''
+
+    echo '<div class="new-grid scrollable-grid--small" data-view="custom-grid-item-width" data-type="subcollections">'
+    for link in menu.links
+      if link.active and link.levels > 0 and link.child_active == false
+        unless current_items contains link.title
+          render 'sub-collections', sub_collection_links: link.links
+
+          assign current_items = current_items | append: link.title
+        endunless
+      endif
+
+      for sub_link in link.links
+        if sub_link.active and sub_link.levels > 0 and sub_link.child_active == false
+          unless current_items contains sub_link.title
+            render 'sub-collections', sub_collection_links: sub_link.links
+
+            assign current_items = current_items | append: sub_link.title
+          endunless
+        endif
+
+        for sub_sub_link in sub_link.links
+          if sub_sub_link.active and sub_sub_link.url == sub_link.url
+            unless current_items contains sub_sub_link.title
+              render 'sub-collections', parent_url: sub_link.url, sub_collection_links: sub_link.links
+
+              assign current_items = current_items | append: sub_sub_link.title
+            endunless
+
+          elsif sub_sub_link.active and sub_sub_link.levels > 0
+            unless current_items contains sub_sub_link.title
+              render 'sub-collections', sub_collection_links: sub_sub_link.links
+
+              assign current_items = current_items | append: sub_sub_link.title
+            endunless
+          endif
+        endfor
+      endfor
+    endfor
+
+    echo '</div>'
+  endunless
+-%}

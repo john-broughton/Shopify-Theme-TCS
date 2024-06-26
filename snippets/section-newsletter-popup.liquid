@@ -1,0 +1,122 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a newsletter reminder.
+
+  Accepts:
+  - disable_for_account_holders {boolean} - Whether to disable the popup for account holders
+  - popup_seconds {5-60} - The number of seconds to wait before showing the popup
+  - popup_days {2-30} - The number of days to wait before showing the popup
+  - popup_title {string} - The title of the popup
+  - popup_text {string} - The text of the popup
+  - popup_image {image} - The image of the popup
+
+  Usage:
+  {% render 'section-newsletter-popup', disable_for_account_holders: false %}
+{%- endcomment -%}
+
+{%- liquid
+  assign disable_for_account_holders = disable_for_account_holders | default: section.settings.disable_for_account_holders, allow_false: true | default: true, allow_false: true
+  assign popup_seconds = popup_seconds | default: section.settings.popup_seconds | default: 30
+  assign popup_days = popup_days | default: section.settings.popup_days | default: 30
+  assign popup_title = popup_title | default: section.settings.popup_title
+  assign popup_text = popup_text | default: section.settings.popup_text
+  assign popup_image = popup_image | default: section.settings.popup_image
+  assign image_position = image_position | default: section.settings.image_position | default: 'left'
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
+  assign show_social_icons = show_social_icons | default: section.settings.show_social_icons, allow_false: true | default: false, allow_false: true
+  assign enable_newsletter = enable_newsletter | default: section.settings.enable_newsletter, allow_false: true | default: true, allow_false: true
+  assign button_label = button_label | default: section.settings.button_label
+  assign button_link = button_link | default: section.settings.button_link
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+{% unless disable_for_account_holders and customer %}
+  {% for block in section.blocks %}
+    {% if block.type == 'header' %}
+      {% assign has_reminder = true %}
+    {% endif %}
+  {% endfor %}
+
+  <is-land {{ hydration }}>
+    <newsletter-popup
+      id="NewsletterPopup-{{ section.id }}"
+      class="modal modal--square modal--mobile-friendly"
+      data-section-id="{{ section.id }}"
+      data-section-type="newsletter-popup"
+      data-has-reminder="{{ has_reminder }}"
+      data-delay-days="{{ popup_days }}"
+      data-test-mode="{{ request.design_mode }}"
+      data-delay-seconds="{{ popup_seconds }}"
+    >
+      <div class="modal__inner{% if popup_image %} modal__inner--bg-image{% endif %}">
+        <div class="modal__centered">
+          <div class="modal__centered-content modal__centered-content--padded color-scheme-{{ color_scheme }} {% if popup_image != blank %}newsletter--has-image{% endif %}">
+            {%- if color_scheme != 'none' -%}
+              {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+            {%- endif -%}
+
+            <div class="newsletter-popup {% if image_position == 'right' %}newsletter-popup--image-reversed{% endif %}">
+              {% if popup_image != blank %}
+                <div class="newsletter-popup__image-wrapper">
+                  {%- render 'image-element',
+                    img: popup_image,
+                    img_width: 1000,
+                    sizeVariable: '400px',
+                    classes: 'newsletter-popup__image'
+                  -%}
+                </div>
+              {% endif %}
+
+              <div class="newsletter-popup__content">
+                {%- if popup_title != blank -%}
+                  <div class="h2">{{ popup_title }}</div>
+                {%- endif -%}
+
+                {%- if popup_text != blank -%}
+                  <div class="rte clearfix">
+                    <div class="enlarge-text">
+                      {{ popup_text }}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                {%- if enable_newsletter -%}
+                  {%- render 'newsletter-form', context: 'popup' -%}
+                {%- endif -%}
+
+                {% if button_label != blank %}
+                  <a href="{{ button_link }}" class="btn newsletter-button">
+                    <div class="button--text">
+                      {{ button_label }}
+                    </div>
+                  </a>
+                {% endif %}
+
+                {% if show_social_icons %}
+                  {% render 'social-icons', wrapper_class: 'inline-list toolbar__social' %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn--circle btn--icon modal__close js-modal-close">
+            {% render 'icon', name: 'close' %}
+            <span class="icon__fallback-text visually-hidden">{{ 'actions.close_esc' | t | json }}</span>
+          </button>
+        </div>
+      </div>
+    </newsletter-popup>
+
+    <template data-island>
+      <script type="module">
+        import 'components/section-newsletter-popup'
+      </script>
+    </template>
+  </is-land>
+
+  {% for block in section.blocks %}
+    {% if block.type == 'header' %}
+      {%- render 'newsletter-reminder', block: block -%}
+    {% endif %}
+  {% endfor %}
+{% endunless %}

@@ -1,0 +1,78 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the header icons.
+
+  Accepts:
+  - cart_icon {string} - The cart icon to use
+  - nav_position {string} - The navigation position
+
+  Usage:
+  {% render 'header-icons', cart_icon: 'bag' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign cart_icon = cart_icon | default: settings.cart_icon | default: 'cart'
+  assign nav_position = nav_position | default: 'below'
+
+  assign hide_icon_labels = true
+
+  if nav_position == 'below'
+    assign hide_icon_labels = false
+  endif
+-%}
+
+<div class="site-nav">
+  <div class="site-nav__icons">
+    <a
+      href="{{ routes.search_url }}"
+      class="site-nav__link site-nav__link--icon js-search-header{% if nav_position == 'below' %} medium-up--hide{% endif %} js-no-transition"
+    >
+      {% render 'icon', name: 'search' %}
+      <span class="icon__fallback-text visually-hidden">{{ 'labels.search' | t }}</span>
+    </a>
+
+    {%- if shop.customer_accounts_enabled -%}
+      <a class="site-nav__link site-nav__link--icon small--hide" href="{{ routes.account_url }}">
+        {% render 'icon', name: 'user' %}
+        <span class="site-nav__icon-label small--hide{% if hide_icon_labels %} icon__fallback-text visually-hidden{% endif %}">
+          {{ 'labels.account' | t }}
+        </span>
+      </a>
+    {%- endif -%}
+
+    <a
+      href="{{ routes.cart_url }}"
+      id="HeaderCartTrigger"
+      aria-controls="HeaderCart"
+      class="site-nav__link site-nav__link--icon js-no-transition"
+      data-icon="{{ cart_icon }}"
+      aria-label="{{ 'labels.cart' | t }}"
+    >
+      <span class="cart-link">
+        {% render 'icon', name: cart_icon %}
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
+          <span class="cart-link__bubble-num">{{ cart.item_count }}</span>
+        </span>
+      </span>
+      <span class="site-nav__icon-label small--hide{% if hide_icon_labels %} icon__fallback-text visually-hidden{% endif %}">
+        {{ 'labels.cart' | t }}
+      </span>
+    </a>
+
+    <button
+      type="button"
+      aria-controls="MobileNav"
+      class="site-nav__link site-nav__link--icon medium-up--hide mobile-nav-trigger"
+    >
+      {% render 'icon', name: 'hamburger' %}
+      <span class="icon__fallback-text visually-hidden">{{ 'labels.site_navigation' | t }}</span>
+    </button>
+  </div>
+
+  <div class="site-nav__close-cart">
+    <button type="button" class="site-nav__link site-nav__link--icon js-close-header-cart">
+      <span>{{ 'actions.close' | t }}</span>
+      {% render 'icon', name: 'close' %}
+    </button>
+  </div>
+</div>

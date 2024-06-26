@@ -1,0 +1,807 @@
+{%- render 'section-countdown' -%}
+
+{% schema %}
+{
+  "name": "t:labels.countdown",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:labels.section_layout",
+      "default": "banner",
+      "options": [
+        {
+          "value": "banner",
+          "label": "t:labels.banner"
+        },
+        {
+          "value": "hero",
+          "label": "t:labels.hero"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:actions.enable_full_width",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:labels.none"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:labels.background_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:labels.background_image"
+    },
+    {
+      "type": "checkbox",
+      "id": "blur_image",
+      "label": "t:actions.blur_the_image",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:labels.overlay",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:labels.overlay_opacity",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "%"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "t:labels.mobile_image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "timer",
+      "name": "t:labels.timer",
+      "settings": [
+        {
+          "type": "select",
+          "id": "year",
+          "label": "t:labels.year",
+          "default": "2025",
+          "options": [
+            {
+              "value": "2024",
+              "label": "2024"
+            },
+            {
+              "value": "2025",
+              "label": "2025"
+            },
+            {
+              "value": "2026",
+              "label": "2026"
+            },
+            {
+              "value": "2027",
+              "label": "2027"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "month",
+          "label": "t:labels.month",
+          "default": "01",
+          "options": [
+            {
+              "value": "01",
+              "label": "t:labels.months.january"
+            },
+            {
+              "value": "02",
+              "label": "t:labels.months.february"
+            },
+            {
+              "value": "03",
+              "label": "t:labels.months.march"
+            },
+            {
+              "value": "04",
+              "label": "t:labels.months.april"
+            },
+            {
+              "value": "05",
+              "label": "t:labels.months.may"
+            },
+            {
+              "value": "06",
+              "label": "t:labels.months.june"
+            },
+            {
+              "value": "07",
+              "label": "t:labels.months.july"
+            },
+            {
+              "value": "08",
+              "label": "t:labels.months.august"
+            },
+            {
+              "value": "09",
+              "label": "t:labels.months.september"
+            },
+            {
+              "value": "10",
+              "label": "t:labels.months.october"
+            },
+            {
+              "value": "11",
+              "label": "t:labels.months.november"
+            },
+            {
+              "value": "12",
+              "label": "t:labels.months.december"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "day",
+          "label": "t:labels.day",
+          "default": "1",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            },
+            {
+              "value": "6",
+              "label": "6"
+            },
+            {
+              "value": "7",
+              "label": "7"
+            },
+            {
+              "value": "8",
+              "label": "8"
+            },
+            {
+              "value": "9",
+              "label": "9"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "15",
+              "label": "15"
+            },
+            {
+              "value": "16",
+              "label": "16"
+            },
+            {
+              "value": "17",
+              "label": "17"
+            },
+            {
+              "value": "18",
+              "label": "18"
+            },
+            {
+              "value": "19",
+              "label": "19"
+            },
+            {
+              "value": "20",
+              "label": "20"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "hour",
+          "label": "t:labels.hour",
+          "default": "03",
+          "options": [
+            {
+              "value": "00",
+              "label": "t:labels.times.12_am"
+            },
+            {
+              "value": "01",
+              "label": "t:labels.times.01_am"
+            },
+            {
+              "value": "02",
+              "label": "t:labels.times.02_am"
+            },
+            {
+              "value": "03",
+              "label": "t:labels.times.03_am"
+            },
+            {
+              "value": "04",
+              "label": "t:labels.times.04_am"
+            },
+            {
+              "value": "05",
+              "label": "t:labels.times.05_am"
+            },
+            {
+              "value": "06",
+              "label": "t:labels.times.06_am"
+            },
+            {
+              "value": "07",
+              "label": "t:labels.times.07_am"
+            },
+            {
+              "value": "08",
+              "label": "t:labels.times.08_am"
+            },
+            {
+              "value": "09",
+              "label": "t:labels.times.09_am"
+            },
+            {
+              "value": "10",
+              "label": "t:labels.times.10_am"
+            },
+            {
+              "value": "11",
+              "label": "t:labels.times.11_am"
+            },
+            {
+              "value": "12",
+              "label": "t:labels.times.12_pm"
+            },
+            {
+              "value": "13",
+              "label": "t:labels.times.1_pm"
+            },
+            {
+              "value": "14",
+              "label": "t:labels.times.2_pm"
+            },
+            {
+              "value": "15",
+              "label": "t:labels.times.3_pm"
+            },
+            {
+              "value": "16",
+              "label": "t:labels.times.4_pm"
+            },
+            {
+              "value": "17",
+              "label": "t:labels.times.5_pm"
+            },
+            {
+              "value": "18",
+              "label": "t:labels.times.6_pm"
+            },
+            {
+              "value": "19",
+              "label": "t:labels.times.7_pm"
+            },
+            {
+              "value": "20",
+              "label": "t:labels.times.8_pm"
+            },
+            {
+              "value": "21",
+              "label": "t:labels.times.9_pm"
+            },
+            {
+              "value": "22",
+              "label": "t:labels.times.10_pm"
+            },
+            {
+              "value": "23",
+              "label": "t:labels.times.11_pm"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "minute",
+          "label": "t:labels.minute",
+          "default": "00",
+          "options": [
+            {
+              "value": "00",
+              "label": "00"
+            },
+            {
+              "value": "01",
+              "label": "01"
+            },
+            {
+              "value": "02",
+              "label": "02"
+            },
+            {
+              "value": "03",
+              "label": "03"
+            },
+            {
+              "value": "04",
+              "label": "04"
+            },
+            {
+              "value": "05",
+              "label": "05"
+            },
+            {
+              "value": "06",
+              "label": "06"
+            },
+            {
+              "value": "07",
+              "label": "07"
+            },
+            {
+              "value": "08",
+              "label": "08"
+            },
+            {
+              "value": "09",
+              "label": "09"
+            },
+            {
+              "value": "10",
+              "label": "10"
+            },
+            {
+              "value": "11",
+              "label": "11"
+            },
+            {
+              "value": "12",
+              "label": "12"
+            },
+            {
+              "value": "13",
+              "label": "13"
+            },
+            {
+              "value": "14",
+              "label": "14"
+            },
+            {
+              "value": "15",
+              "label": "15"
+            },
+            {
+              "value": "16",
+              "label": "16"
+            },
+            {
+              "value": "17",
+              "label": "17"
+            },
+            {
+              "value": "18",
+              "label": "18"
+            },
+            {
+              "value": "19",
+              "label": "19"
+            },
+            {
+              "value": "20",
+              "label": "20"
+            },
+            {
+              "value": "21",
+              "label": "21"
+            },
+            {
+              "value": "22",
+              "label": "22"
+            },
+            {
+              "value": "23",
+              "label": "23"
+            },
+            {
+              "value": "24",
+              "label": "24"
+            },
+            {
+              "value": "25",
+              "label": "25"
+            },
+            {
+              "value": "26",
+              "label": "26"
+            },
+            {
+              "value": "27",
+              "label": "27"
+            },
+            {
+              "value": "28",
+              "label": "28"
+            },
+            {
+              "value": "29",
+              "label": "29"
+            },
+            {
+              "value": "30",
+              "label": "30"
+            },
+            {
+              "value": "31",
+              "label": "31"
+            },
+            {
+              "value": "32",
+              "label": "32"
+            },
+            {
+              "value": "33",
+              "label": "33"
+            },
+            {
+              "value": "34",
+              "label": "34"
+            },
+            {
+              "value": "35",
+              "label": "35"
+            },
+            {
+              "value": "36",
+              "label": "36"
+            },
+            {
+              "value": "37",
+              "label": "37"
+            },
+            {
+              "value": "38",
+              "label": "38"
+            },
+            {
+              "value": "39",
+              "label": "39"
+            },
+            {
+              "value": "40",
+              "label": "40"
+            },
+            {
+              "value": "41",
+              "label": "41"
+            },
+            {
+              "value": "42",
+              "label": "42"
+            },
+            {
+              "value": "43",
+              "label": "43"
+            },
+            {
+              "value": "44",
+              "label": "44"
+            },
+            {
+              "value": "45",
+              "label": "45"
+            },
+            {
+              "value": "46",
+              "label": "46"
+            },
+            {
+              "value": "47",
+              "label": "47"
+            },
+            {
+              "value": "48",
+              "label": "48"
+            },
+            {
+              "value": "49",
+              "label": "49"
+            },
+            {
+              "value": "50",
+              "label": "50"
+            },
+            {
+              "value": "51",
+              "label": "51"
+            },
+            {
+              "value": "52",
+              "label": "52"
+            },
+            {
+              "value": "53",
+              "label": "53"
+            },
+            {
+              "value": "54",
+              "label": "54"
+            },
+            {
+              "value": "55",
+              "label": "55"
+            },
+            {
+              "value": "56",
+              "label": "56"
+            },
+            {
+              "value": "57",
+              "label": "57"
+            },
+            {
+              "value": "58",
+              "label": "58"
+            },
+            {
+              "value": "59",
+              "label": "59"
+            },
+            {
+              "value": "60",
+              "label": "60"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_timer",
+          "label": "t:labels.hide_timer_on",
+          "default": false
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.timer_complete_message"
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "content",
+      "name": "t:labels.content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:labels.heading",
+          "default": "Countdown"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "t:labels.heading_size",
+          "default": "h2",
+          "options": [
+            {
+              "value": "h3",
+              "label": "t:labels.sizes.small"
+            },
+            {
+              "value": "h2",
+              "label": "t:labels.sizes.medium"
+            },
+            {
+              "value": "h1",
+              "label": "t:labels.sizes.large"
+            }
+          ]
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "<p>Use this timer to create urgency and boost sales.</p>"
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "label": "t:labels.content_alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:labels.alignments.left"
+            },
+            {
+              "value": "center",
+              "label": "t:labels.alignments.center"
+            },
+            {
+              "value": "right",
+              "label": "t:labels.alignments.right"
+            }
+          ]
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "button",
+      "name": "t:labels.button",
+      "settings": [
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:labels.button_link"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "label": "t:labels.button_label",
+          "default": "Shop Collection"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "t:labels.button_style",
+          "default": "solid",
+          "options": [
+            {
+              "value": "secondary",
+              "label": "t:labels.outline"
+            },
+            {
+              "value": "solid",
+              "label": "t:labels.solid"
+            }
+          ]
+        }
+      ],
+      "limit": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.countdown",
+      "blocks": [
+        {
+          "type": "content"
+        },
+        {
+          "type": "timer"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "section_name": "countdown"
+    },
+    "es": {
+      "section_name": "countdown"
+    },
+    "fr": {
+      "section_name": "countdown"
+    }
+  },
+  "disabled_on": {
+    "groups": [
+      "custom.popups"
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,215 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the header section.
+
+  Accepts:
+  - logo_alignment {string} - The alignment of the logo
+  - nav_position {string} - The position of the navigation
+  - main_menu_alignment {string} - The alignment of the main menu
+  - header_footer_menu {boolean} - Whether to show the footer menu in the header
+  - header_sticky {boolean} - Whether the header is sticky
+  - sticky_index {boolean} - Whether the header is sticky on the index page
+  - sticky_collection {boolean} - Whether the header is sticky on collection pages
+  - overlay_header {boolean} - Whether the header has an overlay
+  - color_header {string} - The color of the header
+  - disable_aria {boolean} - Whether to disable ARIA attributes
+  - type_navigation_size {number} - The font size of the navigation
+  - type_navigation_capitalize {boolean} - Whether to capitalize the navigation
+  - type_navigation_style {string} - The style of the navigation
+  - color_body_bg {string} - The background color of the body
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'section-header' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign logo_alignment = logo_alignment | default: section.settings.logo_alignment | default: 'left'
+  assign nav_position = nav_position | default: 'below'
+  assign main_menu_alignment = main_menu_alignment | default: section.settings.main_menu_alignment | default: 'below'
+  assign header_footer_menu = header_footer_menu | default: section.settings.header_footer_menu, allow_false: true | default: true, allow_false: true
+  assign header_sticky = header_sticky | default: section.settings.header_sticky, allow_false: true | default: false, allow_false: true
+  assign sticky_index = sticky_index | default: section.settings.sticky_index, allow_false: true | default: false, allow_false: true
+  assign sticky_collection = sticky_collection | default: section.settings.sticky_collection, allow_false: true | default: false, allow_false: true
+  assign overlay_header = overlay_header | default: false, allow_false: true
+  assign color_header = color_header | default: settings.color_header | default: '#fff'
+  assign disable_aria = disable_aria | default: false, allow_false: true
+  assign type_navigation_size = type_navigation_size | default: settings.type_navigation_size | default: 18
+  assign type_navigation_capitalize = type_navigation_capitalize | default: settings.type_navigation_capitalize, allow_false: true | default: false, allow_false: true
+  assign type_navigation_style = type_navigation_style | default: settings.type_navigation_style | default: 'body'
+  assign color_body_bg = color_body_bg | default: settings.color_body_bg | default: '#fff'
+  assign hydration = hydration | default: 'on:idle'
+
+  if main_menu_alignment == 'left' or main_menu_alignment == 'left-center'
+    assign nav_position = 'beside'
+  endif
+
+  if main_menu_alignment == 'center'
+    assign logo_alignment = 'center'
+  endif
+
+  assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle
+
+  if template_name == 'index' and sticky_index
+    assign overlay_header = true
+  endif
+  if template_name contains 'collection' and collection.image and sticky_collection
+    assign overlay_header = true
+  endif
+-%}
+
+<style>
+  .site-nav__link {
+    font-size: {{ type_navigation_size }}px;
+  }
+  {% if type_navigation_capitalize %}
+    .site-nav__link {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+    }
+  {% endif %}
+
+  {% if mainmenu.length > 6 %}
+    .site-nav__link {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  {% endif %}
+</style>
+
+<is-land {{ hydration }}>
+  <header-section data-section-id="{{ section.id }}" data-section-type="header">
+    <div id="HeaderWrapper" class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %}">
+      <header
+        id="SiteHeader"
+        class="site-header{% if type_navigation_style == 'heading' %} heading-font-stack{% endif %}"
+        data-sticky="{{ header_sticky }}"
+        data-overlay="{{ overlay_header }}"
+      >
+        <div class="site-header__element site-header__element--top">
+          <div class="page-width">
+            <div
+              class="header-layout"
+              data-layout="{{ main_menu_alignment }}"
+              data-nav="{{ nav_position }}"
+              data-logo-align="{{ logo_alignment }}"
+            >
+              {%- if nav_position == 'below' and logo_alignment == 'left' -%}
+                <div class="header-item header-item--compress-nav small--hide">
+                  <button
+                    type="button"
+                    class="site-nav__link site-nav__link--icon site-nav__compress-menu{% if type_navigation_style == 'heading' %} heading-font-stack{% endif %}"
+                  >
+                    {% render 'icon', name: 'hamburger' %}
+                    <span class="icon__fallback-text visually-hidden">{{ 'labels.site_navigation' | t }}</span>
+                  </button>
+                </div>
+              {%- endif -%}
+
+              {%- if logo_alignment == 'left' -%}
+                <div class="header-item header-item--logo">
+                  {%- render 'header-logo-block' -%}
+                </div>
+              {%- endif -%}
+
+              {%- if nav_position == 'below' -%}
+                <div class="header-item header-item--search small--hide">
+                  {%- if logo_alignment == 'center' -%}
+                    <button
+                      type="button"
+                      class="site-nav__link site-nav__link--icon site-nav__compress-menu{% if type_navigation_style == 'heading' %} heading-font-stack{% endif %}"
+                    >
+                      {% render 'icon', name: 'hamburger' %}
+                      <span class="icon__fallback-text visually-hidden">{{ 'labels.site_navigation' | t }}</span>
+                    </button>
+                  {%- endif -%}
+
+                  {%- render 'predictive-search', context: 'header' -%}
+                </div>
+              {%- endif -%}
+
+              {%- if nav_position == 'beside' -%}
+                <div
+                  class="header-item header-item--navigation{% if main_menu_alignment == 'left-center' %} text-center{% endif %}"
+                  {% unless disable_aria %}
+                    role="navigation" aria-label="Primary"
+                  {% endunless %}
+                >
+                  {%- render 'header-desktop-nav', nav_position: nav_position -%}
+                </div>
+              {%- endif -%}
+
+              {%- if logo_alignment == 'center' -%}
+                <div class="header-item header-item--logo">
+                  {%- render 'header-logo-block' -%}
+                </div>
+              {%- endif -%}
+
+              <div class="header-item header-item--icons">
+                {%- render 'header-icons', nav_position: nav_position -%}
+              </div>
+            </div>
+          </div>
+
+          <div class="site-header__search-container">
+            <div class="page-width">
+              <div class="site-header__search">
+                {%- render 'predictive-search', context: 'header' -%}
+
+                <button type="button" class="text-link site-header__search-btn site-header__search-btn--cancel">
+                  <span class="medium-up--hide">{% render 'icon', name: 'close' %}</span>
+                  <span class="small--hide">{{ 'actions.cancel' | t }}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {%- if nav_position == 'below' -%}
+          <div class="site-header__element site-header__element--sub" data-type="nav">
+            <div
+              class="page-width{% if logo_alignment == 'center' %} text-center{% endif %}"
+              {% unless disable_aria %}
+                role="navigation" aria-label="Primary"
+              {% endunless %}
+            >
+              {%- render 'header-desktop-nav', nav_position: nav_position -%}
+            </div>
+          </div>
+
+          <div class="site-header__element site-header__element--sub" data-type="search">
+            <div class="page-width medium-up--hide">
+              {%- render 'predictive-search', context: 'header' -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        <div class="page-width site-header__drawers">
+          <div class="site-header__drawers-container">
+            <div class="site-header__drawer site-header__cart" id="HeaderCart">
+              <div class="site-header__drawer-animate">
+                {%- render 'header-cart-drawer' -%}
+              </div>
+            </div>
+
+            <div class="site-header__drawer site-header__mobile-nav medium-up--hide" id="MobileNav">
+              <div class="site-header__drawer-animate">
+                {%- render 'header-mobile-nav' -%}
+
+                {%- if header_footer_menu -%}
+                  <div id="MobileNavFooter"></div>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  </header-section>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-header'
+    </script>
+  </template>
+</is-land>

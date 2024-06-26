@@ -1,0 +1,58 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a list of social media sharing links.
+
+  Accepts:
+  - share_facebook {boolean} - Whether to show the Facebook share link
+  - share_twitter {boolean} - Whether to show the Twitter share link
+  - share_pinterest {boolean} - Whether to show the Pinterest share link
+  - share_title {string} - Title of the shared content
+  - share_permalink {string} - Permalink of the shared content
+  - share_image {string} - Image of the shared content
+
+  Usage:
+  {% render 'social-sharing', share_facebook: true, share_twitter: false %}
+{%- endcomment -%}
+
+{%- liquid
+  assign share_facebook = share_facebook | default: settings.share_facebook, allow_false: true | default: true, allow_false: true
+  assign share_twitter = share_twitter | default: settings.share_twitter, allow_false: true | default: true, allow_false: true
+  assign share_pinterest = share_pinterest | default: settings.share_pinterest, allow_false: true | default: true, allow_false: true
+
+  capture social_sharing_icons
+    if share_facebook
+      assign link = '//www.facebook.com/sharer.php?u=' | append: shop.url | append: share_permalink
+      assign link_title = 'actions.share_on_facebook' | t
+      assign label = 'actions.share' | t
+
+      render 'social-icon-link', platform: 'Facebook', link: link, link_title: link_title, classes: 'social-sharing__link', label: label
+    endif
+
+    if share_twitter
+      assign share_title = share_title | url_param_escape
+
+      assign link = '//twitter.com/intent/tweet?text=' | append: share_title | append: '&amp;url=' | append: shop.url | append: share_permalink
+      assign link_title = 'actions.share_on_x' | t
+      assign label = 'actions.share' | t
+
+      render 'social-icon-link', platform: 'X', link: link, link_title: link_title, classes: 'social-sharing__link', label: label
+    endif
+
+    if share_pinterest
+      assign share_title = share_title | url_param_escape
+      assign share_image = share_image | image_url: width: 1024, height: 1024
+
+      assign link = '//pinterest.com/pin/create/button/?url=' | append: shop.url | append: share_permalink | append: '&amp;media=' | append: share_image | append: '&amp;description=' | append: share_title
+      assign link_title = 'actions.pin_on_pinterest' | t
+      assign label = 'actions.pin_it' | t
+
+      render 'social-icon-link', platform: 'Pinterest', link: link, link_title: link_title, classes: 'social-sharing__link', label: label
+    endif
+  endcapture
+-%}
+
+{%- if social_sharing_icons != blank -%}
+  <ul class="social-sharing no-bullets">
+    {{ social_sharing_icons }}
+  </ul>
+{%- endif -%}

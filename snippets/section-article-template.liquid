@@ -1,0 +1,251 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with an article template.
+
+  Accepts:
+  - blog_capitalize_first {boolean} - Whether to capitalize the first letter of the article
+  - blog_show_tags {boolean} - Whether to show tags
+  - blog_show_date {boolean} - Whether to show the date
+  - blog_show_comments {boolean} - Whether to show comments
+  - blog_show_author {boolean} - Whether to show the author
+
+  Usage:
+  {% render 'section-article-template', blog_capitalize_first: false %}
+{%- endcomment -%}
+
+{%- liquid
+  assign blog_capitalize_first = blog_capitalize_first | default: section.settings.blog_capitalize_first, allow_false: true | default: true, allow_false: true
+  assign blog_show_tags = blog_show_tags | default: section.settings.blog_show_tags, allow_false: true | default: true, allow_false: true
+  assign blog_show_date = blog_show_date | default: section.settings.blog_show_date, allow_false: true | default: true, allow_false: true
+  assign blog_show_comments = blog_show_comments | default: section.settings.blog_show_comments, allow_false: true | default: true, allow_false: true
+  assign blog_show_author = blog_show_author | default: section.settings.blog_show_author, allow_false: true | default: true, allow_false: true
+
+  assign number_of_comments = article.comments_count
+
+  if comment.status == 'pending'
+    assign number_of_comments = article.comments_count | plus: 1
+  endif
+-%}
+
+{%- render 'breadcrumbs' -%}
+
+{%- if blog_show_tags and article.tags.size > 0 -%}
+  <div class="article-tag__wrapper">
+    {%- for tag in article.tags -%}
+      {% if tag contains '_' %}
+        {%- assign tag_starts_with = tag | slice: 0 -%}
+        {% if tag_starts_with == '_' -%}
+          {%- if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif -%}
+          {%- continue -%}
+        {%- endif -%}
+      {%- endif %}
+      <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="article-tag">{{ tag }}</a>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+<header class="section-header">
+  <h1 class="section-header__title">{{ article.title }}</h1>
+
+  <div class="article__sub-meta">
+    {%- if blog_show_comments and article.comments_count > 0 -%}
+      <span>
+        <a href="{{ article.url }}#comments" class="js-no-transition">
+          {{ 'info.comments_count' | t: count: article.comments_count }}
+        </a>
+      </span>
+    {%- endif -%}
+
+    {%- if blog_show_date -%}
+      <span class="article__sub-meta-date">{{ article.published_at | date: format: 'abbreviated_date' }}</span>
+    {%- endif -%}
+
+    {%- if blog_show_author -%}
+      <span>by {{ article.author }}</span>
+    {%- endif -%}
+  </div>
+</header>
+
+<div class="rte{% if blog_capitalize_first %} capitalize-first-letter{% endif %} clearfix">
+  {{ article.content }}
+</div>
+
+{%- if blog.comments_enabled? -%}
+  {%- if number_of_comments > 0 -%}
+    <hr class="hr--large">
+    <h3>{{ 'info.comments_count' | t: count: number_of_comments }}</h3>
+    <hr class="hr--small hr--clear">
+  {%- endif -%}
+
+  {%- paginate article.comments by 5 -%}
+    <div id="comments">
+      {%- if comment and comment.errors == blank -%}
+        <hr class="hr--small hr--clear">
+        <p class="note note--success">
+          {%- if blog.moderated? -%}
+            {{ 'info.posted_successfully_moderated' | t }}
+          {%- else -%}
+            {{ 'info.comment_posted_successfully' | t }}
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+
+      {%- if number_of_comments > 0 -%}
+        <ul class="no-bullets">
+          {%- if comment.status == 'pending' -%}
+            <li id="Comment-{{ comment.id }}" class="article__comment">
+              {%- render 'comment', comment: comment -%}
+            </li>
+          {%- endif -%}
+
+          {%- for comment in article.comments -%}
+            <li id="Comment-{{ comment.id }}" class="article__comment">
+              {%- render 'comment', comment: comment -%}
+            </li>
+
+            {%- unless forloop.last -%}
+              <li><hr class="hr--clear"></li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate, hash: '#comments' -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      <hr class="hr--large">
+
+      <header class="section-header">
+        <h3 class="section-header__title">{{ 'actions.leave_a_comment' | t }}</h3>
+      </header>
+
+      <div class="form-vertical">
+        {%- form 'new_comment', article -%}
+          {{ form.errors | default_errors }}
+
+          <div class="grid grid--small clearfix">
+            <div class="grid__item medium-up--one-half">
+              <label for="CommentAuthor">{{ 'labels.name' | t }}</label>
+              <input
+                required
+                class="input-full{% if form.errors contains 'author' %} error{% endif %}"
+                type="text"
+                name="comment[author]"
+                id="CommentAuthor"
+                value="{{ form.author }}"
+                autocapitalize="words"
+              >
+            </div>
+            <div class="grid__item medium-up--one-half">
+              <label for="CommentEmail">{{ 'labels.email' | t }}</label>
+              <input
+                required
+                class="input-full{% if form.errors contains 'email' %} error{% endif %}"
+                type="email"
+                name="comment[email]"
+                id="CommentEmail"
+                value="{{ form.email }}"
+                autocorrect="off"
+                autocapitalize="off"
+              >
+            </div>
+          </div>
+
+          <label for="CommentBody">{{ 'labels.message' | t }}</label>
+          <textarea
+            required
+            class="input-full{% if form.errors contains 'body' %} error{% endif %}"
+            name="comment[body]"
+            id="CommentBody"
+          >{{ form.body }}</textarea>
+
+          {%- if blog.moderated? -%}
+            <p>
+              <small>{{ 'info.comments_must_be_approved' | t }}</small>
+            </p>
+          {%- endif -%}
+
+          <button type="submit" class="btn btn--secondary">
+            {{ 'actions.post_comment' | t }}
+          </button>
+
+          {% comment %}
+            Remove the following three lines of code to remove the note
+            about being protected by Google's reCAPTCHA service.
+            By removing it, the small reCAPTCHA widget will appear in the
+            bottom right corner of the page.
+          {% endcomment %}
+          {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+        {%- endform -%}
+      </div>
+    </div>
+  {%- endpaginate -%}
+{%- endif -%}
+
+<hr class="hr--large">
+
+{%- if blog_show_tags and article.tags.size > 0 -%}
+  <div class="article-tag__wrapper">
+    <span class="label">{{ 'labels.more_from' | t }}:</span>
+    {%- for tag in article.tags -%}
+      {% if tag contains '_' %}
+        {%- assign tag_starts_with = tag | slice: 0 -%}
+        {% if tag_starts_with == '_' -%}
+          {%- if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif -%}
+          {%- continue -%}
+        {%- endif -%}
+      {%- endif %}
+      <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="article-tag">{{ tag }}</a>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+<div class="text-center">
+  <a href="{{ blog.url }}" class="btn return-link">
+    {%- render 'icon', name: 'arrow-left' %}
+    {{ 'actions.back_to' | t: collection: blog.title -}}
+  </a>
+</div>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "articleBody": {{ article.content | strip_html | json }},
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ shop.url | append: article.url | json }}
+    },
+    "headline": {{ article.title | json }},
+    {% if article.excerpt != blank %}
+      "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+      {% assign image_size = article.image.width %}
+      "image": [
+        {{ article | image_url: width: image_size | prepend: "https:" | json }}
+      ],
+    {% endif %}
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateModified": {{ article.updated_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      {% if page_image %}
+        {% assign image_size = page_image.width %}
+        "logo": {
+          "@type": "ImageObject",
+          "height": {{ page_image.height | json }},
+          "url": {{ page_image | image_url: width: image_size | prepend: "https:" | json }},
+          "width": {{ page_image.width | json }}
+        },
+      {% endif %}
+      "name": {{ shop.name | json }}
+    }
+  }
+</script>

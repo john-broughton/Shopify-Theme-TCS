@@ -1,0 +1,68 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the toolbar section.
+
+  Accepts:
+  - show_locale_selector {boolean} - Whether to show the locale selector
+  - show_currency_selector {boolean} - Whether to show the currency selector
+  - show_currency_flags {boolean} - Whether to show the currency flags
+  - toolbar_social {boolean} - Whether to show the social icons
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'section-toolbar' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_locale_selector = show_locale_selector | default: section.settings.show_locale_selector, allow_false: true | default: true, allow_false: true
+  assign show_currency_selector = show_currency_selector | default: section.settings.show_currency_selector, allow_false: true | default: true, allow_false: true
+  assign show_currency_flags = show_currency_flags | default: section.settings.show_currency_flags, allow_false: true | default: true, allow_false: true
+  assign toolbar_social = toolbar_social | default: section.settings.toolbar_social, allow_false: true | default: true, allow_false: true
+  assign hydration = hydration | default: 'on:visible'
+
+  assign show_selectors = false
+  assign currency_selector = false
+  assign locale_selector = false
+
+  if show_currency_selector and shop.enabled_currencies.size > 1
+    assign currency_selector = true
+  endif
+
+  if show_locale_selector and shop.enabled_locales.size > 1
+    assign locale_selector = true
+  endif
+
+  if currency_selector or locale_selector
+    assign show_selectors = true
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <toolbar-section data-section-id="{{ section.id }}" data-section-type="toolbar">
+    <div class="toolbar">
+      <div class="page-width">
+        <div class="toolbar__content">
+          {%- render 'announcement-bar' -%}
+
+          {%- if toolbar_social -%}
+            <div class="toolbar__item small--hide">
+              {% render 'social-icons', wrapper_class: 'inline-list toolbar__social' %}
+            </div>
+          {%- endif -%}
+
+          {%- if show_selectors -%}
+            <div class="toolbar__item small--hide">
+              {%- render 'multi-selectors', context: 'toolbar' -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </toolbar-section>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-toolbar'
+    </script>
+  </template>
+</is-land>

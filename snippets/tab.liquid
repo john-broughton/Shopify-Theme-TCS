@@ -1,0 +1,54 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a tab.
+
+  Accepts:
+  - id {string} - The unique identifier for the tab
+  - title {string} - The title of the tab
+  - content {string} - The content of the tab
+  - force_open {boolean} - Whether to force the tab to be open
+
+  Usage:
+  {% render 'tab', id: block.id, title: block.settings.title %}
+{%- endcomment -%}
+
+{%- liquid
+  assign id = id | default: blank
+  assign title = title | default: blank
+  assign content = content | default: blank
+  assign force_open = force_open | default: false, allow_false: true
+
+  assign output_tab = true
+
+  if title == blank and content == blank
+    assign output_tab = false
+  endif
+-%}
+
+{%- if output_tab -%}
+  <div class="collapsibles-wrapper">
+    <button
+      type="button"
+      class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height{% if force_open %} is-open{% endif %}"
+      aria-controls="Product-content-{{ id }}"
+      {% if force_open %}
+        aria-expanded="true"
+      {% endif %}
+    >
+      {{ title }}
+      {%- render 'collapsible-icons' -%}
+    </button>
+
+    <div
+      id="Product-content-{{ id }}"
+      class="collapsible-content collapsible-content--all{% if force_open %} is-open{% endif %}"
+      {% if force_open %}
+        style="height: auto;"
+      {% endif %}
+    >
+      <div class="collapsible-content__inner rte clearfix">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

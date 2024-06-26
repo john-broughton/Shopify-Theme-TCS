@@ -1,0 +1,40 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a link to a social media profile.
+
+  Accepts:
+  - platform {string} - Platform of the social media platform
+  - link {string} - Link to the social media profile
+  - link_title {string} - Link title
+  - label {string} - Label for the social icon
+  - classes {string} - Additional CSS classes to add to the social icon link
+
+  Usage:
+  {% render 'social-icon-link', platform: 'Facebook', link: 'https://facebook.com/shop' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign default_link_title = 'actions.shop_on_social' | t: name: shop.name, platform: platform
+  assign link_title = link_title | default: default_link_title
+-%}
+
+<li>
+  <a
+    target="_blank"
+    rel="noopener"
+    href="{{ link }}"
+    title="{{ link_title }}"
+    {% if classes != blank %}
+      class="{{ classes }}"
+    {% endif %}
+  >
+    {%- assign icon_name = platform | downcase -%}
+    {%- render 'icon', name: icon_name -%}
+
+    {%- if label != blank -%}
+      <span class="social-sharing__title" aria-hidden="true">{{ label }}</span>
+    {%- endif -%}
+
+    <span class="icon__fallback-text visually-hidden">{{ platform }}</span>
+  </a>
+</li>

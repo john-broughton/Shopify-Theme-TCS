@@ -1,0 +1,320 @@
+{%- render 'section-text-and-image' -%}
+
+{% schema %}
+{
+"name": "t:labels.image_with_text",
+"settings": [
+  {
+    "type": "header",
+    "content": "t:labels.image"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "t:labels.image"
+  },
+  {
+    "type": "select",
+    "id": "image_mask",
+    "label": "t:labels.image_shape",
+    "default": "none",
+    "options": [
+      {
+        "value": "none",
+        "label": "t:labels.none"
+      },
+      {
+        "value": "portrait",
+        "label": "t:labels.portrait"
+      },
+      {
+        "value": "landscape",
+        "label": "t:labels.landscape"
+      },
+      {
+        "value": "square",
+        "label": "t:labels.square"
+      },
+      {
+        "value": "rounded",
+        "label": "t:labels.rounded"
+      },
+      {
+        "value": "rounded-wave",
+        "label": "t:labels.rounded_wave"
+      },
+      {
+        "value": "rounded-top",
+        "label": "t:labels.arch"
+      },
+      {
+        "value": "star",
+        "label": "t:labels.star"
+      },
+      {
+        "value": "splat-1",
+        "label": "t:labels.splat_1"
+      },
+      {
+        "value": "splat-2",
+        "label": "t:labels.splat_2"
+      },
+      {
+        "value": "splat-3",
+        "label": "t:labels.splat_3"
+      },
+      {
+        "value": "splat-4",
+        "label": "t:labels.splat_4"
+      }
+    ]
+  },
+  {
+    "type": "header",
+    "content": "t:labels.image_2"
+  },
+  {
+    "type": "image_picker",
+    "id": "image2",
+    "label": "t:labels.image_2"
+  },
+  {
+    "type": "select",
+    "id": "image2_mask",
+    "label": "t:labels.image_shape",
+    "default": "none",
+    "options": [
+      {
+        "value": "none",
+        "label": "t:labels.none"
+      },
+      {
+        "value": "portrait",
+        "label": "t:labels.portrait"
+      },
+      {
+        "value": "landscape",
+        "label": "t:labels.landscape"
+      },
+      {
+        "value": "square",
+        "label": "t:labels.square"
+      },
+      {
+        "value": "rounded",
+        "label": "t:labels.rounded"
+      },
+      {
+        "value": "rounded-wave",
+        "label": "t:labels.rounded_wave"
+      },
+      {
+        "value": "rounded-top",
+        "label": "t:labels.arch"
+      },
+      {
+        "value": "star",
+        "label": "t:labels.star"
+      },
+      {
+        "value": "splat-1",
+        "label": "t:labels.splat_1"
+      },
+      {
+        "value": "splat-2",
+        "label": "t:labels.splat_2"
+      },
+      {
+        "value": "splat-3",
+        "label": "t:labels.splat_3"
+      },
+      {
+        "value": "splat-4",
+        "label": "t:labels.splat_4"
+      }
+    ]
+  },
+  {
+    "type": "header",
+    "content": "Content"
+  },
+  {
+    "type": "text",
+    "id": "subtitle",
+    "label": "t:labels.subheading"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "t:labels.heading",
+    "default": "Image with text"
+  },
+  {
+    "type": "select",
+    "id": "heading_size",
+    "label": "t:labels.heading_size",
+    "default": "h2",
+    "options": [
+      {
+        "value": "h3",
+        "label": "t:labels.sizes.small"
+      },
+      {
+        "value": "h2",
+        "label": "t:labels.sizes.medium"
+      },
+      {
+        "value": "h1",
+        "label": "t:labels.sizes.large"
+      },
+      {
+        "value": "h0",
+        "label": "t:labels.sizes.extra_large"
+      }
+    ]
+  },
+  {
+    "type": "richtext",
+    "id": "text",
+    "label": "t:labels.text",
+    "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+  },
+  {
+    "type": "text",
+    "id": "button_label",
+    "label": "t:labels.button_label"
+  },
+  {
+    "type": "url",
+    "id": "button_link",
+    "label": "t:labels.button_link"
+  },
+  {
+    "type": "select",
+    "id": "button_style",
+    "label": "t:labels.button_style",
+    "default": "primary",
+    "options": [
+      {
+        "value": "primary",
+        "label": "t:labels.primary"
+      },
+      {
+        "value": "secondary",
+        "label": "t:labels.secondary"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "id": "align_text",
+    "label": "t:labels.text_alignment",
+    "default": "left",
+    "options": [
+      {
+        "value": "left",
+        "label": "t:labels.alignments.left"
+      },
+      {
+        "value": "center",
+        "label": "t:labels.alignments.centered"
+      },
+      {
+        "value": "right",
+        "label": "t:labels.alignments.right"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "id": "image_width",
+    "label": "t:labels.image_size",
+    "default": "50",
+    "options": [
+      {
+        "value": "33",
+        "label": "t:labels.sizes.small"
+      },
+      {
+        "value": "50",
+        "label": "t:labels.sizes.medium"
+      },
+      {
+        "value": "66",
+        "label": "t:labels.sizes.large"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "id": "layout",
+    "label": "t:labels.layout",
+    "default": "right",
+    "options": [
+      {
+        "value": "left",
+        "label": "t:labels.image_on_left"
+      },
+      {
+        "value": "right",
+        "label": "t:labels.image_on_right"
+      }
+    ]
+  },
+  {
+    "type": "select",
+    "id": "color_scheme",
+    "label": "t:labels.color_scheme",
+    "default": "1",
+    "options": [
+      {
+        "value": "none",
+        "label": "t:labels.none"
+      },
+      {
+        "value": "1",
+        "label": "1"
+      },
+      {
+        "value": "2",
+        "label": "2"
+      },
+      {
+        "value": "3",
+        "label": "3"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "divider",
+    "label": "t:actions.show_section_divider",
+    "default": false
+  },
+  {
+    "type": "checkbox",
+    "id": "top_padding",
+    "label": "t:actions.show_top_padding",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "bottom_padding",
+    "label": "t:actions.show_bottom_padding",
+    "default": true
+  }
+],
+"presets": [
+  {
+    "name": "t:labels.image_with_text"
+  }
+],
+"disabled_on": {
+  "groups": [
+    "footer",
+    "header",
+    "custom.popups"
+  ]
+}
+}
+{% endschema %}

@@ -1,0 +1,174 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders an accordion section with a title and a list of blocks.
+
+  Accepts:
+  - title {string} - Title of the accordion
+  - per_row {number} - Number of blocks per row
+  - two_per_row_mobile {boolean} - Whether to show two blocks per row on mobile
+  - opened {boolean} - Whether the accordion is open by default
+  - disabled {boolean} - Whether the accordion is disabled
+  - hydration {string} - The hydration strategy to use
+
+  Usage:
+  {% render 'section-advanced-accordion', title: 'Accordion title', per_row: 2 %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title = title | default: section.settings.title | default: ''
+  assign per_row = per_row | default: section.settings.per_row | default: 3
+  assign two_per_row_mobile = two_per_row_mobile | default: section.settings.two_per_row_mobile, allow_false: true | default: false, allow_false: true
+  assign opened = opened | default: section.settings.opened, allow_false: true | default: false, allow_false: true
+  assign disabled = disabled | default: section.settings.disabled, allow_false: true | default: false, allow_false: true
+  assign hydration = hydration | default: 'on:visible'
+-%}
+
+<is-land {{ hydration }}>
+  <advanced-accordion
+    data-disabled="{{ disabled }}"
+    class="advanced-accordion__container advanced-accordion--{{ per_row }}-per-row"
+  >
+    {% if disabled %}
+      <div
+        class="advanced-accordion"
+        data-id="{{ section.id }}"
+        {% if opened %}
+          open
+        {% endif %}
+      >
+    {% else %}
+      <details
+        class="advanced-accordion"
+        data-id="{{ section.id }}"
+        {% if opened %}
+          open
+        {% endif %}
+      >
+    {% endif %}
+
+    {% if disabled %}
+      <div class="accordion__title">
+    {% else %}
+      <summary class="accordion__title">
+    {% endif %}
+
+    <h2 class="h2">{{ title }}</h2>
+    {% unless disabled == true %}
+      <svg
+        width="28px"
+        height="16px"
+        viewBox="0 0 28 16"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g transform="translate(1.000000, 1.000000)" stroke-width="2" stroke="var(--colorTextBody)">
+                <polyline points="0.57 0.59 13.33 13.36 26.1 0.59"></polyline>
+            </g>
+        </g>
+      </svg>
+    {% endunless %}
+
+    {% if disabled %}
+      </div>
+    {% else %}
+      </summary>
+    {% endif %}
+
+    <div class="accordion__content" data-accordion-block data-opened="false">
+      {% for block in section.blocks %}
+        <div
+          class="accordion__content-block accordion__content-block--type-{{ block.type }} {% if two_per_row_mobile %}two-per-row-mobile{% endif %} text-{{ block.settings.align_text }}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if block.type == 'text_block' -%}
+            {%- if block.settings.button_link != blank -%}
+              <a href="{{ block.settings.button_link }}">
+            {%- endif -%}
+
+            {% liquid
+              if block.settings.image_mask != 'none'
+                assign paddingValue = block.settings.image_width
+              else
+                assign paddingValue = block.settings.image_width | divided_by: block.settings.image.aspect_ratio
+              endif
+            %}
+
+            {%- if block.settings.image != blank -%}
+              <div
+                class="image-wrap content-block__image {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                style="display: inline-block; width: {{ block.settings.image_width }}%; margin-bottom: 20px; height: 0; padding-bottom: {{ paddingValue }}% !important;"
+              >
+                {%- liquid
+                  if two_per_row_mobile
+                    assign fallback = '50vw'
+                  endif
+                -%}
+                {% render 'image-element',
+                  img: block.settings.image,
+                  widths: '180, 360, 540, 720, 900, 1080',
+                  sizeVariable: per_row,
+                  fallback: fallback
+                %}
+              </div>
+            {%- endif -%}
+
+            {%- if block.settings.button_link != blank -%}
+              </a>
+            {%- endif -%}
+
+            {%- if block.settings.title != blank -%}
+              <h3 class="h4">{{ block.settings.title }}</h3>
+            {%- endif -%}
+
+            {%- if block.settings.text != blank -%}
+              <div class="rte-setting text-spacing">{{ block.settings.text }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.button_label != blank -%}
+              <a href="{{ block.settings.button_link }}" class="btn btn--tertiary btn--small">
+                {{ block.settings.button_label }}
+              </a>
+            {%- endif -%}
+
+          {%- elsif block.type == 'link_block' -%}
+            {%- if block.settings.link != blank -%}
+              <a
+                class="h4 accordion-link-block__link accordion-link-block__link--arrow-{{ block.settings.show_arrow }}"
+                href="{{ block.settings.link }}"
+              >
+                {{ block.settings.link_label }}
+                {%- if block.settings.show_arrow -%}
+                  <span>
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284.49 498.98">
+                      <title>icon-chevron</title><path d="M223.18,628.49a35,35,0,0,1-24.75-59.75L388.17,379,198.43,189.26a35,35,0,0,1,49.5-49.5L462.42,354.25a35,35,0,0,1,0,49.5L247.93,618.24A34.89,34.89,0,0,1,223.18,628.49Z" transform="translate(-188.18 -129.51)"/>
+                    </svg>
+                  </span>
+                {%- endif -%}
+              </a>
+            {%- endif -%}
+          {%- elsif block.type == 'html_block' -%}
+            {%- if block.settings.html != blank -%}
+              {{ block.settings.html }}
+            {%- endif -%}
+          {%- else -%}
+            {%- render block -%}
+          {%- endif -%}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if disabled %}
+      </div>
+    {% else %}
+      </details>
+    {% endif %}
+  </advanced-accordion>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-advanced-accordion'
+    </script>
+  </template>
+</is-land>

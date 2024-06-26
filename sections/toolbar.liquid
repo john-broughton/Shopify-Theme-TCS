@@ -1,0 +1,90 @@
+{%- render 'section-toolbar' -%}
+
+{% schema %}
+{
+"name": "t:labels.announcement_bar",
+"class": "toolbar-section",
+"settings": [
+  {
+    "type": "checkbox",
+    "id": "announcement_center",
+    "label": "t:labels.alignments.center_text"
+  },
+  {
+    "type": "checkbox",
+    "id": "toolbar_social",
+    "label": "t:actions.show_social_icons"
+  },
+  {
+    "type": "header",
+    "content": "t:info.to_add_language_settings",
+    "info": "t:info.to_add_language_settings"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_locale_selector",
+    "label": "t:actions.show_language_selector",
+    "default": true
+  },
+  {
+    "type": "header",
+    "content": "t:info.to_add_currency_settings",
+    "info": "t:info.to_add_currency_settings"
+  },
+  {
+    "type": "checkbox",
+    "id": "show_currency_selector",
+    "label": "t:actions.show_currency_selector",
+    "default": true
+  },
+  {
+    "type": "checkbox",
+    "id": "show_currency_flags",
+    "label": "t:actions.show_currency_flags",
+    "default": true
+  }
+],
+"blocks": [
+  {
+    "type": "@app"
+  },
+  {
+    "type": "announcement",
+    "name": "t:labels.announcement",
+    "limit": 3,
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "t:labels.text",
+        "default": "<p>Hassle-free returns. 30-day postage paid returns</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "richtext_mobile",
+        "label": "t:labels.mobile_text"
+      }
+    ]
+  }
+],
+"default": {
+  "blocks": [
+    {
+      "type": "announcement",
+      "settings": {
+        "richtext": "<p>Free shipping on all orders over $100</p>"
+      }
+    },
+    {
+      "type": "announcement",
+      "settings": {
+        "richtext": "<p>Hassle-free returns. 30-day postage paid returns</p>"
+      }
+    }
+  ]
+},
+"disabled_on": {
+  "groups": ["footer", "custom.popups"]
+}
+}
+{% endschema %}

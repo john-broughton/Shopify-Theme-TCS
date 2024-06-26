@@ -1,0 +1,53 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a quantity selector for a given product
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+
+  Usage:
+    {% render 'block-quantity-selector', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign form_id = 'product-form-' | append: section.id
+-%}
+<block-quantity-selector class="product-block" {{ block.shopify_attributes }}>
+  <div class="product__quantity">
+    <label for="Quantity-{{ section.id }}-{{ product.id }}">{{ 'labels.quantity' | t }}</label>
+    <div class="js-qty__wrapper">
+      <input
+        type="text"
+        id="Quantity-{{ section.id }}-{{ product.id }}"
+        class="js-qty__num"
+        value="1"
+        min="1"
+        aria-label="quantity"
+        pattern="[0-9]*"
+        form="{{ form_id }}"
+        name="quantity"
+      >
+      <button
+        type="button"
+        class="js-qty__adjust js-qty__adjust--minus"
+        aria-label="{{ 'actions.reduce_item_quantity' | t }}"
+      >
+        {% render 'icon', name: 'minus' %}
+        <span class="icon__fallback-text visually-hidden" aria-hidden="true">&minus;</span>
+      </button>
+      <button
+        type="button"
+        class="js-qty__adjust js-qty__adjust--plus"
+        aria-label="{{ 'actions.increase_item_quantity' | t }}"
+      >
+        {% render 'icon', name: 'plus' %}
+        <span class="icon__fallback-text visually-hidden" aria-hidden="true">+</span>
+      </button>
+    </div>
+  </div>
+</block-quantity-selector>
+<script type="module">
+  import 'components/block-quantity-selector'
+</script>

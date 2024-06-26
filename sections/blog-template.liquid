@@ -1,0 +1,75 @@
+{%- render 'section-blog-template' -%}
+
+{% schema %}
+{
+  "name": "t:labels.blog_pages",
+  "class": "blog-layout__main",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "blog_show_rss",
+      "label": "t:actions.show_rss_link"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_tags",
+      "label": "t:actions.show_tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "t:actions.show_date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_comments",
+      "label": "t:actions.show_comment_count",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "t:actions.show_author"
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_excerpt",
+      "label": "t:actions.show_excerpt",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "blog_image_size",
+      "label": "t:actions.force_image_size",
+      "default": "wide",
+      "options": [
+        {
+          "value": "natural",
+          "label": "t:labels.natural"
+        },
+        {
+          "value": "square",
+          "label": "t:labels.square_11"
+        },
+        {
+          "value": "landscape",
+          "label": "t:labels.landscape_43"
+        },
+        {
+          "value": "portrait",
+          "label": "t:labels.portrait_23"
+        },
+        {
+          "value": "wide",
+          "label": "t:labels.wide_16_9"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

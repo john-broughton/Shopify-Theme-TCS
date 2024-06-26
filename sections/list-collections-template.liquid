@@ -1,0 +1,84 @@
+{%- render 'section-list-collections-template' -%}
+
+{% schema %}
+{
+  "name": "t:labels.collections_list_page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "title_enable",
+      "label": "t:actions.show_title",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "t:info.collections_listed_by_default"
+    },
+    {
+      "type": "radio",
+      "id": "display_type",
+      "label": "t:actions.select_collections_to_show",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "t:labels.all"
+        },
+        {
+          "value": "selected",
+          "label": "t:labels.selected"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "sort",
+      "label": "t:actions.sort_collections_by",
+      "info": "t:info.sorting_applies_when_all_selected",
+      "default": "alphabetical",
+      "options": [
+        {
+          "value": "products_high",
+          "label": "t:labels.sortings.product_count_high"
+        },
+        {
+          "value": "products_low",
+          "label": "t:labels.sortings.product_count_low"
+        },
+        {
+          "value": "alphabetical",
+          "label": "t:labels.sortings.alphabetically_az"
+        },
+        {
+          "value": "alphabetical_reversed",
+          "label": "t:labels.sortings.alphabetically_za"
+        },
+        {
+          "value": "date",
+          "label": "t:labels.sortings.date_old_to"
+        },
+        {
+          "value": "date_reversed",
+          "label": "t:labels.sortings.date_new_to"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:labels.collection",
+      "settings": [
+        {
+          "label": "t:labels.collection",
+          "id": "collection",
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

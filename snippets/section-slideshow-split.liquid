@@ -1,0 +1,232 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a slideshow split section.
+
+  Accepts:
+  - full_width {boolean} - Whether to make the section full width
+  - autoplay {boolean} - Whether to autoplay the slideshow
+  - autoplay_speed {5-10} - The speed at which the slideshow should autoplay
+  - style {'minimal'|'arrows'|'bars'|'dots'} - The style of the slideshow
+  - height {450-750} - The height of the slideshow
+  - height_mobile {350-650} - The height of the slideshow on mobile
+  - hydration {string} - The hydration strategy for the section
+
+  Usage:
+  {% render 'section-slideshow-split' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: true, allow_false: true
+  assign autoplay = autoplay | default: section.settings.autoplay, allow_false: true | default: false, allow_false: true
+  assign autoplay_speed = autoplay_speed | default: section.settings.autoplay_speed | default: 7
+  assign style = style | default: section.settings.style | default: 'arrows'
+  assign height = height | default: section.settings.height | default: 650
+  assign height_mobile = height_mobile | default: section.settings.height_mobile | default: 450
+  assign hydration = hydration | default: 'on:visible'
+
+  assign lazyload_images = true
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <slideshow-section>
+    {%- unless full_width -%}
+      <div class="page-width hero--padded">
+    {%- endunless -%}
+
+    {% style %}
+      .hero--{{ section.id }} {
+        height: {{ height }}px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero--{{ section.id }} {
+          height: {{ height_mobile }}px;
+        }
+      }
+    {% endstyle %}
+
+    <div
+      data-section-id="{{ section.id }}"
+      data-section-type="slideshow-section"
+      data-immediate-load
+    >
+      {%- if section.blocks.size > 0 -%}
+        <div class="slideshow-wrapper">
+          {%- if autoplay and style == 'bars' and section.blocks.size > 1 -%}
+            {%- style -%}
+              [data-bars][data-autoplay="true"] .flickity-page-dots .dot:after {
+                animation-duration: {{ autoplay_speed | times: 1000 }}ms;
+              }
+            {%- endstyle -%}
+
+            <button
+              type="button"
+              class="visually-hidden slideshow__pause"
+              data-id="{{ section.id }}"
+              aria-live="polite"
+            >
+              <span class="slideshow__pause-stop">
+                {% render 'icon', name: 'pause' %}
+                <span class="icon__fallback-text visually-hidden">{{ 'actions.slideshow_pause' | t }}</span>
+              </span>
+              <span class="slideshow__pause-play">
+                {% render 'icon', name: 'play' %}
+                <span class="icon__fallback-text visually-hidden">{{ 'actions.slideshow_play' | t }}</span>
+              </span>
+            </button>
+          {%- endif -%}
+
+          <div
+            id="Slideshow-{{ section.id }}"
+            class="hero hero--{{ section.id }}{% if section.index == 1 %} loaded{% else %} loading{% endif %} loading--delayed"
+            data-autoplay="{{ autoplay }}"
+            data-speed="{{ autoplay_speed | times: 1000 }}"
+            {% if style == 'arrows' %}
+              data-arrows="true"
+            {% endif %}
+            {% if style == 'dots' %}
+              data-dots="true"
+            {% endif %}
+            {% if style == 'bars' %}
+              data-dots="true"
+              data-bars="true"
+            {% endif %}
+            data-slide-count="{{ section.blocks.size }}"
+          >
+            {%- for block in section.blocks -%}
+              <div
+                {{ block.shopify_attributes }}
+                class="slideshow__slide slideshow__slide--{{ block.id }}{% if section.index == 1 and forloop.index == 1 %} is-selected{% endif %}"
+                data-index="{{ forloop.index0 }}"
+                data-id="{{ block.id }}"
+              >
+                {%- style -%}
+                  .slideshow__slide--{{ block.id }} .hero__title {
+                    font-size: {{ block.settings.title_size | times: 0.43 }}px;
+                  }
+                  @media only screen and (min-width: 769px) {
+                    .slideshow__slide--{{ block.id }} .hero__title {
+                      font-size: {{ block.settings.title_size }}px;
+                    }
+                  }
+                {%- endstyle -%}
+
+                <div class="hero__sidebyside hero__sidebyside-text--{{ block.settings.text_position }} color-scheme-{{ block.settings.color_scheme }}">
+                  {%- if block.settings.indent_image -%}
+                    {%- if block.settings.color_scheme != 'none' -%}
+                      {%- render 'color-scheme-texture', color_scheme: block.settings.color_scheme -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                  <div class="hero__sidebyside-content">
+                    <div class="hero__sidebyside-content-inner{% if block.settings.indent_image %} hero__sidebyside-content-inner--indented{% endif %} small--text-center">
+                      {%- unless block.settings.indent_image -%}
+                        {%- if block.settings.color_scheme != 'none' -%}
+                          {%- render 'color-scheme-texture', color_scheme: block.settings.color_scheme -%}
+                        {%- endif -%}
+                      {%- endunless -%}
+                      {%- unless block.settings.top_subheading == blank -%}
+                        <div class="hero__top-subtitle">
+                          <div class="hero__animation-contents">
+                            {{ block.settings.top_subheading | escape }}
+                          </div>
+                        </div>
+                      {%- endunless -%}
+                      {%- unless block.settings.title == blank -%}
+                        <h2
+                          class="
+                            h1 hero__title
+                            {% if block.settings.text_highlight %}
+                              text-highlight
+                              text-highlight--{{ block.settings.text_highlight }}
+                            {% endif %}
+                          "
+                        >
+                          <div class="hero__animation-contents">
+                            {{ block.settings.title | newline_to_br }}
+                          </div>
+                        </h2>
+                      {%- endunless -%}
+                      {%- if block.settings.subheading or block.settings.link or block.settings.link_2 -%}
+                        {%- unless block.settings.subheading == blank -%}
+                          <div class="hero__subtitle">
+                            <div class="hero__animation-contents">
+                              {{ block.settings.subheading | escape }}
+                            </div>
+                          </div>
+                        {%- endunless -%}
+                        {%- if block.settings.link_text != blank or block.settings.link_text_2 != blank -%}
+                          <div class="hero__link">
+                            {%- if block.settings.link_text != blank -%}
+                              <a href="{{ block.settings.link }}" class="btn">
+                                {{ block.settings.link_text }}
+                              </a>
+                            {%- endif -%}
+                            {%- if block.settings.link_text_2 != blank -%}
+                              <a href="{{ block.settings.link_2 }}" class="btn">
+                                {{ block.settings.link_text_2 }}
+                              </a>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                  <div class="hero__sidebyside-image{% if block.settings.indent_image %} hero__sidebyside-image--indented{% endif %}">
+                    {%- if block.settings.image != blank -%}
+                      {%- if block.settings.link != blank -%}
+                        <a href="{{ block.settings.link }}" class="hero__sidebyside-image-link" aria-hidden="true">
+                      {%- endif -%}
+
+                      {%- capture image_classes -%}
+                          hero__image hero__image--{{ block.id }}
+                        {%- endcapture -%}
+
+                      {%- liquid
+                        if forloop.index == 1
+                          assign loading = lazyload_images
+                        else
+                          assign loading = true
+                        endif
+                      -%}
+                      {%- render 'image-element',
+                        img: block.settings.image,
+                        loading: loading,
+                        classes: image_classes,
+                        sizeVariable: '60vw'
+                      -%}
+
+                      {%- if block.settings.link != blank -%}
+                        </a>
+                      {%- endif -%}
+                    {%- else -%}
+                      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.blocks.size == 0 -%}
+        <div class="placeholder-noblocks">
+          {{ 'info.section_no_content' | t }}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- unless full_width -%}
+      </div>
+    {%- endunless -%}
+  </slideshow-section>
+
+  <template data-island>
+    <script type="module">
+      import '@archetype-themes/scripts/config'
+      import '@archetype-themes/scripts/modules/slideshow'
+    </script>
+  </template>
+</is-land>

@@ -1,0 +1,180 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the collection grid filters.
+
+  Accepts:
+  - context {object} - The collection or search object
+  - enable_sidebar {boolean} - Whether to enable the sidebar
+  - collapse_filters {boolean} - Whether to collapse filters
+  - enable_color_swatches {boolean} - Whether to enable color swatches
+  - enable_swatch_labels {boolean} - Whether to enable swatch labels
+  - enable_sort {boolean} - Whether to enable sort
+  - grid_style {string} - The grid style
+  - tags_combine {boolean} - Whether to combine tags
+
+  Usage:
+  {% render 'collection-grid-filters', context: search %}
+{%- endcomment -%}
+
+{%- liquid
+  assign enable_sidebar = enable_sidebar | default: section.settings.enable_sidebar, allow_false: true | default: true, allow_false: true
+  assign collapse_filters = collapse_filters | default: section.settings.collapse_filters, allow_false: true | default: true, allow_false: true
+  assign enable_color_swatches = enable_color_swatches | default: section.settings.enable_color_swatches, allow_false: true | default: false, allow_false: true
+  assign enable_swatch_labels = enable_swatch_labels | default: section.settings.enable_swatch_labels, allow_false: true | default: true, allow_false: true
+  assign enable_sort = enable_sort | default: section.settings.enable_sort, allow_false: true | default: true, allow_false: true
+  assign grid_style = grid_style | default: section.settings.grid_style | default: 'medium'
+  assign tags_combine = tags_combine | default: false, allow_false: true
+  assign show_sidebar = true
+
+  if enable_sidebar == false or context.filters.size == 0
+    assign show_sidebar = false
+  endif
+-%}
+
+{%- if enable_sidebar or enable_sort -%}
+  {%- assign location = 'CollectionSidebar' -%}
+  <div id="CollectionSidebar">
+    <div class="collection-sidebar small--hide" id="CollectionSidebarFilterWrap">
+      <div class="filter-wrapper">
+        <ul class="no-bullets tag-list tag-list--active-tags">
+          {%- for filter in context.filters -%}
+            {%- for filter_value in filter.active_values -%}
+              <li class="tag tag--remove">
+                <a class="btn btn--small js-no-transition" href="{{ filter_value.url_to_remove }}">
+                  {{ filter_value.label | escape }}
+                </a>
+                {% render 'icon', name: 'close' %}
+              </li>
+            {%- endfor -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- liquid
+          assign sort_title = 'actions.sort' | t
+          assign sort_by = context.sort_by | default: context.default_sort_by
+          assign sort_id = 'CollectionSidebarSort'
+        -%}
+        <div class="collection-sidebar__group collection-sidebar__group--sort medium-up--hide">
+          {%- render 'collection-sidebar-filter-trigger',
+            location: location,
+            title: sort_title,
+            index: sort_id,
+            collapsed_state: true
+          -%}
+
+          <div
+            data-id="{{ location }}-{{ sort_id }}"
+            class="collapsible-content collapsible-content--all"
+          >
+            <div class="collapsible-content__inner">
+              <ul class="no-bullets tag-list">
+                {%- for option in context.sort_options -%}
+                  <li class="tag{% if option.value == sort_by %} tag--active{% endif %}">
+                    <button type="button" data-value="{{ option.value }}" class="filter-sort">{{ option.name }}</button>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {%- if enable_sidebar -%}
+          <form class="filter-form">
+            {%- for filter in context.filters -%}
+              {%- capture filter_id -%}filter-{{ filter.label | handleize }}{%- endcapture -%}
+              {%- assign filter_index = forloop.index -%}
+              {%- assign collapsed_state = collapse_filters -%}
+              <div class="collection-sidebar__group--{{ filter_index }}">
+                <div class="collection-sidebar__group">
+                  {%- render 'collection-sidebar-filter-trigger',
+                    id: filter_id,
+                    location: location,
+                    title: filter.label,
+                    index: filter_index,
+                    collapsed_state: collapsed_state
+                  -%}
+                  <div
+                    data-id="{{ location }}-{{ filter_index }}"
+                    data-collapsible-id="{{ filter_id }}"
+                    class="collapsible-content collapsible-content--all{% unless collapsed_state %} is-open{% endunless %}"
+                    {% unless collapsed_state %}
+                      style="height: auto;"
+                    {% endunless %}
+                  >
+                    <div class="collapsible-content__inner">
+                      {%- case filter.type -%}
+                        {%- when 'list', 'boolean' -%}
+                          {%- case filter.presentation -%}
+                            {%- when 'swatch' -%}
+                              {%- render 'swatch-filter', filter: filter -%}
+                            {%- when 'text' -%}
+                              {%- render 'text-filter', filter: filter -%}
+                            {%- when 'image' -%}
+                              {%- render 'image-filter', filter: filter -%}
+                            {%- else -%}
+                              {%- render 'fallback-filter', filter: filter -%}
+                          {%- endcase -%}
+                        {%- when 'price_range' -%}
+                          {%- render 'price-range', filter: filter %}
+                      {%- endcase -%}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </form>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- style -%}
+    @media screen and (min-width: 769px) {
+      .collection-filter__item--drawer {
+        display: none;
+      }
+      .collection-filter__item--count {
+        text-align: left;
+      }
+      html[dir='rtl'] .collection-filter__item--count {
+        text-align: right;
+      }
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+{%- if show_sidebar == false -%}
+  {% comment %}
+    Disable sidebar & filter features
+  {% endcomment %}
+  {%- style -%}
+    .collection-content .grid__item--sidebar,
+    .search-content .grid__item--sidebar  {
+      display: none;
+    }
+    .collection-content .grid__item--content,
+    .search-content .grid__item--content {
+      width: 100% !important;
+    }
+    {%- if enable_sort == false -%}
+      .collection-filter__item--drawer {
+        display: none;
+      }
+    {%- endif -%}
+    .collection-filter__item--count {
+      text-align: left;
+    }
+    html[dir="rtl"] .collection-filter__item--count {
+      text-align: right;
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+{%- unless enable_sort -%}
+  {%- style -%}
+    .collection-filter__sort,
+    .collection-sidebar__group--sort {
+      display: none;
+    }
+  {%- endstyle -%}
+{%- endunless -%}

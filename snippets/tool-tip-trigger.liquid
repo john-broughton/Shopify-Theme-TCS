@@ -1,0 +1,43 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders a tool tip trigger component.
+
+  Accepts:
+  - title {string}: The title of the tool tip
+  - content {string}: The content of the tool tip
+  - context {string}: The context of the tool tip
+  - button {string}: The button to render
+  - wrapper_class {string}: The class to apply to the tool tip wrapper
+
+  Usage:
+  {% render 'tool-tip-trigger', title: 'Tool tip', content: 'This is some content', context: 'size-chart' %}
+{% endcomment %}
+
+{%- liquid
+  assign title = title | default: blank
+  assign content = content | default: blank
+  assign context = context | default: blank
+  assign button = button | default: blank
+  assign wrapper_class = wrapper_class | default: blank
+-%}
+
+<tool-tip-trigger
+  class="tool-tip-trigger"
+  data-tool-tip="{{ context }}"
+  data-tool-tip-classes="{{ wrapper_class }}"
+>
+  {% if title != blank %}
+    <div class="tool-tip-trigger__title">{{ title }}</div>
+  {% endif %}
+
+  <span
+    class="tool-tip-trigger__content"
+    data-tool-tip-trigger-content=""
+  >
+    {{ content }}
+  </span>
+
+  {% if button != blank %}
+    {{ button }}
+  {% endif %}
+</tool-tip-trigger>

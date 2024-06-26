@@ -1,0 +1,25 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a collapsible trigger button.
+
+  Accepts:
+  - id {string} - The unique ID of the collapsible
+  - index {string} - The index of the collapsible
+  - title {string} - The title of the collapsible
+  - location {string} - The location of the collapsible
+
+  Usage:
+  {% render 'collection-sidebar-filter-trigger' %}
+{%- endcomment -%}
+
+<button
+  type="button"
+  class="collapsible-trigger collapsible-trigger-btn collapsible--auto-height{% unless collapsed_state %} is-open{% endunless %} tag-list__header"
+  data-controls="{{ location }}-{{ index }}"
+  data-collapsible-id="{{ id }}"
+>
+  <span class="collapsible-trigger__layout collapsible-trigger__layout--inline">
+    <span>{{ title | escape }}</span>
+    {%- render 'collapsible-icons' -%}
+  </span>
+</button>

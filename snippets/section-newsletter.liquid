@@ -1,0 +1,100 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a newsletter section.
+
+  Accepts:
+  - align_text {'left'|'center'|'right'} - The alignment of the text
+  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme of the section
+  - divider {boolean} - Whether to show a divider
+  - top_padding {boolean} - Whether to show top padding
+  - bottom_padding {boolean} - Whether to show bottom padding
+  - image_position {'left'|'right'} - The position of the image
+  - image {object} - The image object
+  - image_width {'33' | '50' |'66'} - The width of the image
+  - image_mask {string} - The mask of the image
+  - share_facebook {boolean} - Whether to show facebook share button
+  - share_twitter {boolean} - Whether to show twitter share button
+  - share_pinterest {boolean} - Whether to show pinterest share button
+
+  Usage:
+  {% render 'section-newsletter' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign align_text = align_text | default: section.settings.align_text | default: 'center'
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+  assign top_padding = top_padding | default: section.settings.top_padding, allow_false: true | default: true, allow_false: true
+  assign bottom_padding = bottom_padding | default: section.settings.bottom_padding, allow_false: true | default: true, allow_false: true
+  assign image_position = image_position | default: section.settings.image_position | default: 'left'
+  assign image = image | default: section.settings.image
+  assign image_width = image_width | default: section.settings.image_width | default: '50'
+  assign image_mask = image_mask | default: section.settings.image_mask | default: 'none'
+  assign color_scheme = color_scheme | default: section.settings.color_scheme
+
+  unless color_scheme
+    assign class_name = 'newsletter-' | append: section.id
+    render 'color-scheme-override', class_name: class_name
+  endunless
+-%}
+
+{% style %}
+  {% if top_padding %}
+    .newsletter-{{ section.id }} .newsletter-section { padding-top: 24px !important; }
+  {% endif %}
+  {% if bottom_padding %}
+    .newsletter-{{ section.id }} .newsletter-section { padding-bottom: 24px !important; }
+  {% endif %}
+{% endstyle %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="index-section newsletter-container newsletter-{{ section.id }} color-scheme-{{ color_scheme }}">
+  {%- if color_scheme -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  <div class="page-width text-{{ align_text }}">
+    <div class="newsletter-section newsletter-section--image-{{ image_position }} {% unless image %}newsletter-section--no-image{% endunless %}">
+      <div class="newsletter-section__content">
+        {%- for block in section.blocks -%}
+          <div class="theme-block" {{ block.shopify_attributes }}>
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'title' -%}
+                {%- if block.settings.title != blank -%}
+                  <p class="{% if block.settings.heading_size != blank %}{{ block.settings.heading_size }}{% else %}h2{% endif %}">
+                    {{ block.settings.title | escape }}
+                  </p>
+                {%- endif -%}
+              {%- when 'text' -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="rte clearfix">
+                    <div class="enlarge-text">
+                      {{ block.settings.text }}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- when 'form' -%}
+                {%- render 'newsletter-form', context: 'section' -%}
+              {%- when 'share_buttons' -%}
+                {%- render 'social-sharing' -%}
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+      {% if image %}
+        <div class="newsletter-section__image newsletter-section__image--{{ image_width }}">
+          <div
+            class="image-wrap {% if image_mask != 'none' %}svg-mask svg-mask--{{ image_mask }}{% endif %}"
+            style="height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;"
+          >
+            {%- render 'image-element', img: image, sizeVariable: image_width, widths: '360, 540, 720, 1020' -%}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

@@ -1,0 +1,46 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a list of recently viewed products.
+
+  Accepts:
+  - product {product} - The product to show recently viewed products for
+  - recently_viewed_max_products {2-16} - The number of recently viewed products to show
+  - hydration {string} - The hydration strategy for the section
+
+  Usage:
+  {% render 'section-recently-viewed' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = product | default: section.settings.product
+  assign recently_viewed_max_products = recently_viewed_max_products | default: settings.recently_viewed_max_products | default: 5
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+<is-land {{ hydration }}>
+  <recently-viewed
+    data-subsection
+    data-section-id="{{ section.id }}"
+    data-section-type="recently-viewed"
+    data-product-id="{{ product.id }}"
+    data-max-products="{{ recently_viewed_max_products }}"
+  >
+    <div class="index-section index-section--sub-product">
+      <div class="page-width">
+        <header class="section-header">
+          <div class="h3 section-header__title">{{ 'labels.recently_viewed' | t }}</div>
+        </header>
+      </div>
+
+      <div class="page-width page-width--flush-small">
+        <div id="RecentlyViewed-{{ section.id }}"></div>
+      </div>
+    </div>
+  </recently-viewed>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-recently-viewed'
+    </script>
+  </template>
+</is-land>

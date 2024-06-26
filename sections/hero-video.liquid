@@ -1,0 +1,133 @@
+{%- render 'section-hero-video' -%}
+
+{% schema %}
+{
+  "name": "t:labels.video_hero",
+  "class": "index-section--hero",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:labels.full_page_width",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "Bring your\nbrand to life."
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "t:labels.heading_text_size",
+      "default": 70,
+      "min": 40,
+      "max": 100,
+      "unit": "px"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:labels.subheading",
+      "default": "Seamless hero videos"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "t:labels.button_text",
+      "default": "Optional button"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "t:labels.button_link",
+      "info": "t:info.links_to_youtube_video_player"
+    },
+    {
+      "type": "color",
+      "id": "color_accent",
+      "label": "t:labels.buttons",
+      "default": "#fff"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:labels.text_alignment",
+      "default": "vertical-center horizontal-center",
+      "options": [
+        {
+          "value": "vertical-center horizontal-left",
+          "label": "t:labels.alignments.center_left"
+        },
+        {
+          "value": "vertical-center horizontal-center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "vertical-center horizontal-right",
+          "label": "t:labels.alignments.center_right"
+        },
+        {
+          "value": "vertical-bottom horizontal-left",
+          "label": "t:labels.alignments.bottom_left"
+        },
+        {
+          "value": "vertical-bottom horizontal-center",
+          "label": "t:labels.alignments.bottom_center"
+        },
+        {
+          "value": "vertical-bottom horizontal-right",
+          "label": "t:labels.alignments.bottom_right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "t:labels.background_video_link",
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "info": "t:info.supported_video_formats"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:labels.text_protection",
+      "info": "t:info.darkens_your_video",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "%"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "t:labels.height",
+      "default": 650,
+      "min": 450,
+      "max": 750,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "t:labels.mobile_height",
+      "default": 300,
+      "min": 250,
+      "max": 500,
+      "step": 10,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.video_hero"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

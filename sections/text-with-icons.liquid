@@ -1,0 +1,197 @@
+{%- render 'section-text-with-icons' -%}
+
+{% schema %}
+{
+  "name": "t:labels.text_columns_with_386",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:labels.text_alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "desktop_columns_per_row",
+      "label": "t:labels.desktop_columns_per",
+      "default": 3,
+      "min": 2,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "t:labels.icon_color",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:labels.button_label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.link"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:actions.show_section_divider",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "t:labels.column",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:labels.icon",
+          "default": "chat",
+          "options": [
+            {
+              "value": "bills",
+              "label": "t:labels.bills"
+            },
+            {
+              "value": "calendar",
+              "label": "t:labels.calendar"
+            },
+            {
+              "value": "cart",
+              "label": "t:labels.cart"
+            },
+            {
+              "value": "charity",
+              "label": "t:labels.charity"
+            },
+            {
+              "value": "chat",
+              "label": "t:labels.chat"
+            },
+            {
+              "value": "envelope",
+              "label": "t:labels.envelope"
+            },
+            {
+              "value": "gears",
+              "label": "t:labels.gears"
+            },
+            {
+              "value": "gift",
+              "label": "t:labels.gift"
+            },
+            {
+              "value": "globe",
+              "label": "t:labels.globe"
+            },
+            {
+              "value": "package",
+              "label": "t:labels.package"
+            },
+            {
+              "value": "phone",
+              "label": "t:labels.phone"
+            },
+            {
+              "value": "plant",
+              "label": "t:labels.plant"
+            },
+            {
+              "value": "recycle",
+              "label": "t:labels.recycle"
+            },
+            {
+              "value": "ribbon",
+              "label": "t:labels.ribbon"
+            },
+            {
+              "value": "sales-tag",
+              "label": "t:labels.sales_tag"
+            },
+            {
+              "value": "shield",
+              "label": "t:labels.shield"
+            },
+            {
+              "value": "stopwatch",
+              "label": "t:labels.stopwatch"
+            },
+            {
+              "value": "store",
+              "label": "t:labels.store"
+            },
+            {
+              "value": "thumbs-up",
+              "label": "t:labels.thumbs_up"
+            },
+            {
+              "value": "trophy",
+              "label": "t:labels.trophy"
+            },
+            {
+              "value": "truck",
+              "label": "t:labels.truck"
+            },
+            {
+              "value": "wallet",
+              "label": "t:labels.wallet"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Example title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.text_columns_with_386",
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

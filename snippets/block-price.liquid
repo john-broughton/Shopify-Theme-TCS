@@ -1,0 +1,103 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the product price
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+  - use_variant {boolean} - Whether to use the first available variant or the product itself
+
+  Usage:
+  {% render 'block-price' block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign use_variant = use_variant | default: true
+  assign target = product
+
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign price = target.price | default: 1999
+  assign available = target.available | default: false
+  assign product_save_amount = settings.product_save_amount | default: false
+  assign product_save_type = settings.product_save_type | default: 'dollar'
+  assign saved_amount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round | append: '%'
+
+  if product_save_type == 'dollar'
+    assign saved_amount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | money_without_trailing_zeros
+  endif
+-%}
+
+<block-price
+  class="block-price product-block"
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+  {{ block.shopify_attributes }}
+>
+  <span class="label variant__label">
+    {{- 'labels.price' | t -}}
+  </span>
+  <div
+    class="block-price__container"
+    {% unless available %}
+      data-sold-out=""
+    {% endunless %}
+    {% if compare_at_price > price %}
+      data-on-sale=""
+    {% endif %}
+    {% if product.selected_or_first_available_variant.unit_price_measurement %}
+      data-unit-price=""
+    {% endif %}
+  >
+    <div class="block-price__regular product__price">
+      <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
+      <span>
+        {%- render 'price', price: price -%}
+      </span>
+    </div>
+
+    <div class="block-price__sale product__price">
+      {%- unless product.price_varies == false and product.compare_at_price_varies %}
+        <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
+        <span>
+          <s>
+            {%- render 'price', price: compare_at_price -%}
+          </s>
+        </span>
+      {%- endunless -%}
+
+      <span class="visually-hidden">{{ 'labels.sale_price' | t }}</span>
+
+      <span class="product__price">
+        {%- render 'price', price: price -%}
+      </span>
+    </div>
+
+    {%- if product_save_amount -%}
+      <span class="block-price__save product__price-savings on-sale">
+        {{- 'info.save_amount' | t: saved_amount: saved_amount -}}
+      </span>
+    {%- endif -%}
+
+    <div class="block-price__unit-price product__unit-price">
+      <span>
+        {%- render 'price', price: product.selected_or_first_available_variant.unit_price -%}
+      </span>
+      <span>/</span>
+      <span>
+        {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+          {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+        {%- endif -%}
+        {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+      </span>
+    </div>
+  </div>
+</block-price>
+
+<script type="module">
+  import 'components/block-price'
+</script>

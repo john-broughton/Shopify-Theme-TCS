@@ -1,0 +1,78 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a list of collections.
+
+  Accepts:
+  - title_enable {boolean} - Whether to show the section title
+  - display_type {'all'|'selected'} - The display type of the collections
+  - sort {'products_high'|'products_low'|'alphabetical'|'alphabetical_reversed'|'date'|'date_reversed'} - The sort order of the collections
+
+  Usage:
+  {% render 'section-list-collections-template' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title_enable = title_enable | default: section.settings.title_enable, allow_false: true | default: true, allow_false: true
+  assign display_type = display_type | default: section.settings.display_type | default: 'all'
+  assign sort = sort | default: section.settings.sort | default: 'alphabetical'
+-%}
+
+{%- paginate collections by 20 -%}
+  <div class="page-width page-content">
+    {%- if title_enable -%}
+      <header class="section-header">
+        <h1 class="section-header__title">{{ 'labels.catalog' | t }}</h1>
+      </header>
+    {%- endif -%}
+
+    {%- liquid
+      capture grid_view
+        if display_type == 'all'
+          render 'grid-view-type', products_per_row: collections.size
+          assign sizeVariable = collections.size | at_most: 5
+        else
+          render 'grid-view-type', products_per_row: section.blocks.size
+          assign sizeVariable = section.blocks.size | at_most: 5
+        endif
+      endcapture
+    -%}
+
+    <div class="new-grid" {{ grid_view }}>
+      {%- if display_type == 'all' -%}
+        {%- liquid
+          case sort
+            when 'products_high'
+              assign collections = collections | sort: 'all_products_count' | reverse
+            when 'products_low'
+              assign collections = collections | sort: 'all_products_count'
+            when 'date'
+              assign collections = collections | sort: 'published_at'
+            when 'date_reversed'
+              assign collections = collections | sort: 'published_at' | reverse
+            when 'alphabetical_reversed'
+              assign collections = collections | sort: 'title' | reverse
+            else
+              assign collections = collections
+          endcase
+
+          for collection in collections
+            render 'collection-grid-item', collection: collection, sizeVariable: sizeVariable, fallback: 'variable'
+          endfor
+        -%}
+      {%- else -%}
+        {%- for block in section.blocks -%}
+          {%- render 'collection-grid-item',
+            block: block,
+            collection: block.settings.collection,
+            sizeVariable: sizeVariable,
+            fallback: 'variable'
+          -%}
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+
+    {%- if paginate.pages > 1 and display_type == 'all' -%}
+      {%- render 'pagination', paginate: paginate -%}
+    {%- endif -%}
+  </div>
+{%- endpaginate -%}

@@ -1,0 +1,156 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a form with locale and currency selectors.
+
+  Accepts:
+  - context {string} - The context in which the form is rendered
+  - show_locale_selector {boolean} - Whether or not to show the locale selector
+  - show_currency_selector {boolean} - Whether or not to show the currency selector
+  - show_currency_flags {boolean} - Whether or not to show the currency flags
+
+  Usage:
+  {% render 'multi-selectors', context: 'footer' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_locale_selector = show_locale_selector | default: section.settings.show_locale_selector, allow_false: true | default: true, allow_false: true
+  assign show_currency_selector = show_currency_selector | default: section.settings.show_currency_selector, allow_false: true | default: true, allow_false: true
+  assign show_currency_flags = show_currency_flags | default: section.settings.show_currency_flags, allow_false: true | default: false, allow_false: true
+
+  assign form_id = 'localization_form-' | append: context
+  assign form_class = 'multi-selectors multi-selectors--' | append: context
+-%}
+
+{%- form 'localization', id: form_id, class: form_class, data-disclosure-form: '' -%}
+  {% unless show_locale_selector and show_currency_selector %}
+    {% assign is_single = true %}
+  {% endunless %}
+
+  {%- if show_locale_selector -%}
+    <div class="multi-selectors__item">
+      {%- if context == 'footer' -%}
+        <div class="footer__title" id="LangHeading-{{ context }}">
+          {{ 'labels.language' | t }}
+        </div>
+      {%- else -%}
+        <div class="visually-hidden" id="LangHeading-{{ context }}">
+          {{ 'labels.language' | t }}
+        </div>
+      {%- endif -%}
+
+      <div class="disclosure" data-disclosure-locale>
+        <button
+          type="button"
+          class="faux-select disclosure__toggle"
+          aria-expanded="false"
+          aria-controls="LangList-{{ context }}"
+          aria-describedby="LangHeading-{{ context }}"
+          data-disclosure-toggle
+        >
+          <span class="disclosure-list__label">
+            {{ form.current_locale.endonym_name | capitalize }}
+          </span>
+          {% render 'icon', name: 'chevron-down' %}
+        </button>
+
+        <ul
+          id="LangList-{{ context }}"
+          class="disclosure-list disclosure-list--single-{{ is_single }} {% if context == 'toolbar' %} disclosure-list--down disclosure-list--left{% endif %}"
+          data-disclosure-list
+        >
+          {%- for locale in form.available_locales -%}
+            <li class="disclosure-list__item{% if locale.iso_code == form.current_locale.iso_code %} disclosure-list__item--current{% endif %}">
+              <a
+                class="disclosure-list__option"
+                href="#"
+                lang="{{ locale.iso_code }}"
+                {% if locale.iso_code == form.current_locale.iso_code %}
+                  aria-current="true"
+                {% endif %}
+                data-value="{{ locale.iso_code }}"
+                data-disclosure-option
+              >
+                <span class="disclosure-list__label">
+                  {{ locale.endonym_name | capitalize }}
+                </span>
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+        <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}" data-disclosure-input>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if show_currency_selector -%}
+    <div class="multi-selectors__item">
+      {%- if context == 'footer' -%}
+        <div class="footer__title" id="CurrencyHeading-{{ context }}">
+          {{ 'labels.currency' | t }}
+        </div>
+      {%- else -%}
+        <div class="visually-hidden" id="CurrencyHeading-{{ context }}">
+          {{ 'labels.currency' | t }}
+        </div>
+      {%- endif -%}
+
+      <div class="disclosure" data-disclosure-currency>
+        <button
+          type="button"
+          class="faux-select disclosure__toggle"
+          aria-expanded="false"
+          aria-controls="CurrencyList-{{ context }}"
+          aria-describedby="CurrencyHeading-{{ context }}"
+          data-disclosure-toggle
+        >
+          {%- if show_currency_flags -%}
+            {{-
+              localization.country
+              | image_url: width: 60, format: 'jpg'
+              | image_tag: loading: 'lazy', class: 'currency-flag'
+            -}}
+          {%- endif -%}
+          <span class="disclosure-list__label">
+            {{- localization.country.name }} ({{ localization.country.currency.iso_code }}
+            {{ localization.country.currency.symbol }})</span
+          >
+          {% render 'icon', name: 'chevron-down' %}
+        </button>
+
+        <ul
+          id="CurrencyList-{{ context }}"
+          class="disclosure-list disclosure-list--single-{{ is_single }} {% if context == 'toolbar' %} disclosure-list--down disclosure-list--left{% endif %}"
+          data-disclosure-list
+        >
+          {%- for country in localization.available_countries -%}
+            <li class="disclosure-list__item{% if country.iso_code == localization.country.iso_code %} disclosure-list__item--current{% endif %}">
+              <a
+                class="disclosure-list__option"
+                href="#"
+                {% if country.iso_code == localization.country.iso_code %}
+                  aria-current="true"
+                {% endif %}
+                data-value="{{ country.iso_code }}"
+                data-disclosure-option
+              >
+                {%- if show_currency_flags -%}
+                  {{-
+                    country
+                    | image_url: width: 60, format: 'jpg'
+                    | image_tag: loading: 'lazy', class: 'currency-flag'
+                  -}}
+                {%- endif -%}
+                <span class="disclosure-list__label">
+                  {{- country.name }} ({{ country.currency.iso_code }}
+                  {{ country.currency.symbol }})</span
+                >
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}" data-disclosure-input>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endform -%}

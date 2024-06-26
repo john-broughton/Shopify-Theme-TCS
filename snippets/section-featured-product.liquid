@@ -1,0 +1,81 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Featured product section
+
+  Accepts:
+  - product {product} - Product object
+  - slot {string} - Content for product info
+  - product_media_gallery {string} - Content for the product media gallery
+  - image_position {string} - Position of the image
+  - mobile_layout {string} - Layout for mobile
+  - image_container_width {string} - Width of the image container
+
+  Usage:
+  {% liquid
+    capture blocks
+      for block in section.blocks
+        case block.type
+          when 'description'
+            render 'block-description', block: block
+        endcase
+      endfor
+    endcapture
+
+    render 'section-featured-product', slot: blocks
+  %}
+{%- endcomment -%}
+
+{%- liquid
+  assign image_position = image_position | default: section.settings.image_position | default: 'left'
+  assign mobile_layout = mobile_layout | default: section.settings.mobile_layout | default: 'partial'
+  assign isModal = false
+  if template == 'product.modal'
+    assign isModal = true
+  endif
+  assign image_container_width = image_container_width | default: section.settings.image_container_size | default: 'medium'
+  assign product_image_width = 'medium-up--one-half'
+  assign product_description_width = 'medium-up--one-half'
+  case image_container_width
+    when 'small'
+      assign product_image_width = 'medium-up--two-fifths'
+      assign product_description_width = 'medium-up--three-fifths'
+    when 'large'
+      assign product_image_width = 'medium-up--three-fifths'
+      assign product_description_width = 'medium-up--two-fifths'
+  endcase
+  capture product_media_gallery_default
+    render 'product-images', isModal: isModal, sizeVariable: product_image_width, product: product
+  endcapture
+  assign divider = section.settings.divider
+  assign product = section.settings.product | default: product
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<section
+  class="page-content page-content--product page-content--{{ mobile_layout }}"
+  data-section-id="{{ section.id }}"
+  data-product-id="{{ product.id }}"
+>
+  <div class="page-width">
+    <div class="product-grid__container product--images grid{% unless image_position == 'left' %} grid--product-images-right{% endunless %}{% if mobile_layout == 'partial' %} grid--product-images--partial{% endif %} clearfix">
+      {%- if image_position == 'left' -%}
+        <div class="grid__item {{ product_image_width }} product-single__sticky">
+          {{- product_media_gallery | default: product_media_gallery_default -}}
+        </div>
+      {%- endif -%}
+      <div class="product-grid__content product--description product-single__sticky grid__item {{ product_description_width }}">
+        <div class="product-single__meta">
+          {{- slot -}}
+        </div>
+      </div>
+      {%- unless image_position == 'left' -%}
+        <div class="grid__item {{ product_image_width }} product-single__sticky">
+          {{- product_media_gallery | default: product_media_gallery_default -}}
+        </div>
+      {%- endunless -%}
+    </div>
+  </div>
+</section>
+
+{%- if divider -%}</div>{%- endif -%}

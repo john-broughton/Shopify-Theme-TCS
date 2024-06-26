@@ -1,0 +1,40 @@
+{%- render 'section-product-recommendations' -%}
+
+{% schema %}
+{
+  "name": "t:labels.related_products",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.dynamic_recommendations_use"
+    },
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "t:labels.heading",
+      "default": "You may also like"
+    },
+    {
+      "type": "range",
+      "id": "related_count",
+      "label": "t:labels.number_of_related",
+      "default": 6,
+      "min": 2,
+      "max": 6,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "products_per_row",
+      "label": "t:labels.desktop_products_per",
+      "default": 3,
+      "min": 2,
+      "max": 5,
+      "step": 1
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

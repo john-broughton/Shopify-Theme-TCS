@@ -1,0 +1,58 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders the texture for a color scheme.
+
+  Accepts:
+  - color_scheme {string} - The color scheme name
+
+  Images:
+    - linen
+    - marble
+    - paper
+    - sand
+    - space
+    - stone
+    - wildflower
+
+  SVG:
+    - cold blur
+    - custom textures 1-3
+    - minimal wave
+    - notebook
+    - squiggle
+    - swirl
+    - warm blur
+    - wave
+
+  CSS:
+    - darken
+
+  Usage:
+  {% render 'color-scheme-texture', color_scheme: color_scheme %}
+{% endcomment %}
+
+{%- capture key -%}color_scheme_{{ color_scheme }}_texture{%- endcapture -%}
+{%- assign texture = settings[key] -%}
+
+{%- if texture == 'linen.jpg'
+  or texture == 'marble.jpg'
+  or texture == 'paper.jpg'
+  or texture == 'sand.jpg'
+  or texture == 'space.jpg'
+  or texture == 'stone.jpg'
+  or texture == 'wildflower.jpg'
+-%}
+  {% capture image_classes %}
+    scheme-image scheme-texture--{{ texture | remove: '.jpg' }}
+  {% endcapture %}
+  {%- render 'image-element',
+    asset: texture,
+    host: 'theme',
+    type: 'asset',
+    classes: image_classes,
+    data-name: 'texture',
+    data-value: texture
+  -%}
+{%- else -%}
+  <div class="scheme-{{ texture }}"></div>
+{%- endif -%}

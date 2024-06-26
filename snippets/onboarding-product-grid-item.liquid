@@ -1,0 +1,89 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders an "empty" product grid item for onboarding purposes.
+
+  Accepts:
+  - index {number} - The forloop index to keep track of the current iteration
+  - wrapper_class {string} - Additional classes to add to the grid item
+  - product_save_amount {boolean} - Whether to show the save amount
+  - product_save_type {'dollar'|'percent'} - The type of save amount to show
+  - superscript_decimals {boolean} - Whether to superscript decimals
+  - set_image_breathing_room {boolean} - Whether to set image breathing room
+
+  Usage:
+  {% render 'onboarding-product-grid-item', index: forloop.index %}
+{%- endcomment -%}
+
+{%- liquid
+  assign wrapper_class = wrapper_class | default: blank
+  assign product_save_amount = product_save_amount | default: settings.product_save_amount, allow_false: true | default: true, allow_false: true
+  assign product_save_type = product_save_type | default: settings.product_save_type | default: 'dollar'
+  assign superscript_decimals = superscript_decimals | default: settings.superscript_decimals | default: true
+  assign set_image_breathing_room = set_image_breathing_room | default: true, allow_false: true
+  assign product_grid_style = product_grid_style | default: settings.product_grid_style | default: 'grey-round'
+  assign product_tile_layout = product_tile_layout | default: false, allow_false: true
+
+  if set_image_breathing_room
+    if settings.product_grid_image_margin == 0
+      assign image_breathing_room = false
+    else
+      assign image_breathing_room = true
+    endif
+  endif
+-%}
+
+<div
+  class="
+    grid-item grid-product {{ wrapper_class }} grid-product-image-breathing-room--{{ image_breathing_room }}
+    {% if product_tile_layout %}product-tile-layout--{{ product_tile_layout }}{% endif %}
+    {% if product_grid_style contains 'gridlines' %}
+      grid-product--gridlines overlay
+    {% endif %}
+  "
+>
+  <div class="grid-item__content">
+    <a href="{{ product.url | within: collection | default: '#' }}" class="grid-item__link">
+      <div class="grid-product__image-wrap">
+        {%- capture current -%}{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+        {%- if index == 1 -%}
+          <div class="grid-product__tags">
+            <div class="grid-product__tag grid-product__tag--sale">
+              {{ 'labels.sale' | t }}
+            </div>
+          </div>
+        {%- endif -%}
+        <div class="image-wrap">
+          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      </div>
+      <div class="grid-item__meta">
+        <div class="grid-item__meta-main">
+          <div class="grid-product__title">{{ 'labels.example_product' | t }}</div>
+        </div>
+        <div class="grid-item__meta-secondary">
+          <div class="grid-product__price">
+            <span class="grid-product__price--current">
+              {%- render 'price', price: '2999' -%}
+            </span>
+            {%- if index == 1 -%}
+              <span class="grid-product__price--original">
+                {%- render 'price', price: '3599' -%}
+              </span>
+
+              {%- if product_save_amount -%}
+                {%- if product_save_type == 'dollar' -%}
+                  {%- capture saved_amount -%}{{ 3599 | minus: 2999 | money_without_trailing_zeros }}{%- endcapture -%}
+                {%- else -%}
+                  {%- capture saved_amount -%}{{ 3599 | minus: 2999 | times: 100.0 | divided_by: 3599 | round }}%{%- endcapture -%}
+                {%- endif -%}
+                <span class="grid-product__price--savings">
+                  {{ 'info.save_amount' | t: saved_amount: saved_amount }}
+                </span>
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

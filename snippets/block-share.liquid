@@ -1,0 +1,19 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the social sharing buttons for a product
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+
+  Usage:
+  {% render 'block-share', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+-%}
+
+<div class="product-block" {{ block.shopify_attributes }}>
+  {%- render 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product -%}
+</div>

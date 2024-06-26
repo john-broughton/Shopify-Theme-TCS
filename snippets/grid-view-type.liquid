@@ -1,0 +1,58 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the grid view type.
+
+  This component outputs the classes for the product and collection grids based on the number of products per row and chosen style. It supports different grid styles, i.e. 'product-grid' and 'fractions'. The products per row value is converted to an integer if a string is passed.
+
+  Accepts:
+  - products_per_row {2-5} - Number of products per row
+  - style {'product-grid'|'fractions'} - Style of the grid
+  - type {boolean} - Whether to output grid view as a data attribute
+
+  Usage:
+  {% render 'section-more-products-vendor', products_per_row: 6 %}
+{%- endcomment -%}
+
+{%- liquid
+  assign products_per_row = products_per_row | default: section.settings.products_per_row | default: 3 | times: 1
+  assign style = style | default: 'product-grid'
+  assign type = type | default: true, allow_false: true
+
+  if style == 'product-grid'
+    case products_per_row
+      when 1
+        assign grid_view = ''
+      when 2
+        assign grid_view = 'large'
+      when 3
+        assign grid_view = 'medium'
+      when 4
+        assign grid_view = 'small'
+      else
+        assign grid_view = 'xsmall'
+    endcase
+  endif
+
+  if style == 'fractions'
+    case products_per_row
+      when 1
+        assign grid_view = ''
+      when 2
+        assign grid_view = 'medium-up--one-half'
+      when 3
+        assign grid_view = 'small--one-half medium-up--one-third'
+      when 4
+        assign grid_view = 'small--one-half medium-up--one-quarter'
+      when 5
+        assign grid_view = 'small--one-half medium-up--one-fifth'
+      else
+        assign grid_view = 'small--one-third medium-up--one-sixth'
+    endcase
+  endif
+-%}
+
+{% if type %}
+  data-view="{{ grid_view }}"
+{% else %}
+  {{ grid_view }}
+{% endif %}

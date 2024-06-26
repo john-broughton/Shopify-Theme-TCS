@@ -1,0 +1,161 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with hotspots.
+
+  Accepts:
+  - title {string} - The title of the section
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - heading_position {'left'|'center'|'right'} - The position of the heading
+  - image {image} - The image of the section
+  - indent_image {boolean} - Whether to indent the image
+  - image_position {'left'|'right'} - The position of the image
+  - hotspot_style {'dot'|'plus'|'tag'|'bag'} - The style of the hotspot
+  - hotspot_color {color} - The color of the hotspot
+  - hydration {string} - The hydration strategy of the section
+
+  Usage:
+  {% render 'section-hotspots', title: 'Shop collections' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title = title | default: section.settings.title
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'center'
+  assign image = image | default: section.settings.image
+  assign indent_image = indent_image | default: section.settings.indent_image, allow_false: true | default: false, allow_false: true
+  assign image_position = image_position | default: section.settings.image_position | default: 'left'
+  assign hotspot_style = hotspot_style | default: section.settings.hotspot_style | default: 'bag'
+  assign hotspot_color = hotspot_color | default: section.settings.hotspot_color | default: '#000'
+  assign hydration = hydration | default: 'on:visible'
+-%}
+
+{%- liquid
+  assign lazyload_images = true
+
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+-%}
+
+{% assign bgBrightness = hotspot_color | brightness_difference: '#fff' %}
+{% style %}
+  {% for block in section.blocks %}
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 {{ hotspot_color | color_modify: 'alpha', 0.5 }}; }
+      100% { box-shadow: 0 0 0 10px {{ hotspot_color | color_modify: 'alpha', 0 }}; }
+    }
+
+    .{{ section.id }} .hotspot__button--{{ block.id }} {
+      left: {{ block.settings.horizontal }}%;
+      top: {{ block.settings.vertical }}%;
+      background-color: {{ hotspot_color }};
+      animation: pulse 2s infinite;
+    }
+
+    .{{ section.id }} .hotspot__button--{{ block.id }}:hover {
+      {% if bgBrightness < 125 %}
+        background-color: {{ hotspot_color | color_darken: 10 }};
+      {% else %}
+        background-color: {{ hotspot_color | color_lighten: 10 }};
+      {% endif %}
+    }
+  {% endfor %}
+
+  .{{ section.id }} .hotspot__button path {
+    {% if bgBrightness < 125 %}
+      stroke: #000 !important;
+    {% else %}
+      stroke: #fff !important;
+    {% endif %}
+  }
+
+  .{{ section.id }} .hotspot__button circle {
+    {% if bgBrightness < 125 %}
+      fill: #000 !important;
+    {% else %}
+      fill: #fff !important;
+    {% endif %}
+    stroke: none !important;
+  }
+{% endstyle %}
+
+<is-land {{ hydration }}>
+  <div class="index-section {{ section.id }} {{ bgBrightness }}">
+    {% if title != blank %}
+      <div class="page-width">
+        <h2 class="hotspots__title {{ heading_size }} text-{{ heading_position }}">{{ title }}</h2>
+      </div>
+    {% endif %}
+
+    <hot-spots class="hotspots-wrapper {% unless indent_image %}page-width{% endunless %} {% if image_position == 'right' %}is-reverse{% endif %}">
+      <div class="hotspots">
+        <div class="hotspots__image hotspots__image--indent-{{ indent_image }}">
+          <div class="grid__image-ratio grid__image-ratio--square">
+            {% if image != blank %}
+              {%- render 'image-element',
+                img: image,
+                img_width: 2400,
+                loading: lazyload_images,
+                sizeVariable: '70vw'
+              -%}
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="hotspots__buttons">
+          {% for block in section.blocks %}
+            <button class="hotspot__button hotspot__button--{{ block.id }}" data-button="{{ block.id }}">
+              {%- render 'icon', name: hotspot_style -%}
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="hotspots__content" data-block-container>
+        {% for block in section.blocks %}
+          <div
+            class="hotspot-content__block {% if forloop.index0 == 0 %}is-active{% endif %}"
+            data-block-type="{{ block.type }}"
+            data-hotspot-block="{{ block.id }}"
+            {{ block.shopify_attributes }}
+          >
+            {% case block.type %}
+              {% when 'product' %}
+                {% if block.settings.featured_product != blank %}
+                  {%- render 'product-grid-item', product: block.settings.featured_product, sizes: '30vw' -%}
+                {% else %}
+                  {%- render 'onboarding-product-grid-item', index: forloop.index -%}
+                {% endif %}
+              {% when 'paragraph' %}
+                {% if block.settings.subheading != blank %}
+                  <p class="subheading">{{ block.settings.subheading }}</p>
+                {% endif %}
+
+                {% if block.settings.heading != blank %}
+                  <h3>{{ block.settings.heading }}</h3>
+                {% endif %}
+
+                {% if block.settings.content != blank %}
+                  {{ block.settings.content }}
+                {% endif %}
+
+                {% if block.settings.button_text != blank %}
+                  <a href="{{ block.settings.button_link }}" class="btn">
+                    {{ block.settings.button_text }}
+                  </a>
+                {% endif %}
+            {% endcase %}
+          </div>
+        {% endfor %}
+      </div>
+    </hot-spots>
+  </div>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-hotspots'
+    </script>
+  </template>
+</is-land>

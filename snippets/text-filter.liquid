@@ -1,0 +1,90 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- liquid
+  assign enable_swatch_labels = enable_swatch_labels | default: section.settings.enable_swatch_labels, allow_false: true | default: true, allow_false: true
+  assign enable_color_swatches = enable_color_swatches | default: section.settings.enable_color_swatches, allow_false: true | default: true, allow_false: true
+
+  assign is_color = false
+  assign swatch_file_extension = 'png'
+  if enable_color_swatches
+    assign swatch_trigger = 'trigger.color_swatch' | t | downcase
+    assign downcased_label = filter.label | downcase
+    if downcased_label contains swatch_trigger
+      assign is_color = true
+    elsif swatch_trigger == 'color' and downcased_label contains 'colour'
+      assign is_color = true
+    endif
+  endif
+-%}
+
+<ul class="no-bullets tag-list {% if is_color %} tag-list--swatches{% endif %}">
+  {%- assign tag_count = filter.values.size -%}
+  {%- for filter_value in filter.values -%}
+    {%- liquid
+      assign tag_count = tag_count | plus: 1
+      assign filter_value_index = forloop.index
+
+      assign color_file_name = filter_value.label | handle | append: '.' | append: swatch_file_extension
+      assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
+      assign color_swatch_fallback = filter_value.label | split: ' ' | last | handle
+      assign is_product_tag = false
+    -%}
+
+    {% if filter_value.label contains 'at_' %}
+      {% assign is_product_tag = true %}
+      {% assign formatted_tag = filter_value.label | remove_first: 'at_' %}
+
+      {% assign tag_id = formatted_tag | strip %}
+      {% assign tag_text = 'tags.' | append: tag_id | replace: '-', '_' | t %}
+
+      {% if tag_text contains 'Translation missing' %}
+        {% continue %}
+      {% endif %}
+    {% endif %}
+
+    <li class="tag{% if filter_value.active %} tag--active{% endif %}{% if is_color %} tag--swatch {% if enable_swatch_labels %}tag--show-label{% endif %}{% endif %}{% if filter_value.count == 0 %} hide{% endif %}">
+      <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}">
+          <input
+          id="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}"
+          type="checkbox"
+          class="tag__input"
+          name="{{ filter_value.param_name }}"
+          value="{{ filter_value.value }}"
+          {% if filter_value.active %}checked{% endif %}>
+          {%- if is_color -%}
+          <span
+              class="color-swatch color-swatch--filter color-swatch--{{ filter_value.label | handle }}"
+              title="{{ filter_value.label }}"
+              style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url({{ color_image }});{% endif %}"
+          >
+            {% if is_product_tag and tag_text %}
+              {{ tag_text }}
+            {% else %}
+              {{ filter_value.label }}
+            {% endif %}
+
+          </span>
+          <span class="tag__text {% unless is_color and enable_swatch_labels %}hide{% endunless %}">{{ filter_value.label | escape }}</span>
+          {%- else -%}
+          <span class="tag__checkbox"></span>
+          <span>
+              <span class="tag__text">
+                {% if is_product_tag %}
+                  {% if tag_text %}
+                    <span class="product-tag__text">{{ tag_text | capitalize }}</span>
+                  {% endif %}
+                {% else %}
+                  {{ filter_value.label }}
+                {% endif %}
+              </span> ({{ filter_value.count }})
+          </span>
+          {%- endif -%}
+      </label>
+    </li>
+  {%- endfor -%}
+</ul>
+
+{%- if tag_count == 0 -%}
+  {%- style -%}
+    .collection-sidebar__group--{{ filter_index }} { display: none; }
+  {%- endstyle -%}
+{%- endif -%}

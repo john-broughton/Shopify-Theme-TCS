@@ -1,0 +1,109 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders the store availability of a product
+
+  Accepts:
+  - product {product} - Product object
+  - context {string} - Modal context
+  - product_variant {variant} - Product variant
+
+  Usage:
+  {% render 'section-store-availability' %}
+{% endcomment %}
+
+{%- liquid
+  assign context = context | default: 'store-availability'
+  assign product_variant = product_variant | default: product.selected_or_first_available_variant
+  assign pick_up_availabilities = product_variant.store_availabilities | where: 'pick_up_enabled', true
+-%}
+
+{%- if pick_up_availabilities.size == 1 -%}
+  {% assign modalTitle = 'actions.view_store_info' | t %}
+{%- else -%}
+  {% assign modalTitle = 'actions.check_availability' | t %}
+{%- endif -%}
+
+{% capture modalContent %}
+  <div data-availability-product-title>{{ product_variant.product.title }}</div>
+  {% unless product_variant.title == 'Default Title' %}
+    <div><small>{{ product_variant.title }}</small></div>
+  {% endunless %}
+  <hr>
+
+  {%- for availability in pick_up_availabilities -%}
+    <div class="store-availability">
+      {%- if availability.available -%}
+        {% render 'icon', name: 'in-stock' %}
+      {%- else -%}
+        {% render 'icon', name: 'out-of-stock' %}
+      {%- endif -%}
+
+      <div class="store-availability__info">
+        <div>
+          <strong>
+            {{ availability.location.name }}
+          </strong>
+        </div>
+
+        <p class="store-availability__small">
+          {%- if availability.available -%}
+            {{ 'info.pick_up_available' | t }}, {{ availability.pick_up_time | downcase }}
+          {%- else -%}
+            {{ 'info.pick_up_currently_unavailable' | t }}
+          {%- endif -%}
+        </p>
+
+        {%- assign address = availability.location.address -%}
+        <div class="store-availability__small">
+          {{ address | format_address }}
+
+          {%- if address.phone.size > 0 -%}
+            <p>
+              {{ address.phone }}
+            </p>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endfor -%}
+{% endcapture %}
+
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="store-availability"
+>
+  {%- if pick_up_availabilities.size > 0 -%}
+    <div class="store-availability">
+      {%- assign closest_location = pick_up_availabilities.first -%}
+      {%- if closest_location.available -%}
+        {% render 'icon', name: 'in-stock' %}
+      {%- else -%}
+        {% render 'icon', name: 'out-of-stock' %}
+      {%- endif -%}
+
+      <div class="store-availability__info">
+        {%- if closest_location.available -%}
+          <div>
+            {{ 'info.pick_up_available_at_html' | t: location_name: closest_location.location.name }}
+          </div>
+          <p class="store-availability__small">
+            {{ closest_location.pick_up_time }}
+          </p>
+          <div class="store-availability__small store-availability__small--link">
+            {% render 'tool-tip-trigger', title: modalTitle, content: modalContent, context: context %}
+          </div>
+        {%- else -%}
+          <p>
+            {{ 'info.pick_up_unavailable_at_html' | t: location_name: closest_location.location.name }}
+          </p>
+
+          {%- if pick_up_availabilities.size > 1 -%}
+            <div class="store-availability__small store-availability__small--link">
+              {% render 'tool-tip-trigger', title: modalTitle, content: modalContent, context: context %}
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>

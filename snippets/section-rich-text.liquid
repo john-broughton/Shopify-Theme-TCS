@@ -1,0 +1,79 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a rich text section with a text blocks.
+
+  Accepts:
+  - divider {boolean} - Whether to show a divider above the section
+  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme for the sectionç
+  - align_text {'left'|'center'|'right'} - The text alignment for the section
+  - narrow_column {boolean} - Whether to make the section narrow
+  - show_wave {boolean} - Whether to show a wave background
+
+  Usage:
+  {% render 'section-rich-text' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
+  assign align_text = align_text | default: section.settings.align_text | default: 'left'
+  assign narrow_column = narrow_column | default: section.settings.narrow_column, allow_false: true | default: false, allow_false: true
+  assign show_wave = show_wave | default: section.settings.show_wave, allow_false: true | default: false, allow_false: true
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="index-section color-scheme-{{ color_scheme }} text-{{ align_text }} {% if show_wave %}background-svg--wave{% endif %}">
+  {%- if color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  <div class="page-width{% if narrow_column %} page-width--narrow{% endif %}">
+    {%- for block in section.blocks -%}
+      <div class="theme-block" {{ block.shopify_attributes }}>
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            {% if block.settings.text_highlight %}
+              <h2
+                class="
+                  {{ block.settings.heading_size }}
+                  text-highlight
+                  text-highlight--{{ block.settings.text_highlight }}
+                "
+              >
+                {{ block.settings.title }}
+              </h2>
+            {% else %}
+              <h2 class="{{ block.settings.heading_size }}">{{ block.settings.title | escape }}</h2>
+            {% endif %}
+          {%- when 'page' -%}
+            <div class="rte clearfix">
+              {%- if block.settings.page_text != blank -%}
+                {{ pages[block.settings.page_text].content }}
+              {%- else -%}
+                {{ 'info.section_no_content' | t }}
+              {%- endif -%}
+            </div>
+          {%- when 'text' -%}
+            <div class="rte clearfix">
+              {%- if block.settings.text != blank -%}
+                {%- if block.settings.enlarge_text %}<div class="enlarge-text">{% endif -%}
+                {{ block.settings.text }}
+                {%- if block.settings.enlarge_text %}</div>{% endif -%}
+              {%- else -%}
+                {{ 'info.section_no_content' | t }}
+              {%- endif -%}
+            </div>
+          {%- when 'button' -%}
+            <div class="rte clearfix">
+              <a href="{{ block.settings.link }}" class="btn">
+                {{ block.settings.link_text }}
+              </a>
+            </div>
+        {%- endcase -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

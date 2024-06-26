@@ -1,0 +1,216 @@
+{%- render 'section-slideshow-split' -%}
+
+{% schema %}
+{
+"name": "t:labels.split_optional_slides",
+"class": "index-section--hero",
+"settings": [
+  {
+    "type": "checkbox",
+    "id": "full_width",
+    "label": "t:labels.full_page_width",
+    "default": true
+  },
+  {
+    "type": "range",
+    "id": "height",
+    "label": "t:labels.desktop_height",
+    "default": 650,
+    "min": 450,
+    "max": 750,
+    "step": 10,
+    "unit": "px"
+  },
+  {
+    "type": "range",
+    "id": "height_mobile",
+    "label": "t:labels.mobile_height",
+    "default": 450,
+    "min": 350,
+    "max": 650,
+    "step": 10,
+    "unit": "px"
+  },
+  {
+    "type": "select",
+    "id": "style",
+    "label": "t:labels.slide_navigation_style",
+    "default": "arrows",
+    "options": [
+      {
+        "value": "minimal",
+        "label": "t:labels.minimal"
+      },
+      {
+        "value": "arrows",
+        "label": "t:labels.arrows"
+      },
+      {
+        "value": "bars",
+        "label": "t:labels.bars"
+      },
+      {
+        "value": "dots",
+        "label": "t:labels.dots"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "t:labels.autochange_slides",
+    "default": true
+  },
+  {
+    "type": "range",
+    "id": "autoplay_speed",
+    "label": "t:labels.change_images_every",
+    "default": 7,
+    "min": 5,
+    "max": 10,
+    "step": 1,
+    "unit": "s"
+  }
+],
+"blocks": [
+  {
+    "type": "slide",
+    "name": "t:labels.slide",
+    "settings": [
+      {
+        "type": "text",
+        "id": "top_subheading",
+        "label": "t:labels.subheading"
+      },
+      {
+        "type": "textarea",
+        "id": "title",
+        "label": "t:labels.heading",
+        "default": "Side by Side Slide"
+      },
+      {
+        "type": "range",
+        "id": "title_size",
+        "label": "t:labels.heading_text_size",
+        "default": 60,
+        "min": 40,
+        "max": 100,
+        "unit": "px"
+      },
+      {
+        "type": "textarea",
+        "id": "subheading",
+        "label": "t:labels.text",
+        "default": "Add optional subtext"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "t:labels.link"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "t:labels.button_text",
+        "default": "Optional button"
+      },
+      {
+        "type": "url",
+        "id": "link_2",
+        "label": "t:labels.link_2"
+      },
+      {
+        "type": "text",
+        "id": "link_text_2",
+        "label": "t:labels.button_text_2"
+      },
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "t:labels.text_position",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:labels.alignments.left"
+          },
+          {
+            "value": "right",
+            "label": "t:labels.alignments.right"
+          }
+        ],
+        "info": "t:info.text_below_on_mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:labels.image"
+      },
+      {
+        "type": "checkbox",
+        "id": "indent_image",
+        "label": "t:labels.indent_image"
+      },
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "label": "t:labels.color_scheme",
+        "default": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "t:labels.none"
+          },
+          {
+            "value": "1",
+            "label": "1"
+          },
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          }
+        ]
+      }
+    ]
+  }
+],
+"max_blocks": 5,
+"presets": [
+  {
+    "name": "t:labels.split_optional_slides",
+    "blocks": [
+      {
+        "type": "slide",
+        "settings": {
+          "title": "Side by side slide",
+          "subheading": "Tailored for longer text and smaller images. Explain more about your promotion.",
+          "text_position": "right",
+          "color_scheme": "2"
+        }
+      },
+      {
+        "type": "slide",
+        "settings": {
+          "title": "Highlight products",
+          "subheading": "Repurpose your product photography with our \"Indented\" image option",
+          "text_position": "left",
+          "color_scheme": "1",
+          "indent_image": true
+        }
+      }
+    ]
+  }
+],
+"disabled_on": {
+  "groups": [
+    "footer",
+    "header",
+    "custom.popups"
+  ]
+}
+}
+{% endschema %}

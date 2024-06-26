@@ -1,0 +1,22 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a full-width page section with its title and content.
+
+  Accepts:
+  - page {page} - The page object
+
+  Usage:
+  {% render 'section-main-page-full-width' %}
+{%- endcomment -%}
+
+<div class="page-full page-content">
+  <header class="section-header">
+    <h1 class="section-header__title">
+      {{ page.title | escape }}
+    </h1>
+  </header>
+
+  <div class="rte rte--nomargin clearfix">
+    {{ page.content }}
+  </div>
+</div>

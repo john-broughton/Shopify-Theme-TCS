@@ -1,0 +1,16 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a 404 section.
+
+  Usage:
+  {% render 'section-main-404' %}
+{%- endcomment -%}
+
+<div class="page-width page-content text-center">
+  <header class="section-header section-header--404">
+    <h1 class="section-header__title">{{ 'info.404_page_not_found' | t }}</h1>
+    <div class="rte text-spacing clearfix">
+      {{ 'info.page_does_not_exist_html' | t: url: routes.root_url }}
+    </div>
+  </header>
+</div>

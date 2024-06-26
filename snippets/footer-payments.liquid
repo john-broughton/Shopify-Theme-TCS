@@ -1,0 +1,72 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the footer payments block.
+
+  Accepts:
+  - block {block} - The block object
+  - show_currency_selector {boolean} - Whether or not to show the currency selector
+  - show_currency_flags {boolean} - Whether or not to show the currency flags
+  - show_locale_selector {boolean} - Whether or not to show the locale selector
+  - show_payment_icons {boolean} - Whether or not to show the payment icons
+  - blocks_heading_size - The heading size for the block
+
+  Usage:
+  {% render 'footer-payments', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_currency_selector = show_currency_selector | default: block.settings.show_currency_selector, allow_false: true | default: true, allow_false: true
+  assign show_currency_flags = show_currency_flags | default: block.settings.show_currency_flags, allow_false: true | default: false, allow_false: true
+  assign show_locale_selector = show_locale_selector | default: block.settings.show_locale_selector, allow_false: true | default: true, allow_false: true
+  assign show_payment_icons = show_payment_icons | default: block.settings.show_payment_icons, allow_false: true | default: true, allow_false: true
+  assign blocks_heading_size = blocks_heading_size | default: block.settings.heading_size | default: 'h4'
+
+  assign show_selectors = false
+  assign currency_selector = false
+  assign locale_selector = false
+
+  if show_currency_selector and shop.enabled_currencies.size > 1
+    assign currency_selector = true
+  endif
+
+  if show_locale_selector and shop.enabled_locales.size > 1
+    assign locale_selector = true
+  endif
+
+  if currency_selector or locale_selector
+    assign show_selectors = true
+  endif
+-%}
+
+<div class="footer__mobile-section">
+  <div class="footer__blocks--mobile">
+    {%- if show_payment_icons -%}
+      {%- unless shop.enabled_payment_types == empty -%}
+        <div class="footer__block--mobile">
+          <h2 class="footer__title {{ blocks_heading_size }}">
+            {{ 'labels.we_accept' | t }}
+          </h2>
+
+          <ul class="inline-list payment-icons">
+            {%- for type in shop.enabled_payment_types -%}
+              <li class="icon--payment">
+                {{ type | payment_type_svg_tag }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endunless -%}
+    {%- endif -%}
+
+    {%- if show_selectors -%}
+      <div class="footer__block--mobile">
+        {%- render 'multi-selectors',
+          show_locale_selector: locale_selector,
+          show_currency_selector: currency_selector,
+          show_currency_flags: show_currency_flags,
+          context: 'footer'
+        -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

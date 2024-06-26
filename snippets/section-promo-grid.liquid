@@ -1,0 +1,572 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a grid of promotional blocks.
+
+  Accepts:
+  - full_width {boolean} - Whether to make the section full width
+  - gutter_size {number} - The size of the gutters between blocks
+  - space_above {boolean} - Whether to add space above the section
+  - space_below {boolean} - Whether to add space below the section
+  - hide_block_images {boolean} - Whether to hide block images
+  - promo_grid_image_ratio {boolean} - Whether to maintain the aspect ratio of the image
+  - hydration {string} - The hydration strategy for the section
+
+  Usage:
+  {% render 'section-promo-grid' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: false, allow_false: true
+  assign gutter_size = gutter_size | default: section.settings.gutter_size | default: 20
+  assign space_above = space_above | default: section.settings.space_above, allow_false: true | default: false, allow_false: true
+  assign space_below = space_below | default: section.settings.space_below, allow_false: true | default: false, allow_false: true
+  assign hide_block_images = hide_block_images | default: section.settings.hide_block_images, allow_false: true | default: false, allow_false: true
+  assign promo_grid_image_ratio = promo_grid_image_ratio | default: section.settings.promo_grid_image_ratio, allow_false: true | default: true, allow_false: true
+  assign hydration = hydration | default: 'on:visible'
+
+  assign lazyload_images = true
+
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <div
+    data-section-id="{{ section.id }}"
+    data-section-type="promo-grid"
+  >
+    {%- unless full_width -%}
+      <div class="page-width">
+    {%- endunless -%}
+
+    {%- style -%}
+      .flex-grid--{{ section.id }} {
+        margin-top: -{{ gutter_size }}px;
+        margin-left: -{{ gutter_size }}px;
+        {% if full_width %}
+          padding-left: {{ gutter_size }}px;
+          padding-right: {{ gutter_size }}px;
+        {% endif %}
+      }
+
+      .flex-grid--{{ section.id }} .flex-grid--gutters {
+        margin-top: -{{ gutter_size }}px;
+        margin-left: -{{ gutter_size }}px;
+      }
+
+      .flex-grid--{{ section.id }} .flex-grid__item {
+        padding-top: {{ gutter_size }}px;
+        padding-left: {{ gutter_size }}px;
+      }
+
+      @media only screen and (max-width: 589px) {
+        .flex-grid--{{ section.id }} {
+          margin-top: -{{ gutter_size | divided_by: 2 }}px;
+          margin-left: -{{ gutter_size | divided_by: 2 }}px;
+          {% if full_width %}
+            padding-left: {{ gutter_size | divided_by: 2 }}px;
+            padding-right: {{ gutter_size | divided_by: 2 }}px;
+          {% endif %}
+        }
+
+        .flex-grid--{{ section.id }} .flex-grid--gutters {
+          margin-top: -{{ gutter_size | divided_by: 2 }}px;
+          margin-left: -{{ gutter_size | divided_by: 2 }}px;
+        }
+
+        .flex-grid--{{ section.id }} .flex-grid__item {
+          padding-top: {{ gutter_size | divided_by: 2 }}px;
+          padding-left: {{ gutter_size | divided_by: 2 }}px;
+        }
+      }
+    {%- endstyle -%}
+
+    <div
+      class="
+        promo-grid
+        {% if space_above %} promo-grid--space-top{% endif %}
+        {% if space_below %} promo-grid--space-bottom{% endif %}
+        {% if hide_block_images %} promo-grid--hidden-block-images{% endif %}
+      "
+    >
+      <div class="flex-grid flex-grid--gutters flex-grid--{{ section.id }}">
+        {%- for block in section.blocks -%}
+          {%- style -%}
+            {% if block.settings.height %}
+              .flex-grid__item--{{ block.id }} {
+                min-height: {{ block.settings.height | times: 0.6 }}px;
+              }
+
+              @media only screen and (min-width: 769px) {
+                .flex-grid__item--{{ block.id }} {
+                  min-height: {{ block.settings.height | times: 0.8 }}px;
+                }
+              }
+
+              @media only screen and (min-width: 1140px) {
+                .flex-grid__item--{{ block.id }} {
+                  min-height: {{ block.settings.height }}px;
+                }
+              }
+            {% endif %}
+
+            {%- assign accent_exists = false -%}
+            {%- assign button_alpha = block.settings.color_accent | color_extract: 'alpha' -%}
+            {% unless button_alpha == 0.0 %}
+              {%- assign accent_exists = true -%}
+              .flex-grid__item--{{ block.id }} .btn {
+                background: {{ block.settings.color_accent }} !important;
+                border: none !important;
+
+                {%- assign accent_brightness = block.settings.color_accent | color_extract: 'lightness' -%}
+
+                {% if accent_brightness > 60 %}
+                  color: #000 !important;
+                {% endif %}
+              }
+            {% endunless %}
+          {%- endstyle -%}
+
+          {%- liquid
+            assign blockWidth = block.settings.width | times: 1
+            if forloop.index == 1 and blockWidth >= 50
+              assign loading = lazyload_images
+            else
+              assign loading = true
+            endif
+          -%}
+
+          <div
+            class="flex-grid__item flex-grid__item--{{ block.settings.width }} flex-grid__item--{{ block.id }} type-{{ block.type }}"
+            {{ block.shopify_attributes }}
+          >
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                <div class="promo-grid__container">
+                  {%- render block -%}
+                </div>
+              {%- when 'advanced' -%}
+                <div
+                  class="promo-grid__container {{ block.settings.text_align }}"
+                >
+                  {%- if block.settings.cta_link1 != blank and block.settings.cta_link2 == blank -%}
+                    <a
+                      href="{{ block.settings.cta_link1 }}"
+                      class="promo-grid__slide-link"
+                      aria-hidden="true"
+                      aria-label="{{ block.settings.cta_text1 }}"
+                    ></a>
+                  {%- endif -%}
+
+                  <div class="promo-grid__bg">
+                    {%- if block.settings.video_url != '' -%}
+                      {%- render 'promo-video', block: block -%}
+                    {%- else -%}
+                      {%- if block.settings.image != blank -%}
+                        {%- capture image_classes -%}
+                          image-fit promo-grid__bg-image promo-grid__bg-image--{{ block.id }}
+                        {%- endcapture -%}
+                        {%- render 'image-element',
+                          img: block.settings.image,
+                          loading: loading,
+                          sizeVariable: block.settings.width,
+                          classes: image_classes
+                        -%}
+                      {%- else -%}
+                        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                    {%- endif -%}
+                  </div>
+
+                  {%- if block.settings.subheading != blank
+                    or block.settings.heading != blank
+                    or block.settings.textarea != blank
+                    or block.settings.cta_text1 != blank
+                    or block.settings.cta_text2 != blank
+                  -%}
+                    <div class="promo-grid__content">
+                      <div class="promo-grid__text">
+                        {%- if block.settings.subheading != blank -%}
+                          <div class="rte--block rte--em">
+                            {{ block.settings.subheading }}
+                          </div>
+                        {%- endif -%}
+                        {%- if block.settings.heading != blank -%}
+                          <h2 class="rte--block rte--strong">
+                            {{ block.settings.heading }}
+                          </h2>
+                        {%- endif -%}
+                        {%- if block.settings.textarea != blank -%}
+                          <div class="rte--block enlarge-text">
+                            {{ block.settings.textarea | newline_to_br }}
+                          </div>
+                        {%- endif -%}
+                        {%- if block.settings.cta_text1 != blank -%}
+                          <a
+                            href="{{ block.settings.cta_link1 }}"
+                            class="btn{% unless accent_exists %} btn--inverse{% endunless %}"
+                          >
+                            {{ block.settings.cta_text1 }}
+                          </a>
+                        {%- endif -%}
+                        {%- if block.settings.cta_text2 != blank -%}
+                          <a
+                            href="{{ block.settings.cta_link2 }}"
+                            class="btn{% unless accent_exists %} btn--inverse{% endunless %}"
+                          >
+                            {{ block.settings.cta_text2 }}
+                          </a>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+
+              {%- when 'sale_collection' -%}
+                <a
+                  href="{{ collections[block.settings.sale_collection].url }}"
+                  class="promo-grid__container vertical-center horizontal-left color-scheme-{{ block.settings.color_scheme }}"
+                >
+                  {%- if block.settings.color_scheme != 'none' -%}
+                    {%- render 'color-scheme-texture', color_scheme: block.settings.color_scheme -%}
+                  {%- endif -%}
+
+                  {%- if block.settings.top_text != blank
+                    or block.settings.middle_text != blank
+                    or block.settings.bottom_text != blank
+                  -%}
+                    <div class="promo-grid__content{% if block.settings.width == '50' %} promo-grid__content--small-text{% endif %}">
+                      <div class="promo-grid__text text-center">
+                        {%- if block.settings.top_text != blank -%}
+                          <div class="rte--block enlarge-text">
+                            {{ block.settings.top_text }}
+                          </div>
+                        {%- endif -%}
+                        {%- if block.settings.middle_text != blank -%}
+                          <div class="rte--block rte--strong">
+                            {%- assign middle_text = block.settings.middle_text
+                              | replace: '% off', '% <small>off</small>'
+                              | replace: '%', '<sup>%</sup>'
+                              | replace: '$', '<sup>$</sup>'
+                            -%}
+                            {{ middle_text }}
+                          </div>
+                        {%- endif -%}
+                        {%- if block.settings.bottom_text != blank -%}
+                          <div class="rte--block enlarge-text">
+                            {{ block.settings.bottom_text }}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+
+                  <div class="type-sale-images">
+                    <div class="type-sale-images__crop">
+                      {%- if block.settings.sale_collection != blank -%}
+                        {%- assign collection_image_1 = collections[block.settings.sale_collection].products[0].featured_media.preview_image -%}
+                        <div class="type-sale-images__image">
+                          {%- if collection_image_1 != blank -%}
+                            <div
+                              class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                              style="height: 0; padding-bottom: {{ 100 | divided_by: collection_image_1.aspect_ratio }}%;"
+                            >
+                              {%- liquid
+                                if block.settings.width == '50'
+                                  assign sizeVariable = '25vw'
+                                else
+                                  assign sizeVariable = '50vw'
+                                endif
+
+                                assign fallback = '50vw'
+                              -%}
+                              {%- render 'image-element',
+                                img: collection_image_1,
+                                loading: loading,
+                                widths: '360, 540, 720, 900, 1080, 1600',
+                                sizeVariable: sizeVariable,
+                                fallback: fallback
+                              -%}
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      {%- else -%}
+                        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </a>
+
+              {%- when 'simple' -%}
+                {%- liquid
+                  assign block_img = ''
+                  assign block_text = ''
+                  if block.settings.link contains '/products/'
+                    assign product_handle = block.settings.link | remove: '/products/'
+                    assign block_img = all_products[product_handle].featured_media.preview_image
+                    assign block_text = all_products[product_handle].title
+                  elsif block.settings.link contains '/collections/'
+                    assign lang_code_string = request.locale.iso_code | prepend: '/' | downcase
+                    assign collection_handle = block.settings.link | remove: '/collections/' | remove: lang_code_string
+                    assign block_text = collections[collection_handle].title
+                    if collections[collection_handle].image
+                      assign block_img = collections[collection_handle].image
+                    else
+                      assign block_img = collections[collection_handle].products[0].featured_image
+                    endif
+                  endif
+                  if block.settings.text != ''
+                    assign block_text = block.settings.text
+                  endif
+                  if block.settings.image
+                    assign block_img = block.settings.image
+                  endif
+                -%}
+
+                {%- if block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}" class="promo-grid__container">
+                {%- else -%}
+                  <div class="promo-grid__container">
+                {%- endif -%}
+
+                <div class="promo-grid__bg">
+                  {%- if block_img != blank -%}
+                    {%- render 'image-element',
+                      img: block_img,
+                      loading: loading,
+                      sizeVariable: block.settings.width,
+                      classes: 'image-fit'
+                    -%}
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                </div>
+
+                <div class="promo-grid__content">
+                  <div class="promo-grid__text">
+                    <p class="promo-grid__title h3">
+                      {%- if block_text != blank -%}
+                        {{ block_text | newline_to_br }}
+                      {%- else -%}
+                        Simple promotion
+                      {%- endif -%}
+                    </p>
+                  </div>
+                </div>
+
+                {%- if block.settings.link != blank -%}
+                  </a>
+                {%- else -%}
+                  </div>
+                {%- endif -%}
+
+              {%- when 'image' -%}
+                <div
+                  class="
+                    promo-grid__container
+                    {% if promo_grid_image_ratio %} image-wrap{% endif %}
+                  "
+                >
+                  {%- if block.settings.link -%}
+                    <a href="{{ block.settings.link }}">
+                  {%- endif -%}
+                  {%- if block.settings.image != blank -%}
+                    {% if promo_grid_image_ratio %}
+                      {%- render 'image-element',
+                        img: block.settings.image,
+                        loading: loading,
+                        widths: '360, 540, 720, 900, 1080, 1600',
+                        sizeVariable: block.settings.width
+                      -%}
+                    {% else %}
+                      <div
+                        class="image-wrap"
+                        style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                      >
+                        {%- render 'image-element',
+                          img: block.settings.image,
+                          loading: loading,
+                          widths: '360, 540, 720, 900, 1080, 1600',
+                          sizeVariable: block.settings.width
+                        -%}
+                      </div>
+                    {% endif %}
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                  {%- if block.settings.link -%}
+                    </a>
+                  {%- endif -%}
+                </div>
+
+              {%- when 'banner' -%}
+                {%- if block.settings.link -%}
+                  <a href="{{ block.settings.link }}" class="type-banner__link">
+                {%- endif -%}
+                <div class="promo-grid__container color-scheme-{{ block.settings.color_scheme }}">
+                  {%- if block.settings.color_scheme != 'none' -%}
+                    {%- render 'color-scheme-texture', color_scheme: block.settings.color_scheme -%}
+                  {%- endif -%}
+                  <div class="type-banner__content text-center">
+                    <div class="type-banner__text">
+                      {%- if block.settings.heading != blank -%}
+                        <h2
+                          class="
+                            {% if block.settings.heading_size %}
+                              {{ block.settings.heading_size }}
+                            {% else %}
+                              h3
+                            {% endif %}
+                            {% if block.settings.text_highlight %}
+                              text-highlight
+                              text-highlight--{{ block.settings.text_highlight }}
+                            {% endif %}
+                          "
+                        >
+                          {{ block.settings.heading }}
+                        </h2>
+                      {%- endif -%}
+                      {%- if block.settings.text != blank -%}
+                        <p>{{ block.settings.text }}</p>
+                      {%- endif -%}
+                      {%- if block.settings.label != blank -%}
+                        <p class="btn btn--secondary btn--small">{{ block.settings.label }}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+                {%- if block.settings.link -%}
+                  </a>
+                {%- endif -%}
+
+              {%- when 'product' -%}
+                {%- assign product = all_products[block.settings.product] -%}
+                <div class="promo-grid__container color-scheme-{{ block.settings.color_scheme }}">
+                  {%- if block.settings.color_scheme != 'none' -%}
+                    {%- render 'color-scheme-texture', color_scheme: block.settings.color_scheme -%}
+                  {%- endif -%}
+                  <div class="type-product__wrapper">
+                    <div class="promo-grid__product">
+                      {%- if block.settings.subheading != blank
+                        or block.settings.heading != blank
+                        or block.settings.textarea != blank
+                        or block.settings.link_label != blank
+                      -%}
+                        <div class="promo-grid__product-text type-product__text promo-grid__text small--text-center">
+                          {%- unless product.empty? -%}
+                            <div class="type-product__labels">
+                              {%- if block.settings.label != blank -%}
+                                <div class="type-product__label">
+                                  {{ block.settings.label }}
+                                </div>
+                              {%- endif -%}
+                              {%- if block.settings.enable_price -%}
+                                <div class="type-product__label type-product__label--secondary">
+                                  {%- render 'price', price: product.price -%}
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          {%- endunless -%}
+                          {%- if block.settings.subheading != blank -%}
+                            <div class="rte--block rte--em">
+                              {{ block.settings.subheading }}
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.heading != blank -%}
+                            <div class="rte--block rte--strong">
+                              {{ block.settings.heading }}
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.textarea != blank -%}
+                            <div class="rte--block enlarge-text">
+                              {{ block.settings.textarea | newline_to_br }}
+                            </div>
+                          {%- endif -%}
+                          {%- if block.settings.link_label != blank -%}
+                            <a href="{{ product.url }}" class="btn">
+                              {{ block.settings.link_label }}
+                            </a>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                      <div class="promo-grid__product-images">
+                        {%- unless product.empty? -%}
+                          {%- assign image = product.featured_media.preview_image -%}
+                          <div class="type-product__image">
+                            {%- if image != blank -%}
+                              {%- assign ratio = image.aspect_ratio -%}
+                            {%- else -%}
+                              {%- assign ratio = 1 -%}
+                            {%- endif -%}
+                            <div
+                              class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                              style="height: 0; padding-bottom: {{ 100 | divided_by: ratio }}%;"
+                            >
+                              {%- if image != blank -%}
+                                <a href="{{ product.url }}">
+                                  {%- liquid
+                                    if block.settings.width == '50'
+                                      assign sizeVariable = 'calc(0.6 * 50vw)'
+                                    else
+                                      assign sizeVariable = '60vw'
+                                    endif
+
+                                    assign fallback = '50vw'
+                                  -%}
+                                  {%- render 'image-element',
+                                    img: image,
+                                    loading: loading,
+                                    widths: '360, 540, 720, 900, 1080, 1600',
+                                    sizeVariable: sizeVariable,
+                                    fallback: fallback
+                                  -%}
+                                </a>
+                              {%- else -%}
+                                {%- capture placeholder -%}product-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                                <div class="product-image--placeholder">
+                                  {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+                                </div>
+                              {%- endif -%}
+                            </div>
+                          </div>
+                        {%- else -%}
+                          <div class="type-product__image">
+                            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                          </div>
+                        {%- endunless -%}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {%- if section.blocks.size == 0 -%}
+      <div class="page-width text-center">
+        <div class="rte clearfix">
+          <p>
+            {{ 'info.section_no_content' | t }}
+          </p>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- unless full_width -%}
+      </div>
+    {%- endunless -%}
+  </div>
+
+  <template data-island>
+    <script type="module">
+      import '@archetype-themes/scripts/config'
+      import '@archetype-themes/scripts/modules/video-section'
+      import videoModal from '@archetype-themes/scripts/modules/video-modal'
+
+      videoModal();
+    </script>
+  </template>
+</is-land>

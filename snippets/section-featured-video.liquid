@@ -1,0 +1,65 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the featured video section.
+
+  Accepts:
+  - title {string} - The title of the section
+  - video_url {string} - The URL of the video
+  - divider {boolean} - Whether to add a divider above the section
+  - color_button {color} - The color of the button
+
+  Usage:
+  {% render 'section-featured-video' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title = title | default: section.settings.title
+  assign video_url = video_url | default: section.settings.video_url
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+  assign color_button = color_button | default: settings.color_button | default: '#1c1d1d'
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-width">
+  {%- if title != blank -%}
+    <div class="section-header">
+      <h2>{{ title }}</h2>
+    </div>
+  {%- endif -%}
+  <div class="video-wrapper">
+    {%- if video_url == blank -%}
+      <iframe
+        src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720"
+        title="YouTube iframe"
+        width="850"
+        height="480"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    {%- else -%}
+      {%- if video_url.type == 'youtube' -%}
+        <iframe
+          src="//www.youtube.com/embed/{{ video_url.id }}?rel=0&showinfo=0&vq=720"
+          title="YouTube iframe"
+          width="850"
+          height="480"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      {%- endif -%}
+      {%- if video_url.type == 'vimeo' -%}
+        <iframe
+          src="//player.vimeo.com/video/{{ video_url.id }}?color={{ color_button | remove: "#" }}&byline=0&portrait=0&badge=0"
+          title="Vimeo iframe"
+          width="850"
+          height="480"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

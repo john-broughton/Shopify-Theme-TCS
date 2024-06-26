@@ -1,0 +1,73 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with scrolling text.
+
+  Accepts:
+  - text {string} - The text to display
+  - link {string} - The link to navigate to when the text is clicked
+  - text_size {20-150} - The size of the text
+  - text_spacing {boolean} - Whether to add spacing between the text
+  - direction {'left'|'right'} - The direction the text should scroll
+  - speed {50-300} - The speed at which the text should scroll
+  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme for the section
+
+  Usage:
+  {% render 'section-scrolling-text' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign text = text | default: section.settings.text
+  assign link = link | default: section.settings.link
+  assign text_size = text_size | default: section.settings.text_size | default: 70
+  assign text_spacing = text_spacing | default: section.settings.text_spacing, allow_false: true | default: true, allow_false: true
+  assign direction = direction | default: section.settings.direction | default: 'left'
+  assign speed = speed | default: section.settings.speed | default: 200
+  assign color_scheme = color_scheme | default: section.settings.color_scheme
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+
+  unless color_scheme
+    assign class_name = 'scrolling-text-' | append: section.id
+    render 'color-scheme-override', class_name: class_name
+  endunless
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="color-scheme-{{ color_scheme }}">
+  {%- if color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  {% style %}
+    .scrolling-text-{{ section.id }} {
+      --move-speed: {{ speed }}s;
+    }
+
+    .scrolling-text-{{ section.id }} span {
+      font-size: {{ text_size }}px;
+    }
+  {% endstyle %}
+
+  {% if link != blank %}
+    <a href="{{ link }}">
+  {% endif %}
+
+  <div class="scrolling-text scrolling-text-{{ section.id }}">
+    <div
+      class="scrolling-text__inner scrolling-text__inner--{{ direction }}"
+      aria-hidden="true"
+      tabindex="0"
+      style="gap: {% if text_spacing %}40px{% else %}10px{% endif %};"
+    >
+      {% for i in (1..35) %}
+        <span>{{ text }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if link != blank %}
+    </a>
+  {% endif %}
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

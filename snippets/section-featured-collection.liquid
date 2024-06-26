@@ -1,0 +1,266 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a featured collection section.
+
+  Accepts:
+  - title {string} - The title of the section
+  - heading_size {string} - The size of the heading
+  - heading_position {string} - The position of the heading
+  - collection {object} - The collection to display
+  - carousel_layout {boolean} - Whether to use the carousel layout
+  - count {number} - The number of products to display
+  - products_per_row {number} - The number of products per row
+  - mobile_scrollable {boolean} - Whether to make the grid scrollable on mobile
+  - view_all {boolean} - Whether to show the view all link
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'section-featured-collection', products_per_row: 3 %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title = title | default: section.settings.title
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
+  assign collection = section.settings.home_featured_products | default: collection
+  assign carousel_layout = carousel_layout | default: false, allow_false: true
+  assign count = count | default: section.settings.count | default: 6
+  assign products_per_row = products_per_row | default: section.settings.products_per_row | default: 3 | times: 1
+  assign mobile_scrollable = mobile_scrollable | default: section.settings.mobile_scrollable, allow_false: true | default: true, allow_false: true
+  assign view_all = view_all | default: section.settings.view_all, allow_false: true | default: true, allow_false: true
+  assign hydration = hydration | default: 'on:visible'
+
+  assign product_limit = count | plus: 1
+
+  if mobile_scrollable
+    assign product_limit = count
+  endif
+-%}
+
+{% style %}
+  {% if title != blank %}
+    {% if heading_position == 'right' %}
+      #CollectionSection-{{ section.id }} .section-header__link {
+        padding-left: 20px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        #CollectionSection-{{ section.id }} .section-header__link {
+          padding-left: 10px;
+        }
+      }
+    {% elsif heading_position == 'center' %}
+      #CollectionSection-{{ section.id }} .section-header {
+        position: relative;
+      }
+
+      #CollectionSection-{{ section.id }} .section-header__link {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      {% if text_direction == 'rtl' %}
+        #CollectionSection-{{ section.id }} .section-header__link {
+          right: auto;
+          left: 0;
+        }
+      {% endif %}
+
+      @media only screen and (max-width: 768px) {
+        #CollectionSection-{{ section.id }} .section-header__link {
+          position: relative;
+        }
+      }
+    {% endif %}
+  {% endif %}
+
+  {%- if view_all -%}
+    @media only screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} .section-header__title {
+        text-align: left;
+      }
+
+      {% if text_direction == 'rtl' %}
+        #shopify-section-{{ section.id }} .section-header__title {
+          text-align: right;
+        }
+      {% endif %}
+    }
+  {% endif %}
+{% endstyle %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<is-land {{ hydration }}>
+  <div
+    id="CollectionSection-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-template"
+  >
+    {%- if title != blank or view_all -%}
+      <div class="page-width text-{{ heading_position }}">
+        <div class="section-header{% if view_all and title != blank %} section-header--with-link{% endif %}">
+          {% if title != blank %}
+            <h2 class="section-header__title {{ heading_size }}">
+              {{ title | escape }}
+            </h2>
+          {% endif %}
+          {%- if view_all -%}
+            <a href="{{ collection.url }}" class="section-header__link">
+              {{- 'actions.view_all' | t -}}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- liquid
+      if mobile_scrollable
+        assign fallback = '45vw'
+      else
+        assign fallback = 'variable'
+      endif
+    -%}
+
+    {% if carousel_layout %}
+      <div class="page-width page-width--no-right-padding">
+        <div class="featured-collection__carousel">
+          <div class="featured-collection__block-wrapper featured-collection__block-wrapper-content-position--{{ content_position }}">
+            {% for block in section.blocks %}
+              {% if block.type == 'heading' %}
+                <div
+                  class="featured-collection__block featured-collection__{{ block.type }}-block"
+                  {{ block.shopify_attributes }}
+                >
+                  {% if block.settings.title != blank %}
+                    <p class="{{ block.settings.heading_size }}">{{ block.settings.title | escape }}</p>
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if block.type == 'text' %}
+                <div
+                  class="featured-collection__block featured-collection__{{ block.type }}-block"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- if block.settings.text != blank -%}
+                    <div class="rte">{{ block.settings.text }}</div>
+                  {%- endif -%}
+                </div>
+              {% endif %}
+              {% if block.type == 'image' %}
+                {% if block.settings.image != blank %}
+                  {%- assign block_image = block.settings.image -%}
+                {% else %}
+                  {%- assign block_image = collection.image -%}
+                {% endif %}
+                <div
+                  class="featured-collection__block featured-collection__{{ block.type }}-block {% if mobile_banner_image %}svg-mask--disabled-mobile medium-down--banner-image{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- if block_image != blank -%}
+                    <div
+                      class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                      style="height: 0; padding-bottom: {{ 100 | divided_by: block_image.aspect_ratio }}%;"
+                    >
+                      {%- render 'image-element', img: block_image -%}
+                    </div>
+                  {%- else -%}
+                    <div class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
+                      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {% endif %}
+              {% if block.type == 'button' %}
+                <div
+                  class="featured-collection__block featured-collection__{{ block.type }}-block"
+                  {{ block.shopify_attributes }}
+                >
+                  <a href="{{ collection.url }}" class="section-header__link">
+                    {% if block.settings.label == blank %}
+                      {{ 'actions.view_all' | t }}
+                    {% else %}
+                      {{ block.settings.label }}
+                    {% endif %}
+                  </a>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          <div class="featured-collection__carousel-grid-items">
+            {% if collection != blank %}
+              {% for product in collection.products limit: count %}
+                {% render 'product-grid-item',
+                  product: product,
+                  collection: collection,
+                  sizeVariable: products_per_row,
+                  fallback: fallback
+                %}
+              {% endfor %}
+            {% else %}
+              {% for i in (1..count) %}
+                {% render 'onboarding-product-grid-item' %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if carousel_layout == false %}
+      <div class="page-width{% if mobile_scrollable %} page-width--flush-small{% endif %}">
+        <div
+          class="new-grid product-grid{% if mobile_scrollable %} scrollable-grid--small{% endif %}"
+          {% render 'grid-view-type' %}
+        >
+          {%- if collection == blank or collection.empty? or collection.products_count == 0 -%}
+            {%- liquid
+              for index in (1..product_limit)
+                unless mobile_scrollable
+                  assign item_classes = ''
+                  if forloop.index > count
+                    assign item_classes = 'hide'
+                    assign mod = forloop.index | modulo: 2
+                    if mod == 0
+                      assign item_classes = 'medium-up--hide'
+                    endif
+                  endif
+                endunless
+
+                render 'onboarding-product-grid-item', index: index, wrapper_class: item_classes
+              endfor
+            -%}
+          {%- else -%}
+            {%- liquid
+              for product in collection.products limit: product_limit
+                assign item_classes = ''
+                unless mobile_scrollable
+                  if forloop.index > count
+                    assign item_classes = 'hide'
+                    assign mod = forloop.index | modulo: 2
+                    if mod == 0
+                      assign item_classes = 'medium-up--hide'
+                    endif
+                  endif
+                endunless
+
+                render 'product-grid-item', product: product, collection: collection, classes: item_classes, sizeVariable: products_per_row, fallback: fallback
+              endfor
+            -%}
+          {%- endif -%}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <template data-island>
+    <script type="module">
+      import '@archetype-themes/scripts/config'
+      import '@archetype-themes/scripts/modules/collection-template'
+    </script>
+  </template>
+</is-land>
+
+{%- if divider -%}</div>{%- endif -%}

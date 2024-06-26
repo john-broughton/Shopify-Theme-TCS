@@ -1,0 +1,32 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the title tag for the current page.
+
+  Usage:
+  {% render 'page-title' %}
+{%- endcomment -%}
+
+{%- liquid
+  capture title
+    echo page_title
+
+    if current_tags
+      assign meta_tags = current_tags | join: ', ' | append: ' &ndash; '
+      echo 'labels.tagged_with' | t: tags: meta_tags
+    endif
+
+    if current_page != 1
+      echo 'labels.page_title' | t: page: current_page | prepend: ' &ndash; '
+    endif
+
+    if template == 'password'
+      echo shop.name
+    else
+      unless page_title contains shop.name
+        echo shop.name | prepend: ' &ndash; '
+      endunless
+    endif
+  endcapture
+-%}
+
+<title>{{ title }}</title>

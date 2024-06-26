@@ -1,0 +1,97 @@
+{%- render 'section-background-image-text' -%}
+
+{% schema %}
+{
+  "name": "t:labels.large_image_with",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:labels.subheading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "Large image with text box"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:labels.text",
+      "default": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:labels.button_label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.button_link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:labels.image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:labels.layout",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.text_on_left"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.text_on_right"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "t:labels.section_height",
+      "default": 550,
+      "min": 450,
+      "max": 750,
+      "step": 100,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax",
+      "label": "t:actions.enable_parallax"
+    },
+    {
+      "type": "select",
+      "id": "parallax_direction",
+      "label": "t:labels.parallax_direction",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:labels.vertical"
+        },
+        {
+          "value": "left",
+          "label": "t:labels.horizontal"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.large_image_with"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

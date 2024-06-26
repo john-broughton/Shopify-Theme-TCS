@@ -1,0 +1,17 @@
+{%- render 'section-recently-viewed' -%}
+
+{% schema %}
+{
+  "name": "t:labels.recently_viewed",
+  "class": "recently-viewed__section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.recently_viewed_products_only_visible"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

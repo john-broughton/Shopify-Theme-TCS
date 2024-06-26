@@ -1,0 +1,39 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the footer menu block.
+
+  Accepts:
+  - block {block} - The block object
+  - menu {string} - The menu handle
+  - title {string} - The title of the block
+  - enable_account_link {boolean} - Whether or not to show the account link
+  - blocks_heading_size - The heading size for the block
+
+  Usage:
+  {% render 'footer-menu', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign menu = menu | default: block.settings.menu
+  assign title = title | default: block.settings.title
+  assign enable_account_link = enable_account_link | default: block.settings.enable_account_link, allow_false: true | default: true, allow_false: true
+  assign blocks_heading_size = blocks_heading_size | default: block.settings.heading_size | default: 'h4'
+-%}
+
+<h2 class="footer__title {{ blocks_heading_size }}">
+  {{ title | default: linklists[menu].title }}
+</h2>
+
+<ul class="footer__menu">
+  {%- for link in linklists[menu].links -%}
+    <li>
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    </li>
+  {%- endfor -%}
+
+  {%- if enable_account_link -%}
+    <li>
+      <a href="{{ routes.account_url }}">{{ 'labels.my_account' | t }}</a>
+    </li>
+  {%- endif -%}
+</ul>

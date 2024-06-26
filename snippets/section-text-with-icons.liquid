@@ -1,0 +1,100 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the text with icons section.
+
+  Accepts:
+  - divider {boolean} - Whether to show a divider
+  - title {string} - The title of the section
+  - align_text {'left'|'center'|'right'} - The alignment of the text
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - button_label {string} - The label of the button
+  - button_link {string} - The link of the button
+  - icon_color {color} - The color of the icons
+  - icon_weight {string} - The weight of the icons
+  - desktop_columns_per_row {number} - The number of columns per row on desktop
+
+  Usage:
+  {% render 'section-text-with-icons' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+  assign title = title | default: section.settings.title | default: blank
+  assign align_text = align_text | default: section.settings.heading_position | default: 'left'
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign button_label = button_label | default: section.settings.button_label | default: blank
+  assign button_link = button_link | default: section.settings.button_link | default: blank
+  assign icon_color = icon_color | default: section.settings.icon_color | default: '#000'
+  assign icon_weight = icon_weight | default: settings.icon_weight | default: '5px'
+  assign desktop_columns_per_row = desktop_columns_per_row | default: section.settings.desktop_columns_per_row | default: 3
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div
+  class="text-with-icons"
+  data-section-id="{{ section.id }}"
+  data-section-type="text-with-icons"
+>
+  <div class="page-width">
+    {%- if title != blank -%}
+      <div
+        class="
+          text-with-icons__title
+          section-header
+        "
+      >
+        <h2 class="text-{{ align_text }} {% if heading_size %}{{ heading_size }}{% endif %}">{{ title }}</h2>
+      </div>
+    {%- endif -%}
+    <div
+      class="
+        text-with-icons__blocks
+        has-{{ desktop_columns_per_row }}-per-row
+      "
+      data-block-count="{{ section.blocks.size }}"
+    >
+      {% for block in section.blocks %}
+        <div class="text-with-icons__block text-{{ align_text }}" {{ block.shopify_attributes }}>
+          <div class="text-with-icons__block-icon">
+            {% assign icon_name = block.settings.icon | prepend: 'tcwi-' %}
+            {% render 'icon', name: icon_name %}
+          </div>
+          <div class="text-with-icons__block-title">
+            <h3>{{ block.settings.title }}</h3>
+          </div>
+          <div class="text-with-icons__block-text">
+            {{ block.settings.text }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {%- if button_label != blank -%}
+      <div class="text-with-icons__button">
+        <a href="{{ button_link }}" class="btn btn--secondary">
+          {{ button_label }}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}
+
+{% style %}
+  #shopify-section-{{ section.id }} .icon {
+    color: {{ icon_color }};
+  }
+
+  #shopify-section-{{ section.id }} .icon path,
+  #shopify-section-{{ section.id }} .icon polygon,
+  #shopify-section-{{ section.id }} .icon rect,
+  #shopify-section-{{ section.id }} .icon circle,
+  #shopify-section-{{ section.id }} .icon ellipse,
+  #shopify-section-{{ section.id }} .icon line,
+  #shopify-section-{{ section.id }} .icon polyline,
+  #shopify-section-{{ section.id }} .icon g {
+    stroke-width: {{ icon_weight | replace: 'px', '' | minus: 1 }}px;
+  }
+{% endstyle %}

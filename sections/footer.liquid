@@ -1,0 +1,248 @@
+{%- render 'section-footer' -%}
+
+{% schema %}
+{
+  "name": "t:labels.footer",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:labels.newsletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "t:actions.show_newsletter_signup",
+      "info": "t:info.customers_who_subscribe_accept_marketing",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "newsletter_richtext",
+      "label": "t:labels.text",
+      "default": "<p>Subscribe today to hear first about our sales</p>"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.additional_footer_content"
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_main_menu",
+      "label": "t:actions.repeat_main_menu",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_copyright",
+      "label": "t:actions.show_copyright"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "t:labels.additional_copyright_text"
+    },
+    {
+      "type": "link_list",
+      "id": "policies_menu",
+      "label": "t:labels.policies_menu",
+      "info": "t:info.menu_shows_top_level"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "payment",
+      "name": "t:labels.payments_and_localization",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_payment_icons",
+          "label": "t:actions.show_payment_icons",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_locale_selector",
+          "label": "t:actions.show_language_selector",
+          "info": "t:info.to_add_language_settings",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_selector",
+          "label": "t:actions.show_currency_selector",
+          "info": "t:info.to_add_currency_settings",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_currency_flags",
+          "label": "t:actions.show_currency_flags",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "menu",
+      "name": "t:labels.navigation",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.title",
+          "info": "t:info.defaults_to_menu_title"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "t:actions.choose_a_menu",
+          "default": "footer",
+          "info": "t:info.menu_shows_top_level"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_account_link",
+          "label": "t:actions.add_my_account_link"
+        }
+      ]
+    },
+    {
+      "type": "contact",
+      "name": "t:labels.contact_and_social",
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:labels.contact"
+        },
+        {
+          "type": "text",
+          "id": "phone",
+          "label": "t:labels.phone_number"
+        },
+        {
+          "type": "page",
+          "id": "contact",
+          "label": "t:labels.contact_page"
+        },
+        {
+          "type": "page",
+          "id": "chat",
+          "label": "t:labels.chat_link"
+        },
+        {
+          "type": "header",
+          "content": "t:labels.social"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_social",
+          "label": "t:actions.show_social_accounts",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image",
+          "info": "t:actions.add_alt_text"
+        },
+        {
+          "type": "select",
+          "id": "image_mask",
+          "label": "t:labels.image_shape",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:labels.none"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            },
+            {
+              "value": "rounded",
+              "label": "t:labels.rounded"
+            },
+            {
+              "value": "rounded-wave",
+              "label": "t:labels.rounded_wave"
+            },
+            {
+              "value": "rounded-top",
+              "label": "t:labels.arch"
+            },
+            {
+              "value": "star",
+              "label": "t:labels.star"
+            },
+            {
+              "value": "splat-1",
+              "label": "t:labels.splat_1"
+            },
+            {
+              "value": "splat-2",
+              "label": "t:labels.splat_2"
+            },
+            {
+              "value": "splat-3",
+              "label": "t:labels.splat_3"
+            },
+            {
+              "value": "splat-4",
+              "label": "t:labels.splat_4"
+            }
+          ]
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:labels.link",
+          "info": "t:labels.optional"
+        }
+      ]
+    },
+    {
+      "type": "follow_shop_cta",
+      "name": "t:labels.follow_on_shop",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:info.enable_shop_pay_for_shop_app_follow"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {},
+    "blocks": [
+      {
+        "type": "menu",
+        "settings": {}
+      },
+      {
+        "type": "payment",
+        "settings": {}
+      }
+    ]
+  },
+  "disabled_on": {
+    "groups": ["header", "custom.popups"]
+  }
+}
+{% endschema %}

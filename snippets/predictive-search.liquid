@@ -1,0 +1,80 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the predictive search component.
+
+  Accepts:
+  - context {string} - The context in which the predictive search is being used.
+  - predictive_search_enabled {boolean} - Enable predictive search
+  - color_header_search {color} - The color of the header search
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'predictive-search', context: 'header' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign context = context | default: blank
+  assign predictive_search_enabled = predictive_search_enabled | default: settings.predictive_search_enabled, allow_false: true | default: true, allow_false: true
+  assign color_header_search = color_header_search | default: settings.color_header_search | default: '#fff'
+  assign hydration = hydration | default: 'on:idle'
+
+  assign dark_search_bg = false
+  assign lightness = color_header_search | color_brightness
+
+  if lightness <= 100
+    assign dark_search_bg = true
+  endif
+-%}
+<is-land {{ hydration }}>
+  <predictive-search
+    data-context="{{ context }}"
+    data-enabled="{{ predictive_search_enabled }}"
+    data-dark="{{ dark_search_bg }}"
+  >
+    <div class="predictive__screen" data-screen></div>
+    <form action="{{ routes.search_url }}" method="get" role="search">
+      <label for="Search" class="visually-hidden">Search</label>
+      <div class="search__input-wrap">
+        <input
+          class="search__input"
+          id="Search"
+          type="search"
+          name="q"
+          value="{{ search.terms | escape }}"
+          role="combobox"
+          aria-expanded="false"
+          aria-owns="predictive-search-results"
+          aria-controls="predictive-search-results"
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="{{ 'labels.search' | t }}"
+          tabindex="0"
+        >
+        <input name="options[prefix]" type="hidden" value="last">
+        <button class="btn--search" type="submit">
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64">
+            <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58zM54 54L41.94 42"/>
+          </svg>
+          <span class="icon__fallback-text visually-hidden">{{ 'labels.search' | t }}</span>
+        </button>
+      </div>
+
+      <button class="btn--close-search">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64">
+          <defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M19 17.61l27.12 27.13m0-27.13L19 44.74"/>
+        </svg>
+      </button>
+      <div id="predictive-search" class="search__results" tabindex="-1"></div>
+    </form>
+  </predictive-search>
+
+  <template data-island>
+    <script type="module">
+      import 'components/predictive-search'
+    </script>
+  </template>
+</is-land>

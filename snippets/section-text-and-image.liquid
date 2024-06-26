@@ -1,0 +1,189 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with an image and text.
+
+  Accepts:
+  - subtitle {string} - The subtitle of the section
+  - title {string} - The title of the section
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - text {string} - The text of the section
+  - button_label {string} - The label of the button
+  - button_link {link} - The link of the button
+  - button_style {'primary'|'secondary'} - The style of the button
+  - align_text {'left'|'center'|'right'} - The alignment of the text
+  - layout {'left'|'right'} - The layout of the section
+  - image_width {string} - The width of the image
+  - image {image} - The image of the section
+  - image_mask {'none'|'portrait'|'landscape'|'square'|'rounded'} - The mask of the image
+  - image2 {image} - The second image of the section
+  - image2_mask {'none'|'portrait'|'landscape'|'square'|'rounded'} - The mask of the second image
+  - show_wave {boolean} - Whether to show the wave background
+  - divider {boolean} - Whether to add a divider above the section
+  - top_padding {boolean} - Whether to add top padding to the section
+  - bottom_padding {boolean} - Whether to add bottom padding to the section
+  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme of the section
+
+  Usage:
+  {% render 'section-text-and-image' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign subtitle = subtitle | default: section.settings.subtitle | default: blank
+  assign title = title | default: section.settings.title
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign text = text | default: section.settings.text
+  assign button_label = button_label | default: section.settings.button_label | default: blank
+  assign button_link = button_link | default: section.settings.button_link
+  assign button_style = button_style | default: section.settings.button_style | default: 'primary'
+  assign align_text = align_text | default: section.settings.align_text | default: 'left'
+  assign layout = layout | default: section.settings.layout | default: 'right'
+  assign image_width = image_width | default: section.settings.image_width | default: '50'
+  assign image = image | default: section.settings.image
+  assign image_mask = image_mask | default: section.settings.image_mask | default: 'none'
+  assign image2 = image2 | default: section.settings.image2
+  assign image2_mask = image2_mask | default: section.settings.image2_mask | default: 'none'
+  assign show_wave = show_wave | default: section.settings.show_wave, allow_false: true | default: false, allow_false: true
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+  assign top_padding = top_padding | default: section.settings.top_padding, allow_false: true | default: true, allow_false: true
+  assign bottom_padding = bottom_padding | default: section.settings.bottom_padding, allow_false: true | default: true, allow_false: true
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
+
+  assign lazyload_images = true
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+{%- liquid
+  assign image_width = image_width
+  assign overlap_images = true
+  if image == blank or image2 == blank
+    assign overlap_images = false
+  endif
+
+  if image == blank and image2 == blank
+    assign overlap_images = true
+    assign placeholder_images = true
+  endif
+-%}
+
+{% style %}
+  {% if top_padding == false %}
+    #shopify-section-{{ section.id }} .index-section { padding-top: 0 !important; }
+  {% endif %}
+  {% if bottom_padding == false %}
+    #shopify-section-{{ section.id }} .index-section { padding-bottom: 0 !important; }
+  {% endif %}
+{% endstyle %}
+
+<div class="index-section color-scheme-{{ color_scheme }} {% if show_wave %}background-svg--wave{% endif %}">
+  {%- if color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+
+  <div class="page-width feature-row-wrapper feature-row--{{ image_width }}">
+    {%- capture image_layout -%}
+      <div class="feature-row__item feature-row__images{% if overlap_images %} feature-row__item--overlap-images{% endif %} {% if placeholder_images %}feature-row__item--placeholder-images{% endif %}">
+          {%- if image != blank -%}
+            <div class="feature-row__first-image">
+              {%- if button_label != blank and button_link != blank -%}<a href="{{ button_link }}">{%- endif -%}
+                <div class="image-wrap {% if image_mask != 'none' %}svg-mask svg-mask--{{ image_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: image.aspect_ratio }}%;">
+                  {%- liquid
+                    if image2 == blank
+                      assign sizeVariable = image_width | append: 'vw'
+                      assign fallback = '100vw'
+                    else
+                      assign sizeVariable = 'calc(0.4 * 50vw)'
+                      assign fallback = '40vw'
+                    endif
+
+                    assign imageWidth = image_width | times: 1
+                    if imageWidth >= 50
+                      assign loading = lazyload_images
+                    else
+                      assign loading = true
+                    endif
+                  -%}
+                  {%- render 'image-element',
+                    img: image,
+                    widths: '180, 360, 540, 750, 900, 1080',
+                    loading: loading,
+                    sizeVariable: sizeVariable,
+                    fallback: fallback,
+                    classes: 'feature-row__image',
+                  -%}
+                </div>
+              {%- if button_label != blank and button_link != blank -%}</a>{%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if image2 != blank -%}
+            <div class="feature-row__second-image">
+              {%- if button_label != blank and button_link != blank -%}<a href="{{ button_link }}">{%- endif -%}
+                <div class="image-wrap {% if image2_mask != 'none' %}svg-mask svg-mask--{{ image2_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: image2.aspect_ratio }}%;">
+                  {%- liquid
+                    if image == blank
+                      assign sizeVariable = image_width | append: 'vw'
+                      assign fallback = '100vw'
+                    else
+                      assign sizeVariable = 'calc(0.6 * 50vw)'
+                      assign fallback = '60vw'
+                    endif
+                  -%}
+                  {%- render 'image-element',
+                    img: image2,
+                    widths: '180, 360, 540, 750, 900, 1080',
+                    sizeVariable: sizeVariable,
+                    fallback: fallback,
+                    classes: 'feature-row__image',
+                  -%}
+                </div>
+              {%- if button_label != blank and button_link != blank -%}</a>{%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if image == blank and image2 == blank -%}
+            <div class="placeholder-image-wrap">
+              <div class="image-wrap">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+            <div class="placeholder-image-wrap">
+              <div class="image-wrap">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+          {%- endif -%}
+      </div>
+    {%- endcapture -%}
+
+    <div class="feature-row">
+      {%- if layout == 'left' -%}
+        {{ image_layout }}
+      {%- endif -%}
+
+      <div class="feature-row__item feature-row__text feature-row__text--{{ layout }} text-{{ align_text }}">
+        {%- if subtitle != blank -%}
+          <p class="accent-subtitle">{{ subtitle }}</p>
+        {%- endif -%}
+        {%- if title != blank -%}
+          <h2 class="{{ heading_size }}">{{ title | escape }}</h2>
+        {%- endif -%}
+        {%- if text != blank -%}
+          <div class="rte featured-row__subtext clearfix">{{ text }}</div>
+        {%- endif -%}
+        {%- if button_label != blank -%}
+          <a href="{{ button_link }}" class="btn btn--{{ button_style }}">
+            {{ button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- if layout == 'right' -%}
+        {{ image_layout }}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

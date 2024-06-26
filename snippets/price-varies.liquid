@@ -1,0 +1,31 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders the price varies component.
+
+  Accepts:
+  - price {number} - The price of the product
+
+  Usage:
+  {% render 'price-varies', price: product.price_min %}
+{% endcomment %}
+
+{%- liquid
+  assign price = price | default: blank
+
+  assign formatted_price = price | money
+  assign raw_price = price | money
+  unless shop.money_format contains 'money' or shop.money_format contains '.'
+    if superscript_decimals
+      if shop.money_format contains '{{amount}}' or shop.money_format contains '{{ amount }}'
+        assign formatted_price = formatted_price | replace: '.', '<sup>' | append: '</sup>'
+      elsif shop.money_format contains '{{amount_with_comma_separator}}' or shop.money_format contains '{{ amount_with_comma_separator }}'
+        assign formatted_price = formatted_price | replace: ',', '<sup>' | append: '</sup>'
+      endif
+    endif
+  endunless
+-%}
+
+<span aria-hidden="true" class="grid-product__price--from">
+  {{- 'labels.from_price_html' | t: price: formatted_price -}}
+</span>
+<span class="visually-hidden">{{ 'labels.from_price_html' | t: price: raw_price }}</span>

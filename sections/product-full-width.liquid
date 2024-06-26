@@ -1,0 +1,126 @@
+{%- render 'section-product-full-width' -%}
+
+{% schema %}
+{
+  "name": "t:labels.fullwidth_details",
+  "class": "product-full-width",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.for_product_with_long_descriptions"
+    },
+    {
+      "type": "checkbox",
+      "id": "max_width",
+      "label": "t:labels.optimize_for_readability",
+      "info": "t:info.applies_a_maximum_width",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "description",
+      "name": "t:labels.description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "is_tab",
+          "label": "t:actions.show_as_tab"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:labels.text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Text block",
+          "label": "t:labels.text"
+        }
+      ]
+    },
+    {
+      "type": "tab",
+      "name": "t:labels.tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Shipping information"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:labels.tab_content",
+          "default": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:labels.tab_content_from"
+        }
+      ]
+    },
+    {
+      "type": "share",
+      "name": "t:actions.share_on_social",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:info.choose_which_platforms_share_theme_settings"
+        }
+      ]
+    },
+    {
+      "type": "separator",
+      "name": "t:labels.separator"
+    },
+    {
+      "type": "contact",
+      "name": "t:labels.contact_form",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:info.all_submissions_sent_to_store_email"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Ask a question"
+        },
+        {
+          "type": "checkbox",
+          "id": "phone",
+          "label": "t:actions.add_phone_number"
+        }
+      ]
+    },
+    {
+      "type": "custom",
+      "name": "t:labels.html",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "code",
+          "label": "t:labels.html",
+          "default": "<h4>Custom code block</h4><p>Use this advanced section to add custom HTML, app scripts, or liquid.</p>",
+          "info": "t:labels.supports_liquid"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

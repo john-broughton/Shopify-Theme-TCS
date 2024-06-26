@@ -1,0 +1,132 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a map section.
+
+  Accepts:
+  - map_title {string} - Title of the map
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - Size of the heading
+  - heading_position {'left'|'center'|'right'} - Position of the heading
+  - address {string} - Address text of the map
+  - map_address {string} - Address for the map
+  - api_key {string} - Google Maps API key
+  - show_button {boolean} - Whether to show the button
+  - bg_image {image} - Background image object
+  - hydration {string} - Hydration strategy for the component
+
+  Usage:
+  {% render 'section-map' %}
+{%- endcomment -%}
+
+<script>
+  theme.strings.addressError = {{ 'info.address_error' | t | json }};
+  theme.strings.addressNoResults = {{ 'info.address_no_results' | t | json }};
+  theme.strings.addressQueryLimit = {{ 'info.address_query_limit_html' | t | json }};
+  theme.strings.authError = {{ 'info.map_auth_error_html' | t | json }};
+</script>
+
+{%- liquid
+  assign map_title = map_title | default: section.settings.map_title
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
+  assign address = address | default: section.settings.address
+  assign map_address = map_address | default: section.settings.map_address
+  assign api_key = api_key | default: section.settings.api_key
+  assign show_button = show_button | default: section.settings.show_button, allow_false: true | default: true, allow_false: true
+  assign bg_image = bg_image | default: section.settings.background_image
+  assign hydration = hydration | default: 'on:visible'
+
+  assign display_map = false
+  assign onboarding = false
+  assign lazyload_images = true
+
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+
+  if api_key == blank and bg_image == blank
+    assign onboarding = true
+  endif
+
+  if api_key != blank and map_address
+    assign display_map = true
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <map-section
+    class="map-section display-map--{{ display_map }} {% if bg_image != blank %}bg-image--true{% endif %}"
+    data-section-id="{{ section.id }}"
+    data-section-type="map"
+  >
+    {%- if map_title != blank or address != blank -%}
+      <div class="map-section__overlay-wrapper" data-map-overlay>
+        <div class="map-section__overlay">
+          <div class="animation-contents">
+            <div class="map-section__overlay-inner text-{{ heading_position }}">
+              {%- if map_title != blank -%}
+                <h3 class="text-spacing {{ heading_size }}">{{ map_title | escape }}</h3>
+              {%- endif -%}
+              {%- if address != blank -%}
+                <div class="rte-setting text-spacing">{{ address }}</div>
+                {%- if show_button -%}
+                  <a
+                    href="https://maps.google.com?daddr={{ map_address | escape }}"
+                    class="btn btn--small"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="{{ map_title }}"
+                  >
+                    {{- 'actions.get_directions' | t -}}
+                  </a>
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    <a
+      data-map-link
+      class="map-section__link"
+      href="https://www.google.com/maps/place/{{ map_address | escape }}"
+      target="_blank"
+      rel="noopener"
+      aria-label="{{ map_address | escape }}"
+    ></a>
+
+    {%- if onboarding -%}
+      <div class="map-onboarding">
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+
+    <div
+      id="Map-{{ section.id }}"
+      data-map
+      class="map-section__container map-{{ section.id }}"
+      data-address-setting="{{ map_address | escape }}"
+      data-api-key="{{ api_key }}"
+    >
+      {%- if bg_image.src != blank -%}
+        {%- unless display_map -%}
+          {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+          {%- render 'image-element', img: bg_image, img_width: 1800, loading: lazyload_images -%}
+          {%- style -%}
+            @media only screen and (max-width: 750px) {
+              .map-{{ section.id }} {
+                padding-top: {{ 1 | divided_by: bg_image.aspect_ratio | times: 100 }}%;
+              }
+            }
+          {%- endstyle -%}
+        {%- endunless -%}
+      {%- endif -%}
+    </div>
+  </map-section>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-map'
+    </script>
+  </template>
+</is-land>

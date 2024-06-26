@@ -1,0 +1,260 @@
+{%- render 'section-newsletter' -%}
+
+{% schema %}
+{
+  "name": "t:labels.email_signup",
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "title",
+      "name": "t:labels.title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Sign up and save"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "t:labels.heading_size",
+          "default": "h2",
+          "options": [
+            {
+              "value": "h3",
+              "label": "t:labels.sizes.small"
+            },
+            {
+              "value": "h2",
+              "label": "t:labels.sizes.medium"
+            },
+            {
+              "value": "h1",
+              "label": "t:labels.sizes.large"
+            },
+            {
+              "value": "h0",
+              "label": "t:labels.sizes.extra_large"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:labels.text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.subheading",
+          "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "name": "t:labels.form",
+      "limit": 1
+    },
+    {
+      "type": "share_buttons",
+      "name": "t:labels.share_buttons",
+      "limit": 1
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.customers_who_subscribe_accept_marketing"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "1",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:labels.none"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:labels.content_alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.centered"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:labels.image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:labels.image",
+      "info": "t:actions.add_alt_text"
+    },
+    {
+      "type": "select",
+      "id": "image_width",
+      "label": "t:labels.image_size",
+      "default": "33",
+      "options": [
+        {
+          "value": "33",
+          "label": "t:labels.sizes.small"
+        },
+        {
+          "value": "50",
+          "label": "t:labels.sizes.medium"
+        },
+        {
+          "value": "66",
+          "label": "t:labels.sizes.large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_mask",
+      "label": "t:labels.image_shape",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:labels.none"
+        },
+        {
+          "value": "portrait",
+          "label": "t:labels.portrait"
+        },
+        {
+          "value": "landscape",
+          "label": "t:labels.landscape"
+        },
+        {
+          "value": "square",
+          "label": "t:labels.square"
+        },
+        {
+          "value": "rounded",
+          "label": "t:labels.rounded"
+        },
+        {
+          "value": "rounded-wave",
+          "label": "t:labels.rounded_wave"
+        },
+        {
+          "value": "rounded-top",
+          "label": "t:labels.arch"
+        },
+        {
+          "value": "star",
+          "label": "t:labels.star"
+        },
+        {
+          "value": "splat-1",
+          "label": "t:labels.splat_1"
+        },
+        {
+          "value": "splat-2",
+          "label": "t:labels.splat_2"
+        },
+        {
+          "value": "splat-3",
+          "label": "t:labels.splat_3"
+        },
+        {
+          "value": "splat-4",
+          "label": "t:labels.splat_4"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:labels.position",
+      "default": "right",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:actions.show_section_divider",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "t:actions.show_top_padding",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "t:actions.show_bottom_padding",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.email_signup",
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "form"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}

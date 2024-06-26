@@ -1,0 +1,84 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a collection grid item.
+
+  Accepts:
+  - block {block} - The block object
+  - collection {collection} - The collection object
+  - collection_title {string} - The collection title
+  - collection_grid_image {string} - The collection grid image
+  - collection_grid_shape {string} - The collection grid shape
+  - collection_grid_image_fill {string} - The collection grid image fill
+  - collection_grid_color {string} - The collection grid color
+  - grid_view {string} - The grid view class
+
+  Usage:
+  {% render 'collection-grid-item', collection: collection %}
+{%- endcomment -%}
+
+{%- liquid
+  assign block = block | default: blank
+  assign collection = section.settings.collection | default: collection
+  assign collection_title = collection_title | default: blank
+  assign collection_grid_image = collection_grid_image | default: settings.collection_grid_image | default: 'collection'
+  assign collection_grid_shape = collection_grid_shape | default: settings.collection_grid_shape | default: 'square'
+  assign collection_grid_image_fill = collection_grid_image_fill | default: settings.collection_grid_image_fill, allow_false: true | default: true, allow_false: true
+  assign collection_grid_color = collection_grid_color | default: settings.collection_grid_color | default: 'grey'
+
+  assign collection_link = collection.url
+  if block.settings.title != blank
+    assign title_output = block.settings.title
+  else
+    if collection == blank
+      assign title_output = 'labels.example_collection' | t
+      assign collection_link = '/collections/all'
+    elsif collection_title != blank
+      assign title_output = collection_title
+    else
+      assign title_output = collection.title | escape
+    endif
+  endif
+-%}
+
+<div class="grid-item {{ grid_view }}" {{ block.shopify_attributes }}>
+  <a href="{{ collection_link }}" class="collection-item">
+    {%- liquid
+      if collection_grid_image == 'collection' and collection.image
+        assign collection_image = collection.image
+        assign using_collection_image = true
+      else
+        assign collection_image = collection.products.first.featured_media.preview_image
+        assign using_collection_image = false
+      endif
+    -%}
+
+    <div
+      class="
+        collection-image-wrap collection-image--{{ collection_grid_shape }}
+        collection-image-fill-space--{{ collection_grid_image_fill }}
+        collection-image-color--{{ collection_grid_color | default: 'undefined' }}
+        overlay
+        {% if collection_grid_color == 'white' %}overlay--before{% endif %}
+      "
+    >
+      {%- if collection == blank or collection_image == blank -%}
+        {%- capture placeholder -%}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+        <div class="collection-image collection-image--placeholder">
+          {{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- else -%}
+        <div class="collection-image{% if using_collection_image %} collection-image--is-collection{% endif %} image-wrap">
+          {%- render 'image-element',
+            img: collection_image,
+            sizes: sizes,
+            sizeVariable: sizeVariable,
+            fallback: fallback,
+            widths: '720, 900, 1080'
+          -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <span class="collection-item__title">{{ title_output }}</span>
+  </a>
+</div>

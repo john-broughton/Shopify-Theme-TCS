@@ -1,0 +1,185 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a slideshow image section.
+
+  Accepts:
+  - full_width {boolean} - Whether to make the section full width
+  - autoplay {boolean} - Whether to autoplay the slideshow
+  - autoplay_speed {5-10} - The speed at which the slideshow should autoplay
+  - style {'minimal'|'arrows'|'bars'|'dots'} - The style of the slideshow
+  - hydration {string} - The hydration strategy for the section
+
+  Usage:
+  {% render 'section-slideshow-image' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: false, allow_false: true
+  assign autoplay = autoplay | default: section.settings.autoplay, allow_false: true | default: true, allow_false: true
+  assign autoplay_speed = autoplay_speed | default: section.settings.autoplay_speed | default: 7
+  assign style = style | default: section.settings.style | default: 'arrows'
+  assign hydration = hydration | default: 'on:visible'
+
+  assign lazyload_images = true
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <slideshow-section>
+    {%- unless full_width -%}
+      <div class="page-width hero--padded">
+    {%- endunless -%}
+    <div
+      data-section-id="{{ section.id }}"
+      data-section-type="slideshow-section"
+    >
+      {%- if section.blocks.size > 0 -%}
+        <div class="slideshow-wrapper">
+          {%- if autoplay and style == 'bars' and section.blocks.size > 1 -%}
+            {%- style -%}
+              [data-bars][data-autoplay="true"] .flickity-page-dots .dot:after {
+                animation-duration: {{ autoplay_speed | times: 1000 }}ms;
+              }
+            {%- endstyle -%}
+
+            <button
+              type="button"
+              class="visually-hidden slideshow__pause"
+              data-id="{{ section.id }}"
+              aria-live="polite"
+            >
+              <span class="slideshow__pause-stop">
+                {% render 'icon', name: 'pause' %}
+                <span class="icon__fallback-text visually-hidden">{{ 'actions.slideshow_pause' | t }}</span>
+              </span>
+              <span class="slideshow__pause-play">
+                {% render 'icon', name: 'play' %}
+                <span class="icon__fallback-text visually-hidden">{{ 'actions.slideshow_play' | t }}</span>
+              </span>
+            </button>
+          {%- endif -%}
+
+          {%- liquid
+            assign natural_height_ratio = '60%'
+            assign natural_height_ratio_mobile = '100%'
+            for block in section.blocks
+              if block.settings.image != blank
+                assign natural_height_ratio = 100 | divided_by: block.settings.image.aspect_ratio | append: '%'
+                assign natural_height_ratio_mobile = natural_height_ratio
+              endif
+              if block.settings.image_mobile != blank
+                assign natural_height_ratio_mobile = 100 | divided_by: block.settings.image_mobile.aspect_ratio | append: '%'
+              endif
+            endfor
+          -%}
+
+          {%- style -%}
+            .hero-natural--{{ section.id }} {
+              height: 0;
+              padding-bottom: {{ natural_height_ratio }};
+            }
+
+            @media screen and (max-width: 768px) {
+              .hero-natural--{{ section.id }} {
+                padding-bottom: {{ natural_height_ratio_mobile }};
+              }
+            }
+          {%- endstyle -%}
+
+          <div class="hero-natural--{{ section.id }}">
+            <div
+              id="Slideshow-{{ section.id }}"
+              class="hero hero--{{ section.id }} loading loading--delayed"
+              data-natural="true"
+              data-autoplay="{{ autoplay }}"
+              data-speed="{{ autoplay_speed | times: 1000 }}"
+              {% if style == 'arrows' %}
+                data-arrows="true"
+              {% endif %}
+              {% if style == 'dots' %}
+                data-dots="true"
+              {% endif %}
+              {% if style == 'bars' %}
+                data-dots="true"
+                data-bars="true"
+              {% endif %}
+              data-slide-count="{{ section.blocks.size }}"
+            >
+              {%- for block in section.blocks -%}
+                <div
+                  {{ block.shopify_attributes }}
+                  class="slideshow__slide slideshow__slide--{{ block.id }}"
+                  data-index="{{ forloop.index0 }}"
+                  data-id="{{ block.id }}"
+                >
+                  {%- liquid
+                    assign has_mobile_image = false
+                    if block.settings.image_mobile != blank
+                      assign has_mobile_image = true
+                    endif
+                  -%}
+
+                  <div class="hero__image-wrapper">
+                    {%- if block.settings.image != blank -%}
+                      {% capture image_classes %}
+                          hero__image hero__image--{{ block.id }} {% if has_mobile_image %} small--hide{% endif %}
+                          {% if has_mobile_image %} small--hide{% endif %}
+                        {% endcapture %}
+                      {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+                      {%- liquid
+                        if forloop.index == 1
+                          assign loading = lazyload_images
+                        else
+                          assign loading = true
+                        endif
+                      -%}
+                      {%- render 'image-element',
+                        img: block.settings.image,
+                        loading: loading,
+                        classes: image_classes
+                      -%}
+                      {%- if has_mobile_image -%}
+                        {% capture image_classes %}
+                            hero__image hero__image--{{ block.id }} medium-up--hide
+                          {% endcapture %}
+                        {%- render 'image-element',
+                          img: block.settings.image_mobile,
+                          loading: loading,
+                          classes: image_classes
+                        -%}
+                      {%- endif -%}
+                    {%- else -%}
+                      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg ' }}
+                    {%- endif -%}
+                  </div>
+
+                  {%- if block.settings.link != blank -%}
+                    <a href="{{ block.settings.link }}" class="hero__slide-link" aria-hidden="true"></a>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- if section.blocks.size == 0 -%}
+        <div class="placeholder-noblocks">
+          {{ 'info.section_no_content' | t }}
+        </div>
+      {%- endif -%}
+    </div>
+    {%- unless full_width -%}
+      </div>
+    {%- endunless -%}
+  </slideshow-section>
+
+  <template data-island>
+    <script type="module">
+      import '@archetype-themes/scripts/config'
+      import '@archetype-themes/scripts/modules/slideshow'
+    </script>
+  </template>
+</is-land>

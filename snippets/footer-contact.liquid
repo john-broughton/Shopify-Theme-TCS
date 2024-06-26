@@ -1,0 +1,77 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the footer contact block.
+
+  Accepts:
+  - block {block} - The block object
+  - phone {string} - The phone number
+  - contact_page {page} - The contact page object
+  - chat_page {page} - The chat page object
+  - blocks_heading_size - The heading size for the block
+
+  Usage:
+  {% render 'footer-contact', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign phone = phone | default: block.settings.phone
+  assign contact_page = contact_page | default: block.settings.contact
+  assign chat_page = chat_page | default: block.settings.chat
+  assign enable_social = enable_social | default: block.settings.enable_social, allow_false: true | default: true, allow_false: true
+  assign blocks_heading_size = blocks_heading_size | default: block.settings.heading_size | default: 'h4'
+-%}
+
+<div class="footer__mobile-section">
+  <div class="footer__blocks--mobile">
+    <div class="footer__block--mobile">
+      <h2 class="footer__title {{ blocks_heading_size }}">
+        {{ 'actions.get_in_touch' | t }}
+      </h2>
+
+      <ul class="footer__menu footer__menu--underline">
+        {%- if phone != blank -%}
+          <li>
+            <a href="tel:{{ phone }}">
+              <span class="icon-and-text">
+                {% render 'icon', name: 'phone' %}
+                <span>{{ phone }}</span>
+              </span>
+            </a>
+          </li>
+        {%- endif -%}
+
+        {%- if contact_page != blank -%}
+          <li>
+            <a href="{{ contact_page.url }}">
+              <span class="icon-and-text">
+                {% render 'icon', name: 'email' %}
+                <span>{{ 'actions.email_us' | t }}</span>
+              </span>
+            </a>
+          </li>
+        {%- endif -%}
+
+        {%- if chat_page != blank -%}
+          <li>
+            <a href="{{ chat_page.url }}">
+              <span class="icon-and-text">
+                {% render 'icon', name: 'chat' %}
+                <span>{{ 'actions.live_chat' | t }}</span>
+              </span>
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </div>
+
+    {%- if enable_social -%}
+      <div class="footer__block--mobile">
+        <div class="footer__title">
+          {{ 'actions.follow_us' | t }}
+        </div>
+
+        {% render 'social-icons', wrapper_class: 'footer__social' %}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

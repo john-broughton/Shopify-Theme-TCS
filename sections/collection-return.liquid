@@ -1,0 +1,40 @@
+{%- render 'section-collection-return' -%}
+
+{% schema %}
+{
+  "name": "t:labels.back_to_collection",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:info.section_on_product_page_w_collection"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "2",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:labels.none"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

@@ -1,0 +1,126 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a testimonials section.
+
+  Accepts:
+  - title {string} - The title of the section
+  - align_text {'left'|'center'|'right'} - The alignment of the text
+  - round_images {boolean} - Whether to round the images
+  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme of the section
+  - hydration {string} - The hydration strategy for the section
+
+  Usage:
+  {% render 'section-testimonials' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign align_text = align_text | default: section.settings.align_text | default: 'center'
+  assign round_images = round_images | default: section.settings.round_images, allow_false: true | default: true, allow_false: true
+  assign title = title | default: section.settings.title
+  assign color_scheme = color_scheme | default: section.settings.color_scheme
+  assign hydration = hydration | default: 'on:idle'
+
+  unless color_scheme
+    assign class_name = 'testimonials-' | append: section.id
+    render 'color-scheme-override', class_name: class_name
+  endunless
+-%}
+
+<is-land {{ hydration }}>
+  <testimonials-component
+    class="testimonials-section testimonials-{{ section.id }} text-{{ align_text }} color-scheme-{{ color_scheme }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="testimonials"
+  >
+    {%- if color_scheme != 'none' -%}
+      {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+    {%- endif -%}
+
+    {%- if title != blank -%}
+      <div class="page-width">
+        <div class="section-header">
+          <h2>{{ title | escape }}</h2>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="slideshow-wrapper">
+        <div
+          class="testimonials-slider"
+          id="Testimonials-{{ section.id }}"
+          data-dots="true"
+          data-count="{{ section.blocks.size }}"
+        >
+          {%- for block in section.blocks -%}
+            <div
+              class="testimonials-slide testimonials-slide--{{ block.id }}"
+              data-index="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}
+            >
+              <blockquote class="testimonials-slider__text">
+                {%- if block.settings.icon == 'quote' -%}
+                  <span class="quote-icon">{% render 'icon', name: 'quote' %}</span>
+                {%- elsif block.settings.icon == '5-stars' -%}
+                  <span class="testimonial-stars">★★★★★</span>
+                {%- elsif block.settings.icon == '4-stars' -%}
+                  <span class="testimonial-stars">★★★★</span>
+                {%- elsif block.settings.icon == '3-stars' -%}
+                  <span class="testimonial-stars">★★★</span>
+                {%- elsif block.settings.icon == '2-stars' -%}
+                  <span class="testimonial-stars">★★</span>
+                {%- elsif block.settings.icon == '1-star' -%}
+                  <span class="testimonial-stars">★</span>
+                {%- endif -%}
+
+                {%- if block.settings.testimonial != blank -%}
+                  <div class="rte-setting text-spacing">{{ block.settings.testimonial }}</div>
+                {%- endif -%}
+
+                {%- if block.settings.image != blank -%}
+                  <div class="testimonial-image{% if round_images %} testimonial-image--round{% endif %}">
+                    <div
+                      class="image-wrap text-spacing"
+                      {% if round_images == false %}
+                        style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                      {% endif %}
+                    >
+                      {%- liquid
+                        if round_images
+                          assign sizeVariable = '65px'
+                        else
+                          assign sizeVariable = '142px'
+                        endif
+
+                        assign fallback = sizeVariable
+                      -%}
+                      {%- render 'image-element',
+                        img: block.settings.image,
+                        sizeVariable: sizeVariable,
+                        fallback: fallback,
+                        widths: '180, 360, 540, 720'
+                      -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.author != blank -%}
+                  <cite>{{ block.settings.author | escape }}</cite>
+                {%- endif -%}
+                {%- if block.settings.author_info != blank -%}
+                  <div class="testimonials__info">{{ block.settings.author_info | escape }}</div>
+                {%- endif -%}
+              </blockquote>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </testimonials-component>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-testimonials'
+    </script>
+  </template>
+</is-land>

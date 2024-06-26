@@ -1,0 +1,212 @@
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+{%- assign metadata = product.metafields.experiences -%}
+{%- assign durationHours = metadata.duration | divided_by: 60 -%}
+{%- assign durationMinutes = metadata.duration | modulo: 60 -%}
+{%- assign durationMinHours = metadata.durationMin | divided_by: 60 -%}
+{%- assign durationMinMinutes = metadata.durationMin | modulo: 60 -%}
+{%- assign durationMaxHours = metadata.durationMax | divided_by: 60 -%}
+{%- assign durationMaxMinutes = metadata.durationMax | modulo: 60 -%}
+{%- assign costLabel = metadata.costLabel | default: "Cost" -%}
+{%- assign costPerUnitLabel = metadata.costPerUnitLabel | default: "per person" -%}
+{%- assign durationLabel = metadata.durationLabel | default: "Duration" -%}
+
+<style>
+  :root {
+     
+    --experiences-primary-background: #fff;
+    --experiences-secondary-background: #f5f5f5;
+    --experiences-primary-action: #505dbf;
+    --experiences-secondary-text: #637381;
+    --experiences-placeholder-color: #a0acb7;
+    --experiences-disabled-background: #ccc;
+    --experiences-disabled-text: #888;
+   
+  }
+</style>
+<link href="//prod-v2.experiencesapp.services/storefront/embedded.css" rel="stylesheet" />
+
+<div
+  class="product__section-container"
+  data-section-id="{{ section.id }}"
+  data-section-type="product"
+  data-enable-history-state="true"
+  itemscope itemtype="http://schema.org/Product"
+>
+
+  <meta itemprop="name" content="{{ product.title }}{% unless product.has_only_default_variant %} - {{ current_variant.title }}{% endunless %}">
+  <meta itemprop="url" content="{{ shop.url }}{{ current_variant.url }}">
+  <meta itemprop="brand" content="{{ product.vendor }}">
+  <meta itemprop="image" content="{{ featured_image }}">
+  <meta itemprop="description" content="{{ product.description | strip_html | escape }}">
+
+  <div class="product__title-container">
+    <h1 class="product__title-container__title" tabindex="0" aria-label="{{ product.title }}">
+      {{ product.title }}
+    </h1>
+    <span class="product__title-container__tagline" tabindex="0">
+      {{ metadata.summary }}
+    </span>
+  </div>
+
+  <div class="product__display-grid">
+    <div class="product__display-grid__col1">
+      {% if metadata.location != blank %}
+        <div class="product__display-grid__infobox">
+          <h3 class="product__display-grid__header">Location:</h3>
+          <span class="product__display-grid__text">
+            {% if metadata.location == "Zoom" %}
+              {{ metadata.location }}
+            {% else %}
+              <a href="https://www.google.com/maps/place/{{ metadata.location }}"
+                target="_blank"
+                aria-label="Location:  {{ metadata.location }}"
+              >
+                {{ metadata.location }}
+              </a>
+            {% endif %}
+          </span>
+        </div>
+      {% endif %}
+      <div class="product__display-grid__infobox" tabindex="0">
+        <h3 class="product__display-grid__header">{{ costLabel }}:</h3>
+        <span class="product__display-grid__text">
+          {% assign price_min = product.price_min | money %}
+          {% if product.price == 0 %}
+              {% assign price_min = "FREE" %}
+          {% endif %}
+
+          {% if product.price_varies %}
+              {{ price_min }}&nbsp;&ndash;&nbsp;{{ product.price_max | money }} {{ costPerUnitLabel }}
+          {% else %}
+              {{ price_min }} {{ costPerUnitLabel }}
+          {% endif %}
+        </span>
+      </div>
+      <div class="product__display-grid__infobox" tabindex="0" >
+        <h3 class="product__display-grid__header">{{ durationLabel }}:</h3>
+        <span class="product__display-grid__text">
+          {% if metadata.durationMin != blank and metadata.durationMax != blank %}
+            {% if durationMinHours != 0 %}
+              {{ durationMinHours }}h
+            {% endif %}
+            {% if durationMinMinutes != 0 %}
+              {{ durationMinMinutes }}min
+            {% endif %}
+            &nbsp;&ndash;&nbsp;
+            {% if durationMaxHours != 0 %}
+              {{ durationMaxHours }}h
+            {% endif %}
+            {% if durationMaxMinutes != 0 %}
+              {{ durationMaxMinutes }}min
+            {% endif %}
+          {% else %}
+            {% if durationHours != 0 %}
+              {{ durationHours }}h
+            {% endif %}
+            {% if durationMinutes != 0 %}
+              {{ durationMinutes }}min
+            {% endif %}
+          {% endif %}
+        </span>
+      </div>
+
+      <div class="product__display-grid__divider"></div>
+
+      <button class="exp__book-now-btn" onclick="redirectToExperiences()">Book now</button>
+
+      {%- capture snippet_content -%}
+      	{%- include 'social-sharing' -%}
+      {%- endcapture -%}
+
+      {%- unless snippet_content contains "Liquid error" -%}
+        {{ snippet_content }}
+      {%- endunless -%}
+
+    </div>
+
+    <div class="product__display-grid__col2">
+
+      {% if featured_image != blank %}
+        <div id="exp__carousel" class="product__carousel-container"></div>
+      {% endif %}
+
+      {% comment %}
+        NOTE: metadata.description is deprecated; please use product.description instead.
+      {% endcomment %}
+      {% if metadata.description != blank or product.description != blank %}
+        <div class="product__display-grid__detailsbox" tabindex="0">
+          <h3 class="product__display-grid__header bottom-spacer-small exp__header-label">
+            About this experience
+          </h3>
+          <p class="product__display-grid__text">
+            {% if metadata.description != blank %}
+              {{ metadata.description }}
+            {% elsif product.description != blank %}
+              {{ product.description }}
+            {% endif %}
+          </p>
+        </div>
+      {% endif %}
+
+      {% if metadata.hostImage != blank or metadata.hostDescription != blank %}
+        <div id="hostDetails" tabindex="0">
+          <h3 class="exp__header-label">Your Host</h3>
+          <div class="exp__host-details-container">
+            {% if metadata.hostImage != blank %}
+              <div class="exp__host-image-container exp__host-details__container">
+                <img
+                  alt="Host image"
+                  class="product__display-grid__host-image isShowing exp__host-image"
+                  src="{{ metadata.hostImage }}"
+                />
+              </div>
+            {% endif %}
+            {% if metadata.hostDescription != blank %}
+              {% if metadata.hostImage == empty %}
+                <div class="exp__host-desc-container exp__host-details__container exp__as-without-padding">
+              {% elsif metadata.hostImage != blank %}
+                <div class="exp__host-desc-container exp__host-details__container">
+              {% endif %}
+                <p>{{ metadata.hostDescription  | newline_to_br }}</p>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<script src="//prod-v2.experiencesapp.services/storefront/embedded.js"></script>
+<script>
+  function redirectToExperiences() {
+    const queryString = window.location.search;
+    const urlSearchParamFull = new URLSearchParams(queryString);
+    const selectValue = urlSearchParamFull.get('select');
+    const languageCode = '{{metadata.languageCode | default: "en-US"}}';
+    const productId = '{{product.id}}';
+    const shopDomain = '{{shop.permanent_domain}}';
+    let url = '/a/experiences/' + languageCode + '/' + productId + '?shop=' + shopDomain;
+    if (selectValue) {
+      url += '&select=' + selectValue;
+    }
+    location.href = url;
+  }
+</script>
+
+<script defer>
+  let imageUrls = [];
+  {% for image in product.images %}
+    imageUrls.push({
+      featured: "{{image}}" === "{{product.featured_image}}",
+      url: "https:{{image | img_url: "master" }}"
+    });
+  {% endfor %}
+
+  ExperiencesApp.enableCarousel({
+    rootSelector: "#exp__carousel",
+    imageUrls,
+  });
+</script>

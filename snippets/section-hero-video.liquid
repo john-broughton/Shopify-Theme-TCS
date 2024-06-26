@@ -1,0 +1,224 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the hero video section.
+
+  Accepts:
+  - full_width {boolean} - Whether the section should be full width
+  - title {string} - The title text
+  - title_size {number} - The title size
+  - text_highlight {string} - The text highlight
+  - subheading {string} - The subheading text
+  - link_text {string} - The link text
+  - link {string} - The link URL
+  - color_accent {color} - The accent color
+  - text_align {string} - The text alignment
+  - video_url {string} - The video URL
+  - overlay_opacity {number} - The overlay opacity
+  - height {number} - The height
+  - height_mobile {number} - The mobile height
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'section-hero-video' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: true, allow_false: true
+  assign title = title | default: section.settings.title
+  assign title_size = title_size | default: section.settings.title_size | default: 70
+  assign text_highlight = text_highlight | default: section.settings.text_highlight | default: 'serif'
+  assign subheading = subheading | default: section.settings.subheading
+  assign link_text = link_text | default: section.settings.link_text
+  assign link = link | default: section.settings.link
+  assign color_accent = color_accent | default: section.settings.color_accent | default: '#fff'
+  assign text_align = text_align | default: section.settings.text_align | default: 'vertical-center horizontal-center'
+  assign video_url = video_url | default: section.settings.video_url
+  assign overlay_opacity = overlay_opacity | default: section.settings.overlay_opacity | default: 0
+  assign height = height | default: section.settings.height | default: 650
+  assign height_mobile = height_mobile | default: section.settings.height_mobile | default: 300
+  assign hydration = hydration | default: 'on:visible'
+-%}
+
+<section>
+  {%- unless full_width -%}
+    <div class="page-width hero--padded">
+  {%- endunless -%}
+
+  {%- style -%}
+    .hero--{{ section.id }} {
+      height: {{ height_mobile }}px;
+    }
+    .hero--{{ section.id }} .hero__title {
+      font-size: {{ title_size | times: 0.5 }}px;
+    }
+    @media only screen and (min-width: 769px) {
+      .hero--{{ section.id }} {
+        height: {{ height }}px;
+      }
+      .hero--{{ section.id }} .hero__title {
+        font-size: {{ title_size }}px;
+      }
+    }
+
+    {%- assign button_alpha = color_accent | color_extract: 'alpha' -%}
+    {% unless button_alpha == 0.0 %}
+      .hero--{{ section.id }} .btn {
+        background: {{ color_accent }} !important;
+        border-color: {{ color_accent }} !important;
+
+        {%- assign accent_brightness = color_accent | color_extract: 'lightness' -%}
+
+        {% if accent_brightness > 40 %}
+          color: #000 !important;
+        {% endif %}
+      }
+    {% endunless %}
+
+    {% if overlay_opacity > 0 %}
+      .hero--{{ section.id }} .hero__text-wrap:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        background-color: #000;
+        opacity: {{ overlay_opacity | divided_by: 100.0 }};
+      }
+    {% endif %}
+  {%- endstyle -%}
+
+  <is-land {{ hydration }}>
+    <video-section
+      data-section-id="{{ section.id }}"
+      data-section-type="video-section"
+      class="video-parent-section hero hero--{{ section.id }}"
+    >
+      <div class="hero__media hero__media--{{ section.id }}">
+        <div class="hero__media-container">
+          {%- if video_url contains 'youtube.com/watch' -%}
+            {%- assign video_id = video_url | split: 'v=' -%}
+            {%- assign video_id = video_id[1] | split: '&' | first -%}
+            <div
+              id="YouTubeVideo-{{ section.id }}"
+              class="video-div"
+              data-type="youtube"
+              data-video-id="{{ video_id }}"
+            ></div>
+          {%- endif -%}
+
+          {%- if video_url contains 'youtu.be/' -%}
+            {%- assign video_id = video_url | split: '.be/' -%}
+            {%- assign video_id = video_id[1] | split: '&' | first -%}
+            <div
+              id="YouTubeVideo-{{ section.id }}"
+              class="video-div"
+              data-type="youtube"
+              data-video-id="{{ video_id }}"
+            ></div>
+          {%- endif -%}
+
+          {%- if video_url contains 'vimeo.com' -%}
+            {%- assign video_id = video_url | split: '.com/' -%}
+            {%- assign video_id = video_id[1] | split: '/' | first -%}
+            <div
+              id="Vimeo-{{ section.id }}"
+              class="video-div"
+              data-type="vimeo"
+              data-video-id="{{ video_id }}"
+            ></div>
+          {%- endif -%}
+
+          {%- if video_url contains '.mp4' or video_url contains '.MP4' -%}
+            <video
+              id="Mp4Video-{{ section.id }}"
+              class="video-div"
+              data-type="mp4"
+              src="{{ video_url }}"
+              loop
+              muted
+              playsinline
+              autoplay
+            ></video>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="hero__text-wrap">
+        <div class="page-width">
+          <div class="hero__text-content {{ text_align }}">
+            {% unless title == blank and subheading == blank and link_text == blank %}
+              <div class="hero__text-shadow overlay">
+                {%- if video_url contains 'vimeo.com' -%}
+                  <button type="button" id="VimeoTrigger-{{ section.id }}" class="vimeo-mobile-trigger medium-up--hide">
+                    {% render 'icon', name: 'play' %}
+                  </button>
+                {%- endif -%}
+
+                {%- unless title == blank -%}
+                  <h2
+                    class="
+                      h1 hero__title
+                      {% if text_highlight %}
+                        text-highlight
+                        text-highlight--{{ text_highlight }}
+                      {% endif %}
+                    "
+                  >
+                    <div class="animation-contents">
+                      {{ title | newline_to_br }}
+                    </div>
+                  </h2>
+                {%- endunless -%}
+                {%- if subheading or link -%}
+                  {%- unless subheading == blank -%}
+                    <div class="hero__subtitle">
+                      <div class="animation-contents">
+                        {{ subheading | escape }}
+                      </div>
+                    </div>
+                  {%- endunless -%}
+                  {%- if link_text != blank -%}
+                    {%- assign link_href = link -%}
+                    {%- if link == blank -%}
+                      {%- assign link_href = video_url -%}
+                    {%- endif -%}
+                    <div class="hero__link">
+                      <a
+                        href="{{ link_href }}"
+                        class="btn{% if color_accent and color_accent == 'rgba(0,0,0,0)' %} btn--inverse{% endif %}"
+                        {%- if video_url contains 'vimeo.com' -%}
+                          data-video-id="{{ video_id }}"
+                        {%- endif -%}
+                      >
+                        {%- if link_href contains 'youtube.com/watch' or link_href contains 'youtu.be/' -%}
+                          {% render 'icon', name: 'play' %}
+                        {%- endif -%}
+                        {{ link_text }}
+                      </a>
+                    </div>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+    </video-section>
+
+    <template data-island>
+      <script type="module">
+        import '@archetype-themes/scripts/config'
+        import '@archetype-themes/scripts/modules/video-section'
+        import videoModal from '@archetype-themes/scripts/modules/video-modal'
+
+        videoModal();
+      </script>
+    </template>
+  </is-land>
+
+  {%- unless full_width -%}
+    </div>
+  {%- endunless -%}
+</section>

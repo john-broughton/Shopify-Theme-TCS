@@ -1,0 +1,28 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a quick shop.
+
+  Accepts:
+  - content {string} - The content of the quick shop
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {%- render 'quick-shop', content: 'This is some content' -%}
+{%- endcomment -%}
+
+{%- liquid
+  assign content = content | default: blank
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+<is-land {{ hydration }}>
+  <quick-shop>
+    {{ content }}
+  </quick-shop>
+
+  <template data-island>
+    <script type="module">
+      import 'components/quick-shop'
+    </script>
+  </template>
+</is-land>

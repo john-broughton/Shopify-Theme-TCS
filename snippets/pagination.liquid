@@ -1,0 +1,53 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a pagination component.
+
+  Accepts:
+  - paginate {paginate} - The paginate object
+  - hash {string} - A hash to append to the URL
+
+  Usage:
+  {% render 'pagination' %}
+{%- endcomment -%}
+
+<div class="pagination">
+  {% if paginate.previous %}
+    <span class="prev">
+      <a
+        href="{{ paginate.previous.url | replace: 'view=ajax', '' }}{{ hash }}"
+        title="{{ 'actions.previous' | t }}"
+        class="btn btn--large btn--circle btn--icon"
+      >
+        {% render 'icon', name: 'chevron-left' %}
+        <span class="icon__fallback-text visually-hidden">{{ 'actions.previous' | t }}</span>
+      </a>
+    </span>
+  {% endif %}
+
+  {% for part in paginate.parts %}
+    {% if part.is_link %}
+      <span class="page">
+        <a href="{{ part.url | replace: 'view=ajax', '' }}{{ hash }}">{{ part.title }}</a>
+      </span>
+    {% else %}
+      {% if part.title == paginate.current_page %}
+        <span class="page current">{{ part.title }}</span>
+      {% else %}
+        <span class="page">{{ part.title }}</span>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if paginate.next %}
+    <span class="next">
+      <a
+        href="{{ paginate.next.url | replace: 'view=ajax', '' }}{{ hash }}"
+        title="{{ 'actions.next' | t }}"
+        class="btn btn--large btn--circle btn--icon"
+      >
+        {% render 'icon', name: 'chevron-right' %}
+        <span class="icon__fallback-text visually-hidden">{{ 'actions.next' | t }}</span>
+      </a>
+    </span>
+  {% endif %}
+</div>

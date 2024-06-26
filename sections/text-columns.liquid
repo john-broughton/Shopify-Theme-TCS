@@ -1,0 +1,193 @@
+{%- render 'section-text-columns' -%}
+
+{% schema %}
+{
+  "name": "t:labels.text_columns_with",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:labels.alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.centered"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:actions.show_section_divider",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:labels.none"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "t:labels.column",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_image",
+          "label": "t:actions.show_image",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "select",
+          "id": "image_mask",
+          "label": "t:labels.image_shape",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:labels.none"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            },
+            {
+              "value": "rounded",
+              "label": "t:labels.rounded"
+            },
+            {
+              "value": "rounded-wave",
+              "label": "t:labels.rounded_wave"
+            },
+            {
+              "value": "rounded-top",
+              "label": "t:labels.arch"
+            },
+            {
+              "value": "star",
+              "label": "t:labels.star"
+            },
+            {
+              "value": "splat-1",
+              "label": "t:labels.splat_1"
+            },
+            {
+              "value": "splat-2",
+              "label": "t:labels.splat_2"
+            },
+            {
+              "value": "splat-3",
+              "label": "t:labels.splat_3"
+            },
+            {
+              "value": "splat-4",
+              "label": "t:labels.splat_4"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "t:labels.image_width",
+          "default": 650,
+          "min": 60,
+          "max": 650,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Example title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:labels.button_label",
+          "default": "Optional button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:labels.link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.text_columns_with",
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "custom.popups"
+    ]
+  }
+}
+{% endschema %}

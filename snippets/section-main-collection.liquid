@@ -1,0 +1,124 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the main collection section.
+
+  Accepts:
+  - show_sidebar {boolean} - Whether to show the sidebar
+  - enable_sidebar {boolean} - Whether to enable the sidebar
+  - paginate_by {number} - The number of products to show per page
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'section-main-collection' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_sidebar = show_sidebar | default: true, allow_false: true
+  assign enable_sidebar = enable_sidebar | default: section.settings.enable_sidebar, allow_false: true | default: true, allow_false: true
+  assign paginate_by = paginate_by | default: section.settings.paginate_by | default: 40
+  assign hydration = hydration | default: 'on:idle'
+
+  if enable_sidebar == false or collection.filters.size == 0
+    assign show_sidebar = false
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <collection-template
+    id="CollectionAjaxResult"
+    class="collection-content"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-template"
+    data-collection-template="true"
+  >
+    <div id="CollectionAjaxContent">
+      <div class="page-width">
+        {%- liquid
+          for filter in collection.filters
+            assign current_filter_size = current_filter_size | plus: filter.active_values.size
+          endfor
+        -%}
+
+        {%- paginate collection.products by paginate_by -%}
+          <div class="grid clearfix">
+            <div class="grid__item medium-up--one-fifth grid__item--sidebar">
+              {%- render 'collection-grid-filters', context: collection -%}
+            </div>
+            <div class="grid__item medium-up--four-fifths grid__item--content">
+              {%- for block in section.blocks -%}
+                {%- case block.type -%}
+                  {%- when 'collection_description' -%}
+                    {%- if collection.description != blank and current_filter_size == 0 -%}
+                      <div class="rte rte--collection-desc clearfix" {{ block.shopify_attributes }}>
+                        <div class="enlarge-text">
+                          {{ collection.description }}
+                        </div>
+                      </div>
+                    {%- endif -%}
+                  {%- when 'subcollections' -%}
+                    {%- if paginate.current_page == 1 and current_filter_size == 0 -%}
+                      <div {{ block.shopify_attributes }}>
+                        {%- render 'subcollections', menu: linklists['main-menu'] -%}
+                      </div>
+                    {%- endif -%}
+                  {%- when 'product_grid' -%}
+                    <div {{ block.shopify_attributes }}>
+                      {%- render 'collection-grid', context: collection, grid_style: block.settings.grid_style -%}
+                    </div>
+
+                    {%- liquid
+                      if paginate.pages > 1
+                        render 'pagination', paginate: paginate
+                      endif
+                    -%}
+                {%- endcase -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endpaginate -%}
+      </div>
+    </div>
+  </collection-template>
+
+  <template data-island>
+    <script type="module">
+      import '@archetype-themes/scripts/config'
+      import '@archetype-themes/scripts/modules/collection-template'
+      import '@archetype-themes/scripts/helpers/sections'
+    </script>
+  </template>
+</is-land>
+
+{%- if show_sidebar == false -%}
+  {% comment %}
+    Disable sidebar & filter features
+  {% endcomment %}
+  {%- style -%}
+    .collection-content .grid__item--sidebar {
+      display: none;
+    }
+    .collection-content .grid__item--content {
+      width: 100% !important;
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "CollectionPage",
+    {% if collection.description != blank %}
+      "description": {{ collection.description | strip_html | json }},
+    {% endif %}
+    {% if page_image %}
+      {% assign image_size = page_image.width %}
+      "image": {
+        "@type": "ImageObject",
+        "height": {{ page_image.height | json }},
+        "url": {{ page_image | image_url: width: image_size | prepend: "https:" | json }},
+        "width": {{ page_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ collection.title | json }}
+  }
+</script>

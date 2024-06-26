@@ -1,0 +1,99 @@
+{%- render 'section-map' -%}
+
+{% schema %}
+{
+  "name": "t:labels.map",
+  "class": "index-section--flush",
+  "settings": [
+    {
+      "id": "map_title",
+      "type": "text",
+      "label": "t:labels.heading",
+      "default": "Our retail store"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:labels.heading_size",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:labels.sizes.small"
+        },
+        {
+          "value": "h2",
+          "label": "t:labels.sizes.medium"
+        },
+        {
+          "value": "h1",
+          "label": "t:labels.sizes.large"
+        },
+        {
+          "value": "h0",
+          "label": "t:labels.sizes.extra_large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "t:labels.heading_position",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.center"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "id": "address",
+      "type": "richtext",
+      "label": "t:labels.address_and_hours",
+      "default": "<p>301 Front St W<br>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br>Saturday, 8:30am - 10:30pm<br>Sunday, 8:30am - 10:30pm</p>"
+    },
+    {
+      "id": "map_address",
+      "type": "text",
+      "label": "t:labels.map_address",
+      "info": "t:info.google_maps_will_find_location",
+      "default": "301 Front St W, Toronto, ON M5V 2T6"
+    },
+    {
+      "id": "api_key",
+      "type": "text",
+      "label": "t:labels.google_maps_api",
+      "info": "t:actions.register_google_maps_api"
+    },
+    {
+      "id": "show_button",
+      "type": "checkbox",
+      "label": "t:actions.show_get_directions",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:labels.image",
+      "info": "t:info.use_instead_of_api"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.map"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

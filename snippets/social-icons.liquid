@@ -1,0 +1,81 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a list of social media icons with links to the shop's social media profiles.
+
+  Accepts:
+  - social_facebook_link {string} - Facebook link
+  - social_twitter_link {string} - Twitter link
+  - social_pinterest_link {string} - Pinterest link
+  - social_instagram_link {string} - Instagram link
+  - social_snapchat_link {string} - Snapchat link
+  - social_tiktok_link {string} - TikTok link
+  - social_tumblr_link {string} - Tumblr link
+  - social_linkedin_link {string} - LinkedIn link
+  - social_youtube_link {string} - YouTube link
+  - social_vimeo_link {string} - Vimeo link
+  - wrapper_class {string} - Additional wrapper classes to add to the social icons list
+
+  Usage:
+  {% render 'social-icons', social_facebook_link: 'https://facebook.com/shop' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign social_facebook_link = social_facebook_link | default: settings.social_facebook_link
+  assign social_twitter_link = social_twitter_link | default: settings.social_twitter_link
+  assign social_pinterest_link = social_pinterest_link | default: settings.social_pinterest_link
+  assign social_instagram_link = social_instagram_link | default: settings.social_instagram_link
+  assign social_snapchat_link = social_snapchat_link | default: settings.social_snapchat_link
+  assign social_tiktok_link = social_tiktok_link | default: settings.social_tiktok_link
+  assign social_tumblr_link = social_tumblr_link | default: settings.social_tumblr_link
+  assign social_linkedin_link = social_linkedin_link | default: settings.social_linkedin_link
+  assign social_youtube_link = social_youtube_link | default: settings.social_youtube_link
+  assign social_vimeo_link = social_vimeo_link | default: settings.social_vimeo_link
+
+  capture social_media_icons
+    if social_facebook_link != blank
+      render 'social-icon-link', platform: 'Facebook', link: social_facebook_link
+    endif
+
+    if social_twitter_link != blank
+      render 'social-icon-link', platform: 'X', link: social_twitter_link
+    endif
+
+    if social_pinterest_link != blank
+      render 'social-icon-link', platform: 'Pinterest', link: social_pinterest_link
+    endif
+
+    if social_instagram_link != blank
+      render 'social-icon-link', platform: 'Instagram', link: social_instagram_link
+    endif
+
+    if social_snapchat_link != blank
+      render 'social-icon-link', platform: 'Snapchat', link: social_snapchat_link
+    endif
+
+    if social_tiktok_link != blank
+      render 'social-icon-link', platform: 'TikTok', link: social_tiktok_link
+    endif
+
+    if social_tumblr_link != blank
+      render 'social-icon-link', platform: 'Tumblr', link: social_tumblr_link
+    endif
+
+    if social_linkedin_link != blank
+      render 'social-icon-link', platform: 'LinkedIn', link: social_linkedin_link
+    endif
+
+    if social_youtube_link != blank
+      render 'social-icon-link', platform: 'YouTube', link: social_youtube_link
+    endif
+
+    if social_vimeo_link != blank
+      render 'social-icon-link', platform: 'Vimeo', link: social_vimeo_link
+    endif
+  endcapture
+-%}
+
+{%- if social_media_icons != blank -%}
+  <ul class="no-bullets social-icons {{ wrapper_class }}">
+    {{ social_media_icons }}
+  </ul>
+{%- endif -%}

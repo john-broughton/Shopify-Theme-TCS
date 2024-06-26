@@ -1,0 +1,214 @@
+{%- render 'section-slideshow' -%}
+
+{% schema %}
+{
+"name": "t:labels.hero_optional_slides",
+"class": "index-section--hero",
+"settings": [
+  {
+    "type": "checkbox",
+    "id": "full_width",
+    "label": "t:labels.full_page_width",
+    "default": true
+  },
+  {
+    "type": "range",
+    "id": "desktop_size",
+    "label": "t:labels.desktop_height_adjustment",
+    "default": 0,
+    "min": -100,
+    "max": 100,
+    "step": 10,
+    "unit": "%"
+  },
+  {
+    "type": "range",
+    "id": "mobile_size",
+    "label": "t:labels.mobile_height_adjustment",
+    "default": 0,
+    "min": -100,
+    "max": 100,
+    "step": 10,
+    "unit": "%"
+  },
+  {
+    "type": "select",
+    "id": "style",
+    "label": "t:labels.slide_navigation_style",
+    "default": "arrows",
+    "options": [
+      {
+        "value": "minimal",
+        "label": "t:labels.minimal"
+      },
+      {
+        "value": "arrows",
+        "label": "t:labels.arrows"
+      },
+      {
+        "value": "bars",
+        "label": "t:labels.bars"
+      },
+      {
+        "value": "dots",
+        "label": "t:labels.dots"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "autoplay",
+    "label": "t:labels.autochange_slides",
+    "default": true
+  },
+  {
+    "type": "range",
+    "id": "autoplay_speed",
+    "label": "t:labels.change_images_every",
+    "default": 7,
+    "min": 5,
+    "max": 10,
+    "step": 1,
+    "unit": "s"
+  }
+],
+"blocks": [
+  {
+    "type": "hero",
+    "name": "t:labels.hero",
+    "settings": [
+      {
+        "type": "text",
+        "id": "top_subheading",
+        "label": "t:labels.subheading"
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "t:labels.heading",
+        "default": "<p>Overlaid Hero Slide</p>"
+      },
+      {
+        "type": "range",
+        "id": "title_size",
+        "label": "t:labels.heading_text_size",
+        "default": 70,
+        "min": 40,
+        "max": 100,
+        "unit": "px"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "t:labels.text",
+        "default": "And optional subtext"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "t:labels.slide_link"
+      },
+      {
+        "type": "text",
+        "id": "link_text",
+        "label": "t:labels.slide_link_text",
+        "default": "Optional button"
+      },
+      {
+        "type": "url",
+        "id": "link_2",
+        "label": "t:labels.slide_link_2"
+      },
+      {
+        "type": "text",
+        "id": "link_text_2",
+        "label": "t:labels.slide_link_text_339"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "t:labels.buttons",
+        "default": "#fff"
+      },
+      {
+        "type": "select",
+        "id": "text_align",
+        "label": "t:labels.text_alignment",
+        "default": "vertical-bottom horizontal-left",
+        "options": [
+          {
+            "value": "vertical-center horizontal-left",
+            "label": "t:labels.alignments.center_left"
+          },
+          {
+            "value": "vertical-center horizontal-center",
+            "label": "t:labels.alignments.center"
+          },
+          {
+            "value": "vertical-center horizontal-right",
+            "label": "t:labels.alignments.center_right"
+          },
+          {
+            "value": "vertical-bottom horizontal-left",
+            "label": "t:labels.alignments.bottom_left"
+          },
+          {
+            "value": "vertical-bottom horizontal-center",
+            "label": "t:labels.alignments.bottom_center"
+          },
+          {
+            "value": "vertical-bottom horizontal-right",
+            "label": "t:labels.alignments.bottom_right"
+          }
+        ]
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:labels.image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "t:labels.mobile_image"
+      },
+      {
+        "type": "range",
+        "id": "overlay_opacity",
+        "label": "t:labels.text_protection",
+        "info": "t:info.darkens_your_image",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 2,
+        "unit": "%"
+      }
+    ]
+  }
+],
+"max_blocks": 5,
+"presets": [
+  {
+    "name": "t:labels.hero_optional_slides",
+    "blocks": [
+      {
+        "type": "hero",
+        "settings": {
+          "title": "<p>Overlaid Hero Slide</p>",
+          "subheading": "Perfect for rich lifestyle photography.",
+          "text_align": "vertical-bottom horizontal-left"
+        }
+      },
+      {
+        "type": "hero",
+        "settings": {
+          "title": "<p>Make an Impact</p>",
+          "subheading": "Supports multiple text alignments and mobile-specific images.",
+          "text_align": "vertical-center horizontal-center"
+        }
+      }
+    ]
+  }
+]
+}
+{% endschema %}

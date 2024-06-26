@@ -1,0 +1,99 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders breadcrumbs for the current page.
+
+  Accepts:
+  - show_breadcrumbs {boolean} - Whether to show the breadcrumbs
+  - show_breadcrumbs_collection_link {boolean} - Whether to show the collection link in the breadcrumbs
+
+  Usage:
+  {% render 'breadcrumbs', show_breadcrumbs_collection_link: false %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_breadcrumbs = show_breadcrumbs | default: settings.show_breadcrumbs, allow_false: true | default: true, allow_false: true
+  assign show_breadcrumbs_collection_link = show_breadcrumbs_collection_link | default: settings.show_breadcrumbs_collection_link, allow_false: true | default: true, allow_false: true
+-%}
+
+{% if show_breadcrumbs %}
+  {% unless template.name == 'index' or template.name == 'cart' %}
+    <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+      <a href="{{ routes.root_url }}" title="{{ 'actions.back_to_homepage' | t }}">{{ 'labels.home' | t }}</a>
+
+      {% if template.name == 'product' %}
+        {% if collection %}
+          {% if show_breadcrumbs_collection_link %}
+            <span class="breadcrumb__divider" aria-hidden="true">/</span>
+            <a href="{{ routes.collections_url }}">{{ 'labels.collections' | t | replace: ':', '' }}</a>
+          {% endif %}
+
+          <span class="breadcrumb__divider" aria-hidden="true">/</span>
+
+          {% if collection.handle %}
+            {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
+            {{ collection.title | link_to: url }}
+          {% endif %}
+        {% endif %}
+
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+
+      {% elsif template.name == 'collection' and collection.handle %}
+        {% if show_breadcrumbs_collection_link %}
+          <span class="breadcrumb__divider" aria-hidden="true">/</span>
+          <a href="{{ routes.collections_url }}">{{ 'labels.collections' | t | replace: ':', '' }}</a>
+        {% endif %}
+
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+
+        {% if current_tags %}
+          {% capture url %}{{ routes.collections_url }}/{{ collection.handle }}{% endcapture %}
+          {{ collection.title | link_to: url }}
+
+          <span class="breadcrumb__divider" aria-hidden="true">/</span>
+
+          {% for tag in current_tags %}
+            {% if tag contains '_' %}
+              {%- assign tag_starts_with = tag | slice: 0 -%}
+              {% if tag_starts_with == '_' -%}
+                {%- if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif -%}
+                {%- continue -%}
+              {%- endif -%}
+            {%- endif %}
+            {% assign tag_name = tag | strip %}
+            {% assign tag_text = tag_name | capitalize %}
+            <span>{{ tag_text }}</span>
+
+            {% unless forloop.last %}
+              <span class="breadcrumb__divider" aria-hidden="true">+</span>
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
+
+      {% elsif template.name == 'blog' %}
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+        {% if current_tags %}
+          {{ blog.title | link_to: blog.url }}
+          <span class="breadcrumb__divider" aria-hidden="true">/</span>
+          <span>{{ current_tags | join: ' + ' }}</span>
+        {% endif %}
+
+      {% elsif template.name == 'article' %}
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+        {{ blog.title | link_to: blog.url }}
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+
+      {% elsif template.name == 'page' %}
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+        <span>{{ page.title }}</span>
+
+      {% elsif template.name == 'search' %}
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+        <span>{{ page_title | replace: '*', '' }}</span>
+
+      {% else %}
+        <span class="breadcrumb__divider" aria-hidden="true">/</span>
+        <span>{{ page_title }}</span>
+      {% endif %}
+    </nav>
+  {% endunless %}
+{% endif %}

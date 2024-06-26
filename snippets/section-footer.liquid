@@ -1,0 +1,118 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the footer section.
+
+  Accepts:
+  - show_newsletter {boolean} - Whether to show the newsletter form
+  - newsletter_richtext {string} - The newsletter text
+  - footer_main_menu {boolean} - Whether to show the main menu in the footer on mobile
+  - show_copyright {boolean} - Whether to show the copyright text
+  - copyright_text {string} - The copyright text
+  - policies_menu {menu} - The policies menu
+  - show_wave {boolean} - Whether to show the wave background
+
+  Usage:
+  {% render 'section-footer' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_newsletter = show_newsletter | default: section.settings.show_newsletter, allow_false: true | default: true, allow_false: true
+  assign newsletter_richtext = newsletter_richtext | default: section.settings.newsletter_richtext
+  assign footer_main_menu = footer_main_menu | default: section.settings.footer_main_menu, allow_false: true | default: true, allow_false: true
+  assign show_copyright = show_copyright | default: section.settings.show_copyright, allow_false: true | default: true, allow_false: true
+  assign copyright_text = copyright_text | default: section.settings.copyright_text
+  assign policies_menu = policies_menu | default: section.settings.policies_menu
+  assign show_wave = show_wave | default: section.settings.show_wave, allow_false: true | default: false, allow_false: true
+  assign hydration = hydration | default: 'on:visible'
+-%}
+
+{%- if show_newsletter -%}
+  <div class="footer__section footer__section--border">
+    <div class="page-width">
+      <div class="footer__newsletter">
+        {%- if newsletter_richtext != blank -%}
+          <div class="footer__subscribe rte rte--nomargin clearfix">
+            {{ newsletter_richtext }}
+          </div>
+        {%- endif -%}
+
+        {%- render 'newsletter-form', context: 'footer' -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% comment %}
+  Main navigation is copied here with JS for mobile users
+{% endcomment %}
+{%- if footer_main_menu -%}
+  <div id="FooterMobileNavWrap" class="footer__section footer__section--border medium-up--hide">
+    <div id="FooterMobileNav" class="page-width"></div>
+  </div>
+{%- endif -%}
+
+<is-land {{ hydration }}>
+  <footer-section class="site-footer" data-section-id="{{ section.id }}" data-section-type="footer-section">
+    <div
+      id="FooterMenus"
+      class="footer__section footer__section--menus {% if show_wave %}background-svg--wave-reverse{% endif %}"
+    >
+      <div class="page-width">
+        <div class="footer__blocks">
+          {%- for block in section.blocks -%}
+            <div
+              class="footer__block footer__block--{{ block.type }}"
+              data-type="{{ block.type }}"
+              {{ block.shopify_attributes }}
+            >
+              {%- liquid
+                case block.type
+                  when 'menu'
+                    render 'footer-menu', block: block
+                  when 'payment'
+                    render 'footer-payments', block: block
+                  when 'contact'
+                    render 'footer-contact', block: block
+                  when 'image'
+                    render 'footer-image', block: block
+                  when 'follow_shop_cta'
+                    render 'follow-shop-cta'
+                endcase
+              -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__section">
+      <div class="page-width text-center small--text-left">
+        <div class="footer__base-links">
+          {%- if show_copyright -%}
+            <span>
+              &copy; {{ 'now' | date: '%Y' }}
+              {{ shop.name }}
+              {%- if copyright_text != blank -%}
+                {{ copyright_text }}
+              {%- endif -%}
+            </span>
+          {%- endif -%}
+
+          {%- if policies_menu.links.size > 0 -%}
+            {%- for link in policies_menu.links -%}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {%- endfor -%}
+          {%- endif -%}
+
+          {{ powered_by_link }}
+        </div>
+      </div>
+    </div>
+  </footer-section>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-footer'
+    </script>
+  </template>
+</is-land>

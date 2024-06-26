@@ -1,0 +1,170 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a slider to compare two images.
+
+  Accepts:
+  - heading {string} - The heading of the section
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - heading_position {'left'|'center'|'right'} - The position of the heading
+  - height {400-900} - The height of the slider
+  - color {color} - The color of the slider button
+  - slider_style {'classic'|'minimal'} - The style of the slider
+  - full_width {boolean} - Whether the slider should be full width
+  - hydration {string} - The hydration strategy of the section
+
+  Usage:
+  {% render 'section-image-compare' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign heading = heading | default: section.settings.heading
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
+  assign height = height | default: section.settings.height | default: 600
+  assign color = color | default: section.settings.color | default: '#fff'
+  assign slider_style = slider_style | default: section.settings.slider_style | default: 'classic'
+  assign full_width = full_width | default: section.settings.fullwidth, allow_false: true | default: false, allow_false: true
+  assign hydration = hydration | default: 'on:visible'
+
+  assign lazyload_images = true
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+  assign bgBrightness = color | brightness_difference: '#000'
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+{% style %}
+  .comparison-{{ section.id }} {
+    height: {{ height }}px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .comparison-{{ section.id }} {
+      height: {{ height | divided_by: 2 }}px;
+    }
+  }
+
+  {% if slider_style == 'classic' %}
+    .comparison-{{ section.id }} .comparison__button {
+      background-color: {{ color }};
+    }
+
+    {% if bgBrightness < 125 %}
+      .comparison-{{ section.id }} .comparison__button svg {
+        fill: #fff;
+      }
+    {% else %}
+      .comparison-{{ section.id }} .comparison__button svg {
+        fill: #000;
+      }
+    {% endif %}
+
+    .comparison-{{ section.id }} .comparison__button::before {
+      height: {{ height | divided_by: 2 }}px;
+      bottom: 60px;
+    }
+
+    .comparison-{{ section.id }} .comparison__button::after {
+      height: {{ height | divided_by: 2 }}px;
+      top: 60px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .comparison-{{ section.id }} .comparison__button::before {
+        bottom: 42px;
+      }
+
+      .comparison-{{ section.id }} .comparison__button::after {
+        top: 42px;
+      }
+    }
+  {% else %}
+    .comparison-{{ section.id }} .comparison__button svg {
+      fill: {{ color }};
+    }
+
+    .comparison-{{ section.id }} .comparison__button::before {
+      height: {{ height }}px;
+      bottom: 0;
+    }
+
+    .comparison-{{ section.id }} .comparison__button::after {
+      height: {{ height }}px;
+      top: 0;
+    }
+
+  {% endif %}
+{% endstyle %}
+
+<div class="index-section">
+  {% if heading != blank %}
+    <div class="section-header page-width">
+      <h2 class="{{ heading_size }} text-{{ heading_position }}">{{ heading }}</h2>
+    </div>
+  {% endif %}
+  <div
+    {% unless full_width %}
+      class="page-width"
+    {% endunless %}
+  >
+    <is-land {{ hydration }}>
+      <image-compare
+        class="comparison comparison-{{ section.id }} comparison--style-{{ slider_style }}"
+        data-section-id="{{ section.id }}"
+      >
+        {% for block in section.blocks %}
+          {% if forloop.index == 1 %}<div class="comparison__draggable" data-draggable>{% endif %}
+
+          {% if block.settings.image != blank %}
+            {%- capture image_classes -%}
+              comparison__image comparison__image--{{ forloop.index }} {% if block.settings.blur %}blur{% endif %}
+            {%- endcapture -%}
+            <div
+              class="comparison__image-wrapper"
+              {{ block.shopify_attributes }}
+              {% if forloop.index == 1 %}
+                data-primary-image
+              {% else %}
+                data-secondary-image
+              {% endif %}
+            >
+              {% comment %}
+                Full width image so don't need to adjust sizes attribute, fallback is 100vw
+                We could provide sizes (ex. 50% of viewport) only if we were able to update
+                the image markup everytime the slider changed
+              {% endcomment %}
+              {%- liquid
+                if forloop.index == 1
+                  assign loading = lazyload_images
+                else
+                  assign loading = true
+                endif
+              -%}
+              {%- render 'image-element',
+                img: block.settings.image,
+                img_width: 2000,
+                loading: loading,
+                classes: image_classes
+              -%}
+            </div>
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg comparison__image' }}
+          {% endif %}
+
+          {% if forloop.index == 1 %}</div>{% endif %}
+        {% endfor %}
+        <button class="comparison__button" data-button>
+          {% render 'icon', name: 'chevron-left' %}
+          {% render 'icon', name: 'chevron-right' %}
+        </button>
+      </image-compare>
+
+      <template data-island>
+        <script type="module">
+          import 'components/section-image-compare'
+        </script>
+      </template>
+    </is-land>
+  </div>
+</div>

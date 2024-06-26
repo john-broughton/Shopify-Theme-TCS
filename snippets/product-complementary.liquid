@@ -1,0 +1,120 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders product complementary recommendations
+
+  Accepts:
+  - block {block} - Block object
+  - type {string} - Block or section
+  - quick_add_enable {boolean} - Whether quick add is enabled
+  - quick_shop_enable {boolean} - Whether quick shop is enabled
+  - product_grid_image_size {string} - The image size to use for the grid item
+  - product_grid_image_fill {boolean} - Whether the image should fill the grid item
+  - product_hover_image {boolean} - Whether second image will be shown on hover
+  - enable_swatches {boolean} - Whether swatches are enabled
+  - vendor_enable {boolean} - Whether to show the vendor
+  - product_save_amount {boolean} - Show save amount
+  - product_save_type {string} - Dollar or percent
+  - superscript_decimals {boolean} - Whether to superscript decimals
+  - set_image_breathing_room {boolean} - Whether to set image breathing room
+  - enable_product_tags {boolean} - Whether to show tags
+
+  Usage:
+  {% render 'product-complementary', type: 'block' %}
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign type = type | default: 'block'
+  assign quick_add_enable = quick_add_enable | default: false
+  assign quick_shop_enable = quick_shop_enable | default: false
+  assign product_grid_image_size = product_grid_image_size | default: settings.product_grid_image_size | default: 'square'
+  assign product_grid_image_fill = product_grid_image_fill | default: settings.product_grid_image_fill | default: false
+  assign product_hover_image = product_hover_image | default: settings.product_hover_image | default: false
+  assign enable_swatches = enable_swatches | default: settings.enable_swatches | default: false
+  assign vendor_enable = vendor_enable | default: settings.vendor_enable | default: false
+  assign product_save_amount = product_save_amount | default: settings.product_save_amount | default: false
+  assign product_save_type = product_save_type | default: settings.product_save_type | default: 'dollar'
+  assign superscript_decimals = superscript_decimals | default: settings.superscript_decimals | default: true
+  assign set_image_breathing_room = set_image_breathing_room | default: true, allow_false: true
+  assign enable_product_tags = enable_product_tags | default: settings.enable_product_tags | default: false
+
+  if recommendations.products and recommendations.products_count > 0
+    assign related_collection = recommendations
+  endif
+
+  if type == 'block'
+    assign number_of_products = block.settings.complementary_count
+    assign image_style = block.settings.image_style
+  else
+    assign number_of_products = section.settings.complementary_count
+  endif
+-%}
+
+<product-recommendations
+  id="Recommendations-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="product-recommendations"
+  data-enable="true"
+  data-product-id="{{ product.id }}"
+  data-intent="complementary"
+  {% if type == 'block' %}
+    data-block-id="{{ block.id }}" {{ block.shopify_attributes -}}
+  {% endif %}
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ number_of_products }}&intent=complementary"
+  data-limit="{{ number_of_products }}"
+>
+  {% if block.settings.product_complementary_heading != blank %}
+    <h4 class="product-recommendations__title">{{ block.settings.product_complementary_heading }}</h4>
+  {% endif %}
+
+  <div
+    class="{% unless block.settings.product_complementary_heading != blank %}product-recommendations--title-missing{% endunless %}"
+    data-section-id="{{ product.id }}"
+    data-subsection
+    data-section-type="collection-template"
+  >
+    <div class="product-recommendations-placeholder">
+      {% comment %}
+        This content is visually hidden and replaced when recommended products show up
+      {% endcomment %}
+      <div class="grid grid--uniform visually-invisible clearfix" aria-hidden="true">
+        {%- render 'product-grid-item', product: product -%}
+      </div>
+    </div>
+    {%- if related_collection.products_count > 0 -%}
+      <div class="product-recommendations">
+        <div
+          class="product-single__related grid grid--uniform clearfix"
+          data-animape
+          {% if type == 'block' %}
+            data-slideshow data-controls="{{ block.settings.control_type }}"
+            data-per-slide="{{ block.settings.per_slide }}" data-count="{{ number_of_products }}"
+          {% endif %}
+        >
+          {% assign currentStep = 1 %}
+          {%- for product in related_collection.products limit: number_of_products -%}
+            {% if currentStep == 1 %}
+              <div class="product-recommendations__slide">
+            {% endif %}
+
+            {%- render 'product-grid-item', image_style: image_style, product: product, sizes: '112px' -%}
+
+            {% if currentStep == block.settings.per_slide or forloop.last %}
+              </div>
+            {% endif %}
+
+            {% if currentStep == block.settings.per_slide or forloop.last %}
+              {% assign currentStep = 0 %}
+            {% endif %}
+
+            {% assign currentStep = currentStep | plus: 1 %}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</product-recommendations>
+
+<script type="module">
+  import '@archetype-themes/scripts/modules/product-recommendations'
+</script>

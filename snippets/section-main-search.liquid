@@ -1,0 +1,77 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a search section with an input form and search results.
+
+  Accepts:
+  - paginate_by {number} - Number of products to show per page
+  - hydration {string} - Hydration strategy for the component
+
+  Usage:
+  {% render 'section-main-search' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign paginate_by = paginate_by | default: section.settings.paginate_by | default: 40
+  assign hydration = hydration | default: 'on:visible'
+-%}
+
+<is-land {{ hydration }}>
+  <collection-template
+    class="search-content"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-template"
+    data-collection-template="true"
+  >
+    <div class="page-width page-content">
+      {%- render 'breadcrumbs' -%}
+
+      <header class="section-header">
+        <h1 class="section-header__title">
+          {{ 'labels.search' | t }}
+        </h1>
+        <p class="medium-up--hide" data-collection-count>
+          {{ 'info.search_result_count' | t: count: search.results_count }}
+        </p>
+      </header>
+
+      {%- render 'predictive-search', context: 'search-page' -%}
+
+      {%- if search.performed -%}
+        {%- if search.results_count == 0 -%}
+          <div class="section-header">
+            <p>{{ 'info.search_no_results_html' | t: terms: search.terms | replace: '*', '' }}</p>
+          </div>
+        {%- else -%}
+          <div id="CollectionAjaxContent" class="grid collection-content clearfix">
+            <div class="grid__item medium-up--one-fifth grid__item--sidebar">
+              {%- render 'collection-grid-filters', context: search -%}
+            </div>
+
+            <div class="grid__item medium-up--four-fifths grid__item--content">
+              {%- paginate search.results by paginate_by -%}
+                <div {{ block.shopify_attributes }}>
+                  {%- render 'collection-grid', context: search -%}
+                </div>
+
+                {%- liquid
+                  if paginate.pages > 1
+                    render 'pagination', paginate: paginate
+                  endif
+                -%}
+              {%- endpaginate -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  </collection-template>
+
+  <template data-island>
+    <script type="module">
+      import '@archetype-themes/scripts/config'
+      import '@archetype-themes/scripts/helpers/utils'
+      import '@archetype-themes/scripts/helpers/ajax-renderer'
+      import '@archetype-themes/scripts/modules/collection-template'
+    </script>
+  </template>
+</is-land>

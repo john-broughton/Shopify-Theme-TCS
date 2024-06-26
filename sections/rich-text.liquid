@@ -1,0 +1,167 @@
+{%- render 'section-rich-text' -%}
+
+{% schema %}
+{
+  "name": "t:labels.rich_text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:labels.content_alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.alignments.centered"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "narrow_column",
+      "label": "t:labels.narrow_column",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "1",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:labels.none"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:actions.show_section_divider",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:labels.heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Rich text"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "t:labels.heading_size",
+          "default": "h2",
+          "options": [
+            {
+              "value": "h3",
+              "label": "t:labels.sizes.small"
+            },
+            {
+              "value": "h2",
+              "label": "t:labels.sizes.medium"
+            },
+            {
+              "value": "h1",
+              "label": "t:labels.sizes.large"
+            },
+            {
+              "value": "h0",
+              "label": "t:labels.sizes.extra_large"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:labels.text",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enlarge_text",
+          "label": "t:actions.enlarge_text",
+          "default": true
+        },
+        {
+          "id": "text",
+          "type": "richtext",
+          "label": "t:labels.text",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:labels.button",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:labels.button_link"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "t:labels.button_text",
+          "default": "Button"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "t:labels.page",
+      "settings": [
+        {
+          "id": "page_text",
+          "type": "page",
+          "label": "t:labels.page"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:labels.rich_text",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": [
+      "custom.popups"
+    ]
+  }
+}
+{% endschema %}

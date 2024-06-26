@@ -1,0 +1,25 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a tab block
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+-%}
+
+<block-tab class="product-block product-block--tab" {{ block.shopify_attributes }}>
+  {% assign tab_id = block.id | append: product.id %}
+  {% capture tab_content %}
+    {{ block.settings.content }}
+    {{ block.settings.page.content }}
+  {% endcapture %}
+  {%- render 'tab', id: tab_id, title: block.settings.title, content: tab_content -%}
+</block-tab>
+
+<script type="module">
+  import 'components/block-tab'
+</script>

@@ -1,0 +1,64 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a list of collection blocks.
+
+  Accepts:
+  - title {string} - The title of the section
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - heading_position {'left'|'center'|'right'} - The position of the heading
+  - divider {boolean} - Whether to add a divider above the section
+
+  Usage:
+  {% render 'section-featured-collections' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title = title | default: section.settings.title
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-width">
+  {%- if title != blank -%}
+    <div class="section-header text-{{ heading_position }}">
+      <h2 class="section-header__title {{ heading_size }}">{{ title }}</h2>
+    </div>
+  {%- endif -%}
+
+  <div
+    class="new-grid"
+    {% if section.blocks.size < 6 %}
+      {%- render 'grid-view-type', products_per_row: section.blocks.size -%}
+    {% else %}
+      data-view="6-3"
+    {% endif %}
+  >
+    {%- liquid
+      assign is_empty = true
+      if section.blocks.size > 0
+        assign is_empty = false
+      endif
+    -%}
+
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign sizeVariable = section.blocks.size | at_most: 6
+
+        render 'collection-grid-item', block: block, collection: block.settings.collection, sizeVariable: sizeVariable, fallback: 'variable'
+      -%}
+    {%- endfor -%}
+
+    {%- if is_empty -%}
+      <div class="page-width">
+        <div class="rte clearfix">
+          {{ 'info.section_no_content' | t }}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

@@ -1,0 +1,59 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a newsletter form.
+
+  Accepts:
+  - context {string} - The context in which the form is rendered
+
+  Usage:
+  {% render 'newsletter-form', context: 'footer' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign newsletter_form_id = 'newsletter-' | append: section.id
+-%}
+
+{% form 'customer', id: newsletter_form_id %}
+  {%- if form.posted_successfully? -%}
+    <div class="note note--success">
+      {{ 'info.newsletter_success' | t }}
+    </div>
+  {%- endif -%}
+  {%- if form.errors and form.context == context -%}
+    {{ form.errors | default_errors }}
+  {%- endif -%}
+
+  {%- unless form.posted_successfully? -%}
+    <label for="Email-{{ section.id }}" class="visually-hidden">{{ 'actions.enter_email' | t }}</label>
+    <label for="newsletter-form-submit-{{ section.id }}" class="visually-hidden">{{ 'actions.subscribe' | t }}</label>
+    <input type="hidden" name="contact[tags]" value="prospect,newsletter">
+    <input type="hidden" name="contact[context]" value="{{ context }}">
+    <div class="input-group newsletter__input-group">
+      <input
+        type="email"
+        value="{% if customer %}{{ customer.email }}{% endif %}"
+        placeholder="{{ 'actions.enter_email' | t }}"
+        name="contact[email]"
+        id="Email-{{ section.id }}"
+        class="input-group-field newsletter__input"
+        autocorrect="off"
+        autocapitalize="off"
+        required
+      >
+      <div class="input-group-btn">
+        <button
+          type="submit"
+          id="newsletter-form-submit-{{ section.id }}"
+          class="btn"
+          name="commit"
+          aria-label="{{ 'actions.subscribe' | t }}"
+        >
+          <span class="form__submit--large">{{ 'actions.subscribe' | t }}</span>
+          <span class="form__submit--small">
+            {% render 'icon', name: 'arrow-right' %}
+          </span>
+        </button>
+      </div>
+    </div>
+  {%- endunless -%}
+{% endform %}

@@ -1,0 +1,44 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a collection grid item.
+
+  Accepts:
+  - sub_collection_links {number} - The number of sub collection links
+  - parent_url {string} - The url of the parent collection
+  - collection_grid_image {string} - The collection grid image
+  - collection_grid_shape {string} - The collection grid shape
+  - collection_grid_image_fill {string} - The collection grid image fill
+  - collection_grid_color {string} - The collection grid color
+
+  Usage:
+  {% render 'sub-collections', sub_collection_links: link.links %}
+{%- endcomment -%}
+
+{%- liquid
+  assign sub_collection_links = sub_collection_links | default: 0
+  assign parent_url = parent_url | default: blank
+  assign collection_grid_image = collection_grid_image | default: settings.collection_grid_image | default: 'collection'
+  assign collection_grid_shape = collection_grid_shape | default: settings.collection_grid_shape | default: 'square'
+  assign collection_grid_image_fill = collection_grid_image_fill | default: settings.collection_grid_image_fill, allow_false: true | default: true, allow_false: true
+  assign collection_grid_color = collection_grid_color | default: settings.collection_grid_color | default: 'grey'
+
+  for sub_collection_link in sub_collection_links
+    if sub_collection_link.url contains '/collections/'
+      assign sub_collection_split = sub_collection_link.url | split: '/'
+      assign sub_collection_handle = sub_collection_split | last
+      assign sub_collection = collections[sub_collection_handle]
+
+      if sub_collection != blank
+        unless parent_url == sub_collection.url
+          capture grid_view
+            render 'grid-view-type', products_per_row: sub_collection_links.size, style: 'fractions', type: false
+          endcapture
+
+          assign size_variable = sub_collection_links.size | at_most: 6
+
+          render 'collection-grid-item', collection: sub_collection, collection_title: sub_collection_link.title, grid_view: grid_view, sizeVariable: size_variable, fallback: '30vw'
+        endunless
+      endif
+    endif
+  endfor
+-%}

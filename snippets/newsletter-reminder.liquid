@@ -1,0 +1,54 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a newsletter reminder.
+
+  Accepts:
+  - block {block} - The block object
+  - popup_days {2-30} - The number of days to wait before showing the popup
+  - popup_seconds {5-60} - The number of seconds to wait before showing the popup
+  - color_scheme {string} - The color scheme of the reminder
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'newsletter-reminder', popup_days: 15 %}
+{%- endcomment -%}
+
+{%- liquid
+  assign reminder_label = reminder_label | default: block.settings.reminder_label
+  assign popup_seconds = popup_seconds | default: section.settings.popup_seconds | default: 30
+  assign popup_days = popup_days | default: section.settings.popup_days | default: 30
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+{% if reminder_label != blank %}
+  <is-land {{ hydration }}>
+    <newsletter-reminder
+      data-section-id="{{ section.id }}"
+      data-enabled="false"
+      data-delay-days="{{ popup_days }}"
+      data-delay-seconds="{{ popup_seconds }}"
+      {{ block.shopify_attributes }}
+      style="display: none;"
+    >
+      <div class="newsletter-reminder__content color-scheme-{{ color_scheme }}">
+        {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+
+        <div class="newsletter-reminder__message h3" data-message>
+          {{ reminder_label | escape }}
+        </div>
+      </div>
+
+      <button type="button" data-close-button class="btn btn--circle btn--icon modal__close js-modal-close">
+        {% render 'icon', name: 'close' %}
+        <span class="icon__fallback-text visually-hidden">{{ 'actions.close_esc' | t | json }}</span>
+      </button>
+    </newsletter-reminder>
+
+    <template data-island>
+      <script type="module">
+        import 'components/newsletter-reminder'
+      </script>
+    </template>
+  </is-land>
+{% endif %}

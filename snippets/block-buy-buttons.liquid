@@ -1,0 +1,116 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders product buy buttons
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+
+  Usage:
+  {% render 'block-buy-buttons', block: block %}
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign form_id = 'product-form-' | append: section.id
+
+  assign cart_type = settings.cart_type | default: 'dropdown'
+
+  assign show_dynamic_checkout = false
+
+  if block.settings.show_dynamic_checkout
+    assign show_dynamic_checkout = true
+  endif
+
+  assign check_against_inventory = true
+  assign quantity_rule_soldout = false
+
+  if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+    assign check_against_inventory = false
+  endif
+
+  if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+    assign quantity_rule_soldout = true
+  endif
+
+  assign button_text = 'actions.add_to_cart' | t
+  if product.selected_or_first_available_variant.available == false or quantity_rule_soldout
+    assign button_text = 'info.sold_out' | t
+  endif
+
+  assign gift_card_recipient_feature_active = false
+  if block.settings.show_gift_card_recipient and product.gift_card?
+    assign gift_card_recipient_feature_active = true
+  endif
+-%}
+
+{% if product %}
+  <block-buy-buttons
+    class="block-buy-buttons product-block"
+    data-section-id="{{ section.id }}"
+    data-product-id="{{ product.id }}"
+    data-cart-type="{{ cart_type }}"
+    {% if show_dynamic_checkout %}
+      data-show-dynamic-checkout=""
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+      {%- if gift_card_recipient_feature_active -%}
+        {%- render 'gift-card-recipient-form' -%}
+      {%- endif -%}
+
+      <input
+        type="hidden"
+        name="id"
+        value="{{ product.selected_or_first_available_variant.id }}"
+        {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+          disabled
+        {% endif %}
+      >
+      <div>
+        <button
+          id="ProductSubmitButton-{{ section.id }}"
+          type="submit"
+          name="add"
+          class="btn btn--full add-to-cart"
+          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+            disabled
+          {% endif %}
+        >
+          <span>
+            {{- button_text -}}
+          </span>
+        </button>
+
+        {%- if show_dynamic_checkout
+          and template != 'product.preorder'
+          and gift_card_recipient_feature_active == false
+        -%}
+          {{- form | payment_button -}}
+        {%- endif -%}
+      </div>
+    {%- endform -%}
+
+    <script type="application/json">
+      {
+        "addToCart": "{{ 'actions.add_to_cart' | t }}",
+        "soldOut": "{{ 'info.sold_out' | t }}",
+        "unavailable": "{{ 'info.unavailable' | t }}"
+      }
+    </script>
+  </block-buy-buttons>
+
+  <script type="module">
+    import 'components/block-buy-buttons'
+  </script>
+
+  {%- if block.settings.surface_pickup_enable -%}
+    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+      | where: 'pick_up_enabled', true
+    -%}
+    {% if pick_up_availabilities.size > 0 %}
+      {%- render 'store-availability' -%}
+    {% endif %}
+  {%- endif -%}
+{%- endif -%}

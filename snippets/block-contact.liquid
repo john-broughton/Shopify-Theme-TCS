@@ -1,0 +1,23 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a contact form
+
+  Accepts:
+  - block {block} - Block object
+
+  Usage:
+  {%- render 'block-contact', block: block -%}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign tab_id = block.id | append: product.id
+-%}
+
+<block-contact class="product-block product-block--tab" {{ block.shopify_attributes }}>
+  {%- render 'tab-contact', id: tab_id, block: block -%}
+</block-contact>
+
+<script type="module">
+  import 'components/block-contact'
+</script>

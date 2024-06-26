@@ -1,0 +1,36 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with an app block.
+
+  Accepts:
+  - full_width {boolean} - Whether to make the section full width
+  - space_around {boolean} - Whether to add space around the section
+
+  Usage:
+  {% render 'section-apps', full_width: true %}
+{%- endcomment -%}
+
+{%- liquid
+  assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: false, allow_false: true
+  assign space_around = space_around | default: section.settings.space_around, allow_false: true | default: true, allow_false: true
+-%}
+
+{%- if space_around -%}
+  <div class="index-section">
+{%- endif -%}
+
+{%- unless full_width -%}
+  <div class="page-width">
+{%- endunless -%}
+
+{%- for block in section.blocks -%}
+  {% render block %}
+{%- endfor -%}
+
+{%- unless full_width -%}
+  </div>
+{%- endunless -%}
+
+{%- if space_around -%}
+  </div>
+{%- endif -%}

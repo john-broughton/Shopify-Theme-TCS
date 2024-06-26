@@ -1,0 +1,50 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a size chart block
+
+  Accepts:
+  - block {block} - Block object
+  - forloop {forloop} - Parent loop object
+  - product {product} - Product object
+
+  Usage:
+  {% render 'block-size-chart', block: block, forloop: forloop %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign connect_to_variant_picker = false
+  assign sizechart_index = forloop.index0
+  assign next_block_index = sizechart_index | plus: 1
+  assign next_block = section.blocks[next_block_index]
+
+  if next_block.type == 'variant_picker' and next_block.settings.picker_type == 'button' and product.has_only_default_variant == false
+    for option in product.options_with_values
+      assign size_trigger = 'labels.size_chart' | t | downcase
+      assign downcased_option = option.name | downcase
+
+      if size_trigger contains downcased_option
+        assign connect_to_variant_picker = true
+      endif
+    endfor
+  endif
+-%}
+
+{% unless connect_to_variant_picker %}
+  {%- capture size_chart_title -%}
+    {{ 'labels.size_chart' | t }}{% render 'icon', name: 'size-chart' %}
+  {%- endcapture -%}
+
+  <div class="size-chart__standalone" {{ block.shopify_attributes }}>
+    {%- render 'tool-tip-trigger',
+      title: size_chart_title,
+      content: block.settings.size_chart.content,
+      context: 'size-chart'
+    -%}
+    {% style %}
+      tool-tip-trigger {
+        font-weight: 800;
+      }
+    {% endstyle %}
+  </div>
+{% endunless %}

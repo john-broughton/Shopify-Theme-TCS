@@ -1,0 +1,29 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- liquid
+  assign enable_swatch_labels = enable_swatch_labels | default: section.settings.enable_swatch_labels, allow_false: true | default: true, allow_false: true
+-%}
+
+<div class="image-filter__wrapper">
+  <ul class="no-bullets tag-list">
+    {%- for filter_value in filter.values -%}
+      <li class="tag tag--image {% if filter_value.active %}tag--active{% endif %} {% if enable_swatch_labels %}tag--show-label{% endif %}">
+        <label for="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label">
+          <input
+          id="tag-{{ filter_value.value | handle }}"
+          type="checkbox"
+          class="tag__input"
+          name="{{ filter_value.param_name }}"
+          value="{{ filter_value.value }}"
+          {% if filter_value.active %}checked{% endif %}>
+
+          <div class="image-filter__image-wrapper">
+            {%- render 'image-element', img: filter_value.image, loading: 'eager' -%}
+            <span class="tag__text {% unless enable_swatch_labels %}hide{% endunless %}">
+              {{ filter_value.label }}
+            </span>
+          </div>
+        </label>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>

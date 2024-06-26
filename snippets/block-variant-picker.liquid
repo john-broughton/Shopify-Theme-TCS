@@ -1,0 +1,53 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders product variant-picker
+
+  Accepts:
+  - block {block} - Block object
+  - product {product} - Product object
+  - update_url {boolean} - Whether to update the URL when the variant is changed
+  - swatch_style {'round'|'square'} - Swatch style
+
+  Usage:
+  {% render 'block-variant-picker', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign update_url = update_url | default: true, allow_false: true
+  assign prev_block_index = forloop.index0 | minus: 1
+  assign swatch_style = swatch_style | default: settings.swatch_style | default: 'round'
+-%}
+
+{%- unless product.has_only_default_variant -%}
+  <block-variant-picker
+    class="block-variant-picker product-block"
+    id="variant-selects-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-url="{{ product.url }}"
+    {% if update_url %}
+      data-update-url=""
+    {% endif %}
+    {% if block.settings.product_dynamic_variants_enable %}
+      data-dynamic-variants-enabled=""
+    {% endif %}
+    data-picker-type="{{ block.settings.picker_type }}"
+    data-product-id="{{ product.id }}"
+    data-swatch_style="{{ swatch_style }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- if block.settings.picker_type == 'button' -%}
+        {%- render 'variant-button', option: option, block: block, prev_block_index: prev_block_index -%}
+      {%- else -%}
+        {%- render 'variant-dropdown', option: option, block: block -%}
+      {%- endif -%}
+    {%- endfor -%}
+    <script type="application/json">
+      {{ product.variants | json }}
+    </script>
+  </block-variant-picker>
+  <script type="module">
+    import 'components/block-variant-picker'
+  </script>
+{%- endunless -%}

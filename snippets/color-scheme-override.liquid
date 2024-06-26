@@ -1,0 +1,39 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Handles color scheme overrides.
+
+  Accepts:
+  - class_name {string} - The class name to apply the color overrides to
+  - text_color {string} - The text color
+  - background_color {string} - The background color
+
+  Usage:
+  {% render 'color-scheme-override', class_name: 'class_name' %}
+{%- endcomment -%}
+
+{% liquid
+  assign id = id | default: section.id
+  assign text_color = text_color | default: section.settings.text_color
+  assign background_color = background_color | default: section.settings.background_color
+%}
+
+{% style %}
+  :root {
+    {% if text_color %}
+      --{{ id }}-text-color: {{ text_color }};
+    {% else %}
+      --{{ id }}-text-color: var(--colorTextBody);
+    {% endif %}
+
+    {% if background_color %}
+      --{{ id }}-background-color: {{ background_color }};
+    {% else %}
+      --{{ id }}-background-color: var(--colorBody);
+    {% endif %}
+  }
+
+  .{{ class_name }} {
+    color: var(--{{ id }}-text-color);
+    background-color: var(--{{ id }}-background-color);
+  }
+{% endstyle %}

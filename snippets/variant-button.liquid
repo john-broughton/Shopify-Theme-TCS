@@ -1,0 +1,145 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Render a variant button for a product option.
+
+  Accepts:
+  - option {product_option} - Product option object
+  - prev_block_index {number} - Index of the previous block
+  - forloop {forloop} - Parent loop object
+  - product {product} - Product object
+  - block {block} - Block object
+  - swatch_file_extension {string} - Swatch file extension
+
+  Usage:
+  {% render 'variant-button', option: option %}
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
+
+  assign form_id = 'product-form-' | append: section.id
+
+  if block.settings.color_swatches
+    assign is_color = false
+    assign swatch_trigger = 'trigger.color_swatch' | t | downcase
+    assign downcased_option = option.name | downcase
+    if downcased_option contains swatch_trigger
+      assign is_color = true
+    elsif swatch_trigger == 'color' and downcased_option contains 'colour'
+      assign is_color = true
+    endif
+  endif
+  assign swatch_file_extension = swatch_file_extension | default: 'png'
+
+  assign is_size = false
+  assign size_trigger = 'labels.size_chart' | t | downcase
+  assign connect_to_sizechart = false
+  assign prev_block = section.blocks[prev_block_index]
+  if size_trigger contains downcased_option
+    assign is_size = true
+  endif
+  if prev_block.type == 'size_chart' and product.has_only_default_variant == false
+    assign connect_to_sizechart = true
+  endif
+  capture size_chart_title
+    echo 'labels.size_chart' | t
+    render 'icon', name: 'size-chart'
+  endcapture
+-%}
+
+<fieldset class="variant-input-wrap">
+  <legend class="label variant__label">
+    {{ option.name }}
+    {%- if connect_to_sizechart and is_size -%}
+      <span class="variant__label-info">
+        &mdash;
+        {%- render 'tool-tip-trigger',
+          title: size_chart_title,
+          content: prev_block.settings.size_chart.content,
+          context: 'size-chart'
+        -%}
+      </span>
+    {%- endif -%}
+    {%- if is_color -%}
+      <span class="variant__label-info">
+        &mdash;
+        <span data-variant-color-label>
+          {{ option.selected_value }}
+        </span>
+      </span>
+    {%- endif -%}
+  </legend>
+
+  {%- for value in option.values -%}
+    {%- liquid
+      assign option_disabled = true
+
+      if block.settings.product_dynamic_variants_enable
+        for option1_name in variants_option1_arr
+          case option.position
+            when 1
+              if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                assign option_disabled = false
+              endif
+            when 2
+              if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                assign option_disabled = false
+              endif
+            when 3
+              if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                assign option_disabled = false
+              endif
+          endcase
+        endfor
+      else
+        assign option_disabled = false
+      endif
+
+      assign id = section.id | append: '-' | append: product.id | append: '-' | append: option.position | append: '-' | append: forloop.index0
+
+      if is_color
+        assign color_file_name = value | handle | append: '.' | append: swatch_file_extension
+        assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
+        assign color_swatch_fallback = value | split: ' ' | last | handle
+      endif
+    -%}
+
+    {% if is_color %}
+      {% style %}
+        label[for="{{ id }}"] {
+          --swatch-bg-color: {{ color_swatch_fallback }};
+          --swatch-bg-image: url({{ color_image }});
+        }
+      {% endstyle %}
+    {% endif %}
+
+    <input
+      class="visually-hidden"
+      type="radio"
+      form="{{ form_id }}"
+      {% if option.selected_value == value %}
+        checked="checked"
+      {% endif %}
+      {% if option_disabled %}
+        data-disabled=""
+      {% endif %}
+      value="{{ value | escape }}"
+      name="{{ option.name }}"
+      id="{{ id }}"
+      data-index="option{{ option.position }}"
+    >
+    <label
+      for="{{ id }}"
+      class="variant__button-label"
+      {% if is_color %}
+        data-color-swatch="{{ option.name }}"
+      {% endif %}
+    >
+      {{- value | escape -}}
+    </label>
+  {%- endfor -%}
+</fieldset>

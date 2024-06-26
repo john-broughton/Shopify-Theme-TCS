@@ -1,0 +1,83 @@
+<div class="page-width page-width--tiny page-content">
+  <header class="section-header">
+    <h1 class="section-header__title">{{ 'actions.login' | t }}</h1>
+  </header>
+
+  <div class="note note--success hide" id="ResetSuccess">
+    {{ 'info.recovery_email_sent' | t }}
+  </div>
+
+  <div id="CustomerLoginForm" class="form-vertical">
+    {%- form 'customer_login' -%}
+
+      {{ form.errors | default_errors }}
+
+      <label for="CustomerEmail">{{ 'labels.email' | t }}</label>
+      <input type="email" name="customer[email]" id="CustomerEmail" class="input-full{% if form.errors contains 'email' %} error{% endif %}" autocorrect="off" autocapitalize="off" autofocus>
+
+      {%- if form.password_needed -%}
+        <div class="grid clearfix">
+          <div class="grid__item one-half">
+            <label for="CustomerPassword">{{ 'labels.password' | t }}</label>
+          </div>
+          <div class="grid__item one-half text-right">
+            <small class="label-info">
+              <a href="#recover" id="RecoverPassword">
+                {{ 'actions.forgot_password' | t }}
+              </a>
+            </small>
+          </div>
+        </div>
+        <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}">
+      {%- endif -%}
+
+      <p>
+        <button type="submit" class="btn btn--full">
+          {{ 'actions.sign_in' | t }}
+        </button>
+      </p>
+      <p>{{ 'actions.create_account' | t | customer_register_link }}</p>
+
+    {%- endform -%}
+  </div>
+
+  <div id="RecoverPasswordForm" class="hide">
+    <div class="form-vertical">
+      <h2>{{ 'actions.reset_your_password' | t }}</h2>
+      <p>{{ 'info.email_to_reset_password' | t }}</p>
+
+      {%- form 'recover_customer_password' -%}
+
+        {{ form.errors | default_errors }}
+
+        {%- if form.posted_successfully? -%}
+          <span class="hide reset-password-success"></span>
+        {%- endif -%}
+
+        <label for="RecoverEmail">{{ 'labels.email' | t }}</label>
+        <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
+
+        <p>
+          <button type="submit" class="btn">
+            {{ 'actions.submit' | t }}
+          </button>
+        </p>
+        <button type="button" id="HideRecoverPasswordLink">{{ 'actions.cancel' | t }}</button>
+      {%- endform -%}
+    </div>
+
+  </div>
+
+  {%- if shop.checkout.guest_login -%}
+    <hr class="hr--clear">
+
+    <h1>{{ 'actions.continue_as_guest' | t }}</h1>
+    <hr class="hr--small">
+
+    {%- form 'guest_login' -%}
+      <button type="submit" class="btn">
+        {{ 'actions.continue' | t }}
+      </button>
+    {%- endform -%}
+  {%- endif -%}
+</div>

@@ -1,0 +1,122 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a list of blocks.
+
+  Accepts:
+  - full_width {boolean} - Whether to make the section full width
+  - space_around {boolean} - Whether to add space around the section
+
+  Usage:
+  {% render 'section-advanced-content', full_width: true, space_around: false %}
+{%- endcomment -%}
+
+{%- liquid
+  assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: false, allow_false: true
+  assign space_around = space_around | default: section.settings.space_around, allow_false: true | default: true, allow_false: true
+
+  assign lazyload_images = true
+
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+-%}
+
+{%- if space_around -%}
+  <div class="index-section">
+{%- endif -%}
+
+{%- unless full_width -%}
+  <div class="page-width">
+{%- endunless -%}
+
+<div class="custom-content">
+  {%- for block in section.blocks -%}
+    {%- liquid
+      case block.settings.width
+        when '25%'
+          assign block_width = 'small--one-whole one-quarter'
+        when '33%'
+          assign block_width = 'small--one-whole one-third'
+        when '50%'
+          assign block_width = 'small--one-whole one-half'
+        when '66%'
+          assign block_width = 'small--one-whole two-thirds'
+        when '75%'
+          assign block_width = 'small--one-whole three-quarters'
+        when '100%'
+          assign block_width = 'one-whole'
+      endcase
+    -%}
+    <div
+      class="custom__item {{ block_width }}{% if block.settings.alignment %} align--{{ block.settings.alignment }}{% endif %}"
+      {{ block.shopify_attributes }}
+    >
+      <div class="custom__item-inner custom__item-inner--{{ block.type }}{% if block.settings.image == blank and block.type == 'image' %} custom__item-inner--placeholder-image{% endif %}">
+        {%- case block.type -%}
+          {%- when 'liquid' -%}
+            {%- if block.settings.code != blank -%}
+              <div class="rte clearfix">
+                {{ block.settings.code }}
+              </div>
+            {%- else -%}
+              <div class="rte clearfix">
+                {{ 'info.section_no_content' | t }}
+              </div>
+            {%- endif -%}
+          {%- when 'image' -%}
+            {%- if block.settings.link != blank -%}
+              <a href="{{ block.settings.link }}">
+            {%- endif -%}
+            {%- if block.settings.image != blank -%}
+              <div
+                class="image-wrap"
+                style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+              >
+                {%- liquid
+                  assign blockWidth = block.settings.width | remove: '%' | times: 1
+                  if forloop.index == 1 and blockWidth >= 50
+                    assign loading = lazyload_images
+                  else
+                    assign loading = true
+                  endif
+                -%}
+                {%- render 'image-element',
+                  img: block.settings.image,
+                  loading: loading,
+                  sizeVariable: block.settings.width,
+                  widths: '360, 540, 720, 900, 1080, 1600'
+                -%}
+              </div>
+            {%- else -%}
+              <div class="image-wrap">
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.link != blank -%}
+              </a>
+            {%- endif -%}
+        {%- endcase -%}
+      </div>
+    </div>
+  {%- endfor -%}
+
+  {%- if section.blocks.size == 0 -%}
+    <div class="page-width">
+      <div class="grid clearfix">
+        <div class="grid__item">
+          <div class="rte clearfix">
+            {{ 'info.section_no_content' | t }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{%- unless full_width -%}
+  </div>
+{%- endunless -%}
+
+{%- if space_around -%}
+  </div>
+{%- endif -%}

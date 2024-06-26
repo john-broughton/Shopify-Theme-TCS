@@ -1,0 +1,178 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a blog article grid item.
+
+  Accepts:
+  - blog {object} - The blog to leverage
+  - article {object} - The article to display
+  - style {'compact'|'medium'|'large'} - The style of the article grid item
+  - show_tags {boolean} - Whether to show tags
+  - show_date {boolean} - Whether to show the date
+  - show_comments {boolean} - Whether to show the comments count
+  - show_author {boolean} - Whether to show the author
+  - show_excerpt {boolean} - Whether to show the excerpt
+  - image_size {'natural'|'square'|'landscape'|'portrait'|'wide'} - The image size to use
+  - grid_item_width {string} - The width of the grid item
+
+  Usage:
+  {%- render 'article-grid-item', article: article -%}
+{%- endcomment -%}
+
+{%- liquid
+  assign style = style | default: blank
+  assign show_tags = show_tags | default: section.settings.blog_show_tags, allow_false: true | default: true, allow_false: true
+  assign show_date = show_date | default: section.settings.blog_show_date, allow_false: true | default: true, allow_false: true
+  assign show_comments = show_comments | default: section.settings.blog_show_comments, allow_false: true | default: true, allow_false: true
+  assign show_author = show_author | default: section.settings.blog_show_author, allow_false: true | default: true, allow_false: true
+  assign show_excerpt = show_excerpt | default: section.settings.blog_show_excerpt, allow_false: true | default: true, allow_false: true
+  assign image_size = image_size | default: section.settings.blog_image_size | default: 'wide'
+  assign grid_item_width = grid_item_width | default: 'grid-item--half'
+
+  assign fixed_aspect_ratio = false
+
+  unless image_size == 'natural'
+    assign fixed_aspect_ratio = true
+  endunless
+-%}
+
+{%- liquid
+  if style == 'large'
+    assign sizeVariable = '60vw'
+  elsif style == 'medium'
+    assign sizeVariable = '30vw'
+    assign fallback = '40vw'
+  else
+    assign sizeVariable = '16vw'
+    assign fallback = '40vw'
+  endif
+-%}
+
+<div
+  class="grid__item grid-article {{ grid_item_width }}"
+  {% if style != blank %}
+    data-style="{{ style }}"
+  {% endif %}
+>
+  <div class="grid-article__image">
+    {%- if article.empty? -%}
+      <div class="image-wrap">
+        <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+        </div>
+      </div>
+    {%- else -%}
+      {%- if article.image -%}
+        <a href="{{ article.url }}" aria-label="{{ article.title | escape }}">
+          {%- if fixed_aspect_ratio -%}
+            <div class="image-wrap">
+              <div class="grid__image-ratio grid__image-ratio--{{ image_size }}">
+                {%- render 'image-element',
+                  img: article.image,
+                  sizeVariable: sizeVariable,
+                  fallback: fallback,
+                  widths: '360, 540, 720, 900, 1080'
+                -%}
+              </div>
+            </div>
+          {%- else -%}
+            <div
+              class="image-wrap"
+              style="height: 0; padding-bottom: {{ 100 | divided_by: article.image.aspect_ratio }}%;"
+            >
+              {%- render 'image-element',
+                img: article.image,
+                sizeVariable: sizeVariable,
+                fallback: fallback,
+                widths: '180, 360, 540, 720, 900, 1080'
+              -%}
+            </div>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    {%- endif -%}
+
+    {%- if show_tags and article.tags.size > 0 and style != blank -%}
+      <div class="grid-article__tags">
+        {%- for tag in article.tags -%}
+          {% if tag contains '_' %}
+            {%- assign tag_starts_with = tag | slice: 0 -%}
+            {% if tag_starts_with == '_' -%}
+              {%- if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif -%}
+              {%- continue -%}
+            {%- endif -%}
+          {%- endif %}
+          <a class="article-tag" href="{{ blog.url | default: '#' }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="grid-article__meta">
+    {%- if article.empty? -%}
+      <a href="{{ article.url }}" class="article__title">Example blog post</a>
+      <div class="article__sub-meta">
+        {%- if show_comments -%}
+          <span>
+            <a href="#">
+              {{ 'info.comments_count' | t: count: 0 }}
+            </a>
+          </span>
+        {%- endif -%}
+
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">Jul 17, {{ 'now' | date: '%Y' }}</span>
+        {%- endif -%}
+
+        {%- if show_author -%}
+          <span>by Archetype Themes</span>
+        {%- endif -%}
+      </div>
+    {%- else -%}
+      <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
+      <div class="article__sub-meta">
+        {%- if show_tags and article.tags.size > 0 -%}
+          <span>
+            {%- for tag in article.tags -%}
+              {% if tag contains '_' %}
+                {%- assign tag_starts_with = tag | slice: 0 -%}
+                {% if tag_starts_with == '_' -%}
+                  {%- if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif -%}
+                  {%- continue -%}
+                {%- endif -%}
+              {%- endif %}
+              <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+            {%- endfor -%}
+          </span>
+        {%- endif -%}
+
+        {%- if show_comments and article.comments_count > 0 -%}
+          <span>
+            <a href="{{ article.url }}#comments">
+              {{ 'info.comments_count' | t: count: article.comments_count }}
+            </a>
+          </span>
+        {%- endif -%}
+
+        {%- if show_date -%}
+          <span class="article__sub-meta-date">{{ article.published_at | date: format: 'abbreviated_date' }}</span>
+        {%- endif -%}
+
+        {%- if show_author and style != blank -%}
+          <span>by {{ article.author }}</span>
+        {%- endif -%}
+      </div>
+
+      {%- if show_author and style == blank -%}
+        <div class="article__author">
+          <span>by {{ article.author }}</span>
+        </div>
+      {%- endif -%}
+
+      {% if show_excerpt and style != blank %}
+        <div class="rte article__excerpt clearfix">
+          {{ article.excerpt_or_content | strip_html | truncatewords: 20 }}
+        </div>
+      {% endif %}
+    {%- endif -%}
+  </div>
+</div>

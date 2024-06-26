@@ -1,0 +1,111 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a background image and text.
+
+  Accepts:
+  - subtitle {string} - The subtitle of the section
+  - title {string} - The title of the section
+  - heading_size {string} - The size of the heading
+  - heading_position {'left'|'center'|'right'} - The position of the heading
+  - text {string} - The text of the section
+  - button_label {string} - The label of the button
+  - button_link {string} - The link of the button
+  - image {image} - The image of the section
+  - layout {'left'|'right'} - The layout of the section
+  - height {number} - The height of the section in pixels
+  - parallax {boolean} - Whether to enable parallax effect
+  - parallax_direction {'top'|'left'} - The direction of the parallax effect
+
+  Usage:
+  {% render 'section-background-image-text', parallax_direction: 'left' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign subtitle = subtitle | default: section.settings.subtitle
+  assign title = title | default: section.settings.title
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
+  assign text = text | default: section.settings.text
+  assign button_label = button_label | default: section.settings.button_label
+  assign button_link = button_link | default: section.settings.button_link
+  assign image = image | default: section.settings.image
+  assign layout = layout | default: section.settings.layout | default: 'left'
+  assign height = height | default: section.settings.height | default: 550
+  assign parallax = parallax | default: section.settings.parallax, allow_false: true | default: true, allow_false: true
+  assign parallax_direction = parallax_direction | default: section.settings.parallax_direction | default: 'top'
+  assign hydration = hydration | default: 'on:visible'
+
+  assign lazyload_images = true
+
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <background-image>
+    <div
+      data-section-type="background-image"
+      class="background-media-text background-media-text--{{ section.id }} background-media-text--{{ height }}"
+      {% if parallax %}
+        data-parallax="true"
+      {% endif %}
+    >
+      <div class="background-media-text__container">
+        {%- if parallax -%}
+          <parallax-image class="parallax-container">
+            <div class="parallax-image" data-movement="15%" data-parallax-image data-angle="{{ parallax_direction }}">
+        {%- endif -%}
+
+        {%- if image != blank -%}
+          {% assign classes = 'image-fit background-media-text__image background-media-text__image--'
+            | append: section.id
+          %}
+          {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+          {%- render 'image-element', img: image, img_width: 2400, loading: lazyload_images, classes: classes -%}
+        {%- else -%}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+
+        {%- if parallax -%}
+          </div>
+          </parallax-image>
+        {%- endif -%}
+      </div>
+
+      {%- if subtitle != blank or title != blank or text != blank -%}
+        <div class="background-media-text__inner">
+          <div class="background-media-text__aligner background-media-text--{{ layout }}">
+            <div class="animation-contents">
+              <div class="background-media-text__text {% if heading_position %}text-{{ heading_position }}{% endif %}">
+                {%- if subtitle != blank -%}
+                  <p class="accent-subtitle">{{ subtitle }}</p>
+                {%- endif -%}
+
+                {%- if title != blank -%}
+                  <p class="{% if heading_size %}{{ heading_size }}{% else %}h3{% endif %}">{{ title | escape }}</p>
+                {%- endif -%}
+
+                {%- if text != blank -%}
+                  <div class="rte background-media-text__subtext clearfix">{{ text }}</div>
+                {%- endif -%}
+
+                {%- if button_label != blank and button_link != blank -%}
+                  <a href="{{ button_link }}" class="btn">
+                    {{ button_label }}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </background-image>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-background-image-text'
+    </script>
+  </template>
+</is-land>

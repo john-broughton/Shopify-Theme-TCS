@@ -1,0 +1,37 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a trust badge block
+
+  Accepts:
+  - block {block} - Block object
+  - image_container_width {string} - Width of the image container
+
+  Usage:
+  {% render 'block-trust-badge', block: block %}
+{%- endcomment -%}
+
+{%- liquid
+  assign image_container_width = image_container_width | default: section.settings.image_container_size | default: 'medium'
+  assign product_description_width = 'medium-up--one-half'
+  case image_container_width
+    when 'small'
+      assign product_description_width = 'medium-up--three-fifths'
+    when 'large'
+      assign product_description_width = 'medium-up--two-fifths'
+  endcase
+-%}
+
+<div class="product-block" {{ block.shopify_attributes }}>
+  <div style="max-width: {{ block.settings.trust_image.width }}px; margin: 0 auto;">
+    <div
+      class="image-wrap "
+      style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.trust_image.aspect_ratio }}%;"
+    >
+      {%- render 'image-element',
+        img: block.settings.trust_image,
+        widths: '360, 540, 700, 1024',
+        sizeVariable: product_description_width
+      -%}
+    </div>
+  </div>
+</div>

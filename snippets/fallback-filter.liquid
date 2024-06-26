@@ -1,0 +1,33 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+<ul class="no-bullets tag-list">
+  {%- assign tag_count = filter.values.size -%}
+  {%- for filter_value in filter.values -%}
+    {%- liquid
+    assign tag_count = tag_count | plus: 1
+    assign filter_value_index = forloop.index
+  -%}
+
+    <li class="tag{% if filter_value.active %} tag--active{% endif %}{% if filter_value.count == 0 %} hide{% endif %}">
+      <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}">
+          <input
+          id="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}"
+          type="checkbox"
+          class="tag__input"
+          name="{{ filter_value.param_name }}"
+          value="{{ filter_value.value }}"
+          {% if filter_value.active %}checked{% endif %}>
+          <span class="tag__checkbox"></span>
+          <span>
+            <span class="tag__text">{{ filter_value.label }}</span> ({{ filter_value.count }})
+          </span>
+
+      </label>
+    </li>
+  {%- endfor -%}
+</ul>
+
+{%- if tag_count == 0 -%}
+  {%- style -%}
+      .collection-sidebar__group--{{ filter_index }} { display: none; }
+  {%- endstyle -%}
+{%- endif -%}

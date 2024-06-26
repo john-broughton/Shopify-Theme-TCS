@@ -1,0 +1,90 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section that shows related products for a given product.
+
+  Accepts:
+  - product_recommendations_heading {string} - The heading for the related products section
+  - products_per_row {2-5} - The number of products per row
+  - related_count {2-16} - The number of related products to show
+
+  Usage:
+  {% render 'section-product-recommendations' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product_recommendations_heading = product_recommendations_heading | default: section.settings.product_recommendations_heading
+  assign products_per_row = products_per_row | default: section.settings.products_per_row | default: 3
+  assign related_count = related_count | default: section.settings.related_count | default: 6
+  assign hydration = hydration | default: 'on:visible'
+
+  assign recommend_products = true
+
+  if recommendations.products and recommendations.products_count > 0
+    assign related_collection = recommendations
+  endif
+
+  assign number_of_products = related_count
+-%}
+
+<is-land {{ hydration }}>
+  <product-recommendations
+    id="Recommendations-{{ section.id }}"
+    class="recommendations-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="product-recommendations"
+    data-enable="{{ recommend_products }}"
+    data-product-id="{{ product.id }}"
+    data-intent="related"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ number_of_products }}"
+    data-limit="{{ number_of_products }}"
+  >
+    <div
+      data-section-id="{{ product.id }}"
+      data-subsection
+      data-section-type="collection-template"
+      class="index-section index-section--sub-product"
+    >
+      <div class="page-width">
+        <header class="section-header">
+          <div class="h3 section-header__title">
+            {{ product_recommendations_heading }}
+          </div>
+        </header>
+      </div>
+
+      <div class="page-width page-width--flush-small">
+        {%- if recommend_products -%}
+          <div class="product-recommendations-placeholder">
+            {% comment %}
+              This content is visually hidden and replaced when recommended
+              products show up
+            {% endcomment %}
+            <div
+              class="new-grid product-grid scrollable-grid--small visually-invisible"
+              aria-hidden="true"
+              data-view="scrollable"
+            >
+              {%- render 'product-grid-item', product: product -%}
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if related_collection.products_count > 0 -%}
+          <div class="product-recommendations page-width">
+            <div class="new-grid product-grid scrollable-grid--small" {%- render 'grid-view-type' -%}>
+              {%- for product in related_collection.products -%}
+                {%- render 'product-grid-item', product: product, sizeVariable: products_per_row, fallback: '45vw' -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </product-recommendations>
+
+  <template data-island>
+    <script type="module">
+      import '@archetype-themes/scripts/modules/product-recommendations'
+    </script>
+  </template>
+</is-land>

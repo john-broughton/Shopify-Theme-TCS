@@ -1,0 +1,154 @@
+{%- render 'section-footer-promotions' -%}
+
+{% schema %}
+{
+  "name": "t:labels.footer_promotions",
+  "max_blocks": 3,
+  "class": "index-section--footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_homepage",
+      "label": "t:actions.do_not_show_on_home"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "promotion",
+      "name": "t:labels.column",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_image",
+          "label": "t:actions.show_image",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "select",
+          "id": "image_mask",
+          "label": "t:labels.image_shape",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:labels.none"
+            },
+            {
+              "value": "portrait",
+              "label": "t:labels.portrait"
+            },
+            {
+              "value": "landscape",
+              "label": "t:labels.landscape"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            },
+            {
+              "value": "rounded",
+              "label": "t:labels.rounded"
+            },
+            {
+              "value": "rounded-wave",
+              "label": "t:labels.rounded_wave"
+            },
+            {
+              "value": "rounded-top",
+              "label": "t:labels.arch"
+            },
+            {
+              "value": "star",
+              "label": "t:labels.star"
+            },
+            {
+              "value": "splat-1",
+              "label": "t:labels.splat_1"
+            },
+            {
+              "value": "splat-2",
+              "label": "t:labels.splat_2"
+            },
+            {
+              "value": "splat-3",
+              "label": "t:labels.splat_3"
+            },
+            {
+              "value": "splat-4",
+              "label": "t:labels.splat_4"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Site-wide promotion"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:labels.button_label",
+          "default": "Optional button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:labels.link"
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "label": "t:labels.color_scheme",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:labels.none"
+            },
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "promotion"
+      },
+      {
+        "type": "promotion"
+      },
+      {
+        "type": "promotion"
+      }
+    ]
+  },
+  "disabled_on": {
+    "groups": ["header", "custom.popups"]
+  }
+}
+{% endschema %}

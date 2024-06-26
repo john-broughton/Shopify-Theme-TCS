@@ -1,0 +1,18 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the product description
+
+  Accepts:
+  - block {block} - Block object
+
+  Usage:
+  {% render 'product-description', block: block %}
+{%- endcomment -%}
+
+<block-description class="product-block" {{ block.shopify_attributes }}>
+  {%- render 'product-description', block: block -%}
+</block-description>
+
+<script type="module">
+  import 'components/block-description'
+</script>

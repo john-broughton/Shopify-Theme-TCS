@@ -1,0 +1,90 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the gift card header section.
+
+  Accepts:
+  - logo {image} - The logo object
+  - desktop_logo_width {100-400} - The desktop logo width
+  - mobile_logo_width {60-200} - The mobile logo width
+
+  Usage:
+  {% render 'section-giftcard-header' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign logo = logo | default: section.settings.logo
+  assign desktop_logo_width = desktop_logo_width | default: section.settings.desktop_logo_width | default: 200
+  assign mobile_logo_width = mobile_logo_width | default: section.settings.mobile_logo_width | default: 140
+-%}
+
+<header class="giftcard-header" role="banner">
+  {%- assign has_logo = logo -%}
+  {%- if has_logo -%}
+    {%- style -%}
+      .site-header__logo a {
+        max-width: {{ mobile_logo_width }}px;
+      }
+      @media only screen and (min-width: 769px) {
+        .site-header__logo a {
+          max-width: {{ desktop_logo_width }}px;
+        }
+      }
+    {%- endstyle -%}
+  {%- endif -%}
+
+  <h1 class="site-header__logo{% unless has_logo %} text-center{% endunless %}">
+    {%- if logo -%}
+      <a
+        href="{{ routes.root_url }}"
+        class="site-header__logo-link"
+      >
+        {% comment %} Desktop logo {% endcomment %}
+        {%- assign width = desktop_logo_width | times: 2 -%}
+        {%- assign height = desktop_logo_width | divided_by: logo.aspect_ratio -%}
+        {%- capture sizes -%}{{ desktop_logo_width }}px{%- endcapture -%}
+        {%- capture widths -%}{{ desktop_logo_width }}, {{ desktop_logo_width | times: 2 }}{%- endcapture -%}
+        {%- capture style -%}max-height: {{ desktop_logo_width | divided_by: logo.aspect_ratio }}px;max-width: {{ desktop_logo_width }}px;{%- endcapture -%}
+
+        {% comment %} Mobile logo {% endcomment %}
+        {%- assign mobile_width = mobile_logo_width | times: 2 -%}
+        {%- assign mobile_height = mobile_logo_width | divided_by: logo.aspect_ratio -%}
+        {%- capture mobile_sizes -%}{{ mobile_logo_width }}px{%- endcapture -%}
+        {%- capture mobile_widths -%}{{ mobile_logo_width }}, {{ mobile_logo_width | times: 2 }}{%- endcapture -%}
+        {%- capture mobile_style -%}max-height: {{ mobile_logo_width | divided_by: logo.aspect_ratio }}px;max-width: {{ mobile_logo_width }}px;{%- endcapture -%}
+
+        {%-
+          render 'image-element',
+          img: logo,
+          img_width: width,
+          img_height: height,
+          img_tag_width: desktop_logo_width,
+          sizes: sizes,
+          widths: widths,
+          style: style,
+          classes: 'small--hide',
+          loading: 'eager',
+          alt: logo.alt | default: shop.name,
+          context: 'giftcard'
+        -%}
+        {%-
+          render 'image-element',
+          img: logo,
+          img_width: mobile_width,
+          img_height: mobile_height,
+          img_tag_width: mobile_logo_width,
+          sizes: mobile_sizes,
+          widths: mobile_widths,
+          style: mobile_style,
+          classes: 'medium-up--hide',
+          loading: 'eager',
+          alt: logo.alt | default: shop.name,
+          context: 'giftcard'
+        -%}
+      </a>
+    {%- else -%}
+      <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+    {%- endif -%}
+  </h1>
+
+  <div class="shop-url">{{ shop.url }}</div>
+</header>

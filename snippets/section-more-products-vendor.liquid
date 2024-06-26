@@ -1,0 +1,63 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a list of products from a vendor.
+
+  Accepts:
+  - product {product} - Product to display
+  - hydration {string} - Hydration strategy for the component
+
+  Usage:
+  {% render 'section-more-products-vendor' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign product = product | default: section.settings.product
+  assign hydration = hydration | default: 'on:visible'
+-%}
+
+{%- if product.vendor -%}
+  {%- capture vendor_link -%}
+    {{ product.vendor | link_to_vendor }}
+  {%- endcapture -%}
+
+  <is-land {{ hydration }}>
+    <vendor-products
+      data-subsection
+      data-section-id="{{ section.id }}"
+      data-section-type="vendor-products"
+      data-product-id="{{ product.id }}"
+      data-vendor="{{ product.vendor }}"
+      data-max-products="{{ max_products }}"
+    >
+      <div class="index-section index-section--sub-product">
+        <div class="page-width">
+          <header class="section-header">
+            <div class="h3 section-header__title">{{ 'labels.more_from_html' | t: link: vendor_link }}</div>
+          </header>
+        </div>
+
+        <div class="page-width page-width--flush-small">
+          <div
+            id="VendorProducts-{{ section.id }}"
+            class="new-grid product-grid scrollable-grid--small"
+            {% render 'grid-view-type' %}
+          >
+            {% comment %}
+              This content is visually hidden and replaced when recommended
+              products show up
+            {% endcomment %}
+            <div class="visually-invisible">
+              {%- render 'product-grid-item', product: product -%}
+            </div>
+          </div>
+        </div>
+      </div>
+    </vendor-products>
+
+    <template data-island>
+      <script type="module">
+        import 'components/section-more-products-vendor'
+      </script>
+    </template>
+  </is-land>
+{%- endif -%}

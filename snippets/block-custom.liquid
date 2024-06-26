@@ -1,0 +1,14 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a custom html block
+
+  Accepts:
+  - block {block} - Block object
+
+  Usage:
+  {% render 'block-custom', block: block %}
+{%- endcomment -%}
+
+<div class="product-block" {{ block.shopify_attributes }}>
+  {{ block.settings.code }}
+</div>

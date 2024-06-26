@@ -1,0 +1,85 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders a select dropdown for a product option
+
+  Accepts:
+  - forloop {forloop} - Parent loop object
+  - option {product_option} - Product option object
+  - product {product} - Product object
+
+  Usage:
+  {%- for option in product.options_with_values -%}
+    {%- render 'variant-dropdown' option: option -%}
+  {%- endfor -%}
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign variant_labels = variant_labels | default: block.settings.variant_labels, allow_false: true
+  assign form_id_default = 'product-form-' | append: section.id
+  assign form_id = form_id | default: form_id_default
+
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
+-%}
+
+<div class="variant-wrapper variant-wrapper--dropdown js" data-type="dropdown">
+  <label
+    class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} visually-hidden{% endif %}{% unless variant_labels %} visually-hidden{% endunless %}"
+    for="SingleOptionSelector-{{ section.id }}-{{ product.id }}-option-{{ forloop.index0 }}"
+  >
+    {{ option.name }}
+  </label>
+  <div class="variant-input-wrap" data-index="option{{ forloop.index }}" data-handle="{{ option.name | handleize }}">
+    <select
+      class="variant-input__select"
+      form="{{ form_id }}"
+      data-variant-input
+      id="SingleOptionSelector-{{ section.id }}-{{ product.id }}-option-{{ forloop.index0 }}"
+      data-index="option{{ forloop.index }}"
+    >
+      {%- for value in option.values -%}
+        {%- liquid
+          assign option_disabled = true
+
+          if block.settings.product_dynamic_variants_enable
+            for option1_name in variants_option1_arr
+              case option.position
+                when 1
+                  if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                    assign option_disabled = false
+                  endif
+                when 2
+                  if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                    assign option_disabled = false
+                  endif
+                when 3
+                  if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+                    assign option_disabled = false
+                  endif
+              endcase
+            endfor
+          else
+            assign option_disabled = false
+          endif
+        -%}
+        <option
+          value="{{ value | escape }}"
+          {% if option.selected_value == value %}
+            selected="selected"
+          {% endif %}
+          {% if option_disabled %}
+            disabled="disabled"
+          {% endif %}
+          name="{{ option.name }}"
+          class="variant-input"
+          data-index="option{{ forloop.index }}"
+        >
+          {{ value }}
+        </option>
+      {%- endfor -%}
+    </select>
+  </div>
+</div>

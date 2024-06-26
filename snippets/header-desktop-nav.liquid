@@ -1,0 +1,185 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the desktop navigation.
+
+  Accepts:
+  - main_menu {linklist} - The main menu object
+  - hover_menu {boolean} - Whether to show the menu on hover
+  - nav_position {string} - The navigation position
+  - show_mega_products {boolean} - Whether to show mega products
+
+  Usage:
+  {% render 'header-desktop-nav', hover_menu: true %}
+{%- endcomment -%}
+
+{%- liquid
+  assign main_menu = main_menu | default: section.settings.main_menu_link_list
+  assign hover_menu = hover_menu | default: section.settings.hover_menu, allow_false: true | default: false, allow_false: true
+  assign nav_position = nav_position | default: 'below'
+  assign show_mega_products = show_mega_products | default: section.settings.mega_products, allow_false: true | default: true, allow_false: true
+
+  unless limit
+    assign limit = main_menu.links.size
+  endunless
+
+  unless offset
+    assign offset = 0
+  endunless
+-%}
+
+<ul class="site-nav site-navigation site-navigation--{{ nav_position }} small--hide">
+  {%- for link in main_menu.links limit: limit offset: offset -%}
+    {%- liquid
+      assign has_dropdown = false
+      assign is_megamenu = false
+
+      if link.levels > 0
+        assign has_dropdown = true
+        if link.levels > 1
+          assign is_megamenu = true
+        endif
+      endif
+
+      assign is_collection = false
+      if show_mega_products
+        if is_megamenu and link.url contains routes.collections_url
+          assign collection_handle = link.url | remove: routes.collections_url | remove: '/'
+          assign collection_drop = collections[collection_handle]
+          assign is_collection = true
+        endif
+      endif
+    -%}
+
+    <li class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}">
+      {% if is_megamenu or has_dropdown %}
+        <details
+          id="site-nav-item--{{ forloop.index }}"
+          class="site-nav__details"
+          data-hover="{{ hover_menu }}"
+        >
+      {% endif %}
+      {% if is_megamenu or has_dropdown %}
+        <summary
+          data-link="{{ link.url }}"
+          aria-expanded="false"
+          aria-controls="site-nav-item--{{ forloop.index }}"
+          class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
+        >
+          {{ link.title }}
+          {% render 'icon', name: 'chevron-down' %}
+        </summary>
+      {% endif %}
+      {% unless is_megamenu or has_dropdown %}
+        <a
+          href="{{ link.url }}"
+          class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}"
+        >
+          {{ link.title }}
+        </a>
+      {% endunless %}
+
+      {%- if is_megamenu -%}
+        {%- assign previous_column_type = '' -%}
+        <div class="site-nav__dropdown megamenu text-left">
+          <div class="page-width">
+            <div class="site-nav__dropdown-animate megamenu__wrapper">
+              <div class="megamenu__cols">
+                <div class="megamenu__col">
+                  {%- for childlink in link.links -%}
+                    {%- liquid
+                      assign create_new_column = false
+
+                      if childlink.levels > 0 and forloop.index != 1
+                        assign create_new_column = true
+                      endif
+
+                      if childlink.levels == 0 and previous_column_type == 'full'
+                        assign create_new_column = true
+                      endif
+                    -%}
+
+                    {%- if create_new_column -%}
+                      </div>
+                    {%- endif -%}
+                    {%- if create_new_column -%}
+                      <div class="megamenu__col">
+                    {%- endif -%}
+
+                    <div class="megamenu__col-title">
+                      <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--top-level">
+                        {{- childlink.title -}}
+                      </a>
+                    </div>
+
+                    {%- liquid
+                      if childlink.levels > 0
+                        assign previous_column_type = 'full'
+                      else
+                        assign previous_column_type = 'single'
+                      endif
+                    -%}
+
+                    {%- for grandchildlink in childlink.links -%}
+                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">
+                        {{ grandchildlink.title }}
+                      </a>
+                    {%- endfor -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+              {%- if is_collection -%}
+                <div class="megamenu__featured">
+                  <div class="product-grid">
+                    {%- liquid
+                      assign mega_product = collection_drop.products.first
+                      render 'product-grid-item', product: mega_product, sizeVariable: '19vw'
+                    -%}
+                  </div>
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- elsif has_dropdown -%}
+        <div class="site-nav__dropdown">
+          <ul class="site-nav__dropdown-animate site-nav__dropdown-list text-left">
+            {%- for childlink in link.links -%}
+              {%- liquid
+                assign has_sub_dropdown = false
+                if childlink.levels > 0
+                  assign has_sub_dropdown = true
+                endif
+              -%}
+
+              <li class="{% if has_sub_dropdown %} site-nav__deep-dropdown-trigger{% endif %}">
+                <a
+                  href="{{ childlink.url }}"
+                  class="site-nav__dropdown-link site-nav__dropdown-link--second-level{% if has_sub_dropdown %} site-nav__dropdown-link--has-children{% endif %}"
+                >
+                  {{ childlink.title | escape }}
+                  {%- if has_sub_dropdown -%}
+                    {% render 'icon', name: 'chevron-down' %}
+                  {%- endif -%}
+                </a>
+                {%- if has_sub_dropdown -%}
+                  <ul class="site-nav__deep-dropdown">
+                    {%- for grandchildlink in childlink.links -%}
+                      <li>
+                        <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">
+                          {{- grandchildlink.title | escape -}}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+      {% if is_megamenu or has_dropdown %}
+        </details>
+      {% endif %}
+    </li>
+  {%- endfor -%}
+</ul>

@@ -1,0 +1,86 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a footer promotions section.
+
+  Accepts:
+  - show_section {boolean} - Whether to show the section
+  - hide_homepage {boolean} - Whether to hide the section on the homepage
+
+  Usage:
+  {% render 'section-footer-promotions' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign show_section = show_section | default: section.settings.show_section, allow_false: true | default: true, allow_false: true
+  assign hide_homepage = hide_homepage | default: section.settings.hide_homepage, allow_false: true | default: true, allow_false: true
+
+  if template == 'index' and hide_homepage
+    assign show_section = false
+  endif
+-%}
+
+{%- if show_section -%}
+  {%- if section.blocks.size > 0 -%}
+    {%- liquid
+      assign grid_item_width = 'medium-up--one-half'
+      if section.blocks.size == 3
+        assign grid_item_width = 'medium-up--one-third'
+      endif
+    -%}
+
+    <div class="index-section">
+      <div class="section--divider">
+        <div class="page-width footer-promotions">
+          <div class="new-grid new-grid--center" data-view="3-1">
+            {%- for block in section.blocks -%}
+              <div class="grid-item {{ grid_item_width }}" {{ block.shopify_attributes }}>
+                <div class="footer-promotion color-scheme-{{ block.settings.color_scheme }}">
+                  {%- if block.settings.color_scheme != 'none' -%}
+                    {%- render 'color-scheme-texture', color_scheme: block.settings.color_scheme -%}
+                  {%- endif -%}
+                  {%- if block.settings.enable_image -%}
+                    <a
+                      href="{{ block.settings.button_link }}"
+                      class="footer__grid-image {% if block.settings.image_width %}footer__grid-image--{{ block.settings.image_width }}{% endif %}"
+                      aria-label="{{ block.settings.title }}"
+                    >
+                      {%- if block.settings.image != blank -%}
+                        <div
+                          class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}"
+                          style="height: 0; padding-bottom: {{ 100 | divided_by: block.settings.image.aspect_ratio }}%;"
+                        >
+                          {%- render 'image-element',
+                            img: block.settings.image,
+                            widths: '180, 360, 540, 720, 900, 1080',
+                            sizeVariable: 3
+                          -%}
+                        </div>
+                      {%- else -%}
+                        <div class="image-wrap {% if block.settings.image_mask != 'none' %}svg-mask svg-mask--{{ block.settings.image_mask }}{% endif %}">
+                          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+                        </div>
+                      {%- endif -%}
+                    </a>
+                  {%- endif -%}
+                  {%- if block.settings.title != blank -%}
+                    <h2 class="{% if block.settings.heading_size %}{{ block.settings.heading_size }}{% else %}h3{% endif %} rte--block">
+                      {{ block.settings.title }}
+                    </h2>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <div class="rte-setting rte--block text-spacing">{{ block.settings.text }}</div>
+                  {%- endif -%}
+                  {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+                    <a href="{{ block.settings.button_link }}" class="btn btn--secondary btn--small">
+                      {{ block.settings.button_label }}
+                    </a>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}

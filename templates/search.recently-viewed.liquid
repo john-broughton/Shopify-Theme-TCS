@@ -1,0 +1,23 @@
+{% comment %}
+  Template used to generated recently viewed product section
+{% endcomment %}
+{%- liquid
+  capture gridView
+    render 'grid-view-type', products_per_row: settings.recently_viewed_products_per_row
+  endcapture
+-%}
+{% layout none %}
+
+{%- if search.performed -%}
+
+  <div class="new-grid product-grid scrollable-grid--small" {{ gridView }}>
+    {%- for item in search.results -%}
+      {%- if item.object_type == 'product' -%}
+        {%- liquid
+          render 'product-grid-item', product: item, sizeVariable: settings.recently_viewed_products_per_row, fallback: '45vw', collection: collection,quick_add_enable: settings.quick_add_enable, quick_shop_enable: settings.quick_shop_enable, product_grid_image_size: settings.product_grid_image_size,product_grid_image_fill: settings.product_grid_image_fill, product_hover_image: settings.product_hover_image, enable_swatches: settings.enable_swatches, vendor_enable: settings.vendor_enable, product_save_amount: settings.product_save_amount, product_save_type: settings.product_save_type
+        -%}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+{%- endif -%}

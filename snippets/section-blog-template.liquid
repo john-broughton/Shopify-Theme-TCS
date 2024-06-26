@@ -1,0 +1,55 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a blog template section.
+
+  Accepts:
+  - blog {blog} - The blog to display
+  - blog_show_tag_filter {boolean} - Whether to show the tag filter
+  - blog_show_rss {boolean} - Whether to show the RSS link
+  - blog_show_tags {boolean} - Whether to show the tags
+  - blog_show_date {boolean} - Whether to show the date
+  - blog_show_comments {boolean} - Whether to show the comments
+  - blog_show_author {boolean} - Whether to show the author
+  - blog_show_excerpt {boolean} - Whether to show the excerpt
+  - blog_image_size {'natural'|'square'|'landscape'|'portrait'|'wide'} - The image size to use
+
+  Usage:
+  {% render 'section-blog-template' %}
+{%- endcomment -%}
+
+{%- paginate blog.articles by 9 -%}
+  <div data-section-id="{{ section.id }}" data-section-type="blog">
+    <header class="section-header{% if blog_show_tag_filter and blog.tags.size > 0 %} section-header--with-link{% endif %}">
+      <h1 class="section-header__title">
+        {{ blog.title }}
+
+        {%- if blog_show_rss -%}
+          <a href="{{ shop.url }}{{ blog.url }}.atom" class="rss-link">
+            {% render 'icon', name: 'rss' %}
+            <span class="icon__fallback-text visually-hidden">RSS</span>
+          </a>
+        {%- endif -%}
+      </h1>
+    </header>
+
+    <div class="new-grid">
+      {% liquid
+        for article in blog.articles
+          assign style = 'medium'
+
+          if forloop.first
+            assign style = 'large'
+          endif
+
+          render 'article-grid-item', style: style, article: article
+        endfor
+      %}
+    </div>
+
+    {%- liquid
+      if paginate.pages > 1
+        render 'pagination', paginate: paginate
+      endif
+    -%}
+  </div>
+{%- endpaginate -%}

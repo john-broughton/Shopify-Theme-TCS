@@ -1,0 +1,92 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a blog sidebar section.
+
+  Accepts:
+  - blog {object} - The blog to display
+  - article {object} - The article to display
+
+  Usage:
+  {% render 'section-blog-sidebar' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign blog = section.settings.blog | default: blog
+  assign article = section.settings.article | default: article
+-%}
+
+{%- if section.blocks.size == 0 -%}
+  <style>
+    .blog-layout__sidebar {
+      display: none;
+    }
+  </style>
+{%- endif -%}
+
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'article' -%}
+      <div class="theme-block" {{ block.shopify_attributes }}>
+        {%- if block.settings.title != blank -%}
+          <h4>{{ block.settings.title }}</h4>
+        {%- endif -%}
+
+        {%- render 'article-grid-item',
+          article: block.settings.article,
+          show_tags: block.settings.blog_show_tags,
+          show_date: block.settings.blog_show_date,
+          show_comments: block.settings.blog_show_comments,
+          show_author: block.settings.blog_show_author,
+          show_excerpt: block.settings.blog_show_excerpt,
+          image_size: block.settings.blog_image_size,
+          style: 'compact'
+        -%}
+      </div>
+    {%- when 'tags' -%}
+      {%- if blog.all_tags.size > 0 -%}
+        <div class="theme-block" {{ block.shopify_attributes }}>
+          <h4>{{ 'actions.explore_more' | t }}</h4>
+
+          <ul class="no-bullets tag-list">
+            {%- for tag in blog.all_tags -%}
+              {% if tag contains '_' %}
+                {%- assign tag_starts_with = tag | slice: 0 -%}
+                {% if tag_starts_with == '_' -%}
+                  {%- if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif -%}
+                  {%- continue -%}
+                {%- endif -%}
+              {%- endif %}
+
+              <li class="tag tag--inline">
+                <a href="{{ blog.url }}/tagged/{{ tag.handle }}" class="article-tag">{{ tag }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {%- when 'product' -%}
+      {%- unless block.settings.featured_product.empty? -%}
+        <div class="theme-block" {{ block.shopify_attributes }}>
+          <h4>{{ 'labels.featured_product' | t }}</h4>
+
+          {%- render 'product-grid-item',
+            product: block.settings.featured_product,
+            sizeVariable: '40vw',
+            no_actions: true
+          -%}
+        </div>
+      {%- endunless -%}
+    {%- when 'share' -%}
+      {%- if article -%}
+        <div class="theme-block" {{ block.shopify_attributes }}>
+          <h4>{{ 'actions.share_this' | t }}</h4>
+
+          {%- render 'social-sharing',
+            share_title: article.title,
+            share_permalink: article.url,
+            share_image: article.image
+          -%}
+        </div>
+      {%- endif -%}
+  {%- endcase -%}
+{%- endfor -%}

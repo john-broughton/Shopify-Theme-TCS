@@ -1,0 +1,241 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a countdown section.
+
+  Accepts:
+  - full_width {boolean} - full width
+  - layout {string} - layout
+  - blur_image {boolean} - blur image
+  - background_image {object} - background image
+  - mobile_image {object} - mobile image
+  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme of the section
+  - overlay_opacity {number} - overlay opacity
+  - overlay_color {string} - overlay color
+  - hydration {string} - The hydration strategy for the section
+
+  Usage:
+  {% render 'section-countdown' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign full_width = full_width | default: section.settings.full_width, allow_false: true | default: false, allow_false: true
+  assign layout = layout | default: section.settings.layout | default: 'banner'
+  assign blur_image = blur_image | default: section.settings.blur_image, allow_false: true | default: false, allow_false: true
+  assign background_image = background_image | default: section.settings.background_image
+  assign mobile_image = mobile_image | default: section.settings.mobile_image
+  assign overlay_opacity = overlay_opacity | default: section.settings.overlay_opacity | default: 0
+  assign overlay_color = overlay_color | default: section.settings.overlay_color | default: '#000'
+  assign color_scheme = color_scheme | default: section.settings.color_scheme
+  assign hydration = hydration | default: 'on:visible'
+
+  assign lazyload_images = true
+  if section.index == 1
+    assign lazyload_images = false
+  endif
+
+  unless color_scheme
+    assign class_name = 'countdown-' | append: section.id
+    render 'color-scheme-override', class_name: class_name
+  endunless
+-%}
+
+<is-land {{ hydration }}>
+  <div
+    {% unless full_width %}
+      class="index-section"
+    {% endunless %}
+  >
+    <div
+      class="
+        countdown-{{ section.id }}
+        countdown-wrapper {% unless full_width %}page-width{% endunless %}
+        countdown-layout--{{ layout }}
+        countdown-blocks--{{ section.blocks.size }}
+        {% if section.blocks.size > 2 and section.blocks[0].type == 'content' and section.blocks[1].type == 'button' %}
+          countdown-blocks--2 content-block-has-button-below
+          {% assign button_block_hidden = true %}
+        {% endif %}
+        countdown__image--blur-{{ blur_image }}
+        {% if background_image != blank %}
+          countdown__background-image--true
+        {% else %}
+          countdown__background-image--false
+        {% endif %}
+        {% if mobile_image != blank %}
+          countdown__mobile-image--true
+        {% else %}
+          countdown__mobile-image--false
+        {% endif %}
+      "
+    >
+      <div
+        class="countdown__content color-scheme-{{ color_scheme }}"
+      >
+        {% if background_image != blank %}
+          <div
+            class="countdown__background-image-wrapper {% if mobile_image != blank %}small--hide{% endif %}"
+          >
+            {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+            {%- render 'image-element',
+              img: background_image,
+              img_width: 2400,
+              loading: lazyload_images,
+              classes: 'countdown__background-image'
+            -%}
+            {% style %}
+              #shopify-section-{{ section.id }} .countdown__background-image {
+                {% if blur_image %}
+                  filter: blur(4px);
+                  {% if layout == 'banner' %}
+                    transform: scale(1.1);
+                  {% else %}
+                    transform: scale(1.03);
+                  {% endif %}
+                {% endif %}
+              }
+            {% endstyle %}
+            {% if overlay_opacity > 0 %}
+              {% assign overlay_alpha = overlay_opacity | divided_by: 100.0 %}
+              <div
+                class="
+                  countdown__overlay
+                  {% if mobile_image != blank %}small--hide{% endif %}
+                "
+                style="
+                                                        --countdown-overlay-rgba: {{ overlay_color | color_modify: 'alpha', overlay_alpha }}
+                "
+              ></div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% if mobile_image != blank %}
+          <div
+            class="countdown__mobile-image-wrapper"
+          >
+            {% comment %} Full width image so don't need to adjust sizes attribute, fallback is 100vw {% endcomment %}
+            {%- render 'image-element',
+              img: mobile_image,
+              loading: lazyload_images,
+              classes: 'countdown__mobile-image medium-up--hide'
+            -%}
+            {% if overlay_opacity > 0 %}
+              {% assign overlay_alpha = overlay_opacity | divided_by: 100.0 %}
+              <div
+                class="countdown__overlay medium-up--hide"
+                style="
+                                                          --countdown-overlay-rgba: {{ overlay_color | color_modify: 'alpha', overlay_alpha }}
+                "
+              ></div>
+            {% endif %}
+          </div>
+        {% endif %}
+        {% for block in section.blocks %}
+          {% if block.type == '@app' %}
+            <div class="countdown__block countdown__block--{{ block.type }}" {{ block.shopify_attributes }}>
+              {%- render block -%}
+            </div>
+          {% endif %}
+          {% if block.type == 'timer' %}
+            <div class="countdown__block countdown__block--{{ block.type }}" {{ block.shopify_attributes }}>
+              <countdown-timer
+                data-year="{{ block.settings.year }}"
+                data-month="{{ block.settings.month }}"
+                data-day="{{ block.settings.day }}"
+                data-hour="{{ block.settings.hour }}"
+                data-minute="{{ block.settings.minute }}"
+                data-hide-timer="{{ block.settings.hide_timer }}"
+                data-complete-message="{{ block.settings.text }}"
+              >
+                <div class="countdown__display countdown__display--visible" data-time-display>
+                  <div class="countdown__display-block">
+                    <h2
+                      class="{% if section.blocks.size == 1 %}h1{% elsif section.blocks.size == 3 and button_block_hidden == false %}h3{% endif %}"
+                      date-days-placeholder
+                    >
+                      12
+                    </h2>
+                    <span>DAYS</span>
+                  </div>
+                  <div class="countdown__display-block">
+                    <h2
+                      class="{% if section.blocks.size == 1 %}h1{% elsif section.blocks.size == 3 and button_block_hidden == false %}h3{% endif %}"
+                      date-hours-placeholder
+                    >
+                      12
+                    </h2>
+                    <span>HOURS</span>
+                  </div>
+                  <div class="countdown__display-block">
+                    <h2
+                      class="{% if section.blocks.size == 1 %}h1{% elsif section.blocks.size == 3 and button_block_hidden == false %}h3{% endif %}"
+                      date-minutes-placeholder
+                    >
+                      12
+                    </h2>
+                    <span>MINUTES</span>
+                  </div>
+                  <div class="countdown__display-block">
+                    <h2
+                      class="{% if section.blocks.size == 1 %}h1{% elsif section.blocks.size == 3 and button_block_hidden == false %}h3{% endif %}"
+                      date-seconds-placeholder
+                    >
+                      12
+                    </h2>
+                    <span>SECONDS</span>
+                  </div>
+                </div>
+                {% if block.settings.text != blank %}
+                  <div class="countdown__timer-message" data-message-placeholder>{{ block.settings.text }}</div>
+                {% endif %}
+              </countdown-timer>
+            </div>
+          {% endif %}
+          {% if block.type == 'content' %}
+            <div class="countdown__block countdown__block--{{ block.type }}" {{ block.shopify_attributes }}>
+              <div class="countdown__text-wrapper countdown__text-wrapper--content-alignment-{{ block.settings.content_alignment }}">
+                <div class="countdown__heading">
+                  <h2 class="{{ block.settings.heading_size }}">{{ block.settings.heading }}</h2>
+                </div>
+                <div class="countdown__richtext">
+                  {{ block.settings.text }}
+                </div>
+                {% if section.blocks.size > 2
+                  and section.blocks[0].type == 'content'
+                  and section.blocks[1].type == 'button'
+                %}
+                  <div class="countdown__block countdown__block--button">
+                    <a
+                      class="countdown__button btn btn--{{ section.blocks[1].settings.button_style }}"
+                      href="{{ section.blocks[1].settings.button_link }}"
+                    >
+                      {{ section.blocks[1].settings.button }}
+                    </a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+          {% if block.type == 'button' and button_block_hidden == blank %}
+            <div
+              class="countdown__block countdown__block--{{ block.type }} button-block-active"
+              {{ block.shopify_attributes }}
+            >
+              <a
+                class="countdown__button btn btn--{{ block.settings.button_style }}"
+                href="{{ block.settings.button_link }}"
+              >
+                {{ block.settings.button }}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <template data-island>
+    <script type="module">
+      import 'components/section-countdown'
+    </script>
+  </template>
+</is-land>

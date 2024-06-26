@@ -1,0 +1,97 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the header cart drawer component.
+
+  Accepts:
+  - cart_type {string} - Cart type
+  - cart_notes_enable {boolean} - Enable cart notes
+  - cart_terms_conditions_enable {boolean} - Enable terms and conditions
+  - cart_terms_conditions_page {page} - Terms and conditions page
+  - cart_additional_buttons {boolean} - Additional checkout buttons
+
+  Usage:
+  {% render 'header-cart-drawer', cart_type: 'dropdown' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign cart_type = cart_type | default: settings.cart_type | default: blank
+  assign cart_notes_enable = cart_notes_enable | default: settings.cart_notes_enable, allow_false: true | default: true, allow_false: true
+  assign cart_terms_conditions_enable = cart_terms_conditions_enable | default: settings.cart_terms_conditions_enable, allow_false: true | default: true, allow_false: true
+  assign cart_terms_conditions_page = cart_terms_conditions_page | default: settings.cart_terms_conditions_page
+  assign cart_additional_buttons = cart_additional_buttons | default: settings.cart_additional_buttons, allow_false: true | default: true, allow_false: true
+-%}
+
+<form action="{{ routes.cart_url }}" method="post" novalidate data-location="header" class="cart__drawer-form">
+  <div class="cart__scrollable">
+    <div data-products></div>
+    {%- render 'cart-recommendations', context: 'drawer' -%}
+
+    {% if cart_notes_enable %}
+      <div class="cart__item-row">
+        <label for="CartHeaderNote" class="add-note">
+          {{ 'actions.add_order_note' | t }}
+          <span class="note-icon note-icon--open" aria-hidden="true">
+            {% render 'icon', name: 'pencil' %}
+          </span>
+          <span class="note-icon note-icon--close">
+            {% render 'icon', name: 'close' %}
+            <span class="icon__fallback-text visually-hidden">{{ 'actions.close' | t }}</span>
+          </span>
+        </label>
+
+        <textarea name="note" class="input-full cart__note hide" id="CartHeaderNote">{{ cart.note }}</textarea>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="cart__footer">
+    <div class="cart__item-sub cart__item-row cart__item--subtotal">
+      <div>{{ 'labels.subtotal' | t }}</div>
+      <div data-subtotal>{{ cart.total_price | money }}</div>
+    </div>
+
+    <div data-discounts></div>
+
+    {% if cart_terms_conditions_enable %}
+      <div class="cart__item-row cart__terms">
+        <input type="checkbox" id="CartTermsHeader" class="cart__terms-checkbox">
+        <label for="CartTermsHeader" class="text-label">
+          <small>
+            {% if cart_terms_conditions_page != blank %}
+              {{ 'actions.terms_i_agree_html' | t: url: cart_terms_conditions_page.url }}
+            {% else %}
+              {{ 'actions.terms_i_agree' | t }}
+            {% endif %}
+          </small>
+        </label>
+      </div>
+    {% endif %}
+
+    <div class="cart__item-row cart__checkout-wrapper payment-buttons">
+      <button
+        type="submit"
+        name="checkout"
+        data-terms-required="{{ cart_terms_conditions_enable }}"
+        class="btn cart__checkout"
+      >
+        {{ 'actions.checkout' | t }}
+      </button>
+
+      {% if cart_type == 'dropdown' and additional_checkout_buttons and cart_additional_buttons %}
+        <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+      {% endif %}
+    </div>
+
+    <div class="cart__item-row--footer text-center">
+      <small>
+        {%- if cart.taxes_included -%}
+          {{ 'info.shipping_at_checkout_taxes_included' | t }}
+        {%- else -%}
+          {{ 'info.shipping_at_checkout' | t }}
+        {%- endif -%}
+      </small>
+    </div>
+  </div>
+</form>
+
+<div class="site-header__cart-empty">{{ 'info.cart_empty' | t }}</div>

@@ -1,0 +1,80 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a promo video component.
+
+  Accepts:
+  - block {block} - The block object
+  - id {string} - The block ID
+  - url {string} - The video URL
+
+  Usage:
+  {% render 'promo-video' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign id = id | default: block.id
+  assign url = url | default: block.settings.video_url
+-%}
+
+<video-section
+  data-subsection
+  data-section-id="{{ id }}"
+  data-section-type="video-section"
+  class="promo-video video-parent-section"
+>
+  <div class="background-media-text__video">
+    {%- liquid
+      assign section_id = id
+      assign url = url
+    -%}
+
+    {%- if url contains 'youtube.com/watch' -%}
+      {%- assign video_id = url | split: 'v=' -%}
+      {%- assign video_id = video_id[1] | split: '&' | first -%}
+      <div
+        id="YouTubeVideo-{{ section_id }}"
+        class="video-div"
+        data-type="youtube"
+        data-video-id="{{ video_id }}"
+      ></div>
+    {%- endif -%}
+
+    {%- if url contains 'youtu.be/' -%}
+      {%- assign video_id = url | split: '.be/' -%}
+      {%- assign video_id = video_id[1] | split: '&' | first -%}
+      <div
+        id="YouTubeVideo-{{ section_id }}"
+        class="video-div"
+        data-type="youtube"
+        data-video-id="{{ video_id }}"
+      ></div>
+    {%- endif -%}
+
+    {%- if url contains 'vimeo.com' -%}
+      {%- assign video_id = url | split: '.com/' -%}
+      {%- assign video_id = video_id[1] | split: '/' | first -%}
+      <button type="button" id="VimeoTrigger-{{ section_id }}" class="vimeo-mobile-trigger medium-up--hide">
+        {% render 'icon', name: 'play' %}
+      </button>
+      <div
+        id="Vimeo-{{ section_id }}"
+        class="video-div"
+        data-type="vimeo"
+        data-video-id="{{ video_id }}"
+      ></div>
+    {%- endif -%}
+
+    {%- if url contains '.mp4' or url contains '.MP4' -%}
+      <video
+        id="Mp4Video-{{ section_id }}"
+        class="video-div"
+        data-type="mp4"
+        src="{{ url }}"
+        loop
+        muted
+        playsinline
+        autoplay
+      ></video>
+    {%- endif -%}
+  </div>
+</video-section>

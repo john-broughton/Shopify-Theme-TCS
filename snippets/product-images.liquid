@@ -1,0 +1,246 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% comment %}
+  Renders a product media gallery
+
+  Accepts:
+  - product_zoom_size {string} - Size of the zoomed image
+  - context {string} - Context of the product
+  - isModal {boolean} - Whether the product is in a modal
+  - media_gallery_layout {string} - Layout of the media gallery
+  - product_zoom_enable {boolean} - Whether the product zoom is enabled
+  - thumbnail_position {string} - Position of the thumbnails
+  - image_size {string} - Size of the image
+  - image_position {string} - Position of the image
+  - thumbnail_arrows {boolean} - Whether the thumbnail arrows are enabled
+  - sizeVariable {string} - Size of the image
+  - thumbnail_height {string} - Height of the thumbnails
+
+  Usage:
+  {% liquid render 'product-images' %}
+{% endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+  assign product_zoom_size = product_zoom_size | default: '1800x1800'
+  assign sizeVariable = sizeVariable | default: 'medium-up--one-half'
+  assign context = context | default: 'main-product'
+  assign product_zoom_enable = product_zoom_enable | default: section.settings.product_zoom_enable, allow_false: true
+  assign image_size = image_size | default: section.settings.product_image_size | default: 'square'
+  assign image_position = image_position | default: section.settings.image_position | default: 'left'
+  assign thumbnail_arrows = thumbnail_arrows | default: section.settings.thumbnail_arrows, allow_false: true
+  assign thumbnail_height = thumbnail_height | default: section.settings.thumbnail_height | default: 'flexible'
+  assign isModal = isModal | default: false
+  assign media_gallery_layout = media_gallery_layout | default: section.settings.media_gallery_layout
+  assign section_id = section.id
+  assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+  assign first_3d_model = product.media | where: 'media_type', 'model' | first
+  assign thumbnail_position = section.settings.thumbnail_position
+
+  unless thumbnail_position
+    if media_gallery_layout == 'stacked'
+      assign thumbnail_position = 'hidden'
+    else
+      assign thumbnail_position = media_gallery_layout
+    endif
+  endunless
+-%}
+
+{%- if product -%}
+  <product-images
+    data-product-images
+    data-zoom="{{ product_zoom_enable }}"
+    data-has-slideshow="{% if product.media.size > 1 %}true{% else %}false{% endif %}"
+    data-media-gallery-layout="{{ media_gallery_layout }}"
+    data-modal="{{ isModal }}"
+    data-product-id="{{ product.id }}"
+    data-section-id="{{ section.id }}"
+  >
+    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}{% if product.media.size == 0 %} hide{% endif %}">
+      <div class="product__main-photos" data-product-single-media-group>
+        <div
+          data-product-photos
+          data-zoom="{{ product_zoom_enable }}"
+          class="product-slideshow"
+          id="ProductPhotos-{{ section_id }}"
+        >
+          {%- for media in product.media -%}
+            {% liquid
+              assign loading = 'eager'
+              assign animation = 'image-fade-in'
+              if context == 'main-product' and forloop.index == 1
+                # LCP image is loaded immediately
+                assign loading = false
+                assign animation = 'none'
+              endif
+            %}
+            {%- render 'media',
+              media: media,
+              featured_media: featured_media,
+              loopIndex0: forloop.index0,
+              loopIndex: forloop.index,
+              isModal: isModal,
+              sizes: sizes,
+              sizeVariable: sizeVariable,
+              fallback: fallback,
+              loading: loading,
+              animation: animation
+            -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if first_3d_model -%}
+          <button
+            aria-label="{{ 'info.view_in_space_explanation' | t }}"
+            class="product-single__view-in-space"
+            data-shopify-xr
+            data-shopify-model3d-id="{{ first_3d_model.id }}"
+            data-shopify-title="{{ product.title }}"
+            data-shopify-xr-hidden
+          >
+            {% render 'icon', name: '3d' %}
+            <span class="product-single__view-in-space-text">
+              {{ 'actions.view_in_space' | t }}
+            </span>
+          </button>
+        {%- endif -%}
+      </div>
+
+      {% if media_gallery_layout != 'stacked' %}
+        <div
+          data-product-thumbs
+          class="product__thumbs product__thumbs--{{ thumbnail_position }} product__thumbs-placement--{{ image_position }}{% if product.media.size == 1 %} medium-up--hide{% endif %} small--hide"
+          data-position="{{ thumbnail_position }}"
+          data-arrows="{{ thumbnail_arrows }}"
+        >
+          {%- if thumbnail_arrows -%}
+            <button
+              type="button"
+              class="product__thumb-arrow product__thumb-arrow--prev hide"
+              aria-label="{{ 'actions.previous' | t }}"
+            >
+              {% render 'icon', name: 'chevron-left' %}
+            </button>
+          {%- endif -%}
+
+          <div class="product__thumbs--scroller">
+            {%- if product.media.size > 1 -%}
+              {%- for media in product.media -%}
+                {%- liquid
+                  assign image_set = false
+                  assign image_set_group = ''
+                  if media.alt contains '#'
+                    assign image_set_full = media.alt | split: '#' | last
+                    if image_set_full contains '_'
+                      assign image_set = true
+                      assign image_set_group = image_set_full | split: '_' | first
+                    endif
+                  endif
+                -%}
+                <div
+                  class="product__thumb-item"
+                  data-index="{{ forloop.index0 }}"
+                  {% if image_set %}
+                    data-set-name="{{ image_set_group }}"
+                    data-group="{{ image_set_full }}"
+                  {% endif %}
+                >
+                  <a
+                    href="{{ media.preview_image | image_url: width: product_zoom_size }}"
+                    data-product-thumb
+                    class="product__thumb js-no-transition"
+                    data-index="{{ forloop.index0 }}"
+                    data-id="{{ media.id }}"
+                  >
+                    <div
+                      class="image-wrap image-wrap__thumbnail"
+                      style="height: 0; padding-bottom: {{ 100 | divided_by: media.preview_image.aspect_ratio }}%;"
+                    >
+                      {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                        <span class="product__thumb-icon">
+                          {% render 'icon', name: 'play' %}
+                        </span>
+                      {%- endif -%}
+                      {%- if media.media_type == 'model' -%}
+                        <span class="product__thumb-icon">
+                          {% render 'icon', name: '3d' %}
+                        </span>
+                      {%- endif -%}
+
+                      {%- assign loading = 'eager' -%}
+                      {%-
+                        render 'image-element',
+                        img: media.preview_image,
+                        alt: media.alt | escape | split: '#' | first,
+                        widths: '120, 360, 540, 720',
+                        sizeVariable: '80px',
+                        loading: loading,
+                      -%}
+                    </div>
+                  </a>
+                </div>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+
+          {%- if thumbnail_arrows -%}
+            <button
+              type="button"
+              class="product__thumb-arrow product__thumb-arrow--next"
+              aria-label="{{ 'actions.next' | t }}"
+            >
+              {% render 'icon', name: 'chevron-right' %}
+            </button>
+          {%- endif -%}
+        </div>
+      {% endif %}
+    </div>
+    <script type="application/json" data-current-variant-json>
+      {{- product.selected_or_first_available_variant | json -}}
+    </script>
+    <script type="application/json" data-product-options-json>
+      {{- product.options | json -}}
+    </script>
+  </product-images>
+
+  <script type="module">
+    import 'components/product-images'
+  </script>
+
+  {% if thumbnail_height == 'fixed' %}
+    {% style %}
+      .product__photos-{{ section_id }} .product__thumbs:not(.product__thumbs--below) {
+        min-height: 400px;
+        max-height: 400px;
+      }
+
+      @media screen and (max-width: 798px) {
+        .product__photos-{{ section_id }} .product__thumbs:not(.product__thumbs--below) {
+          min-height: 300px;
+          max-height: 300px;
+        }
+      }
+    {% endstyle %}
+  {% endif %}
+
+  <script type="application/json" id="ModelJson-{{ section_id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{%- else -%}
+  <div
+    data-product-images
+    data-zoom="false"
+    data-has-slideshow="false"
+  >
+    <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
+      <div class="product__main-photos" style="width: 100%">
+        <div data-product-photos class="product-slideshow">
+          <div class="product-main-slide" data-index="{{ forloop.index0 }}">
+            <a href="#">
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

@@ -1,0 +1,45 @@
+{%- render 'section-collection-header' -%}
+
+{% schema %}
+{
+  "name": "t:labels.collection_header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "t:actions.enable_header",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_image_enable",
+      "label": "t:actions.show_collection_image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax",
+      "label": "t:labels.parallax_image"
+    },
+    {
+      "type": "select",
+      "id": "parallax_direction",
+      "label": "t:labels.parallax_direction",
+      "default": "top",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:labels.vertical"
+        },
+        {
+          "value": "left",
+          "label": "t:labels.horizontal"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

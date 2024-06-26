@@ -1,0 +1,159 @@
+{%- render 'section-testimonials' -%}
+
+{% schema %}
+{
+"name": "t:labels.testimonials",
+"max_blocks": 9,
+"settings": [
+  {
+    "type": "text",
+    "id": "title",
+    "label": "t:labels.heading",
+    "default": "From our customers"
+  },
+  {
+    "type": "select",
+    "id": "align_text",
+    "label": "t:labels.text_alignment",
+    "default": "center",
+    "options": [
+      {
+        "value": "left",
+        "label": "t:labels.alignments.left"
+      },
+      {
+        "value": "center",
+        "label": "t:labels.alignments.centered"
+      },
+      {
+        "value": "right",
+        "label": "t:labels.alignments.right"
+      }
+    ]
+  },
+  {
+    "type": "checkbox",
+    "id": "round_images",
+    "label": "t:labels.circular_images",
+    "info": "t:info.requires_square_images",
+    "default": true
+  },
+  {
+    "type": "select",
+    "id": "color_scheme",
+    "label": "t:labels.color_scheme",
+    "default": "none",
+    "options": [
+      {
+        "value": "none",
+        "label": "t:labels.none"
+      },
+      {
+        "value": "1",
+        "label": "1"
+      },
+      {
+        "value": "2",
+        "label": "2"
+      },
+      {
+        "value": "3",
+        "label": "3"
+      }
+    ]
+  }
+],
+"blocks": [
+  {
+    "type": "testimonial",
+    "name": "t:labels.testimonial",
+    "settings": [
+      {
+        "type": "select",
+        "id": "icon",
+        "label": "t:labels.icon",
+        "default": "5-stars",
+        "options": [
+          {
+            "value": "none",
+            "label": "t:labels.none"
+          },
+          {
+            "value": "quote",
+            "label": "t:labels.quote"
+          },
+          {
+            "value": "5-stars",
+            "label": "t:labels.stars.5_stars"
+          },
+          {
+            "value": "4-stars",
+            "label": "t:labels.stars.4_stars"
+          },
+          {
+            "value": "3-stars",
+            "label": "t:labels.stars.3_stars"
+          },
+          {
+            "value": "2-stars",
+            "label": "t:labels.stars.2_stars"
+          },
+          {
+            "value": "1-star",
+            "label": "t:labels.stars.1_star"
+          }
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "testimonial",
+        "label": "t:labels.text",
+        "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:labels.authors_image"
+      },
+      {
+        "type": "text",
+        "id": "author",
+        "label": "t:labels.author",
+        "default": "Author's name"
+      },
+      {
+        "type": "text",
+        "id": "author_info",
+        "label": "t:labels.author_info",
+        "default": "Los Angeles, CA"
+      }
+    ]
+  }
+],
+"presets": [
+  {
+    "name": "t:labels.testimonials",
+    "blocks": [
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      },
+      {
+        "type": "testimonial"
+      }
+    ]
+  }
+],
+"disabled_on": {
+  "groups": ["footer", "header", "custom.popups"]
+}
+}
+{% endschema %}

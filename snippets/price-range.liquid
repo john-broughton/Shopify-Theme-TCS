@@ -1,0 +1,78 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the price range filter.
+
+  Accepts:
+  - filter {filter} - The filter object
+
+  Usage:
+  {% render 'price-range', filter: filter %}
+{%- endcomment -%}
+
+{%- liquid
+  assign filter = filter | default: blank
+  assign hydration = hydration | default: 'on:idle'
+
+  assign currencies_using_comma_decimals = 'ANG,ARS,BRL,BYN,BYR,CLF,CLP,COP,CRC,CZK,DKK,EUR,HRK,HUF,IDR,ISK,MZN,NOK,PLN,RON,RUB,SEK,TRY,UYU,VES,VND' | split: ','
+  assign uses_comma_decimals = false
+
+  if currencies_using_comma_decimals contains cart.currency.iso_code
+    assign uses_comma_decimals = true
+  endif
+
+  assign filter_min_value = filter.min_value.value | money_without_currency | replace: ',', ''
+  assign filter_max_value = filter.max_value.value | money_without_currency | replace: ',', ''
+  assign filter_range_min = filter.range_min | money_without_currency | replace: ',', ''
+  assign filter_range_max = filter.range_max | money_without_currency | replace: ',', ''
+
+  if uses_comma_decimals
+    if filter.min_value.value
+      assign filter_min_value = filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.'
+    endif
+
+    if filter.max_value.value
+      assign filter_max_value = filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.'
+    endif
+
+    assign filter_range_min = filter.range_min | money_without_currency | replace: '.', '' | replace: ',', '.'
+    assign filter_range_max = filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.'
+  endif
+-%}
+
+<is-land {{ hydration }}>
+  <price-range
+    class="price-range"
+    data-min-value="{{ filter_min_value }}"
+    data-min-name="{{ filter.min_value.param_name }}"
+    data-min="{{ filter_range_min }}"
+    data-max-value="{{ filter_max_value }}"
+    data-max-name="{{ filter.max_value.param_name }}"
+    data-max="{{ filter_range_max }}"
+  >
+    <div class="price-range__display-wrapper">
+      <span class="price-range__display-min">{{ filter_min_value }}</span>
+      <span class="price-range__display-max">{{ filter_max_value }}</span>
+    </div>
+    <div class="price-range__slider-wrapper">
+      <div class="price-range__slider"></div>
+    </div>
+    <input
+      class="price-range__input price-range__input-min"
+      name="{{ filter.min_value.param_name }}"
+      value="{{ filter_min_value }}"
+      readonly
+    >
+    <input
+      class="price-range__input price-range__input-max"
+      name="{{ filter.max_value.param_name }}"
+      value="{{ filter_max_value }}"
+      readonly
+    >
+  </price-range>
+
+  <template data-island>
+    <script type="module">
+      import 'components/price-range'
+    </script>
+  </template>
+</is-land>

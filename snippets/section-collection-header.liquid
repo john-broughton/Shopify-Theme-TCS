@@ -1,0 +1,125 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the collection header section.
+
+  Accepts:
+  - enable {boolean} - Whether to show the section
+  - collection_image_enable {boolean} - Whether to show the collection image
+  - parallax {boolean} - Whether to enable parallax
+  - parallax_direction {'top'|'left'} - The direction of the parallax
+  - disable_sticky_header {boolean} - Whether to disable the sticky header
+  - hydration {string} - The hydration strategy
+
+  Usage:
+  {% render 'section-collection-header', parallax: false %}
+{%- endcomment -%}
+
+{%- liquid
+  assign enable = enable | default: section.settings.enable, allow_false: true | default: true, allow_false: true
+  assign collection_image_enable = collection_image_enable | default: section.settings.collection_image_enable, allow_false: true | default: true, allow_false: true
+  assign parallax = parallax | default: section.settings.parallax, allow_false: true | default: false, allow_false: true
+  assign parallax_direction = parallax_direction | default: section.settings.parallax_direction | default: 'top'
+  assign disable_sticky_header = disable_sticky_header | default: false, allow_false: true
+  assign hydration = hydration | default: 'on:idle'
+-%}
+
+{%- if enable -%}
+  {%- if collection_image_enable and collection.image -%}
+    {% style %}
+      @media screen and (min-width: 769px) {
+        .collection-content {
+          border: 0;
+          margin-top: 0;
+        }
+      }
+    {% endstyle %}
+    <is-land {{ hydration }}>
+      <div
+        id="CollectionHeaderSection"
+        data-section-id="{{ section.id }}"
+        data-section-type="collection-header"
+        {% if parallax %}
+          data-parallax="true"
+        {% endif %}
+      >
+        <div class="collection-hero loading">
+          {%- if parallax -%}
+            <parallax-image class="parallax-container">
+              <div class="parallax-image" data-movement="15%" data-parallax-image data-angle="{{ parallax_direction }}">
+          {%- endif -%}
+          {% comment %}Full width image so don't need to adjust sizes attribute, fallback is 100vw{% endcomment %}
+          {%- render 'image-element',
+            img: collection.image,
+            img_width: 2400,
+            classes: 'collection-hero__image image-fit',
+            preload: true,
+            loading: 'eager'
+          -%}
+
+          {%- if parallax -%}
+            </div>
+            </parallax-image>
+          {%- endif -%}
+
+          <div class="collection-hero__content overlay">
+            <div class="page-width">
+              <header class="section-header section-header--flush">
+                {%- render 'breadcrumbs' -%}
+
+                <h1 class="section-header__title">
+                  {{ collection.title }}
+                </h1>
+              </header>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <template data-island>
+        <script type="module">
+          import 'components/section-collection-header'
+        </script>
+      </template>
+    </is-land>
+
+    <div class="page-width medium-up--hide" data-collection-count style="padding-top: 15px;">
+      {{ 'info.product_count' | t: count: collection.products_count }}
+    </div>
+
+  {%- else -%}
+    {%- assign disable_sticky_header = true -%}
+    <div class="page-width page-content page-content--top">
+      <header class="section-header section-header--flush">
+        {%- render 'breadcrumbs' -%}
+
+        <h1 class="section-header__title">
+          {{ collection.title }}
+        </h1>
+        <p class="medium-up--hide" data-collection-count>
+          {{ 'info.product_count' | t: count: collection.products_count }}
+        </p>
+      </header>
+    </div>
+  {%- endif -%}
+{% else %}
+  {%- assign disable_sticky_header = true -%}
+{%- endif -%}
+
+{%- if disable_sticky_header -%}
+  {% comment %}
+    Div to trigger theme.CollectionHeader JS
+  {% endcomment %}
+  <is-land {{ hydration }}>
+    <div
+      id="CollectionHeaderSection"
+      data-section-id="{{ section.id }}"
+      data-section-type="collection-header"
+    ></div>
+
+    <template data-island>
+      <script type="module">
+        import 'components/section-collection-header'
+      </script>
+    </template>
+  </is-land>
+{%- endif -%}

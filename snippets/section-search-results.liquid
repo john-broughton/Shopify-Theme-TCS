@@ -1,0 +1,244 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with search results.
+
+  Accepts:
+  - predictive_search_show_vendor {boolean} - Whether to show the vendor in the predictive search results
+  - predictive_search_show_price {boolean} - Whether to show the price in the predictive search results
+  - product_save_amount {boolean} - Whether to show the amount saved on a product
+  - product_save_type {'dollar'|'percent'} - The type of amount saved to show
+  - prefix_enable {boolean} - Whether to show the prefix on the product
+
+  Usage:
+  {% render 'section-search-results' %}
+{%- endcomment -%}
+
+{% liquid
+  assign predictive_search_show_price = predictive_search_show_price | default: section.settings.predictive_search_show_price, allow_false: true | default: true, allow_false: true
+  assign predictive_search_show_vendor = predictive_search_show_vendor | default: section.settings.predictive_search_show_vendor, allow_false: true | default: true, allow_false: true
+  assign product_save_amount = product_save_amount | default: settings.product_save_amount, allow_false: true | default: true, allow_false: true
+  assign product_save_type = product_save_type | default: settings.product_save_type | default: 'dollar'
+  assign prefix_enable = prefix_enable | default: settings.prefix_enable, allow_false: true | default: false, allow_false: true
+
+  if predictive_search_show_price
+    assign predictive_search_show_price = true
+  endif
+
+  if predictive_search_show_vendor
+    assign predictive_search_show_vendor = true
+  endif
+
+  assign resources = predictive_search.resources
+  assign columnCount = resources.queries.size | plus: resources.pages.size | plus: resources.articles.size | plus: resources.collections.size
+  assign totalCount = resources.queries.size | plus: resources.pages.size | plus: resources.articles.size | plus: resources.collections.size | plus: resources.products.size
+%}
+
+{%- if predictive_search.performed -%}
+  <div
+    class="predictive-search-results {% if totalCount == 0 %}predictive-search-results--none{% endif %}"
+    id="predictive-search-results"
+  >
+    {% if totalCount > 0 %}
+      <div
+        class="results__group-1"
+        {% if columnCount == 0 %}
+          style="display: none"
+        {% endif %}
+      >
+        {%- if predictive_search.resources.queries.size > 0 -%}
+          <div class="results results--queries">
+            <h3 class="h4" id="predictive-search-suggestions">
+              {{ 'labels.suggestions' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-queries">
+              {%- for query in predictive_search.resources.queries -%}
+                <li role="option">
+                  <a href="{{ query.url }}">
+                    <span>{{ query.styled_text }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        {%- if predictive_search.resources.pages.size > 0 -%}
+          <div class="results results--pages">
+            <h3 class="h4" id="predictive-search-pages">
+              {{ 'labels.pages' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-pages">
+              {%- for page in predictive_search.resources.pages -%}
+                <li role="option">
+                  <a href="{{ page.url }}">
+                    <span>{{ page.title }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        {%- if predictive_search.resources.articles.size > 0 -%}
+          <div class="results results--articles">
+            <h3 class="h4" id="predictive-search-articles">
+              {{ 'labels.articles' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-articles">
+              {%- for article in predictive_search.resources.articles -%}
+                <li role="option">
+                  <a href="{{ article.url }}">
+                    <span>{{ article.title }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        {%- if predictive_search.resources.collections.size > 0 -%}
+          <div class="results results--collections">
+            <h3 class="h4" id="predictive-search-collections">
+              {{ 'labels.collections' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-collections">
+              {%- for collection in predictive_search.resources.collections -%}
+                <li role="option">
+                  <a href="{{ collection.url }}">
+                    <span>{{ collection.title }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="results__group-2">
+        {%- if predictive_search.resources.products.size > 0 -%}
+          <div class="results results--products">
+            <h3 class="h4" id="predictive-search-products">
+              {{ 'labels.products' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-products">
+              {%- for product in predictive_search.resources.products -%}
+                <li role="option">
+                  <a href="{{ product.url }}">
+                    <div class="results-products__image grid__image-ratio">
+                      {% if product.media != blank %}
+                        {%- render 'image-element', img: product.featured_media, widths: '80, 160, 240', classes: 'animape-instant' -%}
+                      {% endif %}
+                    </div>
+                    <div class="results-products__info">
+                      {%- if prefix_enable and product.metafields.archetype.prefix.value != blank -%}
+                        <span class="grid-product__vendor">
+                          {{- product.metafields.archetype.prefix.value | escape -}}
+                        </span>
+                      {%- endif -%}
+
+                      <span>{{ product.title }}</span>
+                      {% if predictive_search_show_vendor %}
+                        <span class="grid-product__vendor">{{ product.vendor }}</span>
+                      {% endif %}
+                      {% if predictive_search_show_price %}
+                        {%- if on_sale -%}
+                          <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
+                          <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
+                          <span class="visually-hidden">{{ 'labels.sale_price' | t }}</span>
+                        {%- endif -%}
+
+                        {%- if product.price_varies -%}
+                          {%- assign price = product.price_min | money -%}
+                          <span class="grid-product__price">{{ 'labels.from_price_html' | t: price: price }}</span>
+                        {%- else -%}
+                          <span class="grid-product__price">{{ product.price | money }}</span>
+                        {%- endif -%}
+                        {%- if on_sale -%}
+                          {%- if product_save_amount -%}
+                            {%- liquid
+                              if product_save_type == 'dollar'
+                                assign saved_amount = product.compare_at_price | minus: product.price | money
+                              else
+                                assign saved_amount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round
+                              endif
+                            -%}
+                            <span class="grid-product__price--savings">
+                              {{ 'info.save_amount' | t: saved_amount: saved_amount }}
+                            </span>
+                          {%- endif -%}
+                        {%- endif -%}
+                      {% endif %}
+                    </div>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        {%- if predictive_search.resources.pages.size > 0 -%}
+          <div class="results results--pages">
+            <h3 class="h4" id="predictive-search-pages">
+              {{ 'labels.pages' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-pages">
+              {%- for page in predictive_search.resources.pages -%}
+                <li role="option">
+                  <a href="{{ page.url }}">
+                    <span>{{ page.title }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        {%- if predictive_search.resources.articles.size > 0 -%}
+          <div class="results results--articles">
+            <h3 class="h4" id="predictive-search-articles">
+              {{ 'labels.articles' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-articles">
+              {%- for article in predictive_search.resources.articles -%}
+                <li role="option">
+                  <a href="{{ article.url }}">
+                    <span>{{ article.title }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+        {%- if predictive_search.resources.collections.size > 0 -%}
+          <div class="results results--collections">
+            <h3 class="h4" id="predictive-search-collections">
+              {{ 'labels.collections' | t }}
+            </h3>
+            <ul role="listbox" aria-labelledby="predictive-search-collections">
+              {%- for collection in predictive_search.resources.collections -%}
+                <li role="option">
+                  <a href="{{ collection.url }}">
+                    <span>{{ collection.title }}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      </div>
+    {% else %}
+      <div class="results">
+        <a
+          class="predictive-search__no-results"
+          href="{{ routes.search_url }}?q={{ predictive_search.terms | escape }}"
+        >
+          {{- 'info.search_no_results_html' | t: terms: predictive_search.terms -}}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  {% if totalCount > 0 %}
+    <button class="results__search-btn">
+      {{ 'actions.show_all_results' | t: terms: predictive_search.terms }}
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 5H12.5M12.5 5L8.5 1M12.5 5L8.5 9" stroke="currentColor"/>
+      </svg>
+    </button>
+  {% endif %}
+{%- endif -%}

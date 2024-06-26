@@ -1,0 +1,158 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a blog post and a list of blog posts.
+
+  Accepts:
+  - blog {blog} - The blog to display
+  - blog_show_tags {boolean} - Whether to show tags
+  - blog_show_date {boolean} - Whether to show the date
+  - blog_show_comments {boolean} - Whether to show the comments
+  - blog_show_author {boolean} - Whether to show the author
+  - blog_show_excerpt {boolean} - Whether to show the excerpt
+  - blog_image_size {'natural'|'square'|'landscape'|'portrait'|'wide'} - The size of the blog image
+  - sidebar_count {number} - The number of blog posts to show in the sidebar
+  - title {string} - The title of the section
+  - heading_position {'left'|'center'|'right'} - The position of the heading
+  - heading_size {'h0'|'h1'|'h2'|'h3'} - The size of the heading
+  - text_direction {'ltr'|'rtl'} - The text direction
+  - divider {boolean} - Whether to show a divider
+
+  Usage:
+  {% render 'section-blog-posts' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign blog = section.settings.blog | default: blog
+  assign blog_show_tags = blog_show_tags | default: section.settings.blog_show_tags, allow_false: true | default: true, allow_false: true
+  assign blog_show_date = blog_show_date | default: section.settings.blog_show_date, allow_false: true | default: true, allow_false: true
+  assign blog_show_comments = blog_show_comments | default: section.settings.blog_show_comments, allow_false: true | default: false, allow_false: true
+  assign blog_show_author = blog_show_author | default: section.settings.blog_show_author, allow_false: true | default: false, allow_false: true
+  assign blog_show_excerpt = blog_show_excerpt | default: section.settings.blog_show_excerpt, allow_false: true | default: false, allow_false: true
+  assign blog_image_size = blog_image_size | default: section.settings.blog_image_size | default: 'wide'
+  assign sidebar_count = sidebar_count | default: section.settings.sidebar_count | default: 4
+  assign title = title | default: section.settings.title
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'left'
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign text_direction = text_direction | default: 'ltr'
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+
+  if blog_show_tags
+    assign sidebar_count = 3
+  endif
+
+  assign have_blog = true
+
+  if blog.empty? or blog.articles.size == 0
+    assign have_blog = false
+  endif
+-%}
+
+{% style %}
+  {% if heading_position == 'right' %}
+    #shopify-section-{{ section.id }} .section-header__link {
+      padding-left: 20px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} .section-header__link {
+        padding-left: 10px;
+      }
+    }
+  {% elsif heading_position == 'center' %}
+    #shopify-section-{{ section.id }} .section-header {
+      position: relative;
+    }
+
+    #shopify-section-{{ section.id }} .section-header__link {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} .section-header__link {
+        position: relative;
+      }
+    }
+  {% endif %}
+
+  @media only screen and (max-width: 768px) {
+    #shopify-section-{{ section.id }} .section-header__title {
+      text-align: left;
+    }
+
+    {% if text_direction == 'rtl' %}
+      #shopify-section-{{ section.id }} .section-header__title {
+        text-align: right;
+      }
+    {% endif %}
+  }
+{% endstyle %}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+
+<div class="page-width">
+  {%- if title != blank -%}
+    <header class="section-header section-header--with-link">
+      <h2 class="section-header__title {{ heading_size }} text-{{ heading_position }}">
+        {{ title | escape }}
+      </h2>
+      <a href="{{ blog.url }}" class="section-header__link">{{ 'actions.view_all' | t }}</a>
+    </header>
+  {%- endif -%}
+
+  <div class="blog-layout">
+    <div class="blog-layout__main">
+      <div class="new-grid">
+        {% liquid
+          if have_blog
+            for article in blog.articles limit: 1
+              render 'article-grid-item', style: 'large', article: article
+            endfor
+          else
+            render 'article-grid-item', style: 'large', image_size: 'landscape', article: article
+          endif
+        %}
+      </div>
+    </div>
+    <div class="blog-layout__sidebar">
+      <div class="h4">{{ 'labels.latest_posts' | t }}</div>
+
+      {% liquid
+        if have_blog
+          for article in blog.articles limit: sidebar_count offset: 1
+            render 'article-grid-item', style: 'compact', article: article
+          endfor
+        else
+          for i in (1..sidebar_count)
+            render 'article-grid-item', style: 'compact', image_size: 'landscape'
+          endfor
+        endif
+      %}
+
+      {%- if blog_show_tags and blog.all_tags.size > 0 -%}
+        <hr class="hr--small hr--clear">
+        <div class="h4">{{ 'actions.explore_more' | t }}</div>
+
+        <ul class="no-bullets tag-list">
+          {%- for tag in blog.all_tags -%}
+            {% if tag contains '_' %}
+              {%- assign tag_starts_with = tag | slice: 0 -%}
+              {% if tag_starts_with == '_' -%}
+                {%- if tag_count %}{%- assign tag_count = tag_count | minus: 1 | at_least: 0 -%}{% endif -%}
+                {%- continue -%}
+              {%- endif -%}
+            {%- endif %}
+
+            <li class="tag tag--inline">
+              <a href="{{ blog.url }}/tagged/{{ tag.handle }}" class="article-tag">{{ tag }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{%- if divider -%}</div>{%- endif -%}

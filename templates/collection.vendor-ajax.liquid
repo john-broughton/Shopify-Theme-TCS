@@ -1,0 +1,10 @@
+{% comment %}
+  Template to ajax-load products from specific vendor
+{% endcomment %}
+{% layout none %}
+
+{%- liquid
+  for product in collection.products limit: 7
+    render 'product-grid-item', product: product, collection: collection, quick_add_enable: settings.quick_add_enable, quick_shop_enable: settings.quick_shop_enable, product_grid_image_size: settings.product_grid_image_size, product_grid_image_fill: settings.product_grid_image_fill, product_hover_image: settings.product_hover_image, enable_swatches: settings.enable_swatches, vendor_enable: settings.vendor_enable, product_save_amount: settings.product_save_amount, product_save_type: settings.product_save_type
+  endfor
+-%}

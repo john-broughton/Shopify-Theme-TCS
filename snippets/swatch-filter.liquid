@@ -1,0 +1,53 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- liquid
+  assign enable_swatch_labels = enable_swatch_labels | default: section.settings.enable_swatch_labels, allow_false: true | default: true, allow_false: true
+-%}
+
+<ul class="no-bullets tag-list {% if tags_combine %} tag-list--checkboxes{% endif %} tag-list--swatches">
+  {%- for filter_value in filter.values -%}
+
+    {% if filter_value.label contains 'at_' %}
+      {% assign is_product_tag = true %}
+      {% assign formatted_tag = filter_value.label | remove_first: 'at_' %}
+
+      {% assign tag_id = formatted_tag | strip %}
+      {% assign tag_text = 'tags.' | append: tag_id | replace: '-', '_' | t %}
+
+      {% if tag_text contains 'Translation missing' %}
+        {% continue %}
+      {% endif %}
+    {% endif %}
+
+    <li class="tag tag--swatch {% if filter_value.active %}tag--active{% endif %} {% if enable_swatch_labels %}tag--show-label{% endif %}">
+      <label for="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label">
+        <input
+        id="tag-{{ filter_value.value | handle }}"
+        type="checkbox"
+        class="tag__input"
+        name="{{ filter_value.param_name }}"
+        value="{{ filter_value.value }}"
+        {% if filter_value.active %}checked{% endif %}>
+        <span
+            class="color-swatch color-swatch--filter color-swatch--{{ filter_value.label | handle }}"
+            title="{{ filter_value.label }}"
+            style="{% if filter_value.swatch.image %}background-image: url({{ filter_value.swatch.image | image_url: width: 300 }}){% else %}background-color: rgb({{ filter_value.swatch.color.rgb }}){% endif %};"
+        >
+          {% if is_product_tag and tag_text %}
+            {{ tag_text }}
+          {% else %}
+            {{ filter_value.label }}
+          {% endif %}
+        </span>
+        <span class="tag__text {% unless enable_swatch_labels %}hide{% endunless %}">
+          {% if is_product_tag %}
+            {% if tag_text %}
+              <span class="product-tag__text">{{ tag_text | capitalize }}</span>
+            {% endif %}
+          {% else %}
+            {{ filter_value.label }}
+          {% endif %}
+        </span>
+      </label>
+    </li>
+  {%- endfor -%}
+</ul>

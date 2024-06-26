@@ -1,0 +1,127 @@
+{%- render 'section-header' -%}
+
+{% schema %}
+{
+  "name": "t:labels.header",
+  "class": "header-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "main_menu_link_list",
+      "label": "t:labels.navigation",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "hover_menu",
+      "label": "t:actions.enable_dropdown_on_hover",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "main_menu_alignment",
+      "label": "t:labels.layout",
+      "default": "below",
+      "options": [
+        {
+          "value": "below",
+          "label": "t:labels.logo_left_menu_below"
+        },
+        {
+          "value": "left",
+          "label": "t:labels.logo_left_menu_left"
+        },
+        {
+          "value": "left-center",
+          "label": "t:labels.logo_left_menu_center"
+        },
+        {
+          "value": "center",
+          "label": "t:labels.logo_center_menu"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "mega_products",
+      "label": "t:actions.show_first_product",
+      "info": "t:info.learn_mega_menu",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "header_sticky",
+      "label": "t:actions.enable_sticky_header",
+      "default": true,
+      "info": "t:labels.recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "header_footer_menu",
+      "label": "t:actions.show_footer_content",
+      "default": true,
+      "info": "t:labels.recommended"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_index",
+      "label": "t:actions.overlay_header_over_home",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_collection",
+      "label": "t:actions.overlay_header_over_collection",
+      "info": "t:info.if_collection_image_enabled",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "t:labels.logo",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "t:labels.logo"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo-inverted",
+          "label": "t:labels.white_logo",
+          "info": "t:info.used_when_on_top_of_image"
+        },
+        {
+          "type": "range",
+          "id": "desktop_logo_width",
+          "label": "t:labels.desktop_logo_width",
+          "default": 200,
+          "min": 100,
+          "max": 400,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "mobile_logo_width",
+          "label": "t:labels.mobile_logo_width",
+          "default": 140,
+          "min": 60,
+          "max": 200,
+          "step": 10,
+          "unit": "px",
+          "info": "t:info.set_as_max_width"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {}
+  },
+  "disabled_on": {
+    "groups": ["footer", "custom.popups"]
+  }
+}
+{% endschema %}

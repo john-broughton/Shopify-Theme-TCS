@@ -1,0 +1,26 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment %}
+  Renders the store availability of a product
+
+  Accepts:
+  - product {product} - Product object
+
+  Usage:
+  {% render 'section-store-availability' %}
+{%- endcomment %}
+
+{%- liquid
+  assign product = section.settings.product | default: product
+-%}
+
+<store-availability
+  data-store-availability-holder
+  data-product-name="{{ product.title | escape }}"
+  data-base-url="{{ shop.url }}{{ routes.root_url }}"
+  data-variant-id="{{- product.selected_or_first_available_variant.id -}}"
+  data-product-id="{{- product.id -}}"
+></store-availability>
+
+<script type="module">
+  import 'components/store-availability'
+</script>

@@ -1,0 +1,38 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders the cart recommendations component.
+
+  Accepts:
+  - context {string} - The context in which the component is being rendered
+  - collection {collection} - The collection to use for cart recommendations
+
+  Usage:
+  {% render 'cart-recommendations', context: 'popup' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign context = context | default: blank
+  assign collection = collection | default: settings.cart_collection
+
+  assign mobile_scroll_only = true
+
+  if context == 'drawer'
+    assign mobile_scroll_only = false
+  endif
+-%}
+
+{%- if collection != blank -%}
+  <div class="cart__item-row cart-recommendations" data-location="{{ context }}">
+    <div class="h3 h3--mobile cart__recommended-title">{{ 'labels.goes_great_with' | t }}</div>
+    <div
+      class="new-grid product-grid{% if mobile_scroll_only %} scrollable-grid--small{% else %} scrollable-grid{% endif %}"
+      data-view="small"
+    >
+      {%- liquid
+        for product in collection.products limit: 4
+          render 'product-grid-item', product: product, collection: collection, sizes: '150px'
+        endfor
+      -%}
+    </div>
+  </div>
+{%- endif -%}

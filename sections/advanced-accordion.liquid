@@ -1,0 +1,214 @@
+<div class="page-width">
+  {%- render 'section-advanced-accordion' -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:labels.advanced_accordion",
+  "class": "advanced-accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:labels.heading",
+      "default": "Advanced Accordion"
+    },
+    {
+      "type": "range",
+      "id": "per_row",
+      "label": "t:labels.blocks_per_row",
+      "default": 3,
+      "min": 1,
+      "max": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "two_per_row_mobile",
+      "label": "t:labels.two_blocks_per_row_mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "opened",
+      "label": "t:actions.init_display_opened",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "disabled",
+      "label": "t:actions.disable_accordion",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "t:labels.text_block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:labels.image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "label": "t:labels.image_width",
+          "default": 100,
+          "min": 10,
+          "max": 100,
+          "step": 5,
+          "unit": "%"
+        },
+        {
+          "type": "select",
+          "id": "image_mask",
+          "label": "t:labels.image_shape",
+          "default": "none",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:labels.none"
+            },
+            {
+              "value": "square",
+              "label": "t:labels.square"
+            },
+            {
+              "value": "rounded",
+              "label": "t:labels.rounded"
+            },
+            {
+              "value": "rounded-wave",
+              "label": "t:labels.rounded_wave"
+            },
+            {
+              "value": "rounded-top",
+              "label": "t:labels.arch"
+            },
+            {
+              "value": "star",
+              "label": "t:labels.star"
+            },
+            {
+              "value": "splat-1",
+              "label": "t:labels.splat_1"
+            },
+            {
+              "value": "splat-2",
+              "label": "t:labels.splat_2"
+            },
+            {
+              "value": "splat-3",
+              "label": "t:labels.splat_3"
+            },
+            {
+              "value": "splat-4",
+              "label": "t:labels.splat_4"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "align_text",
+          "label": "t:labels.text_position",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:labels.alignments.left"
+            },
+            {
+              "value": "center",
+              "label": "t:labels.alignments.center"
+            },
+            {
+              "value": "right",
+              "label": "t:labels.alignments.right"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:labels.heading",
+          "default": "Example title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:labels.text",
+          "default": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:labels.button_text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:labels.button_link"
+        }
+      ]
+    },
+    {
+      "type": "link_block",
+      "name": "t:labels.link_block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "t:labels.link_label",
+          "default": "All Collections"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:labels.link",
+          "default": "/collections"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_arrow",
+          "label": "t:actions.show_arrow",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "html_block",
+      "name": "t:labels.html_block",
+      "settings": [
+        {
+          "type": "html",
+          "id": "html",
+          "label": "t:labels.html"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advanced accordion",
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "footer", "custom.popups"]
+  }
+}
+{% endschema %}

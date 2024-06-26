@@ -1,0 +1,165 @@
+{%- render 'section-newsletter-popup' -%}
+
+{% schema %}
+{
+  "name": "t:labels.popup",
+  "max_blocks": 1,
+  "class": "index-section--hidden",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "disable_for_account_holders",
+      "label": "t:actions.disable_for_accounts",
+      "default": true,
+      "info": "t:info.not_shown_to_customers_with_accounts"
+    },
+    {
+      "type": "range",
+      "id": "popup_seconds",
+      "label": "t:labels.delay",
+      "default": 30,
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "unit": "sec",
+      "info": "t:info.values_below_10_not_recommended"
+    },
+    {
+      "type": "range",
+      "id": "popup_days",
+      "label": "t:labels.frequency",
+      "default": 30,
+      "info": "t:info.number_of_days_popup_reappears",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "day"
+    },
+    {
+      "type": "header",
+      "content": "t:labels.content"
+    },
+    {
+      "type": "text",
+      "id": "popup_title",
+      "label": "t:labels.heading",
+      "default": "Sign up and save"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_text",
+      "label": "t:labels.text",
+      "default": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers. Include an image for extra impact.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "popup_image",
+      "label": "t:labels.image",
+      "info": "t:info.does_not_appear_on_mobile"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "t:labels.image_position",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:labels.alignments.left"
+        },
+        {
+          "value": "right",
+          "label": "t:labels.alignments.right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "t:labels.color_scheme",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:labels.none"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icons",
+      "label": "Show social icons",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:labels.newsletter"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:info.sign_up_creates_customer"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "t:actions.enable_newsletter",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:labels.button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:labels.button_label",
+      "default": "Optional button"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:labels.button_link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "header",
+      "name": "t:labels.sticky_reminder",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "reminder_label",
+          "label": "t:labels.reminder_label",
+          "default": "Get 10% off",
+          "info": "t:info.appears_when_newsletter_popup_closed"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "settings": {},
+    "blocks": [
+      {
+        "type": "header",
+        "settings": {}
+      }
+    ]
+  },
+  "disabled_on": {
+    "groups": ["footer", "header"]
+  }
+}
+{% endschema %}

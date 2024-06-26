@@ -1,0 +1,33 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a return link to a collection.
+
+  Accepts:
+  - collection {collection} - The collection to return to
+  - color_scheme {string} - The color scheme
+
+  Usage:
+  {% render 'section-collection-return', collection: collection %}
+{%- endcomment -%}
+
+{%- liquid
+  assign color_scheme = color_scheme | default: section.settings.color_scheme | default: 'none'
+-%}
+
+{% if collection %}
+  <div class="return-section color-scheme-{{ color_scheme }}">
+    {%- if color_scheme != 'none' -%}
+      {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+    {%- endif -%}
+
+    <div class="page-width text-center">
+      <a
+        href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}"
+        class="btn return-link"
+      >
+        {% render 'icon', name: 'arrow-left' %}
+        {{ 'actions.back_to' | t: collection: collection.title }}
+      </a>
+    </div>
+  </div>
+{% endif %}

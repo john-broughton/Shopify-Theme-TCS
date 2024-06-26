@@ -1,0 +1,77 @@
+{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a section with a list of logos.
+
+  Accepts:
+  - title {string} - The title of the section
+  - heading_size {string} - The size of the heading
+  - heading_position {string} - The position of the heading
+  - grid_background_color {string} - The background color of the grid
+  - per_row {number} - The number of logos per row
+  - divider {boolean} - Whether to add a divider above the section
+
+  Usage:
+  {% render 'section-logo-list', title: 'Our amazing partners' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign title = title | default: section.settings.title
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'center'
+  assign grid_background_color = grid_background_color | default: section.settings.grid_background_color, allow_false: true | default: false, allow_false: true
+  assign per_row = per_row | default: section.settings.per_row
+  assign layout_style = layout_style | default: section.settings.layout_style | default: 'grid'
+  assign divider = divider | default: section.settings.divider, allow_false: true | default: false, allow_false: true
+-%}
+
+{%- if divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-width">
+  {%- if title != blank -%}
+    <div class="section-header text-{{ heading_position }}">
+      <h2 class="section-header__title {{ heading_size }}">{{ title | escape }}</h2>
+    </div>
+  {%- endif -%}
+
+  {%- if section.blocks.size > 0 -%}
+    <div class="logo-bar logo-bar--{{ section.id }} logo-bar--grid-background-color--{{ grid_background_color }} logo-bar--layout-{{ layout_style }}">
+      <div class="new-grid product-grid" {% unless per_row %}data-view="6-2"{% endunless %}>
+        {%- for block in section.blocks -%}
+          <div
+            class="
+              grid-item grid-product
+              {% if per_row %}
+                {% render 'grid-view-type', products_per_row: per_row, type: false, style: 'fractions' %}
+              {% endif %}
+            "
+            {{ block.shopify_attributes }}
+          >
+            <div class="logo-bar__item{% if block.settings.image == blank %} logo-bar__item-svg{% endif %}">
+              {%- if block.settings.link != blank -%}
+                <a href="{{ block.settings.link }}" class="logo-bar__link" aria-label="{{ block.settings.image.alt }}">
+              {%- endif -%}
+
+              {%- if block.settings.image != blank -%}
+                {%- render 'image-element',
+                  img: block.settings.image,
+                  sizeVariable: '6',
+                  fallback: '50vw',
+                  widths: '360, 540, 720, 1020',
+                  classes: 'logo-bar__image'
+                -%}
+              {%- else -%}
+                {{ 'logo' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--no-padding' }}
+              {%- endif -%}
+
+              {%- if block.settings.link != blank -%}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{%- if divider -%}</div>{%- endif -%}
