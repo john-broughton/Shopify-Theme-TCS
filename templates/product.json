@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "title_DaKN6F": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": false
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -61,6 +68,7 @@
         }
       },
       "block_order": [
+        "title_DaKN6F",
         "price",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
         "inventory_status",
