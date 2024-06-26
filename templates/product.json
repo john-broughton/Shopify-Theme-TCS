@@ -12,11 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "price": {
-          "type": "price",
-          "settings": {
-          }
-        },
         "title_DaKN6F": {
           "type": "title",
           "settings": {
@@ -30,11 +25,13 @@
             "is_tab": false
           }
         },
-        "inventory_status": {
-          "type": "inventory_status",
+        "variant_picker_PHeixP": {
+          "type": "variant_picker",
           "settings": {
-            "inventory_threshold": 4,
-            "inventory_transfers_enable": true
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
           }
         },
         "sales_point": {
@@ -44,13 +41,9 @@
             "text": "Free In Store Pickup"
           }
         },
-        "variant_picker_PHeixP": {
-          "type": "variant_picker",
+        "price": {
+          "type": "price",
           "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "product_dynamic_variants_enable": true,
-            "color_swatches": true
           }
         },
         "quantity_selector_KcWnct": {
@@ -65,17 +58,24 @@
             "surface_pickup_enable": false,
             "show_gift_card_recipient": false
           }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 4,
+            "inventory_transfers_enable": true
+          }
         }
       },
       "block_order": [
-        "price",
         "title_DaKN6F",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
-        "inventory_status",
-        "sales_point",
         "variant_picker_PHeixP",
+        "sales_point",
+        "price",
         "quantity_selector_KcWnct",
-        "buy_buttons"
+        "buy_buttons",
+        "inventory_status"
       ],
       "settings": {
         "image_position": "left",
