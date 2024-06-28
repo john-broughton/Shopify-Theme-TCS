@@ -70,6 +70,28 @@
         "bottom_padding": true
       }
     },
+    "text_and_image_iV6NVF": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Vegan_Challenge_Menu_Instagram_Post.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Vegan Chef Challenge",
+        "heading_size": "h2",
+        "text": "<p>From July 1st- July 31st, we will participate in the Vegan Chef Challenge! Come by this month and order one of our Peach Caprese Sandwiches at our café! <\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "b5e95e24-93b4-492c-ae7f-914eae033331": {
       "type": "map",
       "settings": {
@@ -88,6 +110,7 @@
     "main",
     "1644519722c7610927",
     "a4194086-e077-4365-93db-a101e2c6a3e9",
+    "text_and_image_iV6NVF",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
