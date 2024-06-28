@@ -1,1 +1,93 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"1644519722c7610927":{"type":"slideshow","blocks":{"164451972278d4d7fd-0":{"type":"hero","settings":{"top_subheading":"","title":"<p>UPCOMING EVENTS<\/p>","title_size":54,"subheading":"","link":"","link_text":"","link_2":"","link_text_2":"","color_accent":"#ffffff","text_align":"vertical-center horizontal-center","image":"shopify:\/\/shop_images\/outside_day_time.jpg","overlay_opacity":26}}},"block_order":["164451972278d4d7fd-0"],"settings":{"full_width":true,"desktop_size":-40,"mobile_size":-20,"style":"arrows","autoplay":true,"autoplay_speed":7}},"a4194086-e077-4365-93db-a101e2c6a3e9":{"type":"text-and-image","settings":{"image":"shopify:\/\/shop_images\/Burger.jpg","subtitle":"","title":"TCS BURGER NIGHT - June 25th","text":"<p>Join us for Burger Night on June 25th from 5:30 pm-7:30 pm! This is not a ticketed event, it's first come first serve. <\/p><p><a href=\"\/pages\/contact\" title=\"Contact\">Please contact us with any questions.<\/a><\/p>","button_label":"","button_link":"","button_style":"primary","align_text":"left","layout":"right","color_scheme":"3","divider":false}},"b5e95e24-93b4-492c-ae7f-914eae033331":{"type":"map","settings":{"map_title":"Our retail store","address":"<p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/><strong>Cafe Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/><span style=\"text-decoration:underline\"><em>Cafe is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<\/p><p>Closed the 1st Saturday of the month <br\/>Sunday: Closed <\/p>","map_address":"515 Buncombe St. Greenville, SC 29061","api_key":"","show_button":true,"background_image":"shopify:\/\/shop_images\/building-exterior_cooks-station_hogan-construction_street-view_cc9ca009-2839-4910-ba76-75bb415f544f.jpg"}}},"order":["main","1644519722c7610927","a4194086-e077-4365-93db-a101e2c6a3e9","b5e95e24-93b4-492c-ae7f-914eae033331"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1644519722c7610927": {
+      "type": "slideshow",
+      "blocks": {
+        "164451972278d4d7fd-0": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>UPCOMING EVENTS<\/p>",
+            "title_size": 54,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/outside_day_time.jpg",
+            "overlay_opacity": 26
+          }
+        }
+      },
+      "block_order": [
+        "164451972278d4d7fd-0"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -40,
+        "mobile_size": -20,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "a4194086-e077-4365-93db-a101e2c6a3e9": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Burger.jpg",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "TCS BURGER NIGHT - July 30th",
+        "heading_size": "h2",
+        "text": "<p>Join us for Burger Night on July 30th from 5:30 pm-7:30 pm! This is not a ticketed event, it's first come first serve. <\/p><p><a href=\"\/pages\/contact\" title=\"Contact\">Please contact us with any questions.<\/a><\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "3",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "b5e95e24-93b4-492c-ae7f-914eae033331": {
+      "type": "map",
+      "settings": {
+        "map_title": "Our retail store",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "address": "<p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/><strong>Cafe Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/><span style=\"text-decoration:underline\"><em>Cafe is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<\/p><p>Closed the 1st Saturday of the month <br\/>Sunday: Closed <\/p>",
+        "map_address": "515 Buncombe St. Greenville, SC 29061",
+        "api_key": "",
+        "show_button": true,
+        "background_image": "shopify:\/\/shop_images\/building-exterior_cooks-station_hogan-construction_street-view_cc9ca009-2839-4910-ba76-75bb415f544f.jpg"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1644519722c7610927",
+    "a4194086-e077-4365-93db-a101e2c6a3e9",
+    "b5e95e24-93b4-492c-ae7f-914eae033331"
+  ]
+}
