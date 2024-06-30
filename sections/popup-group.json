@@ -1,1 +1,84 @@
-{"type":"custom.popups","name":"t:labels.popups","sections":{"newsletter-popup":{"type":"newsletter-popup","settings":{"popup_seconds":60,"popup_days":30,"popup_title":"SUBSCRIBE TO OUR NEWSLETTER","popup_text":"<p>We would love to stay in touch! Subscribers are the first to know about special offers, events and happenings, and general updated from The Cook's Station!<\/p>","color_scheme":"1","enable_newsletter":true,"button_label":"Optional button","button_link":""}},"age-verification-popup":{"type":"age-verification-popup","disabled":true,"settings":{}}},"order":["newsletter-popup","age-verification-popup"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "type": "custom.popups",
+  "name": "t:labels.popups",
+  "sections": {
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "settings": {
+        "disable_for_account_holders": true,
+        "popup_seconds": 60,
+        "popup_days": 30,
+        "popup_title": "SUBSCRIBE TO OUR NEWSLETTER",
+        "popup_text": "<p>We would love to stay in touch! Subscribers are the first to know about special offers, events and happenings, and general updated from The Cook's Station!<\/p>",
+        "image_position": "left",
+        "color_scheme": "1",
+        "show_social_icons": false,
+        "enable_newsletter": true,
+        "button_label": "Optional button",
+        "button_link": ""
+      }
+    },
+    "age-verification-popup": {
+      "type": "age-verification-popup",
+      "disabled": true,
+      "settings": {
+        "enable_test_mode": false,
+        "color_scheme": "none",
+        "blur_image": false,
+        "heading": "Confirm your age",
+        "text": "<p>Are you 18 years old or older?<\/p>",
+        "decline_button_label": "No I'm not",
+        "approve_button_label": "Yes I am",
+        "decline_heading": "Come back when you're older",
+        "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.<\/p>",
+        "return_button_label": "Oops, I entered incorrectly"
+      }
+    },
+    "1719771546df792260": {
+      "type": "apps",
+      "blocks": {
+        "evey_events_tickets_event_list_4dfUVX": {
+          "type": "shopify:\/\/apps\/evey-events-tickets\/blocks\/event-list\/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
+          "settings": {
+            "style": "web3",
+            "search_background_color": "",
+            "search_font_color": "",
+            "background_color": "#b2b2b2",
+            "background_color2": "#5b5959",
+            "text_color": "",
+            "button_color": "",
+            "button_text_color": "",
+            "padding_x": 0,
+            "padding_y": 0,
+            "horizontal_alignment": "center",
+            "heading": "Events",
+            "button_label": "Get Tickets",
+            "search_label": "Search",
+            "no_results_label": "No results, try changing your search or filter options."
+          }
+        }
+      },
+      "block_order": [
+        "evey_events_tickets_event_list_4dfUVX"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "newsletter-popup",
+    "age-verification-popup",
+    "1719771546df792260"
+  ]
+}
