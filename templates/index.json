@@ -33,7 +33,7 @@
           "type": "hero",
           "settings": {
             "top_subheading": "The Cook's Station",
-            "title": "<p>CLASSES AND DINNERS<\/p>",
+            "title": "<p>CLASSES & DINNERS<\/p>",
             "title_size": 53,
             "subheading": "Sharpen your culinary skills or learn something new!",
             "link": "shopify:\/\/collections\/in-store-classes",
@@ -50,7 +50,7 @@
           "type": "hero",
           "settings": {
             "top_subheading": "The Cook's Station",
-            "title": "<p>Cafe & Bar<\/p>",
+            "title": "<p>CAFE & BAR<\/p>",
             "title_size": 70,
             "subheading": "Come grab a meal or a drink!",
             "link": "shopify:\/\/pages\/cafe",
