@@ -48,20 +48,6 @@
         "autoplay_speed": 7
       }
     },
-    "featured_collection_7FUA4Y": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Newsletter Products",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "newsletter",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
     "promo_grid_34aJnJ": {
       "type": "promo-grid",
       "blocks": {
@@ -78,8 +64,8 @@
         "simple_bEEN4x": {
           "type": "simple",
           "settings": {
-            "link": "shopify:\/\/collections\/cleaning-products",
-            "text": "Cleaning",
+            "link": "shopify:\/\/collections\/costa-nova",
+            "text": "Costa Nova",
             "width": "33",
             "height": 400
           }
@@ -143,7 +129,7 @@
       "settings": {
         "full_width": false,
         "gutter_size": 28,
-        "space_above": false,
+        "space_above": true,
         "space_below": true
       }
     }
@@ -151,7 +137,6 @@
   "order": [
     "main",
     "slideshow_WfCVhX",
-    "featured_collection_7FUA4Y",
     "promo_grid_34aJnJ"
   ]
 }
