@@ -66,6 +66,7 @@
           "settings": {
             "link": "shopify:\/\/collections\/costa-nova",
             "text": "Costa Nova",
+            "image": "shopify:\/\/shop_images\/block1_2359.jpg",
             "width": "33",
             "height": 400
           }
@@ -75,6 +76,7 @@
           "settings": {
             "link": "shopify:\/\/collections\/nora-flemming",
             "text": "Nora Flemming",
+            "image": "shopify:\/\/shop_images\/summerheader_2560x_85954799-b2a6-4488-957f-d81f1aca59a0.webp",
             "width": "33",
             "height": 420
           }
@@ -86,24 +88,6 @@
             "text": "Vietri",
             "width": "33",
             "height": 420
-          }
-        },
-        "simple_yUKL37": {
-          "type": "simple",
-          "settings": {
-            "link": "shopify:\/\/collections\/food",
-            "text": "Food & Beverages",
-            "width": "50",
-            "height": 500
-          }
-        },
-        "simple_hjBPRg": {
-          "type": "simple",
-          "settings": {
-            "link": "shopify:\/\/collections\/game-day",
-            "text": "Game Day",
-            "width": "50",
-            "height": 500
           }
         },
         "banner_3hYmnx": {
@@ -122,8 +106,6 @@
         "simple_bEEN4x",
         "simple_WpEUnW",
         "simple_yYG4JK",
-        "simple_yUKL37",
-        "simple_hjBPRg",
         "banner_3hYmnx"
       ],
       "settings": {
