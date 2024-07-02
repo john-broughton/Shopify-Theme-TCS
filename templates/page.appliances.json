@@ -1,1 +1,382 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"promo_grid_weDiHz":{"type":"promo-grid","blocks":{"advanced_iGmnKd":{"type":"advanced","settings":{"subheading":"The Cook's Station","heading":"APPLIANCES","textarea":"<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">APPOINTMENT HOURS<\/p>\n<p style='font-size:small;font-weight:bold;\"'>• Monday- Friday: 8 am-5 pm <br>•  Saturday: 10-4 pm<br>• Closed the 1st Saturday of the month<br>•Sunday: Closed <\/p>\n<\/div>","cta_text1":"CONTACT US","cta_link1":"shopify:\/\/pages\/appliance-contact-form","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/np-inspiration-get-inspired-CaroleWhiting-1200-4_Fisher-Paykel.jpg","video_url":"","width":"100","height":600,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}}},"block_order":["advanced_iGmnKd"],"custom_css":["{font: inherit; font-size: x-large;}"],"settings":{"full_width":true,"gutter_size":0,"space_above":false,"space_below":false}},"testimonials_ajXYGX":{"type":"testimonials","blocks":{"testimonial_R3KbNK":{"type":"testimonial","settings":{"icon":"none","testimonial":"<h4>Valerie Scharf<\/h4><p>Valerie Scharf is a devoted mother of two and a seasoned professional with eight years of experience in the building industry. Known for her genuine care and dedication, Valerie goes above and beyond to ensure her client's needs are met with precision and compassion. Her deep understanding of the industry makes her an invaluable asset to any project. Whether working with first-time homeowners or seasoned developers, Valerie's commitment to excellence and her clients' satisfaction is evident in every interaction<\/p>","image":"shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Headshots__7.jpg","author":"","author_info":""}},"testimonial_niWJGe":{"type":"testimonial","settings":{"icon":"none","testimonial":"<h4>Michael Moore Jr.<\/h4><p>Michael is a dedicated appliance salesman at The Cook's Station and a proud Marine veteran. His military background has endowed him with a strong work ethic, attention to detail, and a commitment to excellence. His friendly demeanor, coupled with his expertise, ensures that every customer receives top-notch service and personalized recommendations.<\/p>","image":"shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Headshots__5.jpg","author":"","author_info":""}},"testimonial_nAygCL":{"type":"testimonial","settings":{"icon":"none","testimonial":"<h4>John Colacioppo<\/h4><p>John Colacioppo is one of the owners of The Cook's Station and one of our appliance specialists. With 20 years of experience in the construction industry, John brings a wealth of knowledge and expertise to his role. His time serving as a Marine background has instilled in him a sense of discipline and dedication that he applies to every aspect of his business. At The Cook's Station, John combines his technical skills and passion for appliances to provide exceptional service and guidance to his customers, ensuring they find the perfect fit for their culinary needs<\/p>","image":"shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Headshots__9.jpg","author":"","author_info":""}}},"block_order":["testimonial_R3KbNK","testimonial_niWJGe","testimonial_nAygCL"],"settings":{"title":"Our Sales team","align_text":"center","round_images":false,"color_scheme":"none"}},"logo_list_hJexFy":{"type":"logo-list","blocks":{"logo_image_GfDreE":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Miele.png","link":"https:\/\/www.mieleusa.com\/c\/125-years-of-miele-5853.htm"}},"logo_image_hYihLt":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Wolf.png","link":"https:\/\/www.subzero-wolf.com\/offers-and-promotions"}},"logo_image_Xf8nHf":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Cafe.png","link":""}},"logo_image_3WRWmx":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Blue_Star.png","link":"https:\/\/www.bluestarcooking.com\/"}},"logo_image_9eFkB6":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Pofile.png","link":""}},"logo_image_Cmqp6T":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Fisher.png","link":"https:\/\/www.fisherpaykel.com\/us\/"}},"logo_image_mkMhJa":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Fulgor.png","link":"https:\/\/www.fulgor-milano.com\/us\/en"}},"logo_image_C69Rx9":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/U-Line_Logo_Web_DarkBlue.png","link":"https:\/\/www.u-line.com\/"}},"logo_image_PzW4EG":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Black.svg","link":"https:\/\/zephyronline.com\/"}},"logo_image_KKjfjC":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/download.png","link":"https:\/\/bestrangehoods.com\/"}},"logo_image_8RPnkK":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/logo_03.jpg","link":"https:\/\/alfrescogrills.com\/"}},"logo_image_XHkKth":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/download_1.png","link":"https:\/\/www.dcsappliances.com\/us\/grilling\/grills\/all-grills\/"}}},"block_order":["logo_image_GfDreE","logo_image_hYihLt","logo_image_Xf8nHf","logo_image_3WRWmx","logo_image_9eFkB6","logo_image_Cmqp6T","logo_image_mkMhJa","logo_image_C69Rx9","logo_image_PzW4EG","logo_image_KKjfjC","logo_image_8RPnkK","logo_image_XHkKth"],"custom_css":["{text-align: center;}"],"settings":{"title":"Some of our favorite brands","heading_size":"h2","heading_position":"left","divider":true}},"promo_grid_mGt8AN":{"type":"promo-grid","blocks":{"image_C6pgXN":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Showhouse6_BlueStar.png","link":"","width":"33"}},"image_yF66tE":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Prep_Area_fridgeopen_Indoor_Prod_Refrig.png","link":"","width":"33"}},"image_Q4yRt3":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/20000149430.png","link":"","width":"33"}},"image_PAzgec":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Background_copy.png","link":"","width":"50"}},"image_BVk4cC":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Bosch_kitchen2_1162cc8a-e54c-4551-a426-794bf36fca54.png","link":"","width":"50"}}},"block_order":["image_C6pgXN","image_yF66tE","image_Q4yRt3","image_PAzgec","image_BVk4cC"],"settings":{"full_width":false,"gutter_size":21,"space_above":false,"space_below":false}},"logo_list_VB4Tdj":{"type":"logo-list","blocks":{"logo_image_4VHWNB":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Sub_Zero.png","link":"https:\/\/www.subzero-wolf.com\/offers-and-promotions"}},"logo_image_qqgYG7":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Asko.png","link":"https:\/\/us.asko.com\/promotions"}},"logo_image_GBqFzH":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Monogram.png","link":"https:\/\/www.monogram.com\/offers\/one-for-you-one-for-free\/"}},"logo_image_qKe6DE":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Perlick.png","link":"https:\/\/www.perlick.com\/"}},"logo_image_wbaWBT":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/download_2.png","link":"https:\/\/ventahood.com\/"}},"logo_image_A8eRqQ":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/logo-homepage-200-x-200.png","link":"https:\/\/scotsmanhomeice.com\/"}}},"block_order":["logo_image_4VHWNB","logo_image_qqgYG7","logo_image_GBqFzH","logo_image_qKe6DE","logo_image_wbaWBT","logo_image_A8eRqQ"],"settings":{"title":"","heading_size":"h2","heading_position":"left","divider":false}},"rich_text_jGJTeV":{"type":"rich-text","blocks":{"heading_XkgPQJ":{"type":"heading","settings":{"title":"PROMOTIONS & REBATES","heading_size":"h2"}},"text_UhBT7U":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Making sure you get the best deal on your kitchen and major appliances is important to us. Check out all of our current manufacturer deals and rebates on appliances by clicking the button below. Please <a href=\"mailto:john@thecooksstation.com\">reach out<\/a> if you have any questions.<\/p>"}},"button_MUAXgH":{"type":"button","settings":{"link":"shopify:\/\/pages\/sales-rebates","link_text":"View Deals!"}}},"block_order":["heading_XkgPQJ","text_UhBT7U","button_MUAXgH"],"settings":{"align_text":"center","narrow_column":true,"color_scheme":"1","divider":false}}},"order":["main","promo_grid_weDiHz","testimonials_ajXYGX","logo_list_hJexFy","promo_grid_mGt8AN","logo_list_VB4Tdj","rich_text_jGJTeV"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "promo_grid_weDiHz": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_iGmnKd": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "The Cook's Station",
+            "heading": "APPLIANCES",
+            "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">APPOINTMENT HOURS<\/p>\n<p style='font-size:small;font-weight:bold;\"'>• Monday- Friday: 8 am-5 pm <br>•  Saturday: 10-4 pm<br>• Closed the 1st Saturday of the month<br>•Sunday: Closed <\/p>\n<\/div>",
+            "cta_text1": "CONTACT US",
+            "cta_link1": "shopify:\/\/pages\/appliance-contact-form",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/np-inspiration-get-inspired-CaroleWhiting-1200-4_Fisher-Paykel.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 600,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_iGmnKd"
+      ],
+      "custom_css": [
+        "{font: inherit; font-size: x-large;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "gutter_size": 0,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "testimonials_ajXYGX": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_R3KbNK": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h4>Valerie Scharf<\/h4><p>Valerie Scharf is a devoted mother of two and a seasoned professional with eight years of experience in the building industry. Known for her genuine care and dedication, Valerie goes above and beyond to ensure her client's needs are met with precision and compassion. Her deep understanding of the industry makes her an invaluable asset to any project. Whether working with first-time homeowners or seasoned developers, Valerie's commitment to excellence and her clients' satisfaction is evident in every interaction<\/p>",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Headshots__7.jpg",
+            "author": "",
+            "author_info": ""
+          }
+        },
+        "testimonial_niWJGe": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h4>Michael Moore Jr.<\/h4><p>Michael is a dedicated appliance salesman at The Cook's Station and a proud Marine veteran. His military background has endowed him with a strong work ethic, attention to detail, and a commitment to excellence. His friendly demeanor, coupled with his expertise, ensures that every customer receives top-notch service and personalized recommendations.<\/p>",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Headshots__5.jpg",
+            "author": "",
+            "author_info": ""
+          }
+        },
+        "testimonial_nAygCL": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h4>John Colacioppo<\/h4><p>John Colacioppo is one of the owners of The Cook's Station and one of our appliance specialists. With 20 years of experience in the construction industry, John brings a wealth of knowledge and expertise to his role. His time serving as a Marine background has instilled in him a sense of discipline and dedication that he applies to every aspect of his business. At The Cook's Station, John combines his technical skills and passion for appliances to provide exceptional service and guidance to his customers, ensuring they find the perfect fit for their culinary needs<\/p>",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Headshots__9.jpg",
+            "author": "",
+            "author_info": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_R3KbNK",
+        "testimonial_niWJGe",
+        "testimonial_nAygCL"
+      ],
+      "settings": {
+        "title": "Our Sales team",
+        "align_text": "center",
+        "round_images": false,
+        "color_scheme": "none"
+      }
+    },
+    "logo_list_hJexFy": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_image_GfDreE": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Miele.png",
+            "link": "https:\/\/www.mieleusa.com\/c\/125-years-of-miele-5853.htm"
+          }
+        },
+        "logo_image_hYihLt": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wolf.png",
+            "link": "https:\/\/www.subzero-wolf.com\/offers-and-promotions"
+          }
+        },
+        "logo_image_Xf8nHf": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cafe.png",
+            "link": ""
+          }
+        },
+        "logo_image_3WRWmx": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Blue_Star.png",
+            "link": "https:\/\/www.bluestarcooking.com\/"
+          }
+        },
+        "logo_image_9eFkB6": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Pofile.png",
+            "link": ""
+          }
+        },
+        "logo_image_Cmqp6T": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Fisher.png",
+            "link": "https:\/\/www.fisherpaykel.com\/us\/"
+          }
+        },
+        "logo_image_mkMhJa": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Fulgor.png",
+            "link": "https:\/\/www.fulgor-milano.com\/us\/en"
+          }
+        },
+        "logo_image_C69Rx9": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/U-Line_Logo_Web_DarkBlue.png",
+            "link": "https:\/\/www.u-line.com\/"
+          }
+        },
+        "logo_image_PzW4EG": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Black.svg",
+            "link": "https:\/\/zephyronline.com\/"
+          }
+        },
+        "logo_image_KKjfjC": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/download.png",
+            "link": "https:\/\/bestrangehoods.com\/"
+          }
+        },
+        "logo_image_8RPnkK": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo_03.jpg",
+            "link": "https:\/\/alfrescogrills.com\/"
+          }
+        },
+        "logo_image_XHkKth": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/download_1.png",
+            "link": "https:\/\/www.dcsappliances.com\/us\/grilling\/grills\/all-grills\/"
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_GfDreE",
+        "logo_image_hYihLt",
+        "logo_image_Xf8nHf",
+        "logo_image_3WRWmx",
+        "logo_image_9eFkB6",
+        "logo_image_Cmqp6T",
+        "logo_image_mkMhJa",
+        "logo_image_C69Rx9",
+        "logo_image_PzW4EG",
+        "logo_image_KKjfjC",
+        "logo_image_8RPnkK",
+        "logo_image_XHkKth"
+      ],
+      "custom_css": [
+        "{text-align: center;}"
+      ],
+      "settings": {
+        "title": "Some of our favorite brands",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": true
+      }
+    },
+    "promo_grid_mGt8AN": {
+      "type": "promo-grid",
+      "blocks": {
+        "image_C6pgXN": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Showhouse6_BlueStar.png",
+            "link": "",
+            "width": "33",
+            "height": 460
+          }
+        },
+        "image_yF66tE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Prep_Area_fridgeopen_Indoor_Prod_Refrig.png",
+            "link": "",
+            "width": "33",
+            "height": 460
+          }
+        },
+        "image_Q4yRt3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/20000149430.png",
+            "link": "",
+            "width": "33",
+            "height": 460
+          }
+        },
+        "image_PAzgec": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Background_copy.png",
+            "link": "",
+            "width": "50",
+            "height": 700
+          }
+        },
+        "image_BVk4cC": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bosch_kitchen2_1162cc8a-e54c-4551-a426-794bf36fca54.png",
+            "link": "",
+            "width": "50",
+            "height": 700
+          }
+        }
+      },
+      "block_order": [
+        "image_C6pgXN",
+        "image_yF66tE",
+        "image_Q4yRt3",
+        "image_PAzgec",
+        "image_BVk4cC"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 15,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "logo_list_VB4Tdj": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_image_4VHWNB": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Sub_Zero.png",
+            "link": "https:\/\/www.subzero-wolf.com\/offers-and-promotions"
+          }
+        },
+        "logo_image_qqgYG7": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Asko.png",
+            "link": "https:\/\/us.asko.com\/promotions"
+          }
+        },
+        "logo_image_GBqFzH": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Monogram.png",
+            "link": "https:\/\/www.monogram.com\/offers\/one-for-you-one-for-free\/"
+          }
+        },
+        "logo_image_qKe6DE": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Perlick.png",
+            "link": "https:\/\/www.perlick.com\/"
+          }
+        },
+        "logo_image_wbaWBT": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/download_2.png",
+            "link": "https:\/\/ventahood.com\/"
+          }
+        },
+        "logo_image_A8eRqQ": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo-homepage-200-x-200.png",
+            "link": "https:\/\/scotsmanhomeice.com\/"
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_4VHWNB",
+        "logo_image_qqgYG7",
+        "logo_image_GBqFzH",
+        "logo_image_qKe6DE",
+        "logo_image_wbaWBT",
+        "logo_image_A8eRqQ"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "rich_text_jGJTeV": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XkgPQJ": {
+          "type": "heading",
+          "settings": {
+            "title": "PROMOTIONS & REBATES",
+            "heading_size": "h2"
+          }
+        },
+        "text_UhBT7U": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Making sure you get the best deal on your kitchen and major appliances is important to us. Check out all of our current manufacturer deals and rebates on appliances by clicking the button below. Please <a href=\"mailto:john@thecooksstation.com\">reach out<\/a> if you have any questions.<\/p>"
+          }
+        },
+        "button_MUAXgH": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/pages\/sales-rebates",
+            "link_text": "View Deals!"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XkgPQJ",
+        "text_UhBT7U",
+        "button_MUAXgH"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "promo_grid_weDiHz",
+    "testimonials_ajXYGX",
+    "logo_list_hJexFy",
+    "promo_grid_mGt8AN",
+    "logo_list_VB4Tdj",
+    "rich_text_jGJTeV"
+  ]
+}

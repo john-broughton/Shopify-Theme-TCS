@@ -1,1 +1,51 @@
-{"type":"custom.popups","name":"t:labels.popups","sections":{"newsletter-popup":{"type":"newsletter-popup","settings":{"popup_seconds":60,"popup_days":30,"popup_title":"SUBSCRIBE TO OUR NEWSLETTER","popup_text":"<p>We would love to stay in touch! Subscribers are the first to know about special offers, events and happenings, and general updated from The Cook's Station!<\/p>","color_scheme":"1","enable_newsletter":true,"button_label":"Optional button","button_link":""}},"age-verification-popup":{"type":"age-verification-popup","disabled":true,"settings":{}}},"order":["newsletter-popup","age-verification-popup"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "type": "custom.popups",
+  "name": "t:labels.popups",
+  "sections": {
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "settings": {
+        "disable_for_account_holders": true,
+        "popup_seconds": 60,
+        "popup_days": 30,
+        "popup_title": "SUBSCRIBE TO OUR NEWSLETTER",
+        "popup_text": "<p>We would love to stay in touch! Subscribers are the first to know about special offers, events and happenings, and general updated from The Cook's Station!<\/p>",
+        "image_position": "left",
+        "color_scheme": "1",
+        "show_social_icons": false,
+        "enable_newsletter": true,
+        "button_label": "Optional button",
+        "button_link": ""
+      }
+    },
+    "age-verification-popup": {
+      "type": "age-verification-popup",
+      "disabled": true,
+      "settings": {
+        "enable_test_mode": false,
+        "color_scheme": "none",
+        "blur_image": false,
+        "heading": "Confirm your age",
+        "text": "<p>Are you 18 years old or older?<\/p>",
+        "decline_button_label": "No I'm not",
+        "approve_button_label": "Yes I am",
+        "decline_heading": "Come back when you're older",
+        "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.<\/p>",
+        "return_button_label": "Oops, I entered incorrectly"
+      }
+    }
+  },
+  "order": [
+    "newsletter-popup",
+    "age-verification-popup"
+  ]
+}
