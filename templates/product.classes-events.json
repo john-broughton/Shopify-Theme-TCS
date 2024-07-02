@@ -12,6 +12,22 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "title_f9iWjj": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": false
+          }
+        },
+        "evey_events_tickets_event_inventory_BDdwEK": {
+          "type": "shopify:\/\/apps\/evey-events-tickets\/blocks\/event-inventory\/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
+          "settings": {
+            "text_format": "%{available} tickets remaining",
+            "text_color": "",
+            "padding_x": 0,
+            "padding_y": 0
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -21,30 +37,6 @@
           "type": "description",
           "settings": {
             "is_tab": false
-          }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "disabled": true,
-          "settings": {
-            "inventory_threshold": 4,
-            "inventory_transfers_enable": true
-          }
-        },
-        "sales_point2": {
-          "type": "sales_point",
-          "disabled": true,
-          "settings": {
-            "icon": "truck",
-            "text": "Delievery Available!"
-          }
-        },
-        "sales_point3": {
-          "type": "sales_point",
-          "disabled": true,
-          "settings": {
-            "icon": "phone",
-            "text": "Call store for availability - 864-250-0091"
           }
         },
         "quantity_selector_KcWnct": {
@@ -62,11 +54,10 @@
         }
       },
       "block_order": [
+        "title_f9iWjj",
+        "evey_events_tickets_event_inventory_BDdwEK",
         "price",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
-        "inventory_status",
-        "sales_point2",
-        "sales_point3",
         "quantity_selector_KcWnct",
         "buy_buttons"
       ],
