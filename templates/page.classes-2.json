@@ -63,6 +63,7 @@
       "block_order": [
         "liquid_B8ALpU"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "space_around": true
