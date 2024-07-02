@@ -1,1 +1,130 @@
-{"sections":{"main":{"type":"main-product","blocks":{"price":{"type":"price","settings":{}},"e95297a4-dee3-4cf3-aa48-117e1dc226d7":{"type":"description","settings":{"is_tab":false}},"inventory_status":{"type":"inventory_status","settings":{"inventory_threshold":4,"inventory_transfers_enable":true}},"sales_point2":{"type":"sales_point","disabled":true,"settings":{"icon":"truck","text":"Delievery Available!"}},"sales_point3":{"type":"sales_point","disabled":true,"settings":{"icon":"phone","text":"Call store for availability - 864-250-0091"}},"quantity_selector_KcWnct":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"surface_pickup_enable":false}}},"block_order":["price","e95297a4-dee3-4cf3-aa48-117e1dc226d7","inventory_status","sales_point2","sales_point3","quantity_selector_KcWnct","buy_buttons"],"settings":{"image_position":"left","image_container_size":"large","product_image_size":"square","product_zoom_enable":true,"thumbnail_position":"beside","thumbnail_arrows":false,"mobile_layout":"partial","enable_video_looping":false,"product_video_style":"muted"}},"sub":{"type":"product-full-width","blocks":{"description":{"type":"description","disabled":true,"settings":{"is_tab":true}},"tab":{"type":"tab","disabled":true,"settings":{"title":"Shipping information","content":"<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.<\/p><p>Ex: Shipping and return policies, size guides, and other common questions.<\/p>","page":""}},"contact":{"type":"contact","disabled":true,"settings":{"title":"Ask a question","phone":false}},"5076e142-cfe9-42f3-8bbf-2cd918c83c89":{"type":"share","settings":{}},"a132d18f-ff71-4def-8481-36aee9e9d3e1":{"type":"separator","settings":{}}},"block_order":["description","tab","contact","5076e142-cfe9-42f3-8bbf-2cd918c83c89","a132d18f-ff71-4def-8481-36aee9e9d3e1"],"settings":{"max_width":false}},"recommendations":{"type":"product-recommendations","disabled":true,"settings":{"product_recommendations_heading":"You may also like"}},"more-products-vendor":{"type":"more-products-vendor","disabled":true,"settings":{}},"more-products-collection":{"type":"more-products-collection","settings":{}},"recently-viewed":{"type":"recently-viewed","disabled":true,"settings":{}},"collection-return":{"type":"collection-return","disabled":true,"settings":{"color_scheme":"3"}}},"order":["main","sub","recommendations","more-products-vendor","more-products-collection","recently-viewed","collection-return"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_f9iWjj": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": false,
+            "sku_enable": false
+          }
+        },
+        "evey_events_tickets_event_inventory_BDdwEK": {
+          "type": "shopify:\/\/apps\/evey-events-tickets\/blocks\/event-inventory\/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
+          "settings": {
+            "text_format": "%{available} tickets remaining",
+            "text_color": "",
+            "padding_x": 0,
+            "padding_y": 0
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "e95297a4-dee3-4cf3-aa48-117e1dc226d7": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "quantity_selector_KcWnct": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title_f9iWjj",
+        "evey_events_tickets_event_inventory_BDdwEK",
+        "price",
+        "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
+        "quantity_selector_KcWnct",
+        "buy_buttons"
+      ],
+      "settings": {
+        "image_position": "left",
+        "image_container_size": "large",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": false,
+        "product_video_style": "muted"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "settings": {
+        "max_width": false
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "You may also like",
+        "related_count": 4,
+        "products_per_row": 4
+      }
+    },
+    "more-products-vendor": {
+      "type": "more-products-vendor",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "more-products-collection": {
+      "type": "more-products-collection",
+      "disabled": true,
+      "settings": {
+        "products_per_row": 3,
+        "max_products": 5
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "3"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "recommendations",
+    "more-products-vendor",
+    "more-products-collection",
+    "recently-viewed",
+    "collection-return"
+  ]
+}

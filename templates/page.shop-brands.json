@@ -22,7 +22,7 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>SHOP BY COLLECTION<\/p>",
+            "title": "<p>SHOP BY BRAND<\/p>",
             "title_size": 55,
             "subheading": "",
             "link": "",
@@ -48,20 +48,6 @@
         "autoplay_speed": 7
       }
     },
-    "featured_collection_7FUA4Y": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Newsletter Products",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "newsletter",
-        "count": 5,
-        "products_per_row": 5,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
     "promo_grid_34aJnJ": {
       "type": "promo-grid",
       "blocks": {
@@ -78,8 +64,9 @@
         "simple_bEEN4x": {
           "type": "simple",
           "settings": {
-            "link": "shopify:\/\/collections\/cleaning-products",
-            "text": "Cleaning",
+            "link": "shopify:\/\/collections\/costa-nova",
+            "text": "Costa Nova",
+            "image": "shopify:\/\/shop_images\/block1_2359.jpg",
             "width": "33",
             "height": 400
           }
@@ -87,8 +74,9 @@
         "simple_WpEUnW": {
           "type": "simple",
           "settings": {
-            "link": "shopify:\/\/collections\/cooking-gadgets",
-            "text": "Kitchen Tools",
+            "link": "shopify:\/\/collections\/nora-flemming",
+            "text": "Nora Flemming",
+            "image": "shopify:\/\/shop_images\/summerheader_2560x_85954799-b2a6-4488-957f-d81f1aca59a0.webp",
             "width": "33",
             "height": 420
           }
@@ -96,28 +84,11 @@
         "simple_yYG4JK": {
           "type": "simple",
           "settings": {
-            "link": "shopify:\/\/collections\/serveware",
-            "text": "Entertaining",
+            "link": "shopify:\/\/collections\/vietri",
+            "text": "Vietri",
+            "image": "shopify:\/\/shop_images\/SUMMER-24-GG-BANNER.webp",
             "width": "33",
             "height": 420
-          }
-        },
-        "simple_yUKL37": {
-          "type": "simple",
-          "settings": {
-            "link": "shopify:\/\/collections\/food",
-            "text": "Food & Beverages",
-            "width": "50",
-            "height": 500
-          }
-        },
-        "simple_hjBPRg": {
-          "type": "simple",
-          "settings": {
-            "link": "shopify:\/\/collections\/game-day",
-            "text": "Game Day",
-            "width": "50",
-            "height": 500
           }
         },
         "banner_3hYmnx": {
@@ -136,14 +107,12 @@
         "simple_bEEN4x",
         "simple_WpEUnW",
         "simple_yYG4JK",
-        "simple_yUKL37",
-        "simple_hjBPRg",
         "banner_3hYmnx"
       ],
       "settings": {
         "full_width": false,
         "gutter_size": 28,
-        "space_above": false,
+        "space_above": true,
         "space_below": true
       }
     }
@@ -151,7 +120,6 @@
   "order": [
     "main",
     "slideshow_WfCVhX",
-    "featured_collection_7FUA4Y",
     "promo_grid_34aJnJ"
   ]
 }
