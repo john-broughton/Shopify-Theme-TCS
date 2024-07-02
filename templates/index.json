@@ -1,1 +1,389 @@
-{"sections":{"slideshow":{"type":"slideshow","blocks":{"slideshow-0":{"type":"hero","settings":{"top_subheading":"","title":"<p>The best stories are told with food<\/p>","title_size":50,"subheading":"The Cook’s Station is a destination for anyone who has a passion for food.","link":"shopify:\/\/pages\/about-us","link_text":"ABOUT US","link_2":"","link_text_2":"","color_accent":"#ffffff","text_align":"vertical-center horizontal-center","image":"shopify:\/\/shop_images\/outside_day_time.jpg","overlay_opacity":20}},"slideshow-1":{"type":"hero","settings":{"top_subheading":"The Cook's Station","title":"<p>Classes and Dinners<\/p>","title_size":53,"subheading":"Sharpen your culinary skills or learn something new!","link":"shopify:\/\/collections\/in-store-classes","link_text":"View Classes","link_2":"shopify:\/\/collections\/events","link_text_2":"View Dinners","color_accent":"#ffffff","text_align":"vertical-center horizontal-center","image":"shopify:\/\/shop_images\/Cooks-Station_Huang-shoot_picnic-spread_light.jpg","overlay_opacity":12}},"hero_WyD4ky":{"type":"hero","settings":{"top_subheading":"The Cook's Station","title":"<p>Cafe & Bar<\/p>","title_size":70,"subheading":"Come grab a meal or a drink!","link":"shopify:\/\/pages\/cafe","link_text":"Cafe Menu","link_2":"shopify:\/\/pages\/bar-tapas","link_text_2":"Bar Menu","color_accent":"#ffffff","text_align":"vertical-center horizontal-center","image":"shopify:\/\/shop_images\/inside_cafe_use.jpg","overlay_opacity":12}},"hero_7cqwiA":{"type":"hero","settings":{"top_subheading":"The Cook's Station","title":"<p>Shop Online!<\/p>","title_size":70,"subheading":"Shop The Cook's Station from the comfort of your couch!","link":"shopify:\/\/pages\/shop-collections","link_text":"Shop","link_2":"","link_text_2":"","color_accent":"#ffffff","text_align":"vertical-center horizontal-center","image":"shopify:\/\/shop_images\/pexels-sarah-chai-7262895.jpg","overlay_opacity":0}}},"block_order":["slideshow-0","slideshow-1","hero_WyD4ky","hero_7cqwiA"],"settings":{"full_width":true,"desktop_size":-20,"mobile_size":80,"style":"dots","autoplay":true,"autoplay_speed":8}},"rich-text":{"type":"rich-text","blocks":{"heading":{"type":"heading","settings":{"title":"Lets get Cookin'","heading_size":"h2"}},"text":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Whether you’re a talented home cook who likes to try the latest and greatest new gadgets and cookware; one that loves to share a nice meal with family and friends; or heck, even if you can’t cook a lick – and just plain enjoy delicious food – we exist for <em>you<\/em>.<\/p><p>Walk through our spacious store and be captivated by the collections of kitchenware, cookware, bakeware, and gadgets. We have top-of-the-line chef's knives to stylish tableware, to unique culinary tools, we offer a diverse selection of products that cater to all your cooking needs. Our helpful and friendly staff are always available to help guide you in the right direction, ensuring you find the perfect tools to unleash your culinary creativity.<\/p><p><em>515 Buncombe St. Greenville, SC 29601<\/em><\/p>"}},"24b45e77-539e-4a4b-b6ee-9dd7b3b1b2fb":{"type":"button","settings":{"link":"shopify:\/\/pages\/about-us","link_text":"LEARN MORE"}}},"block_order":["heading","text","24b45e77-539e-4a4b-b6ee-9dd7b3b1b2fb"],"settings":{"align_text":"center","narrow_column":false,"color_scheme":"none","divider":false}},"logo-list":{"type":"logo-list","blocks":{"logo-list-0":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Background.jpg","link":"shopify:\/\/collections\/costa-nova"}},"logo-list-1":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Background_copy_33b11da7-8edb-4174-bbb7-d95d5c9b06e4.jpg","link":"shopify:\/\/collections\/le-creuset"}},"logo-list-2":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/smithey_logo.png","link":""}},"logo-list-3":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Background_copy_3.jpg","link":"shopify:\/\/collections\/vietri"}},"logo-list-4":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Background_copy_4.jpg","link":"shopify:\/\/collections\/costa-nova"}},"logo-list-5":{"type":"logo_image","settings":{"image":"shopify:\/\/shop_images\/Background_copy_5.jpg","link":"shopify:\/\/collections\/nora-flemming"}}},"block_order":["logo-list-0","logo-list-1","logo-list-2","logo-list-3","logo-list-4","logo-list-5"],"custom_css":["{text-align: center;}"],"settings":{"title":"Featured brands","heading_size":"h2","heading_position":"left","divider":false}},"1644513838184e5981":{"type":"promo-grid","blocks":{"banner_4wjDwB":{"type":"banner","settings":{"heading":"Shop In-store Pickup!","text":"Items ready for pickup!","link":"shopify:\/\/collections\/newsletter-products","label":"Shop now!","color_scheme":"3"}},"164451383811d88f3f-1":{"type":"advanced","settings":{"subheading":"","heading":"Shop Online!","textarea":"Shop The Cook's Station from home!","cta_text1":"SHOP","cta_link1":"shopify:\/\/pages\/shop-collections","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/pexels-sarah-chai-7262895_1.jpg","video_url":"","width":"33","height":500,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}},"164451383811d88f3f-0":{"type":"advanced","settings":{"subheading":"","heading":"MENUS","textarea":"We’re on a mission to bring folks back to the table","cta_text1":"VIEW","cta_link1":"shopify:\/\/pages\/menus","cta_text2":"","cta_link2":"","video_url":"https:\/\/www.youtube.com\/watch?v=occgf6hbSLM","width":"33","height":700,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}},"6766db52-cf68-4a5e-8bd1-d315bc9041e4":{"type":"advanced","settings":{"subheading":"","heading":"COOKING CLASSES","textarea":"Click here to view our cooking class schedule!","cta_text1":"VIEW","cta_link1":"shopify:\/\/collections\/in-store-classes","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/AdobeStock_206969205_people-cheers.jpg","video_url":"","width":"33","height":500,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}},"e40b7a04-16c9-4e13-aea4-493e558594fa":{"type":"banner","settings":{"heading":"GIFT CARDS","text":"We make giving gifts easy!","link":"shopify:\/\/products\/egift-card","label":"Shop now","color_scheme":"3"}}},"block_order":["banner_4wjDwB","164451383811d88f3f-1","164451383811d88f3f-0","6766db52-cf68-4a5e-8bd1-d315bc9041e4","e40b7a04-16c9-4e13-aea4-493e558594fa"],"settings":{"full_width":false,"gutter_size":14,"space_above":false,"space_below":false}},"164452737700b970d9":{"type":"featured-collection","settings":{"title":"In-store Pick-up","heading_size":"h2","heading_position":"left","home_featured_products":"newsletter-products","count":5,"products_per_row":5,"mobile_scrollable":true,"view_all":true,"divider":false}},"1644519110d4563504":{"type":"map","settings":{"map_title":"Come Visit US","heading_size":"h2","heading_position":"left","address":"<p><a href=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\" target=\"_blank\" title=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\">515 Buncombe Street<br\/>Greenville, SC 29601<\/a><\/p><p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/>Café<strong> Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/>Café<span style=\"text-decoration:underline\"><em> is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<br\/>Sunday: Closed <\/p>","map_address":"515 Buncombe St. Greenville, SC 29061","api_key":"","show_button":false,"background_image":"shopify:\/\/shop_images\/building-exterior_cooks-station_hogan-construction_street-view.jpg"}},"16445322856406b896":{"type":"featured-product","blocks":{"1644532285878f0eae-0":{"type":"price","settings":{}},"1644532285878f0eae-1":{"type":"description","settings":{"is_tab":false}},"1644532285878f0eae-2":{"type":"variant_picker","settings":{"variant_labels":true,"picker_type":"button","product_dynamic_variants_enable":true,"color_swatches":false}},"1644532285878f0eae-3":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true,"surface_pickup_enable":true,"show_gift_card_recipient":false}},"829a864a-45e3-4e6d-b373-2df657e11343":{"type":"inventory_status","settings":{"inventory_threshold":10,"inventory_transfers_enable":true}}},"block_order":["1644532285878f0eae-0","1644532285878f0eae-1","1644532285878f0eae-2","1644532285878f0eae-3","829a864a-45e3-4e6d-b373-2df657e11343"],"disabled":true,"settings":{"divider":false,"image_position":"left","image_container_size":"medium","product_image_size":"square","product_zoom_enable":false,"thumbnail_position":"beside","thumbnail_arrows":false,"mobile_layout":"partial","enable_video_looping":true,"product_video_style":"muted"}}},"order":["slideshow","rich-text","logo-list","1644513838184e5981","164452737700b970d9","1644519110d4563504","16445322856406b896"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>The best stories are told with food<\/p>",
+            "title_size": 50,
+            "subheading": "The Cook’s Station is a destination for anyone who has a passion for food.",
+            "link": "shopify:\/\/pages\/about-us",
+            "link_text": "ABOUT US",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/outside_day_time.jpg",
+            "overlay_opacity": 20
+          }
+        },
+        "slideshow-1": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "The Cook's Station",
+            "title": "<p>Classes and Dinners<\/p>",
+            "title_size": 53,
+            "subheading": "Sharpen your culinary skills or learn something new!",
+            "link": "shopify:\/\/collections\/in-store-classes",
+            "link_text": "View Classes",
+            "link_2": "shopify:\/\/collections\/events",
+            "link_text_2": "View Dinners",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/Cooks-Station_Huang-shoot_picnic-spread_light.jpg",
+            "overlay_opacity": 12
+          }
+        },
+        "hero_WyD4ky": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "The Cook's Station",
+            "title": "<p>Cafe & Bar<\/p>",
+            "title_size": 70,
+            "subheading": "Come grab a meal or a drink!",
+            "link": "shopify:\/\/pages\/cafe",
+            "link_text": "Cafe Menu",
+            "link_2": "shopify:\/\/pages\/bar-tapas",
+            "link_text_2": "Bar Menu",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
+            "overlay_opacity": 12
+          }
+        },
+        "hero_7cqwiA": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "The Cook's Station",
+            "title": "<p>Shop Online!<\/p>",
+            "title_size": 70,
+            "subheading": "Shop The Cook's Station from the comfort of your couch!",
+            "link": "shopify:\/\/pages\/shop-collections",
+            "link_text": "Shop",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262895.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0",
+        "slideshow-1",
+        "hero_WyD4ky",
+        "hero_7cqwiA"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -20,
+        "mobile_size": 80,
+        "style": "dots",
+        "autoplay": true,
+        "autoplay_speed": 8
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "LETS GET COOKIN'",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Whether you’re a talented home cook who likes to try the latest and greatest new gadgets and cookware; one that loves to share a nice meal with family and friends; or heck, even if you can’t cook a lick – and just plain enjoy delicious food – we exist for <em>you<\/em>.<\/p><p>Walk through our spacious store and be captivated by the collections of kitchenware, cookware, bakeware, and gadgets. We have top-of-the-line chef's knives to stylish tableware, to unique culinary tools, we offer a diverse selection of products that cater to all your cooking needs. Our helpful and friendly staff are always available to help guide you in the right direction, ensuring you find the perfect tools to unleash your culinary creativity.<\/p><p><em>515 Buncombe St. Greenville, SC 29601<\/em><\/p>"
+          }
+        },
+        "24b45e77-539e-4a4b-b6ee-9dd7b3b1b2fb": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/pages\/about-us",
+            "link_text": "LEARN MORE"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "24b45e77-539e-4a4b-b6ee-9dd7b3b1b2fb"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "blocks": {
+        "logo-list-0": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Background.jpg",
+            "link": "shopify:\/\/collections\/costa-nova"
+          }
+        },
+        "logo-list-1": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Background_copy_33b11da7-8edb-4174-bbb7-d95d5c9b06e4.jpg",
+            "link": "shopify:\/\/collections\/le-creuset"
+          }
+        },
+        "logo-list-2": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/smithey_logo.png",
+            "link": ""
+          }
+        },
+        "logo-list-3": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Background_copy_3.jpg",
+            "link": "shopify:\/\/collections\/vietri"
+          }
+        },
+        "logo-list-4": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Background_copy_4.jpg",
+            "link": "shopify:\/\/collections\/costa-nova"
+          }
+        },
+        "logo-list-5": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Background_copy_5.jpg",
+            "link": "shopify:\/\/collections\/nora-flemming"
+          }
+        }
+      },
+      "block_order": [
+        "logo-list-0",
+        "logo-list-1",
+        "logo-list-2",
+        "logo-list-3",
+        "logo-list-4",
+        "logo-list-5"
+      ],
+      "custom_css": [
+        "{text-align: center;}"
+      ],
+      "settings": {
+        "title": "FEATURED BRANDS",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
+    },
+    "1644513838184e5981": {
+      "type": "promo-grid",
+      "blocks": {
+        "banner_4wjDwB": {
+          "type": "banner",
+          "settings": {
+            "heading": "Shop In-store Pickup!",
+            "text": "Items ready for pickup!",
+            "link": "shopify:\/\/collections\/newsletter-products",
+            "label": "Shop now!",
+            "color_scheme": "3"
+          }
+        },
+        "164451383811d88f3f-1": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Shop Online!",
+            "textarea": "Shop The Cook's Station from home!",
+            "cta_text1": "SHOP",
+            "cta_link1": "shopify:\/\/pages\/shop-collections",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262895_1.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "164451383811d88f3f-0": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "MENUS",
+            "textarea": "We’re on a mission to bring folks back to the table",
+            "cta_text1": "VIEW",
+            "cta_link1": "shopify:\/\/pages\/menus",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=occgf6hbSLM",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "6766db52-cf68-4a5e-8bd1-d315bc9041e4": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "COOKING CLASSES",
+            "textarea": "Click here to view our cooking class schedule!",
+            "cta_text1": "VIEW",
+            "cta_link1": "shopify:\/\/collections\/in-store-classes",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/AdobeStock_206969205_people-cheers.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "e40b7a04-16c9-4e13-aea4-493e558594fa": {
+          "type": "banner",
+          "settings": {
+            "heading": "GIFT CARDS",
+            "text": "We make giving gifts easy!",
+            "link": "shopify:\/\/products\/egift-card",
+            "label": "Shop now",
+            "color_scheme": "3"
+          }
+        }
+      },
+      "block_order": [
+        "banner_4wjDwB",
+        "164451383811d88f3f-1",
+        "164451383811d88f3f-0",
+        "6766db52-cf68-4a5e-8bd1-d315bc9041e4",
+        "e40b7a04-16c9-4e13-aea4-493e558594fa"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 14,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "164452737700b970d9": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "In-store Pick-up",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "home_featured_products": "newsletter-products",
+        "count": 5,
+        "products_per_row": 5,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "1644519110d4563504": {
+      "type": "map",
+      "settings": {
+        "map_title": "Come Visit US",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "address": "<p><a href=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\" target=\"_blank\" title=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\">515 Buncombe Street<br\/>Greenville, SC 29601<\/a><\/p><p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/>Café<strong> Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/>Café<span style=\"text-decoration:underline\"><em> is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<br\/>Sunday: Closed <\/p>",
+        "map_address": "515 Buncombe St. Greenville, SC 29061",
+        "api_key": "",
+        "show_button": false,
+        "background_image": "shopify:\/\/shop_images\/building-exterior_cooks-station_hogan-construction_street-view.jpg"
+      }
+    },
+    "16445322856406b896": {
+      "type": "featured-product",
+      "blocks": {
+        "1644532285878f0eae-0": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "1644532285878f0eae-1": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "1644532285878f0eae-2": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "1644532285878f0eae-3": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "829a864a-45e3-4e6d-b373-2df657e11343": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        }
+      },
+      "block_order": [
+        "1644532285878f0eae-0",
+        "1644532285878f0eae-1",
+        "1644532285878f0eae-2",
+        "1644532285878f0eae-3",
+        "829a864a-45e3-4e6d-b373-2df657e11343"
+      ],
+      "disabled": true,
+      "settings": {
+        "product": "",
+        "divider": false,
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": false,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "rich-text",
+    "logo-list",
+    "1644513838184e5981",
+    "164452737700b970d9",
+    "1644519110d4563504",
+    "16445322856406b896"
+  ]
+}

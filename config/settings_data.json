@@ -41,7 +41,7 @@
     "type_header_spacing": "25",
     "type_header_base_size": 40,
     "type_header_line_height": 1,
-    "type_header_capitalize": true,
+    "type_header_capitalize": false,
     "type_base_font_family": "avenir_next_rounded_n5",
     "type_base_spacing": "10",
     "type_base_size": 14,
