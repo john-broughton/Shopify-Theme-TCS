@@ -63,6 +63,9 @@
       "block_order": [
         "liquid_B8ALpU"
       ],
+      "custom_css": [
+        "{background-color: lightgray;}"
+      ],
       "settings": {
         "full_width": true,
         "space_around": true
