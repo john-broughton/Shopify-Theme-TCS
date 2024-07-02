@@ -73,8 +73,8 @@
         "simple_WpEUnW": {
           "type": "simple",
           "settings": {
-            "link": "shopify:\/\/collections\/cooking-gadgets",
-            "text": "Kitchen Tools",
+            "link": "shopify:\/\/collections\/nora-flemming",
+            "text": "Nora Flemming",
             "width": "33",
             "height": 420
           }
@@ -82,8 +82,8 @@
         "simple_yYG4JK": {
           "type": "simple",
           "settings": {
-            "link": "shopify:\/\/collections\/serveware",
-            "text": "Entertaining",
+            "link": "shopify:\/\/collections\/vietri",
+            "text": "Vietri",
             "width": "33",
             "height": 420
           }
