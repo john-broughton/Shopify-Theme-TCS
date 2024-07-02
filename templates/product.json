@@ -34,13 +34,6 @@
             "color_swatches": true
           }
         },
-        "sales_point": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "package",
-            "text": "Free In Store Pickup"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -59,6 +52,13 @@
             "show_gift_card_recipient": false
           }
         },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "package",
+            "text": "Free In Store Pickup"
+          }
+        },
         "inventory_status": {
           "type": "inventory_status",
           "settings": {
@@ -71,10 +71,10 @@
         "title_DaKN6F",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
         "variant_picker_PHeixP",
-        "sales_point",
         "price",
         "quantity_selector_KcWnct",
         "buy_buttons",
+        "sales_point",
         "inventory_status"
       ],
       "settings": {
