@@ -82,7 +82,7 @@
         "products_per_row": 4,
         "mobile_scrollable": false,
         "view_all": true,
-        "divider": false
+        "divider": true
       }
     },
     "featured_collection_3DTRYw": {
