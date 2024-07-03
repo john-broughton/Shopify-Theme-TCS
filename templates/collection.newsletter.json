@@ -15,13 +15,21 @@
         "heading_JR3kHg": {
           "type": "heading",
           "settings": {
-            "title": "All In-Store Pick Up Products",
+            "title": "Items From Our Bi-Weekly Newsletter",
             "heading_size": "h2"
+          }
+        },
+        "button_iGB7Ci": {
+          "type": "button",
+          "settings": {
+            "link": "https:\/\/mailchi.mp\/dce16979d797\/st-patricks-day-is-almost-here-17980793",
+            "link_text": "View Newsletter"
           }
         }
       },
       "block_order": [
-        "heading_JR3kHg"
+        "heading_JR3kHg",
+        "button_iGB7Ci"
       ],
       "settings": {
         "align_text": "center",
@@ -51,7 +59,7 @@
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "grid_style": "medium"
+            "grid_style": "small"
           }
         }
       },
@@ -60,10 +68,10 @@
         "product_grid"
       ],
       "settings": {
-        "enable_sidebar": true,
-        "collapse_filters": true,
+        "enable_sidebar": false,
+        "collapse_filters": false,
         "enable_color_swatches": false,
-        "enable_sort": true
+        "enable_sort": false
       }
     },
     "recently-viewed": {

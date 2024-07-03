@@ -16,15 +16,15 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>THE BEST STORIES ARE TOLD WITH FOOD<\/p>",
-            "title_size": 50,
-            "subheading": "The Cook’s Station is a destination for anyone who has a passion for food.",
+            "title": "<h2>THE BEST STORIES ARE TOLD WITH FOOD<\/h2>",
+            "title_size": 40,
+            "subheading": "Lean more about The Cook's Station below!",
             "link": "shopify:\/\/pages\/about-us",
             "link_text": "ABOUT US",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
-            "text_align": "vertical-center horizontal-center",
+            "text_align": "vertical-bottom horizontal-center",
             "image": "shopify:\/\/shop_images\/outside_day_time.jpg",
             "overlay_opacity": 20
           }
@@ -32,9 +32,9 @@
         "slideshow-1": {
           "type": "hero",
           "settings": {
-            "top_subheading": "The Cook's Station",
-            "title": "<p>CLASSES & DINNERS<\/p>",
-            "title_size": 53,
+            "top_subheading": "",
+            "title": "<h2>CLASSES & DINNERS<\/h2>",
+            "title_size": 40,
             "subheading": "Sharpen your culinary skills or learn something new!",
             "link": "shopify:\/\/collections\/in-store-classes",
             "link_text": "View Classes",
@@ -49,9 +49,9 @@
         "hero_WyD4ky": {
           "type": "hero",
           "settings": {
-            "top_subheading": "The Cook's Station",
-            "title": "<p>CAFE & BAR<\/p>",
-            "title_size": 70,
+            "top_subheading": "",
+            "title": "<h2>CAFE & BAR<\/h2>",
+            "title_size": 50,
             "subheading": "Come grab a meal or a drink!",
             "link": "shopify:\/\/pages\/cafe",
             "link_text": "Cafe Menu",
@@ -66,8 +66,8 @@
         "hero_7cqwiA": {
           "type": "hero",
           "settings": {
-            "top_subheading": "The Cook's Station",
-            "title": "<p>SHOP ONLINE<\/p>",
+            "top_subheading": "",
+            "title": "<h2>SHOP ONLINE<\/h2>",
             "title_size": 70,
             "subheading": "Shop The Cook's Station from the comfort of your couch!",
             "link": "shopify:\/\/pages\/shop-collections",
@@ -90,7 +90,7 @@
       "settings": {
         "full_width": true,
         "desktop_size": -20,
-        "mobile_size": 80,
+        "mobile_size": 100,
         "style": "dots",
         "autoplay": true,
         "autoplay_speed": 8
@@ -192,8 +192,8 @@
       ],
       "settings": {
         "title": "FEATURED BRANDS",
-        "heading_size": "h2",
-        "heading_position": "left",
+        "heading_size": "h1",
+        "heading_position": "center",
         "divider": false
       }
     },
@@ -203,18 +203,18 @@
         "banner_4wjDwB": {
           "type": "banner",
           "settings": {
-            "heading": "Shop In-store Pickup!",
+            "heading": "Shop In-Store Pickup!",
             "text": "Items ready for pickup!",
             "link": "shopify:\/\/collections\/newsletter-products",
             "label": "Shop now!",
-            "color_scheme": "3"
+            "color_scheme": "2"
           }
         },
         "164451383811d88f3f-1": {
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Shop Online!",
+            "heading": "Shop Online",
             "textarea": "Shop The Cook's Station from home!",
             "cta_text1": "SHOP",
             "cta_link1": "shopify:\/\/pages\/shop-collections",
@@ -232,7 +232,7 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "MENUS",
+            "heading": "Food Menus",
             "textarea": "We’re on a mission to bring folks back to the table",
             "cta_text1": "VIEW",
             "cta_link1": "shopify:\/\/pages\/menus",
@@ -249,7 +249,7 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "COOKING CLASSES",
+            "heading": "Classes",
             "textarea": "Click here to view our cooking class schedule!",
             "cta_text1": "VIEW",
             "cta_link1": "shopify:\/\/collections\/in-store-classes",
@@ -270,7 +270,7 @@
             "text": "We make giving gifts easy!",
             "link": "shopify:\/\/products\/egift-card",
             "label": "Shop now",
-            "color_scheme": "3"
+            "color_scheme": "2"
           }
         }
       },
@@ -291,9 +291,9 @@
     "164452737700b970d9": {
       "type": "featured-collection",
       "settings": {
-        "title": "In-store Pick-up",
+        "title": "IN STORE PICKUP",
         "heading_size": "h2",
-        "heading_position": "left",
+        "heading_position": "center",
         "home_featured_products": "newsletter-products",
         "count": 5,
         "products_per_row": 5,
@@ -305,7 +305,7 @@
     "1644519110d4563504": {
       "type": "map",
       "settings": {
-        "map_title": "Come Visit US",
+        "map_title": "Come Visit Us",
         "heading_size": "h2",
         "heading_position": "left",
         "address": "<p><a href=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\" target=\"_blank\" title=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\">515 Buncombe Street<br\/>Greenville, SC 29601<\/a><\/p><p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/>Café<strong> Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/>Café<span style=\"text-decoration:underline\"><em> is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<br\/>Sunday: Closed <\/p>",
