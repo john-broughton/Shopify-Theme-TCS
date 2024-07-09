@@ -92,6 +92,28 @@
         "bottom_padding": true
       }
     },
+    "text_and_image_WHRXBw": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/July_Italian_Dinner.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "July Italian Night",
+        "heading_size": "h2",
+        "text": "<p>Join us at The Cook's Station for a delightful Italian Night with Chef Vinnie! Experience the rich flavors of Italy as Chef Vinnie prepares authentic dishes that transport you straight to the heart of Italy. Buon appetito!<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "b5e95e24-93b4-492c-ae7f-914eae033331": {
       "type": "map",
       "settings": {
@@ -111,6 +133,7 @@
     "1644519722c7610927",
     "a4194086-e077-4365-93db-a101e2c6a3e9",
     "text_and_image_iV6NVF",
+    "text_and_image_WHRXBw",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
