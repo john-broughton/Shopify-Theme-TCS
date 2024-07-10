@@ -15,14 +15,22 @@
         "heading_JR3kHg": {
           "type": "heading",
           "settings": {
-            "title": "Dinners, Flights, and Bites"
+            "title": "Items From Our Bi-Weekly Newsletter",
+            "heading_size": "h2"
+          }
+        },
+        "button_iGB7Ci": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "View Newsletter"
           }
         }
       },
       "block_order": [
-        "heading_JR3kHg"
+        "heading_JR3kHg",
+        "button_iGB7Ci"
       ],
-      "disabled": true,
       "settings": {
         "align_text": "center",
         "narrow_column": true,
@@ -35,7 +43,8 @@
       "settings": {
         "enable": false,
         "collection_image_enable": true,
-        "parallax": true
+        "parallax": true,
+        "parallax_direction": "top"
       }
     },
     "main-collection": {
