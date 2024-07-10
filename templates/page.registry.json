@@ -182,24 +182,6 @@
         "space_below": true
       }
     },
-    "17145861856fbae181": {
-      "type": "apps",
-      "blocks": {
-        "enorm_image_gallery_video_embed_code_BaAY88": {
-          "type": "shopify:\/\/apps\/enorm-image-gallery-video\/blocks\/embed-code\/01219f89-c8d0-40c2-a0ff-1987199e84a2",
-          "settings": {
-            "embed-code": "<div id=\"enap-gallery-90933\"><\/div>"
-          }
-        }
-      },
-      "block_order": [
-        "enorm_image_gallery_video_embed_code_BaAY88"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
     "testimonials_7hiFw9": {
       "type": "testimonials",
       "blocks": {
@@ -290,6 +272,24 @@
         "color_scheme": "1"
       }
     },
+    "17145861856fbae181": {
+      "type": "apps",
+      "blocks": {
+        "enorm_image_gallery_video_embed_code_BaAY88": {
+          "type": "shopify:\/\/apps\/enorm-image-gallery-video\/blocks\/embed-code\/01219f89-c8d0-40c2-a0ff-1987199e84a2",
+          "settings": {
+            "embed-code": "<div id=\"enap-gallery-90933\"><\/div>"
+          }
+        }
+      },
+      "block_order": [
+        "enorm_image_gallery_video_embed_code_BaAY88"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
     "advanced_content_D9heiY": {
       "type": "advanced-content",
       "blocks": {
@@ -368,8 +368,8 @@
     "promo_grid_weDiHz",
     "testimonials_nxaqjC",
     "promo_grid_cpHzm9",
-    "17145861856fbae181",
     "testimonials_7hiFw9",
+    "17145861856fbae181",
     "advanced_content_D9heiY",
     "faq_fiTHxg"
   ]
