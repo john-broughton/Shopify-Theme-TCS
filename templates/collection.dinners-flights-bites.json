@@ -18,18 +18,10 @@
             "title": "Dinners, Flights, and Bites",
             "heading_size": "h1"
           }
-        },
-        "button_VXMKq9": {
-          "type": "button",
-          "settings": {
-            "link": "",
-            "link_text": ""
-          }
         }
       },
       "block_order": [
-        "heading_JR3kHg",
-        "button_VXMKq9"
+        "heading_JR3kHg"
       ],
       "settings": {
         "align_text": "center",
