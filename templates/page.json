@@ -1,1 +1,594 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"promo_grid_jKDwGY":{"type":"promo-grid","blocks":{"advanced_DYDfGH":{"type":"advanced","settings":{"subheading":"","heading":"Cafe & Bar","textarea":"<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">CAFE HOURS<\/p>\n<p style='font-size:large;font-weight:bold;\"'>• Monday- Friday: 8am-3pm<br>•  Saturday: 9AM-3pM<br>• Sunday: Closed <\/p>\n<\/div>","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/inside_cafe_use_fc4a414f-67c3-4a66-aa92-0a505a449986.jpg","video_url":"","width":"100","height":500,"text_align":"vertical-center horizontal-center","color_accent":"#242430"}}},"block_order":["advanced_DYDfGH"],"custom_css":["{font: inherit; font-size: x-large;}"],"settings":{"full_width":false,"gutter_size":0,"space_above":false,"space_below":false}},"text_columns_HaHf8Q":{"type":"text-columns","blocks":{"text_block_7DQU9h":{"type":"text_block","settings":{"enable_image":true,"image":"shopify:\/\/shop_images\/FINAL_breakfast_spring_menu.png","image_mask":"none","image_width":540,"title":"","text":"","button_label":"","button_link":""}},"text_block_heiqBy":{"type":"text_block","settings":{"enable_image":true,"image":"shopify:\/\/shop_images\/long_skinny_cafe_menu_Spring_2024_2.png","image_mask":"none","image_width":540,"title":"","text":"","button_label":"","button_link":""}}},"block_order":["text_block_7DQU9h","text_block_heiqBy"],"disabled":true,"settings":{"title":"Cafe Menus","align_text":"center","divider":false,"color_scheme":"none"}},"166420604037b6908b":{"type":"rich-text","blocks":{"16642060405c809cbb-0":{"type":"heading","settings":{"title":"Daily Specials - 06\/03","heading_size":"h2"}},"16642060405c809cbb-1":{"type":"text","settings":{"enlarge_text":true,"text":"<p><strong>TCS CHICKEN SALAD SANDWHICH - $11.99<\/strong><br\/>Chicken, celery, onions, dried cherries, pecan dust, mayo-based dressing, pickled red onions, greens, on toast<\/p><p><strong>TCS SMASH BURGER - $13.99<\/strong><br\/>Thin double beef patty, bacon, grilled sweet onions, pickles, American and farmer cheese, with house sauce<\/p><p><strong>PORK CHOP SANDWICH - $12.99<\/strong><br\/>Grilled pork chop, monterey jack cheese, pear balsamic marinated tomatoes, pickled apples, arugula, onion aioli, on ciabatta<\/p><p><strong>LOADED POTATO SOUP- $5.99<\/strong><br\/>Potatoes, carrots, onions, gouda cheddar blend, spices, cream, garnished with bacon<\/p>"}}},"block_order":["16642060405c809cbb-0","16642060405c809cbb-1"],"disabled":true,"settings":{"align_text":"center","narrow_column":true,"color_scheme":"none","divider":false}},"promo_grid_8ijbpN":{"type":"promo-grid","blocks":{"advanced_afCJ6J":{"type":"advanced","settings":{"subheading":"","heading":"View Our Cafe Menu","textarea":"","cta_text1":"Cafe Menu","cta_link1":"shopify:\/\/pages\/cafe","cta_text2":"","cta_link2":"","video_url":"https:\/\/www.youtube.com\/watch?v=occgf6hbSLM","width":"33","height":700,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}},"advanced_6kba3N":{"type":"advanced","settings":{"subheading":"","heading":"Crispy Shrimp Po-boy","textarea":"","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Lunch__46_1.jpg","video_url":"","width":"33","height":700,"text_align":"vertical-bottom horizontal-center","color_accent":"#ffffff"}},"advanced_hxmJeR":{"type":"advanced","settings":{"subheading":"","heading":"Turkey Bacon Brie","textarea":"","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/ConvertOut-Resized-turky_bacon_brie_2.jpg","video_url":"","width":"33","height":700,"text_align":"vertical-bottom horizontal-center","color_accent":"#ffffff"}}},"block_order":["advanced_afCJ6J","advanced_6kba3N","advanced_hxmJeR"],"settings":{"full_width":false,"gutter_size":20,"space_above":true,"space_below":true}},"promo_grid_3gPzAA":{"type":"promo-grid","blocks":{"advanced_8mWJ6R":{"type":"advanced","settings":{"subheading":"","heading":"Crispy Chicken Biscuit","textarea":"","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/ConvertOut-Resized-chicken_biscuit.jpg","video_url":"","width":"33","height":700,"text_align":"vertical-top horizontal-center","color_accent":"#ffffff"}},"advanced_LcKjpw":{"type":"advanced","settings":{"subheading":"","heading":"Sunrise Biscuit","textarea":"","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/sunrise_biscuit.jpg","video_url":"","width":"33","height":700,"text_align":"vertical-top horizontal-center","color_accent":"#ffffff"}},"advanced_TE6LeX":{"type":"advanced","settings":{"subheading":"","heading":"View Our cafe Menu","textarea":"","cta_text1":"Cafe Menu","cta_link1":"shopify:\/\/pages\/cafe","cta_text2":"","cta_link2":"","video_url":"https:\/\/www.youtube.com\/watch?v=azukF6h-fik","width":"33","height":500,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}}},"block_order":["advanced_8mWJ6R","advanced_LcKjpw","advanced_TE6LeX"],"settings":{"full_width":false,"gutter_size":20,"space_above":false,"space_below":true}},"1644519879b6c859bd":{"type":"rich-text","blocks":{"16445198793d97203c-0":{"type":"heading","settings":{"title":"A LOT ON YOUR PLATE","heading_size":"h2"}},"16445198793d97203c-1":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Come dine in our cafe with us! We pride ourselves on using local produce in our cafe that serves breakfast from 8 am-11 am Monday-Friday, and 9 am-11 am on Saturday. Our cafe also serves lunch from 11 am-3 pm Monday-Saturday. The cafe is closed on Sunday. At our wine and beer bar, you can find a variety of tapas plates served from 4:00-8:00 pm Monday-Saturday. We also serve wine and beer by the glass starting from 10 am-8 pm, so you can sip and shop!<\/p><p><em>Café<\/em><em><strong> <\/strong><\/em><em>Hours:<\/em><br\/><strong><br\/>Breakfast: <br\/><\/strong>Monday-Friday: 8:00 AM-11:00 AM<br\/>Saturday: 9:00AM- 11:00AM<\/p><p><strong>Lunch<\/strong>:<br\/>11:00 AM - 3:00 PM<br\/><span style=\"text-decoration:underline\"><em>The <\/em><\/span>café<span style=\"text-decoration:underline\"><em> is closed on Sundays<\/em><\/span><\/p>"}}},"block_order":["16445198793d97203c-0","16445198793d97203c-1"],"disabled":true,"settings":{"align_text":"center","narrow_column":true,"color_scheme":"3","divider":false}},"1644519946f9b03c75":{"type":"faq","blocks":{"1644519946aa5bfae6-0":{"type":"question","settings":{"title":"PANTRY","text":"<p>From Olivelle infused oils and vinegars to specialty spices; locally ground grits to prized pickles, we’ve got all the stuff pantry-stockin’ dreams are made of (<em>don’t pretend like you don’t have those)…<\/em><\/p>"}},"1644519946aa5bfae6-1":{"type":"question","settings":{"title":"GRAB & GO GOURMET","text":"<p><strong>Ham Salad<\/strong><br\/><em>Sm: $5.99 \/ Med: $8.99 \/ Lg $25.00<\/em><\/p><p><strong>Egg salad<\/strong><br\/><em>Sm: $3.99 \/ Med: $6.00 \/ Lg $16.00<\/em><\/p><p><strong>Potato Salad<\/strong><br\/><em>Sm: $2.49 \/ Med: $4.99 \/ Lg $10.00<\/em><\/p><p><strong>Pimento Cheese<\/strong><br\/><em>Sm: $4.49 \/ Med: $13.99 \/ Lg $19.00<\/em><\/p><p><strong>House Truffled Boursin cheese spread<\/strong><br\/><em>Sm: $5.00 \/ Med: $8.00 \/ Lg $25.00<\/em><\/p><p><strong>Pickled shrimp<\/strong><br\/><em>Sm: $12.00 \/ Lg $26.00<\/em><\/p><p><strong>Smoked trout dip<\/strong><br\/><em>Sm: $12.00 \/ Lg $18.00<\/em><\/p>"}},"fd18df9d-a942-4421-923e-2356c36cebf4":{"type":"question","settings":{"title":"MEATS","text":"<p>&lcub; <em>$3<\/em> &rcub;<br\/>proscuitto<br\/>house rillette<br\/>house smoked guanciale<br\/>Greenbriar head cheese<\/p><p>&lcub; <em>$5<\/em> &rcub;<br\/>spec<br\/>house-cured salmon<br\/>Calabrian pancetta (spotted trotter)<br\/>spicy chupacabra (goat & beef)<br\/>soppessata (American butcher)<br\/>finnochina (American butcher)<br\/>duck prosciutto (spotted trotter)<br\/>smoked fish<br\/>shrimp salad<br\/>confit quail<\/p>"}},"5e75cf0b-7891-4154-b8d6-ac076f738bb7":{"type":"question","settings":{"title":"CHEESES","text":"<p>&lcub; <em>$3<\/em> &rcub;<br\/>marinated halloumi<br\/>manchego w\/ whipped honey<br\/>tillamook<br\/>smoked gouda<br\/>fontina<\/p><p>&lcub; <em>$6<\/em> &rcub;<br\/>calvander<br\/>truffle whipped goat<br\/>ravin cliff<br\/>chattooga blue w\/ whipped honey<br\/>tomme<br\/>griffin<br\/>karst<\/p>"}},"6eef1ca4-ad57-4364-b5ac-d867b0c12c91":{"type":"question","settings":{"title":"GOODIES","text":"<p>&lcub;<em>$3<\/em>&rcub;<br\/>wine-soaked fruit<br\/>marinated veggies<br\/>picked veggies<br\/>cured tomatoes<br\/>mushroom conserva<br\/>blueberry jam<br\/>cheese pop bread<br\/>mini herb loaf<\/p>"}}},"block_order":["1644519946aa5bfae6-0","1644519946aa5bfae6-1","fd18df9d-a942-4421-923e-2356c36cebf4","5e75cf0b-7891-4154-b8d6-ac076f738bb7","6eef1ca4-ad57-4364-b5ac-d867b0c12c91"],"disabled":true,"settings":{"title":"MARKET","heading_size":"h2","heading_position":"left"}},"text_and_image_xtV9AY":{"type":"text-and-image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Happy_Hour_9.2.23.png","image_mask":"none","image2_mask":"none","subtitle":"","title":"jOIN US FOR HAPPY hOUR!","heading_size":"h2","text":"<p>Join us for our delightful Happy Hour at our store! Relax on our inviting patio or explore our curated collection while savoring a refreshing glass of wine or beer. It's the perfect way to unwind after a long day or to kick off a fun evening of shopping. Cheers to great deals and good times!<\/p>","button_label":"","button_link":"","button_style":"primary","align_text":"center","image_width":"50","layout":"right","color_scheme":"1","divider":false,"top_padding":true,"bottom_padding":true}},"promo_grid_qTGxJq":{"type":"promo-grid","blocks":{"advanced_VBBHnG":{"type":"advanced","settings":{"subheading":"","heading":"Drink & Be Merry","textarea":"<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large;font-weight:bold;display: inline-block;\">HAPPY HOUR<\/p>\n<p style='font-size:small;font-weight:bold\"'>• Monday - Friday: 4:30-6:00pm<br>$3 Off Tapas and Wine By The Glass<br><br>• Saturday - Sunday 2:00pm - 4:00pm<br> $3 Off Wine By The Glass <\/p>\n<\/div>","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/Cooks-Station_Huang-shoot_wine-holder.jpg","video_url":"","width":"100","height":420,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}}},"block_order":["advanced_VBBHnG"],"custom_css":["{font-size: large;}"],"settings":{"full_width":false,"gutter_size":0,"space_above":false,"space_below":false}},"promo_grid_c347Ci":{"type":"promo-grid","blocks":{"advanced_XgNNBT":{"type":"advanced","settings":{"subheading":"","heading":"","textarea":"","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__22.jpg","video_url":"","width":"33","height":700,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}},"advanced_7rDM64":{"type":"advanced","settings":{"subheading":"","heading":"View Our Bar Menu","textarea":"","cta_text1":"Bar Menu","cta_link1":"shopify:\/\/pages\/bar-tapas","cta_text2":"","cta_link2":"","video_url":"https:\/\/youtube.com\/watch?v=tMza7Lmh8q0","width":"33","height":700,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}},"advanced_TJRign":{"type":"advanced","settings":{"subheading":"","heading":"","textarea":"","cta_text1":"","cta_link1":"","cta_text2":"","cta_link2":"","image":"shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__27.jpg","video_url":"","width":"33","height":700,"text_align":"vertical-center horizontal-center","color_accent":"#ffffff"}}},"block_order":["advanced_XgNNBT","advanced_7rDM64","advanced_TJRign"],"settings":{"full_width":false,"gutter_size":20,"space_above":true,"space_below":true}},"text_columns_M3xf6e":{"type":"text-columns","blocks":{"text_block_xJd6j7":{"type":"text_block","settings":{"enable_image":true,"image":"shopify:\/\/shop_images\/1_8eff556c-059d-4be2-8d9f-00d07e6f686a.png","image_mask":"none","image_width":650,"title":"","text":"","button_label":"","button_link":""}},"text_block_Rd4cTj":{"type":"text_block","settings":{"enable_image":true,"image":"shopify:\/\/shop_images\/2.png","image_mask":"none","image_width":650,"title":"","text":"","button_label":"","button_link":""}}},"block_order":["text_block_xJd6j7","text_block_Rd4cTj"],"disabled":true,"settings":{"title":"Bar Menus","align_text":"center","divider":false,"color_scheme":"none"}},"16445213628fdd80d7":{"type":"faq","blocks":{"ddf23fe8-8ee1-49d8-a8df-c975a51f047e":{"type":"rich-text","settings":{"title":"DRINK OFFERINGS","text":"<p>Ask at the wine bar or retail section for the latest beer and wine offerings by the glass to enjoy while shopping, or to take home.<\/p>","align_text":"center"}},"164452136229151070-0":{"type":"question","settings":{"title":"WINE BY THE GLASS","text":"<p><em><strong>WHITE<\/strong><\/em><\/p><p>Il Cantico, Pinot Grigio (<em>Italy<\/em>)<\/p><p>Anne Pinchon, Vermentino (<em>France<\/em>) <\/p><p>Doudet- Naudin, Chardonnay (<em>France<\/em>) <\/p><p>Gulp Hablo, Orange (<em>Spain<\/em>)<\/p><p><em><strong>BUBBLES<\/strong><\/em><\/p><p>Montelvini Tullia Prosecco; Sparkling: Semi-Dry; Italy<\/p><p>Los Monteros, Cava<\/p><p>Le Colture, Prosecco Rose<\/p><p><em><strong>ROSE'<\/strong><\/em><\/p><p>Pigoudet Premiere (Provence, France)<\/p><p>Pannonica (France) <\/p><p><em><strong>RED<\/strong><\/em><\/p><p>Altosur, Cabernet Sauvignon<\/p><p>Bordeaux Jourdan<\/p><p>Rio Maggio<\/p><p>Pas de Probleme, Pinot Noir<\/p>"}},"164452136229151070-1":{"type":"question","settings":{"title":"B(U)Y THE BOTTLE","text":"<p>Whether you fancy yourself a moonlighting sommelier-type OR you select wine at the store based on the merits of label design (no shame in that game), we have an expertly curated, eclectic and affordable selection of retail bottles of wine from all over the world.<\/p><p>Grab a new bottle off the wall and a family meal from our fridge for peace of mind on your workday trek home. Pair a wine with local cheeses (we’d love to help you with selections). Together let’s build a custom gift basket for your more-than-deserving neighbor\/aunt\/teacher\/friend (we’ll then wrap it for ya, too).<\/p><p>Now <em>that’s<\/em> bottle service!<\/p>"}},"63bb8c95-731c-40dc-956c-d35a23b4b790":{"type":"rich-text","settings":{"title":"BEER UP, WE’RE HERE FOR YA","text":"","align_text":"center"}},"61cef9f0-f41a-4aaf-ac76-f8d02dd7fae8":{"type":"question","settings":{"title":"BOTTLES & CANS","text":"<p>Peroni<\/p><p>Trifecta IPA (Greenville, SC)<\/p><p>Birds Fly South Blueprint IPA (Greenville, SC) <\/p><p>Allagash White<\/p><p>Seasonal Edmunds Oast (Charleston, SC)<\/p><p>Bud light<\/p><p>Ellie's Brown Ale<\/p><p>Blue Moon Light Sky Citrus <\/p><p>Yee-Haw IPA <\/p><p>Athletic Brewery- Free Wave IPA (non-alcoholic)<\/p><p><em><strong>Seltzers and Ciders<\/strong><\/em><\/p><p>Original Sin Black Widow Cider <\/p><p>Ginger's Revenge- Lime Agave Ginger Beer <\/p><p>Bravazzi- Italian Hard Soda Blood Orange<\/p>"}},"71f9806a-b00b-4dc5-b66b-28effc155c88":{"type":"question","settings":{"title":"ON TAP","text":"<p>Birds Fly South: English Mild <\/p><p>Stella Artois <\/p><p>Steel Hands: Juicy Hazy IPA <\/p>"}}},"block_order":["ddf23fe8-8ee1-49d8-a8df-c975a51f047e","164452136229151070-0","164452136229151070-1","63bb8c95-731c-40dc-956c-d35a23b4b790","61cef9f0-f41a-4aaf-ac76-f8d02dd7fae8","71f9806a-b00b-4dc5-b66b-28effc155c88"],"disabled":true,"settings":{"title":"","heading_size":"h2","heading_position":"left"}}},"order":["main","promo_grid_jKDwGY","text_columns_HaHf8Q","166420604037b6908b","promo_grid_8ijbpN","promo_grid_3gPzAA","1644519879b6c859bd","1644519946f9b03c75","text_and_image_xtV9AY","promo_grid_qTGxJq","promo_grid_c347Ci","text_columns_M3xf6e","16445213628fdd80d7"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "promo_grid_jKDwGY": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_DYDfGH": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Cafe & Bar",
+            "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">CAFE HOURS<\/p>\n<p style='font-size:large;font-weight:bold;\"'>• Monday- Friday: 8am-3pm<br>•  Saturday: 9AM-3pM<br>• Sunday: Closed <\/p>\n<\/div>",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/inside_cafe_use_fc4a414f-67c3-4a66-aa92-0a505a449986.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 500,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#242430"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_DYDfGH"
+      ],
+      "custom_css": [
+        "{font: inherit; font-size: x-large;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 0,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "text_columns_HaHf8Q": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_7DQU9h": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/FINAL_breakfast_spring_menu.png",
+            "image_mask": "none",
+            "image_width": 540,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_heiqBy": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/long_skinny_cafe_menu_Spring_2024_2.png",
+            "image_mask": "none",
+            "image_width": 540,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_7DQU9h",
+        "text_block_heiqBy"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Cafe Menus",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "166420604037b6908b": {
+      "type": "rich-text",
+      "blocks": {
+        "16642060405c809cbb-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Daily Specials - 06\/03",
+            "heading_size": "h2"
+          }
+        },
+        "16642060405c809cbb-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><strong>TCS CHICKEN SALAD SANDWHICH - $11.99<\/strong><br\/>Chicken, celery, onions, dried cherries, pecan dust, mayo-based dressing, pickled red onions, greens, on toast<\/p><p><strong>TCS SMASH BURGER - $13.99<\/strong><br\/>Thin double beef patty, bacon, grilled sweet onions, pickles, American and farmer cheese, with house sauce<\/p><p><strong>PORK CHOP SANDWICH - $12.99<\/strong><br\/>Grilled pork chop, monterey jack cheese, pear balsamic marinated tomatoes, pickled apples, arugula, onion aioli, on ciabatta<\/p><p><strong>LOADED POTATO SOUP- $5.99<\/strong><br\/>Potatoes, carrots, onions, gouda cheddar blend, spices, cream, garnished with bacon<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16642060405c809cbb-0",
+        "16642060405c809cbb-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "promo_grid_8ijbpN": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_afCJ6J": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "View Our Cafe Menu",
+            "textarea": "",
+            "cta_text1": "Cafe Menu",
+            "cta_link1": "shopify:\/\/pages\/cafe",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=occgf6hbSLM",
+            "width": "33",
+            "height": 800,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_6kba3N": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Crispy Shrimp Po-boy",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Lunch__46_1.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_hxmJeR": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Turkey Bacon Brie",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-turky_bacon_brie_2.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-bottom horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_afCJ6J",
+        "advanced_6kba3N",
+        "advanced_hxmJeR"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true
+      }
+    },
+    "promo_grid_3gPzAA": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_8mWJ6R": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Crispy Chicken Biscuit",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-chicken_biscuit.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-top horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_LcKjpw": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Sunrise Biscuit",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/sunrise_biscuit.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-top horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_TE6LeX": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "View Our cafe Menu",
+            "textarea": "",
+            "cta_text1": "Cafe Menu",
+            "cta_link1": "shopify:\/\/pages\/cafe",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "https:\/\/www.youtube.com\/watch?v=azukF6h-fik",
+            "width": "33",
+            "height": 800,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_8mWJ6R",
+        "advanced_LcKjpw",
+        "advanced_TE6LeX"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": false,
+        "space_below": true
+      }
+    },
+    "1644519879b6c859bd": {
+      "type": "rich-text",
+      "blocks": {
+        "16445198793d97203c-0": {
+          "type": "heading",
+          "settings": {
+            "title": "A LOT ON YOUR PLATE",
+            "heading_size": "h2"
+          }
+        },
+        "16445198793d97203c-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Come dine in our cafe with us! We pride ourselves on using local produce in our cafe that serves breakfast from 8 am-11 am Monday-Friday, and 9 am-11 am on Saturday. Our cafe also serves lunch from 11 am-3 pm Monday-Saturday. The cafe is closed on Sunday. At our wine and beer bar, you can find a variety of tapas plates served from 4:00-8:00 pm Monday-Saturday. We also serve wine and beer by the glass starting from 10 am-8 pm, so you can sip and shop!<\/p><p><em>Café<\/em><em><strong> <\/strong><\/em><em>Hours:<\/em><br\/><strong><br\/>Breakfast: <br\/><\/strong>Monday-Friday: 8:00 AM-11:00 AM<br\/>Saturday: 9:00AM- 11:00AM<\/p><p><strong>Lunch<\/strong>:<br\/>11:00 AM - 3:00 PM<br\/><span style=\"text-decoration:underline\"><em>The <\/em><\/span>café<span style=\"text-decoration:underline\"><em> is closed on Sundays<\/em><\/span><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16445198793d97203c-0",
+        "16445198793d97203c-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "1644519946f9b03c75": {
+      "type": "faq",
+      "blocks": {
+        "1644519946aa5bfae6-0": {
+          "type": "question",
+          "settings": {
+            "title": "PANTRY",
+            "text": "<p>From Olivelle infused oils and vinegars to specialty spices; locally ground grits to prized pickles, we’ve got all the stuff pantry-stockin’ dreams are made of (<em>don’t pretend like you don’t have those)…<\/em><\/p>"
+          }
+        },
+        "1644519946aa5bfae6-1": {
+          "type": "question",
+          "settings": {
+            "title": "GRAB & GO GOURMET",
+            "text": "<p><strong>Ham Salad<\/strong><br\/><em>Sm: $5.99 \/ Med: $8.99 \/ Lg $25.00<\/em><\/p><p><strong>Egg salad<\/strong><br\/><em>Sm: $3.99 \/ Med: $6.00 \/ Lg $16.00<\/em><\/p><p><strong>Potato Salad<\/strong><br\/><em>Sm: $2.49 \/ Med: $4.99 \/ Lg $10.00<\/em><\/p><p><strong>Pimento Cheese<\/strong><br\/><em>Sm: $4.49 \/ Med: $13.99 \/ Lg $19.00<\/em><\/p><p><strong>House Truffled Boursin cheese spread<\/strong><br\/><em>Sm: $5.00 \/ Med: $8.00 \/ Lg $25.00<\/em><\/p><p><strong>Pickled shrimp<\/strong><br\/><em>Sm: $12.00 \/ Lg $26.00<\/em><\/p><p><strong>Smoked trout dip<\/strong><br\/><em>Sm: $12.00 \/ Lg $18.00<\/em><\/p>"
+          }
+        },
+        "fd18df9d-a942-4421-923e-2356c36cebf4": {
+          "type": "question",
+          "settings": {
+            "title": "MEATS",
+            "text": "<p>&lcub; <em>$3<\/em> &rcub;<br\/>proscuitto<br\/>house rillette<br\/>house smoked guanciale<br\/>Greenbriar head cheese<\/p><p>&lcub; <em>$5<\/em> &rcub;<br\/>spec<br\/>house-cured salmon<br\/>Calabrian pancetta (spotted trotter)<br\/>spicy chupacabra (goat & beef)<br\/>soppessata (American butcher)<br\/>finnochina (American butcher)<br\/>duck prosciutto (spotted trotter)<br\/>smoked fish<br\/>shrimp salad<br\/>confit quail<\/p>"
+          }
+        },
+        "5e75cf0b-7891-4154-b8d6-ac076f738bb7": {
+          "type": "question",
+          "settings": {
+            "title": "CHEESES",
+            "text": "<p>&lcub; <em>$3<\/em> &rcub;<br\/>marinated halloumi<br\/>manchego w\/ whipped honey<br\/>tillamook<br\/>smoked gouda<br\/>fontina<\/p><p>&lcub; <em>$6<\/em> &rcub;<br\/>calvander<br\/>truffle whipped goat<br\/>ravin cliff<br\/>chattooga blue w\/ whipped honey<br\/>tomme<br\/>griffin<br\/>karst<\/p>"
+          }
+        },
+        "6eef1ca4-ad57-4364-b5ac-d867b0c12c91": {
+          "type": "question",
+          "settings": {
+            "title": "GOODIES",
+            "text": "<p>&lcub;<em>$3<\/em>&rcub;<br\/>wine-soaked fruit<br\/>marinated veggies<br\/>picked veggies<br\/>cured tomatoes<br\/>mushroom conserva<br\/>blueberry jam<br\/>cheese pop bread<br\/>mini herb loaf<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1644519946aa5bfae6-0",
+        "1644519946aa5bfae6-1",
+        "fd18df9d-a942-4421-923e-2356c36cebf4",
+        "5e75cf0b-7891-4154-b8d6-ac076f738bb7",
+        "6eef1ca4-ad57-4364-b5ac-d867b0c12c91"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "MARKET",
+        "heading_size": "h2",
+        "heading_position": "left"
+      }
+    },
+    "text_and_image_xtV9AY": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Happy_Hour_9.2.23.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "jOIN US FOR HAPPY hOUR!",
+        "heading_size": "h2",
+        "text": "<p>Join us for our delightful Happy Hour at our store! Relax on our inviting patio or explore our curated collection while savoring a refreshing glass of wine or beer. It's the perfect way to unwind after a long day or to kick off a fun evening of shopping. Cheers to great deals and good times!<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "center",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "promo_grid_qTGxJq": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_VBBHnG": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "Drink & Be Merry",
+            "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large;font-weight:bold;display: inline-block;\">HAPPY HOUR<\/p>\n<p style='font-size:small;font-weight:bold\"'>• Monday - Friday: 4:30-6:00pm<br>$3 Off Tapas and Wine By The Glass<br><br>• Saturday - Sunday 2:00pm - 4:00pm<br> $3 Off Wine By The Glass <\/p>\n<\/div>",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/Cooks-Station_Huang-shoot_wine-holder.jpg",
+            "video_url": "",
+            "width": "100",
+            "height": 420,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_VBBHnG"
+      ],
+      "custom_css": [
+        "{font-size: large;}"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 0,
+        "space_above": false,
+        "space_below": false
+      }
+    },
+    "promo_grid_c347Ci": {
+      "type": "promo-grid",
+      "blocks": {
+        "advanced_XgNNBT": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__22.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_7rDM64": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "View Our Bar Menu",
+            "textarea": "",
+            "cta_text1": "Bar Menu",
+            "cta_link1": "shopify:\/\/pages\/bar-tapas",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "https:\/\/youtube.com\/watch?v=tMza7Lmh8q0",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
+        "advanced_TJRign": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "textarea": "",
+            "cta_text1": "",
+            "cta_link1": "",
+            "cta_text2": "",
+            "cta_link2": "",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__27.jpg",
+            "video_url": "",
+            "width": "33",
+            "height": 700,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "advanced_XgNNBT",
+        "advanced_7rDM64",
+        "advanced_TJRign"
+      ],
+      "settings": {
+        "full_width": false,
+        "gutter_size": 20,
+        "space_above": true,
+        "space_below": true
+      }
+    },
+    "text_columns_M3xf6e": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_xJd6j7": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/1_8eff556c-059d-4be2-8d9f-00d07e6f686a.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_Rd4cTj": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/2.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xJd6j7",
+        "text_block_Rd4cTj"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Bar Menus",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "16445213628fdd80d7": {
+      "type": "faq",
+      "blocks": {
+        "ddf23fe8-8ee1-49d8-a8df-c975a51f047e": {
+          "type": "rich-text",
+          "settings": {
+            "title": "DRINK OFFERINGS",
+            "text": "<p>Ask at the wine bar or retail section for the latest beer and wine offerings by the glass to enjoy while shopping, or to take home.<\/p>",
+            "align_text": "center"
+          }
+        },
+        "164452136229151070-0": {
+          "type": "question",
+          "settings": {
+            "title": "WINE BY THE GLASS",
+            "text": "<p><em><strong>WHITE<\/strong><\/em><\/p><p>Il Cantico, Pinot Grigio (<em>Italy<\/em>)<\/p><p>Anne Pinchon, Vermentino (<em>France<\/em>) <\/p><p>Doudet- Naudin, Chardonnay (<em>France<\/em>) <\/p><p>Gulp Hablo, Orange (<em>Spain<\/em>)<\/p><p><em><strong>BUBBLES<\/strong><\/em><\/p><p>Montelvini Tullia Prosecco; Sparkling: Semi-Dry; Italy<\/p><p>Los Monteros, Cava<\/p><p>Le Colture, Prosecco Rose<\/p><p><em><strong>ROSE'<\/strong><\/em><\/p><p>Pigoudet Premiere (Provence, France)<\/p><p>Pannonica (France) <\/p><p><em><strong>RED<\/strong><\/em><\/p><p>Altosur, Cabernet Sauvignon<\/p><p>Bordeaux Jourdan<\/p><p>Rio Maggio<\/p><p>Pas de Probleme, Pinot Noir<\/p>"
+          }
+        },
+        "164452136229151070-1": {
+          "type": "question",
+          "settings": {
+            "title": "B(U)Y THE BOTTLE",
+            "text": "<p>Whether you fancy yourself a moonlighting sommelier-type OR you select wine at the store based on the merits of label design (no shame in that game), we have an expertly curated, eclectic and affordable selection of retail bottles of wine from all over the world.<\/p><p>Grab a new bottle off the wall and a family meal from our fridge for peace of mind on your workday trek home. Pair a wine with local cheeses (we’d love to help you with selections). Together let’s build a custom gift basket for your more-than-deserving neighbor\/aunt\/teacher\/friend (we’ll then wrap it for ya, too).<\/p><p>Now <em>that’s<\/em> bottle service!<\/p>"
+          }
+        },
+        "63bb8c95-731c-40dc-956c-d35a23b4b790": {
+          "type": "rich-text",
+          "settings": {
+            "title": "BEER UP, WE’RE HERE FOR YA",
+            "text": "",
+            "align_text": "center"
+          }
+        },
+        "61cef9f0-f41a-4aaf-ac76-f8d02dd7fae8": {
+          "type": "question",
+          "settings": {
+            "title": "BOTTLES & CANS",
+            "text": "<p>Peroni<\/p><p>Trifecta IPA (Greenville, SC)<\/p><p>Birds Fly South Blueprint IPA (Greenville, SC) <\/p><p>Allagash White<\/p><p>Seasonal Edmunds Oast (Charleston, SC)<\/p><p>Bud light<\/p><p>Ellie's Brown Ale<\/p><p>Blue Moon Light Sky Citrus <\/p><p>Yee-Haw IPA <\/p><p>Athletic Brewery- Free Wave IPA (non-alcoholic)<\/p><p><em><strong>Seltzers and Ciders<\/strong><\/em><\/p><p>Original Sin Black Widow Cider <\/p><p>Ginger's Revenge- Lime Agave Ginger Beer <\/p><p>Bravazzi- Italian Hard Soda Blood Orange<\/p>"
+          }
+        },
+        "71f9806a-b00b-4dc5-b66b-28effc155c88": {
+          "type": "question",
+          "settings": {
+            "title": "ON TAP",
+            "text": "<p>Birds Fly South: English Mild <\/p><p>Stella Artois <\/p><p>Steel Hands: Juicy Hazy IPA <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ddf23fe8-8ee1-49d8-a8df-c975a51f047e",
+        "164452136229151070-0",
+        "164452136229151070-1",
+        "63bb8c95-731c-40dc-956c-d35a23b4b790",
+        "61cef9f0-f41a-4aaf-ac76-f8d02dd7fae8",
+        "71f9806a-b00b-4dc5-b66b-28effc155c88"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_position": "left"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "promo_grid_jKDwGY",
+    "text_columns_HaHf8Q",
+    "166420604037b6908b",
+    "promo_grid_8ijbpN",
+    "promo_grid_3gPzAA",
+    "1644519879b6c859bd",
+    "1644519946f9b03c75",
+    "text_and_image_xtV9AY",
+    "promo_grid_qTGxJq",
+    "promo_grid_c347Ci",
+    "text_columns_M3xf6e",
+    "16445213628fdd80d7"
+  ]
+}
