@@ -16,9 +16,9 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>THE BEST STORIES ARE TOLD WITH FOOD<\/p>",
+            "title": "<h1>THE BEST STORIES ARE TOLD WITH FOOD<\/h1>",
             "title_size": 40,
-            "subheading": "The Cook’s Station is a destination for anyone who has a passion for food.",
+            "subheading": "Lean more about The Cook's Station below!",
             "link": "shopify:\/\/pages\/about-us",
             "link_text": "ABOUT US",
             "link_2": "",
