@@ -90,7 +90,7 @@
       "settings": {
         "full_width": true,
         "desktop_size": -20,
-        "mobile_size": 80,
+        "mobile_size": 100,
         "style": "dots",
         "autoplay": true,
         "autoplay_speed": 8
@@ -293,7 +293,7 @@
       "settings": {
         "title": "IN STORE PICKUP",
         "heading_size": "h2",
-        "heading_position": "left",
+        "heading_position": "center",
         "home_featured_products": "newsletter-products",
         "count": 5,
         "products_per_row": 5,
@@ -305,7 +305,7 @@
     "1644519110d4563504": {
       "type": "map",
       "settings": {
-        "map_title": "Come Visit US",
+        "map_title": "Come Visit Us",
         "heading_size": "h2",
         "heading_position": "left",
         "address": "<p><a href=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\" target=\"_blank\" title=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\">515 Buncombe Street<br\/>Greenville, SC 29601<\/a><\/p><p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/>Café<strong> Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/>Café<span style=\"text-decoration:underline\"><em> is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<br\/>Sunday: Closed <\/p>",
