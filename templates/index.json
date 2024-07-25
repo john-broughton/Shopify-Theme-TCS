@@ -66,8 +66,8 @@
         "hero_7cqwiA": {
           "type": "hero",
           "settings": {
-            "top_subheading": "The Cook's Station",
-            "title": "<p>SHOP ONLINE<\/p>",
+            "top_subheading": "",
+            "title": "<h2>SHOP ONLINE<\/h2>",
             "title_size": 70,
             "subheading": "Shop The Cook's Station from the comfort of your couch!",
             "link": "shopify:\/\/pages\/shop-collections",
