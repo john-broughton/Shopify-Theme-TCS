@@ -49,8 +49,8 @@
         "hero_WyD4ky": {
           "type": "hero",
           "settings": {
-            "top_subheading": "The Cook's Station",
-            "title": "<p>CAFE & BAR<\/p>",
+            "top_subheading": "",
+            "title": "<h2>CAFE & BAR<\/h2>",
             "title_size": 50,
             "subheading": "Come grab a meal or a drink!",
             "link": "shopify:\/\/pages\/cafe",
