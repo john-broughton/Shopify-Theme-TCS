@@ -64,7 +64,7 @@
         "align_text": "left",
         "image_width": "50",
         "layout": "right",
-        "color_scheme": "3",
+        "color_scheme": "2",
         "divider": false,
         "top_padding": true,
         "bottom_padding": true
@@ -86,7 +86,7 @@
         "align_text": "left",
         "image_width": "50",
         "layout": "right",
-        "color_scheme": "1",
+        "color_scheme": "3",
         "divider": false,
         "top_padding": true,
         "bottom_padding": true
@@ -108,7 +108,7 @@
         "align_text": "left",
         "image_width": "50",
         "layout": "right",
-        "color_scheme": "1",
+        "color_scheme": "2",
         "divider": false,
         "top_padding": true,
         "bottom_padding": true
