@@ -192,8 +192,8 @@
       ],
       "settings": {
         "title": "FEATURED BRANDS",
-        "heading_size": "h2",
-        "heading_position": "left",
+        "heading_size": "h1",
+        "heading_position": "center",
         "divider": false
       }
     },
@@ -291,7 +291,7 @@
     "164452737700b970d9": {
       "type": "featured-collection",
       "settings": {
-        "title": "In-Store Pick-Up",
+        "title": "IN STORE PICKUP",
         "heading_size": "h2",
         "heading_position": "left",
         "home_featured_products": "newsletter-products",
