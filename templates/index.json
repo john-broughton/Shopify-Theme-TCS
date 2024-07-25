@@ -58,7 +58,7 @@
             "link_2": "shopify:\/\/pages\/bar-tapas",
             "link_text_2": "Bar Menu",
             "color_accent": "#ffffff",
-            "text_align": "vertical-bottom horizontal-center",
+            "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
             "overlay_opacity": 12
           }
