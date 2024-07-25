@@ -24,7 +24,7 @@
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
-            "text_align": "vertical-center horizontal-center",
+            "text_align": "vertical-bottom horizontal-center",
             "image": "shopify:\/\/shop_images\/outside_day_time.jpg",
             "overlay_opacity": 20
           }
