@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "actions": {
     "slideshow_pause": "slideshow pausa",
@@ -11,7 +20,7 @@
     "send_as_gift": "Quero enviar isso de presente",
     "add_order_note": "Instruções especiais para o vendedor",
     "close": "Fechar",
-    "terms_i_agree_html": "Eu concordo com os <a href='{{ url }}' target='_blank'>termos e condições</a>",
+    "terms_i_agree_html": "Eu concordo com os <a href='{{ url }}' target='_blank'>termos e condições<\/a>",
     "terms_i_agree": "Eu concordo com os termos e condições",
     "checkout": "Fechar pedido",
     "expand_submenu": "Expandir menu",
@@ -103,7 +112,7 @@
     "save_amount": "Economize {{ saved_amount }}",
     "placeholder_product_description": "Essa área é usada para descrever os detalhes do seu produto. Diga aos clientes sobre a aparência, toque e estilo de seu produto. Adicione detalhes como cor, materiais usados, tamanho e onde foi fabricado.",
     "tax_included": "Taxas incluídas.",
-    "shipping_policy_html": "<a href='{{ link }}'>Frete</a> calculado no checkout.",
+    "shipping_policy_html": "<a href='{{ link }}'>Frete<\/a> calculado no checkout.",
     "sold_out": "Esgotado",
     "view_in_space_explanation": "Ver em seu espaço, carregar item na janela de realidade aumentada",
     "low_stock_count": {
@@ -123,7 +132,7 @@
     },
     "contact_confirmation": "Obrigado por entrar em contato. Nós lhe retornaremos assim que possível.",
     "404_page_not_found": "404 Página não encontrada",
-    "page_does_not_exist_html": "A página que você solicitou não existe. Clique <a href='{{ url }}'>aqui</a> para voltar às compras.",
+    "page_does_not_exist_html": "A página que você solicitou não existe. Clique <a href='{{ url }}'>aqui<\/a> para voltar às compras.",
     "you_save_amount": "Economize {{ saved_amount }}",
     "search_result_count": {
       "one": "{{ count }} resultado",
@@ -132,12 +141,12 @@
     "search_no_results_html": "Sua busca por \"{{ terms }}\" não gerou resultados.",
     "address_error": "Não é possível localizar o endereço",
     "address_no_results": "Nenhum resultado para este endereço",
-    "address_query_limit_html": "Você excedeu a cota de uso da API do Google. Considere a atualização para um <a href=\"https://developers.google.com/maps/premium/usage-limits\">Plano Premium</a>.",
-    "map_auth_error_html": "Houve um problema autenticação de sua conta do Google Maps. Criar e ativar a <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">API JavaScript</a> e permissões de <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">geocodificação da API</a> do seu aplicativo.",
+    "address_query_limit_html": "Você excedeu a cota de uso da API do Google. Considere a atualização para um <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Plano Premium<\/a>.",
+    "map_auth_error_html": "Houve um problema autenticação de sua conta do Google Maps. Criar e ativar a <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">API JavaScript<\/a> e permissões de <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">geocodificação da API<\/a> do seu aplicativo.",
     "pick_up_available": "transbordo",
     "pick_up_currently_unavailable": "Captador atualmente indisponível",
-    "pick_up_available_at_html": "Captador disponível em <strong> {{location_name}} </strong>",
-    "pick_up_unavailable_at_html": "Captador disponível atualmente em <strong> {{location_name}} </strong>",
+    "pick_up_available_at_html": "Captador disponível em <strong> {{location_name}} <\/strong>",
+    "pick_up_unavailable_at_html": "Captador disponível atualmente em <strong> {{location_name}} <\/strong>",
     "cart_max_quantity": "Solo puedes tener {{ quantity }} de {{ title }} en tu carrito.",
     "create_your_password_to_activate": "Crie uma senha para ativar a sua conta.",
     "disabled": "Inválido",
@@ -159,7 +168,7 @@
     "unavailable": "Indisponível",
     "will_be_powered_by_html": "Esta loja será patrocinada por {{ shopify }}",
     "you_must_agree": "Você deve concordar com os termos e condições de vendas para verificar",
-    "admin_link_html": "Você é o dono da loja? <a href=\"/admin\" class=\"text-link\">Faça login aqui</a>"
+    "admin_link_html": "Você é o dono da loja? <a href=\"\/admin\" class=\"text-link\">Faça login aqui<\/a>"
   },
   "labels": {
     "home": "Início",
@@ -204,7 +213,7 @@
     "pages": "Páginas:",
     "articles": "Artigos:",
     "products": "Produtos",
-    "from_price_html": "<span>A partir de</span> {{ price }}",
+    "from_price_html": "<span>A partir de<\/span> {{ price }}",
     "tagged_with": "Marcado \"{{ tags }}\"",
     "page_title": "Página {{ page }}",
     "my_account": "Minha conta",

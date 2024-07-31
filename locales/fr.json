@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "actions": {
     "slideshow_pause": "Diaporama Pause",
@@ -11,7 +20,7 @@
     "send_as_gift": "Je veux envoyer ce produit comme cadeau",
     "add_order_note": "Ajouter des instructions de commande spéciales",
     "close": "Fermer",
-    "terms_i_agree_html": "Je suis d'accord avec les <a href='{{ url }}' target='_blank'>termes et conditions</a>",
+    "terms_i_agree_html": "Je suis d'accord avec les <a href='{{ url }}' target='_blank'>termes et conditions<\/a>",
     "terms_i_agree": "Je suis d'accord avec les termes et conditions",
     "checkout": "Procéder au paiement",
     "expand_submenu": "Ouvrir le menu",
@@ -103,7 +112,7 @@
     "save_amount": "Épargnez {{ saved_amount }}",
     "placeholder_product_description": "Cette partie est utilisée pour la fiche du produit. Parlez aux clients de l'allure, du ressenti et du style de votre produit. Ajoutez des détails sur la couleur, les matériaux utilisés, le dimensionnement, et où il a été fabriqué.",
     "tax_included": "Taxes incluses.",
-    "shipping_policy_html": "<a href='{{ link }}'>Frais d'expédition</a> calculés lors du passage à la caisse.",
+    "shipping_policy_html": "<a href='{{ link }}'>Frais d'expédition<\/a> calculés lors du passage à la caisse.",
     "sold_out": "Épuisé",
     "view_in_space_explanation": "Affichage dans votre espace, charge l'article dans une fenêtre de réalité augmentée",
     "low_stock_count": {
@@ -123,7 +132,7 @@
     },
     "contact_confirmation": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible.",
     "404_page_not_found": "404 - Page non trouvée",
-    "page_does_not_exist_html": "Cette page n'est pas disponible. <a href='{{ url }}'>Retourner au magasinage</a>",
+    "page_does_not_exist_html": "Cette page n'est pas disponible. <a href='{{ url }}'>Retourner au magasinage<\/a>",
     "you_save_amount": "Épargnez {{ saved_amount }}",
     "search_result_count": {
       "one": "{{ count }} résultat",
@@ -132,12 +141,12 @@
     "search_no_results_html": "Rechercher \"{{ terms }}\"",
     "address_error": "Vous ne trouvez pas cette adresse",
     "address_no_results": "Aucun résultat pour cette adresse",
-    "address_query_limit_html": "Vous avez dépassé la limite de Google utilisation de l'API. Envisager la mise à niveau à un <a href=\"https://developers.google.com/maps/premium/usage-limits\">régime spécial</a>.",
-    "map_auth_error_html": "Il y avait un problème authentifier votre compte Google Maps . Créer et activer <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">l'API JavaScript</a> et <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">l'API de géocodage</a> les autorisations de application.",
+    "address_query_limit_html": "Vous avez dépassé la limite de Google utilisation de l'API. Envisager la mise à niveau à un <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">régime spécial<\/a>.",
+    "map_auth_error_html": "Il y avait un problème authentifier votre compte Google Maps . Créer et activer <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">l'API JavaScript<\/a> et <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">l'API de géocodage<\/a> les autorisations de application.",
     "pick_up_available": "Récupération disponible",
     "pick_up_currently_unavailable": "Récupération actuellement indisponible",
-    "pick_up_available_at_html": "Récupération disponible à <strong> {{location_name}} </strong>",
-    "pick_up_unavailable_at_html": "Récupération actuellement indisponible à <strong> {{location_name}} </strong>",
+    "pick_up_available_at_html": "Récupération disponible à <strong> {{location_name}} <\/strong>",
+    "pick_up_unavailable_at_html": "Récupération actuellement indisponible à <strong> {{location_name}} <\/strong>",
     "cart_max_quantity": "Vous ne pouvez avoir que {{ quantity }} de {{ title }} dans votre panier.",
     "create_your_password_to_activate": "Créez votre mot de passe pour activer le compte.",
     "disabled": "Désactivée",
@@ -159,7 +168,7 @@
     "unavailable": "Non disponible",
     "will_be_powered_by_html": "Cette boutique sera propulsée par {{ shopify }}",
     "you_must_agree": "Vous devez accepter les termes et conditions de vente pour vérifier",
-    "admin_link_html": "Êtes-vous le propriétaire de la boutique? <a href=\"/admin\" class=\"text-link\">Connectez-vous ici</a>."
+    "admin_link_html": "Êtes-vous le propriétaire de la boutique? <a href=\"\/admin\" class=\"text-link\">Connectez-vous ici<\/a>."
   },
   "labels": {
     "home": "Accueil",
@@ -204,7 +213,7 @@
     "pages": "Pages",
     "articles": "Des articles",
     "products": "Produits",
-    "from_price_html": "<span>À partir de</span> {{ price }}",
+    "from_price_html": "<span>À partir de<\/span> {{ price }}",
     "tagged_with": "Mots clés \"{{ tags }}\"",
     "page_title": "Page {{ page }}",
     "my_account": "Mon compte",

@@ -1,1 +1,48 @@
-{"type":"custom.popups","name":"t:labels.popups","sections":{"newsletter-popup":{"type":"newsletter-popup","blocks":{"reminder-block":{"type":"header","disabled":true,"settings":{}}},"block_order":["reminder-block"],"settings":{"popup_seconds":5,"popup_days":30,"popup_title":"Save 10% off your first purchase","popup_text":"<p>Sign up today and we&#x27;ll send you a 10% discount code towards your first purchase.<\/p>","color_scheme":"3","enable_newsletter":true,"button_label":"Optional button"}},"age-verification-popup":{"type":"age-verification-popup","disabled":true,"settings":{}}},"order":["newsletter-popup","age-verification-popup"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "type": "custom.popups",
+  "name": "t:labels.popups",
+  "sections": {
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "blocks": {
+        "reminder-block": {
+          "type": "header",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "reminder-block"
+      ],
+      "settings": {
+        "popup_seconds": 5,
+        "popup_days": 30,
+        "popup_title": "Save 10% off your first purchase",
+        "popup_text": "<p>Sign up today and we&#x27;ll send you a 10% discount code towards your first purchase.<\/p>",
+        "color_scheme": "3",
+        "enable_newsletter": true,
+        "button_label": "Optional button"
+      }
+    },
+    "age-verification-popup": {
+      "type": "age-verification-popup",
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "newsletter-popup",
+    "age-verification-popup"
+  ]
+}

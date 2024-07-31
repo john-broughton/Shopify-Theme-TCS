@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "actions": {
     "slideshow_pause": "Pause slideshow",
@@ -11,7 +20,7 @@
     "send_as_gift": "I want to send this as a gift",
     "add_order_note": "Add order note",
     "close": "Close",
-    "terms_i_agree_html": "I agree with the <a href='{{ url }}' target='_blank'>terms and conditions</a>",
+    "terms_i_agree_html": "I agree with the <a href='{{ url }}' target='_blank'>terms and conditions<\/a>",
     "terms_i_agree": "I agree with the terms and conditions",
     "checkout": "Check out",
     "expand_submenu": "Expand submenu",
@@ -103,14 +112,14 @@
     "save_amount": "Save {{ saved_amount }}",
     "placeholder_product_description": "This area is used to describe your product’s details. Tell customers about the look, feel, and style of your product. Add details on color,  materials used, sizing, and where it was made.",
     "tax_included": "Tax included.",
-    "shipping_policy_html": "<a href='{{ link }}'>Shipping</a> calculated at checkout.",
+    "shipping_policy_html": "<a href='{{ link }}'>Shipping<\/a> calculated at checkout.",
     "sold_out": "Sold Out",
     "view_in_space_explanation": "View in your space, loads item in augmented reality window",
     "low_stock_count": {
       "one": "Low stock - {{ count }} item left",
       "other": "Low stock - {{ count }} items left"
     },
-    "in_stock": "In stock, ready to ship",
+    "in_stock": "In stock, ready for pickup!",
     "back_in_stock_on": "Back in stock {{ date }}",
     "backordered": "Backordered, shipping soon",
     "section_no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar.",
@@ -123,7 +132,7 @@
     },
     "contact_confirmation": "Thanks for contacting us. We'll get back to you as soon as possible.",
     "404_page_not_found": "404 Page Not Found",
-    "page_does_not_exist_html": "<p>The page you were looking for does not exist. </p><p><a href='{{ url }}'>Continue shopping</a></p>",
+    "page_does_not_exist_html": "<p>The page you were looking for does not exist. <\/p><p><a href='{{ url }}'>Continue shopping<\/a><\/p>",
     "you_save_amount": "You save {{ saved_amount }}",
     "search_result_count": {
       "one": "{{ count }} result",
@@ -132,12 +141,12 @@
     "search_no_results_html": "Search for \"{{ terms }}\"",
     "address_error": "Error looking up that address",
     "address_no_results": "No results for that address",
-    "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium Plan</a>.",
-    "map_auth_error_html": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> and <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> permissions of your app.",
+    "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium Plan<\/a>.",
+    "map_auth_error_html": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> and <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> permissions of your app.",
     "pick_up_available": "Pickup available",
     "pick_up_currently_unavailable": "Pickup currently unavailable",
-    "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
-    "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>",
+    "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}<\/strong>",
+    "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}<\/strong>",
     "cart_max_quantity": "You can only have {{ quantity }} of {{ title }} in your cart.",
     "create_your_password_to_activate": "Create your password to activate your account.",
     "disabled": "Disabled",
@@ -159,7 +168,7 @@
     "unavailable": "Unavailable",
     "will_be_powered_by_html": "This shop will be powered by {{ shopify }}",
     "you_must_agree": "You must agree with the terms and conditions of sales to check out",
-    "admin_link_html": "Store owner? <a href=\"/admin\" class=\"text-link\">Log in here</a>"
+    "admin_link_html": "Store owner? <a href=\"\/admin\" class=\"text-link\">Log in here<\/a>"
   },
   "labels": {
     "home": "Home",
@@ -204,7 +213,7 @@
     "pages": "Pages",
     "articles": "Articles",
     "products": "Products",
-    "from_price_html": "<span>from</span> {{ price }}",
+    "from_price_html": "<span>from<\/span> {{ price }}",
     "tagged_with": "Tagged \"{{ tags }}\"",
     "page_title": "Page {{ page }}",
     "my_account": "My account",
@@ -242,7 +251,7 @@
     "tax": "Tax",
     "top_searched": "Top searched",
     "total": "Total",
-    "zip": "Postal/Zip code",
+    "zip": "Postal\/Zip code",
     "your_password": "Your password"
   },
   "trigger": {
@@ -251,5 +260,10 @@
   },
   "date_formats": {
     "month_day_year": "%b %d, %Y"
+  },
+  "sections": {
+    "countdown": {
+      "section_name": "countdown"
+    }
   }
 }
