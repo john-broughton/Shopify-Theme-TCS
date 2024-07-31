@@ -76,7 +76,7 @@
     "cart_additional_buttons": true,
     "cart_collection": "newsletter-products",
     "cart_notes_enable": false,
-    "cart_terms_conditions_enable": true,
+    "cart_terms_conditions_enable": false,
     "cart_terms_conditions_page": "adult-cooking-class-waiver-form-hold-harmless-agreement-waiver-and-release",
     "social_facebook_link": "https:\/\/www.facebook.com\/thecooksstation",
     "social_twitter_link": "",
