@@ -77,6 +77,9 @@
         "sales_point",
         "inventory_status"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
         "image_position": "left",
         "image_container_size": "large",
