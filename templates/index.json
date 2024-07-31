@@ -33,8 +33,8 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h2>CLASSES & DINNERS<\/h2>",
-            "title_size": 40,
+            "title": "<h1>CLASSES & DINNERS<\/h1>",
+            "title_size": 60,
             "subheading": "Sharpen your culinary skills or learn something new!",
             "link": "shopify:\/\/collections\/in-store-classes",
             "link_text": "View Classes",
