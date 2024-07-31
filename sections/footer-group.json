@@ -1,1 +1,69 @@
-{"type":"footer","name":"t:labels.footer_group","sections":{"footer-promotions":{"type":"footer-promotions","blocks":{"footer-promotions-0":{"type":"promotion","settings":{"enable_image":true,"color_scheme":"1"}},"footer-promotions-1":{"type":"promotion","settings":{"enable_image":true,"color_scheme":"3"}},"footer-promotions-2":{"type":"promotion","settings":{"enable_image":true,"color_scheme":"2"}}},"block_order":["footer-promotions-0","footer-promotions-1","footer-promotions-2"],"settings":{}},"footer":{"type":"footer","blocks":{"footer-0":{"type":"menu","settings":{"menu":"footer","enable_account_link":false}},"footer-1":{"type":"contact","settings":{"phone":"+1 800 123 1234","enable_social":true}},"footer-2":{"type":"payment","settings":{"show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true}}},"block_order":["footer-0","footer-1","footer-2"],"settings":{}}},"order":["footer-promotions","footer"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "type": "footer",
+  "name": "t:labels.footer_group",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "settings": {
+        "hide_homepage": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "menu",
+          "settings": {
+            "title": "",
+            "menu": "footer",
+            "enable_account_link": false
+          }
+        },
+        "footer-1": {
+          "type": "contact",
+          "settings": {
+            "phone": "+1 800 123 1234",
+            "contact": "",
+            "chat": "",
+            "enable_social": true
+          }
+        },
+        "footer-2": {
+          "type": "payment",
+          "settings": {
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "footer-2"
+      ],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_richtext": "<p>Subscribe today to hear first about our sales<\/p>",
+        "footer_main_menu": true,
+        "show_copyright": false,
+        "copyright_text": "",
+        "policies_menu": ""
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}
