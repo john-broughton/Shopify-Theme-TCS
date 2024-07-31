@@ -70,9 +70,12 @@
         "full_width": true,
         "space_around": true
       }
-    } ,
+    },
     "featured_collection_fQUYhY": {
       "type": "featured-collection",
+      "custom_css": [
+
+      ],
       "settings": {
         "title": "Dinners, Flights, & Bites",
         "heading_size": "h0",
@@ -80,7 +83,7 @@
         "home_featured_products": "events",
         "count": 75,
         "products_per_row": 4,
-        "mobile_scrollable": false,
+        "mobile_scrollable": true,
         "view_all": true,
         "divider": true
       }
