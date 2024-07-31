@@ -13,26 +13,6 @@
   "sections": {
     "toolbar": {
       "type": "toolbar",
-      "blocks": {
-        "toolbar-0": {
-          "type": "announcement",
-          "settings": {
-            "richtext": "<p>Hassle-free returns. 30-day postage paid returns<\/p>",
-            "richtext_mobile": ""
-          }
-        },
-        "toolbar-1": {
-          "type": "announcement",
-          "settings": {
-            "richtext": "",
-            "richtext_mobile": ""
-          }
-        }
-      },
-      "block_order": [
-        "toolbar-0",
-        "toolbar-1"
-      ],
       "settings": {
         "announcement_center": false,
         "toolbar_social": false,
@@ -43,14 +23,28 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "logo_WdCL9R": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/CooksStation-Black.png",
+            "logo-inverted": "shopify:\/\/shop_images\/CooksStation-White.png",
+            "desktop_logo_width": 280,
+            "mobile_logo_width": 140
+          }
+        }
+      },
+      "block_order": [
+        "logo_WdCL9R"
+      ],
       "settings": {
         "main_menu_link_list": "main-menu",
         "hover_menu": true,
-        "main_menu_alignment": "left",
+        "main_menu_alignment": "center",
         "mega_products": true,
         "header_sticky": true,
         "header_footer_menu": true,
-        "sticky_index": false,
+        "sticky_index": true,
         "sticky_collection": false
       }
     }
