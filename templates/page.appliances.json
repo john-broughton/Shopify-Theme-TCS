@@ -90,7 +90,7 @@
         "testimonial_nAygCL"
       ],
       "settings": {
-        "title": "Our Sales team",
+        "title": "Our Sales Team",
         "align_text": "center",
         "round_images": false,
         "color_scheme": "none"
@@ -216,8 +216,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Showhouse6_BlueStar.png",
             "link": "",
-            "width": "33",
-            "height": 460
+            "width": "33"
           }
         },
         "image_yF66tE": {
@@ -225,8 +224,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Prep_Area_fridgeopen_Indoor_Prod_Refrig.png",
             "link": "",
-            "width": "33",
-            "height": 460
+            "width": "33"
           }
         },
         "image_Q4yRt3": {
@@ -234,8 +232,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/20000149430.png",
             "link": "",
-            "width": "33",
-            "height": 460
+            "width": "33"
           }
         },
         "image_PAzgec": {
@@ -243,8 +240,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Background_copy.png",
             "link": "",
-            "width": "50",
-            "height": 700
+            "width": "50"
           }
         },
         "image_BVk4cC": {
@@ -252,8 +248,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Bosch_kitchen2_1162cc8a-e54c-4551-a426-794bf36fca54.png",
             "link": "",
-            "width": "50",
-            "height": 700
+            "width": "50"
           }
         }
       },
