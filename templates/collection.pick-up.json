@@ -59,6 +59,9 @@
         "collection_description",
         "product_grid"
       ],
+      "custom_css": [
+
+      ],
       "settings": {
         "enable_sidebar": true,
         "collapse_filters": true,
