@@ -50,8 +50,8 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h2>CAFE & BAR<\/h2>",
-            "title_size": 50,
+            "title": "<h1>CAFE & BAR<\/h1>",
+            "title_size": 60,
             "subheading": "Come grab a meal or a drink!",
             "link": "shopify:\/\/pages\/cafe",
             "link_text": "Cafe Menu",
