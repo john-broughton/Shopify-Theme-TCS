@@ -16,8 +16,8 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h2>THE BEST STORIES ARE TOLD WITH FOOD<\/h2>",
-            "title_size": 61,
+            "title": "<h1>THE BEST STORIES ARE TOLD WITH FOOD<\/h1>",
+            "title_size": 60,
             "subheading": "Lean more about The Cook's Station below!",
             "link": "shopify:\/\/pages\/about-us",
             "link_text": "ABOUT US",
