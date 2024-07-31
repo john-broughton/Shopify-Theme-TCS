@@ -321,9 +321,7 @@ class Slideshow {
 }
 
 class SlideshowSection extends HTMLElement {
-  constructor() {
-    super()
-
+  connectedCallback() {
     this.container = this.querySelector('[data-section-type="slideshow-section"]')
     var sectionId = this.container.getAttribute('data-section-id')
     this.slideshow = this.container.querySelector('#Slideshow-' + sectionId)
@@ -364,9 +362,7 @@ class SlideshowSection extends HTMLElement {
     // then get index of it inside its parent
     var sectionEl = this.container.parentElement
     var sectionIndex = [].indexOf.call(sectionEl.parentElement.children, sectionEl)
-  }
 
-  connectedCallback() {
     this.init()
   }
 

@@ -1,4 +1,4 @@
-{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
 {%- comment -%}
   Renders a collection grid.
 
@@ -16,13 +16,13 @@
   if context.products
     assign count = context.products_count
     assign count_label = 'info.product_count' | t: count: count
-    assign items = context.products
+    assign items = items | default: context.products
   endif
 
   if context.results
     assign count = context.results_count
     assign count_label = 'info.search_result_count' | t: count: count
-    assign items = context.results
+    assign items = items | default: context.results
   endif
 
   assign current_filter_size = 0
