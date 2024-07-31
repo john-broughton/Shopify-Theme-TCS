@@ -1,1 +1,62 @@
-{"type":"header","name":"t:labels.header_group","sections":{"header":{"type":"header","settings":{"main_menu_link_list":"main-menu","main_menu_alignment":"left","header_sticky":true,"sticky_index":false,"sticky_collection":false}},"toolbar":{"type":"toolbar","blocks":{"toolbar-0":{"type":"announcement","settings":{}},"toolbar-1":{"type":"announcement","settings":{}}},"block_order":["toolbar-0","toolbar-1"],"settings":{}}},"order":["toolbar","header"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "type": "header",
+  "name": "t:labels.header_group",
+  "sections": {
+    "toolbar": {
+      "type": "toolbar",
+      "blocks": {
+        "toolbar-0": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "<p>Hassle-free returns. 30-day postage paid returns<\/p>",
+            "richtext_mobile": ""
+          }
+        },
+        "toolbar-1": {
+          "type": "announcement",
+          "settings": {
+            "richtext": "",
+            "richtext_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "toolbar-0",
+        "toolbar-1"
+      ],
+      "settings": {
+        "announcement_center": false,
+        "toolbar_social": false,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "show_currency_flags": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "main_menu_link_list": "main-menu",
+        "hover_menu": true,
+        "main_menu_alignment": "left",
+        "mega_products": true,
+        "header_sticky": true,
+        "header_footer_menu": true,
+        "sticky_index": false,
+        "sticky_collection": false
+      }
+    }
+  },
+  "order": [
+    "toolbar",
+    "header"
+  ]
+}
