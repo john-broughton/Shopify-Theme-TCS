@@ -1,4 +1,4 @@
-{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
 {%- comment -%}
   Renders a section with a grid of promotional blocks.
 
@@ -21,7 +21,7 @@
   assign space_above = space_above | default: section.settings.space_above, allow_false: true | default: false, allow_false: true
   assign space_below = space_below | default: section.settings.space_below, allow_false: true | default: false, allow_false: true
   assign hide_block_images = hide_block_images | default: section.settings.hide_block_images, allow_false: true | default: false, allow_false: true
-  assign promo_grid_image_ratio = promo_grid_image_ratio | default: section.settings.promo_grid_image_ratio, allow_false: true | default: true, allow_false: true
+  assign promo_grid_image_ratio = promo_grid_image_ratio | default: section.settings.promo_grid_image_ratio, allow_false: true | default: false, allow_false: true
   assign hydration = hydration | default: 'on:visible'
 
   assign lazyload_images = true
@@ -566,7 +566,7 @@
       import '@archetype-themes/scripts/modules/video-section'
       import videoModal from '@archetype-themes/scripts/modules/video-modal'
 
-      videoModal();
+      videoModal()
     </script>
   </template>
 </is-land>

@@ -1,1 +1,69 @@
-{"type":"footer","name":"t:labels.footer_group","sections":{"footer-promotions":{"type":"footer-promotions","settings":{"hide_homepage":false}},"footer":{"type":"footer","blocks":{"91f41b56-8593-4d23-be98-010977bba37a":{"type":"menu","settings":{"title":"Navigate","menu":"main-menu","enable_account_link":false}},"6a209cf1-5088-40af-99cd-ee090ad6a73f":{"type":"menu","settings":{"title":"","menu":"connect","enable_account_link":false}},"footer-0":{"type":"menu","disabled":true,"settings":{"title":"","menu":"footer","enable_account_link":false}},"6fa99a7b-46e0-4410-ad0a-9e1fada5f727":{"type":"menu","disabled":true,"settings":{"title":"","menu":"","enable_account_link":false}},"fe6a67a0-686e-435b-a946-f28802053c97":{"type":"contact","settings":{"phone":"864-250-0091","contact":"contact","chat":"","enable_social":true}},"c296bc3e-1d7f-4750-b993-050176521596":{"type":"payment","settings":{"show_payment_icons":true,"show_locale_selector":true,"show_currency_selector":true,"show_currency_flags":true}}},"block_order":["91f41b56-8593-4d23-be98-010977bba37a","6a209cf1-5088-40af-99cd-ee090ad6a73f","footer-0","6fa99a7b-46e0-4410-ad0a-9e1fada5f727","fe6a67a0-686e-435b-a946-f28802053c97","c296bc3e-1d7f-4750-b993-050176521596"],"settings":{"show_newsletter":true,"newsletter_richtext":"<p>Subscribe today and stay up to date with all events & offerings!<\/p>","footer_main_menu":true,"show_copyright":true,"copyright_text":"","policies_menu":"main-menu"}}},"order":["footer-promotions","footer"]}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "type": "footer",
+  "name": "t:labels.footer_group",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "settings": {
+        "hide_homepage": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "menu",
+          "settings": {
+            "title": "",
+            "menu": "footer",
+            "enable_account_link": false
+          }
+        },
+        "footer-1": {
+          "type": "contact",
+          "settings": {
+            "phone": "+1 800 123 1234",
+            "contact": "",
+            "chat": "",
+            "enable_social": true
+          }
+        },
+        "footer-2": {
+          "type": "payment",
+          "settings": {
+            "show_payment_icons": true,
+            "show_locale_selector": true,
+            "show_currency_selector": true,
+            "show_currency_flags": true
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "footer-2"
+      ],
+      "settings": {
+        "show_newsletter": true,
+        "newsletter_richtext": "<p>Subscribe today to hear first about our sales<\/p>",
+        "footer_main_menu": true,
+        "show_copyright": false,
+        "copyright_text": "",
+        "policies_menu": ""
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
+}

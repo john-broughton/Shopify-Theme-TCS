@@ -1,4 +1,4 @@
-/* components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License */
+/* components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License */
 /*!
  * Flickity PACKAGED v2.3.0
  * Touch, responsive, flickable carousels

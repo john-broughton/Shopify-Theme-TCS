@@ -1,4 +1,4 @@
-{% # components v2.10.63 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
 {%- comment -%}
   Renders the main collection section.
 
@@ -63,7 +63,7 @@
                     {%- endif -%}
                   {%- when 'product_grid' -%}
                     <div {{ block.shopify_attributes }}>
-                      {%- render 'collection-grid', context: collection, grid_style: block.settings.grid_style -%}
+                      {%- render 'collection-grid', context: collection, items: collection.products, grid_style: block.settings.grid_style -%}
                     </div>
 
                     {%- liquid
