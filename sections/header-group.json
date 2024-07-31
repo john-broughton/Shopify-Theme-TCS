@@ -15,7 +15,7 @@
       "type": "toolbar",
       "settings": {
         "announcement_center": false,
-        "toolbar_social": false,
+        "toolbar_social": true,
         "show_locale_selector": true,
         "show_currency_selector": true,
         "show_currency_flags": true
