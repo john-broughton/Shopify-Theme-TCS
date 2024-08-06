@@ -44,7 +44,7 @@
         "{font: inherit; font-size: x-large;}"
       ],
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "gutter_size": 0,
         "space_above": false,
         "space_below": false
