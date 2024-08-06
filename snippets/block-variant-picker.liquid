@@ -19,6 +19,8 @@
   assign swatch_style = swatch_style | default: settings.swatch_style | default: 'round'
 -%}
 
+<h2>{{ product.type }}</h2>
+
 {%- unless product.has_only_default_variant -%}
   <block-variant-picker
     class="block-variant-picker product-block"
