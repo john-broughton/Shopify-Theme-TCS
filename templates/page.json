@@ -381,7 +381,7 @@
         "advanced_TJRign"
       ],
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "gutter_size": 20,
         "space_above": true,
         "space_below": true
