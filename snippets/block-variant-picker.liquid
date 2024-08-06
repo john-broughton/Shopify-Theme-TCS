@@ -19,8 +19,6 @@
   assign swatch_style = swatch_style | default: settings.swatch_style | default: 'round'
 -%}
 
-<h2>{{ product.type }}</h2>
-
 {%- unless product.has_only_default_variant -%}
   <block-variant-picker
     class="block-variant-picker product-block"
@@ -52,4 +50,45 @@
   <script type="module">
     import 'components/block-variant-picker'
   </script>
+
+  {% if product.type == 'MRGC' %}                  
+      <div class="mr-gc-product" data-mr-hash="QDQfByovfmIewPa3ezB55Q=="></div>
+
+      <script>
+          function _MR_Product_GiftCard() {
+              return {
+                  "url": "https://widget01.modernretail.com/gift-cards-product-page/latest/dist",
+                  "platform": "shopify",
+                  "hash": "QDQfByovfmIewPa3ezB55Q==",
+                  "beforeElement": ".mr-gc-product",
+                  "middleware": {
+                      "url": "https://middleware.modernretail.com",
+                  },
+                  "selectors": {
+                      "amount_el": ".selector-wrapper",
+                      "amount_radios": ".block-variant-picker",
+                      "form_el": ".gpo-app"
+                  }
+              };
+          }
+          setTimeout(()=>{
+            (function (w, d, s) {
+                console.log('running widget');
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s);
+                j.async = true;
+                j.src = _MR_Product_GiftCard()['url'] + '/main.js?V=6';
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script');
+          }, 500)
+
+          // const intervalButtonCheck = setInterval(function(){
+          //   if(document.getElementById('AddToCart').classList.contains('gpo-original-atc-button')) {
+          //     document.getElementById('AddToCart').classList.remove('gpo-original-atc-button');
+          //     clearInterval(intervalButtonCheck);
+          //   }
+          // }, 500)
+        
+      </script>
+   {% endif %} 
 {%- endunless -%}
