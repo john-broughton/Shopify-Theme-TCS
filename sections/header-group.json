@@ -42,7 +42,7 @@
         "hover_menu": true,
         "main_menu_alignment": "center",
         "mega_products": true,
-        "header_sticky": false,
+        "header_sticky": true,
         "header_footer_menu": true,
         "sticky_index": true,
         "sticky_collection": false
