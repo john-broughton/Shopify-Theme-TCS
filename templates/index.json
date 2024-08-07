@@ -16,7 +16,7 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h1>THE BEST STORIES ARE TOLD WITH FOOD<\/h1>",
+            "title": "<h5>THE BEST STORIES ARE TOLD WITH FOOD<\/h5>",
             "title_size": 60,
             "subheading": "Lean more about The Cook's Station below!",
             "link": "shopify:\/\/pages\/about-us",
@@ -33,7 +33,7 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h1>CLASSES & DINNERS<\/h1>",
+            "title": "<h5>CLASSES & DINNERS<\/h5>",
             "title_size": 60,
             "subheading": "Sharpen your culinary skills or learn something new!",
             "link": "shopify:\/\/collections\/in-store-classes",
@@ -67,7 +67,7 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h2>SHOP ONLINE<\/h2>",
+            "title": "<h5>SHOP ONLINE<\/h5>",
             "title_size": 70,
             "subheading": "Shop The Cook's Station from the comfort of your couch!",
             "link": "shopify:\/\/pages\/shop-collections",
