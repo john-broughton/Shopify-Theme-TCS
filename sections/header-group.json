@@ -29,7 +29,7 @@
           "settings": {
             "logo": "shopify:\/\/shop_images\/CooksStation-Black.png",
             "logo-inverted": "shopify:\/\/shop_images\/CooksStation-White.png",
-            "desktop_logo_width": 280,
+            "desktop_logo_width": 220,
             "mobile_logo_width": 140
           }
         }
