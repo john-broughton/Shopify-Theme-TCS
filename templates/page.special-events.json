@@ -41,33 +41,11 @@
       ],
       "settings": {
         "full_width": true,
-        "desktop_size": -10,
+        "desktop_size": -20,
         "mobile_size": 0,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
-      }
-    },
-    "a4194086-e077-4365-93db-a101e2c6a3e9": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Burger.jpg",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "TCS BURGER NIGHT - July 30th",
-        "heading_size": "h2",
-        "text": "<p>Join us for Burger Night on July 30th from 5:30 pm-7:30 pm! This is not a ticketed event, it's first come first serve. <\/p><p><a href=\"\/pages\/contact\" title=\"Contact\">Please contact us with any questions.<\/a><\/p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
       }
     },
     "text_and_image_iV6NVF": {
@@ -131,7 +109,6 @@
   "order": [
     "main",
     "1644519722c7610927",
-    "a4194086-e077-4365-93db-a101e2c6a3e9",
     "text_and_image_iV6NVF",
     "text_and_image_WHRXBw",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
