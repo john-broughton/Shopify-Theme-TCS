@@ -59,7 +59,7 @@
     "product_save_type": "dollar",
     "vendor_enable": true,
     "swatch_size": 34,
-    "quick_shop_enable": true,
+    "quick_shop_enable": false,
     "quick_add_enable": true,
     "product_grid_image_size": "square",
     "product_grid_image_fill": false,
