@@ -31,8 +31,8 @@
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-bottom horizontal-left",
-            "image": "shopify:\/\/shop_images\/1709312998046_t7joktqw_bd5943bf-ce16-4d87-982e-729ba1cbf8c7.jpg",
-            "overlay_opacity": 0
+            "image": "shopify:\/\/shop_images\/AdobeStock_255941989.jpg",
+            "overlay_opacity": 20
           }
         }
       },
@@ -41,8 +41,8 @@
       ],
       "settings": {
         "full_width": true,
-        "desktop_size": -20,
-        "mobile_size": -20,
+        "desktop_size": 0,
+        "mobile_size": 20,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
