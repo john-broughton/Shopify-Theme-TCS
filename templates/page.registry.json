@@ -15,39 +15,37 @@
       "settings": {
       }
     },
-    "promo_grid_weDiHz": {
-      "type": "promo-grid",
+    "slideshow_Bdtww8": {
+      "type": "slideshow",
       "blocks": {
-        "advanced_iGmnKd": {
-          "type": "advanced",
+        "hero_RcXXCn": {
+          "type": "hero",
           "settings": {
-            "subheading": "",
-            "heading": "Gift Registry",
-            "textarea": "At The Cook's Station, we're more than just a store; we're your partners in creating the kitchen of your dreams. Our registry service is designed to make your journey into marital bliss even more extraordinary.",
-            "cta_text1": "More Information",
-            "cta_link1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/Bridal_Registry_papers_.pdf.png?v=1715606318",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/casafina-taormina-lifestyle-image-21_1_0ec5c498-ce6d-4093-a71b-9cd9aecac2bf.jpg",
-            "video_url": "",
-            "width": "100",
-            "height": 600,
+            "top_subheading": "",
+            "title": "<p>Gift Registry<\/p>",
+            "title_size": 70,
+            "subheading": "At The Cook's Station, we're more than just a store; we're your partners in creating the kitchen of your dreams. Our registry service is designed to make your journey into marital bliss even more extraordinary.",
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/Bridal_Registry_papers_.pdf.png?v=1715606318",
+            "link_text": "More Information",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
             "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
+            "image": "shopify:\/\/shop_images\/casafina-taormina-lifestyle-image-21_1.jpg",
+            "overlay_opacity": 16
           }
         }
       },
       "block_order": [
-        "advanced_iGmnKd"
-      ],
-      "custom_css": [
-        "{font: inherit; font-size: x-large;}"
+        "hero_RcXXCn"
       ],
       "settings": {
         "full_width": true,
-        "gutter_size": 0,
-        "space_above": false,
-        "space_below": false
+        "desktop_size": -20,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "testimonials_nxaqjC": {
@@ -365,7 +363,7 @@
   },
   "order": [
     "main",
-    "promo_grid_weDiHz",
+    "slideshow_Bdtww8",
     "testimonials_nxaqjC",
     "promo_grid_cpHzm9",
     "testimonials_7hiFw9",
