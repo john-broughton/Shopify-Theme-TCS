@@ -32,11 +32,45 @@
       "block_order": [
         "template--15684036886753__42a44c76-1c04-476b-8f66-1bb9901e6cb9-heading-1"
       ],
+      "disabled": true,
       "settings": {
         "align_text": "center",
         "narrow_column": true,
         "color_scheme": "2",
         "divider": false
+      }
+    },
+    "slideshow_7DAGex": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_Bj8fi9": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Cooking Classes<\/p>",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/AdobeStock_255941989.jpg",
+            "overlay_opacity": 20
+          }
+        }
+      },
+      "block_order": [
+        "hero_Bj8fi9"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "main-collection": {
@@ -148,6 +182,7 @@
   "order": [
     "collection-header",
     "42a44c76-1c04-476b-8f66-1bb9901e6cb9",
+    "slideshow_7DAGex",
     "main-collection",
     "recently-viewed",
     "faq_np9LMV"
