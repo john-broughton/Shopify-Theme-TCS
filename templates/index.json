@@ -91,7 +91,7 @@
         "full_width": true,
         "desktop_size": -20,
         "mobile_size": 100,
-        "style": "dots",
+        "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 8
       }
