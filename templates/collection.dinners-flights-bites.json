@@ -9,27 +9,6 @@
 */
 {
   "sections": {
-    "rich_text_YGMaJc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_JR3kHg": {
-          "type": "heading",
-          "settings": {
-            "title": "Dinners, Flights, and Bites",
-            "heading_size": "h1"
-          }
-        }
-      },
-      "block_order": [
-        "heading_JR3kHg"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "2",
-        "divider": false
-      }
-    },
     "collection-header": {
       "type": "collection-header",
       "settings": {
@@ -37,6 +16,39 @@
         "collection_image_enable": true,
         "parallax": true,
         "parallax_direction": "top"
+      }
+    },
+    "slideshow_C8htKn": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_4D7z7z": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Dinners, Flights, & Bites<\/p>",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/urban-farmer_wine.webp",
+            "overlay_opacity": 26
+          }
+        }
+      },
+      "block_order": [
+        "hero_4D7z7z"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -30,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "main-collection": {
@@ -74,8 +86,8 @@
     }
   },
   "order": [
-    "rich_text_YGMaJc",
     "collection-header",
+    "slideshow_C8htKn",
     "main-collection",
     "recently-viewed"
   ]
