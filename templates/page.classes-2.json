@@ -42,7 +42,7 @@
       "settings": {
         "full_width": true,
         "desktop_size": -20,
-        "mobile_size": 20,
+        "mobile_size": 10,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
