@@ -78,7 +78,7 @@
       ],
       "settings": {
         "title": "Dinners, Flights, & Bites",
-        "heading_size": "h0",
+        "heading_size": "h1",
         "heading_position": "center",
         "home_featured_products": "events",
         "count": 75,
@@ -92,7 +92,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Classes",
-        "heading_size": "h0",
+        "heading_size": "h1",
         "heading_position": "center",
         "home_featured_products": "in-store-classes",
         "count": 75,
