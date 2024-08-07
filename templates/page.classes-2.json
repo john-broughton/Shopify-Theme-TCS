@@ -30,7 +30,7 @@
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
-            "text_align": "vertical-bottom horizontal-center",
+            "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/christa-rene-photography-72_a7b3497d-b348-42c8-92ca-eb342ff3bf48.jpg",
             "overlay_opacity": 26
           }
@@ -39,15 +39,15 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>Classes, Dinners, Flights, & Bites<\/p>",
+            "title": "<h5>Classes, Dinners, Flights, & Bites<\/h5>",
             "title_size": 70,
-            "subheading": "And optional subtext",
+            "subheading": "",
             "link": "",
-            "link_text": "Optional button",
+            "link_text": "",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#fff",
-            "text_align": "vertical-bottom horizontal-left",
+            "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/christa-rene-photography-69.jpg",
             "overlay_opacity": 0
           }
