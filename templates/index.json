@@ -50,8 +50,8 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h1>CAFE & BAR<\/h1>",
-            "title_size": 60,
+            "title": "<h5>CAFE & BAR<\/h5>",
+            "title_size": 70,
             "subheading": "Come grab a meal or a drink!",
             "link": "shopify:\/\/pages\/cafe",
             "link_text": "Cafe Menu",
@@ -60,7 +60,7 @@
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
-            "overlay_opacity": 12
+            "overlay_opacity": 20
           }
         },
         "hero_7cqwiA": {
