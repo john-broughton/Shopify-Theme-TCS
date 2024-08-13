@@ -18,6 +18,7 @@
           "type": "header",
           "disabled": true,
           "settings": {
+            "reminder_label": "Get 10% off"
           }
         }
       },
@@ -25,19 +26,33 @@
         "reminder-block"
       ],
       "settings": {
+        "disable_for_account_holders": true,
         "popup_seconds": 5,
         "popup_days": 30,
-        "popup_title": "Save 10% off your first purchase",
-        "popup_text": "<p>Sign up today and we&#x27;ll send you a 10% discount code towards your first purchase.<\/p>",
+        "popup_title": "",
+        "popup_text": "",
+        "image_position": "left",
         "color_scheme": "3",
+        "show_social_icons": false,
         "enable_newsletter": true,
-        "button_label": "Optional button"
+        "button_label": "Optional button",
+        "button_link": ""
       }
     },
     "age-verification-popup": {
       "type": "age-verification-popup",
       "disabled": true,
       "settings": {
+        "enable_test_mode": false,
+        "color_scheme": "none",
+        "blur_image": false,
+        "heading": "Confirm your age",
+        "text": "<p>Are you 18 years old or older?<\/p>",
+        "decline_button_label": "No I'm not",
+        "approve_button_label": "Yes I am",
+        "decline_heading": "Come back when you're older",
+        "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.<\/p>",
+        "return_button_label": "Oops, I entered incorrectly"
       }
     }
   },
