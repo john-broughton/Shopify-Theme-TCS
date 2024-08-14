@@ -46,23 +46,6 @@
             "overlay_opacity": 20
           }
         },
-        "hero_XrU3gV": {
-          "type": "hero",
-          "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 70,
-            "subheading": "",
-            "link": "",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#fff",
-            "text_align": "vertical-bottom horizontal-left",
-            "image": "shopify:\/\/shop_images\/store_wide_sale_facebook.png",
-            "overlay_opacity": 0
-          }
-        },
         "hero_WyD4ky": {
           "type": "hero",
           "settings": {
@@ -97,14 +80,31 @@
             "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262895.jpg",
             "overlay_opacity": 0
           }
+        },
+        "hero_XrU3gV": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/store_wide_sale_facebook.png",
+            "overlay_opacity": 0
+          }
         }
       },
       "block_order": [
         "slideshow-0",
         "slideshow-1",
-        "hero_XrU3gV",
         "hero_WyD4ky",
-        "hero_7cqwiA"
+        "hero_7cqwiA",
+        "hero_XrU3gV"
       ],
       "settings": {
         "full_width": true,
