@@ -108,7 +108,7 @@
       ],
       "settings": {
         "full_width": true,
-        "desktop_size": 20,
+        "desktop_size": 0,
         "mobile_size": 90,
         "style": "arrows",
         "autoplay": true,
