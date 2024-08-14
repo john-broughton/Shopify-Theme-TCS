@@ -13,18 +13,6 @@
   "sections": {
     "newsletter-popup": {
       "type": "newsletter-popup",
-      "blocks": {
-        "reminder-block": {
-          "type": "header",
-          "disabled": true,
-          "settings": {
-            "reminder_label": "Get 10% off"
-          }
-        }
-      },
-      "block_order": [
-        "reminder-block"
-      ],
       "settings": {
         "disable_for_account_holders": true,
         "popup_seconds": 5,
