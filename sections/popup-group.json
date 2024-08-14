@@ -18,12 +18,12 @@
         "popup_seconds": 5,
         "popup_days": 30,
         "popup_title": "",
-        "popup_text": "",
+        "popup_text": "<p>Subscribe to our newsletter and stay up to date with The Cook's Station!<\/p>",
         "image_position": "left",
         "color_scheme": "3",
         "show_social_icons": false,
         "enable_newsletter": true,
-        "button_label": "Optional button",
+        "button_label": "",
         "button_link": ""
       }
     },
