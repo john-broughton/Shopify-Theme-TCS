@@ -21,7 +21,7 @@
         "advanced_iGmnKd": {
           "type": "advanced",
           "settings": {
-            "subheading": "The Cook's Station",
+            "subheading": "",
             "heading": "APPLIANCES",
             "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">APPOINTMENT HOURS<\/p>\n<p style='font-size:small;font-weight:bold;\"'>• Monday- Friday: 8 am-5 pm <br>•  Saturday: 10-4 pm<br>• Closed the 1st Saturday of the month<br>•Sunday: Closed <\/p>\n<\/div>",
             "cta_text1": "CONTACT US",
