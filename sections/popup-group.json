@@ -16,7 +16,7 @@
       "settings": {
         "disable_for_account_holders": true,
         "popup_seconds": 15,
-        "popup_days": 30,
+        "popup_days": 2,
         "popup_title": "The Cook's Station Newsletter",
         "popup_text": "<p>Subscribe to our newsletter and stay up to date with The Cook's Station!<\/p>",
         "image_position": "left",
