@@ -298,24 +298,6 @@
 
     ],
     "blocks": {
-      "319724205969189013": {
-        "type": "shopify:\/\/apps\/form-builder-with-file-upload\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "3720565183479497137": {
-        "type": "shopify:\/\/apps\/globo-product-options-variant\/blocks\/app-embed-block\/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
-        "disabled": false,
-        "settings": {
-        }
-      },
-      "12741885996470144523": {
-        "type": "shopify:\/\/apps\/enorm-image-gallery-video\/blocks\/embed-js\/01219f89-c8d0-40c2-a0ff-1987199e84a2",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "1462470501251789457": {
         "type": "shopify:\/\/apps\/evey-events-tickets\/blocks\/evey\/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
         "disabled": false,
@@ -327,7 +309,25 @@
       },
       "5061257265103808445": {
         "type": "shopify:\/\/apps\/r-terms-conditions\/blocks\/embed-block\/471882a9-9b1b-4918-8943-6c66b60c94ea",
-        "disabled": false,
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "3720565183479497137": {
+        "type": "shopify:\/\/apps\/globo-product-option\/blocks\/app-embed-block\/fdc9fad5-1a0f-4bd4-9c8a-1af6a6eef6b8",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "12741885996470144523": {
+        "type": "shopify:\/\/apps\/enorm-image-gallery-video\/blocks\/embed-js\/01219f89-c8d0-40c2-a0ff-1987199e84a2",
+        "disabled": true,
         "settings": {
         }
       }
