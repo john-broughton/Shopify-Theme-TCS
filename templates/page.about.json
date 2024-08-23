@@ -31,7 +31,7 @@
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
+            "image": "shopify:\/\/shop_images\/outside_day_time_16x9_a556885d-1eb7-4f0b-a194-0ad06b53d050.jpg",
             "overlay_opacity": 22
           }
         }
@@ -41,7 +41,7 @@
       ],
       "settings": {
         "full_width": true,
-        "desktop_size": -20,
+        "desktop_size": -10,
         "mobile_size": 50,
         "style": "arrows",
         "autoplay": true,
