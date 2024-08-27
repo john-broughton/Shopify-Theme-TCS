@@ -116,41 +116,6 @@
         "space_around": true
       }
     },
-    "featured_product_FQbXWC": {
-      "type": "featured-product",
-      "blocks": {
-        "title_mc7WER": {
-          "type": "title",
-          "settings": {
-            "vendor_enable": false,
-            "sku_enable": false
-          }
-        },
-        "description_VXFtdc": {
-          "type": "description",
-          "settings": {
-            "is_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "title_mc7WER",
-        "description_VXFtdc"
-      ],
-      "settings": {
-        "product": "disney-dinner",
-        "divider": false,
-        "image_position": "left",
-        "image_container_size": "small",
-        "product_image_size": "natural",
-        "product_zoom_enable": false,
-        "thumbnail_position": "beside",
-        "thumbnail_arrows": false,
-        "mobile_layout": "partial",
-        "enable_video_looping": true,
-        "product_video_style": "muted"
-      }
-    },
     "featured_collection_fQUYhY": {
       "type": "featured-collection",
       "custom_css": [
@@ -166,41 +131,6 @@
         "mobile_scrollable": true,
         "view_all": true,
         "divider": true
-      }
-    },
-    "featured_product_Kqiyt9": {
-      "type": "featured-product",
-      "blocks": {
-        "title_pNw9D8": {
-          "type": "title",
-          "settings": {
-            "vendor_enable": false,
-            "sku_enable": false
-          }
-        },
-        "description_ab974D": {
-          "type": "description",
-          "settings": {
-            "is_tab": false
-          }
-        }
-      },
-      "block_order": [
-        "title_pNw9D8",
-        "description_ab974D"
-      ],
-      "settings": {
-        "product": "knife-skills-09-19-2024",
-        "divider": false,
-        "image_position": "right",
-        "image_container_size": "small",
-        "product_image_size": "natural",
-        "product_zoom_enable": false,
-        "thumbnail_position": "beside",
-        "thumbnail_arrows": false,
-        "mobile_layout": "partial",
-        "enable_video_looping": true,
-        "product_video_style": "muted"
       }
     },
     "featured_collection_3DTRYw": {
@@ -291,9 +221,7 @@
     "1644519722c7610927",
     "testimonials_MACaWt",
     "advanced_content_PYYHmR",
-    "featured_product_FQbXWC",
     "featured_collection_fQUYhY",
-    "featured_product_Kqiyt9",
     "featured_collection_3DTRYw",
     "faq_NHdd4h"
   ]
