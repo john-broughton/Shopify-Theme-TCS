@@ -55,7 +55,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "none",
-            "testimonial": "<h4>Vince Bienish<\/h4><p>With over three decades of culinary experience, Chef Vince Bienish has cultivated a rich career that reflects his deep-rooted passion for food. Growing up in the Hudson Valley area of New York, Vince was heavily influenced by his family’s cooking traditions, which trace back to Curinga, Italy. He honed his craft at the prestigious Culinary Institute of America, subsequently working his way through renowned hotels and local kitchens in New York City, Miami, and the Caribbean.  Since 2020, Chef Vince has brought his extensive experience and passion for food to the store at The Cook's Station. Outside the kitchen, Vince enjoys traveling whenever possible and actively participates in numerous food and wine events. His dedication to the culinary arts continues to inspire both colleagues and customers alike.<\/p>",
+            "testimonial": "<h2>Vince Bienish<\/h2><p>With over three decades of culinary experience, Chef Vince Bienish has cultivated a rich career that reflects his deep-rooted passion for food. Growing up in the Hudson Valley area of New York, Vince was heavily influenced by his family’s cooking traditions, which trace back to Curinga, Italy. He honed his craft at the prestigious Culinary Institute of America, subsequently working his way through renowned hotels and local kitchens in New York City, Miami, and the Caribbean.  Since 2020, Chef Vince has brought his extensive experience and passion for food to the store at The Cook's Station. Outside the kitchen, Vince enjoys traveling whenever possible and actively participates in numerous food and wine events. His dedication to the culinary arts continues to inspire both colleagues and customers alike.<\/p>",
             "author": "",
             "author_info": ""
           }
@@ -65,6 +65,7 @@
           "settings": {
             "icon": "none",
             "testimonial": "<h2>Tazia Young<\/h2><p>Chef Tazia Young is a talented culinary professional who graduated from Greenville Technical College with a major in culinary arts. Over the past three years at The Cook’s Station contributed her skills both in the café and as a retail associate. Chef Tazia’s true passion lies in cooking, and she takes great pride in bringing new, fresh, and exciting classes to the schedule. With a deep love for European, African, and Caribbean cuisine, Chef Tazia continuously strives to expand her culinary horizons. Keep an eye out for her at many future classes—she’s sure to bring something special to the table!<\/p>",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Headshots__25.jpg",
             "author": "",
             "author_info": ""
           }
