@@ -129,28 +129,13 @@
         "description_VXFtdc": {
           "type": "description",
           "settings": {
-            "is_tab": true
-          }
-        },
-        "price_xHdywb": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "buy_buttons_Abqn6R": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false,
-            "show_gift_card_recipient": false
+            "is_tab": false
           }
         }
       },
       "block_order": [
         "title_mc7WER",
-        "description_VXFtdc",
-        "price_xHdywb",
-        "buy_buttons_Abqn6R"
+        "description_VXFtdc"
       ],
       "settings": {
         "product": "disney-dinner",
