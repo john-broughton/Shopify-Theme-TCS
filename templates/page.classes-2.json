@@ -132,6 +132,11 @@
             "is_tab": false
           }
         },
+        "price_xHdywb": {
+          "type": "price",
+          "settings": {
+          }
+        },
         "buy_buttons_Abqn6R": {
           "type": "buy_buttons",
           "settings": {
@@ -144,6 +149,7 @@
       "block_order": [
         "title_mc7WER",
         "description_VXFtdc",
+        "price_xHdywb",
         "buy_buttons_Abqn6R"
       ],
       "settings": {
