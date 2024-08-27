@@ -63,8 +63,8 @@
         "testimonial_XbpAmU": {
           "type": "testimonial",
           "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "icon": "none",
+            "testimonial": "<h2>Tazia Young<\/h2><p>Chef Tazia Young is a talented culinary professional who graduated from Greenville Technical College with a major in culinary arts. Over the past three years at The Cook’s Station contributed her skills both in the café and as a retail associate. Chef Tazia’s true passion lies in cooking, and she takes great pride in bringing new, fresh, and exciting classes to the schedule. With a deep love for European, African, and Caribbean cuisine, Chef Tazia continuously strives to expand her culinary horizons. Keep an eye out for her at many future classes—she’s sure to bring something special to the table!<\/p>",
             "author": "Author's name",
             "author_info": "Los Angeles, CA"
           }
@@ -73,25 +73,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "testimonial_9GYWjQ": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "testimonial_MCEVVa": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "testimonial": "<h2>Craig Kuhns<\/h2><p>With over 25 years of culinary experience, Chef Craig Kuhns began his journey in Charleston, SC, after graduating from Johnson & Wales University. As the Charleston food scene blossomed, Craig honed his craft under the guidance of mentor Chef Ken Vedrinski at Trattoria Lucca, where he developed a deep passion for Italian cuisine and fine dining. His career in Charleston saw him working in some of the city's most prestigious restaurants, including The Charleston Grill, Palmetto Grill, Palmetto Café, and Basil Thai Restaurant.  Chef Craig’s rich culinary background and passion for cooking continue to inspire those around him at The Cook's Station<\/p>",
             "author": "Author's name",
             "author_info": "Los Angeles, CA"
           }
@@ -100,9 +82,7 @@
       "block_order": [
         "testimonial_JRnWLV",
         "testimonial_XbpAmU",
-        "testimonial_4MMJnU",
-        "testimonial_9GYWjQ",
-        "testimonial_MCEVVa"
+        "testimonial_4MMJnU"
       ],
       "settings": {
         "title": "Meet Our Chefs!",
