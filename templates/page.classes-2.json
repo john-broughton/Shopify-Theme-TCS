@@ -189,14 +189,14 @@
         "title_pNw9D8": {
           "type": "title",
           "settings": {
-            "vendor_enable": true,
+            "vendor_enable": false,
             "sku_enable": false
           }
         },
         "description_ab974D": {
           "type": "description",
           "settings": {
-            "is_tab": false
+            "is_tab": true
           }
         },
         "price_6JtYTA": {
@@ -207,8 +207,8 @@
         "buy_buttons_MKU97x": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "surface_pickup_enable": true,
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
             "show_gift_card_recipient": false
           }
         }
