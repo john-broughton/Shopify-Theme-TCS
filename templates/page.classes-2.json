@@ -158,7 +158,7 @@
         "image_position": "left",
         "image_container_size": "small",
         "product_image_size": "square",
-        "product_zoom_enable": true,
+        "product_zoom_enable": false,
         "thumbnail_position": "beside",
         "thumbnail_arrows": false,
         "mobile_layout": "partial",
