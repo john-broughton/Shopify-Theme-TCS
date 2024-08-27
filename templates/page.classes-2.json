@@ -129,7 +129,7 @@
         "description_VXFtdc": {
           "type": "description",
           "settings": {
-            "is_tab": false
+            "is_tab": true
           }
         },
         "price_xHdywb": {
