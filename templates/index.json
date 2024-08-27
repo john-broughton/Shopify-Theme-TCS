@@ -90,11 +90,11 @@
       ],
       "settings": {
         "full_width": true,
-        "desktop_size": -20,
+        "desktop_size": -10,
         "mobile_size": 90,
         "style": "arrows",
         "autoplay": true,
-        "autoplay_speed": 8
+        "autoplay_speed": 5
       }
     },
     "rich-text": {
