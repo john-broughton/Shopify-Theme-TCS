@@ -116,6 +116,66 @@
         "space_around": true
       }
     },
+    "featured_product_FQbXWC": {
+      "type": "featured-product",
+      "blocks": {
+        "title_mc7WER": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": true,
+            "sku_enable": false
+          }
+        },
+        "price_3aDcbY": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "description_VXFtdc": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        },
+        "variant_picker_tXcVNY": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_Abqn6R": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title_mc7WER",
+        "price_3aDcbY",
+        "description_VXFtdc",
+        "variant_picker_tXcVNY",
+        "buy_buttons_Abqn6R"
+      ],
+      "settings": {
+        "product": "",
+        "divider": false,
+        "image_position": "left",
+        "image_container_size": "medium",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
     "featured_collection_fQUYhY": {
       "type": "featured-collection",
       "custom_css": [
@@ -221,6 +281,7 @@
     "1644519722c7610927",
     "testimonials_MACaWt",
     "advanced_content_PYYHmR",
+    "featured_product_FQbXWC",
     "featured_collection_fQUYhY",
     "featured_collection_3DTRYw",
     "faq_NHdd4h"
