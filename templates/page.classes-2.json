@@ -181,28 +181,13 @@
         "description_ab974D": {
           "type": "description",
           "settings": {
-            "is_tab": true
-          }
-        },
-        "price_6JtYTA": {
-          "type": "price",
-          "settings": {
-          }
-        },
-        "buy_buttons_MKU97x": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false,
-            "show_gift_card_recipient": false
+            "is_tab": false
           }
         }
       },
       "block_order": [
         "title_pNw9D8",
-        "description_ab974D",
-        "price_6JtYTA",
-        "buy_buttons_MKU97x"
+        "description_ab974D"
       ],
       "settings": {
         "product": "knife-skills-09-19-2024",
