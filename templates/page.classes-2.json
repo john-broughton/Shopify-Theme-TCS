@@ -29,7 +29,7 @@
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/christa-rene-photography-69.jpg",
             "overlay_opacity": 16
@@ -46,6 +46,69 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
+      }
+    },
+    "testimonials_MACaWt": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_JRnWLV": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h4>Vince Bienish<\/h4><p>With over three decades of culinary experience, Chef Vince Bienish has cultivated a rich career that reflects his deep-rooted passion for food. Growing up in the Hudson Valley area of New York, Vince was heavily influenced by his family’s cooking traditions, which trace back to Curinga, Italy. He honed his craft at the prestigious Culinary Institute of America, subsequently working his way through renowned hotels and local kitchens in New York City, Miami, and the Caribbean.  Since 2020, Chef Vince has brought his extensive experience and passion for food to the store at The Cook's Station. Outside the kitchen, Vince enjoys traveling whenever possible and actively participates in numerous food and wine events. His dedication to the culinary arts continues to inspire both colleagues and customers alike.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_XbpAmU": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_4MMJnU": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_9GYWjQ": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_MCEVVa": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_JRnWLV",
+        "testimonial_XbpAmU",
+        "testimonial_4MMJnU",
+        "testimonial_9GYWjQ",
+        "testimonial_MCEVVa"
+      ],
+      "settings": {
+        "title": "Meet Our Chefs!",
+        "align_text": "center",
+        "round_images": true,
+        "color_scheme": "none"
       }
     },
     "advanced_content_PYYHmR": {
@@ -174,6 +237,7 @@
   "order": [
     "main",
     "1644519722c7610927",
+    "testimonials_MACaWt",
     "advanced_content_PYYHmR",
     "featured_collection_fQUYhY",
     "featured_collection_3DTRYw",
