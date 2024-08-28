@@ -251,9 +251,9 @@
           "settings": {
             "subheading": "",
             "heading": "Classes",
-            "textarea": "Click here to view our cooking class schedule!",
-            "cta_text1": "VIEW",
-            "cta_link1": "shopify:\/\/collections\/in-store-classes",
+            "textarea": "Click here to learn more about out cooking classes and dinners!",
+            "cta_text1": "Learn More",
+            "cta_link1": "shopify:\/\/pages\/menus",
             "cta_text2": "",
             "cta_link2": "",
             "image": "shopify:\/\/shop_images\/AdobeStock_206969205_people-cheers.jpg",
