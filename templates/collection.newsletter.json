@@ -47,6 +47,66 @@
         "parallax_direction": "top"
       }
     },
+    "featured_product_hcmyAt": {
+      "type": "featured-product",
+      "blocks": {
+        "title_mXWwk3": {
+          "type": "title",
+          "settings": {
+            "vendor_enable": true,
+            "sku_enable": false
+          }
+        },
+        "price_fbtBQy": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "description_cLUgtP": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "variant_picker_mCqiGY": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_TRV8pA": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "title_mXWwk3",
+        "price_fbtBQy",
+        "description_cLUgtP",
+        "variant_picker_mCqiGY",
+        "buy_buttons_TRV8pA"
+      ],
+      "settings": {
+        "product": "kita-8-chefs-knife-w-sheath-v-501387",
+        "divider": false,
+        "image_position": "left",
+        "image_container_size": "small",
+        "product_image_size": "square",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "mobile_layout": "partial",
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
     "main-collection": {
       "type": "main-collection",
       "blocks": {
@@ -84,6 +144,7 @@
   "order": [
     "rich_text_YGMaJc",
     "collection-header",
+    "featured_product_hcmyAt",
     "main-collection",
     "recently-viewed"
   ]
