@@ -22,7 +22,7 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Cafe",
+            "heading": "CAFE",
             "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">CAFE HOURS<\/p>\n<p style='font-size:large;font-weight:bold;\"'>• Monday- Friday: 8am-3pm<br>•  Saturday: 9AM-3pM<br>• Sunday: Closed <\/p>\n<\/div>",
             "cta_text1": "",
             "cta_link1": "",
