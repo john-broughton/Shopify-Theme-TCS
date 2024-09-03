@@ -51,13 +51,13 @@
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/August_Burger_Night_2024_Insta_1.png",
+        "image": "shopify:\/\/shop_images\/September_brunch_Menu_Instagram_Post_3.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Monthly Burger Night!",
+        "title": "Sunday Brunch- 9\/29",
         "heading_size": "h2",
-        "text": "<p>Get ready for a sizzle-filled evening at The Cook's Station! Join us for our monthly Burger Night, where we’re flipping juicy, mouthwatering burgers that are sure to delight your taste buds. No tickets are needed to attend. Order at our cafe and dine on our patio!<\/p>",
+        "text": "<p>Join us for a delightful Sunday Brunch at The Cook's Station on September 29th, from 11am-2pm! Indulge in a curated selection of delicious dishes crafted by Chef Vinnie. Dine on our screened-in patio, and enjoy a mimosa from our bar. Whether you're in the mood for savory or sweet, our menu has something for every palate. Bring your friends and family for a memorable meal and make your Sunday special with us!<\/p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -72,13 +72,12 @@
     },
     "text_and_image_WHRXBw": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/July_Italian_Dinner.png",
+        "image": "shopify:\/\/shop_images\/September_Italian_Dinner.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "July Italian Night",
+        "title": "September Italian Night- 9\/25",
         "heading_size": "h2",
         "text": "<p>Join us at The Cook's Station for a delightful Italian Night with Chef Vinnie! Experience the rich flavors of Italy as Chef Vinnie prepares authentic dishes that transport you straight to the heart of Italy. Buon appetito!<\/p>",
         "button_label": "",
