@@ -19,6 +19,13 @@
             "sku_enable": false
           }
         },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 4,
+            "inventory_transfers_enable": true
+          }
+        },
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7": {
           "type": "description",
           "settings": {
@@ -58,24 +65,17 @@
             "icon": "package",
             "text": "Free In Store Pickup"
           }
-        },
-        "inventory_status": {
-          "type": "inventory_status",
-          "settings": {
-            "inventory_threshold": 4,
-            "inventory_transfers_enable": true
-          }
         }
       },
       "block_order": [
         "title_DaKN6F",
+        "inventory_status",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
         "variant_picker_PHeixP",
         "price",
         "quantity_selector_KcWnct",
         "buy_buttons",
-        "sales_point",
-        "inventory_status"
+        "sales_point"
       ],
       "custom_css": [
 
