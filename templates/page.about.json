@@ -181,24 +181,6 @@
         "space_below": true
       }
     },
-    "1725479073b4050ed4": {
-      "type": "apps",
-      "blocks": {
-        "mageplaza_insta_feed_mp_instagram_block_9BbNgc": {
-          "type": "shopify:\/\/apps\/mageplaza-insta-feed\/blocks\/mp_instagram_block\/2e85b90f-5da9-4654-967e-051f1942340c",
-          "settings": {
-            "mp_instagram_feed_id": "pEMdnqt5I28uYOTEqqeg"
-          }
-        }
-      },
-      "block_order": [
-        "mageplaza_insta_feed_mp_instagram_block_9BbNgc"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": true
-      }
-    },
     "rich-text": {
       "type": "rich-text",
       "blocks": {
@@ -261,7 +243,6 @@
     "slideshow",
     "1644516630fe61f07d",
     "promo_grid_mTLbWn",
-    "1725479073b4050ed4",
     "rich-text",
     "map",
     "featured-collection"
