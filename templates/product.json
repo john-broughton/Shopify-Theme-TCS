@@ -22,7 +22,7 @@
         "inventory_status": {
           "type": "inventory_status",
           "settings": {
-            "inventory_threshold": 4,
+            "inventory_threshold": 2,
             "inventory_transfers_enable": true
           }
         },
