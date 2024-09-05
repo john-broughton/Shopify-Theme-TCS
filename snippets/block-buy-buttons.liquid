@@ -54,7 +54,7 @@
       data-show-dynamic-checkout=""
     {% endif %}
     {{ block.shopify_attributes }}
-  >{% comment %} Wait.li Button 1/4 {% endcomment %}{% capture 'wait_li_capture' %}{% render 'wait_li_config', product: product %}{% endcapture %}{%- assign wait_li_capture_results = wait_li_capture | split: '|' -%}{%- assign wait_li_active = wait_li_capture_results[0] | strip -%}{%- assign show_waiting_snippet = wait_li_capture_results[1] | strip -%}{%- assign is_customer = wait_li_capture_results[2] | strip -%}{%- assign customer_status = wait_li_capture_results[3] | strip -%}{% if wait_li_active == 'true' and show_waiting_snippet == 'true' %}{% render 'wait_li_button', product: product, is_customer: is_customer, customer_status: customer_status %}{% else %}{% comment %} Wait.li Button 2/4 {% endcomment %}
+  >
     {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
       {%- if gift_card_recipient_feature_active -%}
         {%- render 'gift-card-recipient-form' -%}
@@ -91,8 +91,7 @@
         {%- endif -%}
       </div>
     {%- endform -%}
-    {% comment %} Wait.li Button 3/4 {% endcomment %}{% endif %}{% comment %} Wait.li End 4/4 {% endcomment %}
-	
+
     <script type="application/json">
       {
         "addToCart": "{{ 'actions.add_to_cart' | t }}",
