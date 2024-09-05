@@ -1,0 +1,58 @@
+{% comment %}
+	Wait.li Logic File
+	DO NOT TOUCH THIS FILE.
+{% endcomment %}
+{% assign og_wait_li_product_id = product.id | downcase %}
+{% assign new_wait_li_product_id = product.selected_or_first_available_variant.id | downcase %}
+{% assign og_wait_li_product_metafield = product.metafields.wait_li[og_wait_li_product_id] %}
+{% assign new_wait_li_product_metafield = product.selected_or_first_available_variant.metafields.wait_li[new_wait_li_product_id] %}
+
+{% if og_wait_li_product_metafield %}
+  {% assign wait_li_product_metafield = og_wait_li_product_metafield %}
+  {% assign wait_li_product_id = og_wait_li_product_id %}
+{% else %}
+  {% assign wait_li_product_metafield = new_wait_li_product_metafield %}
+  {% assign wait_li_product_id = new_wait_li_product_id %}
+{% endif %}
+
+{% if wait_li_product_metafield.status == 'active' %}
+  {% assign wait_li_active = true %}
+{% else %}
+  {% assign wait_li_active = false %}
+{% endif %}
+
+{% comment %}
+  Customer Metafield
+{% endcomment %}
+{% assign wait_li_customer_metafield = customer.metafields.wait_li[wait_li_product_id] %}
+{% assign customer_status = wait_li_customer_metafield.customer_status %}
+{% comment %}
+  End Customer Metafields
+{% endcomment %}
+
+{% if wait_li_active %} 
+  {% if customer %}
+      {% assign is_customer = true %}
+      {% if customer_status == 'waiting' %}
+        {% assign show_waiting_snippet = true %}
+        {% assign customer_waiting = true %}
+      {% elsif customer_status == 'active' %}
+        {% assign show_waiting_snippet = false %}
+      {% else %}
+        {% assign show_waiting_snippet = true %}
+      {% endif %}
+  {% else %}
+      {% assign is_customer = false %}
+      {% assign show_waiting_snippet = true %}
+  {% endif %}
+{% endif %}
+
+{% capture wait_li_output %}
+{{- wait_li_active -}}|{{- show_waiting_snippet -}}|{{- is_customer -}}|{{- customer_status -}}
+{% endcapture %}
+
+{{- wait_li_output -}}
+{% comment %}
+Wait.li Logic File
+DO NOT TOUCH THIS FILE.
+{% endcomment %}
