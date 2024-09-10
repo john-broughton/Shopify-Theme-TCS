@@ -136,7 +136,7 @@
         "heading_position": "center",
         "home_featured_products": "in-store-classes",
         "count": 75,
-        "products_per_row": 4,
+        "products_per_row": 5,
         "mobile_scrollable": false,
         "view_all": true,
         "divider": true
