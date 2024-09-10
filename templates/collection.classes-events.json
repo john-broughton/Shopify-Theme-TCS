@@ -32,10 +32,10 @@
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/christa-rene-photography-69.jpg",
-            "overlay_opacity": 0
+            "overlay_opacity": 12
           }
         },
         "hero_iJ6QbB": {
@@ -49,7 +49,7 @@
             "link_text": "Optional button",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
             "overlay_opacity": 0
           }
@@ -140,7 +140,9 @@
       "block_order": [
         "liquid_B8ALpU"
       ],
-      "custom_css": [],
+      "custom_css": [
+
+      ],
       "settings": {
         "full_width": true,
         "space_around": true
@@ -152,7 +154,8 @@
         "collection_description": {
           "type": "collection_description",
           "disabled": true,
-          "settings": {}
+          "settings": {
+          }
         },
         "product_grid": {
           "type": "product_grid",
@@ -175,7 +178,8 @@
     "recently-viewed": {
       "type": "recently-viewed",
       "disabled": true,
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "faq_NHdd4h": {
