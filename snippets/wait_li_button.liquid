@@ -1,0 +1,1007 @@
+{%- liquid 
+  
+    assign og_wait_li_product_id = product.id | downcase
+    assign og_wait_li_product_metafield = product.metafields.wait_li[og_wait_li_product_id]
+    assign new_wait_li_product_id = product.selected_or_first_available_variant.id | downcase
+    assign new_wait_li_product_metafield = product.selected_or_first_available_variant.metafields.wait_li[new_wait_li_product_id]
+    if og_wait_li_product_metafield
+      assign wait_li_product_metafield = og_wait_li_product_metafield
+      assign wait_li_product_id = og_wait_li_product_id
+    else
+      assign wait_li_product_metafield = new_wait_li_product_metafield
+      assign wait_li_product_id = new_wait_li_product_id
+    endif
+  
+    assign wait_li_customer_metafield = customer.metafields.wait_li[wait_li_product_id]
+    assign wait_li_settings = shop.metafields.wait_li.settings
+    assign list_count = wait_li_product_metafield.list_count
+    assign sign_in_text = wait_li_settings.sign_in_text | default: "There are currently list_count people on the waiting list. Click the button below to join!" | replace: "list_count", list_count
+    assign currently_waiting_text = wait_li_settings.currently_waiting_text | default: "You are currently #current_position on the waiting list. Please keep an eye on your inbox."
+    assign full_currently_waiting_text = currently_waiting_text | replace: "list_count", list_count
+    assign join_text = wait_li_settings.join_text | default: "Join Waiting List"
+    assign success_text = wait_li_settings.success_text | default: 'Congratulations! You are now #current_position on the waiting list. Keep an eye on your email for when you are activated!' | replace: "list_count", list_count
+    assign button_colour = wait_li_settings.button_colour | default: '#3d85c6'
+    assign button_text_colour = wait_li_settings.button_text_colour | default: "white"
+    assign wl_list_limit = wait_li_product_metafield.wl_list_limit | plus: 0
+    if list_count == 1
+      assign sign_in_text = sign_in_text | replace: "list_count", list_count | replace: "people", "person" | replace: "are", "is"
+    endif
+    if wl_list_limit != blank and wl_list_limit != 0
+      assign spots_left = wl_list_limit | minus: list_count
+      assign wl_lang_list_limit_info = wait_li_product_metafield.wl_lang_list_limit_info | default: 'There are spots_left spots left on the waiting list. Join now to get a spot!' | replace: "spots_left", spots_left
+      if spots_left == 1
+      assign wl_lang_list_limit_info = wl_lang_list_limit_info | replace: "spots", "spot" | replace: "are", "is"
+      endif
+      assign wl_lang_no_spots_left = wait_li_product_metafield.wl_lang_no_spots_left | default: 'There are no spots left on the waiting list right now. Please wait until a spot opens up.'
+    endif
+  
+  
+    assign wl_lang_join_waiting_list = wait_li_settings.meta_settings.wl_lang_join_waiting_list | default: 'Join Waiting List'
+    assign wl_lang_register            = wait_li_settings.meta_settings.wl_lang_register | default: 'Register Account'
+    assign wl_lang_register_join_list  =  'Register & Join Waiting List'
+    assign wl_lang_sign_in             =  wait_li_settings.meta_settings.wl_lang_sign_in | default: 'Sign In'
+    assign wl_lang_sign_in_to_purchase =  wait_li_settings.meta_settings.wl_lang_sign_in_to_purchase | default: 'Sign In To Purchase'
+    assign wl_lang_sign_in_check_status =  wait_li_settings.meta_settings.wl_lang_sign_in_check_status | default: 'or Sign In To Check Status'
+    assign wl_lang_email               =  wait_li_settings.meta_settings.wl_lang_email | default: 'Email'
+    assign wl_lang_password            =  wait_li_settings.meta_settings.wl_lang_password | default: 'Password'
+    assign wl_lang_custom_column       =  wait_li_product_metafield.metaSettings.wl_lang_custom_column | default: ''
+    assign wl_lang_generic_error       =  wait_li_settings.meta_settings.wl_lang_generic_error | default: 'Something went wrong with while joining the waiting list - please try again later.'
+    assign wl_lang_empty_email         =  wait_li_settings.meta_settings.wl_lang_empty_email | default: 'Please enter your email'
+    assign wl_lang_empty_password      =  wait_li_settings.meta_settings.wl_lang_empty_password | default: 'Please enter your password'
+    assign wl_lang_password_length     =  wait_li_settings.meta_settings.wl_lang_password_length | default: 'Please make sure your password is over 6 characters long'
+    assign wl_lang_valid_email         =  wait_li_settings.meta_settings.wl_lang_valid_email | default: 'Please check that your email is valid'
+    assign wl_lang_already_on_list     =  wait_li_settings.meta_settings.wl_lang_already_on_list | default: 'You are already on the waiting list! Please sign in to check your status on the list.'
+    assign wl_lang_account_valid       =  wait_li_settings.meta_settings.wl_lang_account_valid | default: 'Please make sure your email and password are valid, then try again.'
+    assign wl_lang_main_referral_msg   =  wait_li_settings.meta_settings.main_referral_msg | default: 'Share the link below to refer your friends and jump up spots on the waiting list!'
+  
+  -%}
+  
+  {% comment %}
+  Wait.li Button Form
+  {% endcomment %}
+  {% capture wait_li_referral_box %}
+  {% if wait_li_product_metafield.metaSettings.listType == 'referral' %}
+    <div class="wait_li_referral_box">
+      <p>{{- wl_lang_main_referral_msg -}}</p>
+      <textarea id="in_page_referral_box" class="wait_li_copy_field">{{ shop.url }}{{product.url}}?ref=__referral_id__</textarea>
+      <button id="in_page_copy_btn" class="wait_li_copy_button" wait_li_tooltip="Copied!">
+        Copy <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 2A1.5 1.5 0 006 3.5V13a1 1 0 001 1h9.5a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0016.5 2h-9zm-4 4H4v10h10v.5a1.5 1.5 0 01-1.5 1.5h-9A1.5 1.5 0 012 16.5v-9A1.5 1.5 0 013.5 6z" fill="#5C5F62"/></svg>
+      </button>
+    </div>
+  {% endif %}
+  {% endcapture %}
+  
+  <div id="wait_li_form" class="wla_form" >
+  {% if customer %}
+    {% if customer_status == 'waiting' %}
+      <p class="wla_text currently_waiting" style="display: none;">{{- full_currently_waiting_text -}}</p>
+      <div class="wait_li_referral_box_wrapper" style="display: none;">
+        {{- wait_li_referral_box -}}
+      </div>
+      <div class="wait_li_spinner" style="margin-top: 10px;"></div>
+    {% else %}
+      {% if spots_left < 1 %}
+        <p>{{- wl_lang_no_spots_left -}}</p>
+      {% else %}
+        {% if wl_list_limit > 0 %}
+          <p class="wla_text wait_li_list_status">{{- wl_lang_list_limit_info -}}</p>
+        {% else %}
+          <p class="wla_text wait_li_list_status">{{- sign_in_text -}}</p>
+        {% endif %}
+        {% if wl_lang_custom_column != blank %}
+          <div class="wla_input wla_custom_column">
+            <input type="text" id="signed_in_custom_column" placeholder="{{ wl_lang_custom_column }}"/>
+          </div>
+        {% endif %}
+        <span class="wla_button" id="wl_join_button">{{- join_text -}}</span>
+        <div id="list-join-loading" style="display: none;">
+          <div class="position-loading-content">
+            <div class="wait_li_ring_loader">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+            </div>
+          </div>
+        </div>
+        <div class="wait_li_referral_box_wrapper" style="display: none;">
+          {{- wait_li_referral_box -}}
+        </div>
+      {% endif %}
+    {% endif %}
+  {% else %}
+    {% if spots_left < 1 %}
+      <p>{{- wl_lang_no_spots_left -}}</p>
+    {% else %}
+      {% if wl_list_limit > 0 %}
+        <p class="wla_text wait_li_list_status">{{- wl_lang_list_limit_info -}}</p>
+      {% else %}
+        <p class="wla_text wait_li_list_status">{{- sign_in_text -}}</p>
+      {% endif %}
+      <span class="wla_button" id="wait_li_register_trigger">{{- join_text -}}</span>
+      <a id="wait_li_login_trigger" class="wla_login_text">{{- wl_lang_sign_in_check_status -}}</a>
+    {% endif %}
+    <p class="wla_text currently_waiting" style="display: none;">{{- full_currently_waiting_text -}}</p>
+    <div class="wait_li_referral_box_wrapper" style="display: none;">
+      {{- wait_li_referral_box -}}
+    </div>
+    <div class="wait_li_spinner" style="margin-top: 10px;"></div>
+  {% endif %}
+  </div>
+  <div id="wait_li_success">
+  <p id="join_success_text" class="currently_waiting">{{- success_text -}}</p>
+  {{- wait_li_referral_box -}}
+  </div>
+  {% comment %}
+  End Wait.li Button Form
+  {% endcomment %}
+  
+  {% comment %}
+  Wait.li Modal
+  {% endcomment %}
+  <div id="wait_li_modal" class="wait_li_modal">
+    <div class="wait_li_modal_content">
+      <div class="tabs">
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+          <label id="register_tab" for="tab-1" class="tab-label">{{- wl_lang_register -}}</label>
+          <div class="tab-content">
+            <div id="tab_success">
+              <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm7 7.457l-9.005 9.565-4.995-5.865.761-.649 4.271 5.016 8.24-8.752.728.685z"/></svg>
+              <br>
+              <p id="modal_success_text" class="currently_waiting">{{ success_text }}</p>
+              <div class="wait_li_referral_box_wrapper" style="display: none;">
+                {{- wait_li_referral_box -}}
+              </div>
+            </div>
+            <div id="register_form">
+              <div class="section-header section-header--large">
+                <h1 class="section-header__title">{{- wl_lang_register -}}</h1>
+              </div>
+              <form id="CustomerRegisterForm" class="wait_li_form">
+                <div class="wla_input wla_email">
+                  <input type="email" id="wl_customer_email" placeholder="{{ wl_lang_email }}" required />
+                  <span id="wl_customer_email_error" class="wl_validation_error"></span>
+                </div>
+                <div class="wla_input wla_password">
+                  <input type="password" id="wl_customer_password" placeholder="{{ wl_lang_password }}" required/>
+                  <span id="wl_customer_password_error" class="wl_validation_error"></span>
+                </div>
+                {% if wl_lang_custom_column != blank %}
+                <div class="wla_input wla_custom_column">
+                  <input type="text" id="wl_custom_column" placeholder="{{ wl_lang_custom_column }}" required/>
+                  <span id="wl_custom_column_error"></span>
+                </div>
+                {% endif %}
+                <button type="submit" class="wla_button" id="wl_register_button">{{- wl_lang_join_waiting_list -}}</button>
+                <span id="error_field"></span>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+          <label id="login_tab" for="tab-2" class="tab-label">{{- wl_lang_sign_in -}}</label>
+          <div class="tab-content">
+            <div id="CustomerLoginForm" class="wait_li_form">
+                {% form 'customer_login' %}
+                  <div class="section-header section-header--large">
+                    <h1 id="sign_in_header" class="section-header__title">{{- wl_lang_sign_in -}}</h1>
+                  </div>
+                  {{ form.errors | default_errors }}
+                  <input type="email" name="customer[email]" id="CustomerEmail" required placeholder="{{ wl_lang_email }}"{% if form.errors contains "email" %} class="error"{% endif %} autocorrect="off" autocapitalize="off" autofocus>
+                  <input type="password" value="" name="customer[password]" required id="CustomerPassword" placeholder="{{ wl_lang_password }}" {% if form.errors contains "password" %} class="error"{% endif %}>
+                  <input type="hidden" name="checkout_url" id="redirect_url" value="" />
+                  <button type="submit" class="wla_button">{{- wl_lang_sign_in -}}</button>
+                {% endform %}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% comment %}
+  End Wait.li Modal
+  {% endcomment %}
+  
+  {% comment %}
+  Wait.li Styling
+  {% endcomment %}
+  <style>
+  .page-container {
+      transform: none;
+      -ms-transform: none;
+      -webkit-transform: none;
+  }
+  #wait_li_success,
+  .wla_form {
+      margin: 10px 0;
+      text-align: center;
+      box-sizing: border-box;
+  }
+  .wait_li_atc_status_hide {
+      display: none !important;
+  }
+  #wait_li_success {
+      display: none;
+  }
+  .wait_li_modal .tab-content .section-header__title {
+      font-size: 22px;
+      margin-bottom: 15px;
+  }
+  .wait_li_modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999999;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.1);
+      transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+      box-sizing: border-box;
+  }
+  .wait_li_modal_content {
+      -webkit-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
+      -moz-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
+      box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
+      background-color: white;
+      width: 450px;
+      border-radius: 1px;
+      margin: auto;
+      position: relative;
+      top: 25%;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: table;
+      box-sizing: border-box;
+  }
+  @media only screen and (max-width: 500px) {
+      .wait_li_modal_content {
+          width: 100%;
+          top: 15%;
+      }
+  }
+  .wait_li_modal_content form {
+      margin-bottom: 0;
+  }
+  .wait_li_modal_content .section-header {
+      margin-bottom: 0;
+      text-align: center;
+  }
+  
+  #signed_in_custom_column {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0 0px;
+  }
+  
+  .wait_li_form input{
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+  }
+  .wait_li_form .btn {
+      background: {{button_colour}};
+      color: {{button_text_colour}}
+  }
+  .wait_li_close_button {
+      float: right;
+      width: 1.5rem;
+      line-height: 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 0;
+  }
+  .wait_li_close_button:hover {
+      background-color: darkgray;
+  }
+  .wait_li_show_modal {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1.0);
+      transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+      background: rgba(0,0,0, 0.75);
+      z-index: 2147483647;
+  }
+  .wla_input {
+      float: left;
+  }
+  .wla_first_name {
+      width: 50%;
+      padding-right: 6px;
+  }
+  .wla_last_name {
+      width: 50%;
+      padding-left: 6px;
+  }
+  .wla_email {
+      width: 100%;
+  }
+  .wla_password,
+  .wla_password_confirmation {
+      width: 100%;
+  }
+  .wla_custom_column {
+    width: 100%;
+  }
+  #wl_customer_email {
+      width: 100%;
+  }
+  .wla_button {
+      width: 100%;
+  }
+  .wla_login_text {
+      text-align: center;
+      display: block;
+      padding: 10px;
+  }
+  .wait_li_modal .tabs {
+      position: relative;
+      margin: 0;
+      background: {{button_colour}}
+  }
+  .wait_li_modal .tabs::after,
+  .wait_li_modal .tabs::before {
+      content: "";
+      display: table;
+  }
+  .wait_li_modal .tabs input[type="radio"] {
+      position: fixed;
+      opacity: 0;
+  }
+  .wait_li_modal .tabs::after {
+      clear: both;
+  }
+  .wait_li_modal .tab {
+      float: left;
+      width: 50%;
+  }
+  .wait_li_modal .section-header {
+    padding: 0;
+  }
+  .wait_li_modal .tab-switch {
+      display: none;
+  }
+  .wait_li_modal .tab-label {
+      text-align: center;
+      position: relative;
+      display: block;
+      line-height: 2.75em;
+      height: 3em;
+      padding: 0 1.618em;
+      background: {{button_colour}};
+      border-right: 0.125rem solid{{button_colour}};
+      color: {{button_text_colour}};
+      cursor: pointer;
+      top: 0;
+      transition: all 0.25s;
+      width: 100%;
+      z-index: 6;
+      margin-bottom: 0;
+  }
+  .wait_li_modal .tab-label:hover {
+      top: -0.25rem;
+      transition: all 0.25s;
+  }
+  .wait_li_modal .tab-content {
+      padding: 1.618rem;
+      background: #fff;
+      color: #2c3e50;
+      height: auto;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      opacity: 0;
+      transition: all 0.35s;
+      -webkit-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
+      -moz-box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
+      box-shadow: 0 0 11px 0 rgba(0,0,0,0.75);
+  }
+  .wait_li_modal .tab-switch:checked + .tab-label {
+      background: #fff;
+      color: #2c3e50;
+      border-bottom: 0;
+      border-right: 0.0625rem solid #fff;
+      transition: all 0.35s;
+      z-index: 6;
+  }
+  .wait_li_modal .tab-switch:checked + .tab-label:hover {
+      top: 0;
+  }
+  .wait_li_modal .tab-switch:checked + .tab-label + .tab-content {
+      opacity: 1;
+      transition: all 0.35s;
+      z-index: 3;
+  }
+  @keyframes spinner {
+      to {
+          transform: rotate(360deg);
+      }
+  }
+  .wla_form .wl_btn_spinner:before, .wait_li_modal .wl_btn_spinner:before {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
+      border-radius: 50%;
+      border: 2px solid white;
+      border-top-color: #333;
+      animation: spinner 0.6s linear infinite;
+  }
+  .wait_li_spinner {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid white;
+    border-top-color: #333;
+    animation: spinner 0.6s linear infinite;
+    display: none;
+  }
+  .wla_button {
+      background: {{button_colour}};
+      color: {{button_text_colour}};
+      padding: 10px 25px;
+      min-height: 47px;
+      min-width: 150px;
+      border: none;
+      position: relative;
+      margin-top: 10px;
+      width: 100%;
+      display: inline-block;
+      cursor: pointer;
+  }
+  .wla_button:hover {
+      color: {{button_text_colour}}
+  }
+  .wait_li_modal #tab_success {
+      display: none;
+      text-align: center;
+  }
+  .wait_li_modal #tab_success > svg {
+      fill: {{button_colour}} !important;
+      margin: 10px 0 20px;
+  }
+  .wait_li_modal #success_content {
+      display: none;
+  }
+  .wait_li_modal .page-container {
+      transform: none;
+      -ms-transform: none;
+      -webkit-transform: none;
+  }
+  .wla_text {
+    margin: 0;
+  }
+  
+  /* referral box */
+  .wait_li_referral_box {
+    margin-top: 15px;
+  }
+  .wait_li_referral_box .resp-sharing-button__link{
+    max-width: 50px;
+  }
+  .wait_li_copy_field {
+    padding: 5px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+    min-height: 50px;
+    text-align: center;
+  }
+  .wait_li_copy_field p {
+    margin-bottom: 0;
+  }
+  
+  .wait_li_copy_button {
+    background-color: transparent;
+    height: 25px;
+    padding: 0px 10px;
+    border-radius: 0;
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 11px;
+  }
+  
+  .wait_li_copy_button:hover {
+    background-color: #f4f4f4;
+  }
+  
+  *[wait_li_tooltip]:focus:after {
+    content: attr(wait_li_tooltip);
+    display: block;
+    position: absolute;
+    height: 25px;
+  }
+  
+  .wait_li_copy_button svg {
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-left: 3px;
+  }
+  .wl_validation_error {
+    color: #f00;
+  }
+  </style>
+  {% comment %}
+  End Wait.li Styling
+  {% endcomment %}
+  
+  {% comment %}
+  Wait.li Script
+  {% endcomment %}
+  <script>
+    const base_url = "https://my.wait.li";
+  
+    function setCookie(cname, cvalue, exminutes) {
+      const d = new Date();
+      d.setTime(d.getTime() + (exminutes*60*1000));
+      let expires = "expires="+ d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+    var positionPolling = async function(referralId) {
+      return new Promise(function(resolve, reject) {
+        fetch(base_url + '/current_position?referralId=' + referralId, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          })
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            console.log(data);
+            if (data.status !== 'waiting') {
+              reject("You are not in the waiting list");
+              return;
+            }
+            if (data.position) {
+              resolve(data);
+            }
+            reject();
+          })
+          .catch(function(ex) {
+            reject(ex);
+          })
+      })
+    }
+    var saveReferralId = function(referralId) {
+      var productId = '{{- product.id -}}';
+      var key = 'waitli_customer_referral_id_' + productId;
+      setCookie(key, referralId, 30);
+    }
+    var getSavedReferralId = function() {
+      var productId = '{{- product.id -}}';
+      var key = 'waitli_customer_referral_id_' + productId;
+      return getCookie(key);
+    }
+    var wlShowSpinner = function() {
+      var spinners = document.querySelectorAll(".wait_li_spinner");
+      if (spinners.length > 0) {
+        spinners.forEach(function(item) {
+          item.style.display = 'block';
+        })
+      }
+    }
+    var wlHideSpinner = function() {
+      var spinners = document.querySelectorAll(".wait_li_spinner");
+      if (spinners.length > 0) {
+        spinners.forEach(function(item) {
+          item.style.display = 'none';
+        })
+      }
+    }
+  
+    var wlDisplayListStatus = function(isHide) {
+      const display = isHide ? 'none' : 'block';
+      // display register, login button
+      const register_trigger = document.getElementById("wait_li_register_trigger");
+      const login_trigger = document.getElementById("wait_li_login_trigger");
+      const listStatusTexts = document.querySelectorAll(".wait_li_list_status");
+      if (register_trigger) {
+        register_trigger.style.display = display;
+      }
+      if (login_trigger) {
+        login_trigger.style.display = display;
+      }
+      if (listStatusTexts && listStatusTexts.length) {
+        listStatusTexts.forEach(function(item) {
+          item.style.display = display;
+        })
+      }
+    }
+    var wlHideListStatus = function() {
+      wlDisplayListStatus(true);
+    }
+    var wlShowListStatus = function() {
+      wlDisplayListStatus(false);
+    }
+  </script>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+  var modal = document.getElementById("wait_li_modal");
+  var register_trigger = document.getElementById("wait_li_register_trigger");
+  var login_trigger = document.getElementById("wait_li_login_trigger");
+  var close_modal_button = document.getElementById("wait_li_close_button");
+  
+  
+  // Various functions for the modal popup and other scripts
+  function isEmpty(value) {
+    if (typeof value === 'number') return false
+    else if (typeof value === 'string') return value.trim().length === 0
+    else if (Array.isArray(value)) return value.length === 0
+    else if (typeof value === 'object') return value == null || Object.keys(value).length === 0
+    else if (typeof value === 'boolean') return false
+    else return !value
+  };
+  function toggleModal(stat) {
+    modal.classList.toggle("wait_li_show_modal")
+  }
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+  function windowOnClick(event) {
+    if (event.target === modal) {
+      toggleModal()
+    }
+  }
+  var referred_id = new URL(document.location.href).searchParams.get('ref');
+  
+  // Event trigger for opening register popup
+  if (register_trigger) {
+    register_trigger.addEventListener("click", function() {
+      toggleModal();
+      document.getElementById("tab-1").checked = true;
+      document.getElementById("tab-2").checked = false
+    })
+  }
+  
+  // Event trigger for opening sign in popup
+  if (login_trigger) {
+    login_trigger.addEventListener("click", function() {
+      toggleModal();
+      document.getElementById("tab-1").checked = false;
+      document.getElementById("tab-2").checked = true
+    })
+  }
+  
+  // Event trigger to close popup
+  if (close_modal_button) {
+    close_modal_button.addEventListener("click", toggleModal)
+  }
+  
+  // Show waiting list popup for customers visiting via the link
+  {% unless customer %}
+    if (window.location.href.indexOf('#waiting_list') > 0) {
+      toggleModal();
+      document.getElementById("tab-1").checked = false;
+      document.getElementById("tab-2").checked = true;
+      document.getElementById("sign_in_header").innerHTML = "{{- wl_lang_sign_in_to_purchase -}}";
+    }
+  {% endunless %}
+  
+  
+  var referralBoxInit = function(value) {
+    document.querySelectorAll('.wait_li_referral_box_wrapper').forEach(function(item) {
+      item.style.display = 'block';
+    })
+    var referralBoxes = document.querySelectorAll('.wait_li_copy_field');
+    referralBoxes.forEach(function(item) {
+      item.value = item.value.replace(/__referral_id__/g, value);
+    })
+    var refCopyButtons = document.querySelectorAll('.wait_li_copy_button');
+    refCopyButtons.forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        var btn = e.target;
+        var textarea = btn.previousElementSibling;
+        if (!textarea) return;
+        textarea.select();
+        document.execCommand('copy');
+      })
+    })
+    wlHideListStatus();
+  }
+  
+  
+  
+  window.addEventListener("click", windowOnClick);
+  const signed_in_button = document.getElementById("wl_join_button");
+  const register_button = document.getElementById("wl_register_button");
+  
+  // Script for signing up for waiting list via the already signed in button
+  if (signed_in_button) {
+  
+    signed_in_button.addEventListener("click", function() {
+      var customInput = document.getElementById('signed_in_custom_column');
+      var customColumn = null;
+      if (customInput) {
+        customColumn = document.getElementById('signed_in_custom_column').value;
+      }
+    
+      const joinData = {
+        customerId: '{{ customer.id }}',
+        productId: '{{ wait_li_product_id }}',
+        productTitle: '{{ product.title | escape }}',
+        productHandle: '{{ product.handle }}',
+        shopDomain: '{{ shop.permanent_domain }}',
+        customerEmail: '{{ customer.email }}',
+        custom_column: customColumn,
+        referred_id
+      };
+    
+      console.log(joinData);
+  
+      signed_in_button.classList.add("wl_btn_spinner");
+      const originSignInText = signed_in_button.innerHTML;
+      signed_in_button.innerHTML = '';
+      document.getElementById("wl_join_button").disabled = true;
+      fetch(base_url + "/list/join", {
+        method: 'POST',
+        body: JSON.stringify(joinData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        return response.json();
+        })
+      .then(async function(data) {
+        if (!data.referralId) return;
+        saveReferralId(data.referralId);
+        let positionData = null;
+        try {
+          positionData = await positionPolling(data.referralId);
+        } catch(e) {
+          console.error(e);
+        }
+        if (!data) return;
+  
+        document.getElementById('wait_li_form').style.display = 'none';
+        document.getElementById('wait_li_success').style.display = 'block';
+        document.getElementById('register_form').style.display = 'none';
+        document.getElementById('register_tab').style.display = 'none';
+        document.getElementById('login_tab').style.display = 'none';
+        document.getElementById('tab_success').style.display = 'block';
+        referralBoxInit(data.referralId);
+        var currently_elements = document.getElementsByClassName('currently_waiting');
+        if (currently_elements.length > 0) {
+          for (let i = 0; i < currently_elements.length; i++) {
+            var element = currently_elements[i];
+            element.innerHTML = element.innerHTML.replace(/current_position/g, positionData.position);
+          }
+        }
+      })
+      .catch(error => console.error('Error:', error))
+      .finally(() => {
+        signed_in_button.classList.remove("wl_btn_spinner");
+        signed_in_button.innerHTML = originSignInText;
+      })
+    })
+  }
+  
+  // Script for signing up for waiting list via the register page button
+  if (register_button) {
+    register_button.addEventListener("click", function(e) {
+      console.log('registering');
+      e.preventDefault();
+      const errors = [];
+      const new_email = document.getElementById('wl_customer_email').value;
+      const new_password = document.getElementById('wl_customer_password').value;
+      const new_password_confirmation = document.getElementById('wl_customer_password').value;
+      var customInput = document.getElementById('wl_custom_column');
+      var customColumn = null;
+      if (customInput) {
+        customColumn = document.getElementById('wl_custom_column').value;
+      }
+  
+      if (isEmpty(new_email)) {
+        document.getElementById('wl_customer_email_error').innerHTML = '{{- wl_lang_empty_email -}}';
+        errors.push('{{- wl_lang_empty_email -}}')
+      }
+      if (!validateEmail(new_email)) {
+        document.getElementById('wl_customer_email_error').innerHTML = '{{- wl_lang_valid_email -}}';
+        errors.push('{{- wl_lang_valid_email -}}')
+      }
+      if (isEmpty(new_password)) {
+        document.getElementById('wl_customer_password_error').innerHTML = '{{- wl_lang_empty_password -}}';
+        errors.push('{{- wl_lang_empty_password -}}');
+      }
+      if (new_password.length < 6) {
+        errors.push('{{- wl_lang_password_length -}}');
+        document.getElementById('wl_customer_password_error').innerHTML = '{{- wl_lang_password_length -}}';
+      }
+      if (errors.length === 0) {
+        const createData = {
+          customerEmail: new_email,
+          password: new_password,
+          password_confirmation: new_password_confirmation,
+          productId: '{{ wait_li_product_id }}',
+          productTitle: '{{ product.title | escape }}',
+          productHandle: '{{ product.handle }}',
+          shopDomain: '{{ shop.permanent_domain }}',
+          custom_column: customColumn,
+          referred_id
+        };
+        document.getElementById("wl_register_button").classList.add("wl_btn_spinner");
+        document.getElementById("wl_register_button").innerHTML = '';
+        document.getElementById("wl_register_button").disabled = true;
+        fetch(base_url + "/list/join", {
+          method: 'POST',
+          body: JSON.stringify(createData),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.status == 200) {
+            return response.json();
+          }
+          document.getElementById("wl_register_button").classList.remove("wl_btn_spinner");
+          document.getElementById("wl_register_button").innerHTML = "{{ wl_lang_join_waiting_list }}";
+          if (response.status == 409) {
+            document.getElementById("wl_register_button").disabled = true;
+            document.getElementById('error_field').innerHTML = '<br><p style="text-align:center;">{{- wl_lang_already_on_list -}}</p>';
+          } else if (response.status == 422) {
+            document.getElementById("wl_register_button").disabled = false;
+            document.getElementById('error_field').innerHTML = '<br><p style="text-align:center;">{{- wl_lang_account_valid -}}</p>';
+          } else {
+            document.getElementById("wl_register_button").disabled = false;
+            document.getElementById('error_field').innerHTML = '<br><p style="text-align:center;">{{- wl_lang_generic_error -}}</p>';
+          }
+        })
+        .then(async (data) => {
+          if (!data || !data.referralId) return;
+          saveReferralId(data.referralId);
+          var referalBox = document.getElementById('in_page_referral_box');
+          if (referalBox)
+            referalBox.value =  referalBox.value.replace(/__referral_id__/g, data.referralId);
+          let positionData = null;
+          try {
+            positionData = await positionPolling(data.referralId);
+            console.log(positionData)
+          } catch(e) {
+            console.log('why error here');
+            console.error(e);
+          }
+          if (!positionData) {
+            console.log('Wait.li Error: No position data returned.');
+          }
+          console.log('hide forms')
+          document.getElementById('register_form').style.display = 'none';
+          document.getElementById('register_tab').style.display = 'none';
+          document.getElementById('login_tab').style.display = 'none';
+          document.getElementById('tab_success').style.display = 'block';
+          document.getElementById('wait_li_success').style.display = 'block';
+          document.getElementById('wait_li_form').style.display = 'none'
+          referralBoxInit(data.referralId);
+          var currently_elements = document.getElementsByClassName('currently_waiting');
+          if (currently_elements.length > 0) {
+            for (let i = 0; i < currently_elements.length; i++) {
+              var element = currently_elements[i];
+              element.innerHTML = element.innerHTML.replace(/current_position/g, data.position);
+            }
+          }
+          var domReferralId = document.getElementById("referral_id");
+          if (domReferralId) {
+            if (Array.isArray(domReferralId)) {
+              for (let i = 0; i < domReferralId.length; i++) {
+                var element = currently_elements[i];
+                element.innerHTML = positionData.referralId;
+              }
+            } else {
+              domReferralId.innerHTML = positionData.referralId;
+            }
+          }
+        })
+        .catch(error => console.error('Error:', error))
+      }
+    }, false)
+  }
+  
+  // Add current page url to the login form for redirect purposes
+  var login_redirect_url = document.getElementById("redirect_url");
+  var current_url = window.location.href.replace('#waiting_list', '');;
+  if (login_redirect_url) {
+    login_redirect_url.value = current_url;
+  }
+  
+  // Grab the customer's current position on the list if they are waiting
+  {% if customer != null and customer.id and customer_status == 'waiting' %}
+    (function() {
+      wlShowSpinner();
+      fetch(base_url + "/current_position/?customerId={{ customer.id }}&productId={{ wait_li_product_id }}&shopDomain={{ shop.permanent_domain }}", {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then((resp) => resp.json())
+      .then(function(data) {
+        if (!data || !data.position || data.status !== 'waiting') return;
+        referralBoxInit(data.referralId);
+        var currently_elements = document.getElementsByClassName('currently_waiting');
+        if (currently_elements.length > 0) {
+          for (let i = 0; i < currently_elements.length; i++) {
+            var element = currently_elements[i];
+            element.innerHTML = element.innerHTML.replace(/current_position/g, data.position);
+            element.style.display = 'block';
+          }
+        }
+      })
+      .finally(function() {
+        wlHideSpinner();
+      })
+    })();
+  {% endif %}
+  
+  {% if customer == null %}
+  const referralId = getSavedReferralId();
+  if (referralId) {
+    (async function() {
+      let positionData = null;
+  
+      wlHideListStatus();
+      wlShowSpinner();
+      try {
+        positionData = await positionPolling(referralId);
+      } catch(e) {
+        console.error(e);
+      }
+      wlHideSpinner();
+      if (positionData && positionData.position && positionData.status === 'waiting') {
+        referralBoxInit(positionData.referralId);
+        var currently_elements = document.getElementsByClassName('currently_waiting');
+        if (currently_elements.length > 0) {
+          for (let i = 0; i < currently_elements.length; i++) {
+            var element = currently_elements[i];
+            element.innerHTML = element.innerHTML.replace(/current_position/g, positionData.position);
+            element.style.display = 'block';
+          }
+        }
+      } else {
+        saveReferralId('');
+        wlShowListStatus();
+      }
+    })();
+  }
+  {% endif %}
+  });
+  </script>
+  {% comment %}
+  End Wait.li Script
+  {% endcomment %}
+  
