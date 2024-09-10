@@ -180,6 +180,14 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "faq_HLjacC": {
+      "type": "faq",
+      "settings": {
+        "title": "FAQs",
+        "heading_size": "h2",
+        "heading_position": "left"
+      }
     }
   },
   "order": [
@@ -188,6 +196,7 @@
     "testimonials_MACaWt",
     "advanced_content_PYYHmR",
     "main-collection",
-    "recently-viewed"
+    "recently-viewed",
+    "faq_HLjacC"
   ]
 }
