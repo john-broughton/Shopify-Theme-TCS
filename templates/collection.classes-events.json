@@ -37,27 +37,10 @@
             "image": "shopify:\/\/shop_images\/christa-rene-photography-69.jpg",
             "overlay_opacity": 12
           }
-        },
-        "hero_iJ6QbB": {
-          "type": "hero",
-          "settings": {
-            "top_subheading": "",
-            "title": "<p>Make an Impact<\/p>",
-            "title_size": 70,
-            "subheading": "Supports multiple text alignments and mobile-specific images.",
-            "link": "",
-            "link_text": "Optional button",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#ffffff",
-            "text_align": "vertical-center horizontal-center",
-            "overlay_opacity": 0
-          }
         }
       },
       "block_order": [
-        "hero_pWM9NP",
-        "hero_iJ6QbB"
+        "hero_pWM9NP"
       ],
       "settings": {
         "full_width": true,
