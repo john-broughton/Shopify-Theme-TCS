@@ -16,10 +16,10 @@
     assign wait_li_settings = shop.metafields.wait_li.settings
     assign list_count = wait_li_product_metafield.list_count
     assign sign_in_text = wait_li_settings.sign_in_text | default: "There are currently list_count people on the waiting list. Click the button below to join!" | replace: "list_count", list_count
-    assign currently_waiting_text = wait_li_settings.currently_waiting_text | default: "You are currently #current_position on the waiting list. Please keep an eye on your inbox."
+    assign currently_waiting_text = wait_li_settings.currently_waiting_text | default: "You are currently on the waiting list. Please keep an eye on your inbox."
     assign full_currently_waiting_text = currently_waiting_text | replace: "list_count", list_count
     assign join_text = wait_li_settings.join_text | default: "Join Waiting List"
-    assign success_text = wait_li_settings.success_text | default: 'Congratulations! You are now #current_position on the waiting list. Keep an eye on your email for when you are activated!' | replace: "list_count", list_count
+    assign success_text = wait_li_settings.success_text | default: 'Congratulations! You are now on the waiting list. Keep an eye on your email for when you are activated!' | replace: "list_count", list_count
     assign button_colour = wait_li_settings.button_colour | default: '#3d85c6'
     assign button_text_colour = wait_li_settings.button_text_colour | default: "white"
     assign wl_list_limit = wait_li_product_metafield.wl_list_limit | plus: 0
