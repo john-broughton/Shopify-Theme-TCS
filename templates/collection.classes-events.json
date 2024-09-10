@@ -9,33 +9,63 @@
 */
 {
   "sections": {
-    "rich_text_YGMaJc": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_JR3kHg": {
-          "type": "heading",
-          "settings": {
-            "title": "Dinners, Flights, and Bites"
-          }
-        }
-      },
-      "block_order": [
-        "heading_JR3kHg"
-      ],
-      "disabled": true,
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "1",
-        "divider": false
-      }
-    },
     "collection-header": {
       "type": "collection-header",
       "settings": {
         "enable": false,
         "collection_image_enable": true,
-        "parallax": true
+        "parallax": true,
+        "parallax_direction": "top"
+      }
+    },
+    "slideshow_Kijrgd": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_pWM9NP": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<h5>Classes, Dinners, Flights, & Bites<\/h5>",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/christa-rene-photography-69.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_iJ6QbB": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Make an Impact<\/p>",
+            "title_size": 70,
+            "subheading": "Supports multiple text alignments and mobile-specific images.",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_pWM9NP",
+        "hero_iJ6QbB"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -20,
+        "mobile_size": 10,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "main-collection": {
@@ -73,8 +103,8 @@
     }
   },
   "order": [
-    "rich_text_YGMaJc",
     "collection-header",
+    "slideshow_Kijrgd",
     "main-collection",
     "recently-viewed"
   ]
