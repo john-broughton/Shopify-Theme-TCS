@@ -11,7 +11,7 @@
 {%- endcomment -%}
 
 {%- liquid
-  assign paginate_by = paginate_by | default: section.settings.paginate_by | default: 40
+  assign paginate_by = paginate_by | default: section.settings.paginate_by | default: 75
   assign hydration = hydration | default: 'on:visible'
 -%}
 

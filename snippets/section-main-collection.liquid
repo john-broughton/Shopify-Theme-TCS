@@ -15,7 +15,7 @@
 {%- liquid
   assign show_sidebar = show_sidebar | default: true, allow_false: true
   assign enable_sidebar = enable_sidebar | default: section.settings.enable_sidebar, allow_false: true | default: true, allow_false: true
-  assign paginate_by = paginate_by | default: section.settings.paginate_by | default: 40
+  assign paginate_by = paginate_by | default: section.settings.paginate_by | default: 75
   assign hydration = hydration | default: 'on:idle'
 
   if enable_sidebar == false or collection.filters.size == 0
