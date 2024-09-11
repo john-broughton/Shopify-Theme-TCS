@@ -195,13 +195,6 @@
             "text": "<p>Each class is different! We like to offer an array of options for our guests. In the description of each class it will normally explain if the class is hands on, semi-hands on or demo based. If you would like further clarification please email <a href=\"mailto:emmie@thecooksstation.com\"><span style=\"text-decoration:underline\">emmie@thecooksstation.com<\/span><\/a><\/p>"
           }
         },
-        "question_ErmDmQ": {
-          "type": "question",
-          "settings": {
-            "title": "The class does not show as sold out, but it shows 0 tickets available to purchase. Is this class sold out?",
-            "text": "<p>YES! Unfortunately, the banner does not automatically update once the class is sold out. If you are unable to purchase tickets, then it is sold out.<\/p>"
-          }
-        },
         "question_FrGP9V": {
           "type": "question",
           "settings": {
@@ -222,7 +215,6 @@
         "question_qQa4zP",
         "question_zLjU6g",
         "question_zkRXna",
-        "question_ErmDmQ",
         "question_FrGP9V",
         "question_bt83t8"
       ],
