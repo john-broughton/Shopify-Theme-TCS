@@ -29,6 +29,23 @@
             "overlay_opacity": 20
           }
         },
+        "hero_7cqwiA": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<h5>SHOP ONLINE<\/h5>",
+            "title_size": 70,
+            "subheading": "Shop The Cook's Station from the comfort of your couch!",
+            "link": "shopify:\/\/pages\/shop-collections",
+            "link_text": "Shop",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262895.jpg",
+            "overlay_opacity": 0
+          }
+        },
         "slideshow-1": {
           "type": "hero",
           "settings": {
@@ -63,30 +80,13 @@
             "image_mobile": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__27_6b4f8c49-87b5-4706-96e9-c4ffd65fb162.jpg",
             "overlay_opacity": 20
           }
-        },
-        "hero_7cqwiA": {
-          "type": "hero",
-          "settings": {
-            "top_subheading": "",
-            "title": "<h5>SHOP ONLINE<\/h5>",
-            "title_size": 70,
-            "subheading": "Shop The Cook's Station from the comfort of your couch!",
-            "link": "shopify:\/\/pages\/shop-collections",
-            "link_text": "Shop",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#ffffff",
-            "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262895.jpg",
-            "overlay_opacity": 0
-          }
         }
       },
       "block_order": [
         "slideshow-0",
+        "hero_7cqwiA",
         "slideshow-1",
-        "hero_WyD4ky",
-        "hero_7cqwiA"
+        "hero_WyD4ky"
       ],
       "settings": {
         "full_width": true,
