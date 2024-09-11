@@ -98,7 +98,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><\/p><p>• Monday- Friday: 8am-3pm<br\/>•  Saturday: 9AM-3pM<br\/>• Sunday: Closed <\/p>"
+            "text": "<p>• Monday- Friday: 8AM-3PM<br\/>•  Saturday: 9AM-3PM<br\/>• Sunday: CLOSED<\/p>"
           }
         }
       },
