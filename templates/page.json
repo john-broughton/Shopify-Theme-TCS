@@ -15,42 +15,6 @@
       "settings": {
       }
     },
-    "promo_grid_jKDwGY": {
-      "type": "promo-grid",
-      "blocks": {
-        "advanced_DYDfGH": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Cafe & Bar",
-            "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">CAFE HOURS<\/p>\n<p style='font-size:large;font-weight:bold;\"'>• Monday- Friday: 8am-3pm<br>•  Saturday: 9AM-3pM<br>• Sunday: Closed <\/p>\n<\/div>",
-            "cta_text1": "",
-            "cta_link1": "",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/inside_cafe_use_fc4a414f-67c3-4a66-aa92-0a505a449986.jpg",
-            "video_url": "",
-            "width": "100",
-            "height": 500,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#242430"
-          }
-        }
-      },
-      "block_order": [
-        "advanced_DYDfGH"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "{font: inherit; font-size: x-large;}"
-      ],
-      "settings": {
-        "full_width": true,
-        "gutter_size": 0,
-        "space_above": false,
-        "space_below": false
-      }
-    },
     "slideshow_bxwR3T": {
       "type": "slideshow",
       "blocks": {
@@ -83,7 +47,7 @@
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#fff",
-            "text_align": "vertical-bottom horizontal-left",
+            "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg",
             "overlay_opacity": 12
           }
@@ -542,7 +506,6 @@
   },
   "order": [
     "main",
-    "promo_grid_jKDwGY",
     "slideshow_bxwR3T",
     "text_columns_HaHf8Q",
     "166420604037b6908b",
