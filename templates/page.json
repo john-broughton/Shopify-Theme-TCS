@@ -68,7 +68,7 @@
             "color_accent": "#fff",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
-            "overlay_opacity": 0
+            "overlay_opacity": 14
           }
         },
         "hero_3VXWNP": {
@@ -85,7 +85,7 @@
             "color_accent": "#fff",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg",
-            "overlay_opacity": 0
+            "overlay_opacity": 12
           }
         }
       },
