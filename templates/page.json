@@ -198,7 +198,7 @@
         "advanced_hxmJeR"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "gutter_size": 20,
         "space_above": true,
         "space_below": true
@@ -267,7 +267,7 @@
         "advanced_TE6LeX"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "gutter_size": 20,
         "space_above": false,
         "space_below": true
@@ -392,7 +392,7 @@
         "advanced_TJRign"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "gutter_size": 20,
         "space_above": true,
         "space_below": true
