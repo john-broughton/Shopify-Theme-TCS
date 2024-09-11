@@ -15,89 +15,6 @@
       "settings": {
       }
     },
-    "1644519879b6c859bd": {
-      "type": "rich-text",
-      "blocks": {
-        "16445198793d97203c-0": {
-          "type": "heading",
-          "settings": {
-            "title": "A LOT ON YOUR PLATE",
-            "heading_size": "h2"
-          }
-        },
-        "16445198793d97203c-1": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Come dine in our cafe with us! We pride ourselves on using local produce in our cafe that serves breakfast from 8 am-11 am Monday-Friday, and 9 am-11 am on Saturday. Our cafe also serves lunch from 11 am-3 pm Monday-Saturday. The cafe is closed on Sunday. At our wine and beer bar, you can find a variety of tapas plates served from 4:00-8:00 pm Monday-Saturday. We also serve wine and beer by the glass starting from 10 am-8 pm, so you can sip and shop!<\/p><p><em>Café<\/em><em><strong> <\/strong><\/em><em>Hours:<\/em><br\/><strong><br\/>Breakfast: <br\/><\/strong>Monday-Friday: 8:00 AM-11:00 AM<br\/>Saturday: 9:00AM- 11:00AM<\/p><p><strong>Lunch<\/strong>:<br\/>11:00 AM - 3:00 PM<br\/><span style=\"text-decoration:underline\"><em>The <\/em><\/span>café<span style=\"text-decoration:underline\"><em> is closed on Sundays<\/em><\/span><\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "16445198793d97203c-0",
-        "16445198793d97203c-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "3",
-        "divider": false
-      }
-    },
-    "1644519946f9b03c75": {
-      "type": "faq",
-      "blocks": {
-        "1644519946aa5bfae6-0": {
-          "type": "question",
-          "settings": {
-            "title": "PANTRY",
-            "text": "<p>From Olivelle infused oils and vinegars to specialty spices; locally ground grits to prized pickles, we’ve got all the stuff pantry-stockin’ dreams are made of (<em>don’t pretend like you don’t have those)…<\/em><\/p>"
-          }
-        },
-        "1644519946aa5bfae6-1": {
-          "type": "question",
-          "settings": {
-            "title": "GRAB & GO GOURMET",
-            "text": "<p><strong>Ham Salad<\/strong><br\/><em>Sm: $5.99 \/ Med: $8.99 \/ Lg $25.00<\/em><\/p><p><strong>Egg salad<\/strong><br\/><em>Sm: $3.99 \/ Med: $6.00 \/ Lg $16.00<\/em><\/p><p><strong>Potato Salad<\/strong><br\/><em>Sm: $2.49 \/ Med: $4.99 \/ Lg $10.00<\/em><\/p><p><strong>Pimento Cheese<\/strong><br\/><em>Sm: $4.49 \/ Med: $13.99 \/ Lg $19.00<\/em><\/p><p><strong>House Truffled Boursin cheese spread<\/strong><br\/><em>Sm: $5.00 \/ Med: $8.00 \/ Lg $25.00<\/em><\/p><p><strong>Pickled shrimp<\/strong><br\/><em>Sm: $12.00 \/ Lg $26.00<\/em><\/p><p><strong>Smoked trout dip<\/strong><br\/><em>Sm: $12.00 \/ Lg $18.00<\/em><\/p>"
-          }
-        },
-        "fd18df9d-a942-4421-923e-2356c36cebf4": {
-          "type": "question",
-          "settings": {
-            "title": "MEATS",
-            "text": "<p>&lcub; <em>$3<\/em> &rcub;<br\/>proscuitto<br\/>house rillette<br\/>house smoked guanciale<br\/>Greenbriar head cheese<\/p><p>&lcub; <em>$5<\/em> &rcub;<br\/>spec<br\/>house-cured salmon<br\/>Calabrian pancetta (spotted trotter)<br\/>spicy chupacabra (goat & beef)<br\/>soppessata (American butcher)<br\/>finnochina (American butcher)<br\/>duck prosciutto (spotted trotter)<br\/>smoked fish<br\/>shrimp salad<br\/>confit quail<\/p>"
-          }
-        },
-        "5e75cf0b-7891-4154-b8d6-ac076f738bb7": {
-          "type": "question",
-          "settings": {
-            "title": "CHEESES",
-            "text": "<p>&lcub; <em>$3<\/em> &rcub;<br\/>marinated halloumi<br\/>manchego w\/ whipped honey<br\/>tillamook<br\/>smoked gouda<br\/>fontina<\/p><p>&lcub; <em>$6<\/em> &rcub;<br\/>calvander<br\/>truffle whipped goat<br\/>ravin cliff<br\/>chattooga blue w\/ whipped honey<br\/>tomme<br\/>griffin<br\/>karst<\/p>"
-          }
-        },
-        "6eef1ca4-ad57-4364-b5ac-d867b0c12c91": {
-          "type": "question",
-          "settings": {
-            "title": "GOODIES",
-            "text": "<p>&lcub;<em>$3<\/em>&rcub;<br\/>wine-soaked fruit<br\/>marinated veggies<br\/>picked veggies<br\/>cured tomatoes<br\/>mushroom conserva<br\/>blueberry jam<br\/>cheese pop bread<br\/>mini herb loaf<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "1644519946aa5bfae6-0",
-        "1644519946aa5bfae6-1",
-        "fd18df9d-a942-4421-923e-2356c36cebf4",
-        "5e75cf0b-7891-4154-b8d6-ac076f738bb7",
-        "6eef1ca4-ad57-4364-b5ac-d867b0c12c91"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "MARKET",
-        "heading_size": "h2",
-        "heading_position": "left"
-      }
-    },
     "text_and_image_xtV9AY": {
       "type": "text-and-image",
       "disabled": true,
@@ -146,6 +63,7 @@
       "block_order": [
         "advanced_VBBHnG"
       ],
+      "disabled": true,
       "custom_css": [
         "{font-size: large;}"
       ],
@@ -154,6 +72,39 @@
         "gutter_size": 0,
         "space_above": false,
         "space_below": false
+      }
+    },
+    "slideshow_BbDDEQ": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_CAHjXB": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>BAR AND TAPAS MENU<\/p>",
+            "title_size": 64,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__26_49f08674-5b1d-4133-8a69-365da55ff139.jpg",
+            "overlay_opacity": 16
+          }
+        }
+      },
+      "block_order": [
+        "hero_CAHjXB"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -30,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "text_columns_M3xf6e": {
@@ -191,7 +142,7 @@
         "text_block_Rd4cTj"
       ],
       "settings": {
-        "title": "Bar Menus",
+        "title": "",
         "align_text": "center",
         "divider": false,
         "color_scheme": "none"
@@ -253,10 +204,9 @@
   },
   "order": [
     "main",
-    "1644519879b6c859bd",
-    "1644519946f9b03c75",
     "text_and_image_xtV9AY",
     "promo_grid_qTGxJq",
+    "slideshow_BbDDEQ",
     "text_columns_M3xf6e",
     "text_columns_wQehrL"
   ]
