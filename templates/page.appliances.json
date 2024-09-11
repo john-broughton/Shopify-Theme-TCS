@@ -31,7 +31,7 @@
             "image": "shopify:\/\/shop_images\/np-inspiration-get-inspired-CaroleWhiting-1200-4_Fisher-Paykel.jpg",
             "video_url": "",
             "width": "100",
-            "height": 600,
+            "height": 460,
             "text_align": "vertical-center horizontal-center",
             "color_accent": "#ffffff"
           }
@@ -40,6 +40,7 @@
       "block_order": [
         "advanced_iGmnKd"
       ],
+      "disabled": true,
       "custom_css": [
         "{font: inherit; font-size: x-large;}"
       ],
@@ -48,6 +49,68 @@
         "gutter_size": 0,
         "space_above": false,
         "space_below": false
+      }
+    },
+    "slideshow_VVagyh": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_BNVgBT": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>APPLINACES<\/p><p><\/p><h4>APPOINTMENT HOURS<\/h4><h4>• Monday- Friday: 8 am-5 pm <br\/>•  Saturday: 10-4 pm<br\/>• Closed the 1st Saturday of the month<br\/>•Sunday: Closed <\/h4>",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/np-inspiration-get-inspired-CaroleWhiting-1200-4_Fisher-Paykel.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_BNVgBT"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -20,
+        "mobile_size": 20,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "rich_text_aPed7y": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3jUkXK": {
+          "type": "heading",
+          "settings": {
+            "title": "APPOINTMENT HOURS",
+            "heading_size": "h1"
+          }
+        },
+        "text_YKHRki": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>• Monday- Friday: 8 am-5 pm <br\/>•  Saturday: 10-4 pm<br\/>• Closed the 1st Saturday of the month<br\/>•Sunday: Closed <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3jUkXK",
+        "text_YKHRki"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
       }
     },
     "testimonials_ajXYGX": {
@@ -368,6 +431,8 @@
   "order": [
     "main",
     "promo_grid_weDiHz",
+    "slideshow_VVagyh",
+    "rich_text_aPed7y",
     "testimonials_ajXYGX",
     "logo_list_hJexFy",
     "promo_grid_mGt8AN",
