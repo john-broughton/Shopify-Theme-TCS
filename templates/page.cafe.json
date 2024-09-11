@@ -22,7 +22,7 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "CAFE",
+            "heading": "CAFE MENU",
             "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">CAFE HOURS<\/p>\n<p style='font-size:large;font-weight:bold;\"'>• Monday- Friday: 8am-3pm<br>•  Saturday: 9AM-3pM<br>• Sunday: Closed <\/p>\n<\/div>",
             "cta_text1": "",
             "cta_link1": "",
@@ -40,6 +40,7 @@
       "block_order": [
         "advanced_DYDfGH"
       ],
+      "disabled": true,
       "custom_css": [
         "{font: inherit; font-size: x-large;}"
       ],
@@ -48,6 +49,39 @@
         "gutter_size": 0,
         "space_above": false,
         "space_below": false
+      }
+    },
+    "slideshow_X8xeKP": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_Kzr8GE": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>CAFE MENU<\/p>",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
+            "overlay_opacity": 16
+          }
+        }
+      },
+      "block_order": [
+        "hero_Kzr8GE"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -40,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "text_columns_HaHf8Q": {
@@ -85,7 +119,7 @@
         "text_block_heiqBy"
       ],
       "settings": {
-        "title": "Cafe Menus",
+        "title": "",
         "align_text": "center",
         "divider": false,
         "color_scheme": "none"
@@ -433,6 +467,7 @@
   "order": [
     "main",
     "promo_grid_jKDwGY",
+    "slideshow_X8xeKP",
     "text_columns_HaHf8Q",
     "166420604037b6908b",
     "promo_grid_8ijbpN",
