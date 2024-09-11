@@ -15,42 +15,6 @@
       "settings": {
       }
     },
-    "promo_grid_weDiHz": {
-      "type": "promo-grid",
-      "blocks": {
-        "advanced_iGmnKd": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "APPLIANCES",
-            "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large; font-weight:bold; display: inline-block;\">APPOINTMENT HOURS<\/p>\n<p style='font-size:small;font-weight:bold;\"'>• Monday- Friday: 8 am-5 pm <br>•  Saturday: 10-4 pm<br>• Closed the 1st Saturday of the month<br>•Sunday: Closed <\/p>\n<\/div>",
-            "cta_text1": "CONTACT US",
-            "cta_link1": "shopify:\/\/pages\/appliance-contact-form",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/np-inspiration-get-inspired-CaroleWhiting-1200-4_Fisher-Paykel.jpg",
-            "video_url": "",
-            "width": "100",
-            "height": 460,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "advanced_iGmnKd"
-      ],
-      "disabled": true,
-      "custom_css": [
-        "{font: inherit; font-size: x-large;}"
-      ],
-      "settings": {
-        "full_width": true,
-        "gutter_size": 0,
-        "space_above": false,
-        "space_below": false
-      }
-    },
     "slideshow_VVagyh": {
       "type": "slideshow",
       "blocks": {
@@ -438,7 +402,6 @@
   },
   "order": [
     "main",
-    "promo_grid_weDiHz",
     "slideshow_VVagyh",
     "rich_text_aPed7y",
     "testimonials_ajXYGX",
