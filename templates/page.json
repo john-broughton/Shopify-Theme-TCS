@@ -40,6 +40,7 @@
       "block_order": [
         "advanced_DYDfGH"
       ],
+      "disabled": true,
       "custom_css": [
         "{font: inherit; font-size: x-large;}"
       ],
@@ -50,18 +51,68 @@
         "space_below": false
       }
     },
+    "slideshow_bxwR3T": {
+      "type": "slideshow",
+      "blocks": {
+        "hero_hqgW3d": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "The Cook's Station",
+            "title": "<p>Eat & Drink<\/p>",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_3VXWNP": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "The Cook's Station",
+            "title": "<p>Eat & Drink <\/p>",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "hero_hqgW3d",
+        "hero_3VXWNP"
+      ],
+      "settings": {
+        "full_width": true,
+        "desktop_size": -20,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
     "text_columns_HaHf8Q": {
       "type": "text-columns",
       "blocks": {
         "text_block_7DQU9h": {
           "type": "text_block",
           "settings": {
-            "enable_image": true,
-            "image": "shopify:\/\/shop_images\/FINAL_breakfast_spring_menu.png",
+            "enable_image": false,
             "image_mask": "none",
             "image_width": 540,
             "title": "",
-            "text": "",
+            "text": "<h3>CAFE HOURS<\/h3><p>• Monday- Friday: 8am-3pm<br\/>•  Saturday: 9AM-3PM<br\/>• Sunday: Closed <\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -69,12 +120,11 @@
         "text_block_heiqBy": {
           "type": "text_block",
           "settings": {
-            "enable_image": true,
-            "image": "shopify:\/\/shop_images\/long_skinny_cafe_menu_Spring_2024_2.png",
+            "enable_image": false,
             "image_mask": "none",
             "image_width": 540,
             "title": "",
-            "text": "",
+            "text": "<h3>HAPPY HOUR<\/h3><p>• Monday - Friday: 4:30-6:00pm<br\/>$3 Off Tapas and Wine By The Glass<br\/><br\/>• Saturday - Sunday 2:00pm - 4:00pm<br\/> $3 Off Wine By The Glass <\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -84,7 +134,6 @@
         "text_block_7DQU9h",
         "text_block_heiqBy"
       ],
-      "disabled": true,
       "settings": {
         "title": "Cafe Menus",
         "align_text": "center",
@@ -496,6 +545,7 @@
   "order": [
     "main",
     "promo_grid_jKDwGY",
+    "slideshow_bxwR3T",
     "text_columns_HaHf8Q",
     "166420604037b6908b",
     "promo_grid_8ijbpN",
