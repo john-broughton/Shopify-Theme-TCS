@@ -84,6 +84,35 @@
         "autoplay_speed": 7
       }
     },
+    "rich_text_kxgRXB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_9LWgxR": {
+          "type": "heading",
+          "settings": {
+            "title": "CAFE HOURS",
+            "heading_size": "h2"
+          }
+        },
+        "text_JrnAbx": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><\/p><p>• Monday- Friday: 8am-3pm<br\/>•  Saturday: 9AM-3pM<br\/>• Sunday: Closed <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_9LWgxR",
+        "text_JrnAbx"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
     "text_columns_HaHf8Q": {
       "type": "text-columns",
       "blocks": {
@@ -468,6 +497,7 @@
     "main",
     "promo_grid_jKDwGY",
     "slideshow_X8xeKP",
+    "rich_text_kxgRXB",
     "text_columns_HaHf8Q",
     "166420604037b6908b",
     "promo_grid_8ijbpN",
