@@ -58,8 +58,8 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>APPLINACES<\/p><p><\/p><h4>APPOINTMENT HOURS<\/h4><h4>• Monday- Friday: 8 am-5 pm <br\/>•  Saturday: 10-4 pm<br\/>• Closed the 1st Saturday of the month<br\/>•Sunday: Closed <\/h4>",
-            "title_size": 70,
+            "title": "<p>APPLIANCES<\/p>",
+            "title_size": 82,
             "subheading": "",
             "link": "",
             "link_text": "",
@@ -68,7 +68,7 @@
             "color_accent": "#fff",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/np-inspiration-get-inspired-CaroleWhiting-1200-4_Fisher-Paykel.jpg",
-            "overlay_opacity": 0
+            "overlay_opacity": 14
           }
         }
       },
@@ -91,7 +91,7 @@
           "type": "heading",
           "settings": {
             "title": "APPOINTMENT HOURS",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text_YKHRki": {
