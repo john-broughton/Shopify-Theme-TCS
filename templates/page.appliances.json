@@ -100,11 +100,19 @@
             "enlarge_text": true,
             "text": "<p>• Monday- Friday: 8 am-5 pm <br\/>•  Saturday: 10-4 pm<br\/>• Closed the 1st Saturday of the month<br\/>•Sunday: Closed <\/p>"
           }
+        },
+        "button_wQmxnU": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/pages\/appliance-contact-form",
+            "link_text": "Contact Us"
+          }
         }
       },
       "block_order": [
         "heading_3jUkXK",
-        "text_YKHRki"
+        "text_YKHRki",
+        "button_wQmxnU"
       ],
       "settings": {
         "align_text": "center",
