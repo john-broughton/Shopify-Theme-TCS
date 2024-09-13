@@ -65,7 +65,7 @@
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
             "overlay_opacity": 16
@@ -160,7 +160,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Daily Specials - 09\/11",
+            "title": "Daily Specials - 09\/13",
             "heading_size": "h2"
           }
         },
