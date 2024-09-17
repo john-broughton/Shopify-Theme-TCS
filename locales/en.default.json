@@ -265,5 +265,14 @@
     "countdown": {
       "section_name": "countdown"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "order_summary": {
+        "gift_card_and_discount_title": "Discount Code",
+        "gift_card_and_discount_label": "Discount Code",
+        "gift_card_and_discount_placeholder": "Discount Code"
+      }
+    }
   }
 }
