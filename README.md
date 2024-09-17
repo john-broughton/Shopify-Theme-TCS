@@ -1,2 +1,4 @@
 # Shopify-Theme-TCS
- Exploring how to make custom themes in Shopify using the Expanse theme. You can see this theme in action at https://www.thecooksstation.com/.
+ This repository holds the customized Expanse theme for The Cook's Station. It can be viewed here: https://www.thecooksstation.com/
+
+ 
