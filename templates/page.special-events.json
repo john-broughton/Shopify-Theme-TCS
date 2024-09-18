@@ -48,6 +48,28 @@
         "autoplay_speed": 7
       }
     },
+    "text_and_image_rBNfCd": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/September_Burger_Night_2024_Insta.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Burger Night- September 24th",
+        "heading_size": "h2",
+        "text": "<p>Join us on September 24th at 5:30pm for our monthly Burger Night! No tickets are needed, just order at our café and dine on our screened-in patio!<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
       "settings": {
@@ -92,28 +114,6 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_rBNfCd": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/September_Burger_Night_2024_Insta.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "September 24th at 5:30pm",
-        "title": "Burger Night",
-        "heading_size": "h2",
-        "text": "<p>Join us on September 24th at 5:30pm for our monthly Burger Night! No tickets are needed, just order at our café and dine on our screened-in patio!<\/p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "b5e95e24-93b4-492c-ae7f-914eae033331": {
       "type": "map",
       "settings": {
@@ -131,9 +131,9 @@
   "order": [
     "main",
     "1644519722c7610927",
+    "text_and_image_rBNfCd",
     "text_and_image_iV6NVF",
     "text_and_image_WHRXBw",
-    "text_and_image_rBNfCd",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
