@@ -295,7 +295,7 @@
         "title": "IN STORE PICKUP",
         "heading_size": "h2",
         "heading_position": "center",
-        "home_featured_products": "newsletter-products",
+        "home_featured_products": "in-stock-items",
         "count": 5,
         "products_per_row": 5,
         "mobile_scrollable": true,
