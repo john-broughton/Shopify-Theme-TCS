@@ -168,7 +168,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>TCS CHICKEN SALAD SANDWICH - $11.99</strong><br/>Chicken, celery, onions, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on toast</p><p><strong>ROASTED SALMON WRAP - $12.99</strong><br/>Salmon, mushrooms, leeks zucchini, fresh basil, spiced yogurt, sautéed garlic and spinach, marinated tomatoes, in a spinach wrap</p><p><strong>PORKLOIN BLT - $12.99</strong><br/>Roasted pork loin, bacon, pepper aioli, tomato, greens, smoked provolone, on teaxas toast</p><p><strong>ITALIAN SAUSAGE HOAGIE- $10.99</strong><br/>Italian sausage link, green bell peppers, caramelized red onions, creamy Italian dressing, fontina cheese</p><p><strong>CHICKEN AND CRAYFISH GUMBO - 5.99</strong><br/>Roasted chicken, crayfish, andouille sausage, onions, bell peppers, celery, rich stock, dark roux, spices, rice, garnished with crispy okra and scallions</p>"
+            "text": "<p><strong>TCS CHICKEN SALAD SANDWICH - $11.99</strong><br/>Chicken, celery, onions, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on toast</p><p><strong>CHICKEN SATAY WRAP - $11.99</strong><br/>Sesame peanut marinated chicken, hummus, cucumber, pickled peppers, arugula, on spinach wrap</p><p><strong>PORKLOIN BLT - $11.99</strong><br/>Roasted pork loin, bacon, pepper aioli, tomato, greens, smoked provolone, on teaxas toast</p><p><strong>CHICKEN AND CRAYFISH GUMBO - 5.99</strong><br/>Roasted chicken, crayfish, andouille sausage, onions, bell peppers, celery, rich stock, dark roux, spices, rice, garnished with crispy okra and scallions</p>"
           }
         }
       },
