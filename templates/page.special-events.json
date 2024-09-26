@@ -22,7 +22,7 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>UPCOMING EVENTS<\/p>",
+            "title": "<p>UPCOMING EVENTS</p>",
             "title_size": 54,
             "subheading": "",
             "link": "",
@@ -31,7 +31,7 @@
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/outside_day_time.jpg",
+            "image": "shopify://shop_images/outside_day_time.jpg",
             "overlay_opacity": 26
           }
         }
@@ -51,13 +51,13 @@
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/September_Burger_Night_2024_Insta.png",
+        "image": "shopify://shop_images/Fall_Fest_Info.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Burger Night- September 24th",
+        "title": "Fall Festival- October 5th",
         "heading_size": "h2",
-        "text": "<p>Join us on September 24th at 5:30pm for our monthly Burger Night! No tickets are needed, just order at our café and dine on our screened-in patio!<\/p>",
+        "text": "<p>Celebrate fall with The Cook's Station on October 5th from 9am-4pm for our Annual Fall festival! We will have tent sales, free food & wine sampling, raffle baskets, live music, and more!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -73,13 +73,13 @@
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/September_brunch_Menu_Instagram_Post_3.png",
+        "image": "shopify://shop_images/September_brunch_Menu_Instagram_Post_3.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Sunday Brunch- 9\/29",
+        "title": "Sunday Brunch- 9/29",
         "heading_size": "h2",
-        "text": "<p>Join us for a delightful Sunday Brunch at The Cook's Station on September 29th, from 11am-2pm! Indulge in a curated selection of delicious dishes crafted by Chef Vinnie. Dine on our screened-in patio, and enjoy a mimosa from our bar. Whether you're in the mood for savory or sweet, our menu has something for every palate. Bring your friends and family for a memorable meal and make your Sunday special with us!<\/p>",
+        "text": "<p>Join us for a delightful Sunday Brunch at The Cook's Station on September 29th, from 11am-2pm! Indulge in a curated selection of delicious dishes crafted by Chef Vinnie. Dine on our screened-in patio, and enjoy a mimosa from our bar. Whether you're in the mood for savory or sweet, our menu has something for every palate. Bring your friends and family for a memorable meal and make your Sunday special with us!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -95,13 +95,13 @@
     "text_and_image_WHRXBw": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify:\/\/shop_images\/September_Italian_Dinner.png",
+        "image": "shopify://shop_images/September_Italian_Dinner.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "September Italian Night- 9\/25",
+        "title": "September Italian Night- 9/25",
         "heading_size": "h2",
-        "text": "<p>Join us at The Cook's Station for a delightful Italian Night with Chef Vinnie! Experience the rich flavors of Italy as Chef Vinnie prepares authentic dishes that transport you straight to the heart of Italy. Buon appetito!<\/p>",
+        "text": "<p>Join us at The Cook's Station for a delightful Italian Night with Chef Vinnie! Experience the rich flavors of Italy as Chef Vinnie prepares authentic dishes that transport you straight to the heart of Italy. Buon appetito!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -120,11 +120,11 @@
         "map_title": "Our retail store",
         "heading_size": "h2",
         "heading_position": "left",
-        "address": "<p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/><strong>Cafe Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/><span style=\"text-decoration:underline\"><em>Cafe is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<\/p><p>Closed the 1st Saturday of the month <br\/>Sunday: Closed <\/p>",
+        "address": "<p>M-F: 8:00AM - 8:00PM<br/>Saturday: 9:00AM - 8:00PM<br/>Sunday: 10:00AM - 5:00PM<br/><br/><strong>Cafe Hours:<br/></strong>8:00AM - 3:00PM<br/>Breakfast: 8:00AM-11:00AM<br/>Lunch: 11:00AM - 3:00PM<br/><span style=\"text-decoration:underline\"><em>Cafe is closed on Sundays<br/></em></span><br/><strong>Appliance Hours:<br/></strong>Monday- Friday: 8am-5pm<br/>Saturday: 10-4pm</p><p>Closed the 1st Saturday of the month <br/>Sunday: Closed </p>",
         "map_address": "515 Buncombe St. Greenville, SC 29061",
         "api_key": "",
         "show_button": true,
-        "background_image": "shopify:\/\/shop_images\/building-exterior_cooks-station_hogan-construction_street-view_cc9ca009-2839-4910-ba76-75bb415f544f.jpg"
+        "background_image": "shopify://shop_images/building-exterior_cooks-station_hogan-construction_street-view_cc9ca009-2839-4910-ba76-75bb415f544f.jpg"
       }
     }
   },
