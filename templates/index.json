@@ -12,20 +12,37 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "hero_N8rzKf": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>WE ARE OPEN</p>",
+            "title_size": 70,
+            "subheading": "9/30/24 WE ARE SERVING FOOD IN THE CAFE!",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/2020.10.05_-_Cooks_Station_Final_-_Select-24.jpg",
+            "overlay_opacity": 0
+          }
+        },
         "slideshow-0": {
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h5>THE BEST STORIES ARE TOLD WITH FOOD<\/h5>",
+            "title": "<h5>THE BEST STORIES ARE TOLD WITH FOOD</h5>",
             "title_size": 60,
             "subheading": "Lean more about The Cook's Station below!",
-            "link": "shopify:\/\/pages\/about-us",
+            "link": "shopify://pages/about-us",
             "link_text": "ABOUT US",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-bottom horizontal-center",
-            "image": "shopify:\/\/shop_images\/outside_day_time_00bc3e4a-cc4f-48ee-a325-ac5df7acee5e.jpg",
+            "image": "shopify://shop_images/outside_day_time_00bc3e4a-cc4f-48ee-a325-ac5df7acee5e.jpg",
             "overlay_opacity": 20
           }
         },
@@ -33,16 +50,16 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h5>SHOP ONLINE<\/h5>",
+            "title": "<h5>SHOP ONLINE</h5>",
             "title_size": 70,
             "subheading": "Shop The Cook's Station from the comfort of your couch!",
-            "link": "shopify:\/\/pages\/shop-collections",
+            "link": "shopify://pages/shop-collections",
             "link_text": "Shop",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262895.jpg",
+            "image": "shopify://shop_images/pexels-sarah-chai-7262895.jpg",
             "overlay_opacity": 0
           }
         },
@@ -50,16 +67,16 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h5>CLASSES & DINNERS<\/h5>",
+            "title": "<h5>CLASSES & DINNERS</h5>",
             "title_size": 60,
             "subheading": "Sharpen your culinary skills or learn something new!",
-            "link": "shopify:\/\/collections\/in-store-classes",
+            "link": "shopify://collections/in-store-classes",
             "link_text": "View Classes",
-            "link_2": "shopify:\/\/collections\/events",
+            "link_2": "shopify://collections/events",
             "link_text_2": "View Dinners",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/christa-rene-photography-69.jpg",
+            "image": "shopify://shop_images/christa-rene-photography-69.jpg",
             "overlay_opacity": 20
           }
         },
@@ -67,22 +84,23 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<h5>CAFE & BAR<\/h5>",
+            "title": "<h5>CAFE & BAR</h5>",
             "title_size": 70,
             "subheading": "Come enjoy our patio with a drink in hand and a plate full of food!",
-            "link": "shopify:\/\/pages\/cafe",
+            "link": "shopify://pages/cafe",
             "link_text": "Cafe Menu",
-            "link_2": "shopify:\/\/pages\/bar-tapas",
+            "link_2": "shopify://pages/bar-tapas",
             "link_text_2": "Bar Menu",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__27_6b4f8c49-87b5-4706-96e9-c4ffd65fb162.jpg",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg",
+            "image_mobile": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__27_6b4f8c49-87b5-4706-96e9-c4ffd65fb162.jpg",
             "overlay_opacity": 20
           }
         }
       },
       "block_order": [
+        "hero_N8rzKf",
         "slideshow-0",
         "hero_7cqwiA",
         "slideshow-1",
@@ -111,13 +129,13 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Whether you’re a talented home cook who likes to try the latest and greatest new gadgets and cookware; one that loves to share a nice meal with family and friends; or heck, even if you can’t cook a lick – and just plain enjoy delicious food – we exist for <em>you<\/em>.<\/p><p>Walk through our spacious store and be captivated by the collections of kitchenware, cookware, bakeware, and gadgets. We have top-of-the-line chef's knives to stylish tableware, to unique culinary tools, we offer a diverse selection of products that cater to all your cooking needs. Our helpful and friendly staff are always available to help guide you in the right direction, ensuring you find the perfect tools to unleash your culinary creativity.<\/p><p><em>515 Buncombe St. Greenville, SC 29601<\/em><\/p>"
+            "text": "<p>Whether you’re a talented home cook who likes to try the latest and greatest new gadgets and cookware; one that loves to share a nice meal with family and friends; or heck, even if you can’t cook a lick – and just plain enjoy delicious food – we exist for <em>you</em>.</p><p>Walk through our spacious store and be captivated by the collections of kitchenware, cookware, bakeware, and gadgets. We have top-of-the-line chef's knives to stylish tableware, to unique culinary tools, we offer a diverse selection of products that cater to all your cooking needs. Our helpful and friendly staff are always available to help guide you in the right direction, ensuring you find the perfect tools to unleash your culinary creativity.</p><p><em>515 Buncombe St. Greenville, SC 29601</em></p>"
           }
         },
         "24b45e77-539e-4a4b-b6ee-9dd7b3b1b2fb": {
           "type": "button",
           "settings": {
-            "link": "shopify:\/\/pages\/about-us",
+            "link": "shopify://pages/about-us",
             "link_text": "LEARN MORE"
           }
         }
@@ -140,43 +158,43 @@
         "logo-list-0": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Background.jpg",
-            "link": "shopify:\/\/collections\/costa-nova"
+            "image": "shopify://shop_images/Background.jpg",
+            "link": "shopify://collections/costa-nova"
           }
         },
         "logo-list-1": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Background_copy_33b11da7-8edb-4174-bbb7-d95d5c9b06e4.jpg",
-            "link": "shopify:\/\/collections\/le-creuset"
+            "image": "shopify://shop_images/Background_copy_33b11da7-8edb-4174-bbb7-d95d5c9b06e4.jpg",
+            "link": "shopify://collections/le-creuset"
           }
         },
         "logo-list-2": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/smithey_logo.png",
+            "image": "shopify://shop_images/smithey_logo.png",
             "link": ""
           }
         },
         "logo-list-3": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Background_copy_3.jpg",
-            "link": "shopify:\/\/collections\/vietri"
+            "image": "shopify://shop_images/Background_copy_3.jpg",
+            "link": "shopify://collections/vietri"
           }
         },
         "logo-list-4": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Background_copy_4.jpg",
-            "link": "shopify:\/\/collections\/costa-nova"
+            "image": "shopify://shop_images/Background_copy_4.jpg",
+            "link": "shopify://collections/costa-nova"
           }
         },
         "logo-list-5": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Background_copy_5.jpg",
-            "link": "shopify:\/\/collections\/nora-flemming"
+            "image": "shopify://shop_images/Background_copy_5.jpg",
+            "link": "shopify://collections/nora-flemming"
           }
         }
       },
@@ -206,7 +224,7 @@
           "settings": {
             "heading": "Shop In-Store Pickup!",
             "text": "Items ready for pickup!",
-            "link": "shopify:\/\/collections\/newsletter-products",
+            "link": "shopify://collections/newsletter-products",
             "label": "Shop now!",
             "color_scheme": "2"
           }
@@ -218,10 +236,10 @@
             "heading": "Shop Online",
             "textarea": "Shop The Cook's Station from home!",
             "cta_text1": "SHOP",
-            "cta_link1": "shopify:\/\/pages\/shop-collections",
+            "cta_link1": "shopify://pages/shop-collections",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/pexels-sarah-chai-7262895_1.jpg",
+            "image": "shopify://shop_images/pexels-sarah-chai-7262895_1.jpg",
             "video_url": "",
             "width": "33",
             "height": 500,
@@ -236,10 +254,10 @@
             "heading": "Food Menus",
             "textarea": "We’re on a mission to bring folks back to the table",
             "cta_text1": "VIEW",
-            "cta_link1": "shopify:\/\/pages\/menus",
+            "cta_link1": "shopify://pages/menus",
             "cta_text2": "",
             "cta_link2": "",
-            "video_url": "https:\/\/www.youtube.com\/watch?v=occgf6hbSLM",
+            "video_url": "https://www.youtube.com/watch?v=occgf6hbSLM",
             "width": "33",
             "height": 700,
             "text_align": "vertical-center horizontal-center",
@@ -253,10 +271,10 @@
             "heading": "Classes",
             "textarea": "Click here to learn more about out cooking classes and dinners!",
             "cta_text1": "Learn More",
-            "cta_link1": "shopify:\/\/pages\/menus",
+            "cta_link1": "shopify://pages/menus",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/AdobeStock_206969205_people-cheers.jpg",
+            "image": "shopify://shop_images/AdobeStock_206969205_people-cheers.jpg",
             "video_url": "",
             "width": "33",
             "height": 500,
@@ -269,7 +287,7 @@
           "settings": {
             "heading": "GIFT CARDS",
             "text": "We make giving gifts easy!",
-            "link": "shopify:\/\/products\/egift-card",
+            "link": "shopify://products/egift-card",
             "label": "Shop now",
             "color_scheme": "2"
           }
@@ -309,11 +327,11 @@
         "map_title": "Come Visit Us",
         "heading_size": "h2",
         "heading_position": "left",
-        "address": "<p><a href=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\" target=\"_blank\" title=\"https:\/\/www.google.com\/maps\/place\/515+Buncombe+St,+Greenville,+SC+29601\/@34.8560623,-82.403152,17z\/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\">515 Buncombe Street<br\/>Greenville, SC 29601<\/a><\/p><p>M-F: 8:00AM - 8:00PM<br\/>Saturday: 9:00AM - 8:00PM<br\/>Sunday: 10:00AM - 5:00PM<br\/><br\/>Café<strong> Hours:<br\/><\/strong>8:00AM - 3:00PM<br\/>Breakfast: 8:00AM-11:00AM<br\/>Lunch: 11:00AM - 3:00PM<br\/>Café<span style=\"text-decoration:underline\"><em> is closed on Sundays<br\/><\/em><\/span><br\/><strong>Appliance Hours:<br\/><\/strong>Monday- Friday: 8am-5pm<br\/>Saturday: 10-4pm<br\/>Sunday: Closed <\/p>",
+        "address": "<p><a href=\"https://www.google.com/maps/place/515+Buncombe+St,+Greenville,+SC+29601/@34.8560623,-82.403152,17z/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\" target=\"_blank\" title=\"https://www.google.com/maps/place/515+Buncombe+St,+Greenville,+SC+29601/@34.8560623,-82.403152,17z/data=!3m1!4b1!4m6!3m5!1s0x885831cf6679aee9:0x828f5a289cff6662!8m2!3d34.8560623!4d-82.403152!16s%2Fg%2F11c3q3l8xp?entry=ttu\">515 Buncombe Street<br/>Greenville, SC 29601</a></p><p>M-F: 8:00AM - 8:00PM<br/>Saturday: 9:00AM - 8:00PM<br/>Sunday: 10:00AM - 5:00PM<br/><br/>Café<strong> Hours:<br/></strong>8:00AM - 3:00PM<br/>Breakfast: 8:00AM-11:00AM<br/>Lunch: 11:00AM - 3:00PM<br/>Café<span style=\"text-decoration:underline\"><em> is closed on Sundays<br/></em></span><br/><strong>Appliance Hours:<br/></strong>Monday- Friday: 8am-5pm<br/>Saturday: 10-4pm<br/>Sunday: Closed </p>",
         "map_address": "515 Buncombe St. Greenville, SC 29061",
         "api_key": "",
         "show_button": false,
-        "background_image": "shopify:\/\/shop_images\/building-exterior_cooks-station_hogan-construction_street-view.jpg"
+        "background_image": "shopify://shop_images/building-exterior_cooks-station_hogan-construction_street-view.jpg"
       }
     },
     "16445322856406b896": {
