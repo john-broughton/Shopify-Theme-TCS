@@ -16,17 +16,17 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>WE ARE OPEN</p>",
-            "title_size": 79,
-            "subheading": "9/30/24 WE ARE SERVING FOOD IN THE CAFE!",
+            "title": "<p>0UR PHONES ARE DOWN, EMAIL US AT </p><p>INFO@THECOOKSSTATION.COM</p>",
+            "title_size": 63,
+            "subheading": "",
             "link": "",
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
-            "text_align": "vertical-bottom horizontal-left",
-            "image": "shopify://shop_images/2020.10.05_-_Cooks_Station_Final_-_Select-24.jpg",
-            "overlay_opacity": 0
+            "color_accent": "#ffffff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/inside_cafe_use_5f09a4b1-28f4-49b0-bd4d-af20220da3cb.jpg",
+            "overlay_opacity": 56
           }
         },
         "slideshow-0": {
