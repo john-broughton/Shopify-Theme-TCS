@@ -22,14 +22,21 @@
         "button_iGB7Ci": {
           "type": "button",
           "settings": {
-            "link": "https:\/\/mailchi.mp\/1ffed297e96e\/store-wide-sale-halloween-must-haves?e=503ee3a5f1",
+            "link": "https://mailchi.mp/1ffed297e96e/store-wide-sale-halloween-must-haves?e=503ee3a5f1",
             "link_text": "View Newsletter"
+          }
+        },
+        "page_9PLppy": {
+          "type": "page",
+          "settings": {
+            "page_text": "about-us"
           }
         }
       },
       "block_order": [
         "heading_JR3kHg",
-        "button_iGB7Ci"
+        "button_iGB7Ci",
+        "page_9PLppy"
       ],
       "settings": {
         "align_text": "center",
