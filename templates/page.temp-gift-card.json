@@ -15,115 +15,72 @@
       "settings": {
       }
     },
-    "text_columns_M3xf6e": {
-      "type": "text-columns",
+    "rich_text_YKfxzc": {
+      "type": "rich-text",
       "blocks": {
-        "text_block_xJd6j7": {
-          "type": "text_block",
+        "heading_xQTMpd": {
+          "type": "heading",
           "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/1_8eff556c-059d-4be2-8d9f-00d07e6f686a.png",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
+            "title": "Gift Cards",
+            "heading_size": "h2"
           }
         },
-        "text_block_Rd4cTj": {
-          "type": "text_block",
+        "text_d7E6ne": {
+          "type": "text",
           "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/2.png",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
+            "enlarge_text": true,
+            "text": "<p>Due to Hurricane Helen impacting our network and phone systems, we have temporarily suspended online gift card sales. We appreciate your understanding during this time and are working hard to restore service as quickly as possible.</p><p>In the meantime, you can still purchase gift cards in-store, or if you prefer, we can process a gift card manually. Just email us at <a>info@thecooksstation.com</a>, and an associate will get back to you as soon as possible.</p><p>Thank you for your patience!</p>"
           }
         }
       },
       "block_order": [
-        "text_block_xJd6j7",
-        "text_block_Rd4cTj"
+        "heading_xQTMpd",
+        "text_d7E6ne"
       ],
-      "disabled": true,
       "settings": {
-        "title": "Bar Menus",
         "align_text": "center",
-        "divider": false,
-        "color_scheme": "none"
+        "narrow_column": true,
+        "color_scheme": "2",
+        "divider": false
       }
     },
-    "16445213628fdd80d7": {
-      "type": "faq",
+    "slideshow_b7nMnj": {
+      "type": "slideshow",
       "blocks": {
-        "ddf23fe8-8ee1-49d8-a8df-c975a51f047e": {
-          "type": "rich-text",
+        "hero_cqWxtw": {
+          "type": "hero",
           "settings": {
-            "title": "DRINK OFFERINGS",
-            "text": "<p>Ask at the wine bar or retail section for the latest beer and wine offerings by the glass to enjoy while shopping, or to take home.</p>",
-            "align_text": "center"
-          }
-        },
-        "164452136229151070-0": {
-          "type": "question",
-          "settings": {
-            "title": "WINE BY THE GLASS",
-            "text": "<p><em><strong>WHITE</strong></em></p><p>Il Cantico, Pinot Grigio (<em>Italy</em>)</p><p>Anne Pinchon, Vermentino (<em>France</em>) </p><p>Doudet- Naudin, Chardonnay (<em>France</em>) </p><p>Gulp Hablo, Orange (<em>Spain</em>)</p><p><em><strong>BUBBLES</strong></em></p><p>Montelvini Tullia Prosecco; Sparkling: Semi-Dry; Italy</p><p>Los Monteros, Cava</p><p>Le Colture, Prosecco Rose</p><p><em><strong>ROSE'</strong></em></p><p>Pigoudet Premiere (Provence, France)</p><p>Pannonica (France) </p><p><em><strong>RED</strong></em></p><p>Altosur, Cabernet Sauvignon</p><p>Bordeaux Jourdan</p><p>Rio Maggio</p><p>Pas de Probleme, Pinot Noir</p>"
-          }
-        },
-        "164452136229151070-1": {
-          "type": "question",
-          "settings": {
-            "title": "B(U)Y THE BOTTLE",
-            "text": "<p>Whether you fancy yourself a moonlighting sommelier-type OR you select wine at the store based on the merits of label design (no shame in that game), we have an expertly curated, eclectic and affordable selection of retail bottles of wine from all over the world.</p><p>Grab a new bottle off the wall and a family meal from our fridge for peace of mind on your workday trek home. Pair a wine with local cheeses (we’d love to help you with selections). Together let’s build a custom gift basket for your more-than-deserving neighbor/aunt/teacher/friend (we’ll then wrap it for ya, too).</p><p>Now <em>that’s</em> bottle service!</p>"
-          }
-        },
-        "63bb8c95-731c-40dc-956c-d35a23b4b790": {
-          "type": "rich-text",
-          "settings": {
-            "title": "BEER UP, WE’RE HERE FOR YA",
-            "text": "",
-            "align_text": "center"
-          }
-        },
-        "61cef9f0-f41a-4aaf-ac76-f8d02dd7fae8": {
-          "type": "question",
-          "settings": {
-            "title": "BOTTLES & CANS",
-            "text": "<p>Peroni</p><p>Trifecta IPA (Greenville, SC)</p><p>Birds Fly South Blueprint IPA (Greenville, SC) </p><p>Allagash White</p><p>Seasonal Edmunds Oast (Charleston, SC)</p><p>Bud light</p><p>Ellie's Brown Ale</p><p>Blue Moon Light Sky Citrus </p><p>Yee-Haw IPA </p><p>Athletic Brewery- Free Wave IPA (non-alcoholic)</p><p><em><strong>Seltzers and Ciders</strong></em></p><p>Original Sin Black Widow Cider </p><p>Ginger's Revenge- Lime Agave Ginger Beer </p><p>Bravazzi- Italian Hard Soda Blood Orange</p>"
-          }
-        },
-        "71f9806a-b00b-4dc5-b66b-28effc155c88": {
-          "type": "question",
-          "settings": {
-            "title": "ON TAP",
-            "text": "<p>Birds Fly South: English Mild </p><p>Stella Artois </p><p>Steel Hands: Juicy Hazy IPA </p>"
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/OutlineofStorelogo_1.jpg",
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "ddf23fe8-8ee1-49d8-a8df-c975a51f047e",
-        "164452136229151070-0",
-        "164452136229151070-1",
-        "63bb8c95-731c-40dc-956c-d35a23b4b790",
-        "61cef9f0-f41a-4aaf-ac76-f8d02dd7fae8",
-        "71f9806a-b00b-4dc5-b66b-28effc155c88"
+        "hero_cqWxtw"
       ],
-      "disabled": true,
       "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "heading_position": "left"
+        "full_width": true,
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     }
   },
   "order": [
     "main",
-    "text_columns_M3xf6e",
-    "16445213628fdd80d7"
+    "slideshow_b7nMnj",
+    "rich_text_YKfxzc"
   ]
 }
