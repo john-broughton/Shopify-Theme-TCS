@@ -31,11 +31,19 @@
             "enlarge_text": true,
             "text": "<p>Due to Hurricane Helene impacting our network and phone systems, we have temporarily suspended online gift card sales. We appreciate your understanding during this time and are working hard to restore service as quickly as possible.</p><p>In the meantime, you can still purchase gift cards in-store, or if you prefer, we can process a gift card manually. Just email us at <a>info@thecooksstation.com</a>, and an associate will get back to you as soon as possible.</p><p>Thank you for your patience!</p>"
           }
+        },
+        "button_GKULei": {
+          "type": "button",
+          "settings": {
+            "link": "mailto:info@thecooksstation.com",
+            "link_text": "Email Us!"
+          }
         }
       },
       "block_order": [
         "heading_xQTMpd",
-        "text_d7E6ne"
+        "text_d7E6ne",
+        "button_GKULei"
       ],
       "settings": {
         "align_text": "center",
