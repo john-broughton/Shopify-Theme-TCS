@@ -45,26 +45,6 @@
           "type": "price",
           "settings": {
           }
-        },
-        "quantity_selector_KcWnct": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false,
-            "show_gift_card_recipient": false
-          }
-        },
-        "sales_point": {
-          "type": "sales_point",
-          "settings": {
-            "icon": "package",
-            "text": "Free In Store Pickup"
-          }
         }
       },
       "block_order": [
@@ -72,10 +52,7 @@
         "inventory_status",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
         "variant_picker_PHeixP",
-        "price",
-        "quantity_selector_KcWnct",
-        "buy_buttons",
-        "sales_point"
+        "price"
       ],
       "custom_css": [
 
