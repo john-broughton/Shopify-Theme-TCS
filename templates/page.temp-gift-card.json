@@ -21,7 +21,7 @@
         "heading_xQTMpd": {
           "type": "heading",
           "settings": {
-            "title": "Gift Cards",
+            "title": "Online Gift Card Sales On Hold!",
             "heading_size": "h2"
           }
         },
@@ -29,7 +29,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Due to Hurricane Helen impacting our network and phone systems, we have temporarily suspended online gift card sales. We appreciate your understanding during this time and are working hard to restore service as quickly as possible.</p><p>In the meantime, you can still purchase gift cards in-store, or if you prefer, we can process a gift card manually. Just email us at <a>info@thecooksstation.com</a>, and an associate will get back to you as soon as possible.</p><p>Thank you for your patience!</p>"
+            "text": "<p>Due to Hurricane Helene impacting our network and phone systems, we have temporarily suspended online gift card sales. We appreciate your understanding during this time and are working hard to restore service as quickly as possible.</p><p>In the meantime, you can still purchase gift cards in-store, or if you prefer, we can process a gift card manually. Just email us at <a>info@thecooksstation.com</a>, and an associate will get back to you as soon as possible.</p><p>Thank you for your patience!</p>"
           }
         }
       },
@@ -43,44 +43,10 @@
         "color_scheme": "2",
         "divider": false
       }
-    },
-    "slideshow_b7nMnj": {
-      "type": "slideshow",
-      "blocks": {
-        "hero_cqWxtw": {
-          "type": "hero",
-          "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 70,
-            "subheading": "",
-            "link": "",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#fff",
-            "text_align": "vertical-bottom horizontal-left",
-            "image": "shopify://shop_images/OutlineofStorelogo_1.jpg",
-            "overlay_opacity": 0
-          }
-        }
-      },
-      "block_order": [
-        "hero_cqWxtw"
-      ],
-      "settings": {
-        "full_width": true,
-        "desktop_size": -10,
-        "mobile_size": 0,
-        "style": "arrows",
-        "autoplay": true,
-        "autoplay_speed": 7
-      }
     }
   },
   "order": [
     "main",
-    "slideshow_b7nMnj",
     "rich_text_YKfxzc"
   ]
 }
