@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -160,7 +160,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Daily Specials - 09/26",
+            "title": "Daily Specials - 10/12",
             "heading_size": "h2"
           }
         },
@@ -168,7 +168,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>TCS CHICKEN SALAD SANDWICH - $11.99</strong><br/>Chicken, celery, onions, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on toast</p><p><strong>THE JAM BURGER - $13.99</strong><br/>Double beef patty, prosciutto, brie cheese, fig jam, caramelized red onions, arugula, herb roasted garlic aioli</p><p><strong>PORKLOIN BLT - $11.99</strong><br/>Roasted pork loin, bacon, pepper aioli, tomato, greens, smoked provolone, on Texas toast</p><p><strong>SWEET POTATO SOUP - 5.99</strong><br/>Onions, celery, carrots, sherry, chicken stock, cream, garnished with leeks and bacon dust</p>"
+            "text": "<p><strong>TCS CHICKEN SALAD SANDWICH - $11.99</strong><br/>Chicken, celery, onions, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on toast</p><p><strong>ROASTED VEGGIE WRAP - $11.99</strong><br/>Carrots, eggplant, spinach, mushrooms, broccoli, parsnips, zucchini, squash, leeks, arugula, tomatoes, on a spinach wrap</p><p><strong>BUFFALO CHICKEN MELT - $11.99</strong><br/>Red onions, celery, mayonnaise, sour cream, ricotta, hot sauce, roasted peppers, picked peppers, herbs, on Texas toast</p><p><strong>CREAMY TOMATO AND PEPPER SOUP - 5.99</strong><br/>Onions, garlic, roasted tomatoes and red peppers, basil, oregano, heavy cream, spices, lemon zest and juice</p>"
           }
         }
       },
