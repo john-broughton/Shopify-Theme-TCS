@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -51,13 +51,13 @@
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/Fall_Fest_Info.png",
+        "image": "shopify://shop_images/TOWN_holiday_open_house_ad.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Fall Festival- October 5th",
+        "title": "Holiday Open House- November 10th",
         "heading_size": "h2",
-        "text": "<p>Celebrate fall with The Cook's Station on October 5th from 9am-4pm for our Annual Fall festival! We will have tent sales, free food & wine sampling, raffle baskets, live music, and more!</p>",
+        "text": "<p>You'll find festive décor, exclusive holiday deals, and delicious treats to kick off the season! We will have free food sampling, free wine sampling, and live music!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
