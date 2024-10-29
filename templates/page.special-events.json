@@ -94,6 +94,7 @@
     },
     "text_and_image_WHRXBw": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/September_Italian_Dinner_3.png",
         "image_mask": "none",
@@ -131,8 +132,8 @@
   "order": [
     "main",
     "1644519722c7610927",
-    "text_and_image_rBNfCd",
     "text_and_image_iV6NVF",
+    "text_and_image_rBNfCd",
     "text_and_image_WHRXBw",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
