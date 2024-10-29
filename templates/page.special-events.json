@@ -73,13 +73,13 @@
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/September_brunch_Menu_Instagram_Post_3.png",
+        "image": "shopify://shop_images/Christmas_China_Cheer_Invite_2.png",
         "image_mask": "none",
         "image2_mask": "none",
-        "subtitle": "",
-        "title": "Sunday Brunch- 9/29",
+        "subtitle": "November 8th 12pm-3pm",
+        "title": "Christmas China & Cheer Event",
         "heading_size": "h2",
-        "text": "<p>Join us for a delightful Sunday Brunch at The Cook's Station on September 29th, from 11am-2pm! Indulge in a curated selection of delicious dishes crafted by Chef Vinnie. Dine on our screened-in patio, and enjoy a mimosa from our bar. Whether you're in the mood for savory or sweet, our menu has something for every palate. Bring your friends and family for a memorable meal and make your Sunday special with us!</p>",
+        "text": "<p>Get ready to deck the halls (and your tables!) with stunning Vietri & Casafina holiday patterns! </p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
