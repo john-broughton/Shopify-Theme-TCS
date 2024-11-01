@@ -120,7 +120,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/FINAL_breakfast_spring_menu.png",
+            "image": "shopify://shop_images/skinny_breakfast.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -133,7 +133,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2024_2.png",
+            "image": "shopify://shop_images/lunch_skinny.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
