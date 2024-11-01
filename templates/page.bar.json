@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -19,13 +19,13 @@
       "type": "text-and-image",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Happy_Hour_9.2.23.png",
+        "image": "shopify://shop_images/Happy_Hour_9.2.23.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
         "title": "jOIN US FOR HAPPY hOUR!",
         "heading_size": "h2",
-        "text": "<p>Join us for our delightful Happy Hour at our store! Relax on our inviting patio or explore our curated collection while savoring a refreshing glass of wine or beer. It's the perfect way to unwind after a long day or to kick off a fun evening of shopping. Cheers to great deals and good times!<\/p>",
+        "text": "<p>Join us for our delightful Happy Hour at our store! Relax on our inviting patio or explore our curated collection while savoring a refreshing glass of wine or beer. It's the perfect way to unwind after a long day or to kick off a fun evening of shopping. Cheers to great deals and good times!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -46,12 +46,12 @@
           "settings": {
             "subheading": "",
             "heading": "Drink & Be Merry",
-            "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large;font-weight:bold;display: inline-block;\">HAPPY HOUR<\/p>\n<p style='font-size:small;font-weight:bold\"'>• Monday - Friday: 4:30-6:00pm<br>$3 Off Tapas and Wine By The Glass<br><br>• Saturday - Sunday 2:00pm - 4:00pm<br> $3 Off Wine By The Glass <\/p>\n<\/div>",
+            "textarea": "<div style=\"padding:12px;border: 1px solid;width:vw;display: inline-block;\">\n<p style=\"font-size:large;font-weight:bold;display: inline-block;\">HAPPY HOUR</p>\n<p style='font-size:small;font-weight:bold\"'>• Monday - Friday: 4:30-6:00pm<br>$3 Off Tapas and Wine By The Glass<br><br>• Saturday - Sunday 2:00pm - 4:00pm<br> $3 Off Wine By The Glass </p>\n</div>",
             "cta_text1": "",
-            "cta_link1": "https:\/\/www.thecooksstation.com\/pages\/bar-tapas.html#shopify-section-template--17974951575777__text_columns_M3xf6e",
+            "cta_link1": "https://www.thecooksstation.com/pages/bar-tapas.html#shopify-section-template--17974951575777__text_columns_M3xf6e",
             "cta_text2": "",
-            "cta_link2": "https:\/\/www.thecooksstation.com\/pages\/bar-tapas.html#shopify-section-template--17974951575777__text_columns_wQehrL",
-            "image": "shopify:\/\/shop_images\/Cooks-Station_Huang-shoot_wine-holder.jpg",
+            "cta_link2": "https://www.thecooksstation.com/pages/bar-tapas.html#shopify-section-template--17974951575777__text_columns_wQehrL",
+            "image": "shopify://shop_images/Cooks-Station_Huang-shoot_wine-holder.jpg",
             "video_url": "",
             "width": "100",
             "height": 420,
@@ -81,16 +81,16 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>BAR AND TAPAS MENU<\/p>",
+            "title": "<p>BAR AND TAPAS MENU</p>",
             "title_size": 64,
             "subheading": "",
             "link": "",
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__26_49f08674-5b1d-4133-8a69-365da55ff139.jpg",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__26_49f08674-5b1d-4133-8a69-365da55ff139.jpg",
             "overlay_opacity": 16
           }
         }
@@ -114,7 +114,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/Wine_Beer_Bar_Menu-_8.26.24.png",
+            "image": "shopify://shop_images/Wine_Beer_Bar_Menu-_8.26.24_bdd80169-e04d-4666-b5d7-858c65738f14.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "",
@@ -127,7 +127,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/2.png",
+            "image": "shopify://shop_images/2.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "",
@@ -167,7 +167,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/Spring_Tapas_Menu_2024_e58186ab-b737-4119-ba64-b747ff09331c.png",
+            "image": "shopify://shop_images/Fall_Tapas_Menu_2024.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "",
@@ -207,7 +207,7 @@
     "text_and_image_xtV9AY",
     "promo_grid_qTGxJq",
     "slideshow_BbDDEQ",
-    "text_columns_M3xf6e",
-    "text_columns_wQehrL"
+    "text_columns_wQehrL",
+    "text_columns_M3xf6e"
   ]
 }
