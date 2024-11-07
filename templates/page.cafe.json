@@ -12,8 +12,7 @@
     "main": {
       "type": "main-page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "promo_grid_jKDwGY": {
       "type": "promo-grid",
@@ -160,7 +159,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Daily Specials - 11/4",
+            "title": "Daily Specials - 11/7",
             "heading_size": "h2"
           }
         },
@@ -168,7 +167,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>TCS CHICKEN SALAD SANDWICH - $11.99</strong><br/>Chicken, celery, onions, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on toast</p><p><strong>SMOKED SALMON AVOCADO TOAST - $11.99</strong><br/>Goat cheese boursin, avocado, pickled onion, cured tomato, arugula, on Rise sourdough</p><p><strong>TCS SMASH BURGER - $14.99</strong><br/>Double beef patty, bacon, grilled sweet onions, pickles, American and Farmer cheese, with house sauce, on a potato bun. Add an egg for $2</p><p><strong>MUSHROOM SOUP - $5.99</strong><br/>Mushrooms, garlic, onions, chicken stock, celery, cream, garnished with blackened mushrooms and herbs</p><p><strong>APPLE & BUTTERNUT SQUASH SOUP - $5.99</strong><br/>Roasted apples, butternut squash, onions, celery, vegetable stock, oat milk, herbs, garnished with cider glaze and sunflower seeds</p>"
+            "text": "<p><strong>TCS CHICKEN SALAD SANDWICH - $11.99</strong><br/>Chicken, celery, onions, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on toast</p><p><strong>ITALIAN MELT - $12.99</strong><br/>Mortadella, capicola, pepperoni, fennel salami, roasted peppers, cured tomatoes, provolone, ricotta, on toasted bread</p><p><strong>APPLE & BUTTERNUT SQUASH SOUP - $5.99</strong><br/>Roasted apples, butternut squash, onions, celery, vegetable stock, oat milk, herbs, garnished with cider glaze and sunflower seeds *vegan*</p><p><strong>CREAMY BACON TOMATO SOUP - $5.99</strong><br/>Bacon, onion, celery, tomatoes, chicken stock, cream, herbs and spices, garnished with croutons</p>"
           }
         }
       },
