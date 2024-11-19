@@ -71,15 +71,14 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/TOWN_holiday_open_house_ad.png",
+        "image": "shopify://shop_images/Heading_Instagram_Post_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Holiday Open House- November 10th",
+        "title": "Knife Sharpening",
         "heading_size": "h2",
-        "text": "<p>You'll find festive décor, exclusive holiday deals, and delicious treats to kick off the season! We will have free food sampling, free wine sampling, and live music!</p>",
+        "text": "<p>Last chance before Thanksgiving!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
