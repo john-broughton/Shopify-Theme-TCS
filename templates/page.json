@@ -1,19 +1,18 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "slideshow_bxwR3T": {
       "type": "slideshow",
@@ -22,16 +21,16 @@
           "type": "hero",
           "settings": {
             "top_subheading": "The Cook's Station",
-            "title": "<p>Eat & Drink<\/p>",
+            "title": "<p>Eat & Drink</p>",
             "title_size": 70,
             "subheading": "",
-            "link": "shopify:\/\/pages\/cafe",
+            "link": "shopify://pages/cafe",
             "link_text": "Cafe Menu",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/inside_cafe_use.jpg",
+            "image": "shopify://shop_images/inside_cafe_use.jpg",
             "overlay_opacity": 14
           }
         },
@@ -39,16 +38,16 @@
           "type": "hero",
           "settings": {
             "top_subheading": "The Cook's Station",
-            "title": "<p>Eat & Drink <\/p>",
+            "title": "<p>Eat & Drink </p>",
             "title_size": 70,
             "subheading": "",
-            "link": "shopify:\/\/pages\/bar-tapas",
+            "link": "shopify://pages/bar-tapas",
             "link_text": "Bar and Tapas Menu",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg",
             "overlay_opacity": 12
           }
         }
@@ -76,7 +75,7 @@
             "image_mask": "none",
             "image_width": 540,
             "title": "",
-            "text": "<h3>CAFE HOURS<\/h3><h3><\/h3><p>• Monday- Friday: 8am-3pm<br\/>•  Saturday: 9AM-3PM<br\/>• Sunday: Closed <\/p>",
+            "text": "<h3>CAFE HOURS</h3><h3></h3><p>• Monday- Friday: 8am-3pm<br/>•  Saturday: 9AM-3PM<br/>• Sunday: Closed </p>",
             "button_label": "",
             "button_link": ""
           }
@@ -88,7 +87,7 @@
             "image_mask": "none",
             "image_width": 540,
             "title": "",
-            "text": "<h3>HAPPY HOUR<\/h3><p>• Monday - Friday: 4:30-6:00pm<br\/>$3 Off Tapas and Wine By The Glass<br\/><br\/>• Saturday - Sunday 2:00pm - 4:00pm<br\/> $3 Off Wine By The Glass <\/p>",
+            "text": "<h3>HAPPY HOUR</h3><p>• Monday - Friday: 4:30-6:00pm<br/>$3 Off Tapas and Wine By The Glass<br/><br/>• Saturday - Sunday 2:00pm - 4:00pm<br/> $3 Off Wine By The Glass </p>",
             "button_label": "",
             "button_link": ""
           }
@@ -111,7 +110,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Daily Specials - 06\/03",
+            "title": "Daily Specials - 06/03",
             "heading_size": "h2"
           }
         },
@@ -119,7 +118,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>TCS CHICKEN SALAD SANDWHICH - $11.99<\/strong><br\/>Chicken, celery, onions, dried cherries, pecan dust, mayo-based dressing, pickled red onions, greens, on toast<\/p><p><strong>TCS SMASH BURGER - $13.99<\/strong><br\/>Thin double beef patty, bacon, grilled sweet onions, pickles, American and farmer cheese, with house sauce<\/p><p><strong>PORK CHOP SANDWICH - $12.99<\/strong><br\/>Grilled pork chop, monterey jack cheese, pear balsamic marinated tomatoes, pickled apples, arugula, onion aioli, on ciabatta<\/p><p><strong>LOADED POTATO SOUP- $5.99<\/strong><br\/>Potatoes, carrots, onions, gouda cheddar blend, spices, cream, garnished with bacon<\/p>"
+            "text": "<p><strong>TCS CHICKEN SALAD SANDWHICH - $11.99</strong><br/>Chicken, celery, onions, dried cherries, pecan dust, mayo-based dressing, pickled red onions, greens, on toast</p><p><strong>TCS SMASH BURGER - $13.99</strong><br/>Thin double beef patty, bacon, grilled sweet onions, pickles, American and farmer cheese, with house sauce</p><p><strong>PORK CHOP SANDWICH - $12.99</strong><br/>Grilled pork chop, monterey jack cheese, pear balsamic marinated tomatoes, pickled apples, arugula, onion aioli, on ciabatta</p><p><strong>LOADED POTATO SOUP- $5.99</strong><br/>Potatoes, carrots, onions, gouda cheddar blend, spices, cream, garnished with bacon</p>"
           }
         }
       },
@@ -145,10 +144,10 @@
             "heading": "View Our Cafe Menu",
             "textarea": "",
             "cta_text1": "Cafe Menu",
-            "cta_link1": "shopify:\/\/pages\/cafe",
+            "cta_link1": "shopify://pages/cafe",
             "cta_text2": "",
             "cta_link2": "",
-            "video_url": "https:\/\/www.youtube.com\/watch?v=occgf6hbSLM",
+            "video_url": "https://www.youtube.com/watch?v=occgf6hbSLM",
             "width": "33",
             "height": 640,
             "text_align": "vertical-center horizontal-center",
@@ -165,7 +164,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Lunch__46_1.jpg",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Lunch__46_1.jpg",
             "video_url": "",
             "width": "33",
             "height": 620,
@@ -183,7 +182,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-turky_bacon_brie_2.jpg",
+            "image": "shopify://shop_images/ConvertOut-Resized-turky_bacon_brie_2.jpg",
             "video_url": "",
             "width": "33",
             "height": 620,
@@ -217,7 +216,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-chicken_biscuit.jpg",
+            "image": "shopify://shop_images/ConvertOut-Resized-chicken_biscuit.jpg",
             "video_url": "",
             "width": "33",
             "height": 640,
@@ -235,7 +234,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/sunrise_biscuit.jpg",
+            "image": "shopify://shop_images/sunrise_biscuit.jpg",
             "video_url": "",
             "width": "33",
             "height": 640,
@@ -250,10 +249,10 @@
             "heading": "View Our cafe Menu",
             "textarea": "",
             "cta_text1": "Cafe Menu",
-            "cta_link1": "shopify:\/\/pages\/cafe",
+            "cta_link1": "shopify://pages/cafe",
             "cta_text2": "",
             "cta_link2": "",
-            "video_url": "https:\/\/www.youtube.com\/watch?v=azukF6h-fik",
+            "video_url": "https://www.youtube.com/watch?v=azukF6h-fik",
             "width": "33",
             "height": 640,
             "text_align": "vertical-center horizontal-center",
@@ -277,13 +276,13 @@
       "type": "text-and-image",
       "disabled": true,
       "settings": {
-        "image": "shopify:\/\/shop_images\/Happy_Hour_9.2.23.png",
+        "image": "shopify://shop_images/Happy_Hour_9.2.23.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
         "title": "jOIN US FOR HAPPY hOUR!",
         "heading_size": "h2",
-        "text": "<p>Join us for our delightful Happy Hour at our store! Relax on our inviting patio or explore our curated collection while savoring a refreshing glass of wine or beer. It's the perfect way to unwind after a long day or to kick off a fun evening of shopping. Cheers to great deals and good times!<\/p>",
+        "text": "<p>Join us for our delightful Happy Hour at our store! Relax on our inviting patio or explore our curated collection while savoring a refreshing glass of wine or beer. It's the perfect way to unwind after a long day or to kick off a fun evening of shopping. Cheers to great deals and good times!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -303,16 +302,16 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>Drink & Be Merry<\/p>",
+            "title": "<p>Drink & Be Merry</p>",
             "title_size": 70,
             "subheading": "",
             "link": "",
             "link_text": "Bar and Tapas Menu",
-            "link_2": "shopify:\/\/pages\/bar-tapas",
+            "link_2": "shopify://pages/bar-tapas",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/Cooks-Station_Huang-shoot_wine-holder.jpg",
+            "image": "shopify://shop_images/Cooks-Station_Huang-shoot_wine-holder.jpg",
             "overlay_opacity": 0
           }
         }
@@ -342,7 +341,7 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__22.jpg",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__22.jpg",
             "video_url": "",
             "width": "33",
             "height": 640,
@@ -357,10 +356,10 @@
             "heading": "View Our Bar Menu",
             "textarea": "",
             "cta_text1": "Bar Menu",
-            "cta_link1": "shopify:\/\/pages\/bar-tapas",
+            "cta_link1": "shopify://pages/bar-tapas",
             "cta_text2": "",
             "cta_link2": "",
-            "video_url": "https:\/\/youtube.com\/watch?v=tMza7Lmh8q0",
+            "video_url": "https://youtube.com/watch?v=tMza7Lmh8q0",
             "width": "33",
             "height": 640,
             "text_align": "vertical-center horizontal-center",
@@ -377,11 +376,11 @@
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify:\/\/shop_images\/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__27.jpg",
+            "image": "shopify://shop_images/Italiano_Sliders.jpg",
             "video_url": "",
             "width": "33",
-            "height": 640,
-            "text_align": "vertical-center horizontal-center",
+            "height": 540,
+            "text_align": "vertical-top horizontal-left",
             "color_accent": "#ffffff"
           }
         }
@@ -405,7 +404,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/1_8eff556c-059d-4be2-8d9f-00d07e6f686a.png",
+            "image": "shopify://shop_images/1_8eff556c-059d-4be2-8d9f-00d07e6f686a.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "",
@@ -418,7 +417,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify:\/\/shop_images\/2.png",
+            "image": "shopify://shop_images/2.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "",
@@ -447,7 +446,7 @@
           "type": "rich-text",
           "settings": {
             "title": "DRINK OFFERINGS",
-            "text": "<p>Ask at the wine bar or retail section for the latest beer and wine offerings by the glass to enjoy while shopping, or to take home.<\/p>",
+            "text": "<p>Ask at the wine bar or retail section for the latest beer and wine offerings by the glass to enjoy while shopping, or to take home.</p>",
             "align_text": "center"
           }
         },
@@ -455,14 +454,14 @@
           "type": "question",
           "settings": {
             "title": "WINE BY THE GLASS",
-            "text": "<p><em><strong>WHITE<\/strong><\/em><\/p><p>Il Cantico, Pinot Grigio (<em>Italy<\/em>)<\/p><p>Anne Pinchon, Vermentino (<em>France<\/em>) <\/p><p>Doudet- Naudin, Chardonnay (<em>France<\/em>) <\/p><p>Gulp Hablo, Orange (<em>Spain<\/em>)<\/p><p><em><strong>BUBBLES<\/strong><\/em><\/p><p>Montelvini Tullia Prosecco; Sparkling: Semi-Dry; Italy<\/p><p>Los Monteros, Cava<\/p><p>Le Colture, Prosecco Rose<\/p><p><em><strong>ROSE'<\/strong><\/em><\/p><p>Pigoudet Premiere (Provence, France)<\/p><p>Pannonica (France) <\/p><p><em><strong>RED<\/strong><\/em><\/p><p>Altosur, Cabernet Sauvignon<\/p><p>Bordeaux Jourdan<\/p><p>Rio Maggio<\/p><p>Pas de Probleme, Pinot Noir<\/p>"
+            "text": "<p><em><strong>WHITE</strong></em></p><p>Il Cantico, Pinot Grigio (<em>Italy</em>)</p><p>Anne Pinchon, Vermentino (<em>France</em>) </p><p>Doudet- Naudin, Chardonnay (<em>France</em>) </p><p>Gulp Hablo, Orange (<em>Spain</em>)</p><p><em><strong>BUBBLES</strong></em></p><p>Montelvini Tullia Prosecco; Sparkling: Semi-Dry; Italy</p><p>Los Monteros, Cava</p><p>Le Colture, Prosecco Rose</p><p><em><strong>ROSE'</strong></em></p><p>Pigoudet Premiere (Provence, France)</p><p>Pannonica (France) </p><p><em><strong>RED</strong></em></p><p>Altosur, Cabernet Sauvignon</p><p>Bordeaux Jourdan</p><p>Rio Maggio</p><p>Pas de Probleme, Pinot Noir</p>"
           }
         },
         "164452136229151070-1": {
           "type": "question",
           "settings": {
             "title": "B(U)Y THE BOTTLE",
-            "text": "<p>Whether you fancy yourself a moonlighting sommelier-type OR you select wine at the store based on the merits of label design (no shame in that game), we have an expertly curated, eclectic and affordable selection of retail bottles of wine from all over the world.<\/p><p>Grab a new bottle off the wall and a family meal from our fridge for peace of mind on your workday trek home. Pair a wine with local cheeses (we’d love to help you with selections). Together let’s build a custom gift basket for your more-than-deserving neighbor\/aunt\/teacher\/friend (we’ll then wrap it for ya, too).<\/p><p>Now <em>that’s<\/em> bottle service!<\/p>"
+            "text": "<p>Whether you fancy yourself a moonlighting sommelier-type OR you select wine at the store based on the merits of label design (no shame in that game), we have an expertly curated, eclectic and affordable selection of retail bottles of wine from all over the world.</p><p>Grab a new bottle off the wall and a family meal from our fridge for peace of mind on your workday trek home. Pair a wine with local cheeses (we’d love to help you with selections). Together let’s build a custom gift basket for your more-than-deserving neighbor/aunt/teacher/friend (we’ll then wrap it for ya, too).</p><p>Now <em>that’s</em> bottle service!</p>"
           }
         },
         "63bb8c95-731c-40dc-956c-d35a23b4b790": {
@@ -477,14 +476,14 @@
           "type": "question",
           "settings": {
             "title": "BOTTLES & CANS",
-            "text": "<p>Peroni<\/p><p>Trifecta IPA (Greenville, SC)<\/p><p>Birds Fly South Blueprint IPA (Greenville, SC) <\/p><p>Allagash White<\/p><p>Seasonal Edmunds Oast (Charleston, SC)<\/p><p>Bud light<\/p><p>Ellie's Brown Ale<\/p><p>Blue Moon Light Sky Citrus <\/p><p>Yee-Haw IPA <\/p><p>Athletic Brewery- Free Wave IPA (non-alcoholic)<\/p><p><em><strong>Seltzers and Ciders<\/strong><\/em><\/p><p>Original Sin Black Widow Cider <\/p><p>Ginger's Revenge- Lime Agave Ginger Beer <\/p><p>Bravazzi- Italian Hard Soda Blood Orange<\/p>"
+            "text": "<p>Peroni</p><p>Trifecta IPA (Greenville, SC)</p><p>Birds Fly South Blueprint IPA (Greenville, SC) </p><p>Allagash White</p><p>Seasonal Edmunds Oast (Charleston, SC)</p><p>Bud light</p><p>Ellie's Brown Ale</p><p>Blue Moon Light Sky Citrus </p><p>Yee-Haw IPA </p><p>Athletic Brewery- Free Wave IPA (non-alcoholic)</p><p><em><strong>Seltzers and Ciders</strong></em></p><p>Original Sin Black Widow Cider </p><p>Ginger's Revenge- Lime Agave Ginger Beer </p><p>Bravazzi- Italian Hard Soda Blood Orange</p>"
           }
         },
         "71f9806a-b00b-4dc5-b66b-28effc155c88": {
           "type": "question",
           "settings": {
             "title": "ON TAP",
-            "text": "<p>Birds Fly South: English Mild <\/p><p>Stella Artois <\/p><p>Steel Hands: Juicy Hazy IPA <\/p>"
+            "text": "<p>Birds Fly South: English Mild </p><p>Stella Artois </p><p>Steel Hands: Juicy Hazy IPA </p>"
           }
         }
       },
