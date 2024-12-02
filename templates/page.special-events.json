@@ -71,6 +71,7 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Heading_Instagram_Post_2.png",
         "image_mask": "none",
@@ -79,29 +80,6 @@
         "title": "Knife Sharpening",
         "heading_size": "h2",
         "text": "<p>Last chance before Thanksgiving!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
-    "text_and_image_WHRXBw": {
-      "type": "text-and-image",
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/September_Italian_Dinner_3.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Italian Night- 10/3",
-        "heading_size": "h2",
-        "text": "<p>Join us at The Cook's Station for a delightful Italian Night with Chef Vinnie! Experience the rich flavors of Italy as Chef Vinnie prepares authentic dishes that transport you straight to the heart of Italy. Buon appetito!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -133,7 +111,6 @@
     "1644519722c7610927",
     "text_and_image_iV6NVF",
     "text_and_image_rBNfCd",
-    "text_and_image_WHRXBw",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
