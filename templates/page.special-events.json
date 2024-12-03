@@ -71,15 +71,14 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Heading_Instagram_Post_2.png",
+        "image": "shopify://shop_images/Heading_Instagram_Post_3.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Knife Sharpening",
         "heading_size": "h2",
-        "text": "<p>Last chance before Thanksgiving!</p>",
+        "text": "<p>Hand sharpened!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
