@@ -49,6 +49,7 @@
     },
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/November_2024_Burger_Night_1.png",
         "image_mask": "none",
