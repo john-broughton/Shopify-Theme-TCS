@@ -154,7 +154,7 @@
       ],
       "settings": {
         "align_text": "center",
-        "narrow_column": true,
+        "narrow_column": false,
         "color_scheme": "1",
         "divider": false
       }
@@ -176,7 +176,7 @@
       ],
       "settings": {
         "full_width": false,
-        "space_around": true
+        "space_around": false
       }
     },
     "logo_list_hJexFy": {
