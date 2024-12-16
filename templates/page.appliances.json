@@ -130,6 +130,35 @@
         "color_scheme": "none"
       }
     },
+    "rich_text_7cFmNF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_XhPaYp": {
+          "type": "heading",
+          "settings": {
+            "title": "Educational Videos",
+            "heading_size": "h2"
+          }
+        },
+        "text_mWHh7m": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Learn more about what we have to offer with the videos below!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_XhPaYp",
+        "text_mWHh7m"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
     "advanced_content_HjbTFG": {
       "type": "advanced-content",
       "blocks": {
@@ -424,6 +453,7 @@
     "slideshow_VVagyh",
     "rich_text_aPed7y",
     "testimonials_ajXYGX",
+    "rich_text_7cFmNF",
     "advanced_content_HjbTFG",
     "logo_list_hJexFy",
     "promo_grid_mGt8AN",
