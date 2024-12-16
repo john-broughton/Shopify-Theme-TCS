@@ -97,16 +97,6 @@
             "author_info": ""
           }
         },
-        "testimonial_niWJGe": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "testimonial": "<h4>Michael Moore Jr.</h4><p>Michael is a dedicated appliance salesman at The Cook's Station and a proud Marine veteran. His military background has endowed him with a strong work ethic, attention to detail, and a commitment to excellence. His friendly demeanor, coupled with his expertise, ensures that every customer receives top-notch service and personalized recommendations.</p>",
-            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Headshots__5.jpg",
-            "author": "",
-            "author_info": ""
-          }
-        },
         "testimonial_nAygCL": {
           "type": "testimonial",
           "settings": {
@@ -116,12 +106,22 @@
             "author": "",
             "author_info": ""
           }
+        },
+        "testimonial_niWJGe": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h4>Michael Moore Jr.</h4><p>Michael is a dedicated appliance salesman at The Cook's Station and a proud Marine veteran. His military background has endowed him with a strong work ethic, attention to detail, and a commitment to excellence. His friendly demeanor, coupled with his expertise, ensures that every customer receives top-notch service and personalized recommendations.</p>",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Headshots__5.jpg",
+            "author": "",
+            "author_info": ""
+          }
         }
       },
       "block_order": [
         "testimonial_R3KbNK",
-        "testimonial_niWJGe",
-        "testimonial_nAygCL"
+        "testimonial_nAygCL",
+        "testimonial_niWJGe"
       ],
       "settings": {
         "title": "Our Sales Team",
