@@ -12,23 +12,6 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "hero_FXtYHT": {
-          "type": "hero",
-          "settings": {
-            "top_subheading": "",
-            "title": "",
-            "title_size": 70,
-            "subheading": "",
-            "link": "",
-            "link_text": "",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#fff",
-            "text_align": "vertical-bottom horizontal-left",
-            "image": "shopify://shop_images/Blue_Professional_Snow_Storm_Instagram_Post_Facebook_Cover_2.png",
-            "overlay_opacity": 0
-          }
-        },
         "slideshow-0": {
           "type": "hero",
           "settings": {
@@ -100,7 +83,6 @@
         }
       },
       "block_order": [
-        "hero_FXtYHT",
         "slideshow-0",
         "hero_7cqwiA",
         "slideshow-1",
