@@ -73,13 +73,13 @@
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/Copy_of_Copy_of_December_2024_Burger_Night.png",
+        "image": "shopify://shop_images/February_Italian_Dinner_1.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Burger Night!",
+        "title": "Italian Night!",
         "heading_size": "h2",
-        "text": "<p>January 28th at 5:30pm- No tickets are needed to attend!</p>",
+        "text": "<p>February 11th at 5:30pm- No tickets are needed to attend!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
