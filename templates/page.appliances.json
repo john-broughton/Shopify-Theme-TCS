@@ -116,12 +116,23 @@
             "author": "",
             "author_info": ""
           }
+        },
+        "testimonial_RGrcRh": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>michelle@thecooksstation.com </p><p>864-558-9309</p>",
+            "image": "shopify://shop_images/Michelle_McDoanld_8x10_c004ffec-a12b-46c8-8241-096564d9b229.jpg",
+            "author": "Michelle McDonald",
+            "author_info": ""
+          }
         }
       },
       "block_order": [
         "testimonial_R3KbNK",
         "testimonial_nAygCL",
-        "testimonial_niWJGe"
+        "testimonial_niWJGe",
+        "testimonial_RGrcRh"
       ],
       "settings": {
         "title": "Our Sales Team",
