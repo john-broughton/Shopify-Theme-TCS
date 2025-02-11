@@ -69,28 +69,6 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_iV6NVF": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify://shop_images/Februarybrunch_Menu_Instagram_Post_1.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "February 16th from 111:00am-2:00pm",
-        "title": "Sunday Brunch",
-        "heading_size": "h2",
-        "text": "<p>Join us for Sunday Brunch at The Cook's Station on February 16th! No tickets are needed, order at our café and dine on our heated, screened-in patio. Bring your friends and family and enjoy a delicious brunch!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "3",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
       "settings": {
@@ -108,6 +86,28 @@
         "image_width": "50",
         "layout": "right",
         "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "text_and_image_iV6NVF": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Februarybrunch_Menu_Instagram_Post_1.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "February 16th from 11:00am-2:00pm",
+        "title": "Sunday Brunch",
+        "heading_size": "h2",
+        "text": "<p>Join us for Sunday Brunch at The Cook's Station on February 16th! No tickets are needed, order at our café and dine on our heated, screened-in patio. Bring your friends and family and enjoy a delicious brunch!</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "3",
         "divider": false,
         "top_padding": true,
         "bottom_padding": true
