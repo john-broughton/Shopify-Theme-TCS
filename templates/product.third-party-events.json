@@ -19,15 +19,6 @@
             "sku_enable": false
           }
         },
-        "evey_events_tickets_event_inventory_BDdwEK": {
-          "type": "shopify://apps/evey-events-tickets/blocks/event-inventory/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
-          "settings": {
-            "text_format": "%{available} tickets remaining",
-            "text_color": "",
-            "padding_x": 0,
-            "padding_y": 0
-          }
-        },
         "price": {
           "type": "price",
           "settings": {}
@@ -35,29 +26,21 @@
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7": {
           "type": "description",
           "settings": {
-            "is_tab": true
+            "is_tab": false
           }
         },
-        "quantity_selector_KcWnct": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "custom_9fMWXB": {
+          "type": "custom",
           "settings": {
-            "show_dynamic_checkout": false,
-            "surface_pickup_enable": false,
-            "show_gift_card_recipient": false
+            "code": "<div class=\"text-center\">\n  <a href=\"https://haymahj.as.me/cooksstation\" class=\"btn btn--primary\">\n    Buy Tickets!\n</a>\n</div>"
           }
         }
       },
       "block_order": [
         "title_f9iWjj",
-        "evey_events_tickets_event_inventory_BDdwEK",
         "price",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
-        "quantity_selector_KcWnct",
-        "buy_buttons"
+        "custom_9fMWXB"
       ],
       "settings": {
         "image_position": "left",
@@ -72,9 +55,37 @@
         "product_video_style": "muted"
       }
     },
+    "rich_text_NTkHXB": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UrRYYA": {
+          "type": "heading",
+          "settings": {
+            "title": "Rich text",
+            "heading_size": "h2"
+          }
+        },
+        "text_TBaRRn": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UrRYYA",
+        "text_TBaRRn"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
     "sub": {
       "type": "product-full-width",
-      "disabled": true,
       "settings": {
         "max_width": false
       }
@@ -118,6 +129,7 @@
   },
   "order": [
     "main",
+    "rich_text_NTkHXB",
     "sub",
     "recommendations",
     "more-products-vendor",
