@@ -55,35 +55,6 @@
         "product_video_style": "muted"
       }
     },
-    "rich_text_NTkHXB": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_UrRYYA": {
-          "type": "heading",
-          "settings": {
-            "title": "Rich text",
-            "heading_size": "h2"
-          }
-        },
-        "text_TBaRRn": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_UrRYYA",
-        "text_TBaRRn"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "1",
-        "divider": false
-      }
-    },
     "sub": {
       "type": "product-full-width",
       "settings": {
@@ -129,7 +100,6 @@
   },
   "order": [
     "main",
-    "rich_text_NTkHXB",
     "sub",
     "recommendations",
     "more-products-vendor",
