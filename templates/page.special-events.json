@@ -50,13 +50,13 @@
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/March_Italian_Dinner_6.png",
+        "image": "shopify://shop_images/March_brunch_Menu_Instagram_Post_1_1.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Italian Night!",
+        "title": "Sunday Brunch",
         "heading_size": "h2",
-        "text": "<p>March 4th at 5:30pm- No tickets are needed to attend!</p>",
+        "text": "<p>March 16th from 11am-2pm- No tickets are needed to attend.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
