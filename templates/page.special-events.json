@@ -49,6 +49,7 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/March_brunch_Menu_Instagram_Post_2.png",
         "image_mask": "none",
