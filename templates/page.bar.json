@@ -12,8 +12,7 @@
     "main": {
       "type": "main-page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "text_and_image_xtV9AY": {
       "type": "text-and-image",
@@ -107,47 +106,6 @@
         "autoplay_speed": 7
       }
     },
-    "text_columns_M3xf6e": {
-      "type": "text-columns",
-      "blocks": {
-        "text_block_xJd6j7": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Wine_Beer_Bar_Menu-_8.26.24_bdd80169-e04d-4666-b5d7-858c65738f14.png",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "text_block_Rd4cTj": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/2.png",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_block_xJd6j7",
-        "text_block_Rd4cTj"
-      ],
-      "settings": {
-        "title": "",
-        "align_text": "center",
-        "divider": false,
-        "color_scheme": "none"
-      }
-    },
     "text_columns_wQehrL": {
       "type": "text-columns",
       "blocks": {
@@ -193,6 +151,47 @@
         "text_block_X9NQc9",
         "text_block_P9Eit6",
         "text_block_KH3xgX"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
+    "text_columns_M3xf6e": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_xJd6j7": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Wine_Beer_Bar_Menu-_4.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_Rd4cTj": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/2.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_xJd6j7",
+        "text_block_Rd4cTj"
       ],
       "settings": {
         "title": "",
