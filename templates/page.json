@@ -137,28 +137,11 @@
     "promo_grid_8ijbpN": {
       "type": "promo-grid",
       "blocks": {
-        "advanced_afCJ6J": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "View Our Cafe Menu",
-            "textarea": "",
-            "cta_text1": "Cafe Menu",
-            "cta_link1": "shopify://pages/cafe",
-            "cta_text2": "",
-            "cta_link2": "",
-            "video_url": "https://www.youtube.com/watch?v=occgf6hbSLM",
-            "width": "33",
-            "height": 640,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        },
         "advanced_6kba3N": {
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Crispy Shrimp Po-boy",
+            "heading": "Bang Bang Shrimp Po-boy",
             "textarea": "",
             "cta_text1": "",
             "cta_link1": "",
@@ -172,33 +155,50 @@
             "color_accent": "#ffffff"
           }
         },
+        "advanced_afCJ6J": {
+          "type": "advanced",
+          "settings": {
+            "subheading": "",
+            "heading": "View Our Cafe Menu",
+            "textarea": "",
+            "cta_text1": "Cafe Menu",
+            "cta_link1": "shopify://pages/cafe",
+            "cta_text2": "",
+            "cta_link2": "",
+            "video_url": "https://www.youtube.com/watch?v=occgf6hbSLM",
+            "width": "33",
+            "height": 520,
+            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#ffffff"
+          }
+        },
         "advanced_hxmJeR": {
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Turkey Bacon Brie",
+            "heading": "The Grilled Cheese",
             "textarea": "",
             "cta_text1": "",
             "cta_link1": "",
             "cta_text2": "",
             "cta_link2": "",
-            "image": "shopify://shop_images/ConvertOut-Resized-turky_bacon_brie_2.jpg",
+            "image": "shopify://shop_images/Cook_sStation-Grilled_Cheese.jpg",
             "video_url": "",
             "width": "33",
-            "height": 620,
+            "height": 100,
             "text_align": "vertical-bottom horizontal-center",
             "color_accent": "#ffffff"
           }
         }
       },
       "block_order": [
-        "advanced_afCJ6J",
         "advanced_6kba3N",
+        "advanced_afCJ6J",
         "advanced_hxmJeR"
       ],
       "settings": {
         "full_width": false,
-        "gutter_size": 20,
+        "gutter_size": 30,
         "space_above": true,
         "space_below": true
       }
@@ -208,6 +208,7 @@
       "blocks": {
         "advanced_8mWJ6R": {
           "type": "advanced",
+          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "Crispy Chicken Biscuit",
@@ -226,6 +227,7 @@
         },
         "advanced_LcKjpw": {
           "type": "advanced",
+          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "Sunrise Biscuit",
@@ -265,6 +267,7 @@
         "advanced_LcKjpw",
         "advanced_TE6LeX"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "gutter_size": 20,
