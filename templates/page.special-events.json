@@ -95,13 +95,13 @@
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/April_Italian_Dinner_4.png",
+        "image": "shopify://shop_images/April_2025_Burger_Night.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Italian Night",
+        "title": "Burger Night",
         "heading_size": "h2",
-        "text": "<p>Join us for Italian Night at The Cook's Station on April 8th! No tickets are needed to attend. Order at our café and dine on our heated, screened-in patio. Bring your friends and family and enjoy a delicious meal!</p>",
+        "text": "<p>Join us for Burger Night at The Cook's Station on April 29th! No tickets are needed to attend. Order at our café and dine on our heated, screened-in patio. Bring your friends and family and enjoy a delicious meal!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
