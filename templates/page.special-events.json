@@ -49,15 +49,14 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/March_brunch_Menu_Instagram_Post_2.png",
+        "image": "shopify://shop_images/Purple_Flower_Pattern_Spring_Poster_14.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Sunday Brunch",
+        "title": "Spring Fling!!",
         "heading_size": "h2",
-        "text": "<p>March 16th from 11am-2pm- No tickets are needed to attend.</p>",
+        "text": "<p>Join us for The Cook’s Station Spring Fling—a fun-filled day you won’t want to miss! We’re bringing the excitement outdoors with tent sales up to 75% off, free food and wine samples, raffle baskets, and live music to keep the energy going. Whether hunting for great deals or just looking to enjoy a lively spring afternoon, there’s something for everyone. Celebrate the season with us!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
