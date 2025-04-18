@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "rich_text_YGMaJc": {
@@ -59,8 +59,7 @@
         },
         "price_fbtBQy": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "description_cLUgtP": {
           "type": "description",
@@ -93,6 +92,7 @@
         "variant_picker_mCqiGY",
         "buy_buttons_TRV8pA"
       ],
+      "disabled": true,
       "settings": {
         "product": "kita-8-chefs-knife-w-sheath-v-501387",
         "divider": false,
@@ -113,8 +113,7 @@
         "collection_description": {
           "type": "collection_description",
           "disabled": true,
-          "settings": {
-          }
+          "settings": {}
         },
         "product_grid": {
           "type": "product_grid",
@@ -137,8 +136,7 @@
     "recently-viewed": {
       "type": "recently-viewed",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [
