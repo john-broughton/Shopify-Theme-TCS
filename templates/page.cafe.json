@@ -119,7 +119,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/skinny_breakfast.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2025_breakfast.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -132,7 +132,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/lunch_skinny_6255d007-9404-4851-a875-c42d8e946c5a.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2025_lunch.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
