@@ -12,6 +12,23 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "hero_L6L8yJ": {
+          "type": "hero",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 70,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#ffffff",
+            "text_align": "vertical-bottom horizontal-right",
+            "image": "shopify://shop_images/Memorial_Day_US_Flyer_4_x_6_in.png",
+            "overlay_opacity": 0
+          }
+        },
         "slideshow-0": {
           "type": "hero",
           "settings": {
@@ -83,6 +100,7 @@
         }
       },
       "block_order": [
+        "hero_L6L8yJ",
         "slideshow-0",
         "hero_7cqwiA",
         "slideshow-1",
