@@ -14,6 +14,7 @@
       "blocks": {
         "hero_L6L8yJ": {
           "type": "hero",
+          "disabled": true,
           "settings": {
             "top_subheading": "",
             "title": "",
