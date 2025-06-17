@@ -49,6 +49,7 @@
     },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/June_2025_Italian_Dinner.png",
         "image_mask": "none",
@@ -71,15 +72,14 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/May_brunch_insta_1_ea7fc2dc-0c59-430d-8a7a-6e3a5508a96c.png",
+        "image": "shopify://shop_images/Knife_sharpening_Instagram_Post_11.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Sunday Brunch",
+        "title": "Knife Sharpening",
         "heading_size": "h2",
-        "text": "<p>Join us on May 25th from 11am-2pm for Sunday Brunch! From sweet to savory, our menu has something for everyone — think mimosas, loaded toasts, fluffy waffles, and seasonal specials crafted by Chef Vince. It’s the perfect way to wrap up your weekend. See you Sunday!</p>",
+        "text": "<p>The Cook’s Station is proud to offer professional knife sharpening by hand, ensuring your blades are restored with precision and care. Drop off your knives and let our skilled sharpener bring them back to life—sharp, safe, and ready for your next culinary creation. It’s just one more way we’re here to support your kitchen from prep to plate.<br/><br/></p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -95,7 +95,7 @@
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/patio.jpg",
+        "image": "shopify://shop_images/June_2025_Burger_Night.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
