@@ -49,9 +49,8 @@
     },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/June_2025_Italian_Dinner.png",
+        "image": "shopify://shop_images/July_2025_Italian_Dinner.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
@@ -131,9 +130,9 @@
   "order": [
     "main",
     "1644519722c7610927",
-    "text_and_image_DRtzyL",
     "text_and_image_iV6NVF",
     "text_and_image_rBNfCd",
+    "text_and_image_DRtzyL",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
