@@ -47,28 +47,6 @@
         "autoplay_speed": 7
       }
     },
-    "text_and_image_DRtzyL": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify://shop_images/July_2025_Italian_Dinner.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Italian Night",
-        "heading_size": "h2",
-        "text": "<p>Experience the warmth and flavor of Italy right here in Greenville at Italian Night at The Cook’s Station! No tickets are needed to attend. Order at our cafe, and dine on our patio!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
       "settings": {
@@ -101,6 +79,28 @@
         "title": "Knife Sharpening",
         "heading_size": "h2",
         "text": "<p>The Cook’s Station is proud to offer professional knife sharpening by hand, ensuring your blades are restored with precision and care. Drop off your knives and let our skilled sharpener bring them back to life—sharp, safe, and ready for your next culinary creation. It’s just one more way we’re here to support your kitchen from prep to plate.<br/><br/></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "text_and_image_DRtzyL": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/July_2025_Italian_Dinner_1.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Italian Night",
+        "heading_size": "h2",
+        "text": "<p>Experience the warmth and flavor of Italy right here in Greenville at Italian Night at The Cook’s Station! No tickets are needed to attend. Order at our cafe, and dine on our patio!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
