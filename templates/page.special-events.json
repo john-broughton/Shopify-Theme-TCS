@@ -69,6 +69,29 @@
         "bottom_padding": true
       }
     },
+    "text_and_image_WGaTCE": {
+      "type": "text-and-image",
+      "name": "t:labels.image_with_text",
+      "settings": {
+        "image": "shopify://shop_images/The_Duke_s_BLT_Real_Estate_Flyer.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Duke's Hot Tomato Summer",
+        "heading_size": "h2",
+        "text": "<p>Since 2021, Duke's has been partnering with chefs to create innovative, delicious dishes that highlight their favorite mayonnaise, combined with summer's bounty of tomatoes, to be served as a special on their menu for the duration of the event. What began in Richmond only, now has a total of six cities involved and over 330 participating restaurants.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
       "disabled": true,
@@ -114,29 +137,6 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_WGaTCE": {
-      "type": "text-and-image",
-      "name": "t:labels.image_with_text",
-      "settings": {
-        "image": "shopify://shop_images/The_Duke_s_BLT_Real_Estate_Flyer.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Duke's Hot Tomato Summer",
-        "heading_size": "h2",
-        "text": "<p>Since 2021, Duke's has been partnering with chefs to create innovative, delicious dishes that highlight their favorite mayonnaise, combined with summer's bounty of tomatoes, to be served as a special on their menu for the duration of the event. What began in Richmond only, now has a total of six cities involved and over 330 participating restaurants.</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "b5e95e24-93b4-492c-ae7f-914eae033331": {
       "type": "map",
       "settings": {
@@ -155,9 +155,9 @@
     "main",
     "1644519722c7610927",
     "text_and_image_iV6NVF",
+    "text_and_image_WGaTCE",
     "text_and_image_DRtzyL",
     "text_and_image_rBNfCd",
-    "text_and_image_WGaTCE",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
