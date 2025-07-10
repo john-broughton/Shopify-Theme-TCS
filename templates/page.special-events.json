@@ -49,15 +49,14 @@
     },
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/June_2025_Burger_Night.png",
+        "image": "shopify://shop_images/Burger_158972a6-5bd9-4882-b64c-2f09a8579a04.jpg",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Burger Night",
         "heading_size": "h2",
-        "text": "<p>Join us for Burger Night at The Cook's Station on June 24th! No tickets are needed to attend. Order at our café and dine on our screened-in patio. Bring your friends and family and enjoy a delicious meal!</p>",
+        "text": "<p>Join us for Burger Night at The Cook's Station on July 29th! No tickets are needed to attend. Order at our café and dine on our screened-in patio. Bring your friends and family and enjoy a delicious meal!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -72,6 +71,7 @@
     },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/July_2025_Italian_Dinner_1.png",
         "image_mask": "none",
