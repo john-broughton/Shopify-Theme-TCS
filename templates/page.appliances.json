@@ -113,6 +113,26 @@
         "divider": false
       }
     },
+    "advanced_content_HjbTFG": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_rByVM8": {
+          "type": "liquid",
+          "settings": {
+            "code": "<script \n            type=\"text/javascript\" \n            src=\"https://cdn.ytb.reputon.com/assets/widget.js?shop=the-cooks-station.myshopify.com\" defer></script>\n<div class=\"reputon-youtube-widget\"\n                 data-content-index=\"1\"\n                 data-autoscroll=\"true\"\n                 data-theme=\"light\"\n                 data-widget-type=\"carousel\"></div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_rByVM8"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
     "testimonials_ajXYGX": {
       "type": "testimonials",
       "blocks": {
@@ -148,9 +168,10 @@
         },
         "testimonial_RGrcRh": {
           "type": "testimonial",
+          "disabled": true,
           "settings": {
             "icon": "none",
-            "testimonial": "<h4>Michelle McDonald</h4><p></p><p>michelle@thecooksstation.com </p><p>864-558-9309</p>",
+            "testimonial": "",
             "image": "shopify://shop_images/Michelle_McDoanld_8x10_c004ffec-a12b-46c8-8241-096564d9b229.jpg",
             "author": "Michelle McDonald",
             "author_info": ""
@@ -168,26 +189,6 @@
         "align_text": "center",
         "round_images": false,
         "color_scheme": "none"
-      }
-    },
-    "advanced_content_HjbTFG": {
-      "type": "advanced-content",
-      "blocks": {
-        "liquid_rByVM8": {
-          "type": "liquid",
-          "settings": {
-            "code": "<script \n            type=\"text/javascript\" \n            src=\"https://cdn.ytb.reputon.com/assets/widget.js?shop=the-cooks-station.myshopify.com\" defer></script>\n<div class=\"reputon-youtube-widget\"\n                 data-content-index=\"1\"\n                 data-autoscroll=\"true\"\n                 data-theme=\"light\"\n                 data-widget-type=\"carousel\"></div>",
-            "width": "100%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "liquid_rByVM8"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": false
       }
     },
     "logo_list_hJexFy": {
