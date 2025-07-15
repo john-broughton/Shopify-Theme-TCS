@@ -1,1 +1,175 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"rich-text":{"type":"rich-text","blocks":{"heading":{"type":"heading","settings":{"title":"Get in touch","heading_size":"h2"}},"text":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"}}},"block_order":["heading","text"],"disabled":true,"settings":{"align_text":"center","narrow_column":true,"color_scheme":"none","divider":false}},"1652288587b2504877":{"type":"rich-text","blocks":{"1652288587b887227e-0":{"type":"heading","settings":{"title":"APPLIANCE SALES TEAM CONTACT FORM","heading_size":"h2"}},"1652288587b887227e-1":{"type":"text","settings":{"enlarge_text":true,"text":"<p>Appointments are preferred.<\/p><p>To schedule your appointments please contact:<\/p><p><em>Valerie Scharf - valerie@thecooksstation.com - 864-558-9307<\/em><\/p><p><em>Michael Moore - michael@thecooksstation.com - 864-558-9309<\/em><\/p><p><em>John Colacioppo - john@thecooksstation.com - 864-915-7210<\/em><\/p><p><\/p><p><\/p><p>Or fill out the form below and someone from our Appliance Team will be in contact with you soon!<\/p><p>______<\/p><p><strong>HOURS<\/strong><\/p><p>○ Monday- Friday: 8 am-5 pm <\/p><p>○ Saturday: 10-4 pm <\/p><p>■ Closed the 1st Saturday of the month <\/p><p>○ Sunday: Closed <\/p>"}}},"block_order":["1652288587b887227e-0","1652288587b887227e-1"],"settings":{"align_text":"center","narrow_column":true,"color_scheme":"3","divider":false}},"165463281710e30da9":{"type":"advanced-content","blocks":{"16546328178d647540-1":{"type":"liquid","settings":{"code":"<div class=\"grid grid--small\">\n          <div class=\"grid__item medium-up--one-half\">\n            <label for=\"ContactFormName-{{ section.id }}\">{{ 'contact.form.name' | t }}<\/label>\n            <input type=\"text\" id=\"ContactFormName-{{ section.id }}\" class=\"input-full\" name=\"contact[name]\" autocapitalize=\"words\" value=\"{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}\">\n          <\/div>\n\n          <div class=\"grid__item medium-up--one-half\">\n            <label for=\"ContactFormEmail-{{ section.id }}\">{{ 'contact.form.email' | t }}<\/label>\n            <input type=\"email\" id=\"ContactFormEmail-{{ section.id }}\" class=\"input-full\" name=\"contact[email]\" autocorrect=\"off\" autocapitalize=\"off\" value=\"{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}\">\n          <\/div><\/div>","width":"50%","alignment":"center"}}},"block_order":["16546328178d647540-1"],"disabled":true,"settings":{"full_width":false,"space_around":false}},"form":{"type":"contact-form","disabled":true,"settings":{"title":"APPLIANCE SALES TEAM CONTACT FORM","heading_size":"h2","heading_position":"left","text":"<p>Appointments are preferred.<\/p><p>To schedule your appointments please contact:<\/p><p><em>Camille Cartee  - camille@thecooksstation.com - 864-617-6778<\/em><\/p><p><em>John Colacioppo - john@thecooksstation.com - 864-915-7210<\/em><\/p><p><em>Valerie Scharf - valerie@thecooksstation.com - 423-785-6985<\/em><\/p><p><\/p><p>Or fill out the form below to and someone from our Appliance Team will be in contact with you soon!<\/p><p>______<\/p><p><strong>HOURS<\/strong><\/p><p>○ Monday- Friday: 8am-5pm <\/p><p>○ Saturday: 10-4pm <\/p><p>■ Closed the 1st Saturday of the month <\/p><p>○ Sunday: Closed <\/p>","show_phone":true,"narrow_column":true,"color_scheme":"1"}},"1654632659db05bbb1":{"type":"contact-form","disabled":true,"settings":{"title":"Contact us","heading_size":"h2","heading_position":"left","text":"<p>&lt;div class=\"grid grid--small\"&gt;&lt;div class=\"grid__item medium-up--one-half&gt;<\/p>","show_phone":false,"narrow_column":true,"color_scheme":"1"}},"166083088430525f14":{"type":"apps","blocks":{"f420d08f-ec0e-470d-9a21-f7f5b6b3c0a9":{"type":"shopify:\/\/apps\/hulk-form-builder\/blocks\/form-block\/b6b8dd14-356b-4725-a4ed-77232212b3c3","settings":{"form_uuid":"SKKL777ZZlWdMdiTFVhiBQ","form_settings":false,"font_color":"#000000","size":14,"input_background_color":"#ffffff","input_background_color_focus":"#f4dada","input_border_radius":1,"input_border_color":"#ebe9e9","input_border_color_focus":"#2d2727","input_font_color":"#3d3131","input_size":14,"border_color":"#121212","border_radius":2,"border":1,"fill_color":"#ebe9e9","padding":35,"form_width":600,"btn_text":"Submit","sub_btn_txt_color":"#f3f3f3","sub_btn_bg_color":"#3f3333","sub_btn_font_size":14,"sub_btn_bdr_color":"#ffffff","sub_btn_bdr_rad":3,"sub_btn_bdr_width":1,"fonts":"Times New Roman"}}},"block_order":["f420d08f-ec0e-470d-9a21-f7f5b6b3c0a9"],"settings":{"full_width":false,"space_around":true}}},"order":["main","rich-text","1652288587b2504877","165463281710e30da9","form","1654632659db05bbb1","166083088430525f14"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Get in touch",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": false
+      }
+    },
+    "1652288587b2504877": {
+      "type": "rich-text",
+      "blocks": {
+        "1652288587b887227e-0": {
+          "type": "heading",
+          "settings": {
+            "title": "APPLIANCE SALES TEAM CONTACT FORM",
+            "heading_size": "h2"
+          }
+        },
+        "1652288587b887227e-1": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Appointments are preferred.</p><p>To schedule your appointments please contact:</p><p><em>Valerie Scharf - valerie@thecooksstation.com - 864.794.2864</em></p><p><em>Michael Moore - michael@thecooksstation.com - 864.696.3911</em></p><p><em>John Colacioppo - john@thecooksstation.com - 864.696.3439</em></p><p></p><p></p><p>Or fill out the form below and someone from our Appliance Team will be in contact with you soon!</p><p>______</p><p><strong>HOURS</strong></p><p>○ Monday- Friday: 8 am-5 pm </p><p>○ Saturday: 10-4 pm </p><p>■ Closed the 1st Saturday of the month </p><p>○ Sunday: Closed </p>"
+          }
+        }
+      },
+      "block_order": [
+        "1652288587b887227e-0",
+        "1652288587b887227e-1"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "3",
+        "divider": false
+      }
+    },
+    "165463281710e30da9": {
+      "type": "advanced-content",
+      "blocks": {
+        "16546328178d647540-1": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div class=\"grid grid--small\">\n          <div class=\"grid__item medium-up--one-half\">\n            <label for=\"ContactFormName-{{ section.id }}\">{{ 'contact.form.name' | t }}</label>\n            <input type=\"text\" id=\"ContactFormName-{{ section.id }}\" class=\"input-full\" name=\"contact[name]\" autocapitalize=\"words\" value=\"{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}\">\n          </div>\n\n          <div class=\"grid__item medium-up--one-half\">\n            <label for=\"ContactFormEmail-{{ section.id }}\">{{ 'contact.form.email' | t }}</label>\n            <input type=\"email\" id=\"ContactFormEmail-{{ section.id }}\" class=\"input-full\" name=\"contact[email]\" autocorrect=\"off\" autocapitalize=\"off\" value=\"{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}\">\n          </div></div>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "16546328178d647540-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "title": "APPLIANCE SALES TEAM CONTACT FORM",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "<p>Appointments are preferred.</p><p>To schedule your appointments please contact:</p><p><em>Camille Cartee  - camille@thecooksstation.com - 864-617-6778</em></p><p><em>John Colacioppo - john@thecooksstation.com - 864-915-7210</em></p><p><em>Valerie Scharf - valerie@thecooksstation.com - 423-785-6985</em></p><p></p><p>Or fill out the form below to and someone from our Appliance Team will be in contact with you soon!</p><p>______</p><p><strong>HOURS</strong></p><p>○ Monday- Friday: 8am-5pm </p><p>○ Saturday: 10-4pm </p><p>■ Closed the 1st Saturday of the month </p><p>○ Sunday: Closed </p>",
+        "show_phone": true,
+        "narrow_column": true,
+        "color_scheme": "1"
+      }
+    },
+    "1654632659db05bbb1": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "title": "Contact us",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "<p>&lt;div class=\"grid grid--small\"&gt;&lt;div class=\"grid__item medium-up--one-half&gt;</p>",
+        "show_phone": false,
+        "narrow_column": true,
+        "color_scheme": "1"
+      }
+    },
+    "166083088430525f14": {
+      "type": "apps",
+      "blocks": {
+        "f420d08f-ec0e-470d-9a21-f7f5b6b3c0a9": {
+          "type": "shopify://apps/hulk-form-builder/blocks/form-block/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+          "settings": {
+            "form_uuid": "SKKL777ZZlWdMdiTFVhiBQ",
+            "form_settings": false,
+            "font_color": "#000000",
+            "size": 14,
+            "input_background_color": "#ffffff",
+            "input_background_color_focus": "#f4dada",
+            "input_border_radius": 1,
+            "input_border_color": "#ebe9e9",
+            "input_border_color_focus": "#2d2727",
+            "input_font_color": "#3d3131",
+            "input_size": 14,
+            "border_color": "#121212",
+            "border_radius": 2,
+            "border": 1,
+            "fill_color": "#ebe9e9",
+            "padding": 35,
+            "form_width": 600,
+            "btn_text": "Submit",
+            "sub_btn_txt_color": "#f3f3f3",
+            "sub_btn_bg_color": "#3f3333",
+            "sub_btn_font_size": 14,
+            "sub_btn_bdr_color": "#ffffff",
+            "sub_btn_bdr_rad": 3,
+            "sub_btn_bdr_width": 1,
+            "fonts": "Times New Roman"
+          }
+        }
+      },
+      "block_order": [
+        "f420d08f-ec0e-470d-9a21-f7f5b6b3c0a9"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich-text",
+    "1652288587b2504877",
+    "165463281710e30da9",
+    "form",
+    "1654632659db05bbb1",
+    "166083088430525f14"
+  ]
+}
