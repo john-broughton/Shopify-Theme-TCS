@@ -71,6 +71,7 @@
     },
     "text_and_image_WGaTCE": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/The_Duke_s_BLT_Real_Estate_Flyer.png",
@@ -118,7 +119,7 @@
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/Knife_sharpening_Instagram_Post_14.png",
+        "image": "shopify://shop_images/Knife_sharpening_Instagram_Post_15.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
