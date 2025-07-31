@@ -49,6 +49,7 @@
     },
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/July_2025_Burger_Night.png",
         "image_mask": "none",
@@ -95,9 +96,8 @@
     },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/July_2025_Italian_Dinner_1.png",
+        "image": "shopify://shop_images/Auugst_2025_Italian_Dinner_1.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
