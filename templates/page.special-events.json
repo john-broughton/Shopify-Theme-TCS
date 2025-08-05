@@ -49,16 +49,15 @@
     },
     "text_and_image_WGaTCE": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/The_Duke_s_BLT_Real_Estate_Flyer.png",
+        "image": "shopify://shop_images/August_brunch_insta.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Duke's Hot Tomato Summer",
+        "title": "Sunday Brunch 11am-2pm",
         "heading_size": "h2",
-        "text": "<p>Since 2021, Duke's has been partnering with chefs to create innovative, delicious dishes that highlight their favorite mayonnaise, combined with summer's bounty of tomatoes, to be served as a special on their menu for the duration of the event. What began in Richmond only, now has a total of six cities involved and over 330 participating restaurants.</p>",
+        "text": "<p>Join us for a relaxing and delicious <strong>Sunday Brunch at The Cook’s Station on August 17th from 11am to 2pm</strong>! Whether you're kicking off a slow Sunday or gathering with friends and family, our café is the perfect spot to indulge in elevated brunch favorites, fresh seasonal flavors, and locally roasted coffee or mimosas. Enjoy the cozy atmosphere, friendly service, and a menu carefully crafted by our talented Chef Vince. Come hungry — we’ll have something special waiting for you!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -154,9 +153,9 @@
   "order": [
     "main",
     "1644519722c7610927",
-    "text_and_image_WGaTCE",
-    "text_and_image_DRtzyL",
     "text_and_image_rBNfCd",
+    "text_and_image_DRtzyL",
+    "text_and_image_WGaTCE",
     "text_and_image_iV6NVF",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
