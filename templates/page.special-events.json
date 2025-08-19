@@ -49,6 +49,7 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/storewide_sale_5_x_7_in_3.png",
         "image_mask": "none",
@@ -71,6 +72,7 @@
     },
     "text_and_image_WGaTCE": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/August_brunch_insta.png",
@@ -95,7 +97,7 @@
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/August_Fish_Fry_Menu_3.png",
+        "image": "shopify://shop_images/August_Fish_Fry_Menu_4.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
