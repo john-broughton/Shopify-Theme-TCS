@@ -95,6 +95,7 @@
     },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/August_Fish_Fry_Menu_4.png",
         "image_mask": "none",
