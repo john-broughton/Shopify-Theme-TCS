@@ -49,15 +49,14 @@
     },
     "text_and_image_rBNfCd": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/storewide_sale_5_x_7_in_3.png",
+        "image": "shopify://shop_images/Fall_Fest_insta_2025.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Store-Wide Sale!",
+        "title": "Fall Festival!",
         "heading_size": "h2",
-        "text": "<p>This weekend only, The Cook’s Station is turning up the savings! Enjoy 20% off the entire store — from gourmet kitchen gadgets, to premium cookware, home décor, and more! Plus, don’t miss our 50% OFF carts loaded with incredible finds at half the price.<br/><br/>It’s the perfect time to stock up on your favorites, grab those pieces you’ve been eyeing, or start early on holiday shopping. Hurry in — these deals won’t last long, and some exclusions do apply.<br/><br/></p>",
+        "text": "<p>Join us Friday, September 27th from 9am–3pm for a full day of fun, flavors, and festivities! We’re pulling out all the stops with raffle baskets, free food & wine tastings, a huge tent sale, live music, and so much more! </p><p>It’s the perfect way to kick off the fall season — shop amazing deals, sip and sample your favorites, enjoy great music, and soak in the festive atmosphere with us. You won’t want to miss it! Mark your calendars, grab your friends, and come celebrate with us at The Cook’s Station! </p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -95,7 +94,6 @@
     },
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/August_Fish_Fry_Menu_4.png",
         "image_mask": "none",
