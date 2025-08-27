@@ -47,16 +47,17 @@
         "autoplay_speed": 7
       }
     },
-    "text_and_image_rBNfCd": {
+    "text_and_image_WGaTCE": {
       "type": "text-and-image",
+      "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Fall_Fest_insta_2025.png",
+        "image": "shopify://shop_images/Knife_sharpening_Instagram_Post_17.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Fall Festival!",
+        "title": "Knife Sharpening",
         "heading_size": "h2",
-        "text": "<p>Join us Friday, September 27th from 9am–3pm for a full day of fun, flavors, and festivities! We’re pulling out all the stops with raffle baskets, free food & wine tastings, a huge tent sale, live music, and so much more! </p><p>It’s the perfect way to kick off the fall season — shop amazing deals, sip and sample your favorites, enjoy great music, and soak in the festive atmosphere with us. You won’t want to miss it! Mark your calendars, grab your friends, and come celebrate with us at The Cook’s Station! </p>",
+        "text": "<p>Do you need your knives sharpened? Drop your knives off at the store by 9am on August 20th, and pick them back up after 5pm on August 25th!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -69,17 +70,17 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_WGaTCE": {
+    "text_and_image_kCeTqw": {
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Knife_sharpening_Instagram_Post_17.png",
+        "image": "shopify://shop_images/September_2025_Italian_Dinner.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Knife Sharpening",
+        "title": "Italian Night",
         "heading_size": "h2",
-        "text": "<p>Do you need your knives sharpened? Drop your knives off at the store by 9am on August 20th, and pick them back up after 5pm on August 25th!</p>",
+        "text": "<p>Mangia, Mangia — it’s <strong>Italian Night at The Cook’s Station! </strong>Join us for an evening full of flavor, fun, and all things Italian! Think heaping plates of pasta, bold wines, and laughter all around — just like a big family dinner in Italy.</p><p>Grab your friends, bring your appetite, and get ready for a night of delicious bites, good vibes, and plenty of <em>la dolce vita</em>!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -114,8 +115,31 @@
         "bottom_padding": true
       }
     },
+    "text_and_image_rBNfCd": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Fall_Fest_insta_2025.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Fall Festival!",
+        "heading_size": "h2",
+        "text": "<p>Join us Friday, September 27th from 9am–3pm for a full day of fun, flavors, and festivities! We’re pulling out all the stops with raffle baskets, free food & wine tastings, a huge tent sale, live music, and so much more! </p><p>It’s the perfect way to kick off the fall season — shop amazing deals, sip and sample your favorites, enjoy great music, and soak in the festive atmosphere with us. You won’t want to miss it! Mark your calendars, grab your friends, and come celebrate with us at The Cook’s Station! </p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/August_2025_Burger_Night.png",
         "image_mask": "none",
@@ -153,9 +177,10 @@
   "order": [
     "main",
     "1644519722c7610927",
-    "text_and_image_rBNfCd",
     "text_and_image_WGaTCE",
+    "text_and_image_kCeTqw",
     "text_and_image_DRtzyL",
+    "text_and_image_rBNfCd",
     "text_and_image_iV6NVF",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
