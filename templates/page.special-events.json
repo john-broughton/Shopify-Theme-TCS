@@ -141,7 +141,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/September_brunch_insta_1.png",
+        "image": "shopify://shop_images/September_brunch_insta_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
