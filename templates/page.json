@@ -137,24 +137,6 @@
     "promo_grid_8ijbpN": {
       "type": "promo-grid",
       "blocks": {
-        "advanced_6kba3N": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Bang Bang Shrimp Po-boy",
-            "textarea": "",
-            "cta_text1": "",
-            "cta_link1": "",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Lunch__46_1.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 620,
-            "text_align": "vertical-bottom horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        },
         "advanced_afCJ6J": {
           "type": "advanced",
           "settings": {
@@ -166,35 +148,15 @@
             "cta_text2": "",
             "cta_link2": "",
             "video_url": "https://www.youtube.com/watch?v=occgf6hbSLM",
-            "width": "33",
-            "height": 520,
+            "width": "100",
+            "height": 400,
             "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        },
-        "advanced_hxmJeR": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "The Grilled Cheese",
-            "textarea": "",
-            "cta_text1": "",
-            "cta_link1": "",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify://shop_images/Cook_sStation-Grilled_Cheese.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 100,
-            "text_align": "vertical-bottom horizontal-center",
             "color_accent": "#ffffff"
           }
         }
       },
       "block_order": [
-        "advanced_6kba3N",
-        "advanced_afCJ6J",
-        "advanced_hxmJeR"
+        "advanced_afCJ6J"
       ],
       "settings": {
         "full_width": false,
