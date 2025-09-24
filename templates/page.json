@@ -147,11 +147,12 @@
             "cta_link1": "shopify://pages/cafe",
             "cta_text2": "",
             "cta_link2": "",
-            "video_url": "https://www.youtube.com/watch?v=occgf6hbSLM",
+            "image": "shopify://shop_images/inside_cafe_use.jpg",
+            "video_url": "",
             "width": "100",
-            "height": 400,
+            "height": 380,
             "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
+            "color_accent": "#2d6ca9"
           }
         }
       },
