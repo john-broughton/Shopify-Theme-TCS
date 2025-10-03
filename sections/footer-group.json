@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "footer",
   "name": "t:labels.footer_group",
@@ -53,8 +53,8 @@
         "footer-2"
       ],
       "settings": {
-        "show_newsletter": true,
-        "newsletter_richtext": "<p>Subscribe today to hear first about our sales<\/p>",
+        "show_newsletter": false,
+        "newsletter_richtext": "<p>Subscribe today to hear first about our sales</p>",
         "footer_main_menu": true,
         "show_copyright": false,
         "copyright_text": "",
