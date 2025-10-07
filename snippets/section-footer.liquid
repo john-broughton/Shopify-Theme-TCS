@@ -24,6 +24,11 @@
   assign policies_menu = policies_menu | default: section.settings.policies_menu
   assign show_wave = show_wave | default: section.settings.show_wave, allow_false: true | default: false, allow_false: true
   assign hydration = hydration | default: 'on:visible'
+
+  #Disable footer newsletter on the subscribe page only
+  if request.page_type == 'page' and page.handle == 'subscribe-to-our-newsletter'
+    assign show_newsletter = false
+  endif
 -%}
 
 {%- if show_newsletter -%}
