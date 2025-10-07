@@ -53,7 +53,7 @@
         "footer-2"
       ],
       "settings": {
-        "show_newsletter": false,
+        "show_newsletter": true,
         "newsletter_richtext": "<p>Subscribe today to hear first about our sales</p>",
         "footer_main_menu": true,
         "show_copyright": false,
