@@ -1,4 +1,6 @@
-{%- render 'section-newsletter-popup' -%}
+{% unless template contains 'page.subscribe-to-our-newsletter' %}
+  {%- render 'section-newsletter-popup' -%}
+{% endunless %}
 
 {% schema %}
 {
