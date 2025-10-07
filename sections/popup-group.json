@@ -1,24 +1,25 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "custom.popups",
   "name": "t:labels.popups",
   "sections": {
     "newsletter-popup": {
       "type": "newsletter-popup",
+      "disabled": true,
       "settings": {
         "disable_for_account_holders": true,
         "popup_seconds": 15,
         "popup_days": 2,
         "popup_title": "The Cook's Station Newsletter",
-        "popup_text": "<p>Subscribe to our newsletter and stay up to date with The Cook's Station!<\/p>",
+        "popup_text": "<p>Subscribe to our newsletter and stay up to date with The Cook's Station!</p>",
         "image_position": "left",
         "color_scheme": "3",
         "show_social_icons": false,
@@ -35,11 +36,11 @@
         "color_scheme": "none",
         "blur_image": false,
         "heading": "Confirm your age",
-        "text": "<p>Are you 18 years old or older?<\/p>",
+        "text": "<p>Are you 18 years old or older?</p>",
         "decline_button_label": "No I'm not",
         "approve_button_label": "Yes I am",
         "decline_heading": "Come back when you're older",
-        "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.<\/p>",
+        "decline_text": "<p>Sorry, the content of this store can't be seen by a younger audience. Come back when you're older.</p>",
         "return_button_label": "Oops, I entered incorrectly"
       }
     }
