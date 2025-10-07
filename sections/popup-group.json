@@ -13,7 +13,6 @@
   "sections": {
     "newsletter-popup": {
       "type": "newsletter-popup",
-      "disabled": true,
       "settings": {
         "disable_for_account_holders": true,
         "popup_seconds": 15,
