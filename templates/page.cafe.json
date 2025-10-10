@@ -132,7 +132,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/long_skinny_cafe_menu_Fall_2025_4.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Fall_2025_3.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -159,7 +159,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Today's Specials - 10/09",
+            "title": "Today's Specials - 10/08",
             "heading_size": "h2"
           }
         },
@@ -167,7 +167,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>SOUTHERN CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, mayonnaise, spices, greens, on Texas toast</p><p><strong>HAM AND GRUYERE CROISSANT - $13.99</strong><br/>Black forest ham, gruyere cheese, tomatoes, arugula, Lusty Monk aioli, on a croissant</p><p><strong>ITALIAN CHICKEN WRAP - $13.99</strong><br/>Roasted chicken, sopressata, mozzarella, tomatoes, greens, pickled peppers, Calabrian chili aioli, on a spinach wrap</p><p><strong>CREAMY TOMATO BASIL SOUP - $5.99</strong><br/>Roasted tomatoes, onions, garlic, basil, cream, chicken stock, herbs and spices, garnished with Pecorino Romano, croutons, and parsley<br/><br/></p><p><strong>**CONTAINS NUTS</strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
+            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on toasted sourdough</p><p><strong>MELTY HAM CROISSANT - $12.99</strong><br/>Ham, sopressata, smoked provolone, red onion, cherry peppers, greens, Lusty Monk aioli, on a croissant</p><p><strong>SALMON BLT WRAP - $13.99          </strong></p><p><strong>  </strong>Roasted salmon, bacon, lettuce, tomato, spiced aioli, in a spinach wrap</p><p><strong>AUTUMN SQUASH SOUP - $5.99</strong></p><p>Onions, celery, carrots, butternut squash, apples, veg stock, coconut milk, herbs, spices, garnished with fig balsamic and candied nuts</p><p><strong>**CONTAINS NUTS</strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
           }
         }
       },
