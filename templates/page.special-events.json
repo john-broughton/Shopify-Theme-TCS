@@ -116,16 +116,17 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_DRtzyL": {
+    "text_and_image_WbXDGx": {
       "type": "text-and-image",
+      "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/September_fish_Fry_Menu_5_x_7_in.png",
+        "image": "shopify://shop_images/October_brunch_2025_insta_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Friday Fish Fry",
+        "title": "Sunday Brunch",
         "heading_size": "h2",
-        "text": "<p>Join us at The Cook’s Station on <strong>October 23rd at 5:30 PM</strong> for a mouthwatering <strong>Fish Fry</strong> you won’t forget. Crispy, golden-fried goodness, fresh sides, and cold beer/ wine to pair with it— it’s the perfect summer evening!</p>",
+        "text": "<p>Join us on October 19th  from 11am-2pm! No tickets are needed to attend. Order at our café, and dine on our screened-in patio!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -138,17 +139,16 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_WbXDGx": {
+    "text_and_image_DRtzyL": {
       "type": "text-and-image",
-      "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/October_brunch_2025_insta_2.png",
+        "image": "shopify://shop_images/September_fish_Fry_Menu_5_x_7_in.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Sunday Brunch",
+        "title": "Friday Fish Fry",
         "heading_size": "h2",
-        "text": "<p>Join us on October 19th  from 11am-2pm! No tickets are needed to attend. Order at our café, and dine on our screened-in patio!</p>",
+        "text": "<p>Join us at The Cook’s Station on <strong>October 23rd at 5:30 PM</strong> for a mouthwatering <strong>Fish Fry</strong> you won’t forget. Crispy, golden-fried goodness, fresh sides, and cold beer/ wine to pair with it— it’s the perfect summer evening!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -204,8 +204,8 @@
     "text_and_image_rBNfCd",
     "text_and_image_kCeTqw",
     "text_and_image_WGaTCE",
-    "text_and_image_DRtzyL",
     "text_and_image_WbXDGx",
+    "text_and_image_DRtzyL",
     "text_and_image_iV6NVF",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
