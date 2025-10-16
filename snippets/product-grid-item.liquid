@@ -55,6 +55,16 @@
     assign on_sale = true
   endif
 
+  # --- Minimal-diff edits start ---
+  # Disable savings UI and force off sale state
+  assign product_save_amount = false
+  assign on_sale = false
+  # Original sale detection disabled:
+  # if product.compare_at_price > product.price
+  #   assign on_sale = true
+  # endif
+  # --- Minimal-diff edits end ---
+
   if set_image_breathing_room
     if settings.product_grid_image_margin == 0
       assign image_breathing_room = false
@@ -195,11 +205,13 @@
                 {{ 'info.sold_out' | t }}
               </div>
             {%- endunless -%}
+            {%- comment -%}
             {%- if on_sale and product.available -%}
               <div class="grid-product__tag grid-product__tag--sale">
                 {{ 'labels.sale' | t }}
               </div>
             {%- endif -%}
+            {%- endcomment -%}
           </div>
 
           {%- if fixed_aspect_ratio -%}
@@ -327,13 +339,18 @@
                   {%- render 'price-varies', price: product.price_min -%}
                 </span>
               {%- else -%}
+                {%- comment -%} sale a11y label disabled {%- endcomment -%}
+                {%- comment -%}
                 {%- if on_sale -%}
                   <span class="visually-hidden">{{ 'labels.sale_price' | t }}</span>
                 {%- endif -%}
+                {%- endcomment -%}
                 <span class="grid-product__price--current">
                   {%- render 'price', price: product.price -%}
                 </span>
               {%- endif -%}
+              {%- comment -%}
+              Compare-at/original price and savings disabled
               {%- if on_sale -%}
                 <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
                 <span class="grid-product__price--original">
@@ -351,6 +368,7 @@
                   </span>
                 {%- endif -%}
               {%- endif -%}
+              {%- endcomment -%}
 
               {%- assign product_variant = product.selected_or_first_available_variant -%}
               {%- if product_variant.unit_price_measurement -%}
