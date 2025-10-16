@@ -1,4 +1,4 @@
-{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership %}
 {%- comment -%}
   Renders the product price
 
@@ -23,13 +23,11 @@
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign available = target.available | default: false
-  assign product_save_amount = settings.product_save_amount | default: false
-  assign product_save_type = settings.product_save_type | default: 'dollar'
-  assign saved_amount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100.0 | divided_by: product.selected_or_first_available_variant.compare_at_price | round | append: '%'
 
-  if product_save_type == 'dollar'
-    assign saved_amount = product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | money_without_trailing_zeros
-  endif
+  # Disable all savings logic
+  assign product_save_amount = false
+  assign product_save_type = 'dollar'
+  assign saved_amount = ''
 -%}
 
 <block-price
@@ -46,13 +44,12 @@
     {% unless available %}
       data-sold-out=""
     {% endunless %}
-    {% if compare_at_price > price %}
-      data-on-sale=""
-    {% endif %}
+    {%- comment -%} compare-at pricing disabled {%- endcomment -%}
     {% if product.selected_or_first_available_variant.unit_price_measurement %}
       data-unit-price=""
     {% endif %}
   >
+    <!-- Regular price only -->
     <div class="block-price__regular product__price">
       <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
       <span>
@@ -60,6 +57,8 @@
       </span>
     </div>
 
+    {%- comment -%}
+    Disabled: compare-at sale price and savings display
     <div class="block-price__sale product__price">
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
@@ -69,9 +68,7 @@
           </s>
         </span>
       {%- endunless -%}
-
       <span class="visually-hidden">{{ 'labels.sale_price' | t }}</span>
-
       <span class="product__price">
         {%- render 'price', price: price -%}
       </span>
@@ -82,7 +79,9 @@
         {{- 'info.save_amount' | t: saved_amount: saved_amount -}}
       </span>
     {%- endif -%}
+    {%- endcomment -%}
 
+    <!-- Unit price (unchanged) -->
     <div class="block-price__unit-price product__unit-price">
       <span>
         {%- render 'price', price: product.selected_or_first_available_variant.unit_price -%}
