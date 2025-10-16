@@ -28,6 +28,12 @@
     assign predictive_search_show_vendor = true
   endif
 
+  # --- Minimal-diff edits start ---
+  # Disable savings UI and sale state for predictive search pricing
+  assign product_save_amount = false
+  assign on_sale = false
+  # --- Minimal-diff edits end ---
+
   assign resources = predictive_search.resources
   assign columnCount = resources.queries.size | plus: resources.pages.size | plus: resources.articles.size | plus: resources.collections.size
   assign totalCount = resources.queries.size | plus: resources.pages.size | plus: resources.articles.size | plus: resources.collections.size | plus: resources.products.size
@@ -138,11 +144,14 @@
                         <span class="grid-product__vendor">{{ product.vendor }}</span>
                       {% endif %}
                       {% if predictive_search_show_price %}
-                        {%- if on_sale -%}
-                          <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
-                          <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
-                          <span class="visually-hidden">{{ 'labels.sale_price' | t }}</span>
-                        {%- endif -%}
+                        {%- comment -%}
+                          Compare-at (original) and sale accessibility labels disabled
+                          {%- if on_sale -%}
+                            <span class="visually-hidden">{{ 'labels.regular_price' | t }}</span>
+                            <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
+                            <span class="visually-hidden">{{ 'labels.sale_price' | t }}</span>
+                          {%- endif -%}
+                        {%- endcomment -%}
 
                         {%- if product.price_varies -%}
                           {%- assign price = product.price_min | money -%}
@@ -150,20 +159,24 @@
                         {%- else -%}
                           <span class="grid-product__price">{{ product.price | money }}</span>
                         {%- endif -%}
-                        {%- if on_sale -%}
-                          {%- if product_save_amount -%}
-                            {%- liquid
-                              if product_save_type == 'dollar'
-                                assign saved_amount = product.compare_at_price | minus: product.price | money
-                              else
-                                assign saved_amount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round
-                              endif
-                            -%}
-                            <span class="grid-product__price--savings">
-                              {{ 'info.save_amount' | t: saved_amount: saved_amount }}
-                            </span>
+
+                        {%- comment -%}
+                          Savings text disabled
+                          {%- if on_sale -%}
+                            {%- if product_save_amount -%}
+                              {%- liquid
+                                if product_save_type == 'dollar'
+                                  assign saved_amount = product.compare_at_price | minus: product.price | money
+                                else
+                                  assign saved_amount = product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round
+                                endif
+                              -%}
+                              <span class="grid-product__price--savings">
+                                {{ 'info.save_amount' | t: saved_amount: saved_amount }}
+                              </span>
+                            {%- endif -%}
                           {%- endif -%}
-                        {%- endif -%}
+                        {%- endcomment -%}
                       {% endif %}
                     </div>
                   </a>
