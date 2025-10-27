@@ -120,13 +120,13 @@
     "text_and_image_DRtzyL": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/September_fish_Fry_Menu_5_x_7_in.png",
+        "image": "shopify://shop_images/Fish_Fry_Menu_5_x_7_in_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Fish Fry",
         "heading_size": "h2",
-        "text": "<p>Join us at The Cook’s Station on <strong>October 23rd at 5:30 PM</strong> for a mouthwatering <strong>Fish Fry</strong> you won’t forget. Crispy, golden-fried goodness, fresh sides, and cold beer/ wine to pair with it— it’s the perfect summer evening!</p>",
+        "text": "<p>Join us at The Cook’s Station on <strong>November 7th at 5:30 PM</strong> for a mouthwatering <strong>Fish Fry</strong> you won’t forget. Crispy, golden-fried goodness, fresh sides, and cold beer/ wine to pair with it— it’s the perfect evening!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
