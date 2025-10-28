@@ -116,10 +116,9 @@
     },
     "text_and_image_WbXDGx": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/October_brunch_2025_insta_2.png",
+        "image": "shopify://shop_images/Copy_of_October_brunch_2025_insta.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
