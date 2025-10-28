@@ -93,10 +93,9 @@
     },
     "text_and_image_kCeTqw": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/October_2025_Italian_Dinner_1.png",
+        "image": "shopify://shop_images/November_2025_Italian_Dinner.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
