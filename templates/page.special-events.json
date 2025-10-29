@@ -141,7 +141,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Copy_of_October_brunch_2025_insta.png",
+        "image": "shopify://shop_images/November_brunch_2025_insta_5_x_7_in.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
@@ -152,7 +152,7 @@
         "button_link": "",
         "button_style": "primary",
         "align_text": "left",
-        "image_width": "50",
+        "image_width": "33",
         "layout": "right",
         "color_scheme": "1",
         "divider": false,
