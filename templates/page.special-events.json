@@ -49,9 +49,8 @@
     },
     "text_and_image_iV6NVF": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/October_2025_Burger_Night.png",
+        "image": "shopify://shop_images/November_2025_Burger_Night.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
@@ -94,6 +93,7 @@
     },
     "text_and_image_kCeTqw": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/November_2025_Italian_Dinner_1.png",
@@ -141,13 +141,13 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/November_brunch_2025_insta_5_x_7_in.png",
+        "image": "shopify://shop_images/Copy_of_October_brunch_2025_insta_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
         "title": "Sunday Brunch",
         "heading_size": "h2",
-        "text": "<p>Join us on October 19th  from 11am-2pm! No tickets are needed to attend. Order at our café, and dine on our screened-in patio!</p>",
+        "text": "<p>Join us on November 9th from 11am-2pm! No tickets are needed to attend. Order at our café, and dine on our screened-in patio!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
