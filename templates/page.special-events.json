@@ -47,28 +47,6 @@
         "autoplay_speed": 7
       }
     },
-    "text_and_image_rBNfCd": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify://shop_images/Holiday_Open_House_2025-_Instagram_Post_5.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Holiday Open House!",
-        "heading_size": "h2",
-        "text": "<p>Join us for The Cook’s Station Holiday Open House on Sunday, November 9th from 10AM–5PM! Get into the holiday spirit as you sip, shop, and savor the season with festive food samples, a hot chocolate bar, and special holiday drink features from our bar. </p><p>Enjoy live music while you browse our holiday collections, and take advantage of exclusive giveaways—including chances to win free Cook’s Station bags with purchases over $250 and Cook’s Cash to use on your next visit. It’s the perfect way to kick off the holidays in style—bring your friends and come celebrate the most wonderful time of the year with us!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "text_and_image_kCeTqw": {
       "type": "text-and-image",
       "disabled": true,
@@ -86,51 +64,6 @@
         "button_style": "primary",
         "align_text": "left",
         "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
-    "text_and_image_DRtzyL": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify://shop_images/Fish_Fry_Menu_5_x_7_in_2.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Fish Fry",
-        "heading_size": "h2",
-        "text": "<p>Join us at The Cook’s Station on <strong>November 7th at 5:30 PM</strong> for a mouthwatering <strong>Fish Fry</strong> you won’t forget. Crispy, golden-fried goodness, fresh sides, and cold beer/ wine to pair with it— it’s the perfect evening!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
-    "text_and_image_WbXDGx": {
-      "type": "text-and-image",
-      "name": "t:labels.image_with_text",
-      "settings": {
-        "image": "shopify://shop_images/Copy_of_October_brunch_2025_insta_2.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Sunday Brunch",
-        "heading_size": "h2",
-        "text": "<p>Join us on November 9th from 11am-2pm! No tickets are needed to attend. Order at our café, and dine on our screened-in patio!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "33",
         "layout": "right",
         "color_scheme": "1",
         "divider": false,
@@ -200,10 +133,7 @@
   "order": [
     "main",
     "1644519722c7610927",
-    "text_and_image_rBNfCd",
     "text_and_image_kCeTqw",
-    "text_and_image_DRtzyL",
-    "text_and_image_WbXDGx",
     "text_and_image_WGaTCE",
     "text_and_image_iV6NVF",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
