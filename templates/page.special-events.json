@@ -116,6 +116,28 @@
         "bottom_padding": true
       }
     },
+    "text_and_image_Bb8aEV": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Thanksgiving_Menu_Flyer.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Thanksgiving Menu",
+        "heading_size": "h2",
+        "text": "<p>Thanksgiving Made Easy!<br/><br/>Skip the stress and let <em>The Cook’s Station</em> take care of your holiday favorites. Starting Friday, November 22nd at 3pm, our Thanksgiving Grab & Go Menu will be available: no pre-orders needed!</p><p>Stop by and pick up freshly prepared holiday dishes from our Grab & Go section, perfect for hosting, sharing, or just treating yourself. Swing by early and stock up on your favorites!</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "3",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "b5e95e24-93b4-492c-ae7f-914eae033331": {
       "type": "map",
       "settings": {
@@ -136,6 +158,7 @@
     "text_and_image_kCeTqw",
     "text_and_image_WGaTCE",
     "text_and_image_iV6NVF",
+    "text_and_image_Bb8aEV",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
