@@ -26,6 +26,12 @@
             "inventory_transfers_enable": true
           }
         },
+        "text_DCCxqp": {
+          "type": "text",
+          "settings": {
+            "text": "Gift cards may be redeemed for any cooking class, our wine bar and café, and all retail items throughout the store."
+          }
+        },
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7": {
           "type": "description",
           "settings": {
@@ -68,6 +74,7 @@
       "block_order": [
         "title_DaKN6F",
         "inventory_status",
+        "text_DCCxqp",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
         "variant_picker_PHeixP",
         "price",
