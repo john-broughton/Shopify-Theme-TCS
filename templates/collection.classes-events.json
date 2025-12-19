@@ -60,10 +60,18 @@
             "title": "Looking for the perfect gift, but don’t see a class that fits your schedule—or one that’s already sold out? Visit our Shop tab to purchase a gift card, redeemable toward any of our future classes. It’s a flexible, thoughtful gift that’s always a great choice.",
             "heading_size": "h3"
           }
+        },
+        "heading_eaaWEp": {
+          "type": "heading",
+          "settings": {
+            "title": "Please email langley@thecooksstation.com for any cooking class questions or to be placed on our waitlist for any sold out classes.",
+            "heading_size": "h3"
+          }
         }
       },
       "block_order": [
-        "heading_GigDbX"
+        "heading_GigDbX",
+        "heading_eaaWEp"
       ],
       "settings": {
         "align_text": "center",
