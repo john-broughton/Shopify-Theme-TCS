@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "t:labels.header_group",
@@ -16,9 +16,9 @@
       "settings": {
         "announcement_center": false,
         "toolbar_social": true,
-        "show_locale_selector": true,
-        "show_currency_selector": true,
-        "show_currency_flags": true
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false
       }
     },
     "header": {
@@ -27,8 +27,8 @@
         "logo_WdCL9R": {
           "type": "logo",
           "settings": {
-            "logo": "shopify:\/\/shop_images\/CooksStation-Black.png",
-            "logo-inverted": "shopify:\/\/shop_images\/CooksStation-White.png",
+            "logo": "shopify://shop_images/CooksStation-Black.png",
+            "logo-inverted": "shopify://shop_images/CooksStation-White.png",
             "desktop_logo_width": 220,
             "mobile_logo_width": 140
           }
