@@ -138,9 +138,9 @@
       "type": "contact-form",
       "name": "t:labels.contact_form",
       "settings": {
-        "title": "Start Planning Your Private Event",
+        "title": "START PLANNING YOUR EVENT",
         "heading_size": "h2",
-        "heading_position": "left",
+        "heading_position": "center",
         "text": "<p>We are here to set up your perfect event. Start by filling out this form and we will be in touch.</p>",
         "show_phone": true,
         "narrow_column": true,
