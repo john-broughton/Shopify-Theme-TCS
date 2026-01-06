@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "16572241568ef8519c": {
@@ -16,16 +16,16 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>Private Cooking Classes<\/p>",
+            "title": "<p>Private Cooking Classes</p>",
             "title_size": 64,
             "subheading": "",
-            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/private_class_options_2024.pdf?v=1721911520",
+            "link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/private_class_options_2024.pdf?v=1721911520",
             "link_text": "More Info",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify:\/\/shop_images\/education-kitchen-NEW.jpg",
+            "image": "shopify://shop_images/education-kitchen-NEW.jpg",
             "overlay_opacity": 16
           }
         },
@@ -34,7 +34,7 @@
           "disabled": true,
           "settings": {
             "top_subheading": "",
-            "title": "<p>Make an Impact<\/p>",
+            "title": "<p>Make an Impact</p>",
             "title_size": 70,
             "subheading": "Supports multiple text alignments and mobile-specific images.",
             "link": "",
@@ -63,8 +63,7 @@
     "main": {
       "type": "main-page",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "rich-text": {
       "type": "rich-text",
@@ -82,7 +81,7 @@
           "disabled": true,
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
           }
         }
       },
@@ -112,13 +111,13 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Choose from the various cooking class options below, and let us help you create the perfect menu!<\/p>"
+            "text": "<p>Choose from the various cooking class options below, and let us help you create the perfect menu!</p>"
           }
         },
         "button_Ec6qaH": {
           "type": "button",
           "settings": {
-            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/private_class_options_2024.pdf?v=1721911520",
+            "link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/private_class_options_2024.pdf?v=1721911520",
             "link_text": "VIEW DETAILS"
           }
         }
@@ -135,6 +134,19 @@
         "divider": false
       }
     },
+    "contact_form_it9Xhg": {
+      "type": "contact-form",
+      "name": "t:labels.contact_form",
+      "settings": {
+        "title": "Start Planning Your Private Event",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "text": "<p>We are here to set up your perfect event. Start by filling out this form and we will be in touch.</p>",
+        "show_phone": true,
+        "narrow_column": true,
+        "color_scheme": "1"
+      }
+    },
     "1656511470875b617a": {
       "type": "text-columns",
       "blocks": {
@@ -146,7 +158,7 @@
             "image_mask": "none",
             "image_width": 650,
             "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.<\/p>",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
             "button_label": "Optional button",
             "button_link": ""
           }
@@ -159,9 +171,9 @@
             "image_mask": "none",
             "image_width": 420,
             "title": "PRIVATE EVENTS",
-            "text": "<p>Celebrate your next birthday, graduation, bridal shower, or any of life's biggest milestones with us at The Cook's Station!<\/p>",
+            "text": "<p>Celebrate your next birthday, graduation, bridal shower, or any of life's biggest milestones with us at The Cook's Station!</p>",
             "button_label": "VIEW DETAILS",
-            "button_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/private_events_10.4.22.pdf?v=1670446109"
+            "button_link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/private_events_10.4.22.pdf?v=1670446109"
           }
         },
         "1656511470523bde54-2": {
@@ -171,9 +183,9 @@
             "image_mask": "none",
             "image_width": 650,
             "title": "PRIVATE COOKING CLASSES",
-            "text": "<p>Choose from the various cooking class options below, and let us help you create the perfect menu!<\/p>",
+            "text": "<p>Choose from the various cooking class options below, and let us help you create the perfect menu!</p>",
             "button_label": "VIEW DETAILS",
-            "button_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/Private_Cooking_Classes_10.18.pdf?v=1670446115"
+            "button_link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/Private_Cooking_Classes_10.18.pdf?v=1670446115"
           }
         }
       },
@@ -205,14 +217,14 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>We love to party, which is good news since we’re so darn good at it! Want to co-host a special or private event with us? Let’s make some plans.<\/p>"
+            "text": "<p>We love to party, which is good news since we’re so darn good at it! Want to co-host a special or private event with us? Let’s make some plans.</p>"
           }
         },
         "c0bec788-ca36-4c67-a23f-a928036d5d2b": {
           "type": "button",
           "disabled": true,
           "settings": {
-            "link": "shopify:\/\/pages\/about-us",
+            "link": "shopify://pages/about-us",
             "link_text": "Button"
           }
         },
@@ -249,10 +261,10 @@
             "heading": "THIS, OR THAT?",
             "textarea": "click the buttons below to view details of each private event type",
             "cta_text1": "PRIVATE COOKING CLASSES",
-            "cta_link1": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/Private_Cooking_Classes_Website_PDF.pdf?v=1656511380",
+            "cta_link1": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/Private_Cooking_Classes_Website_PDF.pdf?v=1656511380",
             "cta_text2": "PRIVATE EVENTS",
-            "cta_link2": "https:\/\/cdn.shopify.com\/s\/files\/1\/0618\/6660\/6817\/files\/Private_Room_Rentals_Website_PDF_6.27.pdf?v=1656511412",
-            "image": "shopify:\/\/shop_images\/outside_day_time.jpg",
+            "cta_link2": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/Private_Room_Rentals_Website_PDF_6.27.pdf?v=1656511412",
+            "image": "shopify://shop_images/outside_day_time.jpg",
             "video_url": "",
             "width": "100",
             "height": 220,
@@ -321,14 +333,14 @@
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
           }
         },
         "1656510829ddb7cd11-1": {
           "type": "question",
           "settings": {
             "title": "Frequently asked question",
-            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.<\/p>"
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
           }
         }
       },
@@ -352,7 +364,7 @@
         "subtitle": "",
         "title": "Image with text",
         "heading_size": "h2",
-        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.<\/p>",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -371,6 +383,7 @@
     "main",
     "rich-text",
     "rich_text_f3CMfL",
+    "contact_form_it9Xhg",
     "1656511470875b617a",
     "165651105369902eb0",
     "1656511130d4ca58c1",
