@@ -134,14 +134,14 @@
         "divider": false
       }
     },
-    "contact_form_it9Xhg": {
-      "type": "contact-form",
-      "name": "t:labels.contact_form",
+    "contact_form_privateevents_7VQqca": {
+      "type": "contact-form-privateevents",
+      "name": "Private Events Contact Form",
       "settings": {
         "title": "START PLANNING YOUR EVENT",
         "heading_size": "h2",
         "heading_position": "center",
-        "text": "<p>We are here to set up your perfect event. Start by filling out this form and we will be in touch.</p>",
+        "text": "<p><strong>We are here to set up your perfect event. Start by filling out this form and we will be in touch.</strong></p>",
         "show_phone": true,
         "narrow_column": true,
         "color_scheme": "1"
@@ -383,7 +383,7 @@
     "main",
     "rich-text",
     "rich_text_f3CMfL",
-    "contact_form_it9Xhg",
+    "contact_form_privateevents_7VQqca",
     "1656511470875b617a",
     "165651105369902eb0",
     "1656511130d4ca58c1",
