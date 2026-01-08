@@ -1,19 +1,10 @@
-{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License %}
+
 {%- comment -%}
-  Renders a contact form section.
+  Renders a Private Events contact form.
 
-  Accepts:
-  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme of the section
-  - narrow_column {boolean} - narrow column
-  - title {string} - title
-  - text {string} - text
-  - heading_position {'left'|'center'|'right'} - heading position
-  - heading_size {'small'|'medium'|'large' | 'extra large'} - heading size
-  - customer {object} - customer object
-  - show_phone {boolean} - show phone
-
-  Usage:
-  {% render 'section-contact-form' %}
+  This is a modified version of the standard contact form
+  with additional Private Events fields.
 {%- endcomment -%}
 
 {%- liquid
@@ -36,6 +27,7 @@
   {%- if color_scheme != 'none' -%}
     {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
   {%- endif -%}
+
   <div class="page-width{% if narrow_column %} page-width--narrow{% endif %}">
     {%- if title != blank or text != blank -%}
       <div class="section-header text-{{ heading_position }}">
@@ -45,7 +37,9 @@
           </h2>
         {%- endif -%}
         {%- if text != blank -%}
-          <div class="rte section-header__rte clearfix">{{ text }}</div>
+          <div class="rte section-header__rte clearfix">
+            {{ text }}
+          </div>
         {%- endif -%}
       </div>
     {% endif %}
@@ -53,6 +47,7 @@
     <div class="form-vertical">
       {%- assign form_id = 'contact-' | append: section.id -%}
       {%- form 'contact', id: form_id -%}
+
         {%- if form.posted_successfully? -%}
           <p class="note note--success">
             {{ 'info.contact_confirmation' | t }}
@@ -63,7 +58,9 @@
 
         <div class="grid grid--small clearfix">
           <div class="grid__item medium-up--one-half">
-            <label for="ContactFormName-{{ section.id }}">{{ 'labels.name' | t }}</label>
+            <label for="ContactFormName-{{ section.id }}">
+              {{ 'labels.name' | t }}
+            </label>
             <input
               type="text"
               id="ContactFormName-{{ section.id }}"
@@ -71,11 +68,14 @@
               name="contact[name]"
               autocapitalize="words"
               value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+              required
             >
           </div>
 
           <div class="grid__item medium-up--one-half">
-            <label for="ContactFormEmail-{{ section.id }}">{{ 'labels.email' | t }}</label>
+            <label for="ContactFormEmail-{{ section.id }}">
+              {{ 'labels.email' | t }}
+            </label>
             <input
               type="email"
               id="ContactFormEmail-{{ section.id }}"
@@ -84,23 +84,61 @@
               autocorrect="off"
               autocapitalize="off"
               value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+              required
             >
           </div>
         </div>
 
         {%- if show_phone -%}
-          <label for="ContactFormPhone-{{ section.id }}">{{ 'labels.phone_number' | t }}</label>
+          <label for="ContactFormPhone-{{ section.id }}">
+            {{ 'labels.phone_number' | t }}
+          </label>
           <input
             type="tel"
             id="ContactFormPhone-{{ section.id }}"
             class="input-full"
             name="contact[phone]"
-            pattern="[0-9\-]*"
+            pattern="[0-9\\-]*"
             value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
           >
         {%- endif -%}
 
-        <label for="ContactFormMessage-{{ section.id }}">{{ 'labels.message' | t }}</label>
+        <!-- Private Events Fields -->
+        <label for="ContactFormExpectedDate-{{ section.id }}">
+          Expected Event Date
+        </label>
+        <input
+          type="date"
+          id="ContactFormExpectedDate-{{ section.id }}"
+          name="contact[Expected Event Date]"
+          class="input-full"
+          required
+        >
+
+        <label for="ContactFormHeadCount-{{ section.id }}">
+          Estimated Head Count
+        </label>
+        <select
+          id="ContactFormHeadCount-{{ section.id }}"
+          name="contact[Estimated Head Count]"
+          class="input-full"
+          required
+        >
+          <option value="" disabled selected>Select number of guests</option>
+          {% for i in (1..20) %}
+            <option value="{{ i }}">{{ i }}</option>
+          {% endfor %}
+        </select>
+
+        <input
+          type="hidden"
+          name="contact[Form Type]"
+          value="Private Events"
+        >
+
+        <label for="ContactFormMessage-{{ section.id }}">
+          {{ 'labels.message' | t }}
+        </label>
         <textarea
           rows="5"
           id="ContactFormMessage-{{ section.id }}"
@@ -108,18 +146,19 @@
           name="contact[body]"
         >{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
-        <label for="contact-form-submit-{{ section.id }}" class="visually-hidden">{{ 'actions.send' | t }}</label>
-        <button type="submit" id="contact-form-submit-{{ section.id }}" class="btn">
+        <label for="contact-form-submit-{{ section.id }}" class="visually-hidden">
+          {{ 'actions.send' | t }}
+        </label>
+        <button
+          type="submit"
+          id="contact-form-submit-{{ section.id }}"
+          class="btn"
+        >
           {{ 'actions.send' | t }}
         </button>
 
-        {% comment %}
-          Remove the following three lines of code to remove the note
-          about being protected by Google's reCAPTCHA service.
-          By removing it, the small reCAPTCHA widget will appear in the
-          bottom right corner of the page.
-        {% endcomment %}
         {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+
       {%- endform -%}
     </div>
   </div>
