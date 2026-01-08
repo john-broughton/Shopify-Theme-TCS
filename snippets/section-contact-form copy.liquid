@@ -1,0 +1,126 @@
+{% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
+{%- comment -%}
+  Renders a contact form section.
+
+  Accepts:
+  - color_scheme {'none'|'1'|'2'|'3'} - The color scheme of the section
+  - narrow_column {boolean} - narrow column
+  - title {string} - title
+  - text {string} - text
+  - heading_position {'left'|'center'|'right'} - heading position
+  - heading_size {'small'|'medium'|'large' | 'extra large'} - heading size
+  - customer {object} - customer object
+  - show_phone {boolean} - show phone
+
+  Usage:
+  {% render 'section-contact-form' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign narrow_column = narrow_column | default: section.settings.narrow_column, allow_false: true | default: false, allow_false: true
+  assign title = title | default: section.settings.title
+  assign text = text | default: section.settings.text
+  assign heading_position = heading_position | default: section.settings.heading_position | default: 'center'
+  assign heading_size = heading_size | default: section.settings.heading_size | default: 'h2'
+  assign customer = customer | default: customer
+  assign show_phone = show_phone | default: section.settings.show_phone, allow_false: true | default: false, allow_false: true
+  assign color_scheme = color_scheme | default: section.settings.color_scheme
+
+  unless color_scheme
+    assign class_name = 'contact-form-' | append: section.id
+    render 'color-scheme-override', class_name: class_name
+  endunless
+-%}
+
+<div class="index-section contact-form-{{ section.id }} color-scheme-{{ color_scheme }}">
+  {%- if color_scheme != 'none' -%}
+    {%- render 'color-scheme-texture', color_scheme: color_scheme -%}
+  {%- endif -%}
+  <div class="page-width{% if narrow_column %} page-width--narrow{% endif %}">
+    {%- if title != blank or text != blank -%}
+      <div class="section-header text-{{ heading_position }}">
+        {%- if title != blank -%}
+          <h2 class="section-header__title {{ heading_size }}">
+            {{ title }}
+          </h2>
+        {%- endif -%}
+        {%- if text != blank -%}
+          <div class="rte section-header__rte clearfix">{{ text }}</div>
+        {%- endif -%}
+      </div>
+    {% endif %}
+
+    <div class="form-vertical">
+      {%- assign form_id = 'contact-' | append: section.id -%}
+      {%- form 'contact', id: form_id -%}
+        {%- if form.posted_successfully? -%}
+          <p class="note note--success">
+            {{ 'info.contact_confirmation' | t }}
+          </p>
+        {%- endif -%}
+
+        {{ form.errors | default_errors }}
+
+        <div class="grid grid--small clearfix">
+          <div class="grid__item medium-up--one-half">
+            <label for="ContactFormName-{{ section.id }}">{{ 'labels.name' | t }}</label>
+            <input
+              type="text"
+              id="ContactFormName-{{ section.id }}"
+              class="input-full"
+              name="contact[name]"
+              autocapitalize="words"
+              value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+            >
+          </div>
+
+          <div class="grid__item medium-up--one-half">
+            <label for="ContactFormEmail-{{ section.id }}">{{ 'labels.email' | t }}</label>
+            <input
+              type="email"
+              id="ContactFormEmail-{{ section.id }}"
+              class="input-full"
+              name="contact[email]"
+              autocorrect="off"
+              autocapitalize="off"
+              value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            >
+          </div>
+        </div>
+
+        {%- if show_phone -%}
+          <label for="ContactFormPhone-{{ section.id }}">{{ 'labels.phone_number' | t }}</label>
+          <input
+            type="tel"
+            id="ContactFormPhone-{{ section.id }}"
+            class="input-full"
+            name="contact[phone]"
+            pattern="[0-9\-]*"
+            value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+          >
+        {%- endif -%}
+
+        <label for="ContactFormMessage-{{ section.id }}">{{ 'labels.message' | t }}</label>
+        <textarea
+          rows="5"
+          id="ContactFormMessage-{{ section.id }}"
+          class="input-full"
+          name="contact[body]"
+        >{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+        <label for="contact-form-submit-{{ section.id }}" class="visually-hidden">{{ 'actions.send' | t }}</label>
+        <button type="submit" id="contact-form-submit-{{ section.id }}" class="btn">
+          {{ 'actions.send' | t }}
+        </button>
+
+        {% comment %}
+          Remove the following three lines of code to remove the note
+          about being protected by Google's reCAPTCHA service.
+          By removing it, the small reCAPTCHA widget will appear in the
+          bottom right corner of the page.
+        {% endcomment %}
+        {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+      {%- endform -%}
+    </div>
+  </div>
+</div>
