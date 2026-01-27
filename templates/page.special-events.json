@@ -47,29 +47,6 @@
         "autoplay_speed": 7
       }
     },
-    "text_and_image_kCeTqw": {
-      "type": "text-and-image",
-      "name": "t:labels.image_with_text",
-      "settings": {
-        "image": "shopify://shop_images/Copy_of_October_2025_Burger_Night.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Burger Night",
-        "heading_size": "h2",
-        "text": "<p>Grab your friends, bring your appetite, and get ready for a night of delicious bites & good vibes.<br/><br/>No tickets are needed to attend. Order at our cafe, and dine on our screened-in patio. Dinner service begins at 5:30pm and continues until 7:30pm—or until we sell out!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
       "settings": {
@@ -77,7 +54,7 @@
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Italian Night 1/20",
+        "title": "Italian Night 2/3",
         "heading_size": "h2",
         "text": "<p>Join us for a cozy, casual Italian evening—no tickets, no reservations, just great food and great company. Simply stop by, order at the café, and settle in on our heated patio to enjoy a night inspired by the flavors of Italy.</p>",
         "button_label": "",
@@ -109,6 +86,29 @@
         "image_width": "50",
         "layout": "right",
         "color_scheme": "3",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "text_and_image_kCeTqw": {
+      "type": "text-and-image",
+      "name": "t:labels.image_with_text",
+      "settings": {
+        "image": "shopify://shop_images/Copy_of_October_2025_Burger_Night.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Burger Night",
+        "heading_size": "h2",
+        "text": "<p>Grab your friends, bring your appetite, and get ready for a night of delicious bites & good vibes.<br/><br/>No tickets are needed to attend. Order at our cafe, and dine on our screened-in patio. Dinner service begins at 5:30pm and continues until 7:30pm—or until we sell out!</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
         "divider": false,
         "top_padding": true,
         "bottom_padding": true
