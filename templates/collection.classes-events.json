@@ -80,14 +80,14 @@
         "divider": false
       }
     },
-    "testimonials_MACaWt": {
+     "testimonials_MACaWt": {
       "type": "testimonials",
       "blocks": {
         "testimonial_JRnWLV": {
           "type": "testimonial",
           "settings": {
             "icon": "none",
-            "testimonial": "<h2>Vince Bienish</h2><p>With over three decades of culinary experience, Chef Vince Bienish has cultivated a rich career that reflects his deep-rooted passion for food. Growing up in the Hudson Valley area of New York, Vince was heavily influenced by his family’s cooking traditions, which trace back to Curinga, Italy. He honed his craft at the prestigious Culinary Institute of America, subsequently working his way through renowned hotels and local kitchens in New York City, Miami, and the Caribbean.  Since 2020, Chef Vince has brought his extensive experience and passion for food to The Cook's Station. Outside the kitchen, Vince enjoys traveling whenever possible and actively participates in numerous food and wine events. His dedication to the culinary arts continues to inspire both colleagues and customers alike.</p>",
+            "testimonial": "<h2>Vince Bienish</h2><p>With over three decades of culinary experience, Chef Vince Bienish has cultivated a rich career that reflects his deep-rooted passion for food. Growing up in the Hudson Valley area of New York, Vince was heavily influenced by his family’s cooking traditions, which trace back to Curinga, Italy. He honed his craft at the prestigious Culinary Institute of America, subsequently working his way through renowned hotels and local kitchens in New York City, Miami, and the Caribbean.  Since 2020, Chef Vince has brought his extensive experience and passion for food to The Cook's Station. Outside the kitchen, Vince enjoys traveling whenever possible and actively participates in numerous food and wine events. His dedication to the culinary arts continues to inspire both colleagues and customers alike.</p>",
             "image": "shopify://shop_images/christa-rene-photography-143_websize.png",
             "author": "",
             "author_info": ""
@@ -97,7 +97,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "none",
-            "testimonial": "<h2>Craig Kuhns</h2><p>With over 25 years of culinary experience, Chef Craig Kuhns began his journey in Charleston, SC, after graduating from Johnson & Wales University. As the Charleston food scene blossomed, Craig honed his craft under the guidance of mentor Chef Ken Vedrinski at Trattoria Lucca, where he developed a deep passion for Italian cuisine and fine dining. His career in Charleston saw him working in some of the city's most prestigious restaurants, including The Charleston Grill, Palmetto Grill, Palmetto Café, and Basil Thai Restaurant.  Chef Craig’s rich culinary background and passion for cooking continue to inspire those around him at The Cook's Station.</p>",
+            "testimonial": "<h2>Craig Kuhns</h2><p>With over 25 years of culinary experience, Chef Craig Kuhns began his journey in Charleston, SC, after graduating from Johnson & Wales University. As the Charleston food scene blossomed, Craig honed his craft under the guidance of mentor Chef Ken Vedrinski at Trattoria Lucca, where he developed a deep passion for Italian cuisine and fine dining. His career in Charleston saw him working in some of the city's most prestigious restaurants, including The Charleston Grill, Palmetto Grill, Palmetto Café, and Basil Thai Restaurant.  Chef Craig’s rich culinary background and passion for cooking continue to inspire those around him at The Cook's Station.</p>",
             "image": "shopify://shop_images/Craig-Kuhns-profile-Paul-Mehaffey-photo-1160x653.png",
             "author": "",
             "author_info": ""
@@ -122,13 +122,24 @@
             "author": "",
             "author_info": ""
           }
+        },
+        "testimonial_LauraFernandez": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h2>Laura Fernandez</h2><p>Laura Fernandez has lived in the Greenville area since 97 when she moved here to attend Furman University. Laura has always been interested in food, both from the farming and culinary side. It is her mission to not only help people grow their own food, but to also utilize it. She wants to connect people to their food and help them return to seasonal, local eating. Laura has extensive restaurant experience and has been growing food for as long as she can remember. Her first gardening experience came when she was about 12 and asked her grandfather to get her started. Food, farming and community are of the greatest importance to Laura, and she hopes to inspire others to find their own connection to the earth and its value.</p>",
+            "image": "shopify://shop_images/IMG_9328_be500420-351e-4261-b1b6-e6545d24a823.jpg",
+            "author": "",
+            "author_info": ""
+          }
         }
       },
       "block_order": [
         "testimonial_JRnWLV",
         "testimonial_4MMJnU",
         "testimonial_XbpAmU",
-        "testimonial_JbH7Ye"
+        "testimonial_JbH7Ye",
+        "testimonial_LauraFernandez"
       ],
       "settings": {
         "title": "Meet Our Chefs!",
