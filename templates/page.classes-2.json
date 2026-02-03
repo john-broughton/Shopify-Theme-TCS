@@ -89,13 +89,24 @@
             "author": "",
             "author_info": ""
           }
+        },
+        "testimonial_XBK9T6": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Laura Fernandez has lived in the Greenville area since 97 when she moved here to attend Furman University. Laura has always been interested in food, both from the farming and culinary side. It is her mission to not only help people grow their own food, but to also utilize it. She wants to connect people to their food and help them return to seasonal, local eating. Laura has extensive restaurant experience and has been growing<br/>food for as long as she can remember. Her first gardening experience came when she was about 12 and asked her grandfather to get her started. Food, farming and community are of the greatest importance to Laura, and she hopes to inspire others to find their own connection to the earth and its value.</p>",
+            "image": "shopify://shop_images/IMG_9328_be500420-351e-4261-b1b6-e6545d24a823.jpg",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
         }
       },
       "block_order": [
         "testimonial_JRnWLV",
         "testimonial_4MMJnU",
         "testimonial_XbpAmU",
-        "testimonial_JbH7Ye"
+        "testimonial_JbH7Ye",
+        "testimonial_XBK9T6"
       ],
       "settings": {
         "title": "Meet Our Chefs!",
