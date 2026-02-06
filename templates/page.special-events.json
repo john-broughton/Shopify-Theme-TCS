@@ -96,6 +96,7 @@
     },
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Italian_Night_-_Feb_2026_6.png",
         "image_mask": "none",
