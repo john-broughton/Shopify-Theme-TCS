@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -20,7 +20,7 @@
           }
         },
         "evey_events_tickets_event_inventory_BDdwEK": {
-          "type": "shopify:\/\/apps\/evey-events-tickets\/blocks\/event-inventory\/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
+          "type": "shopify://apps/evey-events-tickets/blocks/event-inventory/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
           "settings": {
             "text_format": "%{available} tickets remaining",
             "text_color": "",
@@ -30,8 +30,7 @@
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7": {
           "type": "description",
@@ -41,11 +40,21 @@
         },
         "quantity_selector_KcWnct": {
           "type": "quantity_selector",
+          "settings": {}
+        },
+        "evey_events_tickets_multi_variant_selector_EcWRCk": {
+          "type": "shopify://apps/evey-events-tickets/blocks/multi-variant-selector/0ff19eb4-83c2-40c2-b780-a501fc99b6d8",
           "settings": {
+            "show_service_fees": true,
+            "sold_out_color": "#FF0000",
+            "limit_reached_color": "#777777",
+            "padding_x": 0,
+            "padding_y": 0
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_dynamic_checkout": false,
             "surface_pickup_enable": false,
@@ -59,6 +68,7 @@
         "price",
         "e95297a4-dee3-4cf3-aa48-117e1dc226d7",
         "quantity_selector_KcWnct",
+        "evey_events_tickets_multi_variant_selector_EcWRCk",
         "buy_buttons"
       ],
       "settings": {
@@ -108,8 +118,7 @@
     "recently-viewed": {
       "type": "recently-viewed",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "collection-return": {
       "type": "collection-return",
