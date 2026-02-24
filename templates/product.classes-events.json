@@ -12,6 +12,14 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "mailchimp_email_sms_mailchimp_for_shopify_bis_MDr68y": {
+          "type": "shopify://apps/mailchimp-email-sms/blocks/mailchimp_for_shopify_bis/e3b67dce-fd41-4b61-b3cf-961c12344cde",
+          "settings": {
+            "button_text": "Join the Waitlist",
+            "button_bg_color": "#222222",
+            "button_text_color": "#ffffff"
+          }
+        },
         "title_f9iWjj": {
           "type": "title",
           "settings": {
@@ -52,6 +60,7 @@
         }
       },
       "block_order": [
+        "mailchimp_email_sms_mailchimp_for_shopify_bis_MDr68y",
         "title_f9iWjj",
         "evey_events_tickets_event_inventory_BDdwEK",
         "price",
