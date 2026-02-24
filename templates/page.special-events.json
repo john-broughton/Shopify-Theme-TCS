@@ -95,13 +95,12 @@
     },
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
-      "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/Italian_Night_-_Feb_2026_6.png",
+        "image": "shopify://shop_images/Italian_Night_-_March_2026_c2ec69d8-d29d-47ae-9682-5e8787f24e1a.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Italian Night 2/3",
+        "title": "Italian Night 3/2",
         "heading_size": "h2",
         "text": "<p>Join us for a cozy, casual Italian evening—no tickets, no reservations, just great food and great company. Simply stop by, order at the café, and settle in on our heated patio to enjoy a night inspired by the flavors of Italy.</p>",
         "button_label": "",
