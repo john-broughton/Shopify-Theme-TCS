@@ -235,7 +235,7 @@
           "type": "question",
           "settings": {
             "title": "How do I use a gift card to register for a cooking class?",
-            "text": "<p>Upon checking out, please type in your gift card number in the right hand side of the screen where it says “Gift card”.</p>"
+            "text": "<p>*Please check out as guest* Upon checking out, please type in your gift card number in the right hand side of the screen where it says “Gift card”. </p>"
           }
         },
         "question_bt83t8": {
