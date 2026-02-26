@@ -221,7 +221,7 @@
           "type": "question",
           "settings": {
             "title": "Is there a waitlist I can join?",
-            "text": "<p>Yes! We keep a waitlist for each class in case of cancellations. If you would like to add yourself to the waitlist for a class please email <a href=\"mailto:langley@thecooksstation.com\" title=\"mailto:langley@thecooksstation.com\"><span style=\"text-decoration:underline\">langley@thecooksstation.com</span></a> and include your name, the class you would like to be added to the waitlist, number of tickets needed and a phone number. </p>"
+            "text": "<p>Yes! Want to join a class but see that it’s sold out? No worries! Simply click on the class you’re interested in and select the <strong>“Add Me to Waitlist”</strong> button to be notified if a spot opens up. <br/><br/></p>"
           }
         },
         "question_zkRXna": {
