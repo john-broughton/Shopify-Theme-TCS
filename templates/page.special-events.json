@@ -49,6 +49,7 @@
     },
     "text_and_image_kCeTqw": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/February_2026_Burger_Night.png",
@@ -115,6 +116,29 @@
         "bottom_padding": true
       }
     },
+    "text_and_image_E94AcB": {
+      "type": "text-and-image",
+      "name": "t:labels.image_with_text",
+      "settings": {
+        "image": "shopify://shop_images/March_2026_Fish_Fry_Menu_5_x_7_in.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Fish Fry 3/20",
+        "heading_size": "h2",
+        "text": "<p>Golden, crispy, and cooked to perfection — our Fish Fry is everything you crave. Flaky white fish, hand-breaded and fried until perfectly crisp, served hot and ready to enjoy. It’s simple, satisfying, and downright delicious.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "text_and_image_YCtiEh": {
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
@@ -158,6 +182,7 @@
     "text_and_image_kCeTqw",
     "text_and_image_yaEnXV",
     "text_and_image_eRxf3C",
+    "text_and_image_E94AcB",
     "text_and_image_YCtiEh",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
