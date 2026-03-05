@@ -36,7 +36,6 @@
         },
         "hero_4XLgE4": {
           "type": "hero",
-          "disabled": true,
           "settings": {
             "top_subheading": "",
             "title": "<p>From One \"I Do\" to Another</p>",
@@ -48,6 +47,7 @@
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/Wedding_Registry_1.png",
             "overlay_opacity": 16
           }
         }
@@ -376,6 +376,28 @@
         "heading_size": "h2",
         "heading_position": "left"
       }
+    },
+    "slideshow_image_Lrgy9k": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_4acqFb": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Wedding_Registry_Referral_Program.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_4acqFb"
+      ],
+      "name": "t:labels.image_optional_slides",
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
     }
   },
   "order": [
@@ -386,6 +408,7 @@
     "testimonials_7hiFw9",
     "17145861856fbae181",
     "advanced_content_D9heiY",
-    "faq_fiTHxg"
+    "faq_fiTHxg",
+    "slideshow_image_Lrgy9k"
   ]
 }
