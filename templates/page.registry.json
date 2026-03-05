@@ -379,18 +379,6 @@
     },
     "slideshow_image_Lrgy9k": {
       "type": "slideshow-image",
-      "blocks": {
-        "image_4acqFb": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "image": "shopify://shop_images/Wedding_Registry_Referral_Program.png"
-          }
-        }
-      },
-      "block_order": [
-        "image_4acqFb"
-      ],
       "name": "t:labels.image_optional_slides",
       "settings": {
         "full_width": false,
