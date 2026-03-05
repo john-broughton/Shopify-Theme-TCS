@@ -36,6 +36,7 @@
         },
         "hero_4XLgE4": {
           "type": "hero",
+          "disabled": true,
           "settings": {
             "top_subheading": "",
             "title": "<p>From One \"I Do\" to Another</p>",
@@ -43,11 +44,10 @@
             "subheading": "Refer a bride and get $100 gift card for you & one for her too!",
             "link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/Bridal_Registry_papers_.pdf.png?v=1715606318",
             "link_text": "Click Here for Details",
-            "link_2": "https://admin.shopify.com/store/the-cooks-station/content/files/3959577444374",
+            "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/WeddingRegistry.jpg",
             "overlay_opacity": 16
           }
         }
