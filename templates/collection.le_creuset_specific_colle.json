@@ -278,6 +278,7 @@
         "simple",
         "advanced"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "gutter_size": 20,
@@ -353,6 +354,7 @@
         "collection5",
         "collection6"
       ],
+      "disabled": true,
       "settings": {
         "title": "You may also like",
         "heading_size": "h2",
