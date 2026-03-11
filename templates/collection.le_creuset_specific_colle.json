@@ -58,7 +58,7 @@
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "{{ collection.image }}",
+            "image": "shopify://shop_images/lc-hero.png",
             "overlay_opacity": 0
           }
         }
