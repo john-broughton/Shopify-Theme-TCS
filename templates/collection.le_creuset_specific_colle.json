@@ -12,17 +12,6 @@
     "promo-grid": {
       "type": "promo-grid",
       "blocks": {
-        "banner": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "heading": "Banner promotion",
-            "text": "Add the details of your promotion in smaller text",
-            "link": "",
-            "label": "Shop now",
-            "color_scheme": "2"
-          }
-        },
         "advanced": {
           "type": "advanced",
           "settings": {
@@ -43,14 +32,36 @@
         }
       },
       "block_order": [
-        "banner",
         "advanced"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "gutter_size": 20,
         "space_above": true,
         "space_below": false
+      }
+    },
+    "slideshow_image_iEY8Hg": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_QyHYih": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/lc-hero.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_QyHYih"
+      ],
+      "name": "t:labels.image_optional_slides",
+      "settings": {
+        "full_width": true,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "rich_text_Ch4dJm": {
@@ -371,6 +382,7 @@
   },
   "order": [
     "promo-grid",
+    "slideshow_image_iEY8Hg",
     "rich_text_Ch4dJm",
     "featured_collections_iWPpmT",
     "featured-collection",
