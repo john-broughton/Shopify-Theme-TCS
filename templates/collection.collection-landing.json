@@ -14,6 +14,7 @@
       "blocks": {
         "banner": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "heading": "Banner promotion",
             "text": "Add the details of your promotion in smaller text",
@@ -26,13 +27,13 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "Le Creuset",
-            "textarea": "Include the smaller details of your promotion in text below the title.",
+            "heading": "{{ collection.title }}",
+            "textarea": "",
             "cta_text1": "Shop This",
             "cta_link1": "",
             "cta_text2": "Shop All",
             "cta_link2": "",
-            "image": "shopify://shop_images/lc-hero.png",
+            "image": "{{ collection.image }}",
             "video_url": "",
             "width": "100",
             "height": 500,

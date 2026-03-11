@@ -27,13 +27,13 @@
           "type": "advanced",
           "settings": {
             "subheading": "",
-            "heading": "{{ collection.title }}",
+            "heading": "Le Creuset",
             "textarea": "",
-            "cta_text1": "Shop This",
+            "cta_text1": "Shop by Color",
             "cta_link1": "",
-            "cta_text2": "Shop All",
+            "cta_text2": "Shop By Category",
             "cta_link2": "",
-            "image": "{{ collection.image }}",
+            "image": "shopify://shop_images/lc-hero.png",
             "video_url": "",
             "width": "100",
             "height": 500,
@@ -51,6 +51,98 @@
         "gutter_size": 20,
         "space_above": true,
         "space_below": false
+      }
+    },
+    "rich_text_Ch4dJm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ibUpnR": {
+          "type": "heading",
+          "settings": {
+            "title": "An Heirloom in the Making",
+            "heading_size": "h2"
+          }
+        },
+        "text_k3fqfX": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Inside every piece of Le Creuset cookware, there’s more than a wonderful meal. There’s a story. A story of authentic French heritage, of colorful culinary culture, and of generations of passion in kitchens and beyond..</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ibUpnR",
+        "text_k3fqfX"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "featured_collections_iWPpmT": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_NT8GUC": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_HBd7hM": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_V9J7dH": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_wT4H9W": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_txEW7k": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_nGhD99": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_NT8GUC",
+        "collection_HBd7hM",
+        "collection_V9J7dH",
+        "collection_wT4H9W",
+        "collection_txEW7k",
+        "collection_nGhD99"
+      ],
+      "name": "t:labels.collection_list",
+      "settings": {
+        "title": "Our Colors",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
       }
     },
     "featured-collection": {
@@ -231,6 +323,8 @@
   },
   "order": [
     "promo-grid",
+    "rich_text_Ch4dJm",
+    "featured_collections_iWPpmT",
     "featured-collection",
     "featured-collection2",
     "promo-grid2",
