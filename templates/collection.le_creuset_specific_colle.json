@@ -381,68 +381,6 @@
         "divider": false
       }
     },
-    "featured-collections": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection4": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection5": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection6": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection1",
-        "collection2",
-        "collection3",
-        "collection4",
-        "collection5",
-        "collection6"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "You may also like",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "divider": false
-      }
-    },
     "main-collection": {
       "type": "main-collection",
       "blocks": {
@@ -485,7 +423,6 @@
     "featured-collection2",
     "promo-grid2",
     "featured-collection3",
-    "featured-collections",
     "main-collection"
   ]
 }
