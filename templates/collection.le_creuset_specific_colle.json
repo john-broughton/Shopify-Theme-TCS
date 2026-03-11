@@ -96,35 +96,77 @@
         "collection_HBd7hM": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "cerise-copy",
             "title": ""
           }
         },
         "collection_V9J7dH": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "flame-copy",
             "title": ""
           }
         },
         "collection_wT4H9W": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "artichaut-copy",
             "title": ""
           }
         },
         "collection_txEW7k": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "marseille-copy",
             "title": ""
           }
         },
         "collection_nGhD99": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "olive-copy",
+            "title": ""
+          }
+        },
+        "collection_TDp3dW": {
+          "type": "collection",
+          "settings": {
+            "collection": "sea-salt-copy",
+            "title": ""
+          }
+        },
+        "collection_WAq46Q": {
+          "type": "collection",
+          "settings": {
+            "collection": "licorce-copy",
+            "title": ""
+          }
+        },
+        "collection_Vktx9L": {
+          "type": "collection",
+          "settings": {
+            "collection": "oyster-copy",
+            "title": ""
+          }
+        },
+        "collection_DMMgag": {
+          "type": "collection",
+          "settings": {
+            "collection": "rhone-copy",
+            "title": ""
+          }
+        },
+        "collection_rUbBzJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "shallot-copy",
+            "title": ""
+          }
+        },
+        "collection_cPU3Rg": {
+          "type": "collection",
+          "settings": {
+            "collection": "white-copy",
             "title": ""
           }
         }
@@ -135,13 +177,19 @@
         "collection_V9J7dH",
         "collection_wT4H9W",
         "collection_txEW7k",
-        "collection_nGhD99"
+        "collection_nGhD99",
+        "collection_TDp3dW",
+        "collection_WAq46Q",
+        "collection_Vktx9L",
+        "collection_DMMgag",
+        "collection_rUbBzJ",
+        "collection_cPU3Rg"
       ],
       "name": "t:labels.collection_list",
       "settings": {
         "title": "Our Colors",
         "heading_size": "h2",
-        "heading_position": "left",
+        "heading_position": "center",
         "divider": false
       }
     },
