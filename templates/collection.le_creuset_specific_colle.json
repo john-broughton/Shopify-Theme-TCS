@@ -56,7 +56,7 @@
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
             "image": "{{ collection.image }}",
             "overlay_opacity": 0
@@ -216,8 +216,87 @@
         "divider": false
       }
     },
+    "featured_collections_wk94Fp": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_3nbg6t": {
+          "type": "collection",
+          "settings": {
+            "collection": "peche-copy",
+            "title": ""
+          }
+        },
+        "collection_jLmgze": {
+          "type": "collection",
+          "settings": {
+            "collection": "dutch-ovens-copy",
+            "title": ""
+          }
+        },
+        "collection_CD8eFb": {
+          "type": "collection",
+          "settings": {
+            "collection": "fry-pans-skillets-copy",
+            "title": ""
+          }
+        },
+        "collection_e7FyTa": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookware-bakeware-copy",
+            "title": ""
+          }
+        },
+        "collection_tQ9jc3": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookware-bakeware-copy-copy",
+            "title": ""
+          }
+        },
+        "collection_xgmEfG": {
+          "type": "collection",
+          "settings": {
+            "collection": "tea-kettle-copy",
+            "title": ""
+          }
+        },
+        "collection_ayMkUj": {
+          "type": "collection",
+          "settings": {
+            "collection": "utensils-copy",
+            "title": ""
+          }
+        },
+        "collection_pQqnNK": {
+          "type": "collection",
+          "settings": {
+            "collection": "kitchen-tools-gadgets-copy",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_3nbg6t",
+        "collection_jLmgze",
+        "collection_CD8eFb",
+        "collection_e7FyTa",
+        "collection_tQ9jc3",
+        "collection_xgmEfG",
+        "collection_ayMkUj",
+        "collection_pQqnNK"
+      ],
+      "name": "t:labels.collection_list",
+      "settings": {
+        "title": "Shop By Category",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "divider": false
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "heading_size": "h2",
@@ -232,6 +311,7 @@
     },
     "featured-collection2": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "heading_size": "h2",
@@ -288,6 +368,7 @@
     },
     "featured-collection3": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "Featured collection",
         "heading_size": "h2",
@@ -399,6 +480,7 @@
     "slideshow_9NgdAJ",
     "rich_text_Ch4dJm",
     "featured_collections_iWPpmT",
+    "featured_collections_wk94Fp",
     "featured-collection",
     "featured-collection2",
     "promo-grid2",
