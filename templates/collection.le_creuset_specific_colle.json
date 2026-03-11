@@ -42,23 +42,35 @@
         "space_below": false
       }
     },
-    "slideshow_image_iEY8Hg": {
-      "type": "slideshow-image",
+    "slideshow_9NgdAJ": {
+      "type": "slideshow",
       "blocks": {
-        "image_QyHYih": {
-          "type": "image",
+        "hero_fMJcRd": {
+          "type": "hero",
           "settings": {
+            "top_subheading": "",
+            "title": "<p>{{ collection.title }}</p>",
+            "title_size": 70,
+            "subheading": "",
             "link": "",
-            "image": "shopify://shop_images/lc-hero.png"
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-center horizontal-center",
+            "image": "{{ collection.image }}",
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "image_QyHYih"
+        "hero_fMJcRd"
       ],
-      "name": "t:labels.image_optional_slides",
+      "name": "t:labels.hero_optional_slides",
       "settings": {
         "full_width": true,
+        "desktop_size": 0,
+        "mobile_size": 0,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
@@ -382,7 +394,7 @@
   },
   "order": [
     "promo-grid",
-    "slideshow_image_iEY8Hg",
+    "slideshow_9NgdAJ",
     "rich_text_Ch4dJm",
     "featured_collections_iWPpmT",
     "featured-collection",
