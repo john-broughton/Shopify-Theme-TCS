@@ -93,29 +93,6 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_YCtiEh": {
-      "type": "text-and-image",
-      "name": "t:labels.image_with_text",
-      "settings": {
-        "image": "shopify://shop_images/Knife_Sharpening_Calender_5.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "Knife Sharpening",
-        "heading_size": "h2",
-        "text": "<p>Our <strong>Knife Sharpening Service at The Cook’s Station</strong> is back—because dull knives are dangerous, frustrating, and totally unnecessary. Whether you’re prepping weeknight dinners or going full chef mode at home, a professionally sharpened knife makes every cut smoother, safer, and way more enjoyable.</p><p>Bring in your favorite kitchen knives and let us bring them back to life. You’ll feel the difference immediately—clean slices, better control, and less effort in the kitchen.</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "text_and_image_E94AcB": {
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
@@ -188,13 +165,36 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Saturday_Sip_Shop.png",
+        "image": "shopify://shop_images/Saturday_Sip_Shop_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Saturday Sip & Shop",
+        "title": "Saturday & Sunday Sip & Shop",
         "heading_size": "h2",
-        "text": "<p>Join us for <strong>Sip & Shop Saturdays</strong> at The Cook’s Station. For just <strong>$5</strong>, enjoy a <strong>seasonally rotating spritz</strong> you can sip while you explore the store. A little shopping, a little sipping—what could be better?</p>",
+        "text": "<p>Join us for <strong>Sip & Shop Saturday & Sunday</strong> at The Cook’s Station. For just <strong>$5</strong>, enjoy a <strong>seasonally rotating spritz</strong> you can sip while you explore the store. A little shopping, a little sipping—what could be better?</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "text_and_image_YCtiEh": {
+      "type": "text-and-image",
+      "name": "t:labels.image_with_text",
+      "settings": {
+        "image": "shopify://shop_images/Knife_Sharpening_Calender_5.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Knife Sharpening",
+        "heading_size": "h2",
+        "text": "<p>Our <strong>Knife Sharpening Service at The Cook’s Station</strong> is back—because dull knives are dangerous, frustrating, and totally unnecessary. Whether you’re prepping weeknight dinners or going full chef mode at home, a professionally sharpened knife makes every cut smoother, safer, and way more enjoyable.</p><p>Bring in your favorite kitchen knives and let us bring them back to life. You’ll feel the difference immediately—clean slices, better control, and less effort in the kitchen.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
