@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "blog-template",
+      "disabled": true,
       "settings": {
         "blog_show_rss": false,
         "blog_show_tags": true,
@@ -59,6 +60,7 @@
         "9a9fc86a-bfe6-4138-b0ea-db060d4a5f5d",
         "cd0ca039-8651-4bd6-8f3b-346c0ebf5e26"
       ],
+      "disabled": true,
       "settings": {}
     },
     "featured-collections": {
@@ -115,10 +117,28 @@
         "collection5",
         "collection6"
       ],
+      "disabled": true,
       "settings": {
         "title": "You may also like",
         "heading_size": "h2",
         "heading_position": "left",
+        "divider": false
+      }
+    },
+    "blog_posts_d4YVFi": {
+      "type": "blog-posts",
+      "name": "t:labels.blog_posts",
+      "settings": {
+        "title": "The Cook's Station in the News",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "blog": "news",
+        "blog_show_tags": true,
+        "blog_show_date": false,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "blog_show_excerpt": false,
+        "blog_image_size": "natural",
         "divider": false
       }
     }
@@ -126,7 +146,8 @@
   "order": [
     "main",
     "sidebar",
-    "featured-collections"
+    "featured-collections",
+    "blog_posts_d4YVFi"
   ],
   "wrapper": "div.page-width.page-content.blog-layout"
 }
