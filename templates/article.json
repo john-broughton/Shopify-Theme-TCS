@@ -1,1 +1,46 @@
-{"sections":{"main":{"type":"article-template","settings":{}},"sidebar":{"type":"blog-sidebar","blocks":{"tags":{"type":"tags","settings":{}},"share":{"type":"share","settings":{}}},"block_order":["tags","share"],"settings":{}}},"order":["main","sidebar"],"wrapper":"div.page-width.page-content.blog-layout"}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "settings": {
+        "blog_capitalize_first": false,
+        "blog_show_tags": true,
+        "blog_show_date": false,
+        "blog_show_comments": true,
+        "blog_show_author": false
+      }
+    },
+    "sidebar": {
+      "type": "blog-sidebar",
+      "blocks": {
+        "tags": {
+          "type": "tags",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "tags",
+        "share"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sidebar"
+  ],
+  "wrapper": "div.page-width.page-content.blog-layout"
+}
