@@ -72,6 +72,7 @@
     },
     "text_and_image_WUFFB4": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/storewide_sale_5_x_7_in_8.png",
@@ -95,6 +96,7 @@
     },
     "text_and_image_E94AcB": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/March_2026_Fish_Fry_Menu_5_x_7_in.png",
