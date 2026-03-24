@@ -165,6 +165,20 @@
             "title": ""
           }
         },
+        "collection_cPU3Rg": {
+          "type": "collection",
+          "settings": {
+            "collection": "white-copy",
+            "title": ""
+          }
+        },
+        "collection_FJprD8": {
+          "type": "collection",
+          "settings": {
+            "collection": "riviera",
+            "title": ""
+          }
+        },
         "collection_Vktx9L": {
           "type": "collection",
           "settings": {
@@ -185,13 +199,6 @@
             "collection": "shallot-copy",
             "title": ""
           }
-        },
-        "collection_cPU3Rg": {
-          "type": "collection",
-          "settings": {
-            "collection": "white-copy",
-            "title": ""
-          }
         }
       },
       "block_order": [
@@ -203,10 +210,15 @@
         "collection_nGhD99",
         "collection_TDp3dW",
         "collection_WAq46Q",
+        "collection_cPU3Rg",
+        "collection_FJprD8",
         "collection_Vktx9L",
         "collection_DMMgag",
-        "collection_rUbBzJ",
-        "collection_cPU3Rg"
+        "collection_rUbBzJ"
+      ],
+      "custom_css": [
+        ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
+        ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}"
       ],
       "name": "t:labels.collection_list",
       "settings": {
