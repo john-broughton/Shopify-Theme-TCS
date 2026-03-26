@@ -211,7 +211,7 @@
         "logo_image_wbaWBT": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify://shop_images/Cove.png",
+            "image": "shopify://shop_images/Cove__logo__svg.png",
             "link": "https://ventahood.com/"
           }
         },
@@ -239,8 +239,8 @@
         "logo_image_C69Rx9": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify://shop_images/U-Line_Logo_Web_DarkBlue.png",
-            "link": "https://www.u-line.com/"
+            "image": "shopify://shop_images/GE_Appliances_logo.png",
+            "link": "https://www.geappliances.com"
           }
         },
         "logo_image_Cmqp6T": {
@@ -309,7 +309,7 @@
         "logo_image_qqgYG7": {
           "type": "logo_image",
           "settings": {
-            "image": "shopify://shop_images/Asko.png",
+            "image": "shopify://shop_images/maytag-3-logo-png-transparent.png",
             "link": "https://us.asko.com/promotions"
           }
         },
