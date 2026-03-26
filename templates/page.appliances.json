@@ -35,7 +35,9 @@
           }
         }
       },
-      "block_order": ["hero_BNVgBT"],
+      "block_order": [
+        "hero_BNVgBT"
+      ],
       "settings": {
         "full_width": true,
         "desktop_size": -20,
@@ -123,7 +125,9 @@
           }
         }
       },
-      "block_order": ["liquid_rByVM8"],
+      "block_order": [
+        "liquid_rByVM8"
+      ],
       "settings": {
         "full_width": false,
         "space_around": false
@@ -190,24 +194,132 @@
     "logo_list_hJexFy": {
       "type": "logo-list",
       "blocks": {
-        "logo_image_GfDreE": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Miele.png", "link": "https://www.mieleusa.com/c/125-years-of-miele-5853.htm" } },
-        "logo_image_hYihLt": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Wolf.png", "link": "https://www.subzero-wolf.com/offers-and-promotions" } },
-        "logo_image_Xf8nHf": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Cafe.png", "link": "" } },
-        "logo_image_3WRWmx": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Blue_Star.png", "link": "https://www.bluestarcooking.com/" } },
-        "logo_image_9eFkB6": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Pofile.png", "link": "" } },
-        "logo_image_Cmqp6T": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Fisher.png", "link": "https://www.fisherpaykel.com/us/" } },
-        "logo_image_mkMhJa": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Fulgor.png", "link": "https://www.fulgor-milano.com/us/en" } },
-        "logo_image_C69Rx9": { "type": "logo_image", "settings": { "image": "shopify://shop_images/U-Line_Logo_Web_DarkBlue.png", "link": "https://www.u-line.com/" } },
-        "logo_image_PzW4EG": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Black.svg", "link": "https://zephyronline.com/" } },
-        "logo_image_KKjfjC": { "type": "logo_image", "settings": { "image": "shopify://shop_images/download.png", "link": "https://bestrangehoods.com/" } },
-        "logo_image_8RPnkK": { "type": "logo_image", "settings": { "image": "shopify://shop_images/logo_03.jpg", "link": "https://alfrescogrills.com/" } },
-        "logo_image_XHkKth": { "type": "logo_image", "settings": { "image": "shopify://shop_images/download_1.png", "link": "https://www.dcsappliances.com/us/grilling/grills/all-grills/" } },
-        "logo_image_4VHWNB": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Sub_Zero.png", "link": "https://www.subzero-wolf.com/offers-and-promotions" } },
-        "logo_image_qqgYG7": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Asko.png", "link": "https://us.asko.com/promotions" } },
-        "logo_image_GBqFzH": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Monogram.png", "link": "https://www.monogram.com/offers/one-for-you-one-for-free/" } },
-        "logo_image_qKe6DE": { "type": "logo_image", "settings": { "image": "shopify://shop_images/Perlick.png", "link": "https://www.perlick.com/" } },
-        "logo_image_wbaWBT": { "type": "logo_image", "settings": { "image": "shopify://shop_images/download_2.png", "link": "https://ventahood.com/" } },
-        "logo_image_A8eRqQ": { "type": "logo_image", "settings": { "image": "shopify://shop_images/logo-homepage-200-x-200.png", "link": "https://scotsmanhomeice.com/" } }
+        "logo_image_GfDreE": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Miele.png",
+            "link": "https://www.mieleusa.com/c/125-years-of-miele-5853.htm"
+          }
+        },
+        "logo_image_hYihLt": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Wolf.png",
+            "link": "https://www.subzero-wolf.com/offers-and-promotions"
+          }
+        },
+        "logo_image_Xf8nHf": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Cafe.png",
+            "link": ""
+          }
+        },
+        "logo_image_3WRWmx": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Blue_Star.png",
+            "link": "https://www.bluestarcooking.com/"
+          }
+        },
+        "logo_image_9eFkB6": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Pofile.png",
+            "link": ""
+          }
+        },
+        "logo_image_Cmqp6T": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Fisher.png",
+            "link": "https://www.fisherpaykel.com/us/"
+          }
+        },
+        "logo_image_mkMhJa": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Fulgor.png",
+            "link": "https://www.fulgor-milano.com/us/en"
+          }
+        },
+        "logo_image_C69Rx9": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/U-Line_Logo_Web_DarkBlue.png",
+            "link": "https://www.u-line.com/"
+          }
+        },
+        "logo_image_PzW4EG": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Black.svg",
+            "link": "https://zephyronline.com/"
+          }
+        },
+        "logo_image_KKjfjC": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/download.png",
+            "link": "https://bestrangehoods.com/"
+          }
+        },
+        "logo_image_8RPnkK": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/logo_03.jpg",
+            "link": "https://alfrescogrills.com/"
+          }
+        },
+        "logo_image_XHkKth": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/download_1.png",
+            "link": "https://www.dcsappliances.com/us/grilling/grills/all-grills/"
+          }
+        },
+        "logo_image_4VHWNB": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Sub_Zero.png",
+            "link": "https://www.subzero-wolf.com/offers-and-promotions"
+          }
+        },
+        "logo_image_qqgYG7": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Asko.png",
+            "link": "https://us.asko.com/promotions"
+          }
+        },
+        "logo_image_GBqFzH": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Monogram.png",
+            "link": "https://www.monogram.com/offers/one-for-you-one-for-free/"
+          }
+        },
+        "logo_image_qKe6DE": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/XOAppliance.png",
+            "link": "https://www.perlick.com/"
+          }
+        },
+        "logo_image_wbaWBT": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/download_2.png",
+            "link": "https://ventahood.com/"
+          }
+        },
+        "logo_image_A8eRqQ": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/logo-homepage-200-x-200.png",
+            "link": "https://scotsmanhomeice.com/"
+          }
+        }
       },
       "block_order": [
         "logo_image_GfDreE",
@@ -229,7 +341,9 @@
         "logo_image_wbaWBT",
         "logo_image_A8eRqQ"
       ],
-      "custom_css": ["{text-align: center;}"],
+      "custom_css": [
+        "{text-align: center;}"
+      ],
       "settings": {
         "title": "Some Of Our Favorite Brands",
         "heading_size": "h2",
