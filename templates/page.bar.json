@@ -106,93 +106,70 @@
         "autoplay_speed": 7
       }
     },
-    "text_columns_wQehrL": {
-      "type": "text-columns",
+    "slideshow_image_GdpPnj": {
+      "type": "slideshow-image",
       "blocks": {
-        "text_block_X9NQc9": {
-          "type": "text_block",
+        "image_pxaVtT": {
+          "type": "image",
           "settings": {
-            "enable_image": false,
-            "image_mask": "none",
-            "image_width": 350,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
+            "link": "",
+            "image": "shopify://shop_images/Bar_Menu_Print_Out_1.png",
+            "image_mobile": "shopify://shop_images/Bar_Menu_Print_Out_1.png"
           }
         },
-        "text_block_P9Eit6": {
-          "type": "text_block",
+        "image_4k7TN9": {
+          "type": "image",
           "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Fall_Tapas_Menu_2025.png",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "text_block_KH3xgX": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": false,
-            "image_mask": "none",
-            "image_width": 350,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
+            "link": ""
           }
         }
       },
       "block_order": [
-        "text_block_X9NQc9",
-        "text_block_P9Eit6",
-        "text_block_KH3xgX"
+        "image_pxaVtT",
+        "image_4k7TN9"
       ],
+      "name": "t:labels.image_optional_slides",
       "settings": {
-        "title": "",
-        "align_text": "center",
-        "divider": false,
-        "color_scheme": "none"
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
+      }
+    },
+    "slideshow_image_etgQ6L": {
+      "type": "slideshow-image",
+      "blocks": {
+        "image_geacJb": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Bar_Menu_Print_Out.png",
+            "image_mobile": "shopify://shop_images/Bar_Menu_Print_Out.png"
+          }
+        },
+        "image_rgrWyy": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Bar_Menu_Print_Out.png",
+            "image_mobile": "shopify://shop_images/Bar_Menu_Print_Out.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_geacJb",
+        "image_rgrWyy"
+      ],
+      "name": "t:labels.image_optional_slides",
+      "settings": {
+        "full_width": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7
       }
     },
     "text_columns_M3xf6e": {
       "type": "text-columns",
-      "blocks": {
-        "text_block_xJd6j7": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/Wine_Beer_Bar_Menu_Fall_2025_2.png",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "text_block_Rd4cTj": {
-          "type": "text_block",
-          "settings": {
-            "enable_image": true,
-            "image": "shopify://shop_images/2.png",
-            "image_mask": "none",
-            "image_width": 650,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_block_xJd6j7",
-        "text_block_Rd4cTj"
-      ],
       "settings": {
         "title": "",
         "align_text": "center",
@@ -206,7 +183,8 @@
     "text_and_image_xtV9AY",
     "promo_grid_qTGxJq",
     "slideshow_BbDDEQ",
-    "text_columns_wQehrL",
+    "slideshow_image_GdpPnj",
+    "slideshow_image_etgQ6L",
     "text_columns_M3xf6e"
   ]
 }
