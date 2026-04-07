@@ -14,29 +14,6 @@
       "disabled": true,
       "settings": {}
     },
-    "text_and_image_xtV9AY": {
-      "type": "text-and-image",
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/Happy_Hour_9.2.23.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "jOIN US FOR HAPPY hOUR!",
-        "heading_size": "h2",
-        "text": "<p>Join us for our delightful Happy Hour at our store! Relax on our inviting patio or explore our curated collection while savoring a refreshing glass of wine or beer. It's the perfect way to unwind after a long day or to kick off a fun evening of shopping. Cheers to great deals and good times!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "center",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "promo_grid_qTGxJq": {
       "type": "promo-grid",
       "blocks": {
@@ -97,6 +74,7 @@
       "block_order": [
         "hero_CAHjXB"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "desktop_size": -30,
@@ -164,7 +142,6 @@
   },
   "order": [
     "main",
-    "text_and_image_xtV9AY",
     "promo_grid_qTGxJq",
     "slideshow_BbDDEQ",
     "slideshow_image_GdpPnj",
