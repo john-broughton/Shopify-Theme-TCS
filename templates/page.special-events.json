@@ -94,14 +94,13 @@
     },
     "text_and_image_E94AcB": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/March_2026_Fish_Fry_Menu_5_x_7_in.png",
+        "image": "shopify://shop_images/Copy_of_March_2026_Fish_Fry_Menu_5_x_7_in.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Fish Fry 3/20",
+        "title": "Fish Fry 4/24",
         "heading_size": "h2",
         "text": "<p>Golden, crispy, and cooked to perfection — our Fish Fry is everything you crave. Flaky white fish, hand-breaded and fried until perfectly crisp, served hot and ready to enjoy. It’s simple, satisfying, and downright delicious.</p>",
         "button_label": "",
