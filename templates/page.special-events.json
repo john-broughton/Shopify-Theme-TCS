@@ -49,6 +49,7 @@
     },
     "text_and_image_WUFFB4": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Trivia_Night_1.png",
@@ -73,7 +74,7 @@
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/prepping-for-fresh-pasta.jpg",
+        "image": "shopify://shop_images/Italian_Night_-_April_2026.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
