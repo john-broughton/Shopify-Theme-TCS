@@ -106,129 +106,6 @@
         "divider": false
       }
     },
-    "featured_collections_iWPpmT": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_NT8GUC": {
-          "type": "collection",
-          "settings": {
-            "collection": "cerise",
-            "title": ""
-          }
-        },
-        "collection_HBd7hM": {
-          "type": "collection",
-          "settings": {
-            "collection": "cerise-copy",
-            "title": ""
-          }
-        },
-        "collection_V9J7dH": {
-          "type": "collection",
-          "settings": {
-            "collection": "flame-copy",
-            "title": ""
-          }
-        },
-        "collection_wT4H9W": {
-          "type": "collection",
-          "settings": {
-            "collection": "artichaut-copy",
-            "title": ""
-          }
-        },
-        "collection_txEW7k": {
-          "type": "collection",
-          "settings": {
-            "collection": "marseille-copy",
-            "title": ""
-          }
-        },
-        "collection_nGhD99": {
-          "type": "collection",
-          "settings": {
-            "collection": "olive-copy",
-            "title": ""
-          }
-        },
-        "collection_TDp3dW": {
-          "type": "collection",
-          "settings": {
-            "collection": "sea-salt-copy",
-            "title": ""
-          }
-        },
-        "collection_WAq46Q": {
-          "type": "collection",
-          "settings": {
-            "collection": "licorce-copy",
-            "title": ""
-          }
-        },
-        "collection_cPU3Rg": {
-          "type": "collection",
-          "settings": {
-            "collection": "white-copy",
-            "title": ""
-          }
-        },
-        "collection_FJprD8": {
-          "type": "collection",
-          "settings": {
-            "collection": "riviera",
-            "title": ""
-          }
-        },
-        "collection_Vktx9L": {
-          "type": "collection",
-          "settings": {
-            "collection": "oyster-copy",
-            "title": ""
-          }
-        },
-        "collection_DMMgag": {
-          "type": "collection",
-          "settings": {
-            "collection": "rhone-copy",
-            "title": ""
-          }
-        },
-        "collection_rUbBzJ": {
-          "type": "collection",
-          "settings": {
-            "collection": "shallot-copy",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_NT8GUC",
-        "collection_HBd7hM",
-        "collection_V9J7dH",
-        "collection_wT4H9W",
-        "collection_txEW7k",
-        "collection_nGhD99",
-        "collection_TDp3dW",
-        "collection_WAq46Q",
-        "collection_cPU3Rg",
-        "collection_FJprD8",
-        "collection_Vktx9L",
-        "collection_DMMgag",
-        "collection_rUbBzJ"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
-        ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}"
-      ],
-      "name": "t:labels.collection_list",
-      "settings": {
-        "title": "Our Colors",
-        "heading_size": "h2",
-        "heading_position": "center",
-        "divider": false
-      }
-    },
     "featured_collections_wk94Fp": {
       "type": "featured-collections",
       "blocks": {
@@ -426,7 +303,6 @@
     "promo-grid",
     "slideshow_9NgdAJ",
     "rich_text_Ch4dJm",
-    "featured_collections_iWPpmT",
     "featured_collections_wk94Fp",
     "featured-collection",
     "featured-collection2",
