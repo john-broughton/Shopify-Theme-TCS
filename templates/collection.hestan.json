@@ -164,93 +164,6 @@
         "divider": false
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 6,
-        "products_per_row": 3,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "featured-collection2": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 6,
-        "products_per_row": 3,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "promo-grid2": {
-      "type": "promo-grid",
-      "blocks": {
-        "simple": {
-          "type": "simple",
-          "settings": {
-            "link": "",
-            "text": "",
-            "width": "50",
-            "height": 300
-          }
-        },
-        "advanced": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Announce your promotion",
-            "textarea": "Include the smaller details of your promotion in text below the title.",
-            "cta_text1": "Shop This",
-            "cta_link1": "",
-            "cta_text2": "Shop All",
-            "cta_link2": "",
-            "video_url": "",
-            "width": "50",
-            "height": 500,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "simple",
-        "advanced"
-      ],
-      "disabled": true,
-      "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": false,
-        "space_below": false
-      }
-    },
-    "featured-collection3": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "home_featured_products": "",
-        "count": 6,
-        "products_per_row": 3,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
     "main-collection": {
       "type": "main-collection",
       "blocks": {
@@ -281,6 +194,36 @@
         "enable_color_swatches": false,
         "enable_sort": true
       }
+    },
+    "featured_collections_fBAXPj": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_Cy4xAq": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookware-1",
+            "title": ""
+          }
+        },
+        "collection_KQPzXn": {
+          "type": "collection",
+          "settings": {
+            "collection": "bakeware",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_Cy4xAq",
+        "collection_KQPzXn"
+      ],
+      "name": "t:labels.collection_list",
+      "settings": {
+        "title": "Shop By Category",
+        "heading_size": "h2",
+        "heading_position": "left",
+        "divider": false
+      }
     }
   },
   "order": [
@@ -288,10 +231,7 @@
     "slideshow_9NgdAJ",
     "rich_text_Ch4dJm",
     "featured_collections_wk94Fp",
-    "featured-collection",
-    "featured-collection2",
-    "promo-grid2",
-    "featured-collection3",
-    "main-collection"
+    "main-collection",
+    "featured_collections_fBAXPj"
   ]
 }
