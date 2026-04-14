@@ -112,49 +112,35 @@
         "collection_3nbg6t": {
           "type": "collection",
           "settings": {
-            "collection": "peche-copy",
+            "collection": "nanobond®",
             "title": ""
           }
         },
         "collection_jLmgze": {
           "type": "collection",
           "settings": {
-            "collection": "dutch-ovens-copy",
+            "collection": "copperbond®",
             "title": ""
           }
         },
         "collection_CD8eFb": {
           "type": "collection",
           "settings": {
-            "collection": "fry-pans-skillets-copy",
+            "collection": "probond®-luxe™",
             "title": ""
           }
         },
         "collection_tQ9jc3": {
           "type": "collection",
           "settings": {
-            "collection": "cookware-bakeware-copy-copy",
+            "collection": "titum®-fusion",
             "title": ""
           }
         },
         "collection_xgmEfG": {
           "type": "collection",
           "settings": {
-            "collection": "tea-kettle-copy",
-            "title": ""
-          }
-        },
-        "collection_ayMkUj": {
-          "type": "collection",
-          "settings": {
-            "collection": "utensils-copy",
-            "title": ""
-          }
-        },
-        "collection_pQqnNK": {
-          "type": "collection",
-          "settings": {
-            "collection": "kitchen-tools-gadgets-copy",
+            "collection": "provisions",
             "title": ""
           }
         }
@@ -164,9 +150,7 @@
         "collection_jLmgze",
         "collection_CD8eFb",
         "collection_tQ9jc3",
-        "collection_xgmEfG",
-        "collection_ayMkUj",
-        "collection_pQqnNK"
+        "collection_xgmEfG"
       ],
       "custom_css": [
         ".new-grid {display: flex !important; flex-wrap: wrap !important;}",
@@ -174,7 +158,7 @@
       ],
       "name": "t:labels.collection_list",
       "settings": {
-        "title": "Shop By Category",
+        "title": "Shop By Covering",
         "heading_size": "h2",
         "heading_position": "center",
         "divider": false
