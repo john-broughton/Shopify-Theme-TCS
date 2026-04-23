@@ -119,7 +119,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/long_skinny_cafe_menu_Fall_2025_1.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2026.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -132,7 +132,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/long_skinny_cafe_menu_Fall_2025_6.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2026_1.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -167,7 +167,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toast </p><p><strong>THE THREE LITTLE PIGS - $13.99</strong><br/>Ham, bacon, Italian sausage, grilled onions, cherry peppers, swiss cheese, lusty monk mustard, on a flatbread wrap</p><p><strong>GREEK STYLE CHEESESTEAK - $13.99</strong><br/>Feta, white American cheese, tzatziki, arugula, roasted red pepper, on a hoagie roll</p><p><strong>CHICKEN POZOLE VERDE STEW- $5.99</strong><br/>Onions, jalapeno, garlic, lime, poblanos, tomatillos, stock, hominy, black beans, roasted chicken thighs, cilantro, spices. Garnished with crema and crispy corn tortillas *Mildly spicy*</p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
+            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toast </p><p><strong>CAESAR CHICKEN WRAP - $14.25</strong><br/>Blackened grilled chicken, romaine lettuce, tomato, croutons, house Caesar ﻿dressing, served in a spinach wrap </p><p><strong>THE THREE LITTLE PIGS - $13.99</strong><br/>Ham, bacon, italian sausage, grilled onions, cherry peppers, swiss cheese, lusty monk mustard, on a flatbread wrap</p><p><strong>GREEK STYLE CHEESESTEAK - $13.99</strong><br/>Feta, white american cheese, tzatziki, arugula, roasted red pepper, on a hoagie roll</p><p><strong>CHICKEN POZOLE VERDE STEW- $5.99</strong><br/>Onions, jalepeno, garlic, lime, poblanos, tomatillos, stock, hominy, black beans, roasted chicken thighs, cilantro, spices. Garnished with crema and crispy corn tortillas *Mildly spicy*</p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
           }
         }
       },
