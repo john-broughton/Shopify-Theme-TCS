@@ -14,34 +14,53 @@
       "disabled": true,
       "settings": {}
     },
-    "slideshow_VVagyh": {
+    "slideshow_jYTCYa": {
       "type": "slideshow",
       "blocks": {
-        "hero_BNVgBT": {
+        "hero_qCYtYW": {
+          "type": "hero",
+          "disabled": true,
+          "settings": {
+            "top_subheading": "",
+            "title": "<p>Overlaid Hero Slide</p>",
+            "title_size": 70,
+            "subheading": "Perfect for rich lifestyle photography.",
+            "link": "",
+            "link_text": "Optional button",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#fff",
+            "text_align": "vertical-bottom horizontal-left",
+            "overlay_opacity": 0
+          }
+        },
+        "hero_gJCFgU": {
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>APPLIANCES</p>",
-            "title_size": 82,
-            "subheading": "",
-            "link": "",
-            "link_text": "",
-            "link_2": "",
+            "title": "<p>THE KITCHEN YOU'RE PLANNING DESERVES MORE THAN A WEBSITE</p>",
+            "title_size": 60,
+            "subheading": "We're Greenville's curated appliance destination - from everyday workhorses to professional chef inspired kitchens. 20+ brands at our fingertips and a team that cooks on what we sell.",
+            "link": "shopify://pages/appliance-contact-form",
+            "link_text": "COME SEE US",
+            "link_2": "shopify://pages/appliance-contact-form",
             "link_text_2": "",
-            "color_accent": "#ffffff",
+            "color_accent": "#fff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/np-inspiration-get-inspired-CaroleWhiting-1200-4_Fisher-Paykel.jpg",
-            "overlay_opacity": 14
+            "image": "shopify://shop_images/ApplianceShowroomPlaceholder.png",
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
-        "hero_BNVgBT"
+        "hero_qCYtYW",
+        "hero_gJCFgU"
       ],
+      "name": "t:labels.hero_optional_slides",
       "settings": {
         "full_width": true,
-        "desktop_size": -20,
-        "mobile_size": 20,
+        "desktop_size": 0,
+        "mobile_size": 0,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
@@ -449,7 +468,7 @@
   },
   "order": [
     "main",
-    "slideshow_VVagyh",
+    "slideshow_jYTCYa",
     "rich_text_aPed7y",
     "rich_text_7cFmNF",
     "advanced_content_HjbTFG",
