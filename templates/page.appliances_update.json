@@ -42,7 +42,7 @@
             "title_size": 60,
             "subheading": "We're Greenville's curated appliance destination - from everyday workhorses to professional chef inspired kitchens. 20+ brands at our fingertips and a team that cooks on what we sell.",
             "link": "shopify://pages/appliance-contact-form",
-            "link_text": "COME SEE US",
+            "link_text": "Come See Us",
             "link_2": "shopify://pages/appliance-contact-form",
             "link_text_2": "",
             "color_accent": "#fff",
@@ -66,48 +66,12 @@
         "autoplay_speed": 7
       }
     },
-    "rich_text_aPed7y": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_3jUkXK": {
-          "type": "heading",
-          "settings": {
-            "title": "APPOINTMENT HOURS",
-            "heading_size": "h2"
-          }
-        },
-        "text_YKHRki": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": true,
-            "text": "<p>• Monday- Friday: 8 am-5 pm <br/>•  Saturday: 10-4 pm<br/>• Closed the 1st Saturday of the month<br/>•Sunday: Closed </p>"
-          }
-        },
-        "button_wQmxnU": {
-          "type": "button",
-          "settings": {
-            "link": "shopify://pages/appliance-contact-form",
-            "link_text": "Contact Us"
-          }
-        }
-      },
-      "block_order": [
-        "heading_3jUkXK",
-        "text_YKHRki",
-        "button_wQmxnU"
-      ],
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "1",
-        "divider": false
-      }
-    },
     "rich_text_7cFmNF": {
       "type": "rich-text",
       "blocks": {
         "heading_XhPaYp": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "title": "Educational Videos",
             "heading_size": "h2"
@@ -117,7 +81,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Learn more about what we have to offer with the videos below!</p>"
+            "text": "<p>⭐ 4.9 / 5 from 400+ reviews · Family-owned in Greenville since 1996 · Authorized retailer for Wolf, Sub-Zero, Miele</p>"
           }
         }
       },
@@ -132,25 +96,60 @@
         "divider": false
       }
     },
-    "advanced_content_HjbTFG": {
-      "type": "advanced-content",
+    "1777561471f7ecdba2": {
+      "type": "_blocks",
       "blocks": {
-        "liquid_rByVM8": {
-          "type": "liquid",
+        "ai_gen_block_578df23_Fih9wq": {
+          "type": "ai_gen_block_578df23",
           "settings": {
-            "code": "<script \n            type=\"text/javascript\" \n            src=\"https://cdn.ytb.reputon.com/assets/widget.js?shop=the-cooks-station.myshopify.com\" defer></script>\n<div class=\"reputon-youtube-widget\"\n                 data-content-index=\"1\"\n                 data-autoscroll=\"true\"\n                 data-theme=\"light\"\n                 data-widget-type=\"carousel\"></div>",
-            "width": "100%",
-            "alignment": "center"
-          }
+            "headline": "How we shop for appliances - with you, not at you.",
+            "subheading": "You probably aren't going to buy a 48-inch range twice. So we don't sell them like impulse purchases. Here's how it works when you bring a project to The Cook's Station.",
+            "text_alignment": "center",
+            "headline_size": 36,
+            "subheading_size": 16,
+            "headline_color": "#000000",
+            "subheading_color": "#484848",
+            "column_1_headline": "Visit",
+            "column_1_text": "<p>Come see us and experience the showroom. Touch the knobs, listen to the hood, ask the questions. Our team is here six days a week.</p>",
+            "column_2_headline": "Consult",
+            "column_2_text": "<p>We start with how you cook, not what you should buy. Layout, timeline, budget, who's in the kitchen.</p>",
+            "column_3_headline": "Configure & Quote",
+            "column_3_text": "<p>We spec the right sizes, finishes, fuel types, and accessories -  and we'll tell you when a less expensive option will serve you better.</p>",
+            "column_4_headline": "Order & Schedule",
+            "column_4_text": "<p>We coordinate across 20+ brands and keep you posted on lead times so your timeline holds.</p>",
+            "column_5_headline": "Install & Support",
+            "column_5_text": "<p>Delivery, authorized service, warranty registration, and a real human to call when something blinks the wrong color in three years.</p>",
+            "column_text_alignment": "center",
+            "column_headline_size": 18,
+            "column_text_size": 14,
+            "column_headline_color": "#000000",
+            "column_text_color": "#484848",
+            "show_button": true,
+            "button_text": "Book Your Consultation",
+            "button_link": "shopify://pages/appliance-contact-form",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 4,
+            "button_background_color": "#393939",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#000000",
+            "button_top_spacing": 40,
+            "desktop_width_percent": 100,
+            "section_padding": 40,
+            "header_spacing": 40,
+            "subheading_spacing": 10,
+            "column_gap": 30,
+            "column_content_spacing": 10,
+            "background_color": "#ffffff"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "liquid_rByVM8"
+        "ai_gen_block_578df23_Fih9wq"
       ],
-      "settings": {
-        "full_width": false,
-        "space_around": false
-      }
+      "settings": {}
     },
     "testimonials_ajXYGX": {
       "type": "testimonials",
@@ -208,6 +207,55 @@
         "align_text": "center",
         "round_images": false,
         "color_scheme": "none"
+      }
+    },
+    "rich_text_mT8GLk": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gXB4mT": {
+          "type": "heading",
+          "settings": {
+            "title": "Start Here Guides",
+            "heading_size": "h2"
+          }
+        },
+        "text_tULLcm": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Start here - videos  by people who actually use these.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gXB4mT",
+        "text_tULLcm"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": false,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "advanced_content_HjbTFG": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_rByVM8": {
+          "type": "liquid",
+          "settings": {
+            "code": "<script \n            type=\"text/javascript\" \n            src=\"https://cdn.ytb.reputon.com/assets/widget.js?shop=the-cooks-station.myshopify.com\" defer></script>\n<div class=\"reputon-youtube-widget\"\n                 data-content-index=\"1\"\n                 data-autoscroll=\"true\"\n                 data-theme=\"light\"\n                 data-widget-type=\"carousel\"></div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_rByVM8"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
       }
     },
     "logo_list_hJexFy": {
@@ -370,6 +418,43 @@
         "divider": true
       }
     },
+    "rich_text_aPed7y": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_3jUkXK": {
+          "type": "heading",
+          "settings": {
+            "title": "APPOINTMENT HOURS",
+            "heading_size": "h2"
+          }
+        },
+        "text_YKHRki": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>• Monday- Friday: 8 am-5 pm <br/>•  Saturday: 10-4 pm<br/>• Closed the 1st Saturday of the month<br/>•Sunday: Closed </p>"
+          }
+        },
+        "button_wQmxnU": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/appliance-contact-form",
+            "link_text": "Contact Us"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3jUkXK",
+        "text_YKHRki",
+        "button_wQmxnU"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
     "promo_grid_mGt8AN": {
       "type": "promo-grid",
       "blocks": {
@@ -421,6 +506,7 @@
         "image_PAzgec",
         "image_BVk4cC"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "gutter_size": 15,
@@ -469,11 +555,13 @@
   "order": [
     "main",
     "slideshow_jYTCYa",
-    "rich_text_aPed7y",
     "rich_text_7cFmNF",
-    "advanced_content_HjbTFG",
+    "1777561471f7ecdba2",
     "testimonials_ajXYGX",
+    "rich_text_mT8GLk",
+    "advanced_content_HjbTFG",
     "logo_list_hJexFy",
+    "rich_text_aPed7y",
     "promo_grid_mGt8AN",
     "rich_text_jGJTeV"
   ]
