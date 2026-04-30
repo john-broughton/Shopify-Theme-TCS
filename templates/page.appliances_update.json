@@ -418,6 +418,59 @@
         "divider": true
       }
     },
+    "text_columns_C6r9tx": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_4AhEiX": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "text_block_ek7NLF": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "text_block_47FnXb": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_4AhEiX",
+        "text_block_ek7NLF",
+        "text_block_47FnXb"
+      ],
+      "name": "t:labels.text_columns_with",
+      "settings": {
+        "title": "Why people in the Upstate plan their kitchens with us.",
+        "align_text": "center",
+        "divider": false,
+        "color_scheme": "none"
+      }
+    },
     "rich_text_aPed7y": {
       "type": "rich-text",
       "blocks": {
@@ -561,6 +614,7 @@
     "rich_text_mT8GLk",
     "advanced_content_HjbTFG",
     "logo_list_hJexFy",
+    "text_columns_C6r9tx",
     "rich_text_aPed7y",
     "promo_grid_mGt8AN",
     "rich_text_jGJTeV"
