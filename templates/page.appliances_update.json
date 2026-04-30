@@ -471,6 +471,91 @@
         "color_scheme": "none"
       }
     },
+    "testimonials_rarQ9e": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_yGLCHU": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>i'm a review!</p>",
+            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
+            "author": "customer",
+            "author_info": "Greenville, SC"
+          }
+        },
+        "testimonial_mLLwKG": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>i'm a review!!</p>",
+            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
+            "author": "bill",
+            "author_info": "Mauldin, SC"
+          }
+        },
+        "testimonial_GCe6pE": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>reviews are neat</p>",
+            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
+            "author": "poppy",
+            "author_info": "Simpsonville, SC"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_yGLCHU",
+        "testimonial_mLLwKG",
+        "testimonial_GCe6pE"
+      ],
+      "name": "t:labels.testimonials",
+      "settings": {
+        "title": "What your neighbors say.",
+        "align_text": "center",
+        "round_images": true,
+        "color_scheme": "none"
+      }
+    },
+    "rich_text_BjWjy7": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_eEmekF": {
+          "type": "heading",
+          "settings": {
+            "title": "Serving the Upstate - and beyond.",
+            "heading_size": "h2"
+          }
+        },
+        "text_GRyr8r": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>We work with homeowners, builders, and designers across Greenville, Greer, Spartanburg, Anderson, Easley, Travelers Rest, Lake Keowee, Lake Hartwell, and the Cliffs communities. Whether you're remodeling a downtown bungalow or finishing a lake house, we coordinate delivery, install, and service across the region.</p>"
+          }
+        },
+        "button_EcT6c6": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/appliance-contact-form",
+            "link_text": "Book a Showroom Visit"
+          }
+        }
+      },
+      "block_order": [
+        "heading_eEmekF",
+        "text_GRyr8r",
+        "button_EcT6c6"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
     "rich_text_aPed7y": {
       "type": "rich-text",
       "blocks": {
@@ -501,6 +586,7 @@
         "text_YKHRki",
         "button_wQmxnU"
       ],
+      "disabled": true,
       "settings": {
         "align_text": "center",
         "narrow_column": true,
@@ -597,58 +683,12 @@
         "text_UhBT7U",
         "button_MUAXgH"
       ],
+      "disabled": true,
       "settings": {
         "align_text": "center",
         "narrow_column": true,
         "color_scheme": "1",
         "divider": false
-      }
-    },
-    "testimonials_rarQ9e": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_yGLCHU": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "quote",
-            "testimonial": "<p>i'm a review!</p>",
-            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
-            "author": "customer",
-            "author_info": "Greenville, SC"
-          }
-        },
-        "testimonial_mLLwKG": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "quote",
-            "testimonial": "<p>i'm a review!!</p>",
-            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
-            "author": "bill",
-            "author_info": "Mauldin, SC"
-          }
-        },
-        "testimonial_GCe6pE": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "quote",
-            "testimonial": "<p>reviews are neat</p>",
-            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
-            "author": "poppy",
-            "author_info": "Simpsonville, SC"
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_yGLCHU",
-        "testimonial_mLLwKG",
-        "testimonial_GCe6pE"
-      ],
-      "name": "t:labels.testimonials",
-      "settings": {
-        "title": "What your neighbors say.",
-        "align_text": "center",
-        "round_images": true,
-        "color_scheme": "none"
       }
     }
   },
@@ -662,9 +702,10 @@
     "advanced_content_HjbTFG",
     "logo_list_hJexFy",
     "text_columns_C6r9tx",
+    "testimonials_rarQ9e",
+    "rich_text_BjWjy7",
     "rich_text_aPed7y",
     "promo_grid_mGt8AN",
-    "rich_text_jGJTeV",
-    "testimonials_rarQ9e"
+    "rich_text_jGJTeV"
   ]
 }
