@@ -29,7 +29,7 @@
             "link_text": "Optional button",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-bottom horizontal-left",
             "overlay_opacity": 0
           }
@@ -45,7 +45,7 @@
             "link_text": "Come See Us",
             "link_2": "shopify://pages/appliance-contact-form",
             "link_text_2": "",
-            "color_accent": "#fff",
+            "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify://shop_images/ApplianceShowroomPlaceholder.png",
             "overlay_opacity": 0
@@ -223,7 +223,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Start here - videos  by people who actually use these.</p>"
+            "text": "<p>Start here - learn about appliances from the people who use them all the time.</p>"
           }
         }
       },
