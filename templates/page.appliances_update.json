@@ -630,10 +630,11 @@
         "testimonial_GCe6pE": {
           "type": "testimonial",
           "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
+            "icon": "quote",
+            "testimonial": "<p>reviews are neat</p>",
+            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
+            "author": "poppy",
+            "author_info": "Simpsonville, SC"
           }
         }
       },
