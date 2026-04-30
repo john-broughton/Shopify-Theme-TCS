@@ -427,8 +427,8 @@
             "enable_image": true,
             "image_mask": "none",
             "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
+            "title": "Quality Over Quantity",
+            "text": "<p>There are hundreds of appliance brands and we recommend a fraction of them. The ones we put in our own homes. The ones we cook on in our teaching kitchen. The ones we'd recommend to our parents.</p>",
             "button_label": "Optional button",
             "button_link": ""
           }
@@ -439,8 +439,8 @@
             "enable_image": true,
             "image_mask": "none",
             "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
+            "title": "We LOVE  Appliances",
+            "text": "<p>Our appliance specialists have a combined 40 years specifying kitchens for Upstate homes. We know what will work for you in the long run - not just the trendiest widget right now.</p>",
             "button_label": "Optional button",
             "button_link": ""
           }
