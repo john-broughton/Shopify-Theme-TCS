@@ -451,8 +451,8 @@
             "enable_image": true,
             "image_mask": "none",
             "image_width": 650,
-            "title": "Example title",
-            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions.</p>",
+            "title": "Family-Owned",
+            "text": "<p>We're not a chain and we're not going anywhere. The same familiar voice answers the phone, the same team services your kitchen, and the same shop teaches the cooking class your daughter takes next spring.</p>",
             "button_label": "Optional button",
             "button_link": ""
           }
