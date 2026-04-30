@@ -603,6 +603,51 @@
         "color_scheme": "1",
         "divider": false
       }
+    },
+    "testimonials_rarQ9e": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_yGLCHU": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "testimonial": "<p>i'm a review!</p>",
+            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
+            "author": "customer",
+            "author_info": "Greenville, SC"
+          }
+        },
+        "testimonial_mLLwKG": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_GCe6pE": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_yGLCHU",
+        "testimonial_mLLwKG",
+        "testimonial_GCe6pE"
+      ],
+      "name": "t:labels.testimonials",
+      "settings": {
+        "title": "What your neighbors say.",
+        "align_text": "center",
+        "round_images": true,
+        "color_scheme": "none"
+      }
     }
   },
   "order": [
@@ -617,6 +662,7 @@
     "text_columns_C6r9tx",
     "rich_text_aPed7y",
     "promo_grid_mGt8AN",
-    "rich_text_jGJTeV"
+    "rich_text_jGJTeV",
+    "testimonials_rarQ9e"
   ]
 }
