@@ -118,6 +118,9 @@
               </button>
 
               {% if additional_checkout_buttons and cart_additional_buttons %}
+                <div class="cart__giftcard-notice" style="margin: 12px 0; padding: 10px 14px; background: #f7f3ec; border-left: 3px solid #1a1a1a; border-radius: 4px; font-size: 13px; line-height: 1.5; text-align: left;">
+                  💳 <strong>Have a gift card?</strong> Use the "Check out" button above — gift cards can't be applied through Shop Pay or Apple Pay.
+                </div>
                 <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
               {% endif %}
 
