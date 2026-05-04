@@ -1,18 +1,15 @@
 {% # components v2.10.64 | Copyright © 2024 Archetype Themes Limited Partnership  | "Shopify Theme Store (https://www.shopify.com/legal/terms#9-additional-services)" License  %}
 {%- comment -%}
   Renders the header cart drawer component.
-
   Accepts:
   - cart_type {string} - Cart type
   - cart_notes_enable {boolean} - Enable cart notes
   - cart_terms_conditions_enable {boolean} - Enable terms and conditions
   - cart_terms_conditions_page {page} - Terms and conditions page
   - cart_additional_buttons {boolean} - Additional checkout buttons
-
   Usage:
   {% render 'header-cart-drawer', cart_type: 'dropdown' %}
 {%- endcomment -%}
-
 {%- liquid
   assign cart_type = cart_type | default: settings.cart_type | default: blank
   assign cart_notes_enable = cart_notes_enable | default: settings.cart_notes_enable, allow_false: true | default: true, allow_false: true
@@ -20,12 +17,10 @@
   assign cart_terms_conditions_page = cart_terms_conditions_page | default: settings.cart_terms_conditions_page
   assign cart_additional_buttons = cart_additional_buttons | default: settings.cart_additional_buttons, allow_false: true | default: true, allow_false: true
 -%}
-
 <form action="{{ routes.cart_url }}" method="post" novalidate data-location="header" class="cart__drawer-form">
   <div class="cart__scrollable">
     <div data-products></div>
     {%- render 'cart-recommendations', context: 'drawer' -%}
-
     {% if cart_notes_enable %}
       <div class="cart__item-row">
         <label for="CartHeaderNote" class="add-note">
@@ -38,20 +33,16 @@
             <span class="icon__fallback-text visually-hidden">{{ 'actions.close' | t }}</span>
           </span>
         </label>
-
         <textarea name="note" class="input-full cart__note hide" id="CartHeaderNote">{{ cart.note }}</textarea>
       </div>
     {% endif %}
   </div>
-
   <div class="cart__footer">
     <div class="cart__item-sub cart__item-row cart__item--subtotal">
       <div>{{ 'labels.subtotal' | t }}</div>
       <div data-subtotal>{{ cart.total_price | money }}</div>
     </div>
-
     <div data-discounts></div>
-
     {% if cart_terms_conditions_enable %}
       <div class="cart__item-row cart__terms">
         <input type="checkbox" id="CartTermsHeader" class="cart__terms-checkbox">
@@ -66,7 +57,6 @@
         </label>
       </div>
     {% endif %}
-
     <div class="cart__item-row cart__checkout-wrapper payment-buttons">
       <button
         type="submit"
@@ -76,12 +66,13 @@
       >
         {{ 'actions.checkout' | t }}
       </button>
-
       {% if cart_type == 'dropdown' and additional_checkout_buttons and cart_additional_buttons %}
+        <div class="cart__giftcard-notice" style="margin: 10px 0; padding: 8px 12px; background: #f7f3ec; border-left: 3px solid #1a1a1a; border-radius: 4px; font-size: 12px; line-height: 1.4; text-align: left;">
+          💳 <strong>Have a gift card?</strong> Use the "Check out" button above — gift cards can't be applied through Shop Pay or Apple Pay.
+        </div>
         <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
       {% endif %}
     </div>
-
     <div class="cart__item-row--footer text-center">
       <small>
         {%- if cart.taxes_included -%}
@@ -93,5 +84,4 @@
     </div>
   </div>
 </form>
-
 <div class="site-header__cart-empty">{{ 'info.cart_empty' | t }}</div>
