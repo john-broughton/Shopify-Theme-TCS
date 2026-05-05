@@ -72,6 +72,7 @@
     },
     "text_and_image_RGbyfA": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Spring_Fling_Signage.png",
@@ -95,6 +96,7 @@
     },
     "text_and_image_E94AcB": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Copy_of_March_2026_Fish_Fry_Menu_5_x_7_in.png",
@@ -118,6 +120,7 @@
     },
     "text_and_image_yaEnXV": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Sunday_Brunch_5.png",
         "image_mask": "none",
@@ -142,11 +145,11 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/april_2026_Burger_Night_1.png",
+        "image": "shopify://shop_images/Copy_of_april_2026_Burger_Night.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Burger Night-4/28",
+        "title": "Burger Night-5/26",
         "heading_size": "h2",
         "text": "<p>Grab your friends, bring your appetite, and get ready for a night of delicious bites & good vibes.<br/><br/>No tickets are needed to attend. Order at our café, and dine on our screened-in patio. Dinner service begins at 5:30 pm and continues until 7:30pm—or until we sell out! Always on the last Tuesday of every month! </p>",
         "button_label": "",
