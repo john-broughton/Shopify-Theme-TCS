@@ -50,7 +50,7 @@
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/prepping-for-fresh-pasta.jpg",
+        "image": "shopify://shop_images/Italian_Night_-_may_2026_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
@@ -71,16 +71,15 @@
     },
     "text_and_image_RGbyfA": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Spring_Fling_Signage.png",
+        "image": "shopify://shop_images/Tapas_cafe_night_TV_Menu_1.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Spring Fling!",
+        "title": "Thursday & Friday Night Specials",
         "heading_size": "h2",
-        "text": "<p>Mark your calendars for May 2nd for Spring Fling at The Cook's Station! We will have free food & wine samples, live music, chances to win raffle baskets, and more! </p>",
+        "text": "<p>Join us Thursday and Friday evenings in the café for a new way to dine at The Cook’s Station at 4pm. Each week, our chefs will create a fresh rotating menu featuring 3 seasonal small plate selections, and a house-made dessert. </p><p>Perfect for sharing, sampling, or enjoying as a light evening out, our small plates menu is designed to bring people together around creative dishes and fresh ingredients.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
