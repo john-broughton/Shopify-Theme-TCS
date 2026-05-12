@@ -49,6 +49,7 @@
     },
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Italian_Night_-_may_2026_2.png",
         "image_mask": "none",
