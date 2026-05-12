@@ -167,7 +167,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toast </p><p><strong>FALAFEL WRAP- $13.99</strong><br/>Crispy falafel, tomato, cucumber, pickled onion, lemon dill tzatziki, ménage cheese, roasted peppers, greens on a spinach wrap </p><p><strong>CRISPY HOG HOAGIE- $13.99</strong><br/>fried pork cutlet, braised onion, swiss cheese, topped with lusty monk aioli, on a hoagie roll </p><p><strong>FIESTA GRILLED CHEESE- $13.99</strong><br/>Grilled queso fresco, chihuahua cheese, pickled jalapenos, avocado, pickled onion, Guajillo poblano aioli, crispy black bean cake on a hoagie roll </p><p><strong>CREAMY TOMATO BASIL BISQUE- $5.99</strong><br/>Tomatoes, basil, garlic, onions, olive oil, salt and cream</p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
+            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toa</p><p><strong>CRISPY HOG HOAGIE- $13.99</strong><br/>fried pork cutlet, braised onion, swiss cheese, topped with lusty monk aioli, on a hoagie roll </p><p><strong>FIESTA GRILLED CHEESE- $13.99</strong><br/>Grilled queso fresco, chihuahua cheese, pickled jalapenos, avocado, pickled onion, Guajillo poblano aioli, crispy black bean cake on a hoagie roll </p><p><strong>ANDOUILLE SAUSAGE WRAP- $13.99</strong><br/>Andouille sausage strips, tomatoes, bananna peppers, roasted peppers, greens, swiss cheese, lusty monk aioli, on a spinach wrap </p><p><strong>QUICHE LORAINE- $12.95</strong><br/>Bacon, pancetta, onion, eggs, menage cheese, salt, pepper, served with a side salad (mixed greens, tomato, cucumber, onion, creamy dill dressing) </p><p><strong>CHICKEN TORTILLA SOUP- $5.99</strong><br/>Onions, garlic, tomatillos, poblano peppers, bell peppers, fire roasted tomatoes, chicken stock, roasted chicken, hominy, black beans, corn tortillas, lime, cilantro, spices. Garnished with crispy corn tortillas and chimichurri </p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
           }
         }
       },
@@ -179,7 +179,7 @@
         "align_text": "center",
         "narrow_column": true,
         "color_scheme": "none",
-        "divider": false
+        "divider": true
       }
     },
     "promo_grid_8ijbpN": {
