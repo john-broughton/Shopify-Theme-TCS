@@ -74,7 +74,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Tapas_cafe_night_TV_Menu_1.png",
+        "image": "shopify://shop_images/Tapas_cafe_night_TV_Menu.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
