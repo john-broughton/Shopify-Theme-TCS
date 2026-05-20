@@ -425,11 +425,12 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/3_7858ff75-9c4e-4a97-894b-3dfd85359311.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "Quality Over Quantity",
             "text": "<p>There are hundreds of appliance brands and we recommend a fraction of them. The ones we put in our own homes. The ones we cook on in our teaching kitchen. The ones we'd recommend to our parents.</p>",
-            "button_label": "Optional button",
+            "button_label": "",
             "button_link": ""
           }
         },
@@ -437,11 +438,12 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/4.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "We LOVE  Appliances",
             "text": "<p>Our appliance specialists have a combined 40 years specifying kitchens for Upstate homes. We know what will work for you in the long run - not just the trendiest widget right now.</p>",
-            "button_label": "Optional button",
+            "button_label": "",
             "button_link": ""
           }
         },
@@ -449,11 +451,12 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
+            "image": "shopify://shop_images/1_5410bd2f-c0d6-4f7e-9018-82f6fab51cc7.png",
             "image_mask": "none",
             "image_width": 650,
             "title": "Family-Owned",
             "text": "<p>We're not a chain and we're not going anywhere. The same familiar voice answers the phone, the same team services your kitchen, and the same shop teaches the cooking class your daughter takes next spring.</p>",
-            "button_label": "Optional button",
+            "button_label": "",
             "button_link": ""
           }
         }
