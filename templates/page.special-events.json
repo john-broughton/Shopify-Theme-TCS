@@ -119,16 +119,15 @@
     },
     "text_and_image_WUFFB4": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Trivia_Night_5.png",
+        "image": "shopify://shop_images/Trivia_Night_1_35143f56-ce4b-491b-acfa-feed7fa55958.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Trivia Night- 5/15",
+        "title": "Trivia Night-1st Friday of the Month",
         "heading_size": "h2",
-        "text": "<p>Join us for an exciting night of <strong>Trivia at The Cook’s Station</strong>! Gather your team and get ready for <strong>4 fun-filled rounds</strong> of questions covering a variety of topics.</p><p>While you play, enjoy our <strong>small bites menu</strong> along with a great selection of <strong>beer, wine, and soft drinks</strong> from our bar—perfect for sipping, snacking, and strategizing between rounds.</p>",
+        "text": "<p>Join us for an exciting night of <strong>Trivia at The Cook’s Station</strong>! Gather your team and get ready for <strong>4 fun-filled rounds</strong> of questions covering a variety of topics.</p><p>While you play, enjoy our <strong>small bites menu</strong> along with a great selection of <strong>beer, wine, and soft drinks</strong> from our bar—perfect for sipping, snacking, and strategizing between rounds. </p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -143,6 +142,7 @@
     },
     "text_and_image_kCeTqw": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Copy_of_april_2026_Burger_Night.png",
@@ -166,6 +166,7 @@
     },
     "text_and_image_yaEnXV": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/hotel-breakfast-room-service.jpg",
         "image_mask": "none",
