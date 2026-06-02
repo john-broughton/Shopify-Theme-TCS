@@ -30,6 +30,9 @@
     },
     "main": {
       "type": "blog-template",
+      "custom_css": [
+        ".page-width,.container,.wrapper,.section-inner {padding-left: 5%; padding-right: 5%;}"
+      ],
       "settings": {
         "blog_show_rss": false,
         "blog_show_tags": false,
