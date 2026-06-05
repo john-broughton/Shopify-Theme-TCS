@@ -121,6 +121,52 @@
         "divider": false
       }
     },
+    "featured_collections_qryfkB": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_CfaqUb": {
+          "type": "collection",
+          "settings": {
+            "collection": "le-creuset",
+            "title": ""
+          }
+        },
+        "collection_f8dnbM": {
+          "type": "collection",
+          "settings": {
+            "collection": "hestan",
+            "title": ""
+          }
+        },
+        "collection_BFDQ4p": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookware",
+            "title": ""
+          }
+        },
+        "collection_wNirYP": {
+          "type": "collection",
+          "settings": {
+            "collection": "cooking-gadgets",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_CfaqUb",
+        "collection_f8dnbM",
+        "collection_BFDQ4p",
+        "collection_wNirYP"
+      ],
+      "name": "t:labels.collection_list",
+      "settings": {
+        "title": "FEATURED COLLECTIONS",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "divider": false
+      }
+    },
     "testimonials_7hiFw9": {
       "type": "testimonials",
       "blocks": {
@@ -309,52 +355,6 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
-      }
-    },
-    "featured_collections_qryfkB": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_CfaqUb": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection_f8dnbM": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection_BFDQ4p": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        },
-        "collection_wNirYP": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_CfaqUb",
-        "collection_f8dnbM",
-        "collection_BFDQ4p",
-        "collection_wNirYP"
-      ],
-      "name": "t:labels.collection_list",
-      "settings": {
-        "title": "FEATURED COLLECTIONS",
-        "heading_size": "h2",
-        "heading_position": "center",
-        "divider": false
       }
     }
   },
