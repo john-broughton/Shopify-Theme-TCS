@@ -25,7 +25,7 @@
             "title_size": 70,
             "subheading": "More than a store. We're your partners in building your first kitchen together, from the table to the cookware, knives, and everything in between. Register one-on-one with Tyler and Lilly in our Greenville showroom.",
             "link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/Bridal_Registry_papers_.pdf.png?v=1715606318",
-            "link_text": "More Information",
+            "link_text": "Book Your Appointment",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
@@ -47,136 +47,78 @@
         "autoplay_speed": 7
       }
     },
-    "testimonials_nxaqjC": {
-      "type": "testimonials",
+    "rich_text_8ABTAc": {
+      "type": "rich-text",
       "blocks": {
-        "testimonial_wwa6tF": {
-          "type": "testimonial",
+        "heading_YcjKkA": {
+          "type": "heading",
           "settings": {
-            "icon": "none",
-            "testimonial": "<h1><strong>OUR PROCESS</strong></h1><p>Enjoy a one-on-one wedding  registry appointment with our  consultant, Tyler, in our beautiful two-story showroom. We kindly request that you call or email to schedule a consultation, please allow 2 hours for your consultation. We will help you curate a beautiful registry that speaks to your taste and personality.</p>",
-            "author": "",
-            "author_info": ""
+            "title": "HOW IT WORKS",
+            "heading_size": "h0"
           }
         },
-        "testimonial_8hVi4Y": {
-          "type": "testimonial",
+        "text_9MD68U": {
+          "type": "text",
           "settings": {
-            "icon": "none",
-            "testimonial": "<h1>ONLINE REGISTRY</h1><p>Your registry is updated online, and purchases can be made either through our website or in-person. Registries are updated as purchases are made so our brides can stay up-todate with their gifts. </p>",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial_pexHkw": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "testimonial": "<h1>OUR PERKS</h1><p>We offer a 20% discount on any items that were on your registry, though not purchased. This discount is good for one year after your big day. From dishware to décor, we have unique, beautiful pieces that will be treasured for years to come! </p>",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial_XAXwmq": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "testimonial": "<h1>COMPLETION AGREEMENT</h1><p>One of the greatest advantages of registering at The Cook's Station is our voluntary Completion Agreement Program. All of our brides have the choice to reserve as many or as few place settings as they desire! This program is completely optional, though it does ensure your beautiful dishes are in stock when your friends and family arrive to shop. When you sign the completion agreement, you also walk away with a The Cook's Station Gift Bag!</p>",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial_eLJBdW": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "testimonial": "<h1>SPECIAL ORDERS</h1><p>While we do our best to keep all products on your registry in stock, some items may need to be special ordered; this can take anywhere from 2-8 weeks. Once you receive a gift off of your registry, we will contact you via email that a gift is ready for you to pick up. In the case that an item is out of stock, we will give you the option to either wait for the gift to be ordered OR you can receive a gift card in that item's amount. Please note that all special orders, and seasonal items, cannot be returned. </p>",
-            "author": "",
-            "author_info": ""
+            "enlarge_text": true,
+            "text": "<p>A warm, personal registry experience, the way it should be.</p>"
           }
         }
       },
       "block_order": [
-        "testimonial_wwa6tF",
-        "testimonial_8hVi4Y",
-        "testimonial_pexHkw",
-        "testimonial_XAXwmq",
-        "testimonial_eLJBdW"
+        "heading_YcjKkA",
+        "text_9MD68U"
       ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
+    },
+    "text_with_icons_aqNc7t": {
+      "type": "text-with-icons",
+      "blocks": {
+        "text_block_gnBVep": {
+          "type": "text_block",
+          "settings": {
+            "icon": "store",
+            "title": "OUR PROCESS",
+            "text": "<p>Enjoy a one-on-one appointment with Tyler or Lilly in our beautiful two-story showroom. Plan for about two hours as we curate a registry that covers everything from your table to your cookware.</p>"
+          }
+        },
+        "text_block_HicixF": {
+          "type": "text_block",
+          "settings": {
+            "icon": "chat",
+            "title": "ONLINE REGISTRY",
+            "text": "<p>Your registry updates online, and family can purchase through our website or in-store, so you always stay up to date with your gifts.</p>"
+          }
+        },
+        "text_block_HK7kGa": {
+          "type": "text_block",
+          "settings": {
+            "icon": "gift",
+            "title": "YOURS FOR A LIFETIME",
+            "text": "<p>From dishware to décor to your favorite cookware, we help you choose unique, beautiful pieces you'll treasure for years. A home that's truly yours, built to last.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_gnBVep",
+        "text_block_HicixF",
+        "text_block_HK7kGa"
+      ],
+      "name": "t:labels.text_columns_with_386",
       "settings": {
         "title": "",
         "align_text": "center",
-        "round_images": true,
-        "color_scheme": "none"
-      }
-    },
-    "promo_grid_cpHzm9": {
-      "type": "promo-grid",
-      "blocks": {
-        "advanced_Fninwi": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Shop Current Registries",
-            "textarea": "Click the button below to see what magic we have created with our soon-to-be newlyweds!",
-            "cta_text1": "View Registries!",
-            "cta_link1": "https://cooksstation.myshoplocal.com/registry.cfm",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify://shop_images/istockphoto-969035890-612x612_64a90157-6d6e-455b-8654-77850e8c36bf.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 700,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        },
-        "advanced_ypibnE": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "",
-            "textarea": "",
-            "cta_text1": "",
-            "cta_link1": "",
-            "cta_text2": "",
-            "cta_link2": "",
-            "video_url": "https://youtube.com/watch?v=xKjyIyCZkMw",
-            "width": "33",
-            "height": 760,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        },
-        "advanced_RdLK9U": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Book an appointment",
-            "textarea": "Click the button below to schedule a consultation!",
-            "cta_text1": "Book Now!",
-            "cta_link1": "https://www.thecooksstation.com/pages/registry.html#shopify-section-template--18074448298209__advanced_content_D9heiY",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "shopify://shop_images/stock_127f21b9-d252-4677-b0f0-2fd085d21a16.jpg",
-            "video_url": "",
-            "width": "33",
-            "height": 700,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "advanced_Fninwi",
-        "advanced_ypibnE",
-        "advanced_RdLK9U"
-      ],
-      "settings": {
-        "full_width": false,
-        "gutter_size": 20,
-        "space_above": true,
-        "space_below": true
+        "desktop_columns_per_row": 3,
+        "icon_color": "#000",
+        "button_label": "",
+        "button_link": "",
+        "divider": false
       }
     },
     "testimonials_7hiFw9": {
@@ -368,13 +310,60 @@
         "autoplay": true,
         "autoplay_speed": 7
       }
+    },
+    "featured_collections_qryfkB": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_CfaqUb": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_f8dnbM": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_BFDQ4p": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "collection_wNirYP": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_CfaqUb",
+        "collection_f8dnbM",
+        "collection_BFDQ4p",
+        "collection_wNirYP"
+      ],
+      "name": "t:labels.collection_list",
+      "settings": {
+        "title": "FEATURED COLLECTIONS",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "divider": false
+      }
     }
   },
   "order": [
     "main",
     "slideshow_Bdtww8",
-    "testimonials_nxaqjC",
-    "promo_grid_cpHzm9",
+    "rich_text_8ABTAc",
+    "text_with_icons_aqNc7t",
+    "featured_collections_qryfkB",
     "testimonials_7hiFw9",
     "17145861856fbae181",
     "advanced_content_D9heiY",
