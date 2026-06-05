@@ -23,7 +23,7 @@
             "top_subheading": "",
             "title": "<p>Gift Registry</p>",
             "title_size": 70,
-            "subheading": "At The Cook's Station, we're more than just a store; we're your partners in creating the kitchen of your dreams. Our registry service is designed to make your journey into marital bliss even more extraordinary.",
+            "subheading": "More than a store. We're your partners in building your first kitchen together, from the table to the cookware, knives, and everything in between. Register one-on-one with Tyler and Lilly in our Greenville showroom.",
             "link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/Bridal_Registry_papers_.pdf.png?v=1715606318",
             "link_text": "More Information",
             "link_2": "",
@@ -33,28 +33,10 @@
             "image": "shopify://shop_images/casafina-taormina-lifestyle-image-21_1.jpg",
             "overlay_opacity": 16
           }
-        },
-        "hero_4XLgE4": {
-          "type": "hero",
-          "settings": {
-            "top_subheading": "",
-            "title": "<p>From One \"I Do\" to Another</p>",
-            "title_size": 70,
-            "subheading": "Refer a bride and get $100 gift card for you & one for her too!",
-            "link": "https://cdn.shopify.com/s/files/1/0618/6660/6817/files/Wedding_Registry_Referral_Program.png?v=1772749839",
-            "link_text": "Click Here for Details",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "#ffffff",
-            "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/Wedding_Registry_1.png",
-            "overlay_opacity": 16
-          }
         }
       },
       "block_order": [
-        "hero_RcXXCn",
-        "hero_4XLgE4"
+        "hero_RcXXCn"
       ],
       "settings": {
         "full_width": true,
