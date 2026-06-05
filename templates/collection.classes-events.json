@@ -242,7 +242,7 @@
           "type": "question",
           "settings": {
             "title": " I’m having issues using a gift card. What should I do?",
-            "text": "<p>Unfortunately, technology does not always work with us! If you are worried about missing out on your spot in the class, please purchase your cooking class with another form of payment. </p><p>You can then email <a href=\"mailto:emmie@thecooksstation.com\"><span style=\"text-decoration:underline\">emmie@thecooksstation.com</span></a> with your gift card number and the class you have signed up for. We can refund your other payment method on the next business day and charge the appropriate gift card. </p>"
+            "text": "<p>Technology can be unpredictable, and we don't want you to miss out on a class! If you're having trouble using your gift card during registration, we recommend reserving your spot with another form of payment.</p><p>After you've registered, simply email <a href=\"mailto:events@thecooksstation.com\">events@thecooksstation.com</a> with your gift card number and the class you've signed up for. Our team will be happy to apply the gift card and refund your original payment method on the next business day.</p>"
           }
         }
       },
