@@ -311,7 +311,7 @@
         "liquid_pAaP3f": {
           "type": "liquid",
           "settings": {
-            "code": "<!-- Calendly inline widget begin -->\n<div class=\"calendly-inline-widget\" data-url=\"https://calendly.com/tyler-c8m/registry-consultation\" style=\"min-width:320px;height:700px;\"></div>\n<script type=\"text/javascript\" src=\"https://assets.calendly.com/assets/external/widget.js\" async></script>\n<!-- Calendly inline widget end -->",
+            "code": "<!-- Calendly dual scheduler begin -->\n<div style=\"max-width:1100px;margin:0 auto;padding:0 16px;\">\n  <h2 style=\"text-align:center;font-size:1.8rem;margin-bottom:24px;\">\n    Schedule Your Time With One of Our Consultants\n  </h2>\n\n  <div style=\"display:flex;flex-wrap:wrap;gap:24px;justify-content:center;\">\n    <div style=\"flex:1 1 380px;min-width:320px;\">\n      <h3 style=\"text-align:center;margin-bottom:8px;\">Tyler</h3>\n      <div class=\"calendly-inline-widget\"\n           data-url=\"https://calendly.com/tyler-c8m/registry-consultation?hide_event_type_details=1\"\n           style=\"min-width:320px;height:700px;\"></div>\n    </div>\n\n    <div style=\"flex:1 1 380px;min-width:320px;\">\n      <h3 style=\"text-align:center;margin-bottom:8px;\">Lilly</h3>\n      <div class=\"calendly-inline-widget\"\n           data-url=\"https://calendly.com/lilly-thecooksstation/registry-consultation-lilly?hide_event_type_details=1\"\n           style=\"min-width:320px;height:700px;\"></div>\n    </div>\n  </div>\n</div>\n\n<script type=\"text/javascript\" src=\"https://assets.calendly.com/assets/external/widget.js\" async></script>\n<!-- Calendly dual scheduler end -->",
             "width": "100%",
             "alignment": "center"
           }
