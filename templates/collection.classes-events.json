@@ -207,7 +207,7 @@
           "type": "question",
           "settings": {
             "title": "What is the cancellation policy?",
-            "text": "<p>Our cancellation policy for classes and events requires a minimum of 72 hours' notice. <br/>Please email events@thecooksstation.com if you need to transfer or cancel your class. If you are unable to attend the scheduled class or event and fail to provide at least 72 hours' notice, we regret to inform you that refunds will not be issued. No exceptions will be made to this policy</p>"
+            "text": "<p>We understand that plans can change. If you need to cancel or transfer your registration, please contact us at <a href=\"mailto:events@thecooksstation.com\">events@thecooksstation.com</a>.</p><p>Guests who notify us at least 72 hours before the scheduled class or event are eligible for either a full refund or a transfer to another class or event.</p><p>Because we prepare staffing, ingredients, and seating in advance, cancellations received less than 72 hours before the scheduled class or event are not eligible for a refund or transfer. You are welcome to send another attendee in your place. No exceptions will be made to this policy.</p>"
           }
         },
         "question_qQa4zP": {
