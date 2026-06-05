@@ -164,7 +164,7 @@
         "title": "FEATURED COLLECTIONS",
         "heading_size": "h2",
         "heading_position": "center",
-        "divider": false
+        "divider": true
       }
     },
     "testimonials_7hiFw9": {
@@ -270,6 +270,7 @@
       "block_order": [
         "enorm_image_gallery_video_embed_code_BaAY88"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
         "space_around": true
@@ -341,6 +342,7 @@
         "question_tBEj4N",
         "question_X6fU4h"
       ],
+      "disabled": true,
       "settings": {
         "title": "FAQs",
         "heading_size": "h2",
@@ -349,6 +351,7 @@
     },
     "slideshow_image_Lrgy9k": {
       "type": "slideshow-image",
+      "disabled": true,
       "name": "t:labels.image_optional_slides",
       "settings": {
         "full_width": false,
