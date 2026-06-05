@@ -207,7 +207,7 @@
           "type": "question",
           "settings": {
             "title": "What is the cancellation policy?",
-            "text": "<p>Our cancellation policy for classes and events requires a minimum of 72 hours' notice. If you are unable to attend the scheduled class or event and fail to provide at least 72 hours' notice, we regret to inform you that refunds will not be issued. No exceptions will be made to this policy</p>"
+            "text": "<p>Our cancellation policy for classes and events requires a minimum of 72 hours' notice. <br/>Please email events@thecooksstation.com if you need to transfer or cancel your class. If you are unable to attend the scheduled class or event and fail to provide at least 72 hours' notice, we regret to inform you that refunds will not be issued. No exceptions will be made to this policy</p>"
           }
         },
         "question_qQa4zP": {
@@ -228,7 +228,7 @@
           "type": "question",
           "settings": {
             "title": "Are the classes hands-on or demo-based?",
-            "text": "<p>Each class is different! We like to offer an array of options for our guests. In the description of each class it will normally explain if the class is hands on, semi-hands on or demo based. If you would like further clarification please email <a href=\"mailto:emmie@thecooksstation.com\"><span style=\"text-decoration:underline\">emmie@thecooksstation.com</span></a></p>"
+            "text": "<p>Each class is different! We like to offer an array of options for our guests. In the description of each class it will normally explain if the class is hands on, semi-hands on or demo based. If you would like further clarification please email <a href=\"mailto:emmie@thecooksstation.com\"><span style=\"text-decoration:underline\">events@thecooksstation.com</span></a></p>"
           }
         },
         "question_FrGP9V": {
