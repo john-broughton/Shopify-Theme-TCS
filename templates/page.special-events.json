@@ -121,7 +121,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Trivia_Night_1_35143f56-ce4b-491b-acfa-feed7fa55958.png",
+        "image": "shopify://shop_images/Trivia_Night_4.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
