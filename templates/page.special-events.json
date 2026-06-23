@@ -74,7 +74,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/SAS_Menu-_Print_Out_Insta_Story_4_x_6_in_1_2f52e29f-d1eb-4796-a5d7-febef5dee1a2.png",
+        "image": "shopify://shop_images/SAS_Menu-_Print_Out_Insta_Story_4_x_6_in_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
@@ -121,11 +121,11 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Trivia_Night_4.png",
+        "image": "shopify://shop_images/Trivia_Night.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Trivia Night-1st & 3rd Friday of the Month",
+        "title": "Trivia Night-1st Friday of the Month",
         "heading_size": "h2",
         "text": "<p>Join us for an exciting night of <strong>Trivia at The Cook’s Station</strong>! Gather your team and get ready for <strong>4 fun-filled rounds</strong> of questions covering a variety of topics.</p><p>While you play, enjoy our <strong>small bites menu</strong> along with a great selection of <strong>beer, wine, and soft drinks</strong> from our bar—perfect for sipping, snacking, and strategizing between rounds. </p>",
         "button_label": "",
