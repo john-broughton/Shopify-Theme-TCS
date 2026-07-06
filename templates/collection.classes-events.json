@@ -83,6 +83,16 @@
     "testimonials_MACaWt": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_piAFAf": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h2><strong>Carlos Baez</strong></h2><p>Chef Carlos Baez is the founder of Pride & Joy Provisions, creating private dinners, pop-ups, and cooking classes centered around memorable culinary experiences. After more than 20 years in professional kitchens, including leadership roles at The Anchorage and as Executive Chef of Mr. Crisp, his cooking has evolved into a style he describes as bold, vibrant, with calculated restraint. Guided by seasonal ingredients and global influences, he believes food should create lasting memories.<br/><br/></p>",
+            "image": "shopify://shop_images/Chef_Carlos_Baez.png",
+            "author": "",
+            "author_info": ""
+          }
+        },
         "testimonial_YCJmE9": {
           "type": "testimonial",
           "settings": {
@@ -145,6 +155,7 @@
         }
       },
       "block_order": [
+        "testimonial_piAFAf",
         "testimonial_YCJmE9",
         "testimonial_JRnWLV",
         "testimonial_4MMJnU",
