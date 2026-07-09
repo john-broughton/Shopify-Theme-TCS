@@ -96,7 +96,7 @@
     "text_and_image_yaEnXV": {
       "type": "text-and-image",
       "settings": {
-        "image": "shopify://shop_images/Sunday_Brunch_2.png",
+        "image": "shopify://shop_images/Sunday_Brunch_4_37057232-7732-4c4c-bf45-f222ba377070.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "11am-2pm",
@@ -140,6 +140,7 @@
     },
     "text_and_image_WUFFB4": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Trivia_Night.png",
