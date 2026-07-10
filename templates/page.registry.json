@@ -379,6 +379,7 @@
     },
     "slideshow_image_Lrgy9k": {
       "type": "slideshow-image",
+      "disabled": true,
       "name": "t:labels.image_optional_slides",
       "settings": {
         "full_width": false,
