@@ -140,14 +140,13 @@
     },
     "text_and_image_WUFFB4": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Trivia_Night.png",
+        "image": "shopify://shop_images/Trivia_Night_7.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "1st Friday of the Month",
-        "title": "Trivia Night- 7/3",
+        "title": "Trivia Night- 7/24",
         "heading_size": "h2",
         "text": "<p>Join us for an exciting night of <strong>Trivia at The Cook’s Station</strong>! Gather your team and get ready for <strong>4 fun-filled rounds</strong> of questions covering a variety of topics from 5:30pm-7:30pm.</p><p>While you play, enjoy our <strong>small bites menu</strong> along with a great selection of <strong>beer, wine, and soft drinks</strong> from our bar—perfect for sipping, snacking, and strategizing between rounds. </p>",
         "button_label": "",
