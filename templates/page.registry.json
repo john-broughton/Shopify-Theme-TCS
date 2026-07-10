@@ -362,6 +362,13 @@
             "title": "What is the return/exchange policy?",
             "text": "<p>At The Cook's Station, our registrant's satisfaction is our top priority. This means if you are not completely satisfied with your gift, please schedule a return appointment with Tyler Johnston. We will be happy to return unwanted registry items for store credit as long as they apply within our qualifications. The product must be unused, and accompanied by the original packaging. To avoid excess returns, ensure that your registry only contains gifts you want. If you would like a gift removed, please email Tyler to take it off your registry.</p>"
           }
+        },
+        "question_AzWUcT": {
+          "type": "question",
+          "settings": {
+            "title": "Does The Cook's Station offer monogramming?",
+            "text": "<p>Yes. The Cook's Station has monogramming available for Mepra and Pickard products.</p>"
+          }
         }
       },
       "block_order": [
@@ -369,7 +376,8 @@
         "question_kgpf9r",
         "question_TkH7Mn",
         "question_tBEj4N",
-        "question_X6fU4h"
+        "question_X6fU4h",
+        "question_AzWUcT"
       ],
       "settings": {
         "title": "FAQs",
