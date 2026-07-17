@@ -132,7 +132,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2026_38caae89-35f4-447d-9810-24a7c82d035f.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2026_1.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -159,7 +159,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Today's Specials - 07/15",
+            "title": "Today's Specials - 07/17",
             "heading_size": "h2"
           }
         },
@@ -167,7 +167,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toast </p><p><strong>PASTRAMI REUBEN - $13.99</strong><br/>Shaved pastrami, thousand island dressing, beer-braised sauerkraut, swiss, on rye bread</p><p><strong>GYRO PITA $13.99</strong><br/>Gyro meat, feta, tomato, lettuce, pickles, garlic aioli, on pita</p><p><strong>SALMON BLT WRAP $13.99</strong><br/>Salmon, lettuce, bacon, tomato, house-made ranch, in a spinach wrap</p><p><strong>SUMMER CHICKEN & VEGETABLE SOUP $5.99</strong><br/>Carrot, celery, onion, garlic, red & yellow peppers, green beans, locally farmed squash, roasted chicken, lemon zest’s juice, rich chicken stock, herbs & spices, garnished with pecorino-romano cheese and scallions</p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
+            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toast </p><p><strong>PASTRAMI REUBEN - $13.99</strong><br/>Shaved pastrami, thousand island dressing, beer-braised sauerkraut, swiss, on rye bread</p><p><strong>GYRO PITA $13.99</strong><br/>Gyro meat, feta, tomato, lettuce, pickles, garlic aioli, on pita</p><p><strong>FRIED GREEN TOMATO BLT $13.99</strong><br/>Fried green tomatoes, bacon, pimento cheese, lettuce, steak tomato, feisty aioli on sourdough </p><p><strong>SUMMER CHICKEN & VEGETABLE SOUP $5.99</strong><br/>Carrot, celery, onion, garlic, red & yellow peppers, green beans, locally farmed squash, roasted chicken, lemon zest’s juice, rich chicken stock, herbs & spices, garnished with pecorino-romano cheese and scallions</p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
           }
         }
       },
