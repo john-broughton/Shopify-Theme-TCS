@@ -100,6 +100,7 @@
       "block_order": [
         "image_pxaVtT"
       ],
+      "disabled": true,
       "name": "t:labels.image_optional_slides",
       "settings": {
         "full_width": false,
