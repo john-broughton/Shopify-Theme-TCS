@@ -89,6 +89,7 @@
       "blocks": {
         "image_pxaVtT": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "link": "",
             "image": "shopify://shop_images/Bar_Menu_Print_Out_6.png",
@@ -114,8 +115,8 @@
           "type": "image",
           "settings": {
             "link": "",
-            "image": "shopify://shop_images/Bar_Menu_Print_Out_3.png",
-            "image_mobile": "shopify://shop_images/Bar_Menu_Print_Out_3_93e909fb-340b-4682-aa0c-8cd3386b2b5d.png"
+            "image": "shopify://shop_images/Bar_TV_Menu.png",
+            "image_mobile": "shopify://shop_images/Bar_TV_Menu_2571bdd5-c38c-42a0-99fd-8f590dde6356.png"
           }
         }
       },
