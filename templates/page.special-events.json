@@ -166,7 +166,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Trivia_Night_9_ab7d158c-4ecd-4ffe-89cf-5156b8c4db40.png",
+        "image": "shopify://shop_images/Trivia_Night_4_x_6_in_2.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "1st Friday of the Month",
@@ -187,6 +187,7 @@
     },
     "text_and_image_kCeTqw": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/june_2026_Burger_Night_2.png",
@@ -212,7 +213,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Knife_Sharpening_Calender_2_ea540ec4-52b5-4d53-a926-325ce164302f.png",
+        "image": "shopify://shop_images/Knife_Sharpening_Calender_3.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
