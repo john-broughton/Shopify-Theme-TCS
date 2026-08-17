@@ -499,10 +499,9 @@
           "type": "testimonial",
           "settings": {
             "icon": "quote",
-            "testimonial": "<p>reviews are neat</p>",
-            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
-            "author": "poppy",
-            "author_info": "Simpsonville, SC"
+            "testimonial": "<p>Valerie was very helpful showing us cooktops and explaining features. She has been most helpful in this entire process and we agreed to the purchase of the Wolf cooktop. She is currently helping us with the installation.</p><p>I appreciate her kindness and thought that you should know what a great sales associate you have in Valerie!</p>",
+            "author": "Jim F.",
+            "author_info": ""
           }
         }
       },
