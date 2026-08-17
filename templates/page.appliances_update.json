@@ -481,9 +481,8 @@
           "type": "testimonial",
           "settings": {
             "icon": "quote",
-            "testimonial": "<p>i'm a review!</p>",
-            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
-            "author": "customer",
+            "testimonial": "<p>Michael sold me an incredible dishwasher. Great service and they have a wonderful selection in the store.</p>",
+            "author": "Max H.",
             "author_info": "Greenville, SC"
           }
         },
