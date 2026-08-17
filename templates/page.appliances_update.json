@@ -490,10 +490,9 @@
           "type": "testimonial",
           "settings": {
             "icon": "quote",
-            "testimonial": "<p>i'm a review!!</p>",
-            "image": "shopify://shop_images/dog-puppy-on-garden-royalty-free-image-1586966191.avif",
-            "author": "bill",
-            "author_info": "Mauldin, SC"
+            "testimonial": "<p>We purchased several appliances from the Cook’s Station and could not be more pleased. When selecting our appliances John went above and beyond to make sure a few niche features we wanted were available on the models we were considering. Valerie and Michael were lovely to work with for payments, delivery, and service, making absolutely no fuss when we needed some appliances installed on different days.<br/><br/>The team has been a joy to work with throughout the whole process and I know if we have any issues or concerns they will be addressed quickly and with care.</p>",
+            "author": "Kate G.",
+            "author_info": ""
           }
         },
         "testimonial_GCe6pE": {
