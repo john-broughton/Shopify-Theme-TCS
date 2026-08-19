@@ -83,12 +83,32 @@
     "testimonials_MACaWt": {
       "type": "testimonials",
       "blocks": {
-        "testimonial_giTACh": {
+        "testimonial_XbpAmU": {
           "type": "testimonial",
           "settings": {
             "icon": "none",
-            "testimonial": "<h2><strong>Carlos Baez</strong></h2><p>Chef Carlos Baez is the founder of Pride & Joy Provisions, creating private dinners, pop-ups, and cooking classes centered around memorable culinary experiences. After more than 20 years in professional kitchens, including leadership roles at The Anchorage and as Executive Chef of Mr. Crisp, his cooking has evolved into a style he describes as bold, vibrant, with calculated restraint. Guided by seasonal ingredients and global influences, he believes food should create lasting memories.<br/><br/></p>",
-            "image": "shopify://shop_images/Chef_Carlos_Baez.png",
+            "testimonial": "<h2>Tazia Young</h2><p>Chef Tazia Young is a talented culinary professional who graduated from Greenville Technical College with a major in culinary arts. Over the past three years at The Cook's Station, Tazia contributed her skills both in the café and as a retail associate. Chef Tazia's true passion lies in cooking, and she takes great pride in bringing new, fresh, and exciting classes to the schedule. With a deep love for European, African, and Caribbean cuisine, Chef Tazia continuously strives to expand her culinary horizons. Keep an eye out for her at many future classes—she's sure to bring something special to the table!</p>",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Headshots__25.png",
+            "author": "",
+            "author_info": ""
+          }
+        },
+        "testimonial_4MMJnU": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h2>Craig Kuhns</h2><p>With over 25 years of culinary experience, Chef Craig Kuhns began his journey in Charleston, SC, after graduating from Johnson & Wales University. As the Charleston food scene blossomed, Craig honed his craft under the guidance of mentor Chef Ken Vedrinski at Trattoria Lucca, where he developed a deep passion for Italian cuisine and fine dining. His career in Charleston saw him working in some of the city's most prestigious restaurants, including The Charleston Grill, Palmetto Grill, Palmetto Café, and Basil Thai Restaurant.  Chef Craig's rich culinary background and passion for cooking continue to inspire those around him at The Cook's Station.</p>",
+            "image": "shopify://shop_images/Craig-Kuhns-profile-Paul-Mehaffey-photo-1160x653.png",
+            "author": "",
+            "author_info": ""
+          }
+        },
+        "testimonial_JbH7Ye": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h2>Daniel Cantrell</h2><p>Daniel Cantrell embarked on his culinary journey at the Culinary Institute of the Carolinas, where he honed his skills and developed a passion for cooking. After graduating, Daniel worked in some of Greenville's favorite restaurants, including The Lazy Goat, Stellas, and Fork & Plough, where he worked under the esteemed Chefs. Today, as the Chef de Cuisine at The Cook's Station Café, Daniel brings his creativity and expertise to every dish he prepares. If you've enjoyed a meal at our café downstairs, you've likely savored one of Daniel's incredible creations, showcasing his dedication to exceptional cuisine.</p>",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Headshots__22.png",
             "author": "",
             "author_info": ""
           }
@@ -113,41 +133,12 @@
             "author_info": ""
           }
         },
-        "testimonial_gciniR": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
-            "author": "Author's name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "testimonial_4MMJnU": {
+        "testimonial_giTACh": {
           "type": "testimonial",
           "settings": {
             "icon": "none",
-            "testimonial": "<h2>Craig Kuhns</h2><p>With over 25 years of culinary experience, Chef Craig Kuhns began his journey in Charleston, SC, after graduating from Johnson & Wales University. As the Charleston food scene blossomed, Craig honed his craft under the guidance of mentor Chef Ken Vedrinski at Trattoria Lucca, where he developed a deep passion for Italian cuisine and fine dining. His career in Charleston saw him working in some of the city's most prestigious restaurants, including The Charleston Grill, Palmetto Grill, Palmetto Café, and Basil Thai Restaurant.  Chef Craig's rich culinary background and passion for cooking continue to inspire those around him at The Cook's Station.</p>",
-            "image": "shopify://shop_images/Craig-Kuhns-profile-Paul-Mehaffey-photo-1160x653.png",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial_XbpAmU": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "testimonial": "<h2>Tazia Young</h2><p>Chef Tazia Young is a talented culinary professional who graduated from Greenville Technical College with a major in culinary arts. Over the past three years at The Cook's Station, Tazia contributed her skills both in the café and as a retail associate. Chef Tazia's true passion lies in cooking, and she takes great pride in bringing new, fresh, and exciting classes to the schedule. With a deep love for European, African, and Caribbean cuisine, Chef Tazia continuously strives to expand her culinary horizons. Keep an eye out for her at many future classes—she's sure to bring something special to the table!</p>",
-            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Headshots__25.png",
-            "author": "",
-            "author_info": ""
-          }
-        },
-        "testimonial_JbH7Ye": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "none",
-            "testimonial": "<h2>Daniel Cantrell</h2><p>Daniel Cantrell embarked on his culinary journey at the Culinary Institute of the Carolinas, where he honed his skills and developed a passion for cooking. After graduating, Daniel worked in some of Greenville's favorite restaurants, including The Lazy Goat, Stellas, and Fork & Plough, where he worked under the esteemed Chefs. Today, as the Chef de Cuisine at The Cook's Station Café, Daniel brings his creativity and expertise to every dish he prepares. If you've enjoyed a meal at our café downstairs, you've likely savored one of Daniel's incredible creations, showcasing his dedication to exceptional cuisine.</p>",
-            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Headshots__22.png",
+            "testimonial": "<h2><strong>Carlos Baez</strong></h2><p>Chef Carlos Baez is the founder of Pride & Joy Provisions, creating private dinners, pop-ups, and cooking classes centered around memorable culinary experiences. After more than 20 years in professional kitchens, including leadership roles at The Anchorage and as Executive Chef of Mr. Crisp, his cooking has evolved into a style he describes as bold, vibrant, with calculated restraint. Guided by seasonal ingredients and global influences, he believes food should create lasting memories.<br/><br/></p>",
+            "image": "shopify://shop_images/Chef_Carlos_Baez.png",
             "author": "",
             "author_info": ""
           }
@@ -164,13 +155,12 @@
         }
       },
       "block_order": [
-        "testimonial_giTACh",
+        "testimonial_XbpAmU",
+        "testimonial_4MMJnU",
+        "testimonial_JbH7Ye",
         "testimonial_qQHbeF",
         "testimonial_JRnWLV",
-        "testimonial_gciniR",
-        "testimonial_4MMJnU",
-        "testimonial_XbpAmU",
-        "testimonial_JbH7Ye",
+        "testimonial_giTACh",
         "testimonial_LauraFernandez"
       ],
       "settings": {
