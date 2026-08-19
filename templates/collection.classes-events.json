@@ -93,7 +93,27 @@
             "author_info": ""
           }
         },
+        "testimonial_giTACh": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h2><strong>Carlos Baez</strong></h2><p>Chef Carlos Baez is the founder of Pride & Joy Provisions, creating private dinners, pop-ups, and cooking classes centered around memorable culinary experiences. After more than 20 years in professional kitchens, including leadership roles at The Anchorage and as Executive Chef of Mr. Crisp, his cooking has evolved into a style he describes as bold, vibrant, with calculated restraint. Guided by seasonal ingredients and global influences, he believes food should create lasting memories.<br/><br/></p>",
+            "image": "shopify://shop_images/Chef_Carlos_Baez.png",
+            "author": "",
+            "author_info": ""
+          }
+        },
         "testimonial_YCJmE9": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "none",
+            "testimonial": "<h2><strong>Stuart Christoff</strong></h2><p>Chef Stu joins Greenville SC, most recently from his home state of Michigan.Stuart is a native of the budding culinary scene in Grand Rapids Michigan where he earned his culinary arts degree and his BS in Hospitality before spending five years cooking in Thailand and Hong Kong. Stuart specializes in Asian cuisines although his early career as a chef was spent focused on Italian and French cooking. Before and after his wonder years in Asia, Stuart was a regular presenter on Grand Rapids local tv, taught a variety of cooking classes both large and small, held private events and when he wasn't exploring a new country or cooking you would find him hiking, riding a motorcycle, reading, and playing his guitar. Beyond the kitchen Stuart was a faithful high school Lacrosse coach - a sport he loved and enjoyed passing on down to young men learning how to lose and get back up to win - a truth applicable to culinary arts no question.<br/><br/></p>",
+            "image": "shopify://shop_images/Chef_Stu.png",
+            "author": "",
+            "author_info": ""
+          }
+        },
+        "testimonial_qQHbeF": {
           "type": "testimonial",
           "settings": {
             "icon": "none",
@@ -107,8 +127,8 @@
           "type": "testimonial",
           "settings": {
             "icon": "none",
-            "testimonial": "<h2>Vince Bienish</h2><p>With over three decades of culinary experience, Chef Vince Bienish has cultivated a rich career that reflects his deep-rooted passion for food. Growing up in the Hudson Valley area of New York, Vince was heavily influenced by his family's cooking traditions, which trace back to Curinga, Italy. He honed his craft at the prestigious Culinary Institute of America, subsequently working his way through renowned hotels and local kitchens in New York City, Miami, and the Caribbean.  Since 2020, Chef Vince has brought his extensive experience and passion for food to The Cook's Station. Outside the kitchen, Vince enjoys traveling whenever possible and actively participates in numerous food and wine events. His dedication to the culinary arts continues to inspire both colleagues and customers alike.</p>",
-            "image": "shopify://shop_images/christa-rene-photography-143_websize.png",
+            "testimonial": "<h2>Kendall Baez</h2><p>Known as “the muscle” of Pride & Joy Provisions – a local private dining company she co-founded with her husband – Kendall has been in and out of professional kitchens since 2008.  Originally thinking she would graduate, go to law school, and eventually change the world through government policy, Kendall fell in love with the growing farm to table movement in Athens, GA, and saw the power of community building through beautiful food.  Kendall graduated college during the recession of 2008 and kept working a second shift in restaurants in the front-of-house in order to pay her rent.  After three years of baking at night and giving treats the next morning to her co-workers at the UGA library, her good friend Sarah opened an intimate (only 21 seats!), gourmet vegan restaurant and asked Kendall to man it with her.  In spite of not having any professional cooking experience nor being a vegan, Kendall played restaurant with Sarah for just over a year and helped her build quite a following.  After that Kendall moved to Atlanta to pursue her baking aspirations full-time at places like West Egg Cafe, Empire State South, Little Tart Bakeshop, Aria, and Aix in Atlanta, learning a broad repertoire of classic French technique mixed with the lore of Southern cake making.  Upon moving to Greenville with her husband and two small children, Kendall worked under Greg McPhee as pastry chef at the Anchorage and her husband, Carlos Baez, at Mr. Crisp, and did a stint working under Julian Loue at Rise to help develop recipes and their Thanksgiving pie program.  Lately, Kendall is primarily a mom of two active young boys who enjoys hiking whenever possible, reading, and baking gluten-free treats at home.</p>",
+            "image": "shopify://shop_images/IMG_7583.jpg",
             "author": "",
             "author_info": ""
           }
@@ -156,7 +176,9 @@
       },
       "block_order": [
         "testimonial_piAFAf",
+        "testimonial_giTACh",
         "testimonial_YCJmE9",
+        "testimonial_qQHbeF",
         "testimonial_JRnWLV",
         "testimonial_4MMJnU",
         "testimonial_XbpAmU",
