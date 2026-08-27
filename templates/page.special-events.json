@@ -118,13 +118,12 @@
     },
     "text_and_image_E94AcB": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_Aug_3_2026_12_25_01_PM.png",
+        "image": "shopify://shop_images/Fried_Chicken_Night_1.png",
         "image_mask": "none",
         "image2_mask": "none",
-        "subtitle": "August 11th  5:30pm-7:30pm",
+        "subtitle": "September 15th  5:30pm-7:30pm",
         "title": "Fried Chicken Night",
         "heading_size": "h2",
         "text": "<p>Golden, crispy, and cooked to perfection — our Fried Chicken and classic southern sides is everything you crave. Hand-breaded and fried until perfectly crisp, served hot and ready to enjoy. It’s simple, satisfying, and downright delicious.</p>",
