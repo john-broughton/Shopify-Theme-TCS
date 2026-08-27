@@ -165,10 +165,9 @@
     },
     "text_and_image_WUFFB4": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Trivia_Night_4_x_6_in_2.png",
+        "image": "shopify://shop_images/Trivia_Night_11.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "1st Friday of the Month",
@@ -191,11 +190,11 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/2026_Burger_Night_4.png",
+        "image": "shopify://shop_images/Burger_158972a6-5bd9-4882-b64c-2f09a8579a04.jpg",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "Last Tuesday of the Month!",
-        "title": "Burger Night-8/25",
+        "title": "Burger Night-9/29",
         "heading_size": "h2",
         "text": "<p>Grab your friends, bring your appetite, and get ready for a night of delicious bites & good vibes.<br/><br/>No tickets are needed to attend. Order at our café, and dine on our screened-in patio. Dinner service begins at 5:30 pm and continues until 7:30pm—or until we sell out! Always on the last Tuesday of every month! </p>",
         "button_label": "",
