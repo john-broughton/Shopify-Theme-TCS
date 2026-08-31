@@ -233,7 +233,7 @@
         "map_title": "Our retail store",
         "heading_size": "h2",
         "heading_position": "left",
-        "address": "<p><strong>515 Buncombe Street<br/>Greenville, SC 29601</strong></p><p><strong>M-F: 8:00AM - 8:00PM<br/>Saturday: 9:00AM - 8:00PM<br/>Sunday: 10:00AM - 5:00PM<br/><br/>Cafe Hours:<br/>8:00AM - 3:00PM<br/>Breakfast: 8:00AM-11:00AM<br/>Lunch: 11:00AM - 3:00PM<br/></strong><span style=\"text-decoration:underline\"><em><strong>Cafe is closed on Sundays</strong></em></span><strong><br/><br/>Appliance Hours:<br/>Monday- Friday: 8am-5pm<br/>Saturday: 10-4pm<br/>Sunday: Closed </strong></p>",
+        "address": "<p><strong>515 Buncombe Street<br/>Greenville, SC 29601</strong></p><p><strong>M-F: 8:00AM - 8:00PM<br/>Saturday: 9:00AM - 8:00PM<br/>Sunday: 10:00AM - 5:00PM<br/><br/>Cafe Hours:<br/>8:00AM - 3:00PM<br/>Breakfast: 8:00AM-11:00AM<br/>Lunch: 11:00AM - 3:00PM<br/></strong><span style=\"text-decoration:underline\"><em><strong>Cafe is closed on Sundays</strong></em></span><strong><br/><br/>Appliance Hours:<br/>Monday- Friday: 8:00 AM-5:00 PM<br/>Saturday: 9:00 AM -3:00 PM<br/>Sunday: Closed </strong></p>",
         "map_address": "515 BUNCOMBE ST. GREENVILLE, SC 29601",
         "api_key": "",
         "show_button": false,
