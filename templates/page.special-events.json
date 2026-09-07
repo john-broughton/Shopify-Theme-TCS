@@ -190,7 +190,7 @@
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Burger_158972a6-5bd9-4882-b64c-2f09a8579a04.jpg",
+        "image": "shopify://shop_images/2026_Burger_Night_6.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "Last Tuesday of the Month!",
