@@ -8,46 +8,196 @@
 
   Usage:
     {% render 'block-quantity-selector', block: block %}
+
+  MODIFIED: caps the quantity at the variant's available inventory when
+  inventory is tracked by Shopify and the policy is 'deny'. Prevents
+  customers selecting a quantity that will be reduced at checkout.
 {%- endcomment -%}
 
 {%- liquid
   assign product = section.settings.product | default: product
   assign form_id = 'product-form-' | append: section.id
+  assign current_variant = current_variant | default: product.selected_or_first_available_variant
+
+  # ---------------------------------------------------------------
+  # Set to true to cap ONLY event products, leaving physical
+  # products with the default uncapped behaviour.
+  # ---------------------------------------------------------------
+  assign limit_to_event_products = false
+
+  assign cap_this_product = true
+  if limit_to_event_products and product.type != 'Event'
+    assign cap_this_product = false
+  endif
+
+  # Only cap when Shopify tracks inventory AND we deny overselling
+  assign initial_max = blank
+  if cap_this_product
+    if current_variant.inventory_management == 'shopify' and current_variant.inventory_policy != 'continue' and current_variant.inventory_quantity > 0
+      assign initial_max = current_variant.inventory_quantity
+    endif
+  endif
+
+  assign variants_with_inventory_tracking = product.variants | where: 'inventory_management', 'shopify'
 -%}
+
+{%- capture qty_inventories_json -%}
+  {
+    {%- for variant in variants_with_inventory_tracking -%}
+      "{{- variant.id -}}": {
+        "quantity": {{- variant.inventory_quantity | default: 0 -}},
+        "policy": "{{- variant.inventory_policy | default: false -}}"
+      }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  }
+{%- endcapture -%}
+
 <block-quantity-selector class="product-block" {{ block.shopify_attributes }}>
-  <div class="product__quantity">
-    <label for="Quantity-{{ section.id }}-{{ product.id }}">{{ 'labels.quantity' | t }}</label>
-    <div class="js-qty__wrapper">
-      <input
-        type="text"
-        id="Quantity-{{ section.id }}-{{ product.id }}"
-        class="js-qty__num"
-        value="1"
-        min="1"
-        aria-label="quantity"
-        pattern="[0-9]*"
-        form="{{ form_id }}"
-        name="quantity"
-      >
-      <button
-        type="button"
-        class="js-qty__adjust js-qty__adjust--minus"
-        aria-label="{{ 'actions.reduce_item_quantity' | t }}"
-      >
-        {% render 'icon', name: 'minus' %}
-        <span class="icon__fallback-text visually-hidden" aria-hidden="true">&minus;</span>
-      </button>
-      <button
-        type="button"
-        class="js-qty__adjust js-qty__adjust--plus"
-        aria-label="{{ 'actions.increase_item_quantity' | t }}"
-      >
-        {% render 'icon', name: 'plus' %}
-        <span class="icon__fallback-text visually-hidden" aria-hidden="true">+</span>
-      </button>
+  <quantity-max
+    style="display: contents"
+    data-product-id="{{ product.id }}"
+    data-enabled="{{ cap_this_product }}"
+  >
+    <div class="product__quantity">
+      <label for="Quantity-{{ section.id }}-{{ product.id }}">{{ 'labels.quantity' | t }}</label>
+      <div class="js-qty__wrapper">
+        <input
+          type="text"
+          id="Quantity-{{ section.id }}-{{ product.id }}"
+          class="js-qty__num"
+          value="1"
+          min="1"
+          {%- if initial_max != blank %}
+            max="{{ initial_max }}"
+          {%- endif %}
+          aria-label="quantity"
+          pattern="[0-9]*"
+          form="{{ form_id }}"
+          name="quantity"
+        >
+        <button
+          type="button"
+          class="js-qty__adjust js-qty__adjust--minus"
+          aria-label="{{ 'actions.reduce_item_quantity' | t }}"
+        >
+          {% render 'icon', name: 'minus' %}
+          <span class="icon__fallback-text visually-hidden" aria-hidden="true">&minus;</span>
+        </button>
+        <button
+          type="button"
+          class="js-qty__adjust js-qty__adjust--plus"
+          aria-label="{{ 'actions.increase_item_quantity' | t }}"
+        >
+          {% render 'icon', name: 'plus' %}
+          <span class="icon__fallback-text visually-hidden" aria-hidden="true">+</span>
+        </button>
+      </div>
     </div>
-  </div>
+
+    <script type="application/json" data-qty-inventories-json>
+      {{- qty_inventories_json -}}
+    </script>
+  </quantity-max>
 </block-quantity-selector>
+
+<script type="module">
+  import { EVENTS, subscribe } from '@archetype-themes/utils/pubsub'
+
+  if (!customElements.get('quantity-max')) {
+    class QuantityMax extends HTMLElement {
+      connectedCallback() {
+        if (this.dataset.enabled !== 'true') return
+
+        this.productId = this.dataset.productId
+        this.input = this.querySelector('.js-qty__num')
+        this.plusButton = this.querySelector('.js-qty__adjust--plus')
+
+        if (!this.input) return
+
+        try {
+          this.inventories = JSON.parse(this.querySelector('[data-qty-inventories-json]').textContent)
+        } catch (e) {
+          this.inventories = {}
+        }
+
+        const initial = this.input.getAttribute('max')
+        this.max = initial ? parseInt(initial, 10) : null
+        this.refreshButtonState()
+
+        // Clamp anything typed directly into the field
+        this.input.addEventListener('input', this.clamp.bind(this))
+        this.input.addEventListener('change', this.clamp.bind(this))
+
+        // Intercept the "+" click in the capture phase, before the
+        // theme's own stepper handler runs.
+        this.addEventListener(
+          'click',
+          (event) => {
+            if (!event.target.closest('.js-qty__adjust--plus')) return
+            if (this.max === null) return
+
+            const current = parseInt(this.input.value, 10) || 1
+            if (current >= this.max) {
+              event.preventDefault()
+              event.stopPropagation()
+              this.input.value = this.max
+              this.refreshButtonState()
+            }
+          },
+          true
+        )
+
+        // Ticket types / variants have their own inventory
+        subscribe(`${EVENTS.variantChange}:${this.productId}`, this.updateMax.bind(this))
+      }
+
+      updateMax(event) {
+        const variant = event.detail.variant
+        this.max = null
+
+        if (variant) {
+          const inventory = this.inventories[variant.id]
+          if (inventory && inventory.policy !== 'continue' && inventory.quantity > 0) {
+            this.max = inventory.quantity
+          }
+        }
+
+        if (this.max === null) {
+          this.input.removeAttribute('max')
+        } else {
+          this.input.setAttribute('max', this.max)
+        }
+
+        this.clamp()
+        this.refreshButtonState()
+      }
+
+      clamp() {
+        if (this.max === null) return
+
+        const current = parseInt(this.input.value, 10)
+        if (!isNaN(current) && current > this.max) {
+          this.input.value = this.max
+        }
+
+        this.refreshButtonState()
+      }
+
+      refreshButtonState() {
+        if (!this.plusButton) return
+
+        const current = parseInt(this.input.value, 10) || 1
+        const atMax = this.max !== null && current >= this.max
+
+        this.plusButton.classList.toggle('is-disabled', atMax)
+        this.plusButton.setAttribute('aria-disabled', atMax ? 'true' : 'false')
+      }
+    }
+
+    customElements.define('quantity-max', QuantityMax)
+  }
+</script>
+
 <script type="module">
   import 'components/block-quantity-selector'
 </script>

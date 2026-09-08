@@ -6,3 +6,7 @@
   font-weight: bold;
   font-size: var(--typeBaseSize);
 }
+.js-qty__adjust--plus.is-disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
