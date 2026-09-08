@@ -47,28 +47,6 @@
         "autoplay_speed": 7
       }
     },
-    "text_and_image_eRxf3C": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_Sep_8_2026_11_06_47_AM.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "9/11 at 5:30pm",
-        "title": "BINGO Night",
-        "heading_size": "h2",
-        "text": "<p>It's BINGO time! Come out for a fun-filled Friday night at The Cook's Station at 5:30pm for our first BINGO! We will be hosting 6 rounds, including music & gadget bingo.<br/><br/>Come early to ensure your seat and enjoy Supper at The Station with a cold drink from our bar. See you there!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "3",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "text_and_image_RGbyfA": {
       "type": "text-and-image",
       "name": "t:labels.image_with_text",
@@ -103,6 +81,28 @@
         "title": "Sunday Brunch 9/6",
         "heading_size": "h2",
         "text": "<p>We’ll be serving up our favorite brunch classics alongside seasonal specials, perfect for a leisurely late morning with friends, family, or a cozy solo treat. Whether you’re craving something sweet, savory, or a little of both, our brunch menu has you covered.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "3",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "text_and_image_eRxf3C": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_Sep_8_2026_11_06_47_AM.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "9/11 at 5:30pm",
+        "title": "BINGO Night",
+        "heading_size": "h2",
+        "text": "<p>It's BINGO time! Come out for a fun-filled Friday night at The Cook's Station at 5:30pm for our first BINGO! We will be hosting 6 rounds, including music & gadget bingo.<br/><br/>Come early to ensure your seat and enjoy Supper at The Station with a cold drink from our bar. See you there!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -270,9 +270,9 @@
   "order": [
     "main",
     "1644519722c7610927",
-    "text_and_image_eRxf3C",
     "text_and_image_RGbyfA",
     "text_and_image_yaEnXV",
+    "text_and_image_eRxf3C",
     "text_and_image_E94AcB",
     "text_and_image_WUFFB4",
     "text_and_image_kCeTqw",
