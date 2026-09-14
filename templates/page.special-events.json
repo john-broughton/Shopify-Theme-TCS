@@ -95,6 +95,7 @@
     },
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_Sep_8_2026_11_06_47_AM.png",
         "image_mask": "none",
@@ -232,6 +233,7 @@
     },
     "text_and_image_YjefMa": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Saturday_Sip_Shop_3_c7364aa1-f36b-4a3e-87a5-14c67c0546d8.png",
