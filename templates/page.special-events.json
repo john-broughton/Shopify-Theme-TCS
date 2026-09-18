@@ -118,6 +118,7 @@
     },
     "text_and_image_E94AcB": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Fried_Chicken_Night_1.png",
@@ -273,12 +274,12 @@
     "main",
     "1644519722c7610927",
     "text_and_image_RGbyfA",
+    "text_and_image_nB87tT",
     "text_and_image_yaEnXV",
     "text_and_image_eRxf3C",
     "text_and_image_E94AcB",
     "text_and_image_WUFFB4",
     "text_and_image_kCeTqw",
-    "text_and_image_nB87tT",
     "text_and_image_YCtiEh",
     "text_and_image_YjefMa",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
