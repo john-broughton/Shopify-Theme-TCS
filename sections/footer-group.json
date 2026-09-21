@@ -43,12 +43,13 @@
         "footer-1",
         "footer-2"
       ],
+      "custom_css": [],
       "settings": {
         "show_newsletter": true,
         "newsletter_richtext": "<p>Subscribe today to hear first about our sales</p>",
         "footer_main_menu": true,
-        "show_copyright": false,
-        "copyright_text": "",
+        "show_copyright": true,
+        "copyright_text": "515 Buncombe St, Greenville, SC 29601 · 864.250.0091",
         "policies_menu": ""
       }
     }
