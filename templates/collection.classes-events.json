@@ -64,14 +64,22 @@
         "heading_eaaWEp": {
           "type": "heading",
           "settings": {
-            "title": "October Classes Are Live! November Classes Live October 1st. Want to join a class but see that it's sold out? No worries! Simply click on the class you're interested in and select the “Add Me to Waitlist” button to be notified if a spot opens up.",
+            "title": "October Classes Are Live! November Classes Live October 1st.",
             "heading_size": "h3"
+          }
+        },
+        "text_eeiRt7": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Want to join a class but see that it's sold out? No worries! Simply click on the class you're interested in and select the “Add Me to Waitlist” button to be notified if a spot opens up.</p>"
           }
         }
       },
       "block_order": [
         "heading_GigDbX",
-        "heading_eaaWEp"
+        "heading_eaaWEp",
+        "text_eeiRt7"
       ],
       "settings": {
         "align_text": "center",
