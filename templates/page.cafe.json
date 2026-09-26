@@ -119,7 +119,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/long_skinny_cafe_menu_Fall_2026_2.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2026_3.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -132,7 +132,7 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/long_skinny_cafe_menu_Fall_2026_3.png",
+            "image": "shopify://shop_images/long_skinny_cafe_menu_Spring_2026_1.png",
             "image_mask": "none",
             "image_width": 540,
             "title": "",
@@ -159,7 +159,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Today's Specials - 09/25",
+            "title": "Today's Specials - 09/26",
             "heading_size": "h2"
           }
         },
@@ -167,7 +167,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toast  </p><p><strong>FRIED BOLOGNA SANDWICH- $12.99</strong><br/>Crispy thick cut bologna, bacon, egg, white American cheese, lusty monk aioli, on thin sourdough bread </p><p><strong>AHI TUNA BURGER- $14.99</strong><br/>Seared Tuna, Bibb lettuce, tomato, pickles, mustard BBQ shallot aioli on brioche bun  <br/><br/><strong>GYRO WRAP- $13.99</strong><br/>Gyro meat, tomato, cucumber, onion, garlic aioli greens, feta, on a spinach wrap</p><p><strong>CREAMY TOMATO SOUP- $5.99</strong><br/>Roasted tomatoes, peppers, onions, garlic, fresh herbs, heavy cream, spices, lemon, garnished with croutons, basil, and pecorino Romano cheese </p><p><strong>SHRIMP AND SAUSAGE GUMBO- $5.99</strong><br/>Andouille sausage, shrimp, peppers, onion, celery, dark roux, chicken stock, garnished with rice and scallions </p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
+            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Chicken, celery, onion, greens, dried cherries, pecan dust, mayo-based dressing, pickled red onion, on sourdough toast  </p><p><strong>FRIED BOLOGNA SANDWICH- $12.99</strong><br/>Crispy thick cut bologna, bacon, egg, white American cheese, lusty monk aioli, on thin sourdough bread </p><p><strong>AHI TUNA BURGER- $14.99</strong><br/>Seared Tuna, Bibb lettuce, tomato, pickles, mustard BBQ shallot aioli on brioche bun  <br/><br/><strong>GYRO WRAP- $13.99</strong><br/>Gyro meat, tomato, cucumber, onion, garlic aioli greens, feta, on a spinach wrap</p><p><strong>SHORT RIB DIP- $13.99</strong><br/>Braised short rib, lusty monk aioli, swiss cheese, on a hoagie roll</p><p><strong>SHRIMP AND SAUSAGE GUMBO- $5.99</strong><br/>Andouille sausage, shrimp, peppers, onion, celery, dark roux, chicken stock, garnished with rice and scallions </p><p><strong>**CONTAINS NUTS </strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
           }
         }
       },
