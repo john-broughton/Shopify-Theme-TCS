@@ -115,24 +115,7 @@
         {%- capture image_classes -%}
             hide {% if product_zoom_enable %}photoswipe__image{% endif %}
           {%- endcapture -%}
-        {%-
-          render 'image-element',
-          img: media.preview_image,
-          type: 'photoswipe',
-          classes: image_classes,
-          alt: media.alt | escape | split: '#' | first,
-          widths: '900',
-          product_zoom_size: product_zoom_size,
-          loopIndex: loopIndex,
-          media: media,
-          media_width: media_width,
-          media_height: media_height,
-          sizes: sizes,
-          loading: loading,
-          sizeVariable: sizeVariable,
-          fallback: fallback,
-          animation: animation,
-        -%}
+        {%- render 'image-element', img: media.preview_image, type: 'photoswipe', classes: image_classes, alt: media.alt, split: '#', widths: '900', product_zoom_size: product_zoom_size, loopIndex: loopIndex, media: media, media_width: media_width, media_height: media_height, sizes: sizes, loading: loading, sizeVariable: sizeVariable, fallback: fallback, animation: animation -%}
       </div>
       <button class="hide btn btn--circle btn--static product-single__close-media">
         {% render 'icon', name: 'close' %}
@@ -155,24 +138,7 @@
             assign fallback = '75vw'
           endif
         -%}
-        {%-
-          render 'image-element',
-          img: media.preview_image,
-          type: 'photoswipe',
-          classes: image_classes,
-          alt: media.alt | escape | split: '#' | first,
-          widths: '360, 540, 720, 900, 1080',
-          product_zoom_size: product_zoom_size,
-          loopIndex: loopIndex,
-          media: media,
-          media_width: media_width,
-          media_height: media_height,
-          sizes: sizes,
-          loading: loading,
-          sizeVariable: sizeVariable,
-          fallback: fallback,
-          animation: animation,
-        -%}
+        {%- render 'image-element', img: media.preview_image, type: 'photoswipe', classes: image_classes, alt: media.alt, split: '#', widths: '360, 540, 720, 900, 1080', product_zoom_size: product_zoom_size, loopIndex: loopIndex, media: media, media_width: media_width, media_height: media_height, sizes: sizes, loading: loading, sizeVariable: sizeVariable, fallback: fallback, animation: animation -%}
 
         {%- if product_zoom_enable and media.media_type == 'image' -%}
           <button
@@ -285,3 +251,60 @@
     {%- endif -%}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'image-element',
+              img: media.preview_image,
+              type: 'photoswipe',
+              classes: image_classes,
+              alt: media.alt | escape | split: '#' | first,
+              widths: '900',
+              product_zoom_size: product_zoom_size,
+              loopIndex: loopIndex,
+              media: media,
+              media_width: media_width,
+              media_height: media_height,
+              sizes: sizes,
+              loading: loading,
+              sizeVariable: sizeVariable,
+              fallback: fallback,
+              animation: animation,
+            -%}
+  to: "{%- render 'image-element', img: media.preview_image, type: 'photoswipe', classes:
+    image_classes, alt: media.alt, split: '#', widths: '900', product_zoom_size: product_zoom_size,
+    loopIndex: loopIndex, media: media, media_width: media_width, media_height: media_height,
+    sizes: sizes, loading: loading, sizeVariable: sizeVariable, fallback: fallback,
+    animation: animation -%}"
+  position: 3970..4343
+- from: |-
+    {%-
+              render 'image-element',
+              img: media.preview_image,
+              type: 'photoswipe',
+              classes: image_classes,
+              alt: media.alt | escape | split: '#' | first,
+              widths: '360, 540, 720, 900, 1080',
+              product_zoom_size: product_zoom_size,
+              loopIndex: loopIndex,
+              media: media,
+              media_width: media_width,
+              media_height: media_height,
+              sizes: sizes,
+              loading: loading,
+              sizeVariable: sizeVariable,
+              fallback: fallback,
+              animation: animation,
+            -%}
+  to: "{%- render 'image-element', img: media.preview_image, type: 'photoswipe', classes:
+    image_classes, alt: media.alt, split: '#', widths: '360, 540, 720, 900, 1080',
+    product_zoom_size: product_zoom_size, loopIndex: loopIndex, media: media, media_width:
+    media_width, media_height: media_height, sizes: sizes, loading: loading, sizeVariable:
+    sizeVariable, fallback: fallback, animation: animation -%}"
+  position: 5140..5534
+{% endcomment %}

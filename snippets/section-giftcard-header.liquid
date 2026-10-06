@@ -52,34 +52,8 @@
         {%- capture mobile_widths -%}{{ mobile_logo_width }}, {{ mobile_logo_width | times: 2 }}{%- endcapture -%}
         {%- capture mobile_style -%}max-height: {{ mobile_logo_width | divided_by: logo.aspect_ratio }}px;max-width: {{ mobile_logo_width }}px;{%- endcapture -%}
 
-        {%-
-          render 'image-element',
-          img: logo,
-          img_width: width,
-          img_height: height,
-          img_tag_width: desktop_logo_width,
-          sizes: sizes,
-          widths: widths,
-          style: style,
-          classes: 'small--hide',
-          loading: 'eager',
-          alt: logo.alt | default: shop.name,
-          context: 'giftcard'
-        -%}
-        {%-
-          render 'image-element',
-          img: logo,
-          img_width: mobile_width,
-          img_height: mobile_height,
-          img_tag_width: mobile_logo_width,
-          sizes: mobile_sizes,
-          widths: mobile_widths,
-          style: mobile_style,
-          classes: 'medium-up--hide',
-          loading: 'eager',
-          alt: logo.alt | default: shop.name,
-          context: 'giftcard'
-        -%}
+        {%- render 'image-element', img: logo, img_width: width, img_height: height, img_tag_width: desktop_logo_width, sizes: sizes, widths: widths, style: style, classes: 'small--hide', loading: 'eager', alt: logo.alt, default: shop.name, context: 'giftcard' -%}
+        {%- render 'image-element', img: logo, img_width: mobile_width, img_height: mobile_height, img_tag_width: mobile_logo_width, sizes: mobile_sizes, widths: mobile_widths, style: mobile_style, classes: 'medium-up--hide', loading: 'eager', alt: logo.alt, default: shop.name, context: 'giftcard' -%}
       </a>
     {%- else -%}
       <a href="{{ routes.root_url }}">{{ shop.name }}</a>
@@ -88,3 +62,50 @@
 
   <div class="shop-url">{{ shop.url }}</div>
 </header>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%-
+              render 'image-element',
+              img: logo,
+              img_width: width,
+              img_height: height,
+              img_tag_width: desktop_logo_width,
+              sizes: sizes,
+              widths: widths,
+              style: style,
+              classes: 'small--hide',
+              loading: 'eager',
+              alt: logo.alt | default: shop.name,
+              context: 'giftcard'
+            -%}
+  to: "{%- render 'image-element', img: logo, img_width: width, img_height: height,
+    img_tag_width: desktop_logo_width, sizes: sizes, widths: widths, style: style,
+    classes: 'small--hide', loading: 'eager', alt: logo.alt, default: shop.name, context:
+    'giftcard' -%}"
+  position: 2448..2704
+- from: |-
+    {%-
+              render 'image-element',
+              img: logo,
+              img_width: mobile_width,
+              img_height: mobile_height,
+              img_tag_width: mobile_logo_width,
+              sizes: mobile_sizes,
+              widths: mobile_widths,
+              style: mobile_style,
+              classes: 'medium-up--hide',
+              loading: 'eager',
+              alt: logo.alt | default: shop.name,
+              context: 'giftcard'
+            -%}
+  to: "{%- render 'image-element', img: logo, img_width: mobile_width, img_height:
+    mobile_height, img_tag_width: mobile_logo_width, sizes: mobile_sizes, widths:
+    mobile_widths, style: mobile_style, classes: 'medium-up--hide', loading: 'eager',
+    alt: logo.alt, default: shop.name, context: 'giftcard' -%}"
+  position: 2713..3007
+{% endcomment %}
