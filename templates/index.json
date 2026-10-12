@@ -394,6 +394,27 @@
         "enable_video_looping": true,
         "product_video_style": "muted"
       }
+    },
+    "advanced_content_qjh7wp": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_6XXiWP": {
+          "type": "liquid",
+          "settings": {
+            "code": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"HomeGoodsStore\",\n  \"@id\": \"https://www.thecooksstation.com/#store\",\n  \"name\": \"The Cook's Station\",\n  \"description\": \"Family-owned kitchen store in Greenville, SC offering cookware, kitchen gadgets, gifts, wine, an appliance showroom, cooking classes, a gift registry and a café.\",\n  \"url\": \"https://www.thecooksstation.com\",\n  \"telephone\": \"+1-864-250-0091\",\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"515 Buncombe St\",\n    \"addressLocality\": \"Greenville\",\n    \"addressRegion\": \"SC\",\n    \"postalCode\": \"29601\",\n    \"addressCountry\": \"US\"\n  },\n  \"geo\": {\n    \"@type\": \"GeoCoordinates\",\n    \"latitude\": 34.8560775,\n    \"longitude\": -82.4031907\n  },\n  \"hasMap\": \"https://www.google.com/maps/search/?api=1&query=The+Cook%27s+Station+515+Buncombe+St+Greenville+SC+29601\",\n  \"areaServed\": [\n    {\"@type\": \"City\", \"name\": \"Greenville, SC\"},\n    {\"@type\": \"City\", \"name\": \"Greer, SC\"},\n    {\"@type\": \"City\", \"name\": \"Spartanburg, SC\"},\n    {\"@type\": \"City\", \"name\": \"Anderson, SC\"},\n    {\"@type\": \"City\", \"name\": \"Easley, SC\"},\n    {\"@type\": \"City\", \"name\": \"Travelers Rest, SC\"},\n    {\"@type\": \"Place\", \"name\": \"Lake Keowee, SC\"},\n    {\"@type\": \"Place\", \"name\": \"Lake Hartwell\"},\n    {\"@type\": \"Place\", \"name\": \"The Cliffs communities, SC\"},\n    {\"@type\": \"AdministrativeArea\", \"name\": \"Greenville County, SC\"},\n    {\"@type\": \"AdministrativeArea\", \"name\": \"Spartanburg County, SC\"},\n    {\"@type\": \"AdministrativeArea\", \"name\": \"Anderson County, SC\"},\n    {\"@type\": \"AdministrativeArea\", \"name\": \"Pickens County, SC\"},\n    {\"@type\": \"AdministrativeArea\", \"name\": \"Oconee County, SC\"}\n  ],\n  \"openingHoursSpecification\": [\n    {\"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": [\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"], \"opens\": \"08:00\", \"closes\": \"20:00\"},\n    {\"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": \"Saturday\", \"opens\": \"09:00\", \"closes\": \"20:00\"},\n    {\"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": \"Sunday\", \"opens\": \"10:00\", \"closes\": \"17:00\"}\n  ],\n  \"department\": [\n    {\n      \"@type\": \"ApplianceStore\",\n      \"name\": \"The Cook's Station Appliance Showroom\",\n      \"url\": \"https://www.thecooksstation.com/pages/appliances\",\n      \"telephone\": \"+1-864-250-0091\",\n      \"openingHoursSpecification\": [\n        {\"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": [\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"], \"opens\": \"08:00\", \"closes\": \"17:00\"},\n        {\"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": \"Saturday\", \"opens\": \"09:00\", \"closes\": \"15:00\"}\n      ]\n    },\n    {\n      \"@type\": \"CafeOrCoffeeShop\",\n      \"name\": \"The Cook's Station Café\",\n      \"servesCuisine\": \"Breakfast, Lunch\",\n      \"openingHoursSpecification\": [\n        {\"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": [\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\"], \"opens\": \"08:00\", \"closes\": \"15:00\"},\n        {\"@type\": \"OpeningHoursSpecification\", \"dayOfWeek\": \"Saturday\", \"opens\": \"09:00\", \"closes\": \"15:00\"}\n      ]\n    }\n  ],\n  \"sameAs\": [\n    \"https://www.facebook.com/thecooksstation\",\n    \"https://www.instagram.com/thecooksstation/\",\n    \"https://www.linkedin.com/company/the-cook's-station\"\n  ]\n}\n</script>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_6XXiWP"
+      ],
+      "name": "t:labels.custom_content",
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
     }
   },
   "order": [
@@ -403,6 +424,7 @@
     "1644513838184e5981",
     "164452737700b970d9",
     "1644519110d4563504",
-    "16445322856406b896"
+    "16445322856406b896",
+    "advanced_content_qjh7wp"
   ]
 }
