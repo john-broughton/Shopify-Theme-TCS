@@ -72,14 +72,13 @@
     },
     "text_and_image_WUFFB4": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Prizes_snacks_and_good_vibes_await_2.png",
+        "image": "shopify://shop_images/Prizes_snacks_and_good_vibes_await_4.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Bingo Night- 10/9",
+        "title": "Bingo Night- 10/23",
         "heading_size": "h2",
         "text": "<p>Join us for an exciting night of <strong>BINGO at The Cook’s Station</strong>! Bring your friends and get ready for 6<strong> fun-filled rounds</strong> &nbsp;from 5:30pm-7:30pm.</p><p>While you play, enjoy our <strong>Supper at The Station menu </strong>along with a great selection of <strong>beer, wine, and soft drinks</strong> from our bar—perfect for sipping, snacking, and strategizing between rounds.&nbsp;</p>",
         "button_label": "",
@@ -96,6 +95,7 @@
     },
     "text_and_image_nB87tT": {
       "type": "text-and-image",
+      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
         "image": "shopify://shop_images/Turkey_Demo_Day_8.5x11.png",
@@ -142,6 +142,7 @@
     },
     "text_and_image_eRxf3C": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Trivia_Night_14.png",
         "image_mask": "none",
