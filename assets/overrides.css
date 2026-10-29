@@ -19,12 +19,6 @@
   color: #393939;
 }
 
-/* Selected: filled dark with white text */
-.variant-input-wrap input:checked + label:not(.color-swatch) {
-  background: #393939 !important;
-  color: #fff !important;
-}
-
 /* Out of stock: faded, dashed, crossed out */
 .variant-input-wrap label.disabled:not(.color-swatch) {
   opacity: 0.45;
@@ -37,11 +31,6 @@
 /* Thin dark ring so white and light colors show */
 .variant-input-wrap .color-swatch {
   box-shadow: 0 0 0 1px #393939 !important;
-}
-
-/* Selected: bold ring with a small gap */
-.variant-input-wrap input:checked + .color-swatch {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #393939 !important;
 }
 
 /* Out of stock: faded */
