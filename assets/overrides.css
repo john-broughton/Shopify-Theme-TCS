@@ -19,12 +19,6 @@
   color: #393939;
 }
 
-/* Out of stock: faded, dashed, crossed out */
-.variant-input-wrap label.disabled:not(.color-swatch) {
-  opacity: 0.45;
-  border-style: dashed !important;
-  text-decoration: line-through;
-}
 
 /* ===== COLOR SWATCHES ===== */
 
@@ -38,8 +32,38 @@
   opacity: 0.4;
 }
 
-/* ===== OUT-OF-STOCK SLASH (both types) ===== */
-.variant-input-wrap label.disabled:after {
-  border-color: #c0392b !important;
-  border-left-width: 3px !important;
+/* ===== OUT OF STOCK: TEXT BOXES ===== */
+.variant-input-wrap label.disabled:not(.color-swatch),
+.variant-input-wrap label.is-disabled:not(.color-swatch),
+.variant-input-wrap input.disabled + label:not(.color-swatch),
+.variant-input-wrap input:disabled + label:not(.color-swatch) {
+  color: #8a8a8a !important;
+  border-color: #b5b5b5 !important;
+  border-style: dashed !important;
+  text-decoration: line-through;
+  text-decoration-color: #c0392b;
+  text-decoration-thickness: 2px;
+  background-image: linear-gradient(
+    to top left,
+    transparent calc(50% - 1.5px),
+    #c0392b calc(50% - 1.5px),
+    #c0392b calc(50% + 1.5px),
+    transparent calc(50% + 1.5px)
+  ) !important;
+}
+
+/* Hide the theme's faint white slash */
+.variant-input-wrap label.disabled:after,
+.variant-input-wrap label.is-disabled:after,
+.variant-input-wrap input.disabled + label:after,
+.variant-input-wrap input:disabled + label:after {
+  display: none !important;
+}
+
+/* ===== OUT OF STOCK: COLOR SWATCHES ===== */
+.variant-input-wrap .color-swatch.disabled,
+.variant-input-wrap .color-swatch.is-disabled,
+.variant-input-wrap input.disabled + .color-swatch,
+.variant-input-wrap input:disabled + .color-swatch {
+  opacity: 0.4;
 }
