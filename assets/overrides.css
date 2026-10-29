@@ -11,59 +11,57 @@
   cursor: not-allowed;
 }
 
-/* ===== TEXT BOX VARIANTS ===== */
+/* ===== VARIANT OPTIONS ===== */
 
-/* Darker, thicker outline */
-.variant-input-wrap label:not(.color-swatch):not(.variant__label) {
+/* Text boxes: dark outline */
+.variant-input-wrap label.variant__button-label:not([data-color-swatch]) {
   border: 2px solid #393939 !important;
-  color: #393939;
+  color: #393939 !important;
 }
 
-
-/* ===== COLOR SWATCHES ===== */
-
-/* Thin dark ring so white and light colors show */
-.variant-input-wrap .color-swatch {
-  box-shadow: 0 0 0 1px #393939 !important;
+/* Color swatches: thin dark ring so light colors like White show */
+.variant-input-wrap label[data-color-swatch] {
+  border: 1px solid #393939 !important;
 }
 
-/* Out of stock: faded */
-.variant-input-wrap .color-swatch.disabled {
-  opacity: 0.4;
+/* Selected (both types): ring with a gap; color and text stay visible */
+.variant-input-wrap input[type="radio"]:checked + label {
+  outline: 2px solid #393939 !important;
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+.variant-input-wrap input[type="radio"]:checked + label:not([data-color-swatch]) {
+  font-weight: 700 !important;
 }
 
-/* ===== OUT OF STOCK: TEXT BOXES ===== */
-.variant-input-wrap label.disabled:not(.color-swatch),
-.variant-input-wrap label.is-disabled:not(.color-swatch),
-.variant-input-wrap input.disabled + label:not(.color-swatch),
-.variant-input-wrap input:disabled + label:not(.color-swatch) {
-  color: #8a8a8a !important;
-  border-color: #b5b5b5 !important;
+/* Sold out text boxes: gray dashed border and gray text */
+.variant-input-wrap input[data-disabled] + label:not([data-color-swatch]) {
   border-style: dashed !important;
-  text-decoration: line-through;
-  text-decoration-color: #c0392b;
-  text-decoration-thickness: 2px;
-  background-image: linear-gradient(
-    to top left,
-    transparent calc(50% - 1.5px),
-    #c0392b calc(50% - 1.5px),
-    #c0392b calc(50% + 1.5px),
-    transparent calc(50% + 1.5px)
-  ) !important;
+  border-color: #9a9a9a !important;
+  color: #8a8a8a !important;
 }
 
-/* Hide the theme's faint white slash */
-.variant-input-wrap label.disabled:after,
-.variant-input-wrap label.is-disabled:after,
-.variant-input-wrap input.disabled + label:after,
-.variant-input-wrap input:disabled + label:after {
-  display: none !important;
-}
-
-/* ===== OUT OF STOCK: COLOR SWATCHES ===== */
-.variant-input-wrap .color-swatch.disabled,
-.variant-input-wrap .color-swatch.is-disabled,
-.variant-input-wrap input.disabled + .color-swatch,
-.variant-input-wrap input:disabled + .color-swatch {
-  opacity: 0.4;
+/* Sold out (both types): washed out with a bold red slash */
+.variant-input-wrap input[data-disabled] + label::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  border: 0 !important;
+  transform: none !important;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top left,
+      transparent calc(50% - 1.5px),
+      #c0392b calc(50% - 1.5px),
+      #c0392b calc(50% + 1.5px),
+      transparent calc(50% + 1.5px)
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)) !important;
 }
