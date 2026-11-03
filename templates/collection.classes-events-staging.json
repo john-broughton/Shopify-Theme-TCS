@@ -317,7 +317,6 @@
         "img_height": 300,
         "show_stats": true,
         "collection": "calendar",
-        "accent": "#8A2B1D",
         "pad_top": 32,
         "pad_bottom": 8
       }
@@ -331,7 +330,8 @@
             "name": "Teaching Kitchen",
             "guests": "Up to [20] guests",
             "best_for": "Private cooking classes, team building, birthdays",
-            "price": "[From $XX per person]"
+            "price": "[From $XX per person]",
+            "image": "shopify://shop_images/education-kitchen-NEW.jpg"
           }
         },
         "space_patio": {
@@ -340,7 +340,8 @@
             "name": "Patio",
             "guests": "Up to [XX] guests",
             "best_for": "Holiday parties, rehearsal dinners, happy hours on our screened-in patio",
-            "price": "[From $XX per person]"
+            "price": "[From $XX per person]",
+            "image": "shopify://shop_images/outside_day_time.jpg"
           }
         },
         "space_cafe": {
@@ -349,7 +350,8 @@
             "name": "Café",
             "guests": "Up to [XX] guests",
             "best_for": "Brunches, showers, meetings",
-            "price": "[From $XX per person]"
+            "price": "[From $XX per person]",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg"
           }
         },
         "space_store": {
@@ -358,7 +360,8 @@
             "name": "Whole Store",
             "guests": "Up to [XX] guests",
             "best_for": "Large parties and corporate events",
-            "price": "[Minimum $X,XXX]"
+            "price": "[Minimum $X,XXX]",
+            "image": "shopify://shop_images/building-exterior_cooks-station_hogan-construction_street-view.jpg"
           }
         },
         "step_1": {
@@ -409,9 +412,10 @@
         "button_link": "/pages/host-with-us-contact-form",
         "email": "events@thecooksstation.com",
         "phone": "864.250.0091",
-        "accent": "#8A2B1D",
         "highlight": true,
-        "space_top": 24
+        "space_top": 0,
+        "band": true,
+        "card_button": "Ask about this space"
       }
     }
   },
@@ -420,9 +424,9 @@
     "slideshow_Kijrgd",
     "tcs_events_hero",
     "tcs_events_calendar_mkBgPV",
-    "tcs_private_events",
     "rich_text_7HWRjF",
     "testimonials_MACaWt",
+    "tcs_private_events",
     "advanced_content_PYYHmR",
     "main-collection",
     "recently-viewed",
