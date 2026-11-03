@@ -328,7 +328,7 @@
       // Phones: an upcoming list that starts today (month/week grids are too cramped).
       initialView: mobile ? 'listUpcoming' : 'dayGridMonth',
       headerToolbar: mobile ? { left: 'prev', center: 'title', right: 'next' } : { left: 'title', right: 'listThisWeek dayGridMonth timeGridWeek listMonth prev,next' },
-      buttonText: { month: 'month', week: 'week grid', list: 'list', listThisWeek: 'this week' },
+      buttonText: { month: 'month', week: 'week grid', listMonth: 'list' },
       views: {
         // "This week" = a simple list of the next 7 days, starting today.
         listThisWeek: { type: 'list', duration: { days: 7 }, dateIncrement: { days: 7 }, dateAlignment: 'day', buttonText: 'this week' },
