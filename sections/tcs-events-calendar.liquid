@@ -85,7 +85,12 @@
   #tcs-cal-{{ section.id }} .fc-list-event.s-sold .fc-list-event-title{text-decoration:line-through}
   #tcs-cal-{{ section.id }} .tcs-left{font-weight:700;margin-left:4px;font-size:.85em}
   #tcs-cal-{{ section.id }} .tcs-cal__pop{position:absolute;z-index:100;width:300px;max-width:calc(100% - 32px);background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.14);padding:22px;border-radius:6px;font-size:15px;line-height:1.5}
-  #tcs-cal-{{ section.id }} .tcs-cal__close{position:absolute;top:6px;right:10px;background:none;border:0;font-size:22px;cursor:pointer;line-height:1}
+  #tcs-cal-{{ section.id }} .tcs-cal__close{position:absolute;top:2px;right:2px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:0;font-size:26px;cursor:pointer;line-height:1;color:#252525}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-title{padding-right:28px}
+  #tcs-cal-{{ section.id }} .fc-event:focus-visible,#tcs-cal-{{ section.id }} .fc-list-event:focus-visible{outline:2px solid #252525;outline-offset:2px}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-img{display:none}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-img.is-ready{display:block}
+  @media (max-width:700px){#tcs-cal-{{ section.id }} .tcs-cal__pop{width:auto;left:16px !important;right:16px;max-width:none}#tcs-cal-{{ section.id }} .fc .fc-toolbar{flex-wrap:nowrap;gap:8px}#tcs-cal-{{ section.id }} .fc .fc-toolbar-title{font-size:20px;text-align:center}}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-img img{width:100%;height:auto;border-radius:4px;margin-bottom:10px}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-title{font-weight:600;font-size:18px;line-height:1.3;margin-bottom:4px}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-status{font-weight:700;margin-top:4px}
@@ -163,15 +168,17 @@
   }
 
   var pop = root.querySelector('.tcs-cal__pop');
-  function closePop() { pop.hidden = true; }
+  var lastEl = null;
+  function closePop() { if (pop.hidden) return; pop.hidden = true; if (lastEl && pop.contains(document.activeElement)) lastEl.focus(); }
   root.querySelector('.tcs-cal__close').addEventListener('click', closePop);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+  window.addEventListener('resize', place);
   document.addEventListener('click', function (e) {
     if (!pop.hidden && !pop.contains(e.target) && !e.target.closest('.fc-event')) closePop();
   });
 
   function showPop(info) {
-    info.jsEvent.preventDefault();
+    if (info.jsEvent) info.jsEvent.preventDefault();
     var ev = info.event, x = ev.extendedProps, p = x.p;
     var fmtDay = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
     var fmtTime = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' });
@@ -188,17 +195,30 @@
     st.textContent = labels[x.status] || '';
     if (x.status === 'sold') st.classList.add('is-sold');
     pop.querySelector('.tcs-cal__pop-private').style.display = p.private ? '' : 'none';
-    var img = pop.querySelector('.tcs-cal__pop-img');
-    if (p.image && !p.private) { img.querySelector('img').src = p.image; img.style.display = ''; } else { img.style.display = 'none'; }
+    var img = pop.querySelector('.tcs-cal__pop-img'), im = img.querySelector('img');
+    img.classList.remove('is-ready'); im.onload = null; im.removeAttribute('src');
+    if (p.image && !p.private) {
+      var want = p.image;
+      im.onload = function () { if (im.getAttribute('src') === want) { img.classList.add('is-ready'); place(); } };
+      im.alt = ev.title; im.setAttribute('src', want);
+    }
     var btn = pop.querySelector('.tcs-cal__pop-btn');
     btn.style.display = p.private ? 'none' : '';
     btn.href = p.url; btn.textContent = x.status === 'sold' ? 'Join the waitlist' : (x.status === 'free' && p.admission === 'Free RSVP' ? 'RSVP' : 'View event');
 
+    lastEl = info.el;
+    pop.setAttribute('aria-label', ev.title);
     pop.hidden = false;
-    var r = root.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
-    var left = Math.min(Math.max(8, info.jsEvent.clientX - r.left - w / 2), r.width - w - 8);
-    var top = info.jsEvent.clientY - r.top + 12;
-    if (info.jsEvent.clientY + h + 24 > window.innerHeight) top = info.jsEvent.clientY - r.top - h - 12;
+    place();
+    if (info.fromKeyboard) pop.querySelector('.tcs-cal__close').focus();
+  }
+  // Put the card right under (or above) the event that was clicked or tapped.
+  function place() {
+    if (pop.hidden || !lastEl) return;
+    var r = root.getBoundingClientRect(), e = lastEl.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+    var left = Math.min(Math.max(8, e.left + e.width / 2 - r.left - w / 2), r.width - w - 8);
+    var top = e.bottom - r.top + 8;
+    if (e.bottom + h + 16 > window.innerHeight && e.top - h - 8 > 70) top = e.top - r.top - h - 8;
     pop.style.left = left + 'px'; pop.style.top = Math.max(0, top) + 'px';
   }
 
@@ -207,14 +227,25 @@
     var loading = root.querySelector('.tcs-cal__loading');
     var mobile = window.matchMedia('(max-width: 700px)').matches;
     var cal = new FullCalendar.Calendar(grid, {
-      initialView: mobile ? 'listMonth' : 'dayGridMonth',
-      headerToolbar: { left: 'title', right: 'dayGridMonth timeGridWeek listMonth prev,next' },
+      // Phones: an upcoming list that starts today (month/week grids are too cramped).
+      initialView: mobile ? 'listUpcoming' : 'dayGridMonth',
+      headerToolbar: mobile ? { left: 'prev', center: 'title', right: 'next' } : { left: 'title', right: 'dayGridMonth timeGridWeek listMonth prev,next' },
       buttonText: { month: 'month', week: 'week', list: 'list' },
+      views: { listUpcoming: { type: 'list', duration: { weeks: 4 }, dateIncrement: { weeks: 4 } } },
+      // Week view: show the store's day, not midnight to 8am.
+      slotMinTime: '08:00:00', slotMaxTime: '22:00:00', allDaySlot: false,
       height: 'auto', eventDisplay: 'block', dayMaxEvents: false,
       eventTimeFormat: { hour: 'numeric', minute: '2-digit', meridiem: 'short' },
       eventClick: showPop,
       eventDidMount: function (info) {
-        var x = info.event.extendedProps;
+        var x = info.event.extendedProps, el = info.el, ev = info.event;
+        var when = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(ev.start);
+        var said = { open: '', few: ', only ' + x.p.seats + ' left', sold: ', sold out', free: ', free', private: '' };
+        el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button');
+        el.setAttribute('aria-label', ev.title + ', ' + when + (said[x.status] || ''));
+        el.addEventListener('keydown', function (k) {
+          if (k.key === 'Enter' || k.key === ' ') { k.preventDefault(); showPop({ event: ev, el: el, jsEvent: null, fromKeyboard: true }); }
+        });
         if (x.status === 'few') {
           var t = info.el.querySelector('.fc-event-title, .fc-list-event-title a');
           if (t) { var b = document.createElement('span'); b.className = 'tcs-left'; b.textContent = '· ' + x.p.seats + ' left'; t.appendChild(b); }
