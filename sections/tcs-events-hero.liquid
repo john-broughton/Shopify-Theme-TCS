@@ -32,11 +32,13 @@
 </div>
 
 <style>
-  #tcs-hero-{{ section.id }}{max-width:1100px;margin:0 auto;padding:{{ section.settings.pad_top }}px 16px {{ section.settings.pad_bottom }}px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+  #tcs-hero-{{ section.id }}{max-width:1100px;margin:0 auto;padding:{{ section.settings.pad_top }}px 16px {{ section.settings.pad_bottom }}px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:stretch}
   #tcs-hero-{{ section.id }} .tcs-hero__eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:{{ section.settings.accent }}}
-  #tcs-hero-{{ section.id }} .tcs-hero__title{margin:0 0 12px;font-size:clamp(34px,4.4vw,56px);line-height:1.05}
-  #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:18px;line-height:1.55;opacity:.8}
+  #tcs-hero-{{ section.id }} .tcs-hero__text{align-self:center}
+  #tcs-hero-{{ section.id }} .tcs-hero__title{margin:0 0 12px;font-size:clamp(28px,3.2vw,42px);line-height:1.12}
+  #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:16px;line-height:1.55}
   #tcs-hero-{{ section.id }} .tcs-hero__intro p{margin:0}
+  #tcs-hero-{{ section.id }} .tcs-hero__intro p+p{margin-top:10px}
   #tcs-hero-{{ section.id }} .tcs-hero__note{margin:12px 0 0;font-size:16px;font-weight:700}
   #tcs-hero-{{ section.id }} .tcs-hero__stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
   #tcs-hero-{{ section.id }} .tcs-hero__stats[hidden]{display:none}
@@ -45,12 +47,12 @@
   #tcs-hero-{{ section.id }} .tcs-hero__stat:focus-visible{outline:2px solid #252525;outline-offset:2px}
   #tcs-hero-{{ section.id }} .tcs-hero__stat b{font-size:28px;line-height:1.1}
   #tcs-hero-{{ section.id }} .tcs-hero__stat span{font-size:13px;opacity:.8}
-  #tcs-hero-{{ section.id }} .tcs-hero__img img{display:block;width:100%;height:{{ section.settings.img_height }}px;object-fit:cover;border-radius:10px}
+  #tcs-hero-{{ section.id }} .tcs-hero__img img{display:block;width:100%;height:100%;min-height:{{ section.settings.img_height }}px;object-fit:cover;border-radius:10px}
   @media (max-width:749px){
     #tcs-hero-{{ section.id }}{grid-template-columns:1fr;gap:16px;padding-top:16px}
     #tcs-hero-{{ section.id }} .tcs-hero__img{order:-1}
-    #tcs-hero-{{ section.id }} .tcs-hero__img img{height:150px}
-    #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:16px}
+    #tcs-hero-{{ section.id }} .tcs-hero__img img{height:150px;min-height:0}
+    #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:15px}
     #tcs-hero-{{ section.id }} .tcs-hero__stats{flex-wrap:nowrap;gap:8px}
     #tcs-hero-{{ section.id }} .tcs-hero__stat{flex:1 1 0;min-width:0;padding:10px}
     #tcs-hero-{{ section.id }} .tcs-hero__stat b{font-size:22px}
@@ -117,7 +119,7 @@
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Small line above heading", "default": "Greenville, SC · 515 Buncombe St" },
     { "type": "text", "id": "heading", "label": "Heading (page H1)", "default": "Classes & Events" },
-    { "type": "richtext", "id": "intro", "label": "Intro (1–2 sentences)", "default": "<p>Cooking classes, chef dinners, café nights, and store events, all in one place. See what's coming up, what's free, and what still has seats.</p>" },
+    { "type": "richtext", "id": "intro", "label": "Intro", "default": "<p>Cooking classes, chef dinners, café nights, and store events, all in one place. See what's coming up, what's free, and what still has seats.</p>" },
     { "type": "text", "id": "note", "label": "Bold note (release dates, etc.)" },
     { "type": "image_picker", "id": "image", "label": "Photo" },
     { "type": "range", "id": "img_height", "label": "Photo height (desktop)", "min": 200, "max": 500, "step": 10, "unit": "px", "default": 340 },
