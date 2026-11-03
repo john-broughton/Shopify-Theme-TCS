@@ -1,0 +1,81 @@
+{%- layout none -%}
+{%- comment -%}
+  TCS calendar data feed.
+  Open it at /collections/calendar?view=calendar-json
+  Lists every product in the collection as calendar data (no Evey needed).
+  Date/time: uses the "Event start" / "Event end" product fields if filled in,
+  otherwise the calendar reads the date and time from the product title
+  (e.g. "Pasta 101 12/12/2026 2pm").
+{%- endcomment -%}
+{%- paginate collection.products by 250 -%}
+{
+  "page": {{ paginate.current_page | default: 1 }},
+  "pages": {{ paginate.pages | default: 1 }},
+  "events": [
+  {%- for product in collection.products -%}
+    {%- liquid
+      assign et = product.metafields.custom.event_type.value
+      assign et_label = ''
+      if et
+        assign et_label = et.event_type.value | default: et.name.value | default: et.title.value
+      endif
+
+      assign ad = product.metafields.custom.admission.value
+      assign ad_label = ''
+      if ad
+        assign ad_label = ad.admission.value | default: ad.name.value | default: ad.title.value
+      endif
+
+      assign sp = product.metafields.custom.space_booked.value
+      assign sp_label = ''
+      if sp
+        assign sp_label = sp.space.value | default: sp.space_booked.value | default: sp.name.value | default: sp.title.value
+      endif
+
+      assign start_iso = ''
+      if product.metafields.custom.event_start != blank
+        assign start_iso = product.metafields.custom.event_start.value | date: '%Y-%m-%dT%H:%M:%S'
+      endif
+      assign end_iso = ''
+      if product.metafields.custom.event_end != blank
+        assign end_iso = product.metafields.custom.event_end.value | date: '%Y-%m-%dT%H:%M:%S'
+      endif
+
+      assign seats = 0
+      assign tracked = false
+      for variant in product.variants
+        if variant.inventory_management == 'shopify'
+          assign tracked = true
+          if variant.inventory_quantity > 0
+            assign seats = seats | plus: variant.inventory_quantity
+          endif
+        endif
+      endfor
+
+      assign is_private = false
+      if et_label == 'Private Event' or product.tags contains 'private-event'
+        assign is_private = true
+      endif
+    -%}
+    {
+      "id": {{ product.id }},
+      "title": {{ product.title | json }},
+      "url": {{ product.url | json }},
+      "image": {% if product.featured_image %}{{ product.featured_image | image_url: width: 500 | json }}{% else %}null{% endif %},
+      "type": {{ et_label | json }},
+      "admission": {{ ad_label | json }},
+      "space": {{ sp_label | json }},
+      "private": {{ is_private }},
+      "start": {{ start_iso | json }},
+      "end": {{ end_iso | json }},
+      "price_min": {{ product.price_min | divided_by: 100.0 }},
+      "price_max": {{ product.price_max | divided_by: 100.0 }},
+      "price_label": {{ product.price_min | money_without_trailing_zeros | json }},
+      "available": {{ product.available }},
+      "tracked": {{ tracked }},
+      "seats": {{ seats }}
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+  ]
+}
+{%- endpaginate -%}
