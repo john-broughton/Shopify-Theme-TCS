@@ -321,6 +321,98 @@
         "pad_top": 32,
         "pad_bottom": 8
       }
+    },
+    "tcs_private_events": {
+      "type": "tcs-private-events",
+      "blocks": {
+        "space_kitchen": {
+          "type": "space",
+          "settings": {
+            "name": "Teaching Kitchen",
+            "guests": "Up to [20] guests",
+            "best_for": "Private cooking classes, team building, birthdays",
+            "price": "[From $XX per person]"
+          }
+        },
+        "space_patio": {
+          "type": "space",
+          "settings": {
+            "name": "Patio",
+            "guests": "Up to [XX] guests",
+            "best_for": "Holiday parties, rehearsal dinners, happy hours on our screened-in patio",
+            "price": "[From $XX per person]"
+          }
+        },
+        "space_cafe": {
+          "type": "space",
+          "settings": {
+            "name": "Café",
+            "guests": "Up to [XX] guests",
+            "best_for": "Brunches, showers, meetings",
+            "price": "[From $XX per person]"
+          }
+        },
+        "space_store": {
+          "type": "space",
+          "settings": {
+            "name": "Whole Store",
+            "guests": "Up to [XX] guests",
+            "best_for": "Large parties and corporate events",
+            "price": "[Minimum $X,XXX]"
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Tell us your date and head count.",
+            "text": "Fill out the planning form, or email events@thecooksstation.com."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Pick your space and menu.",
+            "text": "We'll send menu options and a quote within [X business days]."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Lock in your date.",
+            "text": "[A $XXX deposit] holds your date. [Final head count is due X days before your event.]"
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "See it on the calendar.",
+            "text": "Your booking shows on the calendar above as \"Private Event\" with the space. Guest names are never shown."
+          }
+        }
+      },
+      "block_order": [
+        "space_kitchen",
+        "space_patio",
+        "space_cafe",
+        "space_store",
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "settings": {
+        "eyebrow": "Private events",
+        "heading": "Host a private class or party",
+        "intro": "<p>Book our teaching kitchen, patio, café or the whole store for a private cooking class, team event, birthday or holiday party. Dates that are already booked show on the calendar above as \"Private Event.\"</p>",
+        "steps_heading": "How booking works",
+        "button_label": "Start planning your event",
+        "button_link": "/pages/host-with-us-contact-form",
+        "email": "events@thecooksstation.com",
+        "phone": "864.250.0091",
+        "accent": "#8A2B1D",
+        "highlight": true,
+        "space_top": 24
+      }
     }
   },
   "order": [
@@ -328,6 +420,7 @@
     "slideshow_Kijrgd",
     "tcs_events_hero",
     "tcs_events_calendar_mkBgPV",
+    "tcs_private_events",
     "rich_text_7HWRjF",
     "testimonials_MACaWt",
     "advanced_content_PYYHmR",
