@@ -231,7 +231,7 @@
       initialView: mobile ? 'listUpcoming' : 'dayGridMonth',
       headerToolbar: mobile ? { left: 'prev', center: 'title', right: 'next' } : { left: 'title', right: 'dayGridMonth timeGridWeek listMonth prev,next' },
       buttonText: { month: 'month', week: 'week', list: 'list' },
-      views: { listUpcoming: { type: 'list', duration: { weeks: 4 }, dateIncrement: { weeks: 4 } } },
+      views: { listUpcoming: { type: 'list', duration: { weeks: 4 }, dateIncrement: { weeks: 4 }, dateAlignment: 'day' } },
       // Week view: show the store's day, not midnight to 8am.
       slotMinTime: '08:00:00', slotMaxTime: '22:00:00', allDaySlot: false,
       height: 'auto', eventDisplay: 'block', dayMaxEvents: false,
