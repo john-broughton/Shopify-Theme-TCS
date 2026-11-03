@@ -34,7 +34,7 @@
     <ol>
       {%- for block in section.blocks -%}
         {%- if block.type == 'step' -%}
-        <li {{ block.shopify_attributes }}><b>{{ block.settings.title | escape }}</b>{%- if block.settings.text != blank -%} <span>{{ block.settings.text | escape }}</span>{%- endif -%}</li>
+        <li {{ block.shopify_attributes }}><b>{{ block.settings.title | escape }}</b>{%- if block.settings.text != blank -%}{{ ' ' }}<span>{{ block.settings.text | escape }}</span>{%- endif -%}</li>
         {%- endif -%}
       {%- endfor -%}
     </ol>
@@ -44,7 +44,7 @@
     {%- if section.settings.button_link != blank -%}<a class="btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label | escape }}</a>{%- endif -%}
     <p>
       {%- if section.settings.email != blank -%}Email <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>{%- endif -%}
-      {%- if section.settings.phone != blank -%} · Call <a href="tel:{{ section.settings.phone | remove: '.' | remove: '-' | remove: ' ' }}">{{ section.settings.phone }}</a>{%- endif -%}
+      {%- if section.settings.phone != blank -%}{{ ' · ' }}Call <a href="tel:{{ section.settings.phone | remove: '.' | remove: '-' | remove: ' ' }}">{{ section.settings.phone }}</a>{%- endif -%}
     </p>
   </div>
 </div>
@@ -67,6 +67,7 @@
   #tcs-pe-{{ section.id }} .tcs-pe__steps h3{margin:0 0 10px;font-size:20px;text-align:center}
   #tcs-pe-{{ section.id }} .tcs-pe__steps ol{margin:0;padding-left:22px;font-size:15px;line-height:1.55}
   #tcs-pe-{{ section.id }} .tcs-pe__steps li{margin:0 0 8px}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps li b{font-weight:700}
   #tcs-pe-{{ section.id }} .tcs-pe__cta{text-align:center;margin-top:22px}
   #tcs-pe-{{ section.id }} .tcs-pe__cta p{margin:10px 0 0;font-size:15px}
   #tcs-pe-{{ section.id }} mark.tcs-ph{background:#FFF3B0;color:inherit;padding:0 2px;border-radius:2px}
