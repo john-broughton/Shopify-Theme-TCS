@@ -1,0 +1,132 @@
+{%- comment -%}
+  TCS Classes & Events header (replaces the big carousel on the Classes & Events page).
+  Eyebrow, H1, short intro, one-line note, live stat boxes and a photo.
+  The stat boxes count events from /collections/calendar?view=calendar-json.
+  Tapping a box filters the calendar section on the same page.
+{%- endcomment -%}
+{%- liquid
+  assign feed_handle = 'calendar'
+  if section.settings.collection != blank
+    assign feed_handle = section.settings.collection.handle
+  endif
+-%}
+<div class="tcs-hero" id="tcs-hero-{{ section.id }}">
+  <div class="tcs-hero__text">
+    {%- if section.settings.eyebrow != blank -%}<p class="tcs-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+    <h1 class="tcs-hero__title">{{ section.settings.heading | escape }}</h1>
+    {%- if section.settings.intro != blank -%}<div class="tcs-hero__intro">{{ section.settings.intro }}</div>{%- endif -%}
+    {%- if section.settings.note != blank -%}<p class="tcs-hero__note">{{ section.settings.note | escape }}</p>{%- endif -%}
+    {%- if section.settings.show_stats -%}
+    <div class="tcs-hero__stats" hidden>
+      <button type="button" class="tcs-hero__stat" data-stat="week"><b>–</b><span>happening this week</span></button>
+      <button type="button" class="tcs-hero__stat" data-stat="free"><b>–</b><span>free to attend</span></button>
+      <button type="button" class="tcs-hero__stat" data-stat="open"><b>–</b><span>with seats open</span></button>
+    </div>
+    {%- endif -%}
+  </div>
+  {%- if section.settings.image != blank -%}
+  <div class="tcs-hero__img">
+    {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', sizes: '(max-width: 749px) 100vw, 45vw', widths: '600, 900, 1200, 1400', alt: section.settings.image.alt | default: section.settings.heading }}
+  </div>
+  {%- endif -%}
+</div>
+
+<style>
+  #tcs-hero-{{ section.id }}{max-width:1100px;margin:0 auto;padding:{{ section.settings.pad_top }}px 16px {{ section.settings.pad_bottom }}px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+  #tcs-hero-{{ section.id }} .tcs-hero__eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:{{ section.settings.accent }}}
+  #tcs-hero-{{ section.id }} .tcs-hero__title{margin:0 0 12px;font-size:clamp(34px,4.4vw,56px);line-height:1.05}
+  #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:18px;line-height:1.55;opacity:.8}
+  #tcs-hero-{{ section.id }} .tcs-hero__intro p{margin:0}
+  #tcs-hero-{{ section.id }} .tcs-hero__note{margin:12px 0 0;font-size:16px;font-weight:700}
+  #tcs-hero-{{ section.id }} .tcs-hero__stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  #tcs-hero-{{ section.id }} .tcs-hero__stats[hidden]{display:none}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:132px;padding:12px 16px;border:1px solid #DADADA;border-radius:8px;background:#fff;color:#252525;font:inherit;text-align:left;cursor:pointer;margin:0}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat:hover{border-color:#252525}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat:focus-visible{outline:2px solid #252525;outline-offset:2px}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat b{font-size:28px;line-height:1.1}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat span{font-size:13px;opacity:.8}
+  #tcs-hero-{{ section.id }} .tcs-hero__img img{display:block;width:100%;height:{{ section.settings.img_height }}px;object-fit:cover;border-radius:10px}
+  @media (max-width:749px){
+    #tcs-hero-{{ section.id }}{grid-template-columns:1fr;gap:16px;padding-top:16px}
+    #tcs-hero-{{ section.id }} .tcs-hero__img{order:-1}
+    #tcs-hero-{{ section.id }} .tcs-hero__img img{height:150px}
+    #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:16px}
+    #tcs-hero-{{ section.id }} .tcs-hero__stats{flex-wrap:nowrap;gap:8px}
+    #tcs-hero-{{ section.id }} .tcs-hero__stat{flex:1 1 0;min-width:0;padding:10px}
+    #tcs-hero-{{ section.id }} .tcs-hero__stat b{font-size:22px}
+    #tcs-hero-{{ section.id }} .tcs-hero__stat span{font-size:12px;line-height:1.25}
+  }
+</style>
+
+{%- if section.settings.show_stats -%}
+<script>
+(function () {
+  var root = document.getElementById('tcs-hero-{{ section.id }}');
+  if (!root || root.__tcs) return; root.__tcs = true;
+  var FEED = '/collections/{{ feed_handle }}?view=calendar-json';
+  var box = root.querySelector('.tcs-hero__stats');
+
+  function dateFromTitle(t) {
+    var m = String(t).match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s*(?:at\s*)?(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i);
+    if (!m) return null;
+    var h = parseInt(m[4], 10) % 12 + (m[6].toLowerCase() === 'pm' ? 12 : 0);
+    return new Date(+m[3], +m[1] - 1, +m[2], h, m[5] ? +m[5] : 0);
+  }
+  function load(n, all) {
+    return fetch(FEED + '&page=' + n, { credentials: 'same-origin' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) { all = all.concat(d.events || []); return n < (d.pages || 1) ? load(n + 1, all) : all; });
+  }
+  load(1, []).then(function (list) {
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var weekEnd = new Date(today.getTime() + 7 * 86400000);
+    var c = { week: 0, free: 0, open: 0 };
+    list.forEach(function (p) {
+      if (p.private) return;
+      var s = p.start ? new Date(p.start) : dateFromTitle(p.title);
+      if (!s || isNaN(s) || s < today) return;
+      if (s < weekEnd) c.week++;
+      if (p.price_max === 0) c.free++;
+      if (p.available) c.open++;
+    });
+    Object.keys(c).forEach(function (k) { box.querySelector('[data-stat="' + k + '"] b').textContent = c[k]; });
+    box.hidden = false;
+  }).catch(function () {});
+
+  // Tap a box: filter the calendar on this page, then scroll to it.
+  box.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-stat]'); if (!b) return;
+    var cal = document.querySelector('.tcs-cal'); if (!cal) return;
+    var k = b.getAttribute('data-stat');
+    function set(sel, on) { var i = cal.querySelector(sel); if (i && i.checked !== on) i.click(); }
+    if (k === 'week') {
+      var w = cal.querySelector('.fc-listThisWeek-button, .tcs-cal__views [data-view="listThisWeek"]');
+      if (w) w.click();
+    }
+    if (k === 'free') { set('[data-f="free"]', true); }
+    if (k === 'open') { set('[data-f="sold"]', true); }
+    cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Classes & Events Header",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small line above heading", "default": "Greenville, SC · 515 Buncombe St" },
+    { "type": "text", "id": "heading", "label": "Heading (page H1)", "default": "Classes & Events" },
+    { "type": "richtext", "id": "intro", "label": "Intro (1–2 sentences)", "default": "<p>Cooking classes, chef dinners, café nights, and store events, all in one place. See what's coming up, what's free, and what still has seats.</p>" },
+    { "type": "text", "id": "note", "label": "Bold note (release dates, etc.)" },
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "range", "id": "img_height", "label": "Photo height (desktop)", "min": 200, "max": 500, "step": 10, "unit": "px", "default": 340 },
+    { "type": "checkbox", "id": "show_stats", "label": "Show live event counts", "default": true },
+    { "type": "collection", "id": "collection", "label": "Events collection for counts", "info": "Use the Calendar collection." },
+    { "type": "color", "id": "accent", "label": "Small line color", "default": "#8A2B1D" },
+    { "type": "range", "id": "pad_top", "label": "Space above", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 32 },
+    { "type": "range", "id": "pad_bottom", "label": "Space below", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 }
+  ],
+  "presets": [{ "name": "Classes & Events Header" }]
+}
+{% endschema %}
