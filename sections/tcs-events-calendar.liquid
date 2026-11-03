@@ -27,6 +27,17 @@
     </div>
     {%- endif -%}
   </div>
+  {%- if section.settings.show_filters -%}
+  <div class="tcs-cal__filters">
+    <div class="tcs-cal__chips" role="group" aria-label="Type of event"></div>
+    <div class="tcs-cal__row">
+      <label class="tcs-cal__tog"><input type="checkbox" data-f="free"> <span>Free only</span></label>
+      <label class="tcs-cal__tog"><input type="checkbox" data-f="sold"> <span>Hide sold out</span></label>
+      <label class="tcs-cal__search"><span class="tcs-cal__sr">Search events</span><input type="search" data-f="q" placeholder="Search: pasta, sushi, wine…"></label>
+    </div>
+    <p class="tcs-cal__empty" hidden>Nothing matches those filters. <button type="button" class="tcs-cal__reset">Show everything</button></p>
+  </div>
+  {%- endif -%}
   <div class="tcs-cal__loading">Loading events…</div>
   <div class="tcs-cal__grid"></div>
 
@@ -97,6 +108,20 @@
   #tcs-cal-{{ section.id }} .tcs-cal__pop-status.is-sold{color:#E11900}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-private{margin-top:8px}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-btn{display:block;margin-top:16px;text-align:center}
+  #tcs-cal-{{ section.id }} .tcs-cal__filters{margin:0 0 14px}
+  #tcs-cal-{{ section.id }} .tcs-cal__chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip{font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border:1px solid #CFCFCF;border-radius:999px;background:#fff;color:#252525;cursor:pointer}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip small{opacity:.65;margin-left:4px}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip[aria-pressed="true"]{background:#252525;border-color:#252525;color:#fff}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip:focus-visible,#tcs-cal-{{ section.id }} .tcs-cal__reset:focus-visible{outline:2px solid #252525;outline-offset:2px}
+  #tcs-cal-{{ section.id }} .tcs-cal__row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center;margin-top:12px;font-size:14px}
+  #tcs-cal-{{ section.id }} .tcs-cal__tog{display:inline-flex;align-items:center;gap:6px;min-height:40px;cursor:pointer;margin:0}
+  #tcs-cal-{{ section.id }} .tcs-cal__tog input{width:18px;height:18px;margin:0}
+  #tcs-cal-{{ section.id }} .tcs-cal__search input{font:inherit;font-size:16px;min-height:40px;width:260px;max-width:100%;padding:6px 12px;border:1px solid #CFCFCF;border-radius:6px;margin:0}
+  #tcs-cal-{{ section.id }} .tcs-cal__sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  #tcs-cal-{{ section.id }} .tcs-cal__empty{text-align:center;margin:12px 0 0;font-size:14px}
+  #tcs-cal-{{ section.id }} .tcs-cal__reset{font:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;color:inherit}
+  @media (max-width:700px){#tcs-cal-{{ section.id }} .tcs-cal__chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px;-webkit-overflow-scrolling:touch}#tcs-cal-{{ section.id }} .tcs-cal__chip{flex:0 0 auto}#tcs-cal-{{ section.id }} .tcs-cal__search{flex:1 1 100%}#tcs-cal-{{ section.id }} .tcs-cal__search input{width:100%}}
 </style>
 
 <script>
@@ -222,6 +247,65 @@
     pop.style.left = left + 'px'; pop.style.top = Math.max(0, top) + 'px';
   }
 
+  // ---------- filters (Event Type chips, Free only, Hide sold out, search) ----------
+  // Chips are built from each product's Event Type, so a new type gets its own chip automatically.
+  // Link straight to a filter with ?event_type=Kids (matches the Event Type name).
+  function setupFilters(cal, events) {
+    var box = root.querySelector('.tcs-cal__filters');
+    if (!box) { cal.addEventSource(events); return; }
+    var chips = box.querySelector('.tcs-cal__chips'), empty = box.querySelector('.tcs-cal__empty');
+    var fFree = box.querySelector('[data-f="free"]'), fSold = box.querySelector('[data-f="sold"]'), fQ = box.querySelector('[data-f="q"]');
+    var want = new URLSearchParams(location.search).get('event_type');
+    var state = { type: 'all' };
+    var source = null, timer = null;
+    function typeOf(e) { return e.extendedProps.p.type || ''; }
+    function passToggles(e) {
+      var s = e.extendedProps.status;
+      if (fFree.checked && s !== 'free') return false;
+      if (fSold.checked && s === 'sold') return false;
+      return true;
+    }
+    function passSearch(e) {
+      var q = fQ.value.trim().toLowerCase();
+      return !q || (e.title + ' ' + typeOf(e)).toLowerCase().indexOf(q) !== -1;
+    }
+    function passType(e) { return state.type === 'all' || (!e.extendedProps.p.private && typeOf(e) === state.type); }
+    function drawChips() {
+      var counts = {}, base = events.filter(function (e) { return passToggles(e) && passSearch(e); });
+      base.forEach(function (e) { var t = typeOf(e); if (t && !e.extendedProps.p.private) counts[t] = (counts[t] || 0) + 1; });
+      var types = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a] || (a < b ? -1 : 1); });
+      if (state.type !== 'all' && types.indexOf(state.type) === -1) types.push(state.type);
+      chips.innerHTML = '';
+      [['all', 'All', base.length]].concat(types.map(function (t) { return [t, t, counts[t] || 0]; })).forEach(function (c) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'tcs-cal__chip'; b.setAttribute('aria-pressed', String(state.type === c[0]));
+        b.appendChild(document.createTextNode(c[1]));
+        var n = document.createElement('small'); n.textContent = c[2]; b.appendChild(n);
+        b.addEventListener('click', function () { state.type = c[0]; apply(); });
+        chips.appendChild(b);
+      });
+    }
+    function apply() {
+      closePop();
+      var list = events.filter(function (e) { return passType(e) && passToggles(e) && passSearch(e); });
+      if (source) source.remove();
+      source = cal.addEventSource(list);
+      empty.hidden = list.length > 0;
+      drawChips();
+    }
+    if (want) {
+      var match = events.map(typeOf).filter(function (t) { return t && t.toLowerCase() === want.toLowerCase(); })[0];
+      if (match) state.type = match;
+    }
+    fFree.addEventListener('change', apply);
+    fSold.addEventListener('change', apply);
+    fQ.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(apply, 200); });
+    box.querySelector('.tcs-cal__reset').addEventListener('click', function () {
+      state.type = 'all'; fFree.checked = false; fSold.checked = false; fQ.value = ''; apply();
+    });
+    apply();
+  }
+
   function start() {
     var grid = root.querySelector('.tcs-cal__grid');
     var loading = root.querySelector('.tcs-cal__loading');
@@ -255,7 +339,7 @@
     cal.render();
     loadAll().then(function (list) {
       var events = list.map(toEvent).filter(Boolean);
-      cal.addEventSource(events);
+      setupFilters(cal, events);
       loading.style.display = 'none';
     }).catch(function (e) {
       loading.textContent = 'Events could not load. Please refresh the page.';
@@ -275,6 +359,7 @@
     { "type": "text", "id": "title", "label": "Heading", "default": "Calendar" },
     { "type": "collection", "id": "collection", "label": "Calendar collection", "info": "Use the automated \"Calendar\" collection (Product type = Event). Every product in it shows on the calendar." },
     { "type": "checkbox", "id": "show_legend", "label": "Show color key", "default": true },
+    { "type": "checkbox", "id": "show_filters", "label": "Show filters", "default": true, "info": "Event Type chips, Free only, Hide sold out and search. Chips come from each product's Event Type." },
     { "type": "range", "id": "few_seats", "label": "\"Only a few left\" at or below", "min": 1, "max": 10, "step": 1, "default": 3 },
     { "type": "range", "id": "default_minutes", "label": "Default length when no end time (minutes)", "min": 30, "max": 300, "step": 30, "default": 120 },
     { "type": "header", "content": "Private events" },
