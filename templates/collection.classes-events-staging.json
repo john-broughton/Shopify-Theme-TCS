@@ -79,7 +79,8 @@
         "narrow_column": true,
         "color_scheme": "1",
         "divider": false
-      }
+      },
+      "disabled": true
     },
     "testimonials_MACaWt": {
       "type": "testimonials",
@@ -308,12 +309,12 @@
     "tcs_events_hero": {
       "type": "tcs-events-hero",
       "settings": {
-        "eyebrow": "Greenville, SC · 515 Buncombe St",
-        "heading": "Classes & Events",
-        "intro": "<p>Cooking classes, chef dinners, café nights, and store events, all in one place. See what's coming up, what's free, and what still has seats.</p>",
+        "eyebrow": "Classes & Events",
+        "heading": "Cooking Classes & Chef Dinners in Greenville, SC",
+        "intro": "<p>The Cook's Station offers hands-on and demonstration cooking classes, chef's table dinners, and one-hour Lunch & Learns in our teaching kitchen at 515 Buncombe St in downtown Greenville, SC.</p><p>New classes are released on the 1st of every month, and class guests save 20% on in-store purchases the day of their class.</p><p>Want to join a class but see that it's sold out? No worries! Simply click on the class you're interested in and select the “Notify Me When Back in Stock” button to be notified if a spot opens up.</p>",
         "note": "November & December Classes Are Live! January classes will be released on December 1st.",
         "image": "shopify://shop_images/christa-rene-photography-69.jpg",
-        "img_height": 340,
+        "img_height": 300,
         "show_stats": true,
         "collection": "calendar",
         "accent": "#8A2B1D",
