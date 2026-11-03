@@ -39,6 +39,10 @@
   </div>
   {%- endif -%}
   <div class="tcs-cal__loading">Loading events…</div>
+  <div class="tcs-cal__views" role="group" aria-label="Show" hidden>
+    <button type="button" data-view="listThisWeek" aria-pressed="false">This week</button>
+    <button type="button" data-view="listUpcoming" aria-pressed="false">Next 4 weeks</button>
+  </div>
   <div class="tcs-cal__grid"></div>
 
   <div class="tcs-cal__pop" role="dialog" aria-modal="false" hidden>
@@ -122,6 +126,13 @@
   #tcs-cal-{{ section.id }} .tcs-cal__empty{text-align:center;margin:12px 0 0;font-size:14px}
   #tcs-cal-{{ section.id }} .tcs-cal__reset{font:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;color:inherit}
   @media (max-width:700px){#tcs-cal-{{ section.id }} .tcs-cal__chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}#tcs-cal-{{ section.id }} .tcs-cal__chips::-webkit-scrollbar{display:none}#tcs-cal-{{ section.id }} .tcs-cal__chip{flex:0 0 auto}#tcs-cal-{{ section.id }} .tcs-cal__search{flex:1 1 100%}#tcs-cal-{{ section.id }} .tcs-cal__search input{width:100%}}
+  #tcs-cal-{{ section.id }} .tcs-cal__views{display:flex;justify-content:center;margin:0 0 10px}
+  #tcs-cal-{{ section.id }} .tcs-cal__views[hidden]{display:none}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button{font:inherit;font-size:14px;min-height:40px;padding:6px 16px;border:1px solid #CFCFCF;background:#fff;color:#252525;cursor:pointer;margin:0}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button:first-child{border-radius:6px 0 0 6px}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button:last-child{border-radius:0 6px 6px 0;border-left:0}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button[aria-pressed="true"]{background:#252525;border-color:#252525;color:#fff}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button:focus-visible{outline:2px solid #252525;outline-offset:2px}
 </style>
 
 <script>
@@ -316,9 +327,17 @@
     var cal = new FullCalendar.Calendar(grid, {
       // Phones: an upcoming list that starts today (month/week grids are too cramped).
       initialView: mobile ? 'listUpcoming' : 'dayGridMonth',
-      headerToolbar: mobile ? { left: 'prev', center: 'title', right: 'next' } : { left: 'title', right: 'dayGridMonth timeGridWeek listMonth prev,next' },
-      buttonText: { month: 'month', week: 'week', list: 'list' },
-      views: { listUpcoming: { type: 'list', duration: { weeks: 4 }, dateIncrement: { weeks: 4 }, dateAlignment: 'day' } },
+      headerToolbar: mobile ? { left: 'prev', center: 'title', right: 'next' } : { left: 'title', right: 'listThisWeek dayGridMonth timeGridWeek listMonth prev,next' },
+      buttonText: { month: 'month', week: 'week grid', list: 'list' },
+      views: {
+        // "This week" = a simple list of the next 7 days, starting today.
+        listThisWeek: { type: 'list', duration: { days: 7 }, dateIncrement: { days: 7 }, dateAlignment: 'day', buttonText: 'this week' },
+        listUpcoming: { type: 'list', duration: { weeks: 4 }, dateIncrement: { weeks: 4 }, dateAlignment: 'day' }
+      },
+      noEventsContent: 'No events in these dates. Use the arrows to see more.',
+      datesSet: function (d) {
+        root.querySelectorAll('.tcs-cal__views button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === d.view.type)); });
+      },
       // Week view: show the store's day, not midnight to 8am.
       slotMinTime: '08:00:00', slotMaxTime: '22:00:00', allDaySlot: false,
       height: 'auto', eventDisplay: 'block', dayMaxEvents: false,
@@ -340,6 +359,14 @@
       }
     });
     cal.render();
+    if (mobile) {
+      var vs = root.querySelector('.tcs-cal__views');
+      vs.hidden = false;
+      vs.querySelectorAll('button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === cal.view.type));
+        b.addEventListener('click', function () { closePop(); cal.changeView(b.getAttribute('data-view'), new Date()); });
+      });
+    }
     loadAll().then(function (list) {
       var events = list.map(toEvent).filter(Boolean);
       setupFilters(cal, events);
