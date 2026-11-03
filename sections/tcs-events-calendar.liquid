@@ -78,7 +78,7 @@
   #tcs-cal-{{ section.id }} .fc-button{background:#fff !important;border-color:#fff !important;border-radius:6px !important;color:#000 !important;box-shadow:none !important}
   #tcs-cal-{{ section.id }} .fc-button-active{background:#F2F2F2 !important;border-color:#F2F2F2 !important}
   #tcs-cal-{{ section.id }} .fc-day-today{background:#fff !important}
-  #tcs-cal-{{ section.id }} .fc-day-today .fc-daygrid-day-number{background:#252525;color:#fff;width:30px;text-align:center;border-radius:15px}
+  #tcs-cal-{{ section.id }} .fc-day-today .fc-daygrid-day-number{background:var(--colorBtnPrimary,#393939);color:#fff;width:30px;text-align:center;border-radius:15px}
   #tcs-cal-{{ section.id }} .fc-daygrid-event{border:0 !important;padding:1px 4px;margin-bottom:2px;cursor:pointer}
   #tcs-cal-{{ section.id }} .fc-event-main,#tcs-cal-{{ section.id }} .fc-event-time{color:inherit !important}
   #tcs-cal-{{ section.id }} .fc-event-time{flex-shrink:0;font-weight:700}
@@ -101,9 +101,9 @@
   #tcs-cal-{{ section.id }} .fc-list-event.s-sold .fc-list-event-title{text-decoration:line-through}
   #tcs-cal-{{ section.id }} .tcs-left{font-weight:700;margin-left:4px;font-size:.85em}
   #tcs-cal-{{ section.id }} .tcs-cal__pop{position:absolute;z-index:100;width:300px;max-width:calc(100% - 32px);background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.14);padding:22px;border-radius:6px;font-size:15px;line-height:1.5}
-  #tcs-cal-{{ section.id }} .tcs-cal__close{position:absolute;top:2px;right:2px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:0;font-size:26px;cursor:pointer;line-height:1;color:#252525}
+  #tcs-cal-{{ section.id }} .tcs-cal__close{position:absolute;top:2px;right:2px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:0;font-size:26px;cursor:pointer;line-height:1;color:var(--colorBtnPrimary,#393939)}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-title{padding-right:28px}
-  #tcs-cal-{{ section.id }} .fc-event:focus-visible,#tcs-cal-{{ section.id }} .fc-list-event:focus-visible{outline:2px solid #252525;outline-offset:2px}
+  #tcs-cal-{{ section.id }} .fc-event:focus-visible,#tcs-cal-{{ section.id }} .fc-list-event:focus-visible{outline:2px solid var(--colorBtnPrimary,#393939);outline-offset:2px}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-img{display:none}
   #tcs-cal-{{ section.id }} .tcs-cal__pop-img.is-ready{display:block}
   @media (max-width:700px){#tcs-cal-{{ section.id }} .tcs-cal__pop{width:auto;left:16px !important;right:16px;max-width:none}#tcs-cal-{{ section.id }} .fc .fc-toolbar{flex-wrap:nowrap;gap:8px}#tcs-cal-{{ section.id }} .fc .fc-toolbar-title{font-size:20px;text-align:center}}
@@ -115,10 +115,10 @@
   #tcs-cal-{{ section.id }} .tcs-cal__pop-btn{display:block;margin-top:16px;text-align:center}
   #tcs-cal-{{ section.id }} .tcs-cal__filters{margin:0 0 14px}
   #tcs-cal-{{ section.id }} .tcs-cal__chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-  #tcs-cal-{{ section.id }} .tcs-cal__chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;line-height:1.2;font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border:1px solid #CFCFCF;border-radius:999px;background:#fff;color:#252525;cursor:pointer}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;line-height:1.2;font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border:1px solid #CFCFCF;border-radius:999px;background:#fff;color:var(--colorBtnPrimary,#393939);cursor:pointer}
   #tcs-cal-{{ section.id }} .tcs-cal__chip small{display:inline;font-size:12px;opacity:.7;margin:0}
-  #tcs-cal-{{ section.id }} .tcs-cal__chip[aria-pressed="true"]{background:#252525;border-color:#252525;color:#fff}
-  #tcs-cal-{{ section.id }} .tcs-cal__chip:focus-visible,#tcs-cal-{{ section.id }} .tcs-cal__reset:focus-visible{outline:2px solid #252525;outline-offset:2px}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip[aria-pressed="true"]{background:var(--colorBtnPrimary,#393939);border-color:var(--colorBtnPrimary,#393939);color:#fff}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip:focus-visible,#tcs-cal-{{ section.id }} .tcs-cal__reset:focus-visible{outline:2px solid var(--colorBtnPrimary,#393939);outline-offset:2px}
   #tcs-cal-{{ section.id }} .tcs-cal__row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center;margin-top:12px;font-size:14px}
   #tcs-cal-{{ section.id }} .tcs-cal__tog{display:inline-flex;align-items:center;gap:6px;min-height:40px;cursor:pointer;margin:0}
   #tcs-cal-{{ section.id }} .tcs-cal__tog input{width:18px;height:18px;margin:0}
@@ -129,11 +129,11 @@
   @media (max-width:700px){#tcs-cal-{{ section.id }} .tcs-cal__chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}#tcs-cal-{{ section.id }} .tcs-cal__chips::-webkit-scrollbar{display:none}#tcs-cal-{{ section.id }} .tcs-cal__chip{flex:0 0 auto}#tcs-cal-{{ section.id }} .tcs-cal__search{flex:1 1 100%}#tcs-cal-{{ section.id }} .tcs-cal__search input{width:100%}}
   #tcs-cal-{{ section.id }} .tcs-cal__views{display:flex;justify-content:center;margin:0 0 10px}
   #tcs-cal-{{ section.id }} .tcs-cal__views[hidden]{display:none}
-  #tcs-cal-{{ section.id }} .tcs-cal__views button{font:inherit;font-size:14px;min-height:40px;padding:6px 16px;border:1px solid #CFCFCF;background:#fff;color:#252525;cursor:pointer;margin:0}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button{font:inherit;font-size:14px;min-height:40px;padding:6px 16px;border:1px solid #CFCFCF;background:#fff;color:var(--colorBtnPrimary,#393939);cursor:pointer;margin:0}
   #tcs-cal-{{ section.id }} .tcs-cal__views button:first-child{border-radius:6px 0 0 6px}
   #tcs-cal-{{ section.id }} .tcs-cal__views button:last-child{border-radius:0 6px 6px 0;border-left:0}
-  #tcs-cal-{{ section.id }} .tcs-cal__views button[aria-pressed="true"]{background:#252525;border-color:#252525;color:#fff}
-  #tcs-cal-{{ section.id }} .tcs-cal__views button:focus-visible{outline:2px solid #252525;outline-offset:2px}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button[aria-pressed="true"]{background:var(--colorBtnPrimary,#393939);border-color:var(--colorBtnPrimary,#393939);color:#fff}
+  #tcs-cal-{{ section.id }} .tcs-cal__views button:focus-visible{outline:2px solid var(--colorBtnPrimary,#393939);outline-offset:2px}
 </style>
 
 <script>
