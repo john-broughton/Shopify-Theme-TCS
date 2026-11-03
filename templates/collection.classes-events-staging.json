@@ -193,6 +193,7 @@
       "block_order": [
         "liquid_B8ALpU"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "full_width": true,
@@ -289,6 +290,25 @@
         "heading_size": "h2",
         "heading_position": "left"
       }
+    },
+    "tcs_events_calendar_mkBgPV": {
+      "type": "tcs-events-calendar",
+      "name": "Classes & Events Calendar",
+      "settings": {
+        "title": "Calendar",
+        "collection": "calendar",
+        "show_legend": true,
+        "few_seats": 3,
+        "default_minutes": 120,
+        "private_label": "Private Event",
+        "show_space": true,
+        "private_message": "Interested in booking a private event? Email events@thecooksstation.com.",
+        "c_open": "#1F3A5F",
+        "c_few": "#C9822B",
+        "c_sold": "#E3E3E3",
+        "c_free": "#2E7D46",
+        "c_private": "#7A2E1F"
+      }
     }
   },
   "order": [
@@ -299,6 +319,7 @@
     "advanced_content_PYYHmR",
     "main-collection",
     "recently-viewed",
-    "faq_HLjacC"
+    "faq_HLjacC",
+    "tcs_events_calendar_mkBgPV"
   ]
 }
