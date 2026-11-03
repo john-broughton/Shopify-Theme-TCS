@@ -1,40 +1,47 @@
 {%- comment -%}
-  TCS Private Events info block for the Classes & Events page.
+  TCS Private Events block for the Classes & Events page (matches the approved mock-up).
+  Uses the theme's own fonts, colors and buttons (Theme settings), so it matches the rest of the site.
   Spaces are blocks (name, guests, best for, price, photo). Booking steps are blocks.
-  Anything in [brackets] is a placeholder waiting on team approval and gets highlighted
-  in yellow so it can't be missed. Turn "Highlight placeholders" off once copy is final.
+  Anything in [brackets] is a placeholder waiting on team approval and shows in yellow.
+  Turn "Highlight placeholders" off once copy is final.
 {%- endcomment -%}
-<div class="tcs-pe" id="tcs-pe-{{ section.id }}">
+<div class="tcs-pe-band{% if section.settings.band %} tcs-pe-band--gray{% endif %}" id="tcs-pe-{{ section.id }}">
+<div class="page-width tcs-pe">
   <div class="tcs-pe__head">
     {%- if section.settings.eyebrow != blank -%}<p class="tcs-pe__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
-    <h2 class="tcs-pe__title">{{ section.settings.heading | escape }}</h2>
+    <h2 class="section-header__title tcs-pe__title">{{ section.settings.heading | escape }}</h2>
     {%- if section.settings.intro != blank -%}<div class="tcs-pe__intro">{{ section.settings.intro }}</div>{%- endif -%}
   </div>
 
   <div class="tcs-pe__spaces">
     {%- for block in section.blocks -%}
       {%- if block.type == 'space' -%}
-      <div class="tcs-pe__space" {{ block.shopify_attributes }}>
+      <article class="tcs-pe__space" {{ block.shopify_attributes }}>
         {%- if block.settings.image != blank -%}
-          {{ block.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', widths: '350, 700', sizes: '(max-width: 749px) 100vw, 25vw', alt: block.settings.name }}
+          <div class="tcs-pe__img">{{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '400, 600, 900', sizes: '(max-width: 749px) 100vw, (max-width: 1100px) 50vw, 25vw', alt: block.settings.image.alt | default: block.settings.name }}</div>
         {%- endif -%}
-        <h3>{{ block.settings.name | escape }}</h3>
-        <ul>
-          {%- if block.settings.guests != blank -%}<li><b>Guests:</b> {{ block.settings.guests | escape }}</li>{%- endif -%}
-          {%- if block.settings.best_for != blank -%}<li><b>Best for:</b> {{ block.settings.best_for | escape }}</li>{%- endif -%}
-          {%- if block.settings.price != blank -%}<li><b>Pricing:</b> {{ block.settings.price | escape }}</li>{%- endif -%}
-        </ul>
-      </div>
+        <div class="tcs-pe__body">
+          <h3 class="tcs-pe__name">{{ block.settings.name | escape }}</h3>
+          <dl>
+            {%- if block.settings.guests != blank -%}<div><dt>Guests</dt><dd>{{ block.settings.guests | escape }}</dd></div>{%- endif -%}
+            {%- if block.settings.best_for != blank -%}<div><dt>Best for</dt><dd>{{ block.settings.best_for | escape }}</dd></div>{%- endif -%}
+            {%- if block.settings.price != blank -%}<div><dt>Pricing</dt><dd>{{ block.settings.price | escape }}</dd></div>{%- endif -%}
+          </dl>
+          {%- if section.settings.button_link != blank and section.settings.card_button != blank -%}
+          <a class="tcs-pe__line" href="{{ section.settings.button_link }}">{{ section.settings.card_button | escape }}</a>
+          {%- endif -%}
+        </div>
+      </article>
       {%- endif -%}
     {%- endfor -%}
   </div>
 
   <div class="tcs-pe__steps">
-    <h3>{{ section.settings.steps_heading | escape }}</h3>
+    <h3 class="tcs-pe__steps-title">{{ section.settings.steps_heading | escape }}</h3>
     <ol>
       {%- for block in section.blocks -%}
         {%- if block.type == 'step' -%}
-        <li {{ block.shopify_attributes }}><b>{{ block.settings.title | escape }}</b>{%- if block.settings.text != blank -%}{{ ' ' }}<span>{{ block.settings.text | escape }}</span>{%- endif -%}</li>
+        <li {{ block.shopify_attributes }}><b>{{ block.settings.title | escape }}</b>{%- if block.settings.text != blank -%}<span>{{ block.settings.text | escape }}</span>{%- endif -%}</li>
         {%- endif -%}
       {%- endfor -%}
     </ol>
@@ -48,29 +55,46 @@
     </p>
   </div>
 </div>
+</div>
 
 <style>
   #shopify-section-{{ section.id }}{margin-top:{{ section.settings.space_top }}px}
-  #tcs-pe-{{ section.id }}{max-width:1100px;margin:0 auto;padding:32px 16px 40px;border-top:1px solid #E5E5E5}
-  #tcs-pe-{{ section.id }} .tcs-pe__head{max-width:720px;margin:0 auto 24px;text-align:center}
-  #tcs-pe-{{ section.id }} .tcs-pe__eyebrow{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:{{ section.settings.accent }}}
-  #tcs-pe-{{ section.id }} .tcs-pe__title{margin:0 0 10px}
-  #tcs-pe-{{ section.id }} .tcs-pe__intro{font-size:16px;line-height:1.55}
+  #tcs-pe-{{ section.id }}{color:var(--colorTextBody,#484848);padding:var(--indexSectionPadding,60px) 0}
+  #tcs-pe-{{ section.id }}.tcs-pe-band--gray{background:var(--colorBodyDim,#f2f2f2)}
+  #tcs-pe-{{ section.id }} .tcs-pe__head{max-width:720px;margin:0 auto 32px;text-align:center}
+  #tcs-pe-{{ section.id }} .tcs-pe__eyebrow{margin:0 0 8px;font-family:var(--typeHeaderPrimary),sans-serif;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+  #tcs-pe-{{ section.id }} .tcs-pe__title{margin:0 0 12px}
+  #tcs-pe-{{ section.id }} .tcs-pe__intro{font-size:16px;line-height:1.6}
   #tcs-pe-{{ section.id }} .tcs-pe__intro p{margin:0}
-  #tcs-pe-{{ section.id }} .tcs-pe__spaces{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-  #tcs-pe-{{ section.id }} .tcs-pe__space{border:1px solid #DADADA;border-radius:10px;padding:16px;background:#fff}
-  #tcs-pe-{{ section.id }} .tcs-pe__space img{display:block;width:100%;height:140px;object-fit:cover;border-radius:6px;margin-bottom:12px}
-  #tcs-pe-{{ section.id }} .tcs-pe__space h3{margin:0 0 8px;font-size:20px}
-  #tcs-pe-{{ section.id }} .tcs-pe__space ul{list-style:none;margin:0;padding:0;font-size:15px;line-height:1.5}
-  #tcs-pe-{{ section.id }} .tcs-pe__space li{margin:0 0 4px}
-  #tcs-pe-{{ section.id }} .tcs-pe__steps{max-width:720px;margin:28px auto 0}
-  #tcs-pe-{{ section.id }} .tcs-pe__steps h3{margin:0 0 10px;font-size:20px;text-align:center}
-  #tcs-pe-{{ section.id }} .tcs-pe__steps ol{margin:0;padding-left:22px;font-size:15px;line-height:1.55}
-  #tcs-pe-{{ section.id }} .tcs-pe__steps li{margin:0 0 8px}
-  #tcs-pe-{{ section.id }} .tcs-pe__steps li b{font-weight:700}
-  #tcs-pe-{{ section.id }} .tcs-pe__cta{text-align:center;margin-top:22px}
-  #tcs-pe-{{ section.id }} .tcs-pe__cta p{margin:10px 0 0;font-size:15px}
+  #tcs-pe-{{ section.id }} .tcs-pe__spaces{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--grid-gutter,22px)}
+  #tcs-pe-{{ section.id }} .tcs-pe__space{display:flex;flex-direction:column;background:var(--colorBody,#fff);border-radius:var(--productRadius,10px);overflow:hidden}
+  #tcs-pe-{{ section.id }} .tcs-pe__img img{display:block;width:100%;aspect-ratio:3/2;height:auto;object-fit:cover}
+  #tcs-pe-{{ section.id }} .tcs-pe__body{display:flex;flex-direction:column;gap:14px;flex:1;padding:18px 18px 20px}
+  #tcs-pe-{{ section.id }} .tcs-pe__name{margin:0;font-size:22px}
+  #tcs-pe-{{ section.id }} dl{display:grid;gap:8px;margin:0;flex:1;font-size:15px;line-height:1.45}
+  #tcs-pe-{{ section.id }} dl div{display:grid;grid-template-columns:72px 1fr;gap:8px;border-top:1px solid var(--colorScheme2Bg,#e2e2e2);padding-top:8px}
+  #tcs-pe-{{ section.id }} dt{font-family:var(--typeHeaderPrimary),sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75;padding-top:3px}
+  #tcs-pe-{{ section.id }} dd{margin:0}
+  #tcs-pe-{{ section.id }} .tcs-pe__line{display:block;text-align:center;padding:10px 14px;border:1px solid var(--colorBtnPrimary,#393939);border-radius:var(--buttonRadius,3px);color:var(--colorBtnPrimary,#393939);font-weight:700;font-size:14px;text-decoration:none;transition:background .15s,color .15s}
+  #tcs-pe-{{ section.id }} .tcs-pe__line:hover{background:var(--colorBtnPrimary,#393939);color:var(--colorBtnPrimaryText,#fff)}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps{margin:48px 0 0}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps-title{margin:0 0 20px;text-align:center}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps ol{list-style:none;counter-reset:pe;display:grid;grid-template-columns:repeat(4,1fr);gap:var(--grid-gutter,22px);margin:0;padding:0}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps li{counter-increment:pe;position:relative;margin:0;padding:18px 18px 18px 64px;background:var(--colorBody,#fff);border-radius:var(--productRadius,10px);font-size:15px;line-height:1.5}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps li::before{content:counter(pe);position:absolute;left:18px;top:18px;width:32px;height:32px;border-radius:50%;background:var(--colorBtnPrimary,#393939);color:var(--colorBtnPrimaryText,#fff);font-family:var(--typeHeaderPrimary),sans-serif;font-weight:700;font-size:16px;line-height:32px;text-align:center}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps li b{display:block;margin:0 0 4px;font-family:var(--typeHeaderPrimary),sans-serif;font-weight:var(--typeHeaderWeight,700);font-size:16px}
+  #tcs-pe-{{ section.id }} .tcs-pe__cta{text-align:center;margin-top:36px}
+  #tcs-pe-{{ section.id }} .tcs-pe__cta p{margin:12px 0 0;font-size:15px}
   #tcs-pe-{{ section.id }} mark.tcs-ph{background:#FFF3B0;color:inherit;padding:0 2px;border-radius:2px}
+  @media (max-width:1100px){
+    #tcs-pe-{{ section.id }} .tcs-pe__spaces,#tcs-pe-{{ section.id }} .tcs-pe__steps ol{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:749px){
+    #tcs-pe-{{ section.id }}{padding:40px 0}
+    #tcs-pe-{{ section.id }} .tcs-pe__spaces,#tcs-pe-{{ section.id }} .tcs-pe__steps ol{grid-template-columns:1fr;gap:14px}
+    #tcs-pe-{{ section.id }} .tcs-pe__img img{aspect-ratio:16/9}
+    #tcs-pe-{{ section.id }} .tcs-pe__steps{margin-top:36px}
+  }
 </style>
 
 {%- if section.settings.highlight -%}
@@ -104,9 +128,10 @@
     { "type": "url", "id": "button_link", "label": "Button link" },
     { "type": "text", "id": "email", "label": "Email", "default": "events@thecooksstation.com" },
     { "type": "text", "id": "phone", "label": "Phone", "default": "864.250.0091" },
-    { "type": "color", "id": "accent", "label": "Small line color", "default": "#8A2B1D" },
+    { "type": "text", "id": "card_button", "label": "Card button text", "default": "Ask about this space" },
+    { "type": "checkbox", "id": "band", "label": "Light gray background", "default": true },
     { "type": "checkbox", "id": "highlight", "label": "Highlight [placeholders] in yellow", "info": "Turn off once all copy is approved.", "default": true },
-    { "type": "range", "id": "space_top", "label": "Space above section", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 24 }
+    { "type": "range", "id": "space_top", "label": "Space above section", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 0 }
   ],
   "blocks": [
     {
