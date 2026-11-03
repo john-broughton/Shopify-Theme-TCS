@@ -110,8 +110,8 @@
   #tcs-cal-{{ section.id }} .tcs-cal__pop-btn{display:block;margin-top:16px;text-align:center}
   #tcs-cal-{{ section.id }} .tcs-cal__filters{margin:0 0 14px}
   #tcs-cal-{{ section.id }} .tcs-cal__chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-  #tcs-cal-{{ section.id }} .tcs-cal__chip{font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border:1px solid #CFCFCF;border-radius:999px;background:#fff;color:#252525;cursor:pointer}
-  #tcs-cal-{{ section.id }} .tcs-cal__chip small{opacity:.65;margin-left:4px}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;line-height:1.2;font:inherit;font-size:14px;min-height:40px;padding:6px 14px;border:1px solid #CFCFCF;border-radius:999px;background:#fff;color:#252525;cursor:pointer}
+  #tcs-cal-{{ section.id }} .tcs-cal__chip small{display:inline;font-size:12px;opacity:.7;margin:0}
   #tcs-cal-{{ section.id }} .tcs-cal__chip[aria-pressed="true"]{background:#252525;border-color:#252525;color:#fff}
   #tcs-cal-{{ section.id }} .tcs-cal__chip:focus-visible,#tcs-cal-{{ section.id }} .tcs-cal__reset:focus-visible{outline:2px solid #252525;outline-offset:2px}
   #tcs-cal-{{ section.id }} .tcs-cal__row{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:center;margin-top:12px;font-size:14px}
@@ -271,7 +271,8 @@
     }
     function passType(e) { return state.type === 'all' || (!e.extendedProps.p.private && typeOf(e) === state.type); }
     function drawChips() {
-      var counts = {}, base = events.filter(function (e) { return passToggles(e) && passSearch(e); });
+      // Counts show upcoming events only (past ones still appear when you page back).
+      var now = new Date(), counts = {}, base = events.filter(function (e) { return new Date(e.end) >= now && passToggles(e) && passSearch(e); });
       base.forEach(function (e) { var t = typeOf(e); if (t && !e.extendedProps.p.private) counts[t] = (counts[t] || 0) + 1; });
       var types = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a] || (a < b ? -1 : 1); });
       if (state.type !== 'all' && types.indexOf(state.type) === -1) types.push(state.type);
