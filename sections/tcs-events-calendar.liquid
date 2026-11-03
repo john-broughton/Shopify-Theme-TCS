@@ -1,0 +1,262 @@
+{%- comment -%}
+  TCS Classes & Events Calendar (Shopify-only version)
+  Reads every event product from the "Calendar" collection through
+  /collections/<handle>?view=calendar-json, so new products appear automatically.
+  No Evey feed and no hand-typed lists.
+{%- endcomment -%}
+{%- liquid
+  assign cal_collection = section.settings.collection
+  assign feed_handle = 'calendar'
+  if cal_collection != blank
+    assign feed_handle = cal_collection.handle
+  endif
+-%}
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+
+<div class="tcs-cal" id="tcs-cal-{{ section.id }}">
+  <div class="tcs-cal__head">
+    {%- if section.settings.title != blank -%}<h2 class="tcs-cal__title">{{ section.settings.title | escape }}</h2>{%- endif -%}
+    {%- if section.settings.show_legend -%}
+    <div class="tcs-cal__legend">
+      <span><i class="k-open"></i>Seats available</span>
+      <span><i class="k-few"></i>Only a few left</span>
+      <span><i class="k-sold"></i>Sold out</span>
+      <span><i class="k-free"></i>Free</span>
+      <span><i class="k-private"></i>Private event / booked</span>
+    </div>
+    {%- endif -%}
+  </div>
+  <div class="tcs-cal__loading">Loading events…</div>
+  <div class="tcs-cal__grid"></div>
+
+  <div class="tcs-cal__pop" role="dialog" aria-modal="false" hidden>
+    <button type="button" class="tcs-cal__close" aria-label="Close">×</button>
+    <div class="tcs-cal__pop-img"><img alt="" loading="lazy"></div>
+    <div class="tcs-cal__pop-title"></div>
+    <div class="tcs-cal__pop-date"></div>
+    <div class="tcs-cal__pop-space"></div>
+    <div class="tcs-cal__pop-status"></div>
+    <div class="tcs-cal__pop-private">{{ section.settings.private_message }}</div>
+    <a class="btn tcs-cal__pop-btn" href="#">View event</a>
+  </div>
+</div>
+
+<style>
+  #tcs-cal-{{ section.id }}{position:relative;max-width:1100px;margin:0 auto;padding:10px 16px 40px}
+  #tcs-cal-{{ section.id }} .tcs-cal__head{text-align:center;margin-bottom:12px}
+  #tcs-cal-{{ section.id }} .tcs-cal__legend{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;font-size:14px;margin-top:6px}
+  #tcs-cal-{{ section.id }} .tcs-cal__legend span{display:inline-flex;align-items:center;gap:6px}
+  #tcs-cal-{{ section.id }} .tcs-cal__legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+  #tcs-cal-{{ section.id }} .k-open{background:{{ section.settings.c_open }}}
+  #tcs-cal-{{ section.id }} .k-few{background:{{ section.settings.c_few }}}
+  #tcs-cal-{{ section.id }} .k-sold{background:{{ section.settings.c_sold }}}
+  #tcs-cal-{{ section.id }} .k-free{background:{{ section.settings.c_free }}}
+  #tcs-cal-{{ section.id }} .k-private{background:{{ section.settings.c_private }}}
+  #tcs-cal-{{ section.id }} .tcs-cal__loading{text-align:center;font-size:14px;opacity:.7;padding:8px}
+  #tcs-cal-{{ section.id }} table{margin-bottom:0 !important;border:none !important;background:#fff !important}
+  #tcs-cal-{{ section.id }} table a{border-bottom:0 !important}
+  #tcs-cal-{{ section.id }} .fc-scrollgrid th,#tcs-cal-{{ section.id }} .fc-scrollgrid td{border-left:none !important;border-right:none !important}
+  #tcs-cal-{{ section.id }} .fc-daygrid-day-top{justify-content:center}
+  #tcs-cal-{{ section.id }} .fc-daygrid-event-dot{display:none !important}
+  #tcs-cal-{{ section.id }} .fc-button{background:#fff !important;border-color:#fff !important;border-radius:6px !important;color:#000 !important;box-shadow:none !important}
+  #tcs-cal-{{ section.id }} .fc-button-active{background:#F2F2F2 !important;border-color:#F2F2F2 !important}
+  #tcs-cal-{{ section.id }} .fc-day-today{background:#fff !important}
+  #tcs-cal-{{ section.id }} .fc-day-today .fc-daygrid-day-number{background:#252525;color:#fff;width:30px;text-align:center;border-radius:15px}
+  #tcs-cal-{{ section.id }} .fc-daygrid-event{border:0 !important;padding:1px 4px;margin-bottom:2px;cursor:pointer}
+  #tcs-cal-{{ section.id }} .fc-event-main,#tcs-cal-{{ section.id }} .fc-event-time{color:inherit !important}
+  #tcs-cal-{{ section.id }} .fc-event-time{flex-shrink:0;font-weight:700}
+  #tcs-cal-{{ section.id }} .fc-event-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #tcs-cal-{{ section.id }} .s-open{background:{{ section.settings.c_open }} !important;color:#fff !important}
+  #tcs-cal-{{ section.id }} .s-few{background:{{ section.settings.c_few }} !important;color:#fff !important}
+  #tcs-cal-{{ section.id }} .s-sold{background:{{ section.settings.c_sold }} !important;color:#555 !important}
+  #tcs-cal-{{ section.id }} .s-sold .fc-event-title{text-decoration:line-through}
+  #tcs-cal-{{ section.id }} .s-free{background:{{ section.settings.c_free }} !important;color:#fff !important}
+  #tcs-cal-{{ section.id }} .s-private{background:{{ section.settings.c_private }} !important;color:#fff !important}
+  #tcs-cal-{{ section.id }} .fc-list-event{cursor:pointer}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-open,#tcs-cal-{{ section.id }} .fc-list-event.s-few,#tcs-cal-{{ section.id }} .fc-list-event.s-sold,#tcs-cal-{{ section.id }} .fc-list-event.s-free,#tcs-cal-{{ section.id }} .fc-list-event.s-private{background:transparent !important;color:inherit !important}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-sold{opacity:.6}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-open .fc-list-event-dot{border-color:{{ section.settings.c_open }} !important}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-few .fc-list-event-dot{border-color:{{ section.settings.c_few }} !important}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-sold .fc-list-event-dot{border-color:{{ section.settings.c_sold }} !important}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-free .fc-list-event-dot{border-color:{{ section.settings.c_free }} !important}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-private .fc-list-event-dot{border-color:{{ section.settings.c_private }} !important}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-sold .fc-list-event-dot{border-color:#999 !important}
+  #tcs-cal-{{ section.id }} .fc-list-event.s-sold .fc-list-event-title{text-decoration:line-through}
+  #tcs-cal-{{ section.id }} .tcs-left{font-weight:700;margin-left:4px;font-size:.85em}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop{position:absolute;z-index:100;width:300px;max-width:calc(100% - 32px);background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.14);padding:22px;border-radius:6px;font-size:15px;line-height:1.5}
+  #tcs-cal-{{ section.id }} .tcs-cal__close{position:absolute;top:6px;right:10px;background:none;border:0;font-size:22px;cursor:pointer;line-height:1}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-img img{width:100%;height:auto;border-radius:4px;margin-bottom:10px}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-title{font-weight:600;font-size:18px;line-height:1.3;margin-bottom:4px}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-status{font-weight:700;margin-top:4px}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-status.is-sold{color:#E11900}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-private{margin-top:8px}
+  #tcs-cal-{{ section.id }} .tcs-cal__pop-btn{display:block;margin-top:16px;text-align:center}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('tcs-cal-{{ section.id }}');
+  if (!root || root.__tcs) return; root.__tcs = true;
+
+  var FEED = '/collections/{{ feed_handle }}?view=calendar-json';
+  var PRIVATE_FEED = '/collections/{{ feed_handle }}?view=private-bookings-json';
+  var FEW_SEATS = {{ section.settings.few_seats | default: 3 }};
+  var PRIVATE_LABEL = {{ section.settings.private_label | default: 'Private Event' | json }};
+  var SHOW_SPACE = {{ section.settings.show_space | json }};
+  var DEFAULT_MIN = { 'Lunch & Learn': 60, 'Chef Dinners': 150, 'Café Nights': 210, 'Game Nights': 120 };
+  var FALLBACK_MIN = {{ section.settings.default_minutes | default: 120 }};
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function isoLocal(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + 'T' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':00'; }
+
+  // "Pasta 101 12/12/2026 2pm" -> Date
+  function dateFromTitle(t) {
+    var m = String(t).match(/(\d{1,2})\/(\d{1,2})\/(\d{4})\s*(?:at\s*)?(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i);
+    if (!m) return null;
+    var h = parseInt(m[4], 10) % 12 + (m[6].toLowerCase() === 'pm' ? 12 : 0);
+    return new Date(+m[3], +m[1] - 1, +m[2], h, m[5] ? +m[5] : 0);
+  }
+  function cleanTitle(t) {
+    return String(t).replace(/\s*-?\s*\d{1,2}\/\d{1,2}\/\d{4}.*$/, '').trim();
+  }
+  function statusOf(p) {
+    if (p.private) return 'private';
+    if (p.price_max === 0) return 'free';
+    if (!p.available) return 'sold';
+    if (p.tracked && p.seats > 0 && p.seats <= FEW_SEATS) return 'few';
+    return 'open';
+  }
+
+  function toEvent(p) {
+    var start = p.start ? new Date(p.start) : dateFromTitle(p.title);
+    if (!start || isNaN(start)) return null;
+    var end = p.end ? new Date(p.end) : new Date(start.getTime() + (DEFAULT_MIN[p.type] || FALLBACK_MIN) * 60000);
+    var status = statusOf(p);
+    var space = SHOW_SPACE ? (p.space || '') : '';
+    var label = (p.private && p.url === null && p.title) ? p.title : PRIVATE_LABEL;
+    var title = p.private ? label + (space ? ' · ' + space : '') : cleanTitle(p.title);
+    return {
+      id: String(p.id), title: title, start: isoLocal(start), end: isoLocal(end),
+      classNames: ['s-' + status], display: 'block',
+      extendedProps: { p: p, status: status, space: space }
+    };
+  }
+
+  function loadFeed(url, optional) {
+    var all = [];
+    function page(n) {
+      return fetch(url + '&page=' + n, { credentials: 'same-origin' })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (data) {
+          all = all.concat(data.events || []);
+          return n < (data.pages || 1) ? page(n + 1) : all;
+        });
+    }
+    var run = page(1);
+    // The private bookings feed is optional: if it isn't installed, the calendar still loads.
+    return optional ? run.catch(function () { return all; }) : run;
+  }
+  function loadAll() {
+    return Promise.all([loadFeed(FEED, false), loadFeed(PRIVATE_FEED, true)])
+      .then(function (r) { return r[0].concat(r[1]); });
+  }
+
+  var pop = root.querySelector('.tcs-cal__pop');
+  function closePop() { pop.hidden = true; }
+  root.querySelector('.tcs-cal__close').addEventListener('click', closePop);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+  document.addEventListener('click', function (e) {
+    if (!pop.hidden && !pop.contains(e.target) && !e.target.closest('.fc-event')) closePop();
+  });
+
+  function showPop(info) {
+    info.jsEvent.preventDefault();
+    var ev = info.event, x = ev.extendedProps, p = x.p;
+    var fmtDay = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    var fmtTime = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' });
+    pop.querySelector('.tcs-cal__pop-title').textContent = ev.title;
+    pop.querySelector('.tcs-cal__pop-date').textContent = fmtDay.format(ev.start) + ' · ' + fmtTime.format(ev.start) + (p.private && ev.end ? ' – ' + fmtTime.format(ev.end) : '');
+    var spaceEl = pop.querySelector('.tcs-cal__pop-space');
+    spaceEl.textContent = x.space ? 'Space booked: ' + x.space : '';
+    var st = pop.querySelector('.tcs-cal__pop-status');
+    st.className = 'tcs-cal__pop-status';
+    var labels = {
+      open: p.price_label, few: p.price_label + ' · Only ' + p.seats + ' left',
+      sold: 'Sold out', free: p.admission === 'Free RSVP' ? 'Free · RSVP' : 'Free entry · pay as you order', private: ''
+    };
+    st.textContent = labels[x.status] || '';
+    if (x.status === 'sold') st.classList.add('is-sold');
+    pop.querySelector('.tcs-cal__pop-private').style.display = p.private ? '' : 'none';
+    var img = pop.querySelector('.tcs-cal__pop-img');
+    if (p.image && !p.private) { img.querySelector('img').src = p.image; img.style.display = ''; } else { img.style.display = 'none'; }
+    var btn = pop.querySelector('.tcs-cal__pop-btn');
+    btn.style.display = p.private ? 'none' : '';
+    btn.href = p.url; btn.textContent = x.status === 'sold' ? 'Join the waitlist' : (x.status === 'free' && p.admission === 'Free RSVP' ? 'RSVP' : 'View event');
+
+    pop.hidden = false;
+    var r = root.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+    var left = Math.min(Math.max(8, info.jsEvent.clientX - r.left - w / 2), r.width - w - 8);
+    var top = info.jsEvent.clientY - r.top + 12;
+    if (info.jsEvent.clientY + h + 24 > window.innerHeight) top = info.jsEvent.clientY - r.top - h - 12;
+    pop.style.left = left + 'px'; pop.style.top = Math.max(0, top) + 'px';
+  }
+
+  function start() {
+    var grid = root.querySelector('.tcs-cal__grid');
+    var loading = root.querySelector('.tcs-cal__loading');
+    var mobile = window.matchMedia('(max-width: 700px)').matches;
+    var cal = new FullCalendar.Calendar(grid, {
+      initialView: mobile ? 'listMonth' : 'dayGridMonth',
+      headerToolbar: { left: 'title', right: 'dayGridMonth timeGridWeek listMonth prev,next' },
+      buttonText: { month: 'month', week: 'week', list: 'list' },
+      height: 'auto', eventDisplay: 'block', dayMaxEvents: false,
+      eventTimeFormat: { hour: 'numeric', minute: '2-digit', meridiem: 'short' },
+      eventClick: showPop,
+      eventDidMount: function (info) {
+        var x = info.event.extendedProps;
+        if (x.status === 'few') {
+          var t = info.el.querySelector('.fc-event-title, .fc-list-event-title a');
+          if (t) { var b = document.createElement('span'); b.className = 'tcs-left'; b.textContent = '· ' + x.p.seats + ' left'; t.appendChild(b); }
+        }
+      }
+    });
+    cal.render();
+    loadAll().then(function (list) {
+      var events = list.map(toEvent).filter(Boolean);
+      cal.addEventSource(events);
+      loading.style.display = 'none';
+    }).catch(function (e) {
+      loading.textContent = 'Events could not load. Please refresh the page.';
+      console.error('[TCS calendar]', e);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Classes & Events Calendar",
+  "tag": "section",
+  "class": "index-section",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "Calendar" },
+    { "type": "collection", "id": "collection", "label": "Calendar collection", "info": "Use the automated \"Calendar\" collection (Product type = Event). Every product in it shows on the calendar." },
+    { "type": "checkbox", "id": "show_legend", "label": "Show color key", "default": true },
+    { "type": "range", "id": "few_seats", "label": "\"Only a few left\" at or below", "min": 1, "max": 10, "step": 1, "default": 3 },
+    { "type": "range", "id": "default_minutes", "label": "Default length when no end time (minutes)", "min": 30, "max": 300, "step": 30, "default": 120 },
+    { "type": "header", "content": "Private events" },
+    { "type": "text", "id": "private_label", "label": "Label on the calendar", "default": "Private Event" },
+    { "type": "checkbox", "id": "show_space", "label": "Show the space booked", "default": true, "info": "e.g. Private Event · Patio" },
+    { "type": "textarea", "id": "private_message", "label": "Message when clicked", "default": "Interested in booking a private event? Email events@thecooksstation.com." },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "c_open", "label": "Seats available", "default": "#1F3A5F" },
+    { "type": "color", "id": "c_few", "label": "Only a few left", "default": "#C9822B" },
+    { "type": "color", "id": "c_sold", "label": "Sold out", "default": "#E3E3E3" },
+    { "type": "color", "id": "c_free", "label": "Free", "default": "#2E7D46" },
+    { "type": "color", "id": "c_private", "label": "Private / booked", "default": "#7A2E1F" }
+  ],
+  "presets": [{ "name": "Classes & Events Calendar" }]
+}
+{% endschema %}
