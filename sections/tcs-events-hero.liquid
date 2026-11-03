@@ -33,7 +33,7 @@
 
 <style>
   #tcs-hero-{{ section.id }}{max-width:1100px;margin:0 auto;padding:{{ section.settings.pad_top }}px 16px {{ section.settings.pad_bottom }}px;display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:stretch}
-  #tcs-hero-{{ section.id }} .tcs-hero__eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:{{ section.settings.accent }}}
+  #tcs-hero-{{ section.id }} .tcs-hero__eyebrow{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-family:var(--typeHeaderPrimary),sans-serif;color:var(--colorTextBody,#484848);opacity:.75}
   #tcs-hero-{{ section.id }} .tcs-hero__text{align-self:center}
   #tcs-hero-{{ section.id }} .tcs-hero__title{margin:0 0 12px;font-size:clamp(28px,3.2vw,42px);line-height:1.12}
   #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:16px;line-height:1.55}
@@ -42,10 +42,10 @@
   #tcs-hero-{{ section.id }} .tcs-hero__note{margin:12px 0 0;font-size:16px;font-weight:700}
   #tcs-hero-{{ section.id }} .tcs-hero__stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
   #tcs-hero-{{ section.id }} .tcs-hero__stats[hidden]{display:none}
-  #tcs-hero-{{ section.id }} .tcs-hero__stat{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:132px;padding:12px 16px;border:1px solid #DADADA;border-radius:8px;background:#fff;color:#252525;font:inherit;text-align:left;cursor:pointer;margin:0}
-  #tcs-hero-{{ section.id }} .tcs-hero__stat:hover{border-color:#252525}
-  #tcs-hero-{{ section.id }} .tcs-hero__stat:focus-visible{outline:2px solid #252525;outline-offset:2px}
-  #tcs-hero-{{ section.id }} .tcs-hero__stat b{font-size:28px;line-height:1.1}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:132px;padding:12px 16px;border:1px solid var(--colorScheme2Bg,#e2e2e2);border-radius:var(--buttonRadius,3px);background:var(--colorBody,#fff);color:var(--colorTextBody,#484848);font:inherit;text-align:left;cursor:pointer;margin:0}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat:hover{border-color:var(--colorBtnPrimary,#393939)}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat:focus-visible{outline:2px solid var(--colorBtnPrimary,#393939);outline-offset:2px}
+  #tcs-hero-{{ section.id }} .tcs-hero__stat b{font-family:var(--typeHeaderPrimary),sans-serif;font-weight:var(--typeHeaderWeight,700);font-size:28px;line-height:1.1}
   #tcs-hero-{{ section.id }} .tcs-hero__stat span{font-size:13px;opacity:.8}
   #tcs-hero-{{ section.id }} .tcs-hero__img img{display:block;width:100%;height:100%;min-height:{{ section.settings.img_height }}px;object-fit:cover;border-radius:10px}
   #tcs-hero-{{ section.id }} .tcs-hero__more{display:none}
@@ -140,7 +140,6 @@
     { "type": "range", "id": "img_height", "label": "Photo height (desktop)", "min": 200, "max": 500, "step": 10, "unit": "px", "default": 340 },
     { "type": "checkbox", "id": "show_stats", "label": "Show live event counts", "default": true },
     { "type": "collection", "id": "collection", "label": "Events collection for counts", "info": "Use the Calendar collection." },
-    { "type": "color", "id": "accent", "label": "Small line color", "default": "#8A2B1D" },
     { "type": "range", "id": "pad_top", "label": "Space above", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 32 },
     { "type": "range", "id": "pad_bottom", "label": "Space below", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 }
   ],
