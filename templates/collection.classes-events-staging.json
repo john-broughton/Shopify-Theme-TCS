@@ -71,7 +71,7 @@
         "heading_eaaWEp": {
           "type": "heading",
           "settings": {
-            "title": "November Classes Are Live! December classes will be released on November 1st.",
+            "title": "November & December Classes Are Live! January classes will be released on December 1st.",
             "heading_size": "h3"
           }
         }
@@ -202,6 +202,7 @@
     },
     "main-collection": {
       "type": "main-collection",
+      "disabled": true,
       "blocks": {
         "collection_description": {
           "type": "collection_description",
@@ -315,9 +316,9 @@
     "collection-header",
     "slideshow_Kijrgd",
     "rich_text_7HWRjF",
+    "tcs_events_calendar_mkBgPV",
     "testimonials_MACaWt",
     "advanced_content_PYYHmR",
-    "tcs_events_calendar_mkBgPV",
     "main-collection",
     "recently-viewed",
     "faq_HLjacC"
