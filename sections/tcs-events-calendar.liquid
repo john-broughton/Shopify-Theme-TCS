@@ -121,7 +121,7 @@
   #tcs-cal-{{ section.id }} .tcs-cal__sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   #tcs-cal-{{ section.id }} .tcs-cal__empty{text-align:center;margin:12px 0 0;font-size:14px}
   #tcs-cal-{{ section.id }} .tcs-cal__reset{font:inherit;background:none;border:0;padding:0;text-decoration:underline;cursor:pointer;color:inherit}
-  @media (max-width:700px){#tcs-cal-{{ section.id }} .tcs-cal__chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px;-webkit-overflow-scrolling:touch}#tcs-cal-{{ section.id }} .tcs-cal__chip{flex:0 0 auto}#tcs-cal-{{ section.id }} .tcs-cal__search{flex:1 1 100%}#tcs-cal-{{ section.id }} .tcs-cal__search input{width:100%}}
+  @media (max-width:700px){#tcs-cal-{{ section.id }} .tcs-cal__chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}#tcs-cal-{{ section.id }} .tcs-cal__chips::-webkit-scrollbar{display:none}#tcs-cal-{{ section.id }} .tcs-cal__chip{flex:0 0 auto}#tcs-cal-{{ section.id }} .tcs-cal__search{flex:1 1 100%}#tcs-cal-{{ section.id }} .tcs-cal__search input{width:100%}}
 </style>
 
 <script>
@@ -285,6 +285,8 @@
         b.addEventListener('click', function () { state.type = c[0]; apply(); });
         chips.appendChild(b);
       });
+      var on = chips.querySelector('[aria-pressed="true"]');
+      if (on && chips.scrollWidth > chips.clientWidth) chips.scrollLeft += on.getBoundingClientRect().left - chips.getBoundingClientRect().left - 16;
     }
     function apply() {
       closePop();
