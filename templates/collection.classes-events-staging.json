@@ -44,8 +44,8 @@
       ],
       "settings": {
         "full_width": true,
-        "desktop_size": -20,
-        "mobile_size": 10,
+        "desktop_size": -70,
+        "mobile_size": -30,
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
@@ -67,19 +67,11 @@
             "enlarge_text": true,
             "text": "<p>The Cook's Station offers hands-on and demonstration cooking classes, chef's table dinners, and one-hour Lunch & Learns in our teaching kitchen at 515 Buncombe St in downtown Greenville, SC.&nbsp;<br/><br/>New classes are released on the 1st of every month, and class guests save 20% on in-store purchases the day of their class.<br/><br/>Want to join a class but see that it's sold out? No worries! Simply click on the class you're interested in and select the “Notify Me When Back in Stock” button to be notified if a spot opens up.</p>"
           }
-        },
-        "heading_eaaWEp": {
-          "type": "heading",
-          "settings": {
-            "title": "November & December Classes Are Live! January classes will be released on December 1st.",
-            "heading_size": "h3"
-          }
         }
       },
       "block_order": [
         "heading_GigDbX",
-        "text_eeiRt7",
-        "heading_eaaWEp"
+        "text_eeiRt7"
       ],
       "settings": {
         "align_text": "center",
@@ -310,13 +302,35 @@
         "c_free": "#2E7D46",
         "c_private": "#7A2E1F"
       }
+    },
+    "rich_text_banner": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_banner": {
+          "type": "heading",
+          "settings": {
+            "title": "November & December Classes Are Live! January classes will be released on December 1st.",
+            "heading_size": "h3"
+          }
+        }
+      },
+      "block_order": [
+        "heading_banner"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "color_scheme": "1",
+        "divider": false
+      }
     }
   },
   "order": [
     "collection-header",
     "slideshow_Kijrgd",
-    "rich_text_7HWRjF",
+    "rich_text_banner",
     "tcs_events_calendar_mkBgPV",
+    "rich_text_7HWRjF",
     "testimonials_MACaWt",
     "advanced_content_PYYHmR",
     "main-collection",
