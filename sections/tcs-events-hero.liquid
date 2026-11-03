@@ -100,7 +100,7 @@
     var k = b.getAttribute('data-stat');
     function set(sel, on) { var i = cal.querySelector(sel); if (i && i.checked !== on) i.click(); }
     if (k === 'week') {
-      var w = cal.querySelector('.fc-listThisWeek-button, .tcs-cal__views [data-view="listThisWeek"]');
+      var w = cal.querySelector('.fc-listThisWeek-button') || cal.querySelector('.tcs-cal__views [data-view="listThisWeek"]');
       if (w) w.click();
     }
     if (k === 'free') { set('[data-f="free"]', true); }
