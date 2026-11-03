@@ -14,7 +14,7 @@
   <div class="tcs-hero__text">
     {%- if section.settings.eyebrow != blank -%}<p class="tcs-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
     <h1 class="tcs-hero__title">{{ section.settings.heading | escape }}</h1>
-    {%- if section.settings.intro != blank -%}<div class="tcs-hero__intro">{{ section.settings.intro }}</div>{%- endif -%}
+    {%- if section.settings.intro != blank -%}<div class="tcs-hero__intro">{{ section.settings.intro }}</div><button type="button" class="tcs-hero__more" aria-expanded="false">Read more</button>{%- endif -%}
     {%- if section.settings.note != blank -%}<p class="tcs-hero__note">{{ section.settings.note | escape }}</p>{%- endif -%}
     {%- if section.settings.show_stats -%}
     <div class="tcs-hero__stats" hidden>
@@ -48,8 +48,11 @@
   #tcs-hero-{{ section.id }} .tcs-hero__stat b{font-size:28px;line-height:1.1}
   #tcs-hero-{{ section.id }} .tcs-hero__stat span{font-size:13px;opacity:.8}
   #tcs-hero-{{ section.id }} .tcs-hero__img img{display:block;width:100%;height:100%;min-height:{{ section.settings.img_height }}px;object-fit:cover;border-radius:10px}
+  #tcs-hero-{{ section.id }} .tcs-hero__more{display:none}
   @media (max-width:749px){
     #tcs-hero-{{ section.id }}{grid-template-columns:1fr;gap:16px;padding-top:16px}
+    #tcs-hero-{{ section.id }} .tcs-hero__intro:not(.is-open) p:not(:first-child){display:none}
+    #tcs-hero-{{ section.id }} .tcs-hero__more{display:inline-block;margin:6px 0 0;padding:6px 0;min-height:36px;background:none;border:0;font:inherit;font-size:15px;font-weight:700;text-decoration:underline;color:inherit;cursor:pointer}
     #tcs-hero-{{ section.id }} .tcs-hero__img{order:-1}
     #tcs-hero-{{ section.id }} .tcs-hero__img img{height:150px;min-height:0}
     #tcs-hero-{{ section.id }} .tcs-hero__intro{font-size:15px}
@@ -60,6 +63,18 @@
   }
 </style>
 
+<script>
+(function () {
+  var r = document.getElementById('tcs-hero-{{ section.id }}'); if (!r) return;
+  var m = r.querySelector('.tcs-hero__more'), i = r.querySelector('.tcs-hero__intro');
+  if (!m || !i) return;
+  if (i.querySelectorAll('p').length < 2) { m.remove(); return; }
+  m.addEventListener('click', function () {
+    var open = i.classList.toggle('is-open');
+    m.setAttribute('aria-expanded', open); m.textContent = open ? 'Show less' : 'Read more';
+  });
+})();
+</script>
 {%- if section.settings.show_stats -%}
 <script>
 (function () {
