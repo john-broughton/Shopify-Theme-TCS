@@ -1,0 +1,45 @@
+{%- layout none -%}
+{%- comment -%}
+  TCS private bookings feed: /collections/calendar?view=private-bookings-json
+  Reads Content → Metaobjects → Private booking (type handle: private_booking).
+  These entries have NO page on the website. Only date, time, space and label are output;
+  nothing else from the entry is ever printed.
+  Field keys expected: start (Date and time), end (Date and time),
+  space (Metaobject → Space), calendar_label (Single line text, optional).
+{%- endcomment -%}
+{%- paginate shop.metaobjects.private_booking.values by 250 -%}
+{
+  "page": {{ paginate.current_page | default: 1 }},
+  "pages": {{ paginate.pages | default: 1 }},
+  "events": [
+  {%- for b in shop.metaobjects.private_booking.values -%}
+    {%- liquid
+      assign sp_label = ''
+      assign sp = b.space.value
+      if sp
+        assign sp_label = sp.space.value | default: sp.name.value | default: sp.title.value
+      endif
+      assign start_iso = ''
+      if b.start != blank
+        assign start_iso = b.start.value | date: '%Y-%m-%dT%H:%M:%S'
+      endif
+      assign end_iso = ''
+      if b.end != blank
+        assign end_iso = b.end.value | date: '%Y-%m-%dT%H:%M:%S'
+      endif
+    -%}
+    {
+      "id": {{ 'pb-' | append: forloop.index | append: '-' | append: paginate.current_page | json }},
+      "title": {{ b.calendar_label.value | default: '' | json }},
+      "url": null, "image": null,
+      "type": "Private Event", "admission": "",
+      "space": {{ sp_label | json }},
+      "private": true,
+      "start": {{ start_iso | json }}, "end": {{ end_iso | json }},
+      "price_min": 0, "price_max": 0, "price_label": "",
+      "available": false, "tracked": false, "seats": 0
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+  ]
+}
+{%- endpaginate -%}
