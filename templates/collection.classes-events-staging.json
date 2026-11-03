@@ -49,7 +49,8 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
-      }
+      },
+      "disabled": true
     },
     "rich_text_7HWRjF": {
       "type": "rich-text",
@@ -288,7 +289,7 @@
       "type": "tcs-events-calendar",
       "name": "Classes & Events Calendar",
       "settings": {
-        "title": "Calendar",
+        "title": "What's coming up",
         "collection": "calendar",
         "show_legend": true,
         "few_seats": 3,
@@ -300,35 +301,31 @@
         "c_few": "#C9822B",
         "c_sold": "#E3E3E3",
         "c_free": "#2E7D46",
-        "c_private": "#7A2E1F"
+        "c_private": "#7A2E1F",
+        "space_top": 16
       }
     },
-    "rich_text_banner": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_banner": {
-          "type": "heading",
-          "settings": {
-            "title": "November & December Classes Are Live! January classes will be released on December 1st.",
-            "heading_size": "h3"
-          }
-        }
-      },
-      "block_order": [
-        "heading_banner"
-      ],
+    "tcs_events_hero": {
+      "type": "tcs-events-hero",
       "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "color_scheme": "1",
-        "divider": false
+        "eyebrow": "Greenville, SC · 515 Buncombe St",
+        "heading": "Classes & Events",
+        "intro": "<p>Cooking classes, chef dinners, café nights, and store events, all in one place. See what's coming up, what's free, and what still has seats.</p>",
+        "note": "November & December Classes Are Live! January classes will be released on December 1st.",
+        "image": "shopify://shop_images/christa-rene-photography-69.jpg",
+        "img_height": 340,
+        "show_stats": true,
+        "collection": "calendar",
+        "accent": "#8A2B1D",
+        "pad_top": 32,
+        "pad_bottom": 8
       }
     }
   },
   "order": [
     "collection-header",
     "slideshow_Kijrgd",
-    "rich_text_banner",
+    "tcs_events_hero",
     "tcs_events_calendar_mkBgPV",
     "rich_text_7HWRjF",
     "testimonials_MACaWt",
