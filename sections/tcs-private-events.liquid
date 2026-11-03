@@ -1,0 +1,131 @@
+{%- comment -%}
+  TCS Private Events info block for the Classes & Events page.
+  Spaces are blocks (name, guests, best for, price, photo). Booking steps are blocks.
+  Anything in [brackets] is a placeholder waiting on team approval and gets highlighted
+  in yellow so it can't be missed. Turn "Highlight placeholders" off once copy is final.
+{%- endcomment -%}
+<div class="tcs-pe" id="tcs-pe-{{ section.id }}">
+  <div class="tcs-pe__head">
+    {%- if section.settings.eyebrow != blank -%}<p class="tcs-pe__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+    <h2 class="tcs-pe__title">{{ section.settings.heading | escape }}</h2>
+    {%- if section.settings.intro != blank -%}<div class="tcs-pe__intro">{{ section.settings.intro }}</div>{%- endif -%}
+  </div>
+
+  <div class="tcs-pe__spaces">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'space' -%}
+      <div class="tcs-pe__space" {{ block.shopify_attributes }}>
+        {%- if block.settings.image != blank -%}
+          {{ block.settings.image | image_url: width: 700 | image_tag: loading: 'lazy', widths: '350, 700', sizes: '(max-width: 749px) 100vw, 25vw', alt: block.settings.name }}
+        {%- endif -%}
+        <h3>{{ block.settings.name | escape }}</h3>
+        <ul>
+          {%- if block.settings.guests != blank -%}<li><b>Guests:</b> {{ block.settings.guests | escape }}</li>{%- endif -%}
+          {%- if block.settings.best_for != blank -%}<li><b>Best for:</b> {{ block.settings.best_for | escape }}</li>{%- endif -%}
+          {%- if block.settings.price != blank -%}<li><b>Pricing:</b> {{ block.settings.price | escape }}</li>{%- endif -%}
+        </ul>
+      </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <div class="tcs-pe__steps">
+    <h3>{{ section.settings.steps_heading | escape }}</h3>
+    <ol>
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'step' -%}
+        <li {{ block.shopify_attributes }}><b>{{ block.settings.title | escape }}</b>{%- if block.settings.text != blank -%} <span>{{ block.settings.text | escape }}</span>{%- endif -%}</li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ol>
+  </div>
+
+  <div class="tcs-pe__cta">
+    {%- if section.settings.button_link != blank -%}<a class="btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label | escape }}</a>{%- endif -%}
+    <p>
+      {%- if section.settings.email != blank -%}Email <a href="mailto:{{ section.settings.email }}">{{ section.settings.email }}</a>{%- endif -%}
+      {%- if section.settings.phone != blank -%} · Call <a href="tel:{{ section.settings.phone | remove: '.' | remove: '-' | remove: ' ' }}">{{ section.settings.phone }}</a>{%- endif -%}
+    </p>
+  </div>
+</div>
+
+<style>
+  #shopify-section-{{ section.id }}{margin-top:{{ section.settings.space_top }}px}
+  #tcs-pe-{{ section.id }}{max-width:1100px;margin:0 auto;padding:32px 16px 40px;border-top:1px solid #E5E5E5}
+  #tcs-pe-{{ section.id }} .tcs-pe__head{max-width:720px;margin:0 auto 24px;text-align:center}
+  #tcs-pe-{{ section.id }} .tcs-pe__eyebrow{margin:0 0 6px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:{{ section.settings.accent }}}
+  #tcs-pe-{{ section.id }} .tcs-pe__title{margin:0 0 10px}
+  #tcs-pe-{{ section.id }} .tcs-pe__intro{font-size:16px;line-height:1.55}
+  #tcs-pe-{{ section.id }} .tcs-pe__intro p{margin:0}
+  #tcs-pe-{{ section.id }} .tcs-pe__spaces{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  #tcs-pe-{{ section.id }} .tcs-pe__space{border:1px solid #DADADA;border-radius:10px;padding:16px;background:#fff}
+  #tcs-pe-{{ section.id }} .tcs-pe__space img{display:block;width:100%;height:140px;object-fit:cover;border-radius:6px;margin-bottom:12px}
+  #tcs-pe-{{ section.id }} .tcs-pe__space h3{margin:0 0 8px;font-size:20px}
+  #tcs-pe-{{ section.id }} .tcs-pe__space ul{list-style:none;margin:0;padding:0;font-size:15px;line-height:1.5}
+  #tcs-pe-{{ section.id }} .tcs-pe__space li{margin:0 0 4px}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps{max-width:720px;margin:28px auto 0}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps h3{margin:0 0 10px;font-size:20px;text-align:center}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps ol{margin:0;padding-left:22px;font-size:15px;line-height:1.55}
+  #tcs-pe-{{ section.id }} .tcs-pe__steps li{margin:0 0 8px}
+  #tcs-pe-{{ section.id }} .tcs-pe__cta{text-align:center;margin-top:22px}
+  #tcs-pe-{{ section.id }} .tcs-pe__cta p{margin:10px 0 0;font-size:15px}
+  #tcs-pe-{{ section.id }} mark.tcs-ph{background:#FFF3B0;color:inherit;padding:0 2px;border-radius:2px}
+</style>
+
+{%- if section.settings.highlight -%}
+<script>
+(function () {
+  // Highlight [placeholder] text so the team can spot what still needs approval.
+  var root = document.getElementById('tcs-pe-{{ section.id }}'); if (!root) return;
+  var walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+  while ((n = walk.nextNode())) { if (/\[[^\]]+\]/.test(n.nodeValue)) nodes.push(n); }
+  nodes.forEach(function (t) {
+    var frag = document.createDocumentFragment();
+    t.nodeValue.split(/(\[[^\]]+\])/).forEach(function (part) {
+      if (/^\[[^\]]+\]$/.test(part)) { var m = document.createElement('mark'); m.className = 'tcs-ph'; m.textContent = part; frag.appendChild(m); }
+      else if (part) frag.appendChild(document.createTextNode(part));
+    });
+    t.parentNode.replaceChild(frag, t);
+  });
+})();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Private Events Info",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small line above heading", "default": "Private events" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Host a private class or party" },
+    { "type": "richtext", "id": "intro", "label": "Intro" },
+    { "type": "text", "id": "steps_heading", "label": "Steps heading", "default": "How booking works" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Start planning your event" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "text", "id": "email", "label": "Email", "default": "events@thecooksstation.com" },
+    { "type": "text", "id": "phone", "label": "Phone", "default": "864.250.0091" },
+    { "type": "color", "id": "accent", "label": "Small line color", "default": "#8A2B1D" },
+    { "type": "checkbox", "id": "highlight", "label": "Highlight [placeholders] in yellow", "info": "Turn off once all copy is approved.", "default": true },
+    { "type": "range", "id": "space_top", "label": "Space above section", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 24 }
+  ],
+  "blocks": [
+    {
+      "type": "space", "name": "Space",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Space name", "default": "Teaching Kitchen" },
+        { "type": "text", "id": "guests", "label": "Guests", "default": "Up to [XX] guests" },
+        { "type": "text", "id": "best_for", "label": "Best for" },
+        { "type": "text", "id": "price", "label": "Pricing", "default": "[From $XX per person]" },
+        { "type": "image_picker", "id": "image", "label": "Photo" }
+      ]
+    },
+    {
+      "type": "step", "name": "Booking step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Step" },
+        { "type": "text", "id": "text", "label": "Details" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Private Events Info" }]
+}
+{% endschema %}
