@@ -41,7 +41,7 @@
   <div class="tcs-cal__loading">Loading events…</div>
   <div class="tcs-cal__views" role="group" aria-label="Show" hidden>
     <button type="button" data-view="listThisWeek" aria-pressed="false">This week</button>
-    <button type="button" data-view="listUpcoming" aria-pressed="false">Next 4 weeks</button>
+    <button type="button" data-view="listMonth" aria-pressed="false">This month</button>
   </div>
   <div class="tcs-cal__grid"></div>
 
@@ -325,14 +325,14 @@
     var loading = root.querySelector('.tcs-cal__loading');
     var mobile = window.matchMedia('(max-width: 700px)').matches;
     var cal = new FullCalendar.Calendar(grid, {
-      // Phones: an upcoming list that starts today (month/week grids are too cramped).
-      initialView: mobile ? 'listUpcoming' : 'dayGridMonth',
+      // Phones: a list for this month (month/week grids are too cramped). Past days are skipped on phones.
+      initialView: mobile ? 'listMonth' : 'dayGridMonth',
+      validRange: mobile ? function (now) { var d = new Date(now); d.setHours(0, 0, 0, 0); return { start: d }; } : {},
       headerToolbar: mobile ? { left: 'prev', center: 'title', right: 'next' } : { left: 'title', right: 'listThisWeek dayGridMonth timeGridWeek listMonth prev,next' },
       buttonText: { month: 'month', week: 'week grid', listMonth: 'list' },
       views: {
         // "This week" = a simple list of the next 7 days, starting today.
-        listThisWeek: { type: 'list', duration: { days: 7 }, dateIncrement: { days: 7 }, dateAlignment: 'day', buttonText: 'this week' },
-        listUpcoming: { type: 'list', duration: { weeks: 4 }, dateIncrement: { weeks: 4 }, dateAlignment: 'day' }
+        listThisWeek: { type: 'list', duration: { days: 7 }, dateIncrement: { days: 7 }, dateAlignment: 'day', buttonText: 'this week' }
       },
       noEventsContent: 'No events in these dates. Use the arrows to see more.',
       datesSet: function (d) {
