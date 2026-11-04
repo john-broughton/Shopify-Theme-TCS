@@ -1,0 +1,81 @@
+{%- comment -%}
+  The Cook's Station · site alert bar (red bar at the top of the page).
+  Two sources, nothing typed twice:
+    1) Content → Metaobjects → Site notice (Active entries): patio closures, special hours, anything else.
+    2) Private bookings whose Space is Patio or Whole Store: added automatically
+       ("Patio closed for a private event" / "Store closed for a private event"). No guest names are ever shown.
+  The bar shows from "Show days before" (default 3) days ahead and disappears on its own after the end time.
+  Staging: rendered from the tcs-events-hero section. Sitewide: render once in layout/theme.liquid right after <body ...>.
+{%- endcomment -%}
+<div id="tcs-notice-bar" class="tcs-notice-bar" role="status" hidden></div>
+<style>
+  .tcs-notice-bar{background:#7A2E1F;color:#fff;text-align:center;font-family:var(--typeBasePrimary),sans-serif;font-size:14px;line-height:1.45;padding:10px 16px}
+  .tcs-notice-bar b{font-family:var(--typeHeaderPrimary),sans-serif;font-weight:700;letter-spacing:.04em}
+  .tcs-notice-bar a{color:#fff;text-decoration:underline;margin-left:8px;white-space:nowrap}
+  .tcs-notice-bar .tcs-sep{opacity:.6;margin:0 10px}
+  @media (max-width:749px){.tcs-notice-bar{font-size:13px;padding:8px 12px}.tcs-notice-bar .tcs-sep{display:block;height:4px;overflow:hidden;opacity:0}}
+</style>
+<script>
+(function () {
+  if (window.__tcsNoticesLoaded) return; window.__tcsNoticesLoaded = true;
+  var notices = [
+    {%- for n in shop.metaobjects.site_notice.values -%}
+      {%- if n.starts_at.value != blank and n.ends_at.value != blank -%}
+      { "headline": {{ n.headline.value | json }}, "area": {{ n.area.value | json }},
+        "start": {{ n.starts_at.value | date: '%s' | times: 1000 }}, "end": {{ n.ends_at.value | date: '%s' | times: 1000 }},
+        "open": {{ n.still_open.value | default: '' | json }}, "lead": {{ n.show_days_before.value | default: 3 }} },
+      {%- endif -%}
+    {%- endfor -%}
+    null
+  ].filter(Boolean);
+  var FEED = '/collections/calendar?view=private-bookings-json';
+  var AUTO = {
+    'Patio': { headline: 'Patio closed for a private event', open: 'Café & bar open as usual' },
+    'Whole Store': { headline: 'Store closed for a private event', open: '' }
+  };
+  var LINK = '{{ routes.collections_url }}/in-store-classes';
+  var DAY = 864e5, TZ = 'America/New_York', now = Date.now();
+  var fDay = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'short', day: 'numeric', timeZone: TZ });
+  var fTime = new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit', timeZone: TZ });
+  var fParts = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  // "2026-12-15T17:30:00" (store time, no offset) -> ms
+  function local(s) {
+    var m = /^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)/.exec(s || ''); if (!m) return NaN;
+    var guess = Date.UTC(+m[1], m[2] - 1, +m[3], +m[4], +m[5]);
+    var p = {}; fParts.formatToParts(guess).forEach(function (x) { p[x.type] = x.value; });
+    var asTz = Date.UTC(+p.year, p.month - 1, +p.day, +p.hour % 24, +p.minute);
+    return guess - (asTz - guess);
+  }
+  function hm(ms) { return fTime.format(ms).replace(':00', '').replace(/\s/g, '').toLowerCase(); }
+  function range(n) { var a = hm(n.start), b = hm(n.end); if (a.slice(-2) === b.slice(-2)) a = a.slice(0, -2); return a + '–' + b; }
+  function line(n) { return '<b>' + esc(fDay.format(n.start)) + ', ' + range(n) + '</b> · ' + esc(n.headline) + '.' + (n.open ? ' ' + esc(n.open) + '.' : ''); }
+
+  function render(list) {
+    var bar = document.getElementById('tcs-notice-bar'); if (!bar) return;
+    var show = list.filter(function (n) { return n.end > now && n.start - (n.lead == null ? 3 : n.lead) * DAY <= now; })
+      .sort(function (a, b) { return a.start - b.start; });
+    // one line per area per day (two patio bookings the same evening read as one alert)
+    var seen = {}; show = show.filter(function (n) { var k = n.area + fDay.format(n.start) + n.headline; if (seen[k]) { var o = seen[k]; o.start = Math.min(o.start, n.start); o.end = Math.max(o.end, n.end); return false; } seen[k] = n; return true; });
+    if (!show.length) { bar.hidden = true; return; }
+    var more = show.length > 2 ? ' <a href="' + LINK + '">+' + (show.length - 2) + ' more</a>' : '';
+    bar.innerHTML = show.slice(0, 2).map(line).join('<span class="tcs-sep">|</span>') + more;
+    bar.hidden = false;
+  }
+  render(notices);
+  var KEY = 'tcsPB1', cached = null;
+  try { cached = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) {}
+  function useBookings(evts) {
+    var auto = (evts || []).filter(function (e) { return AUTO[e.space]; }).map(function (e) {
+      return { headline: AUTO[e.space].headline, open: AUTO[e.space].open, area: e.space, start: local(e.start), end: local(e.end), lead: 3 };
+    }).filter(function (n) { return n.start && n.end; });
+    render(notices.concat(auto));
+  }
+  if (cached && now - cached.t < 15 * 60 * 1000) { useBookings(cached.e); return; }
+  fetch(FEED, { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+    var evts = (j && j.events || []).filter(function (e) { return AUTO[e.space]; }).map(function (e) { return { space: e.space, start: e.start, end: e.end }; });
+    try { sessionStorage.setItem(KEY, JSON.stringify({ t: now, e: evts })); } catch (e) {}
+    useBookings(evts);
+  }).catch(function () {});
+})();
+</script>
