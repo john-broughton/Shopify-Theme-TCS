@@ -58,8 +58,8 @@
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/cookware-collection-hero.webp",
-            "overlay_opacity": 30
+            "image": "shopify://shop_images/cookware-collection-hero-2.webp",
+            "overlay_opacity": 22
           }
         }
       },
