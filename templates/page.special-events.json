@@ -142,6 +142,7 @@
     },
     "text_and_image_yaEnXV": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Sunday_Brunch_17.png",
         "image_mask": "none",
@@ -274,10 +275,10 @@
     "1644519722c7610927",
     "text_and_image_RGbyfA",
     "text_and_image_nB87tT",
+    "text_and_image_E94AcB",
     "text_and_image_eRxf3C",
     "text_and_image_WUFFB4",
     "text_and_image_yaEnXV",
-    "text_and_image_E94AcB",
     "text_and_image_kCeTqw",
     "text_and_image_YCtiEh",
     "text_and_image_YjefMa",
