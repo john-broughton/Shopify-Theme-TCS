@@ -49,17 +49,17 @@
           "type": "hero",
           "settings": {
             "top_subheading": "",
-            "title": "<p>Hestan</p>",
+            "title": "<p>Cookware</p>",
             "title_size": 70,
-            "subheading": "",
+            "subheading": "Pots, pans, and everyday essentials for your next great meal.",
             "link": "",
             "link_text": "",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "#ffffff",
             "text_align": "vertical-center horizontal-center",
-            "image": "shopify://shop_images/HestanHero.jpg",
-            "overlay_opacity": 0
+            "image": "shopify://shop_images/cookware_collections_image.png",
+            "overlay_opacity": 22
           }
         }
       },
@@ -90,7 +90,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Not just made here, or made <em>there</em>, Hestan cookware is made in <em>Hestan's own </em>Italian factories, and is the only stainless steel cookware that chefs and discerning home cooks demand.</p>"
+            "text": "<p>From quick weeknight dinners to slow Sunday suppers, find <strong>cookware</strong> for whatever’s on the menu.</p>"
           }
         }
       },
@@ -98,6 +98,7 @@
         "heading_ibUpnR",
         "text_k3fqfX"
       ],
+      "disabled": true,
       "name": "t:labels.rich_text",
       "settings": {
         "align_text": "center",
@@ -158,7 +159,7 @@
       ],
       "name": "t:labels.collection_list",
       "settings": {
-        "title": "Shop By Style",
+        "title": "Shop By Category",
         "heading_size": "h2",
         "heading_position": "center",
         "divider": false
@@ -194,36 +195,6 @@
         "enable_color_swatches": false,
         "enable_sort": true
       }
-    },
-    "featured_collections_fBAXPj": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_Cy4xAq": {
-          "type": "collection",
-          "settings": {
-            "collection": "hestan-cookware",
-            "title": ""
-          }
-        },
-        "collection_KQPzXn": {
-          "type": "collection",
-          "settings": {
-            "collection": "le-creuset-bakeware",
-            "title": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_Cy4xAq",
-        "collection_KQPzXn"
-      ],
-      "name": "t:labels.collection_list",
-      "settings": {
-        "title": "Shop By Category",
-        "heading_size": "h2",
-        "heading_position": "left",
-        "divider": false
-      }
     }
   },
   "order": [
@@ -231,7 +202,6 @@
     "slideshow_9NgdAJ",
     "rich_text_Ch4dJm",
     "featured_collections_wk94Fp",
-    "main-collection",
-    "featured_collections_fBAXPj"
+    "main-collection"
   ]
 }
