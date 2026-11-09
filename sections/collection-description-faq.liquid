@@ -1,0 +1,136 @@
+{%- comment -%}
+TCS: Renders the collection description intro, then turns the
+"<h2>... FAQs</h2><h3>Question</h3><p>Answer</p>" part of the
+description into the same accordion used by the FAQ section,
+with FAQPage structured data.
+{%- endcomment -%}
+{%- liquid
+assign desc = collection.description
+assign intro = desc
+assign faq_title = ''
+assign faq_body = ''
+if desc contains '<h2>'
+assign parts = desc | split: '<h2>'
+assign intro = parts | first
+for part in parts
+if forloop.first
+continue
+endif
+assign head = part | split: '</h2>' | first
+if head contains 'FAQ'
+assign faq_title = head
+assign faq_body = part | remove_first: head | remove_first: '</h2>'
+else
+assign intro = intro | append: '<h2>' | append: part
+endif
+endfor
+endif
+assign qs = faq_body | split: '<h3>'
+assign q_count = 0
+for item in qs
+if item contains '</h3>'
+assign q_count = q_count | plus: 1
+endif
+endfor
+assign current_filter_size = 0
+for filter in collection.filters
+assign current_filter_size = current_filter_size | plus: filter.active_values.size
+endfor
+-%}
+
+{%- if desc != blank and current_filter_size == 0 -%}
+{%- if intro != blank -%}
+<div class="index-section">
+<div class="page-width page-width--narrow">
+<div class="rte rte--collection-desc clearfix">
+<div class="enlarge-text">{{ intro }}</div>
+</div>
+</div>
+</div>
+{%- endif -%}
+
+{%- if q_count > 0 -%}
+<div class="index-section">
+<div class="section--divider">
+<div class="page-width page-width--narrow">
+<header class="section-header text-{{ section.settings.heading_position }}">
+<h2 class="section-header__title h2">{{ faq_title }}</h2>
+</header>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{%- assign n = 0 -%}
+{%- for item in qs -%}
+{%- if item contains '</h3>' -%}
+{%- assign n = n | plus: 1 -%}
+{%- assign q = item | split: '</h3>' | first | strip_html | strip -%}
+{%- assign a = item | split: '</h3>' | last | strip -%}
+{
+"@type": "Question",
+"name": {{ q | replace: '&amp;', '&' | replace: '&quot;', '"' | replace: '&#39;', "'" | json }},
+"acceptedAnswer": { "@type": "Answer", "text": {{ a | json }} }
+}{% if n < q_count %},{% endif %}
+{%- endif -%}
+{%- endfor -%}
+]
+}
+</script>
+
+{%- for item in qs -%}
+{%- if item contains '</h3>' -%}
+{%- assign q = item | split: '</h3>' | first | strip -%}
+{%- assign a = item | split: '</h3>' | last | strip -%}
+<div>
+<collapsible-elements>
+<div>
+<button
+type="button"
+class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height"
+aria-controls="FAQ-content-{{ section.id }}-{{ forloop.index }}"
+>
+<span class="collapsible-trigger__layout">
+<span>
+<span>{{ q }}</span>
+</span>
+<span class="collapsible-trigger__icon collapsible-trigger__icon--open" role="presentation">
+{% render 'icon', name: 'chevron-down' %}
+</span>
+</span>
+</button>
+<div id="FAQ-content-{{ section.id }}-{{ forloop.index }}" class="collapsible-content collapsible-content--all">
+<div class="collapsible-content__inner rte clearfix">
+{{ a }}
+</div>
+</div>
+</div>
+</collapsible-elements>
+</div>
+{%- endif -%}
+{%- endfor -%}
+</div>
+</div>
+</div>
+{%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+"name": "Description + FAQs",
+"settings": [
+{
+"type": "select",
+"id": "heading_position",
+"label": "FAQ heading position",
+"default": "center",
+"options": [
+{ "value": "left", "label": "Left" },
+{ "value": "center", "label": "Center" }
+]
+}
+],
+"enabled_on": { "templates": ["collection"] }
+}
+{% endschema %}
