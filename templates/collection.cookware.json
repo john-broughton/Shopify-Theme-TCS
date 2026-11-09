@@ -26,15 +26,10 @@
           "settings": {
             "grid_style": "medium"
           }
-        },
-        "collection_description": {
-          "type": "collection_description",
-          "settings": {}
         }
       },
       "block_order": [
-        "product_grid",
-        "collection_description"
+        "product_grid"
       ],
       "settings": {
         "enable_sidebar": false,
@@ -42,10 +37,17 @@
         "enable_color_swatches": false,
         "enable_sort": true
       }
+    },
+    "description_faq": {
+      "type": "collection-description-faq",
+      "settings": {
+        "heading_position": "center"
+      }
     }
   },
   "order": [
     "collection-header",
-    "main-collection"
+    "main-collection",
+    "description_faq"
   ]
 }
