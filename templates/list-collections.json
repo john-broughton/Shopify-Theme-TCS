@@ -1,1 +1,231 @@
-{"sections":{"main":{"type":"list-collections-template","blocks":{"82e33f9c-ada7-45e2-84bd-286fa3ddc1ad":{"type":"collection","settings":{"collection":"appliances"}},"a7e92177-4e43-4bf5-b076-15759b0a6fc0":{"type":"collection","settings":{"collection":"barware"}},"008e9db6-a7c5-4e49-9094-0b4542b9910f":{"type":"collection","settings":{"collection":"flatware"}},"bd763b07-325a-4e86-b7e5-57efe3bef031":{"type":"collection","settings":{"collection":"gift-baskets"}},"0622a7f3-0ca7-4019-afa0-6aaf87a96290":{"type":"collection","settings":{"collection":"glassware"}},"3efd1c9d-95f9-42eb-be30-924dcbd079bb":{"type":"collection","settings":{"collection":"home-decor"}}},"block_order":["82e33f9c-ada7-45e2-84bd-286fa3ddc1ad","a7e92177-4e43-4bf5-b076-15759b0a6fc0","008e9db6-a7c5-4e49-9094-0b4542b9910f","bd763b07-325a-4e86-b7e5-57efe3bef031","0622a7f3-0ca7-4019-afa0-6aaf87a96290","3efd1c9d-95f9-42eb-be30-924dcbd079bb"],"settings":{"title_enable":false,"display_type":"selected","sort":"alphabetical"}},"logo-list":{"type":"logo-list","blocks":{"logo1":{"type":"logo_image","settings":{"link":""}},"logo2":{"type":"logo_image","settings":{"link":""}},"logo3":{"type":"logo_image","settings":{"link":""}},"logo4":{"type":"logo_image","settings":{"link":""}},"logo5":{"type":"logo_image","settings":{"link":""}},"logo6":{"type":"logo_image","settings":{"link":""}}},"block_order":["logo1","logo2","logo3","logo4","logo5","logo6"],"settings":{"title":"Our brands","divider":false}}},"order":["main","logo-list"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "list-collections-template",
+      "blocks": {
+        "dept_1": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookware"
+          }
+        },
+        "dept_2": {
+          "type": "collection",
+          "settings": {
+            "collection": "cooking-gadgets"
+          }
+        },
+        "dept_3": {
+          "type": "collection",
+          "settings": {
+            "collection": "knives"
+          }
+        },
+        "dept_4": {
+          "type": "collection",
+          "settings": {
+            "collection": "counter-appliances"
+          }
+        },
+        "dept_5": {
+          "type": "collection",
+          "settings": {
+            "collection": "serveware"
+          }
+        },
+        "dept_6": {
+          "type": "collection",
+          "settings": {
+            "collection": "barware"
+          }
+        },
+        "dept_7": {
+          "type": "collection",
+          "settings": {
+            "collection": "glassware"
+          }
+        },
+        "dept_8": {
+          "type": "collection",
+          "settings": {
+            "collection": "food"
+          }
+        },
+        "dept_9": {
+          "type": "collection",
+          "settings": {
+            "collection": "storage"
+          }
+        },
+        "dept_10": {
+          "type": "collection",
+          "settings": {
+            "collection": "cleaning-products"
+          }
+        },
+        "dept_11": {
+          "type": "collection",
+          "settings": {
+            "collection": "game-day"
+          }
+        },
+        "dept_12": {
+          "type": "collection",
+          "settings": {
+            "collection": "sale"
+          }
+        }
+      },
+      "block_order": [
+        "dept_1",
+        "dept_2",
+        "dept_3",
+        "dept_4",
+        "dept_5",
+        "dept_6",
+        "dept_7",
+        "dept_8",
+        "dept_9",
+        "dept_10",
+        "dept_11",
+        "dept_12"
+      ],
+      "custom_css": [
+        ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
+        ".new-grid .grid-item {flex: 0 0 25% !important; max-width: 25% !important; box-sizing: border-box;}",
+        "@media only screen and (max-width: 768px) {.new-grid .grid-item {flex: 0 0 50% !important; max-width: 50% !important;}}"
+      ],
+      "settings": {
+        "title_enable": true,
+        "display_type": "selected",
+        "sort": "alphabetical"
+      }
+    },
+    "brands": {
+      "type": "featured-collections",
+      "blocks": {
+        "brand_1": {
+          "type": "collection",
+          "settings": {
+            "collection": "le-creuset",
+            "title": ""
+          }
+        },
+        "brand_2": {
+          "type": "collection",
+          "settings": {
+            "collection": "hestan",
+            "title": ""
+          }
+        },
+        "brand_3": {
+          "type": "collection",
+          "settings": {
+            "collection": "vietri",
+            "title": ""
+          }
+        },
+        "brand_4": {
+          "type": "collection",
+          "settings": {
+            "collection": "costa-nova",
+            "title": ""
+          }
+        },
+        "brand_5": {
+          "type": "collection",
+          "settings": {
+            "collection": "oxo",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_1",
+        "brand_2",
+        "brand_3",
+        "brand_4",
+        "brand_5"
+      ],
+      "custom_css": [
+        ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
+        ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}",
+        "@media only screen and (max-width: 768px) {.new-grid .grid-item {flex: 0 0 50% !important; max-width: 50% !important;}}"
+      ],
+      "settings": {
+        "title": "Shop By Brand",
+        "heading_size": "h2",
+        "heading_position": "center",
+        "divider": true
+      }
+    },
+    "logo-list": {
+      "type": "logo-list",
+      "blocks": {
+        "logo1": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo2": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo3": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo4": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo5": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        },
+        "logo6": {
+          "type": "logo_image",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo1",
+        "logo2",
+        "logo3",
+        "logo4",
+        "logo5",
+        "logo6"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Our brands",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "brands",
+    "logo-list"
+  ]
+}
