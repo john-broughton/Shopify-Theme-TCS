@@ -244,7 +244,7 @@
         ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
         ".new-grid .grid-item {flex: 0 0 12.5% !important; max-width: 12.5% !important; box-sizing: border-box;}",
         "@media (max-width: 768px) {.new-grid .grid-item {flex: 0 0 25% !important; max-width: 25% !important;}}",
-        ".new-grid .grid-item, .new-grid .grid-item * {border-radius: 0 !important;}"
+        ".new-grid .grid-item, .new-grid .grid-item *, .new-grid .grid-item *::before, .new-grid .grid-item *::after {border-radius: 0 !important;}"
       ],
       "name": "t:labels.collection_list",
       "settings": {
