@@ -82,7 +82,7 @@
         "heading_ibUpnR": {
           "type": "heading",
           "settings": {
-            "title": "The Italian Sports Car of Stainless Steel Cookware",
+            "title": "Cookware for Every Kind of Cook",
             "heading_size": "h2"
           }
         },
@@ -90,7 +90,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>From quick weeknight dinners to slow Sunday suppers, find <strong>cookware</strong> for whatever’s on the menu.</p>"
+            "text": "<p>From your first skillet to a full kitchen, The Cook's Station carries cookware from Le Creuset, Hestan, Lodge and Smithey that we would put on our own stoves. Shop by category below, or visit our Buncombe Street shop in Greenville to see and lift the pieces before you buy.</p>"
           }
         }
       },
@@ -98,7 +98,6 @@
         "heading_ibUpnR",
         "text_k3fqfX"
       ],
-      "disabled": true,
       "name": "t:labels.rich_text",
       "settings": {
         "align_text": "center",
@@ -110,13 +109,6 @@
     "featured_collections_wk94Fp": {
       "type": "featured-collections",
       "blocks": {
-        "collection_gFRd84": {
-          "type": "collection",
-          "settings": {
-            "collection": "cookware-accessories",
-            "title": ""
-          }
-        },
         "collection_NDUX9c": {
           "type": "collection",
           "settings": {
@@ -124,31 +116,10 @@
             "title": ""
           }
         },
-        "collection_3nbg6t": {
-          "type": "collection",
-          "settings": {
-            "collection": "dutch-ovens-braisers",
-            "title": ""
-          }
-        },
         "collection_gp3rrr": {
           "type": "collection",
           "settings": {
-            "collection": "le-creuset-fry-pans-skillets",
-            "title": ""
-          }
-        },
-        "collection_GxfkPc": {
-          "type": "collection",
-          "settings": {
-            "collection": "griddles-grill-pans",
-            "title": ""
-          }
-        },
-        "collection_xgmEfG": {
-          "type": "collection",
-          "settings": {
-            "collection": "roasting-pans",
+            "collection": "fry-pans-skillets",
             "title": ""
           }
         },
@@ -166,10 +137,38 @@
             "title": ""
           }
         },
+        "collection_3nbg6t": {
+          "type": "collection",
+          "settings": {
+            "collection": "dutch-ovens-braisers",
+            "title": ""
+          }
+        },
         "collection_tQ9jc3": {
           "type": "collection",
           "settings": {
             "collection": "stockpots",
+            "title": ""
+          }
+        },
+        "collection_GxfkPc": {
+          "type": "collection",
+          "settings": {
+            "collection": "griddles-grill-pans",
+            "title": ""
+          }
+        },
+        "collection_xgmEfG": {
+          "type": "collection",
+          "settings": {
+            "collection": "roasting-pans",
+            "title": ""
+          }
+        },
+        "collection_HiQHM4": {
+          "type": "collection",
+          "settings": {
+            "collection": "woks",
             "title": ""
           }
         },
@@ -180,30 +179,31 @@
             "title": ""
           }
         },
-        "collection_HiQHM4": {
+        "collection_gFRd84": {
           "type": "collection",
           "settings": {
-            "collection": "woks",
+            "collection": "cookware-accessories",
             "title": ""
           }
         }
       },
       "block_order": [
-        "collection_gFRd84",
         "collection_NDUX9c",
-        "collection_3nbg6t",
         "collection_gp3rrr",
-        "collection_GxfkPc",
-        "collection_xgmEfG",
         "collection_CD8eFb",
         "collection_jLmgze",
+        "collection_3nbg6t",
         "collection_tQ9jc3",
+        "collection_GxfkPc",
+        "collection_xgmEfG",
+        "collection_HiQHM4",
         "collection_yMAWjg",
-        "collection_HiQHM4"
+        "collection_gFRd84"
       ],
       "custom_css": [
-        ".new-grid {display: flex !important; flex-wrap: wrap !important;}",
-        ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}"
+        ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
+        ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}",
+        "@media only screen and (max-width: 768px) {.new-grid .grid-item {flex: 0 0 50% !important; max-width: 50% !important;}}"
       ],
       "name": "t:labels.collection_list",
       "settings": {
@@ -243,6 +243,104 @@
         "enable_color_swatches": false,
         "enable_sort": true
       }
+    },
+    "rich_text_guide": {
+      "type": "rich-text",
+      "blocks": {
+        "guide_h": {
+          "type": "heading",
+          "settings": {
+            "title": "How to Choose Cookware",
+            "heading_size": "h2"
+          }
+        },
+        "guide_t": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><strong>Stainless steel</strong> (Hestan ProBond and NanoBond) is the all-purpose workhorse. It sears well, builds a pan sauce, goes in the oven and lasts for decades.</p><p><strong>Cast iron and carbon steel</strong> (Lodge and Smithey) hold heat for a hard sear and get more nonstick with every use. They go from stovetop to oven to grill.</p><p><strong>Enameled cast iron</strong> (Le Creuset) needs no seasoning and is made for braises, soups, stews and bread, with color that can go straight to the table.</p><p><strong>Nonstick</strong> makes eggs, fish and weeknight cleanup easy. Cook on low to medium heat and it will last longer.</p><p>Most kitchens start with three pieces: a 10\" to 12\" <a href=\"/collections/fry-pans-skillets\">skillet</a>, a 2 to 3 qt. <a href=\"/collections/saucepans\">saucepan</a> and a 5 to 7 qt. <a href=\"/collections/dutch-ovens-braisers\">Dutch oven</a> or <a href=\"/collections/stockpots\">stockpot</a>. A <a href=\"/collections/cookware-sets\">cookware set</a> covers all of them in one purchase.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "guide_h",
+        "guide_t"
+      ],
+      "name": "t:labels.rich_text",
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": true
+      }
+    },
+    "faq_cookware": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "title": "What cookware should I buy first?",
+            "text": "<p>Start with a 10\" to 12\" skillet, a 2 to 3 qt. saucepan with a lid, and a 5 to 7 qt. Dutch oven or stockpot. Add a saut&eacute; pan, wok or grill pan as your cooking grows.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "title": "Which cookware material is best?",
+            "text": "<p>It depends on what you cook. Stainless steel is the most versatile, cast iron and carbon steel are best for high-heat searing, enameled cast iron excels at slow cooking, and nonstick is easiest for eggs and delicate fish. Many cooks own a mix.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "title": "Is your cookware induction-compatible?",
+            "text": "<p>Most stainless steel, cast iron, carbon steel and enameled cast iron cookware works on induction. Some aluminum and copper pieces do not. Check each product page for the specific piece.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "title": "How do I care for cast iron and carbon steel?",
+            "text": "<p>Rinse with hot water and a brush, dry it right away, and wipe on a thin coat of oil while the pan is warm. Skip the dishwasher and long soaks. If rust appears, scrub it off and re-season.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "title": "Can I put my cookware in the dishwasher?",
+            "text": "<p>Many stainless steel and enameled pieces are dishwasher-safe, but hand washing keeps them looking new longer. Never put cast iron or carbon steel in the dishwasher. Follow the care notes on each product page.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "title": "Do you carry lids, racks and replacement parts?",
+            "text": "<p>Yes. Browse <a href=\"/collections/cookware-accessories\">cookware accessories</a> for lids, roasting racks, steamer inserts, handle covers and more.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "title": "Can I see cookware in person or pick up my order?",
+            "text": "<p>Yes. Visit our Buncombe Street shop in Greenville, SC, or order online and choose local pickup at checkout.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ],
+      "settings": {
+        "title": "Cookware FAQs",
+        "heading_size": "h2",
+        "heading_position": "center"
+      }
     }
   },
   "order": [
@@ -250,6 +348,8 @@
     "slideshow_9NgdAJ",
     "rich_text_Ch4dJm",
     "featured_collections_wk94Fp",
+    "rich_text_guide",
+    "faq_cookware",
     "main-collection"
   ]
 }
