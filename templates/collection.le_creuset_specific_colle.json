@@ -199,11 +199,35 @@
             "collection": "white",
             "title": ""
           }
+        },
+        "collection_nuit01": {
+          "type": "collection",
+          "settings": {
+            "collection": "nuit",
+            "title": ""
+          }
+        },
+        "collection_nect01": {
+          "type": "collection",
+          "settings": {
+            "collection": "nectar",
+            "title": ""
+          }
+        },
+        "collection_flmd01": {
+          "type": "collection",
+          "settings": {
+            "collection": "flamme-doree",
+            "title": ""
+          }
         }
       },
       "block_order": [
         "collection_NT8GUC",
         "collection_HBd7hM",
+        "collection_nuit01",
+        "collection_nect01",
+        "collection_flmd01",
         "collection_V9J7dH",
         "collection_wT4H9W",
         "collection_txEW7k",
@@ -218,7 +242,8 @@
       ],
       "custom_css": [
         ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
-        ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}"
+        ".new-grid .grid-item {flex: 0 0 12.5% !important; max-width: 12.5% !important; box-sizing: border-box;}",
+        "@media (max-width: 768px) {.new-grid .grid-item {flex: 0 0 25% !important; max-width: 25% !important;}}"
       ],
       "name": "t:labels.collection_list",
       "settings": {
