@@ -74,7 +74,10 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
-      }
+      },
+      "custom_css": [
+        "* {border-radius: 0 !important;}"
+      ]
     },
     "rich_text_Ch4dJm": {
       "type": "rich-text",
