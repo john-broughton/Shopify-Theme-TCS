@@ -213,13 +213,6 @@
             "collection": "nectar",
             "title": ""
           }
-        },
-        "collection_flmd01": {
-          "type": "collection",
-          "settings": {
-            "collection": "flamme-doree",
-            "title": ""
-          }
         }
       },
       "block_order": [
@@ -227,7 +220,6 @@
         "collection_HBd7hM",
         "collection_nuit01",
         "collection_nect01",
-        "collection_flmd01",
         "collection_V9J7dH",
         "collection_wT4H9W",
         "collection_txEW7k",
