@@ -110,48 +110,96 @@
     "featured_collections_wk94Fp": {
       "type": "featured-collections",
       "blocks": {
+        "collection_gFRd84": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookware-accessories",
+            "title": ""
+          }
+        },
+        "collection_NDUX9c": {
+          "type": "collection",
+          "settings": {
+            "collection": "cookware-sets",
+            "title": ""
+          }
+        },
         "collection_3nbg6t": {
           "type": "collection",
           "settings": {
-            "collection": "hestan-nanobond®",
+            "collection": "dutch-ovens-braisers",
             "title": ""
           }
         },
-        "collection_jLmgze": {
+        "collection_gp3rrr": {
           "type": "collection",
           "settings": {
-            "collection": "hestan-copperbond®",
+            "collection": "le-creuset-fry-pans-skillets",
             "title": ""
           }
         },
-        "collection_CD8eFb": {
+        "collection_GxfkPc": {
           "type": "collection",
           "settings": {
-            "collection": "hestan-probond®-luxe™",
-            "title": ""
-          }
-        },
-        "collection_tQ9jc3": {
-          "type": "collection",
-          "settings": {
-            "collection": "hestan-titum®-fusion",
+            "collection": "griddles-grill-pans",
             "title": ""
           }
         },
         "collection_xgmEfG": {
           "type": "collection",
           "settings": {
-            "collection": "hestan-provisions",
+            "collection": "roasting-pans",
+            "title": ""
+          }
+        },
+        "collection_CD8eFb": {
+          "type": "collection",
+          "settings": {
+            "collection": "saucepans",
+            "title": ""
+          }
+        },
+        "collection_jLmgze": {
+          "type": "collection",
+          "settings": {
+            "collection": "saute-pans",
+            "title": ""
+          }
+        },
+        "collection_tQ9jc3": {
+          "type": "collection",
+          "settings": {
+            "collection": "stockpots",
+            "title": ""
+          }
+        },
+        "collection_yMAWjg": {
+          "type": "collection",
+          "settings": {
+            "collection": "tea-kettles",
+            "title": ""
+          }
+        },
+        "collection_HiQHM4": {
+          "type": "collection",
+          "settings": {
+            "collection": "woks",
             "title": ""
           }
         }
       },
       "block_order": [
+        "collection_gFRd84",
+        "collection_NDUX9c",
         "collection_3nbg6t",
-        "collection_jLmgze",
+        "collection_gp3rrr",
+        "collection_GxfkPc",
+        "collection_xgmEfG",
         "collection_CD8eFb",
+        "collection_jLmgze",
         "collection_tQ9jc3",
-        "collection_xgmEfG"
+        "collection_yMAWjg",
+        "collection_HiQHM4"
       ],
       "custom_css": [
         ".new-grid {display: flex !important; flex-wrap: wrap !important;}",
