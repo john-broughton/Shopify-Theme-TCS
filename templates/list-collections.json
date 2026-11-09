@@ -100,6 +100,7 @@
         "dept_12"
       ],
       "custom_css": [
+        "* {border-radius: 0 !important;}",
         ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
         ".new-grid .grid-item {flex: 0 0 25% !important; max-width: 25% !important; box-sizing: border-box;}",
         "@media only screen and (max-width: 768px) {.new-grid .grid-item {flex: 0 0 50% !important; max-width: 50% !important;}}"
@@ -157,6 +158,7 @@
         "brand_5"
       ],
       "custom_css": [
+        "* {border-radius: 0 !important;}",
         ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
         ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}",
         "@media only screen and (max-width: 768px) {.new-grid .grid-item {flex: 0 0 50% !important; max-width: 50% !important;}}"
