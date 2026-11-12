@@ -234,16 +234,15 @@
     },
     "text_and_image_YjefMa": {
       "type": "text-and-image",
-      "disabled": true,
       "name": "t:labels.image_with_text",
       "settings": {
-        "image": "shopify://shop_images/Saturday_Sip_Shop_3_c7364aa1-f36b-4a3e-87a5-14c67c0546d8.png",
+        "image": "shopify://shop_images/Cook_s_Station_29th_Birthday_Bingo.png",
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "$5 Sip & Shop",
+        "title": "The Cook's Station's 29th Birthday!",
         "heading_size": "h2",
-        "text": "<p>Join us for <strong>Sip & Shop </strong>at The Cook’s Station. For just <strong>$5</strong>, enjoy a <strong>seasonally rotating spritz</strong> you can sip while you explore the store. A little shopping, a little sipping—what could be better?</p>",
+        "text": "<p>Join us this Saturday as we celebrate 29 wonderful years of The Cook’s Station!&nbsp;</p><p>Play Birthday Bingo at checkout and receive the number you draw as a percentage off your most expensive item! Plus, enjoy a special Kelly & John-inspired lunch in our café as we celebrate 29 years of food, fun, and memories!</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -274,6 +273,7 @@
     "main",
     "1644519722c7610927",
     "text_and_image_RGbyfA",
+    "text_and_image_YjefMa",
     "text_and_image_E94AcB",
     "text_and_image_eRxf3C",
     "text_and_image_WUFFB4",
@@ -281,7 +281,6 @@
     "text_and_image_yaEnXV",
     "text_and_image_kCeTqw",
     "text_and_image_YCtiEh",
-    "text_and_image_YjefMa",
     "b5e95e24-93b4-492c-ae7f-914eae033331"
   ]
 }
