@@ -70,6 +70,52 @@
         "bottom_padding": true
       }
     },
+    "text_and_image_yykrCh": {
+      "type": "text-and-image",
+      "name": "t:labels.image_with_text",
+      "settings": {
+        "image": "shopify://shop_images/Thanksgiving_Menu_Flyer_1.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "November 21st at 3pm",
+        "title": "Thanksgiving Sides from the Cafe",
+        "heading_size": "h2",
+        "text": "<p>Make Thanksgiving a little easier this year! Stop by and pick up our delicious, ready-to-enjoy Thanksgiving sides from our grab-and-go case!</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "text_and_image_YjefMa": {
+      "type": "text-and-image",
+      "name": "t:labels.image_with_text",
+      "settings": {
+        "image": "shopify://shop_images/Cook_s_Station_29th_Birthday_Bingo.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "The Cook's Station's 29th Birthday!",
+        "heading_size": "h2",
+        "text": "<p>Join us this Saturday as we celebrate 29 wonderful years of The Cook’s Station!&nbsp;</p><p>Play Birthday Bingo at checkout and receive the number you draw as a percentage off your most expensive item! Plus, enjoy a special Kelly & John-inspired lunch in our café as we celebrate 29 years of food, fun, and memories!</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "text_and_image_E94AcB": {
       "type": "text-and-image",
       "disabled": true,
@@ -232,29 +278,6 @@
         "bottom_padding": true
       }
     },
-    "text_and_image_YjefMa": {
-      "type": "text-and-image",
-      "name": "t:labels.image_with_text",
-      "settings": {
-        "image": "shopify://shop_images/Cook_s_Station_29th_Birthday_Bingo.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "The Cook's Station's 29th Birthday!",
-        "heading_size": "h2",
-        "text": "<p>Join us this Saturday as we celebrate 29 wonderful years of The Cook’s Station!&nbsp;</p><p>Play Birthday Bingo at checkout and receive the number you draw as a percentage off your most expensive item! Plus, enjoy a special Kelly & John-inspired lunch in our café as we celebrate 29 years of food, fun, and memories!</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "b5e95e24-93b4-492c-ae7f-914eae033331": {
       "type": "map",
       "settings": {
@@ -273,6 +296,7 @@
     "main",
     "1644519722c7610927",
     "text_and_image_RGbyfA",
+    "text_and_image_yykrCh",
     "text_and_image_YjefMa",
     "text_and_image_E94AcB",
     "text_and_image_eRxf3C",
