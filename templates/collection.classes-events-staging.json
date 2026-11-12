@@ -42,6 +42,7 @@
       "block_order": [
         "hero_pWM9NP"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "desktop_size": -50,
@@ -49,8 +50,43 @@
         "style": "arrows",
         "autoplay": true,
         "autoplay_speed": 7
-      },
-      "disabled": true
+      }
+    },
+    "tcs_events_hero": {
+      "type": "tcs-events-hero",
+      "settings": {
+        "eyebrow": "Classes & Events",
+        "heading": "Cooking Classes & Chef Dinners in Greenville, SC",
+        "intro": "<p>The Cook's Station offers hands-on and demonstration cooking classes, chef's table dinners, and one-hour Lunch & Learns in our teaching kitchen at 515 Buncombe St in downtown Greenville, SC.</p><p>New classes are released on the 1st of every month, and class guests save 20% on in-store purchases the day of their class.</p><p>Want to join a class but see that it's sold out? No worries! Simply click on the class you're interested in and select the “Notify Me When Back in Stock” button to be notified if a spot opens up.</p>",
+        "note": "November & December Classes Are Live! January classes will be released on December 1st.",
+        "image": "shopify://shop_images/christa-rene-photography-69.jpg",
+        "img_height": 300,
+        "show_stats": true,
+        "collection": "calendar",
+        "pad_top": 32,
+        "pad_bottom": 8
+      }
+    },
+    "tcs_events_calendar_mkBgPV": {
+      "type": "tcs-events-calendar",
+      "name": "Classes & Events Calendar",
+      "settings": {
+        "title": "What's coming up",
+        "space_top": 16,
+        "collection": "calendar",
+        "show_legend": true,
+        "show_filters": true,
+        "few_seats": 3,
+        "default_minutes": 120,
+        "private_label": "Private Event",
+        "show_space": true,
+        "private_message": "Interested in booking a private event? Email events@thecooksstation.com.",
+        "c_open": "#1f3a5f",
+        "c_few": "#c9822b",
+        "c_sold": "#e3e3e3",
+        "c_free": "#2e7d46",
+        "c_private": "#7a2e1f"
+      }
     },
     "rich_text_7HWRjF": {
       "type": "rich-text",
@@ -74,13 +110,13 @@
         "heading_GigDbX",
         "text_eeiRt7"
       ],
+      "disabled": true,
       "settings": {
         "align_text": "center",
         "narrow_column": true,
         "color_scheme": "1",
         "divider": false
-      },
-      "disabled": true
+      }
     },
     "testimonials_MACaWt": {
       "type": "testimonials",
@@ -172,6 +208,103 @@
         "color_scheme": "none"
       }
     },
+    "tcs_private_events": {
+      "type": "tcs-private-events",
+      "blocks": {
+        "space_kitchen": {
+          "type": "space",
+          "settings": {
+            "name": "Teaching Kitchen",
+            "guests": "Up to 20 guests",
+            "best_for": "Private cooking classes, team building, birthdays",
+            "price": "[From $XX per person]",
+            "image": "shopify://shop_images/education-kitchen-NEW.jpg"
+          }
+        },
+        "space_patio": {
+          "type": "space",
+          "settings": {
+            "name": "Patio",
+            "guests": "Up to 40 guests",
+            "best_for": "Holiday parties, rehearsal dinners, happy hours on our screened-in patio",
+            "price": "[From $XX per person]",
+            "image": "shopify://shop_images/outside_day_time.jpg"
+          }
+        },
+        "space_cafe": {
+          "type": "space",
+          "settings": {
+            "name": "Café",
+            "guests": "Up to 30 guests",
+            "best_for": "Brunches, showers, meetings",
+            "price": "[From $XX per person]",
+            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg"
+          }
+        },
+        "space_store": {
+          "type": "space",
+          "settings": {
+            "name": "Whole Store",
+            "guests": "Up to 75 guests",
+            "best_for": "Large parties and corporate events",
+            "price": "[Minimum $X,XXX]",
+            "image": "shopify://shop_images/building-exterior_cooks-station_hogan-construction_street-view.jpg"
+          }
+        },
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Tell us your date and head count.",
+            "text": "Fill out the planning form, or email events@thecooksstation.com."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Pick your space and menu.",
+            "text": "We'll send menu options and a quote within 3 business days."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Lock in your date.",
+            "text": "A 50% deposit holds your date. Final head count is due 7 days before your event."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "See it on the calendar.",
+            "text": "Your booking shows on the calendar above as \"Private Event\" with the space. Guest names are never shown."
+          }
+        }
+      },
+      "block_order": [
+        "space_kitchen",
+        "space_patio",
+        "space_cafe",
+        "space_store",
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "settings": {
+        "eyebrow": "Private events",
+        "heading": "Host a private class or party",
+        "intro": "<p>Book our teaching kitchen, patio, café or the whole store for a private cooking class, team event, birthday or holiday party. Dates that are already booked show on the calendar above as \"Private Event.\"</p>",
+        "steps_heading": "How booking works",
+        "button_label": "Start planning your event",
+        "button_link": "/pages/host-with-us-contact-form",
+        "email": "events@thecooksstation.com",
+        "phone": "864.250.0091",
+        "card_button": "Ask about this space",
+        "band": true,
+        "highlight": true,
+        "space_top": 0
+      }
+    },
     "advanced_content_PYYHmR": {
       "type": "advanced-content",
       "blocks": {
@@ -196,7 +329,6 @@
     },
     "main-collection": {
       "type": "main-collection",
-      "disabled": true,
       "blocks": {
         "collection_description": {
           "type": "collection_description",
@@ -214,6 +346,7 @@
         "collection_description",
         "product_grid"
       ],
+      "disabled": true,
       "settings": {
         "enable_sidebar": false,
         "collapse_filters": false,
@@ -284,138 +417,6 @@
         "title": "Frequently Asked Questions",
         "heading_size": "h2",
         "heading_position": "left"
-      }
-    },
-    "tcs_events_calendar_mkBgPV": {
-      "type": "tcs-events-calendar",
-      "name": "Classes & Events Calendar",
-      "settings": {
-        "title": "What's coming up",
-        "collection": "calendar",
-        "show_legend": true,
-        "few_seats": 3,
-        "default_minutes": 120,
-        "private_label": "Private Event",
-        "show_space": true,
-        "private_message": "Interested in booking a private event? Email events@thecooksstation.com.",
-        "c_open": "#1F3A5F",
-        "c_few": "#C9822B",
-        "c_sold": "#E3E3E3",
-        "c_free": "#2E7D46",
-        "c_private": "#7A2E1F",
-        "space_top": 16
-      }
-    },
-    "tcs_events_hero": {
-      "type": "tcs-events-hero",
-      "settings": {
-        "eyebrow": "Classes & Events",
-        "heading": "Cooking Classes & Chef Dinners in Greenville, SC",
-        "intro": "<p>The Cook's Station offers hands-on and demonstration cooking classes, chef's table dinners, and one-hour Lunch & Learns in our teaching kitchen at 515 Buncombe St in downtown Greenville, SC.</p><p>New classes are released on the 1st of every month, and class guests save 20% on in-store purchases the day of their class.</p><p>Want to join a class but see that it's sold out? No worries! Simply click on the class you're interested in and select the “Notify Me When Back in Stock” button to be notified if a spot opens up.</p>",
-        "note": "November & December Classes Are Live! January classes will be released on December 1st.",
-        "image": "shopify://shop_images/christa-rene-photography-69.jpg",
-        "img_height": 300,
-        "show_stats": true,
-        "collection": "calendar",
-        "pad_top": 32,
-        "pad_bottom": 8
-      }
-    },
-    "tcs_private_events": {
-      "type": "tcs-private-events",
-      "blocks": {
-        "space_kitchen": {
-          "type": "space",
-          "settings": {
-            "name": "Teaching Kitchen",
-            "guests": "Up to [20] guests",
-            "best_for": "Private cooking classes, team building, birthdays",
-            "price": "[From $XX per person]",
-            "image": "shopify://shop_images/education-kitchen-NEW.jpg"
-          }
-        },
-        "space_patio": {
-          "type": "space",
-          "settings": {
-            "name": "Patio",
-            "guests": "Up to [XX] guests",
-            "best_for": "Holiday parties, rehearsal dinners, happy hours on our screened-in patio",
-            "price": "[From $XX per person]",
-            "image": "shopify://shop_images/outside_day_time.jpg"
-          }
-        },
-        "space_cafe": {
-          "type": "space",
-          "settings": {
-            "name": "Café",
-            "guests": "Up to [XX] guests",
-            "best_for": "Brunches, showers, meetings",
-            "price": "[From $XX per person]",
-            "image": "shopify://shop_images/ConvertOut-Resized-Cook_sStation-Food_Patio_Tapas__24.jpg"
-          }
-        },
-        "space_store": {
-          "type": "space",
-          "settings": {
-            "name": "Whole Store",
-            "guests": "Up to [XX] guests",
-            "best_for": "Large parties and corporate events",
-            "price": "[Minimum $X,XXX]",
-            "image": "shopify://shop_images/building-exterior_cooks-station_hogan-construction_street-view.jpg"
-          }
-        },
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "title": "Tell us your date and head count.",
-            "text": "Fill out the planning form, or email events@thecooksstation.com."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "title": "Pick your space and menu.",
-            "text": "We'll send menu options and a quote within [X business days]."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "title": "Lock in your date.",
-            "text": "[A $XXX deposit] holds your date. [Final head count is due X days before your event.]"
-          }
-        },
-        "step_4": {
-          "type": "step",
-          "settings": {
-            "title": "See it on the calendar.",
-            "text": "Your booking shows on the calendar above as \"Private Event\" with the space. Guest names are never shown."
-          }
-        }
-      },
-      "block_order": [
-        "space_kitchen",
-        "space_patio",
-        "space_cafe",
-        "space_store",
-        "step_1",
-        "step_2",
-        "step_3",
-        "step_4"
-      ],
-      "settings": {
-        "eyebrow": "Private events",
-        "heading": "Host a private class or party",
-        "intro": "<p>Book our teaching kitchen, patio, café or the whole store for a private cooking class, team event, birthday or holiday party. Dates that are already booked show on the calendar above as \"Private Event.\"</p>",
-        "steps_heading": "How booking works",
-        "button_label": "Start planning your event",
-        "button_link": "/pages/host-with-us-contact-form",
-        "email": "events@thecooksstation.com",
-        "phone": "864.250.0091",
-        "highlight": true,
-        "space_top": 0,
-        "band": true,
-        "card_button": "Ask about this space"
       }
     }
   },
