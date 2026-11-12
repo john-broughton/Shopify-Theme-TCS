@@ -25,7 +25,7 @@
           <dl>
             {%- if block.settings.guests != blank -%}<div><dt>Guests</dt><dd>{{ block.settings.guests | escape }}</dd></div>{%- endif -%}
             {%- if block.settings.best_for != blank -%}<div><dt>Best for</dt><dd>{{ block.settings.best_for | escape }}</dd></div>{%- endif -%}
-            {%- if block.settings.price != blank -%}<div><dt>Pricing</dt><dd>{{ block.settings.price | escape }}</dd></div>{%- endif -%}
+            {%- if section.settings.show_pricing and block.settings.price != blank -%}<div><dt>Pricing</dt><dd>{{ block.settings.price | escape }}</dd></div>{%- endif -%}
           </dl>
           {%- if section.settings.button_link != blank and section.settings.card_button != blank -%}
           <a class="tcs-pe__line" href="{{ section.settings.button_link }}">{{ section.settings.card_button | escape }}</a>
@@ -120,6 +120,7 @@
 {
   "name": "Private Events Info",
   "settings": [
+    { "type": "checkbox", "id": "show_pricing", "label": "Show pricing on space cards", "info": "Off = the Pricing line is hidden on every space card. The prices you typed stay saved.", "default": false },
     { "type": "text", "id": "eyebrow", "label": "Small line above heading", "default": "Private events" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Host a private class or party" },
     { "type": "richtext", "id": "intro", "label": "Intro" },
