@@ -215,8 +215,8 @@
           "type": "space",
           "settings": {
             "name": "Teaching Kitchen",
-            "guests": "Up to 20 guests",
-            "best_for": "Private cooking classes, team building, birthdays",
+            "guests": "Up to 32 guests",
+            "best_for": "Private cooking classes, team building, birthdays, brunches, showers, meetings",
             "price": "[From $XX per person]",
             "image": "shopify://shop_images/education-kitchen-NEW.jpg"
           }
@@ -225,7 +225,7 @@
           "type": "space",
           "settings": {
             "name": "Patio",
-            "guests": "Up to 40 guests",
+            "guests": "Up to 75 guests",
             "best_for": "Holiday parties, rehearsal dinners, happy hours on our screened-in patio",
             "price": "[From $XX per person]",
             "image": "shopify://shop_images/outside_day_time.jpg"
@@ -233,6 +233,7 @@
         },
         "space_cafe": {
           "type": "space",
+          "disabled": true,
           "settings": {
             "name": "Café",
             "guests": "Up to 30 guests",
@@ -243,6 +244,7 @@
         },
         "space_store": {
           "type": "space",
+          "disabled": true,
           "settings": {
             "name": "Whole Store",
             "guests": "Up to 75 guests",
@@ -291,6 +293,7 @@
         "step_4"
       ],
       "settings": {
+        "show_pricing": false,
         "eyebrow": "Private events",
         "heading": "Host a private class or party",
         "intro": "<p>Book our teaching kitchen, patio, café or the whole store for a private cooking class, team event, birthday or holiday party. Dates that are already booked show on the calendar above as \"Private Event.\"</p>",
