@@ -73,7 +73,10 @@
       "price_label": {{ product.price_min | money_without_trailing_zeros | json }},
       "available": {{ product.available }},
       "tracked": {{ tracked }},
-      "seats": {{ seats }}
+      "seats": {{ seats }},
+      "link": {{ product.metafields.custom.calendar_link.value | default: '' | json }},
+      "badge": {{ product.metafields.custom.calendar_badge.value | default: '' | json }},
+      "button": {{ product.metafields.custom.calendar_button.value | default: '' | json }}
     }{% unless forloop.last %},{% endunless %}
   {%- endfor -%}
   ]

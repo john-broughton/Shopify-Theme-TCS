@@ -164,6 +164,7 @@
   }
   function statusOf(p) {
     if (p.private) return 'private';
+    if (p.link) return 'info';
     if (p.price_max === 0) return 'free';
     if (!p.available) return 'sold';
     if (p.tracked && p.seats > 0 && p.seats <= FEW_SEATS) return 'few';
@@ -180,7 +181,7 @@
     var title = p.private ? label + (space ? ' · ' + space : '') : cleanTitle(p.title);
     return {
       id: String(p.id), title: title, start: isoLocal(start), end: isoLocal(end),
-      classNames: ['s-' + status], display: 'block',
+      classNames: ['s-' + (status === 'info' ? 'open' : status)], display: 'block',
       extendedProps: { p: p, status: status, space: space }
     };
   }
@@ -227,7 +228,8 @@
     st.className = 'tcs-cal__pop-status';
     var labels = {
       open: p.price_label, few: p.price_label + ' · Only ' + p.seats + ' left',
-      sold: 'Sold out', free: p.admission === 'Free RSVP' ? 'Free · RSVP' : 'Free entry · pay as you order', private: ''
+      sold: 'Sold out', free: p.admission === 'Free RSVP' ? 'Free · RSVP' : (p.type === 'Store Events' ? 'Free entry' : 'Free entry · pay as you order'), private: '',
+      info: p.badge || ''
     };
     st.textContent = labels[x.status] || '';
     if (x.status === 'sold') st.classList.add('is-sold');
@@ -241,7 +243,8 @@
     }
     var btn = pop.querySelector('.tcs-cal__pop-btn');
     btn.style.display = p.private ? 'none' : '';
-    btn.href = p.url; btn.textContent = x.status === 'sold' ? 'Join the waitlist' : (x.status === 'free' && p.admission === 'Free RSVP' ? 'RSVP' : 'View event');
+    btn.href = x.status === 'info' ? p.link : p.url;
+    btn.textContent = x.status === 'info' ? (p.button || 'Learn more') : (x.status === 'sold' ? 'Join the waitlist' : (x.status === 'free' && p.admission === 'Free RSVP' ? 'RSVP' : 'View event'));
 
     lastEl = info.el;
     pop.setAttribute('aria-label', ev.title);

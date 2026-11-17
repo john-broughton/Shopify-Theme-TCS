@@ -104,6 +104,7 @@
       var s = p.start ? new Date(p.start) : dateFromTitle(p.title);
       if (!s || isNaN(s) || s < today) return;
       if (s < weekEnd) c.week++;
+      if (p.link) return;
       if (p.price_max === 0) c.free++;
       if (p.available) c.open++;
     });

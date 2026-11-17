@@ -490,6 +490,28 @@
         "heading_size": "h2",
         "heading_position": "left"
       }
+    },
+    "thanksgiving_sides": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Thanksgiving_Menu_Flyer_1.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "Starting November 21 at 3pm",
+        "title": "Thanksgiving Sides",
+        "heading_size": "h2",
+        "text": "<p>Make Thanksgiving a little easier this year. Our ready-to-enjoy sides will be in the café's grab-and-go case starting Saturday, November 21 at 3pm.</p><p><strong>Sweet Potato Casserole</strong> – $12.99<br/>Roasted and mashed sweet potatoes, butter, brown sugar and marshmallows</p><p><strong>TCS Stuffing</strong> – Small $12.99 · Large $19.99<br/>Made with bread cubes, turkey, fresh herbs and house-made turkey stock</p><p><strong>Vegan Stuffing</strong> – $11.99<br/>Vegan herbed bread, mushrooms and house-made vegetable stock</p><p><strong>Cranberry Sauce</strong> – $9.99<br/>Fresh cranberries puréed with citrus and just enough sugar</p><p><strong>5 Cheese Macaroni & Cheese</strong> – Small $13.99 · Large $19.99<br/>Gouda, Karst, cheddar, cream cheese and fontina</p><p><strong>Roasted Turkey Gravy</strong> – $14.99</p><p><strong>Vegan Mushroom Gravy</strong> – $11.99</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
     }
   },
   "order": [
@@ -497,6 +519,7 @@
     "promo_grid_jKDwGY",
     "slideshow_X8xeKP",
     "rich_text_kxgRXB",
+    "thanksgiving_sides",
     "text_columns_HaHf8Q",
     "166420604037b6908b",
     "promo_grid_8ijbpN",
