@@ -10,7 +10,7 @@
     assign feed_handle = section.settings.collection.handle
   endif
 -%}
-{%- render 'tcs-site-notices' -%}
+{%- comment -%} Site alert bar now renders sitewide from layout/theme.liquid {%- endcomment -%}
 <div class="tcs-hero" id="tcs-hero-{{ section.id }}">
   <div class="tcs-hero__text">
     {%- if section.settings.eyebrow != blank -%}<p class="tcs-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
