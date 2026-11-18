@@ -40,6 +40,14 @@
       if product.metafields.custom.event_end != blank
         assign end_iso = product.metafields.custom.event_end.value | date: '%Y-%m-%dT%H:%M:%S'
       endif
+      # No Event start/end filled in: use the times saved on the old Evey event
+      assign evey = product.metafields.evey.event.value
+      if start_iso == blank and evey.start_at != blank
+        assign start_iso = evey.start_at | slice: 0, 19
+      endif
+      if end_iso == blank and evey.end_at != blank
+        assign end_iso = evey.end_at | slice: 0, 19
+      endif
 
       assign seats = 0
       assign tracked = false
