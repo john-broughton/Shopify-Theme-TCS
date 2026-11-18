@@ -112,6 +112,28 @@
         "divider": false
       }
     },
+    "thanksgiving_sides": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Thanksgiving_Menu_Flyer_1.png",
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "Starting November 21 at 3pm",
+        "title": "Thanksgiving Sides",
+        "heading_size": "h2",
+        "text": "<p>Make Thanksgiving a little easier this year. Our ready-to-enjoy sides will be in the café's grab-and-go case starting Saturday, November 21 at 3pm.</p><p><strong>Sweet Potato Casserole</strong> – $12.99<br/>Roasted and mashed sweet potatoes, butter, brown sugar and marshmallows</p><p><strong>TCS Stuffing</strong> – Small $12.99 · Large $19.99<br/>Made with bread cubes, turkey, fresh herbs and house-made turkey stock</p><p><strong>Vegan Stuffing</strong> – $11.99<br/>Vegan herbed bread, mushrooms and house-made vegetable stock</p><p><strong>Cranberry Sauce</strong> – $9.99<br/>Fresh cranberries puréed with citrus and just enough sugar</p><p><strong>5 Cheese Macaroni & Cheese</strong> – Small $13.99 · Large $19.99<br/>Gouda, Karst, cheddar, cream cheese and fontina</p><p><strong>Roasted Turkey Gravy</strong> – $14.99</p><p><strong>Vegan Mushroom Gravy</strong> – $11.99</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "color_scheme": "1",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
     "text_columns_HaHf8Q": {
       "type": "text-columns",
       "blocks": {
@@ -159,7 +181,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Today's Specials - 11/14",
+            "title": "Today's Specials - 11/18",
             "heading_size": "h2"
           }
         },
@@ -167,7 +189,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Roasted chicken, celery, red onion, dried cherries, chopped candied pecans, creamy herb dressing with Olivelle vinegar&nbsp;</p><p><strong>THE KELLY- $13.99</strong><br/>Crispy fried chicken breast, pimento cheese, pepper jelly, pickles, garlic aioli, on a brioche bun</p><p><strong>THE JOHN- $13.99</strong><br/>Wagyu patty, American cheese, lettuce, tomato, onions, pickles, ketchup, and mustard, on a brioche bun&nbsp;</p><p><strong>TCS PASTRAMI REUBEN- $13.99</strong><br/>Pastrami, lusty monk aioli, beer braised caraway, saurkraut, on grilled rye bread</p><p><strong>THE CRABBY PATTY- $13.99</strong><br/>Crab and halibut patty blended with peppers, dill, and spices, topped with lettuce, tomato, pickles, onion, house-made remoulade, served on a toasted bun</p><p><strong>CREAMY TOMATO SOUP- $5.99</strong><br/>Roasted tomatoes. peppers, onions, garlic, fresh herbs, heavy cream, spices, lemon, Garnished with croutons, basil, and pecorino Romano cheese</p><p><strong>**CONTAINS NUTS&nbsp;</strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
+            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Roasted chicken, celery, red onion, dried cherries, chopped candied pecans, creamy herb dressing with Olivelle vinegar&nbsp;</p><p><strong>THE KELLY- $13.99</strong><br/>Crispy fried chicken breast, pimento cheese, pepper jelly, pickles, garlic aioli, on a brioche bun</p><p><strong>THE JOHN- $13.99</strong><br/>Wagyu patty, American cheese, lettuce, tomato, onions, pickles, ketchup, and mustard, on a brioche bun&nbsp;</p><p><strong>TCS PASTRAMI REUBEN- $13.99</strong><br/>Pastrami, lusty monk aioli, beer braised caraway, saurkraut, on grilled rye bread</p><p><strong>THE CRABBY PATTY- $13.99</strong><br/>Crab and halibut patty blended with peppers, dill, and spices, topped with lettuce, tomato, pickles, onion, house-made remoulade, served on a toasted bun</p><p><strong>CREAMY WINTER VEGETABLE SOUP- $5.99</strong><br/>Onion, garlic, carrot, roasted butter and spaghetti squash, parsnips, sweet potatoes, brown butter, chicken stock, heavy cream, herbs and spices. Garnished with maple bacon agrodolce and candied pecan dust&nbsp;</p><p><strong>**CONTAINS NUTS&nbsp;</strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
           }
         }
       },
@@ -489,28 +511,6 @@
         "title": "",
         "heading_size": "h2",
         "heading_position": "left"
-      }
-    },
-    "thanksgiving_sides": {
-      "type": "text-and-image",
-      "settings": {
-        "image": "shopify://shop_images/Thanksgiving_Menu_Flyer_1.png",
-        "image_mask": "none",
-        "image2_mask": "none",
-        "subtitle": "Starting November 21 at 3pm",
-        "title": "Thanksgiving Sides",
-        "heading_size": "h2",
-        "text": "<p>Make Thanksgiving a little easier this year. Our ready-to-enjoy sides will be in the café's grab-and-go case starting Saturday, November 21 at 3pm.</p><p><strong>Sweet Potato Casserole</strong> – $12.99<br/>Roasted and mashed sweet potatoes, butter, brown sugar and marshmallows</p><p><strong>TCS Stuffing</strong> – Small $12.99 · Large $19.99<br/>Made with bread cubes, turkey, fresh herbs and house-made turkey stock</p><p><strong>Vegan Stuffing</strong> – $11.99<br/>Vegan herbed bread, mushrooms and house-made vegetable stock</p><p><strong>Cranberry Sauce</strong> – $9.99<br/>Fresh cranberries puréed with citrus and just enough sugar</p><p><strong>5 Cheese Macaroni & Cheese</strong> – Small $13.99 · Large $19.99<br/>Gouda, Karst, cheddar, cream cheese and fontina</p><p><strong>Roasted Turkey Gravy</strong> – $14.99</p><p><strong>Vegan Mushroom Gravy</strong> – $11.99</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "color_scheme": "1",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
       }
     }
   },
