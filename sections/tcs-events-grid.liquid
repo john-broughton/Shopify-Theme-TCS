@@ -1,0 +1,127 @@
+{%- comment -%}
+  TCS upcoming events grid
+  Shows the event products in this collection as product cards, but only
+  events happening today or later, in date order. Past events drop off on
+  their own (checked when the page is built and again in the shopper's browser).
+  Date comes from "Event start", then the Evey event, then the product title (m/d/yyyy).
+{%- endcomment -%}
+{%- liquid
+  assign src = section.settings.collection | default: collection
+  assign today_key = 'now' | date: '%Y%m%d'
+  assign show_n = section.settings.initial_count
+  assign cards = ''
+  assign shown = 0
+-%}
+{%- paginate src.products by 250 -%}
+  {%- for product in src.products -%}
+    {%- liquid
+      if product.metafields.custom.calendar_link != blank
+        continue
+      endif
+
+      assign key = ''
+      if product.metafields.custom.event_start != blank
+        assign key = product.metafields.custom.event_start.value | date: '%Y%m%d%H%M'
+      else
+        assign evey = product.metafields.evey.event.value
+        if evey.start_at != blank
+          assign key = evey.start_at | slice: 0, 16 | remove: '-' | remove: 'T' | remove: ':'
+        endif
+      endif
+
+      if key == blank
+        assign words = product.title | split: ' '
+        for w in words
+          assign parts = w | split: '/'
+          if parts.size == 3
+            assign yy = parts[2] | slice: 0, 4
+            assign mm = parts[0] | prepend: '0' | slice: -2, 2
+            assign dd = parts[1] | prepend: '0' | slice: -2, 2
+            assign key = yy | append: mm | append: dd | append: '0000'
+            break
+          endif
+        endfor
+      endif
+
+      if key == blank
+        continue
+      endif
+      assign day_key = key | slice: 0, 8
+      if day_key < today_key
+        continue
+      endif
+      assign y = day_key | slice: 0, 4
+      assign m = day_key | slice: 4, 2
+      assign d = day_key | slice: 6, 2
+      assign day_iso = y | append: '-' | append: m | append: '-' | append: d
+    -%}
+    {%- capture card -%}{{ key }}~~{{ product.id }}~~{{ day_iso }}~~{%- assign cls = 'tcs-ev tcs-d-' | append: day_iso -%}{%- render 'product-grid-item', product: product, classes: cls, sizes: '(min-width: 769px) 25vw, 50vw' -%}{%- endcapture -%}
+    {%- assign cards = cards | append: card | append: '^^tcs^^' -%}
+  {%- endfor -%}
+{%- endpaginate -%}
+{%- assign card_list = cards | split: '^^tcs^^' | sort -%}
+
+{%- if card_list.size > 0 -%}
+<div class="page-width tcs-egrid" id="tcs-egrid-{{ section.id }}" style="padding-top:{{ section.settings.space_top }}px;padding-bottom:{{ section.settings.space_bottom }}px">
+  {%- if section.settings.title != blank -%}
+    <div class="section-header text-center">
+      <h2 class="section-header__title">{{ section.settings.title | escape }}</h2>
+      {%- if section.settings.subtitle != blank -%}<div class="rte section-header__description">{{ section.settings.subtitle }}</div>{%- endif -%}
+    </div>
+  {%- endif -%}
+  <div class="new-grid product-grid collection-grid" data-view="small">
+    {%- for c in card_list -%}
+      {%- assign bits = c | split: '~~' -%}
+      {%- if bits.size < 4 -%}{%- continue -%}{%- endif -%}
+      {%- assign shown = shown | plus: 1 -%}
+      {%- assign skip = bits[0] | append: '~~' | append: bits[1] | append: '~~' | append: bits[2] | append: '~~' -%}
+      {%- if shown > show_n -%}
+        {{ c | remove_first: skip | replace_first: 'tcs-ev ', 'tcs-ev tcs-egrid__more ' }}
+      {%- else -%}
+        {{ c | remove_first: skip }}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <div class="tcs-egrid__foot">
+    <button type="button" class="btn btn--secondary tcs-egrid__btn" hidden>{{ section.settings.more_label | escape }}</button>
+  </div>
+</div>
+
+<style>
+  #tcs-egrid-{{ section.id }} .tcs-ev.is-hidden,
+  #tcs-egrid-{{ section.id }}:not(.is-open) .tcs-egrid__more{display:none}
+  #tcs-egrid-{{ section.id }} .tcs-egrid__foot{text-align:center;margin-top:24px}
+</style>
+<script>
+(function () {
+  var root = document.getElementById('tcs-egrid-{{ section.id }}'); if (!root) return;
+  var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  var cells = [].slice.call(root.querySelectorAll('.tcs-ev')), n = {{ show_n }}, live = 0;
+  cells.forEach(function (c) {
+    c.classList.remove('tcs-egrid__more');
+    var m = /tcs-d-(\d{4}-\d\d-\d\d)/.exec(c.className);
+    if (m && m[1] < today) { c.classList.add('is-hidden'); return; }
+    live++; if (live > n) c.classList.add('tcs-egrid__more');
+  });
+  if (!live) { root.style.display = 'none'; return; }
+  var btn = root.querySelector('.tcs-egrid__btn');
+  if (live > n) { btn.hidden = false; btn.addEventListener('click', function () { root.classList.add('is-open'); btn.hidden = true; }); }
+})();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "TCS upcoming events grid",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "Upcoming classes & events" },
+    { "type": "richtext", "id": "subtitle", "label": "Text under heading" },
+    { "type": "collection", "id": "collection", "label": "Collection", "info": "Leave empty to use the collection this page belongs to." },
+    { "type": "range", "id": "initial_count", "label": "Events shown before \"Show more\"", "min": 4, "max": 48, "step": 4, "default": 12 },
+    { "type": "text", "id": "more_label", "label": "Show more button", "default": "Show more events" },
+    { "type": "range", "id": "space_top", "label": "Space above", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 32 },
+    { "type": "range", "id": "space_bottom", "label": "Space below", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 40 }
+  ],
+  "presets": [{ "name": "TCS upcoming events grid" }]
+}
+{% endschema %}
