@@ -421,6 +421,17 @@
         "heading_size": "h2",
         "heading_position": "left"
       }
+    },
+    "tcs_events_grid": {
+      "type": "tcs-events-grid",
+      "settings": {
+        "title": "Upcoming classes & events",
+        "subtitle": "",
+        "initial_count": 12,
+        "more_label": "Show more events",
+        "space_top": 32,
+        "space_bottom": 40
+      }
     }
   },
   "order": [
@@ -430,6 +441,7 @@
     "tcs_events_calendar_mkBgPV",
     "rich_text_7HWRjF",
     "testimonials_MACaWt",
+    "tcs_events_grid",
     "tcs_private_events",
     "advanced_content_PYYHmR",
     "main-collection",
