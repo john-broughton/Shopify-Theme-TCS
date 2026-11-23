@@ -1,0 +1,174 @@
+{%- comment -%}
+  TCS Café Nights strip (for the Café page)
+  Pulls upcoming events of one event type (default "Café Nights") from the
+  Calendar collection, today or later, soonest first. Hides itself when none.
+  Date/time: "Event start/end" fields, then the Evey event, then the product title.
+{%- endcomment -%}
+{%- liquid
+  assign src = section.settings.collection | default: collections['calendar']
+  assign want = section.settings.event_type | default: 'Café Nights'
+  assign today_key = 'now' | date: '%Y%m%d'
+  assign cards = ''
+-%}
+{%- paginate src.products by 250 -%}
+  {%- for product in src.products -%}
+    {%- liquid
+      assign et = product.metafields.custom.event_type.value
+      assign et_name = et.event_type.value | default: et.event_type
+      if et_name != want
+        continue
+      endif
+      if product.metafields.custom.calendar_link != blank
+        continue
+      endif
+
+      assign s_iso = ''
+      assign e_iso = ''
+      if product.metafields.custom.event_start != blank
+        assign s_iso = product.metafields.custom.event_start.value | date: '%Y-%m-%dT%H:%M'
+      endif
+      if product.metafields.custom.event_end != blank
+        assign e_iso = product.metafields.custom.event_end.value | date: '%Y-%m-%dT%H:%M'
+      endif
+      assign evey = product.metafields.evey.event.value
+      if s_iso == blank and evey.start_at != blank
+        assign s_iso = evey.start_at | slice: 0, 16
+      endif
+      if e_iso == blank and evey.end_at != blank
+        assign e_iso = evey.end_at | slice: 0, 16
+      endif
+
+      assign clean_title = product.title
+      assign words = product.title | split: ' '
+      for w in words
+        assign parts = w | split: '/'
+        if parts.size == 3
+          assign cut = ' ' | append: w
+          assign clean_title = product.title | split: cut | first
+          if s_iso == blank
+            assign yy = parts[2] | slice: 0, 4
+            assign mm = parts[0] | prepend: '0' | slice: -2, 2
+            assign dd = parts[1] | prepend: '0' | slice: -2, 2
+            assign s_iso = yy | append: '-' | append: mm | append: '-' | append: dd | append: 'T00:00'
+          endif
+          break
+        endif
+      endfor
+      if s_iso == blank
+        continue
+      endif
+
+      assign day_key = s_iso | slice: 0, 10 | remove: '-'
+      if day_key < today_key
+        continue
+      endif
+      assign sort_key = s_iso | remove: '-' | remove: 'T' | remove: ':'
+      assign adm = product.metafields.custom.admission.value
+      assign adm_name = adm.admission.value | default: adm.name.value | default: adm.title.value
+    -%}
+    {%- capture card -%}{{ sort_key }}~~{{ product.id }}~~<a class="tcs-cn__card" href="{{ product.url }}" data-start="{{ s_iso }}" data-end="{{ e_iso }}">
+        <span class="tcs-cn__img">{%- if product.featured_image -%}{{ product.featured_image | image_url: width: 640 | image_tag: loading: 'lazy', alt: clean_title, sizes: '(min-width: 769px) 300px, 80vw' }}{%- endif -%}</span>
+        <span class="tcs-cn__body">
+          <span class="tcs-cn__when">{{ s_iso | slice: 0, 10 }}</span>
+          <span class="tcs-cn__name">{{ clean_title | escape }}</span>
+          {%- if adm_name != blank -%}<span class="tcs-cn__tag">{{ adm_name | escape }}</span>{%- endif -%}
+          <span class="tcs-cn__cta">{{ section.settings.card_button | escape }} <span aria-hidden="true">&rarr;</span></span>
+        </span>
+      </a>{%- endcapture -%}
+    {%- assign cards = cards | append: card | append: '^^tcs^^' -%}
+  {%- endfor -%}
+{%- endpaginate -%}
+{%- assign card_list = cards | split: '^^tcs^^' | sort -%}
+
+{%- if card_list.size > 0 -%}
+<div class="tcs-cn" id="tcs-cn-{{ section.id }}">
+  <div class="page-width">
+    <div class="tcs-cn__head">
+      {%- if section.settings.eyebrow != blank -%}<p class="tcs-cn__eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+      {%- if section.settings.title != blank -%}<h2 class="tcs-cn__title">{{ section.settings.title | escape }}</h2>{%- endif -%}
+      {%- if section.settings.text != blank -%}<div class="tcs-cn__text">{{ section.settings.text }}</div>{%- endif -%}
+    </div>
+    <div class="tcs-cn__row">
+      {%- assign shown = 0 -%}
+      {%- for c in card_list -%}
+        {%- assign bits = c | split: '~~' -%}
+        {%- if bits.size < 3 -%}{%- continue -%}{%- endif -%}
+        {%- assign shown = shown | plus: 1 -%}
+        {%- if shown > section.settings.max_count -%}{%- break -%}{%- endif -%}
+        {%- assign skip = bits[0] | append: '~~' | append: bits[1] | append: '~~' -%}
+        {{ c | remove_first: skip }}
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.link_label != blank -%}
+      <p class="tcs-cn__all"><a href="{{ section.settings.link_url | default: '/collections/in-store-classes?event_type=Caf%C3%A9%20Nights' }}">{{ section.settings.link_label | escape }} <span aria-hidden="true">&rarr;</span></a></p>
+    {%- endif -%}
+  </div>
+</div>
+
+<style>
+  #tcs-cn-{{ section.id }}{padding:{{ section.settings.space_top }}px 0 {{ section.settings.space_bottom }}px;{% if section.settings.band %}background:#f4f1ec;{% endif %}}
+  #tcs-cn-{{ section.id }} .tcs-cn__head{text-align:center;max-width:640px;margin:0 auto 28px}
+  #tcs-cn-{{ section.id }} .tcs-cn__eyebrow{font-family:var(--typeHeaderPrimary),sans-serif;text-transform:uppercase;letter-spacing:.2em;font-size:13px;font-weight:700;opacity:.7;margin:0 0 8px}
+  #tcs-cn-{{ section.id }} .tcs-cn__title{margin:0 0 10px}
+  #tcs-cn-{{ section.id }} .tcs-cn__text p{margin:0}
+  #tcs-cn-{{ section.id }} .tcs-cn__row{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+  #tcs-cn-{{ section.id }} .tcs-cn__card{flex:0 1 290px;display:flex;flex-direction:column;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:12px;overflow:hidden;color:inherit;text-decoration:none;transition:box-shadow .2s,transform .2s}
+  #tcs-cn-{{ section.id }} .tcs-cn__card:hover{box-shadow:0 8px 22px rgba(0,0,0,.1);transform:translateY(-2px)}
+  #tcs-cn-{{ section.id }} .tcs-cn__img{display:block;aspect-ratio:4/3;background:#eee;overflow:hidden}
+  #tcs-cn-{{ section.id }} .tcs-cn__img img{width:100%;height:100%;object-fit:cover;display:block}
+  #tcs-cn-{{ section.id }} .tcs-cn__body{display:flex;flex-direction:column;gap:6px;padding:16px 18px 18px;flex:1}
+  #tcs-cn-{{ section.id }} .tcs-cn__when{font-family:var(--typeHeaderPrimary),sans-serif;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#7A2E1F}
+  #tcs-cn-{{ section.id }} .tcs-cn__name{font-family:var(--typeHeaderPrimary),sans-serif;font-weight:700;font-size:20px;line-height:1.25}
+  #tcs-cn-{{ section.id }} .tcs-cn__tag{align-self:flex-start;font-size:12px;font-weight:600;background:#e8f2ea;color:#2e7d46;border-radius:999px;padding:3px 10px}
+  #tcs-cn-{{ section.id }} .tcs-cn__cta{margin-top:auto;padding-top:8px;font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:3px}
+  #tcs-cn-{{ section.id }} .tcs-cn__all{text-align:center;margin:24px 0 0}
+  #tcs-cn-{{ section.id }} .tcs-cn__all a{font-weight:600;text-underline-offset:3px}
+  @media (max-width:749px){
+    #tcs-cn-{{ section.id }} .tcs-cn__row{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -17px;padding:0 17px 6px}
+    #tcs-cn-{{ section.id }} .tcs-cn__card{flex:0 0 78%;scroll-snap-align:start}
+    #tcs-cn-{{ section.id }} .tcs-cn__row:has(.tcs-cn__card:only-child){justify-content:center}
+  }
+</style>
+<script>
+(function () {
+  var root = document.getElementById('tcs-cn-{{ section.id }}'); if (!root) return;
+  var tz = 'America/New_York';
+  var today = new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function parts(s) { var m = /^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)/.exec(s || ''); return m ? { y: +m[1], mo: +m[2], d: +m[3], h: +m[4], mi: +m[5] } : null; }
+  function hm(p) { var h = p.h % 12 || 12; return h + (p.mi ? ':' + String(p.mi).padStart(2, '0') : '') + (p.h < 12 ? 'am' : 'pm'); }
+  var cards = [].slice.call(root.querySelectorAll('.tcs-cn__card')), live = 0;
+  cards.forEach(function (c) {
+    var s = parts(c.getAttribute('data-start')), e = parts(c.getAttribute('data-end'));
+    if (!s) return;
+    if (c.getAttribute('data-start').slice(0, 10) < today) { c.remove(); return; }
+    live++;
+    var dow = DAYS[new Date(s.y, s.mo - 1, s.d).getDay()];
+    var t = (s.h || s.mi) ? ' · ' + hm(s) + (e ? '–' + hm(e) : '') : '';
+    var w = c.querySelector('.tcs-cn__when'); if (w) w.textContent = dow + ', ' + MON[s.mo - 1] + ' ' + s.d + t;
+  });
+  if (!live) root.style.display = 'none';
+})();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "TCS Café Nights",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "After hours in the café" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "Upcoming Café Nights" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Evening food nights in our downstairs café. Tap an event for the menu and details.</p>" },
+    { "type": "text", "id": "event_type", "label": "Event type to show", "default": "Café Nights" },
+    { "type": "collection", "id": "collection", "label": "Collection", "info": "Leave empty to use the Calendar collection." },
+    { "type": "range", "id": "max_count", "label": "Most events to show", "min": 1, "max": 8, "step": 1, "default": 4 },
+    { "type": "text", "id": "card_button", "label": "Card link text", "default": "See the menu & details" },
+    { "type": "text", "id": "link_label", "label": "Link under the cards", "default": "See all Café Nights on the calendar" },
+    { "type": "url", "id": "link_url", "label": "Link address" },
+    { "type": "checkbox", "id": "band", "label": "Tinted background", "default": true },
+    { "type": "range", "id": "space_top", "label": "Space above", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 56 },
+    { "type": "range", "id": "space_bottom", "label": "Space below", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 56 }
+  ],
+  "presets": [{ "name": "TCS Café Nights" }]
+}
+{% endschema %}
