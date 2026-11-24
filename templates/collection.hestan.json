@@ -51,7 +51,7 @@
             "top_subheading": "",
             "title": "<p>Hestan</p>",
             "title_size": 70,
-            "subheading": "",
+            "subheading": "Italian-made stainless steel cookware for serious home cooks.",
             "link": "",
             "link_text": "",
             "link_2": "",
@@ -82,7 +82,7 @@
         "heading_ibUpnR": {
           "type": "heading",
           "settings": {
-            "title": "The Italian Sports Car of Stainless Steel Cookware",
+            "title": "Professional Cookware, Made in Hestan's Own Italian Factories",
             "heading_size": "h2"
           }
         },
@@ -90,7 +90,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Not just made here, or made <em>there</em>, Hestan cookware is made in <em>Hestan's own </em>Italian factories, and is the only stainless steel cookware that chefs and discerning home cooks demand.</p>"
+            "text": "<p>Hestan makes its stainless steel cookware in its own factories in Italy. Every line is fully clad, works on every cooktop including induction, and has flush rivets, so there's nothing on the cooking surface for food to stick to. At The Cook's Station we carry NanoBond, ProBond, CopperBond, TITUM nonstick and Hestan Provisions. Shop by line below, or visit our Buncombe Street shop in Greenville to pick up a pan and feel the balance before you buy.</p>"
           }
         }
       },
@@ -129,28 +129,12 @@
             "collection": "hestan-probond®-luxe™",
             "title": ""
           }
-        },
-        "collection_tQ9jc3": {
-          "type": "collection",
-          "settings": {
-            "collection": "hestan-titum®-fusion",
-            "title": ""
-          }
-        },
-        "collection_xgmEfG": {
-          "type": "collection",
-          "settings": {
-            "collection": "hestan-provisions",
-            "title": ""
-          }
         }
       },
       "block_order": [
         "collection_3nbg6t",
         "collection_jLmgze",
-        "collection_CD8eFb",
-        "collection_tQ9jc3",
-        "collection_xgmEfG"
+        "collection_CD8eFb"
       ],
       "custom_css": [
         ".new-grid {display: flex !important; flex-wrap: wrap !important;}",
@@ -187,7 +171,6 @@
         "subcollections",
         "product_grid"
       ],
-      "disabled": true,
       "settings": {
         "enable_sidebar": true,
         "collapse_filters": true,
@@ -208,7 +191,7 @@
         "collection_KQPzXn": {
           "type": "collection",
           "settings": {
-            "collection": "le-creuset-bakeware",
+            "collection": "hestan-provisions",
             "title": ""
           }
         }
@@ -224,6 +207,127 @@
         "heading_position": "left",
         "divider": false
       }
+    },
+    "rich_text_guide": {
+      "type": "rich-text",
+      "blocks": {
+        "guide_h": {
+          "type": "heading",
+          "settings": {
+            "title": "Which Hestan Line Is Right for You?",
+            "heading_size": "h2"
+          }
+        },
+        "guide_t": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><strong>NanoBond</strong> is Hestan's top line. Thousands of titanium nano-layers are bonded onto the stainless steel, so the surface is harder than standard stainless and resists scratches and staining. It's oven- and broiler-safe to 1050°F. Choose it if you want the most durable pan Hestan makes.</p><p><strong>ProBond</strong> (including the mirror-polished <strong>ProBond Luxe</strong>) is tri-ply stainless steel with an aluminum core. It's oven-safe to 600°F and dishwasher-safe. Choose it for everyday searing, sautéing and pan sauces at the best value.</p><p><strong>CopperBond</strong> has a pure copper core wrapped in stainless steel. Copper responds to heat faster than any other cookware metal, and the stainless exterior still works on induction. It's oven-safe to 600°F. Hand wash it to keep the copper bright. Choose it for precise temperature control.</p><p><strong>TITUM nonstick</strong> puts Hestan's diamond-reinforced nonstick coating on a clad stainless steel body. It's oven-safe to 500°F and dishwasher-safe. Choose it for eggs, fish and easy cleanup.</p><p><strong>Hestan Provisions</strong> includes roasters, griddles, inserts and lids that round out a Hestan kitchen.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "guide_h",
+        "guide_t"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": true
+      }
+    },
+    "faq_hestan": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "title": "Where is Hestan cookware made?",
+            "text": "<p>Hestan makes its NanoBond, ProBond, CopperBond and TITUM cookware in its own factories in Italy.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "title": "What is the difference between Hestan NanoBond, ProBond and CopperBond?",
+            "text": "<p>All three are clad stainless steel and work on induction. ProBond is tri-ply stainless steel with an aluminum core and is the best everyday value. NanoBond adds a titanium-bonded surface that is harder and more stain-resistant, and it's oven-safe to 1050°F. CopperBond uses a pure copper core for the fastest response to heat.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "title": "Is Hestan cookware worth the price?",
+            "text": "<p>For cooks who want pans that last for decades, yes. Hestan cookware is fully clad, has flush rivets that make cleaning easier, and comes with a lifetime warranty. If you're choosing one pan, ProBond gives you Hestan's construction at the lowest price. NanoBond is worth the upgrade if you want the most durable, easiest-to-clean stainless surface.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "title": "Is Hestan cookware oven-safe?",
+            "text": "<p>Yes. NanoBond is oven- and broiler-safe to 1050°F. ProBond and CopperBond are oven-safe to 600°F. TITUM nonstick is oven-safe to 500°F but shouldn't go on a grill.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "title": "Does Hestan cookware work on induction?",
+            "text": "<p>Yes. NanoBond, ProBond, CopperBond and TITUM all work on induction, gas, electric and ceramic cooktops.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "title": "Is Hestan cookware dishwasher-safe?",
+            "text": "<p>NanoBond, ProBond and TITUM are dishwasher-safe. Hestan recommends hand washing CopperBond. Hand washing helps any stainless pan keep its finish longer.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "title": "Is Hestan TITUM nonstick safe?",
+            "text": "<p>TITUM uses a PTFE-based nonstick coating made without PFOA. Like any nonstick pan, avoid heating it empty on high heat. It's oven-safe to 500°F.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "title": "Does Hestan have a warranty?",
+            "text": "<p>Yes. Hestan cookware has a lifetime warranty against defects in materials and workmanship.</p>"
+          }
+        },
+        "q9": {
+          "type": "question",
+          "settings": {
+            "title": "How do I keep food from sticking to Hestan stainless steel?",
+            "text": "<p>Heat the pan over medium for a minute or two, add oil, and let it shimmer before adding food. Let proteins release on their own before flipping. A splash of water and a soft sponge removes most residue.</p>"
+          }
+        },
+        "q10": {
+          "type": "question",
+          "settings": {
+            "title": "Can I see Hestan cookware in person in Greenville?",
+            "text": "<p>Yes. The Cook's Station carries Hestan at our Buncombe Street shop in Greenville, SC. You can also order online and choose local pickup at checkout.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10"
+      ],
+      "settings": {
+        "title": "Hestan FAQs",
+        "heading_size": "h2",
+        "heading_position": "center"
+      }
     }
   },
   "order": [
@@ -231,7 +335,9 @@
     "slideshow_9NgdAJ",
     "rich_text_Ch4dJm",
     "featured_collections_wk94Fp",
+    "featured_collections_fBAXPj",
+    "rich_text_guide",
     "main-collection",
-    "featured_collections_fBAXPj"
+    "faq_hestan"
   ]
 }

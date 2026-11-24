@@ -51,7 +51,7 @@
             "top_subheading": "",
             "title": "<p>{{ collection.title }}</p>",
             "title_size": 70,
-            "subheading": "",
+            "subheading": "French enameled cast iron, made since 1925.",
             "link": "",
             "link_text": "",
             "link_2": "",
@@ -90,7 +90,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p>Inside every piece of Le Creuset cookware, there’s more than a wonderful meal. There’s a story. A story of authentic French heritage, of colorful culinary culture, and of generations of passion in kitchens and beyond..</p>"
+            "text": "<p>Le Creuset introduced the first colorful enameled cast iron cookware in 1925, in its signature orange Flame. A century later, every piece of Le Creuset enameled cast iron is still made at the original foundry in Fresnoy-le-Grand, France, and passes through the hands of at least 15 artisans. At The Cook's Station we carry Le Creuset Dutch ovens, braisers, stainless steel and nonstick cookware, kettles and replacement knobs. Shop by color or category below, or come see the colors side by side at our Buncombe Street shop in Greenville.</p>"
           }
         }
       },
@@ -179,20 +179,6 @@
             "title": ""
           }
         },
-        "collection_Vktx9L": {
-          "type": "collection",
-          "settings": {
-            "collection": "rhone",
-            "title": ""
-          }
-        },
-        "collection_DMMgag": {
-          "type": "collection",
-          "settings": {
-            "collection": "shallot",
-            "title": ""
-          }
-        },
         "collection_rUbBzJ": {
           "type": "collection",
           "settings": {
@@ -228,8 +214,6 @@
         "collection_WAq46Q",
         "collection_cPU3Rg",
         "collection_FJprD8",
-        "collection_Vktx9L",
-        "collection_DMMgag",
         "collection_rUbBzJ"
       ],
       "custom_css": [
@@ -431,12 +415,140 @@
         "subcollections",
         "product_grid"
       ],
-      "disabled": true,
       "settings": {
         "enable_sidebar": true,
         "collapse_filters": true,
         "enable_color_swatches": false,
         "enable_sort": true
+      }
+    },
+    "rich_text_guide": {
+      "type": "rich-text",
+      "blocks": {
+        "guide_h": {
+          "type": "heading",
+          "settings": {
+            "title": "How to Choose a Le Creuset Dutch Oven",
+            "heading_size": "h2"
+          }
+        },
+        "guide_t": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><strong>Pick the size by how many people you cook for.</strong> Le Creuset's rule of thumb is one quart per person, then round up. A family of four does best with a 5 to 6 quart oven.</p><ul><li><strong>2 to 3.5 qt.</strong> serves 1 to 3: sides, sauces, small batches of soup</li><li><strong>4.5 qt. round</strong> serves 4 to 5: weeknight stews, bread for two</li><li><strong>5.5 qt. round</strong> serves 5 to 6: the most versatile size for braises, soups and no-knead bread</li><li><strong>6.75 to 7.25 qt.</strong> serves 6 to 8: whole chickens, pot roasts, entertaining</li><li><strong>9 qt. and up</strong> serves 9+: big batches, holidays, freezer cooking</li></ul><p><strong>Round or oval?</strong> Round fits a standard burner and heats most evenly on the stovetop. Oval fits a whole chicken, a pork shoulder or a long roast.</p><p><strong>Dutch oven or braiser?</strong> A Dutch oven is deep, for soups, stews and bread. A braiser is wide and shallow, for searing and then slow-cooking chicken thighs, short ribs or shakshuka.</p><p><strong>Which knob?</strong> The black Signature knob is oven-safe to 500°F. Stainless steel and gold knobs can go in the oven at any temperature. We carry <a href=\"/collections/le-creuset-kitchen-accessories\">replacement knobs</a> if you want to swap yours.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "guide_h",
+        "guide_t"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "color_scheme": "none",
+        "divider": true
+      }
+    },
+    "faq_lecreuset": {
+      "type": "faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "title": "Where is Le Creuset made?",
+            "text": "<p>Le Creuset enameled cast iron is made at the company's original foundry in Fresnoy-le-Grand, France, where it has been made since 1925. Le Creuset makes some of its other lines, like stoneware, stainless steel and nonstick, in other countries, so check each product page.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "title": "What size Le Creuset Dutch oven should I buy?",
+            "text": "<p>For most households, a 5.5 quart round Dutch oven. It serves 5 to 6 people and handles soups, braises and bread. Plan on about one quart per person.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "title": "Is Le Creuset oven-safe?",
+            "text": "<p>Yes. Le Creuset enameled cast iron is oven-safe to 500°F. The black Signature knob is safe to 500°F, the older Classic black knob to 390°F, and stainless steel or gold knobs at any oven temperature.</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "title": "Does Le Creuset work on induction?",
+            "text": "<p>Yes. Le Creuset enameled cast iron works on all cooktops, including induction, gas, electric and ceramic. Lift it rather than sliding it on a glass cooktop.</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "title": "Is Le Creuset dishwasher-safe?",
+            "text": "<p>Le Creuset says its Signature enameled cast iron is dishwasher-safe. Hand washing with warm, soapy water keeps the enamel glossy longer. For stuck-on food, soak it in warm water before scrubbing with a nylon brush.</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "title": "Can I use metal utensils in Le Creuset?",
+            "text": "<p>Le Creuset says Signature enameled cast iron is safe with metal utensils. Wood or silicone is gentler on the enamel over time. Use non-metal utensils on Le Creuset nonstick.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "title": "Does Le Creuset have a lifetime warranty?",
+            "text": "<p>Le Creuset enameled cast iron has a limited lifetime warranty against defects in materials and workmanship. It doesn't cover damage from drops, and it doesn't cover nonstick-coated cookware.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "title": "Why is Le Creuset so expensive?",
+            "text": "<p>Each piece of enameled cast iron is cast at Le Creuset's foundry in France and passes through at least 15 artisans. It's also backed by a lifetime warranty, which is why many people hand Le Creuset down for generations.</p>"
+          }
+        },
+        "q9": {
+          "type": "question",
+          "settings": {
+            "title": "What was Le Creuset's original color?",
+            "text": "<p>Flame, a bright orange first called \"Volcanique.\" It was inspired by the color of molten iron in a crucible, or \"creuset\" in French, and introduced in 1925.</p>"
+          }
+        },
+        "q10": {
+          "type": "question",
+          "settings": {
+            "title": "Which Le Creuset colors does The Cook's Station carry?",
+            "text": "<p>Our current colors include Flame, Cerise, Artichaut, Marseille, Olive, Sea Salt, Licorice, Oyster, Pêche, Riviera, White, Nuit and Nectar. Selection changes with the seasons, so visit our Buncombe Street shop in Greenville to see what's in stock.</p>"
+          }
+        },
+        "q11": {
+          "type": "question",
+          "settings": {
+            "title": "Can I buy Le Creuset in Greenville, SC?",
+            "text": "<p>Yes. The Cook's Station carries Le Creuset at our Buncombe Street shop in Greenville, SC. You can also order online and choose local pickup at checkout.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10",
+        "q11"
+      ],
+      "settings": {
+        "title": "Le Creuset FAQs",
+        "heading_size": "h2",
+        "heading_position": "center"
       }
     }
   },
@@ -446,10 +558,12 @@
     "rich_text_Ch4dJm",
     "featured_collections_iWPpmT",
     "featured_collections_wk94Fp",
+    "rich_text_guide",
+    "main-collection",
+    "faq_lecreuset",
     "featured-collection",
     "featured-collection2",
     "promo-grid2",
-    "featured-collection3",
-    "main-collection"
+    "featured-collection3"
   ]
 }
