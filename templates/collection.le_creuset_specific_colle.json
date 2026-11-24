@@ -293,7 +293,7 @@
         "collection_pQqnNK"
       ],
       "custom_css": [
-        ".new-grid {display: flex !important; flex-wrap: wrap !important;}",
+        ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
         ".new-grid .grid-item {flex: 0 0 25% !important; max-width: 25% !important; box-sizing: border-box;}",
         ".new-grid .grid-item, .new-grid .grid-item *, .new-grid .grid-item *::before, .new-grid .grid-item *::after {border-radius: 0 !important;}"
       ],
@@ -420,7 +420,8 @@
         "collapse_filters": true,
         "enable_color_swatches": false,
         "enable_sort": true
-      }
+      },
+      "disabled": true
     },
     "rich_text_guide": {
       "type": "rich-text",
