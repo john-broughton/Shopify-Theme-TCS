@@ -261,20 +261,6 @@
             "title": ""
           }
         },
-        "collection_xgmEfG": {
-          "type": "collection",
-          "settings": {
-            "collection": "le-creuset-utensils",
-            "title": ""
-          }
-        },
-        "collection_ayMkUj": {
-          "type": "collection",
-          "settings": {
-            "collection": "le-creuset-kitchen-tools-gadgets",
-            "title": ""
-          }
-        },
         "collection_pQqnNK": {
           "type": "collection",
           "settings": {
@@ -288,8 +274,6 @@
         "collection_jLmgze",
         "collection_CD8eFb",
         "collection_tQ9jc3",
-        "collection_xgmEfG",
-        "collection_ayMkUj",
         "collection_pQqnNK"
       ],
       "custom_css": [
