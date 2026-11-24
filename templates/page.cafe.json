@@ -512,6 +512,10 @@
         "heading_size": "h2",
         "heading_position": "left"
       }
+    },
+    "tcs_cafe_nights": {
+      "type": "tcs-cafe-nights",
+      "settings": {}
     }
   },
   "order": [
@@ -520,6 +524,7 @@
     "slideshow_X8xeKP",
     "rich_text_kxgRXB",
     "thanksgiving_sides",
+    "tcs_cafe_nights",
     "text_columns_HaHf8Q",
     "166420604037b6908b",
     "promo_grid_8ijbpN",
