@@ -138,7 +138,7 @@
       ],
       "custom_css": [
         ".new-grid {display: flex !important; flex-wrap: wrap !important; justify-content: center !important;}",
-        ".new-grid .grid-item {flex: 0 0 20% !important; max-width: 20% !important; box-sizing: border-box;}"
+        ".new-grid .grid-item {flex: 0 0 33.333% !important; max-width: 33.333% !important; box-sizing: border-box;}"
       ],
       "name": "t:labels.collection_list",
       "settings": {
