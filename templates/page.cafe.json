@@ -114,6 +114,7 @@
     },
     "thanksgiving_sides": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Thanksgiving_Menu_Flyer_1.png",
         "image_mask": "none",
@@ -132,6 +133,23 @@
         "divider": false,
         "top_padding": true,
         "bottom_padding": true
+      }
+    },
+    "tcs_cafe_nights": {
+      "type": "tcs-cafe-nights",
+      "settings": {
+        "eyebrow": "After hours in the café",
+        "title": "Upcoming Café Nights",
+        "text": "<p>Evening food nights in our downstairs café. Tap an event for the menu and details.</p>",
+        "event_type": "Café Nights",
+        "collection": "",
+        "max_count": 4,
+        "card_button": "See the menu & details",
+        "link_label": "See all Café Nights on the calendar",
+        "link_url": "",
+        "band": true,
+        "space_top": 56,
+        "space_bottom": 56
       }
     },
     "text_columns_HaHf8Q": {
@@ -181,7 +199,7 @@
         "16642060405c809cbb-0": {
           "type": "heading",
           "settings": {
-            "title": "Today's Specials - 11/21",
+            "title": "Today's Specials - 11/27",
             "heading_size": "h2"
           }
         },
@@ -189,7 +207,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": true,
-            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Roasted chicken, celery, red onion, dried cherries, chopped candied pecans, creamy herb dressing with Olivelle vinegar&nbsp;</p><p><strong>GREEK GYRO WRAP- $13.99</strong><br/>Gyro meat, tzatziki, marinated tomatoes, banana peppers, onions, feta, lettuce, on a spinach wrap&nbsp;</p><p><strong>TCS SMASHBURGER- $13.99</strong><br/>Wagyu patty, American cheese, lettuce, tomato, onions, pickles, ketchup, and mustard, on a brioche bun</p><p><strong>CREAMY WINTER VEGETABLE SOUP- $5.99</strong><br/>Onion, garlic, carrot, roasted butter and spaghetti squash, parsnips, sweet potatoes, brown butter, chicken stock, heavy cream, herbs and spices. Garnished with maple bacon agrodolce and candied pecan dust&nbsp;</p><p><strong>**CONTAINS NUTS&nbsp;</strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
+            "text": "<p><strong>**TCS CHICKEN SALAD SANDWICH - $12.99</strong><br/>Roasted chicken, celery, red onion, dried cherries, chopped candied pecans, creamy herb dressing with Olivelle vinegar&nbsp;</p><p><strong>Salmon BLT Wrap- $13.99</strong><br/>Salmon, bacon, lettuce, tomato, pickled red onions, caper garlic aioli, on spinach wrap</p><p><strong>THe Cranberry Gobbler- $14.99</strong><br/>6oz smash burger, bacon, cranberry jam, havarti cheese, arugula, chipolte lusty monk aioli, on a brioche bun</p><p><strong>Meatball Sub- $14.99</strong><br/>Meatballs, marinara sauce, on a hoagie roll</p><p><strong>Roasted myshroom soup GF (soup of the day) - $7.99</strong><br/>Shallots, garlic, thyme, sage, roasted mushrooms, lemon zest, spices, butter, chicken stock, heavy cream, olivelle mushroom and sage oil, Garnish with: Crispy onions and herbs&nbsp;</p><p><strong>**CONTAINS NUTS&nbsp;</strong></p><p><strong>GLUTEN-FREE BREAD AVAILABLE UPON REQUEST - $2.00 UPCHARGE</strong></p>"
           }
         }
       },
@@ -512,10 +530,6 @@
         "heading_size": "h2",
         "heading_position": "left"
       }
-    },
-    "tcs_cafe_nights": {
-      "type": "tcs-cafe-nights",
-      "settings": {}
     }
   },
   "order": [
